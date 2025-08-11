@@ -1,0 +1,626 @@
+{
+  "baden-wuerttemberg": [
+    {
+      "id": "bw001",
+      "category": "State",
+      "question": "Welches Wappen gehört zum Bundesland Baden-Württemberg?",
+      "image": "/images/baden-wurttemberg-coat-of-arms.jpg",
+      "options": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
+      "answerIndex": 0,
+      "explanation": "Das Wappen Baden-Württembergs (Bild 1) zeigt drei schwarze Löwen auf goldenem Grund - das traditionelle Wappen der Staufer."
+    },
+    {
+      "id": "bw002",
+      "category": "State",
+      "question": "Welches ist ein Landkreis in Baden-Württemberg?",
+      "options": [
+        "Mecklenburgische Seenplatte",
+        "Neckar-Odenwald-Kreis",
+        "Nordfriesland",
+        "Altötting"
+      ],
+      "answerIndex": 1,
+      "explanation": "Neckar-Odenwald-Kreis ist ein Landkreis in Baden-Württemberg."
+    },
+    {
+      "id": "bw003",
+      "category": "State",
+      "question": "Für wie viele Jahre wird der Landtag in Baden-Württemberg gewählt?",
+      "options": ["3", "4", "5", "6"],
+      "answerIndex": 2,
+      "explanation": "Der Landtag in Baden-Württemberg wird für 5 Jahre gewählt."
+    },
+    {
+      "id": "bw004",
+      "category": "State",
+      "question": "Ab welchem Alter darf man in Baden-Württemberg bei Kommunalwahlen wählen?",
+      "options": ["14", "16", "18", "20"],
+      "answerIndex": 1,
+      "explanation": "In Baden-Württemberg darf man ab 16 Jahren bei Kommunalwahlen wählen."
+    },
+    {
+      "id": "bw005",
+      "category": "State",
+      "question": "Welche Farben hat die Landesflagge von Baden-Württemberg?",
+      "options": [
+        "blau-weiß-rot",
+        "schwarz-gold",
+        "weiß-blau",
+        "grün-weiß-rot"
+      ],
+      "answerIndex": 1,
+      "explanation": "Die Landesflagge von Baden-Württemberg ist schwarz-gold."
+    },
+    {
+      "id": "bw006",
+      "category": "State",
+      "question": "Wo können Sie sich in Baden-Württemberg über politische Themen informieren?",
+      "options": [
+        "beim Ordnungsamt der Gemeinde",
+        "bei der Verbraucherzentrale",
+        "bei der Landeszentrale für politische Bildung",
+        "bei den Kirchen"
+      ],
+      "answerIndex": 2,
+      "explanation": "In Baden-Württemberg können Sie sich bei der Landeszentrale für politische Bildung über politische Themen informieren."
+    },
+    {
+      "id": "bw007",
+      "category": "State",
+      "question": "Die Landeshauptstadt von Baden-Württemberg heißt …",
+      "options": ["Heidelberg.", "Stuttgart.", "Karlsruhe.", "Mannheim."],
+      "answerIndex": 1,
+      "explanation": "Die Landeshauptstadt von Baden-Württemberg ist Stuttgart."
+    },
+    {
+      "id": "bw008",
+      "category": "State",
+      "question": "Welches Bundesland ist Baden-Württemberg?",
+      "image": "/images/germany-map-baden-wurttemberg.jpg",
+      "options": ["1", "2", "3", "4"],
+      "answerIndex": 1,
+      "explanation": "Auf der Karte ist Baden-Württemberg mit der Nummer 2 gekennzeichnet."
+    },
+    {
+      "id": "bw009",
+      "category": "State",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef in Baden-Württemberg?",
+      "options": [
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
+      ],
+      "answerIndex": 3,
+      "explanation": "Die Regierungschefin/der Regierungschef in Baden-Württemberg wird als Ministerpräsidentin/Ministerpräsident bezeichnet."
+    },
+    {
+      "id": "bw010",
+      "category": "State",
+      "question": "Welche Ministerin/welchen Minister hat Baden-Württemberg nicht?",
+      "options": [
+        "Finanzministerin/Finanzminister",
+        "Justizministerin/Justizminister",
+        "Innenministerin/Innenminister",
+        "Außenministerin/Außenminister"
+      ],
+      "answerIndex": 3,
+      "explanation": "Baden-Württemberg hat keinen Außenminister, da dies eine Aufgabe der Bundesregierung ist."
+    }
+  ],
+  "bayern": [
+    {
+      "id": "by001",
+      "category": "State",
+      "question": "Welches Wappen gehört zum Freistaat Bayern?",
+      "image": "/images/baden-wurttemberg-coat-of-arms.jpg",
+      "options": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
+      "answerIndex": 1,
+      "explanation": "Das Wappen des Freistaats Bayern (Bild 2) zeigt eine blau-weiße Rautenflagge."
+    },
+    {
+      "id": "by002",
+      "category": "State",
+      "question": "Welches ist ein Landkreis in Bayern?",
+      "options": ["Prignitz", "Rhein-Sieg-Kreis", "Nordfriesland", "Altötting"],
+      "answerIndex": 3,
+      "explanation": "Altötting ist ein Landkreis in Bayern."
+    },
+    {
+      "id": "by003",
+      "category": "State",
+      "question": "Für wie viele Jahre wird der Landtag in Bayern gewählt?",
+      "options": ["3", "4", "5", "6"],
+      "answerIndex": 2,
+      "explanation": "Der Landtag in Bayern wird für 5 Jahre gewählt."
+    },
+    {
+      "id": "by004",
+      "category": "State",
+      "question": "Ab welchem Alter darf man in Bayern bei Kommunalwahlen wählen?",
+      "options": ["14", "16", "18", "20"],
+      "answerIndex": 2,
+      "explanation": "In Bayern darf man ab 18 Jahren bei Kommunalwahlen wählen."
+    },
+    {
+      "id": "by005",
+      "category": "State",
+      "question": "Welche Farben hat die Landesflagge von Bayern?",
+      "options": [
+        "blau-weiß-rot",
+        "weiß-blau",
+        "grün-weiß-rot",
+        "schwarz-gelb"
+      ],
+      "answerIndex": 1,
+      "explanation": "Die Landesflagge von Bayern ist weiß-blau."
+    },
+    {
+      "id": "by006",
+      "category": "State",
+      "question": "Wo können Sie sich in Bayern über politische Themen informieren?",
+      "options": [
+        "beim Ordnungsamt der Gemeinde",
+        "bei der Landeszentrale für politische Bildung",
+        "bei der Verbraucherzentrale",
+        "bei den Kirchen"
+      ],
+      "answerIndex": 1,
+      "explanation": "In Bayern können Sie sich bei der Landeszentrale für politische Bildung über politische Themen informieren."
+    },
+    {
+      "id": "by007",
+      "category": "State",
+      "question": "Die Landeshauptstadt von Bayern heißt …",
+      "options": ["Ingolstadt.", "Regensburg.", "Nürnberg.", "München."],
+      "answerIndex": 3,
+      "explanation": "Die Landeshauptstadt von Bayern ist München."
+    },
+    {
+      "id": "by008",
+      "category": "State",
+      "question": "Welches Bundesland ist Bayern?",
+      "image": "/images/germany-map-baden-wurttemberg.jpg",
+      "options": ["1", "2", "3", "4"],
+      "answerIndex": 3,
+      "explanation": "Auf der Karte ist Bayern mit der Nummer 4 gekennzeichnet."
+    },
+    {
+      "id": "by009",
+      "category": "State",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef in Bayern?",
+      "options": [
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
+      ],
+      "answerIndex": 3,
+      "explanation": "Die Regierungschefin/der Regierungschef in Bayern wird als Ministerpräsidentin/Ministerpräsident bezeichnet."
+    },
+    {
+      "id": "by010",
+      "category": "State",
+      "question": "Welche Ministerin/welchen Minister hat Bayern nicht?",
+      "options": [
+        "Justizministerin/Justizminister",
+        "Außenministerin/Außenminister",
+        "Finanzministerin/Finanzminister",
+        "Innenministerin/Innenminister"
+      ],
+      "answerIndex": 1,
+      "explanation": "Bayern hat keinen Außenminister, da dies eine Aufgabe der Bundesregierung ist."
+    }
+  ],
+  "berlin": [
+    {
+      "id": "be001",
+      "category": "State",
+      "question": "Welches Wappen gehört zum Bundesland Berlin?",
+      "image": "/images/coat-of-arms.jpg",
+      "options": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
+      "answerIndex": 3,
+      "explanation": "Das Wappen des Bundeslandes Berlin (Bild 4) zeigt einen Bären."
+    },
+    {
+      "id": "be002",
+      "category": "State",
+      "question": "Welches ist ein Bezirk von Berlin?",
+      "options": [
+        "Altona",
+        "Prignitz",
+        "Pankow",
+        "Mecklenburgische Seenplatte"
+      ],
+      "answerIndex": 2,
+      "explanation": "Pankow ist ein Bezirk von Berlin."
+    },
+    {
+      "id": "be003",
+      "category": "State",
+      "question": "Für wie viele Jahre wird das Landesparlament in Berlin gewählt?",
+      "options": ["3", "4", "5", "6"],
+      "answerIndex": 2,
+      "explanation": "Das Landesparlament in Berlin wird für 5 Jahre gewählt."
+    },
+    {
+      "id": "be004",
+      "category": "State",
+      "question": "Ab welchem Alter darf man in Berlin bei Kommunalwahlen (Wahl der Bezirksverordnetenversammlung) wählen?",
+      "options": ["14", "16", "18", "20"],
+      "answerIndex": 1,
+      "explanation": "In Berlin darf man ab 16 Jahren bei Kommunalwahlen wählen."
+    },
+    {
+      "id": "be005",
+      "category": "State",
+      "question": "Welche Farben hat die Landesflagge von Berlin?",
+      "options": ["blau-weiß-rot", "weiß-rot", "grün-weiß-rot", "schwarz-gold"],
+      "answerIndex": 1,
+      "explanation": "Die Landesflagge von Berlin ist weiß-rot."
+    },
+    {
+      "id": "be006",
+      "category": "State",
+      "question": "Wo können Sie sich in Berlin über politische Themen informieren?",
+      "options": [
+        "beim Ordnungsamt der Gemeinde",
+        "bei den Kirchen",
+        "bei der Verbraucherzentrale",
+        "bei der Landeszentrale für politische Bildung"
+      ],
+      "answerIndex": 3,
+      "explanation": "In Berlin können Sie sich bei der Landeszentrale für politische Bildung über politische Themen informieren."
+    },
+    {
+      "id": "be007",
+      "category": "State",
+      "question": "Welches Bundesland ist ein Stadtstaat?",
+      "options": ["Berlin", "Saarland", "Brandenburg", "Hessen"],
+      "answerIndex": 0,
+      "explanation": "Berlin ist ein Stadtstaat."
+    },
+    {
+      "id": "be008",
+      "category": "State",
+      "question": "Welches Bundesland ist Berlin?",
+      "image": "/images/map.jpg",
+      "options": ["1", "2", "3", "4"],
+      "answerIndex": 3,
+      "explanation": "Auf der Karte ist Berlin mit der Nummer 4 gekennzeichnet."
+    },
+    {
+      "id": "be009",
+      "category": "State",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef des Stadtstaates Berlin?",
+      "options": [
+        "Ministerpräsidentin/Ministerpräsident",
+        "Oberbürgermeisterin/Oberbürgermeister",
+        "Präsidentin/Präsident des Senates",
+        "Regierende Bürgermeisterin/Regierender Bürgermeister"
+      ],
+      "answerIndex": 3,
+      "explanation": "Die Regierungschefin/der Regierungschef des Stadtstaates Berlin wird als Regierende Bürgermeisterin/Regierender Bürgermeister bezeichnet."
+    },
+    {
+      "id": "be010",
+      "category": "State",
+      "question": "Welche Senatorin/welchen Senator hat Berlin nicht?",
+      "options": [
+        "Finanzsenatorin/Finanzsenator",
+        "Innensenatorin/Innensenator",
+        "Senatorin/Senator für Außenbeziehungen",
+        "Justizsenatorin/Justizsenator"
+      ],
+      "answerIndex": 2,
+      "explanation": "Berlin hat keinen Senator für Außenbeziehungen, da dies eine Aufgabe der Bundesregierung ist."
+    }
+  ],
+  "brandenburg": [
+    {
+      "id": "bb001",
+      "category": "State",
+      "question": "Welches Wappen gehört zum Bundesland Brandenburg?",
+      "image": "/images/coatofarms.jpg",
+      "options": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
+      "answerIndex": 0,
+      "explanation": "Das Wappen des Bundeslandes Brandenburg (Bild 1) zeigt einen roten Adler."
+    },
+    {
+      "id": "bb002",
+      "category": "State",
+      "question": "Welches ist ein Landkreis in Brandenburg?",
+      "options": [
+        "Prignitz",
+        "Rhein-Sieg-Kreis",
+        "Vogtlandkreis",
+        "Amberg-Sulzbach"
+      ],
+      "answerIndex": 0,
+      "explanation": "Prignitz ist ein Landkreis in Brandenburg."
+    },
+    {
+      "id": "bb003",
+      "category": "State",
+      "question": "Für wie viele Jahre wird der Landtag in Brandenburg gewählt?",
+      "options": ["3", "4", "5", "6"],
+      "answerIndex": 2,
+      "explanation": "Der Landtag in Brandenburg wird für 5 Jahre gewählt."
+    },
+    {
+      "id": "bb004",
+      "category": "State",
+      "question": "Ab welchem Alter darf man in Brandenburg bei Kommunalwahlen wählen?",
+      "options": ["14", "16", "18", "20"],
+      "answerIndex": 1,
+      "explanation": "In Brandenburg darf man ab 16 Jahren bei Kommunalwahlen wählen."
+    },
+    {
+      "id": "bb005",
+      "category": "State",
+      "question": "Welche Farben hat die Landesflagge von Brandenburg?",
+      "options": ["blau-weiß-rot", "rot-weiß", "grün-weiß-rot", "schwarz-gelb"],
+      "answerIndex": 1,
+      "explanation": "Die Landesflagge von Brandenburg ist rot-weiß."
+    },
+    {
+      "id": "bb006",
+      "category": "State",
+      "question": "Wo können Sie sich in Brandenburg über politische Themen informieren?",
+      "options": [
+        "bei den Kirchen",
+        "beim Ordnungsamt der Gemeinde",
+        "bei der Landeszentrale für politische Bildung",
+        "bei der Verbraucherzentrale"
+      ],
+      "answerIndex": 2,
+      "explanation": "In Brandenburg können Sie sich bei der Landeszentrale für politische Bildung über politische Themen informieren."
+    },
+    {
+      "id": "bb007",
+      "category": "State",
+      "question": "Die Landeshauptstadt von Brandenburg heißt …",
+      "options": ["Potsdam.", "Cottbus.", "Brandenburg.", "Frankfurt/Oder."],
+      "answerIndex": 0,
+      "explanation": "Die Landeshauptstadt von Brandenburg ist Potsdam."
+    },
+    {
+      "id": "bb008",
+      "category": "State",
+      "question": "Welches Bundesland ist Brandenburg?",
+      "image": "/images/bremen.jpg",
+      "options": ["1", "2", "3", "4"],
+      "answerIndex": 2,
+      "explanation": "Auf der Karte ist Brandenburg mit der Nummer 3 gekennzeichnet."
+    },
+    {
+      "id": "bb009",
+      "category": "State",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef in Brandenburg?",
+      "options": [
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
+      ],
+      "answerIndex": 3,
+      "explanation": "Die Regierungschefin/der Regierungschef in Brandenburg wird als Ministerpräsidentin/Ministerpräsident bezeichnet."
+    },
+    {
+      "id": "bb010",
+      "category": "State",
+      "question": "Welche Ministerin/welchen Minister hat Brandenburg nicht?",
+      "options": [
+        "Justizministerin/Justizminister",
+        "Außenministerin/Außenminister",
+        "Finanzministerin/Finanzminister",
+        "Innenministerin/Innenminister"
+      ],
+      "answerIndex": 1,
+      "explanation": "Brandenburg hat keinen Außenminister, da dies eine Aufgabe der Bundesregierung ist."
+    }
+  ],
+  "bremen": [
+    {
+      "id": "hb001",
+      "category": "State",
+      "question": "Welches Wappen gehört zur Freien Hansestadt Bremen?",
+      "image": "/images/coatarms.jpg",
+      "options": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
+      "answerIndex": 2,
+      "explanation": "Das Wappen der Freien Hansestadt Bremen (Bild 3) zeigt einen roten Schlüssel auf weißem Schild."
+    },
+    {
+      "id": "hb002",
+      "category": "State",
+      "question": "Welches ist ein Stadtteil von Bremen?",
+      "options": ["Altona", "Hemelingen", "Pankow", "Babelsberg"],
+      "answerIndex": 1,
+      "explanation": "Hemelingen ist ein Stadtteil von Bremen."
+    },
+    {
+      "id": "hb003",
+      "category": "State",
+      "question": "Für wie viele Jahre wird das Landesparlament in Bremen gewählt?",
+      "options": ["3", "4", "5", "6"],
+      "answerIndex": 1,
+      "explanation": "Das Landesparlament in Bremen wird für 4 Jahre gewählt."
+    },
+    {
+      "id": "hb004",
+      "category": "State",
+      "question": "Ab welchem Alter darf man in Bremen bei den Wahlen zur Bürgerschaft (Landtag) wählen?",
+      "options": ["14", "16", "18", "20"],
+      "answerIndex": 1,
+      "explanation": "In Bremen darf man ab 16 Jahren bei den Wahlen zur Bürgerschaft wählen."
+    },
+    {
+      "id": "hb005",
+      "category": "State",
+      "question": "Welche Farben hat die Landesflagge von Bremen?",
+      "options": ["blau-weiß-rot", "rot-weiß", "grün-weiß-rot", "schwarz-gold"],
+      "answerIndex": 1,
+      "explanation": "Die Landesflagge von Bremen ist rot-weiß."
+    },
+    {
+      "id": "hb006",
+      "category": "State",
+      "question": "Wo können Sie sich in Bremen über politische Themen informieren?",
+      "options": [
+        "beim Ordnungsamt der Gemeinde",
+        "bei der Landeszentrale für politische Bildung",
+        "bei den Kirchen",
+        "bei der Verbraucherzentrale"
+      ],
+      "answerIndex": 1,
+      "explanation": "In Bremen können Sie sich bei der Landeszentrale für politische Bildung über politische Themen informieren."
+    },
+    {
+      "id": "hb007",
+      "category": "State",
+      "question": "Was ist ein deutscher Stadtstaat?",
+      "options": ["Bremen", "München", "Frankfurt", "Erfurt"],
+      "answerIndex": 0,
+      "explanation": "Bremen ist ein deutscher Stadtstaat."
+    },
+    {
+      "id": "hb008",
+      "category": "State",
+      "question": "Welches Bundesland ist Bremen?",
+      "image": "/images/bremen.jpg",
+      "options": ["1", "2", "3", "4"],
+      "answerIndex": 0,
+      "explanation": "Auf der Karte ist Bremen mit der Nummer 1 gekennzeichnet."
+    },
+    {
+      "id": "hb009",
+      "category": "State",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef des Stadtstaates Bremen?",
+      "options": [
+        "Ministerpräsidentin/Ministerpräsident",
+        "Erste Bürgermeisterin/Erster Bürgermeister",
+        "Präsidentin/Präsident des Senates",
+        "Regierende Bürgermeisterin/Regierender Bürgermeister"
+      ],
+      "answerIndex": 1,
+      "explanation": "Die Regierungschefin/der Regierungschef des Stadtstaates Bremen wird als Erste Bürgermeisterin/Erster Bürgermeister bezeichnet."
+    },
+    {
+      "id": "hb010",
+      "category": "State",
+      "question": "Welche Senatorin/welchen Senator hat Bremen nicht?",
+      "options": [
+        "Senatorin/Senator für Außenbeziehungen",
+        "Finanzsenatorin/Finanzsenator",
+        "Justizsenatorin/Justizsenator",
+        "Innensenatorin/Innensenator"
+      ],
+      "answerIndex": 0,
+      "explanation": "Bremen hat keinen Senator für Außenbeziehungen, da dies eine Aufgabe der Bundesregierung ist."
+    }
+  ],
+  "hamburg": [
+    {
+      "id": "hh001",
+      "category": "State",
+      "question": "Welches Wappen gehört zur Freien und Hansestadt Hamburg?",
+      "image": "/images/hamburg.jpg",
+      "options": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
+      "answerIndex": 1,
+      "explanation": "Das Wappen der Freien und Hansestadt Hamburg (Bild 2) zeigt eine Burg mit drei Türmen."
+    },
+    {
+      "id": "hh002",
+      "category": "State",
+      "question": "Welches ist ein Bezirk von Hamburg?",
+      "options": [
+        "Altona",
+        "Hemelingen",
+        "Pankow",
+        "Mecklenburgische Seenplatte"
+      ],
+      "answerIndex": 0,
+      "explanation": "Altona ist ein Bezirk von Hamburg."
+    },
+    {
+      "id": "hh003",
+      "category": "State",
+      "question": "Für wie viele Jahre wird das Landesparlament in Hamburg gewählt?",
+      "options": ["3", "4", "5", "6"],
+      "answerIndex": 2,
+      "explanation": "Das Landesparlament in Hamburg wird für 5 Jahre gewählt."
+    },
+    {
+      "id": "hh004",
+      "category": "State",
+      "question": "Ab welchem Alter darf man in Hamburg bei Kommunalwahlen (Wahl der Bezirksversammlungen) wählen?",
+      "options": ["14", "16", "18", "20"],
+      "answerIndex": 1,
+      "explanation": "In Hamburg darf man ab 16 Jahren bei Kommunalwahlen wählen."
+    },
+    {
+      "id": "hh005",
+      "category": "State",
+      "question": "Welche Farben hat die Landesflagge von Hamburg?",
+      "options": ["blau-weiß-rot", "weiß-rot", "grün-weiß-rot", "schwarz-gelb"],
+      "answerIndex": 1,
+      "explanation": "Die Landesflagge von Hamburg ist weiß-rot."
+    },
+    {
+      "id": "hh006",
+      "category": "State",
+      "question": "Wo können Sie sich in Hamburg über politische Themen informieren?",
+      "options": [
+        "beim Ordnungsamt der Gemeinde",
+        "bei der Verbraucherzentrale",
+        "bei den Kirchen",
+        "bei der Landeszentrale für politische Bildung"
+      ],
+      "answerIndex": 3,
+      "explanation": "In Hamburg können Sie sich bei der Landeszentrale für politische Bildung über politische Themen informieren."
+    },
+    {
+      "id": "hh007",
+      "category": "State",
+      "question": "Welches Bundesland ist ein Stadtstaat?",
+      "options": ["Hamburg", "Sachsen", "Bayern", "Thüringen"],
+      "answerIndex": 0,
+      "explanation": "Hamburg ist ein Stadtstaat."
+    },
+    {
+      "id": "hh008",
+      "category": "State",
+      "question": "Welches Bundesland ist Hamburg?",
+      "image": "/images/map.jpg",
+      "options": ["1", "2", "3", "4"],
+      "answerIndex": 2,
+      "explanation": "Auf der Karte ist Hamburg mit der Nummer 3 gekennzeichnet."
+    },
+    {
+      "id": "hh009",
+      "category": "State",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef des Stadtstaates Hamburg?",
+      "options": [
+        "Ministerpräsidentin/Ministerpräsident",
+        "Erste Bürgermeisterin/Erster Bürgermeister",
+        "Regierende Senatorin/Regierender Senator",
+        "Oberbürgermeisterin/Oberbürgermeister"
+      ],
+      "answerIndex": 1,
+      "explanation": "Die Regierungschefin/der Regierungschef des Stadtstaates Hamburg wird als Erste Bürgermeisterin/Erster Bürgermeister bezeichnet."
+    },
+    {
+      "id": "hh010",
+      "category": "State",
+      "question": "Welche Senatorin/welchen Senator hat Hamburg nicht?",
+      "options": [
+        "Justizsenatorin/Justizsenator",
+        "Senatorin/Senator für Außenbeziehungen",
+        "Finanzsenatorin/Finanzsenator",
+        "Innensenatorin/Innensenator"
+      ],
+      "answerIndex": 1,
+      "explanation": "Hamburg hat keinen Senator für Außenbeziehungen, da dies eine Aufgabe der Bundesregierung ist."
+    }
+  ]
+}

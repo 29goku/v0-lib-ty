@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar styling */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thumb-pink-500::-webkit-scrollbar-thumb {
+  background-color: rgb(236 72 153);
+  border-radius: 3px;
+}
+
+.scrollbar-track-gray-700::-webkit-scrollbar-track {
+  background-color: rgb(55 65 81);
+  border-radius: 3px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+:root {
+  --font-geist-sans: var(--font-sans);
+  --font-geist-mono: var(--font-mono);
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 9% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Improve mobile touch handling */
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Improve mobile scrolling */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile-optimized touch targets */
+@media (max-width: 768px) {
+  button,
+  .touch-manipulation {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-pink-500 {
+  scrollbar-color: rgb(236 72 153) transparent;
+}
+
+.scrollbar-track-gray-700 {
+  /* Handled by scrollbar-color above */
+}
+
+/* Improve mobile card interactions */
+@media (max-width: 768px) {
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+}
+
+/* Fix contrast issues for home page cards */
+.home-card-contrast {
+  background: rgba(0, 0, 0, 0.85) !important;
+  border: 2px solid rgba(147, 51, 234, 0.6) !important;
+  color: white !important;
+}
+
+.home-card-contrast h3 {
+  color: rgb(196, 181, 253) !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.home-card-contrast p {
+  color: rgb(229, 231, 235) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Better scrollbar for state filter */
+.state-filter-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(236 72 153) rgb(55 65 81);
+}
+
+.state-filter-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.state-filter-scroll::-webkit-scrollbar-track {
+  background: rgba(55, 65, 81, 0.3);
+  border-radius: 2px;
+}
+
+.state-filter-scroll::-webkit-scrollbar-thumb {
+  background: rgb(236 72 153);
+  border-radius: 2px;
+}
+
+.state-filter-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgb(219 39 119);
+}
+
+/* Remove max-height and improve UX for state filter */
+.state-filter-container {
+  max-height: none !important;
+  overflow-y: visible !important;
+}
+
+/* Improve state filter button layout */
+.state-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+@media (max-width: 768px) {
+  .state-filter-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    max-height: 160px;
+  }
+}
