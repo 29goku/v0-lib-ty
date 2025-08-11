@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
+import { Slider } from "@/components/ui/slider"
 import { ArrowLeft, Clock, Flag, Volume2, Languages } from "lucide-react"
 import Link from "next/link"
 import { getCategoryEmoji } from "@/lib/category-emojis"
@@ -33,15 +34,13 @@ export default function TestPage() {
   const [showResults, setShowResults] = useState(false)
   const [isTranslated, setIsTranslated] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const [showConfig, setShowConfig] = useState(true)
+  const [selectedQuestionCount, setSelectedQuestionCount] = useState([33])
 
-  // Load questions on component mount
   useEffect(() => {
     const initializeTest = async () => {
       try {
         await loadQuestions()
-        if (!testMode) {
-          startTest()
-        }
       } catch (error) {
         console.error("Failed to load questions:", error)
       } finally {
@@ -50,11 +49,18 @@ export default function TestPage() {
     }
 
     initializeTest()
-  }, [loadQuestions, testMode, startTest])
+  }, [loadQuestions])
 
-  // Timer effect
+  const handleStartTest = () => {
+    const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5)
+    const selectedQuestions = shuffledQuestions.slice(0, selectedQuestionCount[0])
+    setQuestions(selectedQuestions)
+    setShowConfig(false)
+    startTest()
+  }
+
   useEffect(() => {
-    if (!testMode || showResults) return
+    if (!testMode || showResults || showConfig) return
 
     const timer = setInterval(() => {
       setTimeRemaining((prev) => {
@@ -67,7 +73,7 @@ export default function TestPage() {
     }, 1000)
 
     return () => clearInterval(timer)
-  }, [testMode, showResults])
+  }, [testMode, showResults, showConfig])
 
   const currentQuestion = questions[currentQuestionIndex]
   const currentAnswer = testAnswers.find((a) => a.questionId === currentQuestion?.id)
@@ -83,7 +89,6 @@ export default function TestPage() {
   const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1)
-      // Load existing answer if available
       const nextQuestion = questions[currentQuestionIndex + 1]
       const existingAnswer = testAnswers.find((a) => a.questionId === nextQuestion?.id)
       setSelectedAnswer(existingAnswer?.selectedIndex ?? null)
@@ -94,7 +99,6 @@ export default function TestPage() {
   const handlePrevious = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1)
-      // Load existing answer if available
       const prevQuestion = questions[currentQuestionIndex - 1]
       const existingAnswer = testAnswers.find((a) => a.questionId === prevQuestion?.id)
       setSelectedAnswer(existingAnswer?.selectedIndex ?? null)
@@ -133,7 +137,7 @@ export default function TestPage() {
   const correctAnswers = testAnswers.filter((a) => a.correct).length
   const totalAnswered = testAnswers.length
   const scorePercentage = totalAnswered > 0 ? Math.round((correctAnswers / totalAnswered) * 100) : 0
-  const requiredToPass = Math.ceil(questions.length * 0.5) // 50% to pass
+  const requiredToPass = Math.ceil(selectedQuestionCount[0] * 0.5) // 50% to pass
   const passed = correctAnswers >= requiredToPass
 
   if (isLoading) {
@@ -147,10 +151,76 @@ export default function TestPage() {
     )
   }
 
+  if (showConfig) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex items-center justify-between mb-6">
+            <Link href="/">
+              <Button variant="ghost" className="text-white hover:bg-white/10">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back
+              </Button>
+            </Link>
+            <h1 className="text-3xl font-bold">🎯 TEST CONFIGURATION</h1>
+            <div></div>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <Card className="border-2 border-purple-500/50 bg-gradient-to-br from-purple-900/30 to-black/50 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-center text-2xl font-bold text-purple-300">Configure Your Test</CardTitle>
+                <p className="text-center text-gray-300">Choose how many questions you want to answer in your test</p>
+              </CardHeader>
+              <CardContent className="space-y-8">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <label className="text-lg font-semibold text-white">Number of Questions:</label>
+                    <div className="text-2xl font-bold text-cyan-400">{selectedQuestionCount[0]}</div>
+                  </div>
+
+                  <Slider
+                    value={selectedQuestionCount}
+                    onValueChange={setSelectedQuestionCount}
+                    max={questions.length}
+                    min={10}
+                    step={1}
+                    className="w-full"
+                  />
+
+                  <div className="flex justify-between text-sm text-gray-400">
+                    <span>Min: 10</span>
+                    <span>Default: 33</span>
+                    <span>Max: {questions.length}</span>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-lg p-6 border border-blue-500/30">
+                  <h3 className="text-lg font-bold text-blue-300 mb-3">📋 Test Information</h3>
+                  <div className="space-y-2 text-gray-300">
+                    <p>⏱️ Time Limit: 60 minutes</p>
+                    <p>✅ Pass Rate: 50% ({Math.ceil(selectedQuestionCount[0] * 0.5)} correct answers needed)</p>
+                    <p>🎯 Questions: {selectedQuestionCount[0]} randomly selected</p>
+                  </div>
+                </div>
+
+                <Button
+                  onClick={handleStartTest}
+                  className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-black py-4 text-xl rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                >
+                  🚀 START TEST WITH {selectedQuestionCount[0]} QUESTIONS
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   if (showResults) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-black text-white relative overflow-hidden">
-        {/* Floating emojis */}
         <div className="absolute top-10 left-10 text-4xl animate-bounce" style={{ animationDelay: "0s" }}>
           🎉
         </div>
@@ -183,14 +253,13 @@ export default function TestPage() {
             </CardHeader>
 
             <CardContent className="space-y-8 relative z-10">
-              {/* Stats Grid */}
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-5xl font-black text-green-400">{correctAnswers}</div>
                   <div className="text-sm text-gray-300 font-bold">🧠 CORRECT</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-5xl font-black text-orange-400">{questions.length - correctAnswers}</div>
+                  <div className="text-5xl font-black text-orange-400">{selectedQuestionCount[0] - correctAnswers}</div>
                   <div className="text-sm text-gray-300 font-bold">⚡ MISSED</div>
                 </div>
                 <div className="text-center">
@@ -199,30 +268,27 @@ export default function TestPage() {
                 </div>
               </div>
 
-              {/* Pass/Fail Status */}
               <div className="text-center space-y-2">
                 <div className="text-lg">
                   <span className="text-orange-400 font-bold">
-                    🧠 Required to pass: {requiredToPass}/{questions.length} (
-                    {Math.round((requiredToPass / questions.length) * 100)}%)
+                    🧠 Required to pass: {requiredToPass}/{selectedQuestionCount[0]} (
+                    {Math.round((requiredToPass / selectedQuestionCount[0]) * 100)}%)
                   </span>
                 </div>
                 <div className="text-lg">
                   <span className="text-cyan-400 font-bold">
-                    Your score: {correctAnswers}/{questions.length} ({scorePercentage}%)
+                    Your score: {correctAnswers}/{selectedQuestionCount[0]} ({scorePercentage}%)
                   </span>
                 </div>
               </div>
 
-              {/* Progress Bar */}
               <div className="space-y-2">
-                <Progress value={(correctAnswers / questions.length) * 100} className="h-4 bg-gray-700" />
+                <Progress value={(correctAnswers / selectedQuestionCount[0]) * 100} className="h-4 bg-gray-700" />
                 <div className="text-center text-sm text-gray-400">
                   {passed ? "🎉 CONGRATULATIONS! YOU PASSED! 🎉" : "💪 Keep grinding! You've got this! 💪"}
                 </div>
               </div>
 
-              {/* Action Buttons */}
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <Link href="/practice">
@@ -267,7 +333,6 @@ export default function TestPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
       <div className="container mx-auto px-4 py-6">
-        {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <Link href="/">
             <Button variant="ghost" className="text-white hover:bg-white/10">
@@ -279,7 +344,7 @@ export default function TestPage() {
           <div className="text-center">
             <h1 className="text-3xl font-bold">🎯 OFFICIAL TEST</h1>
             <p className="text-gray-300">
-              Question {currentQuestionIndex + 1} of {questions.length}
+              Question {currentQuestionIndex + 1} of {selectedQuestionCount[0]}
             </p>
           </div>
 
@@ -291,12 +356,10 @@ export default function TestPage() {
           </div>
         </div>
 
-        {/* Progress Bar */}
         <div className="mb-6">
-          <Progress value={((currentQuestionIndex + 1) / questions.length) * 100} className="h-2" />
+          <Progress value={((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100} className="h-2" />
         </div>
 
-        {/* Question Card */}
         <Card className="mb-6 border-2 border-purple-500/50 bg-gradient-to-br from-purple-900/30 to-black/50 backdrop-blur-sm">
           <CardHeader>
             <div className="flex items-start justify-between mb-4">
@@ -305,7 +368,6 @@ export default function TestPage() {
               </Badge>
 
               <div className="flex space-x-2">
-                {/* Translate Button */}
                 <Button
                   variant="ghost"
                   size="sm"
@@ -315,7 +377,6 @@ export default function TestPage() {
                   <Languages className="w-4 h-4 text-blue-400" />
                 </Button>
 
-                {/* Read Aloud Button */}
                 <Button
                   variant="ghost"
                   size="sm"
@@ -325,7 +386,6 @@ export default function TestPage() {
                   <Volume2 className="w-4 h-4 text-green-400" />
                 </Button>
 
-                {/* Flag Button */}
                 <Button
                   variant="ghost"
                   size="sm"
@@ -363,6 +423,10 @@ export default function TestPage() {
                   src={currentQuestion.image || "/placeholder.svg"}
                   alt="Question image"
                   className="w-full max-w-md mx-auto rounded-lg border-2 border-purple-500/30"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    target.src = "/abstract-question.png"
+                  }}
                 />
               </div>
             )}
@@ -388,7 +452,6 @@ export default function TestPage() {
           </CardContent>
         </Card>
 
-        {/* Navigation Buttons - REVERTED TO NORMAL */}
         <div className="flex justify-between items-center mb-6">
           <Button
             onClick={handlePrevious}
@@ -407,14 +470,13 @@ export default function TestPage() {
 
           <Button
             onClick={handleNext}
-            disabled={currentQuestionIndex >= questions.length - 1}
+            disabled={currentQuestionIndex >= selectedQuestionCount[0] - 1}
             className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-black px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Next →
           </Button>
         </div>
 
-        {/* Answer Overview */}
         <Card className="border-2 border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 backdrop-blur-sm">
           <CardHeader>
             <CardTitle className="text-center text-2xl font-black text-yellow-400">🏆 ANSWER OVERVIEW 🏆</CardTitle>
@@ -465,7 +527,7 @@ export default function TestPage() {
                 <span className="text-red-400 font-bold">🚩 FLAGGED</span>
               </div>
               <div className="text-cyan-400 font-bold">
-                🎯 {testAnswers.length} / {questions.length} COMPLETED
+                🎯 {testAnswers.length} / {selectedQuestionCount[0]} COMPLETED
               </div>
             </div>
           </CardContent>

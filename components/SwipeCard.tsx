@@ -16,6 +16,8 @@ interface SwipeCardProps {
   isFlagged: boolean
   showAnswer?: boolean
   onAnswerSelect?: (index: number) => void
+  isTranslated?: boolean
+  onTranslate?: () => void
 }
 
 export default function SwipeCard({
@@ -25,13 +27,19 @@ export default function SwipeCard({
   isFlagged,
   showAnswer = false,
   onAnswerSelect,
+  isTranslated,
+  onTranslate,
 }: SwipeCardProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
   const [isTranslating, setIsTranslating] = useState(false)
   const [translatedText, setTranslatedText] = useState<string>("")
-  const [showTranslation, setShowTranslation] = useState(false)
+  const [internalShowTranslation, setInternalShowTranslation] = useState(false)
+  const [translatedOptions, setTranslatedOptions] = useState<string[]>([])
+  const [translatedExplanation, setTranslatedExplanation] = useState<string>("")
   const { language } = useStore()
   const t = getTranslation(language)
+
+  const showTranslation = isTranslated !== undefined ? isTranslated : internalShowTranslation
 
   const x = useMotionValue(0)
   const rotate = useTransform(x, [-200, 200], [-25, 25])
@@ -39,11 +47,12 @@ export default function SwipeCard({
 
   const cardRef = useRef<HTMLDivElement>(null)
 
-  // Reset selected answer when question changes
   useEffect(() => {
     setSelectedAnswer(null)
-    setShowTranslation(false)
+    setInternalShowTranslation(false)
     setTranslatedText("")
+    setTranslatedOptions([])
+    setTranslatedExplanation("")
   }, [question.id])
 
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
@@ -64,22 +73,31 @@ export default function SwipeCard({
   }
 
   const translateQuestion = async () => {
-    if (isTranslating || showTranslation) {
-      setShowTranslation(!showTranslation)
+    if (isTranslating) return
+
+    if (onTranslate) {
+      onTranslate()
+      return
+    }
+
+    if (internalShowTranslation) {
+      setInternalShowTranslation(false)
       return
     }
 
     setIsTranslating(true)
 
     try {
-      // Simple mock translation - in a real app, you'd use a translation service
-      const mockTranslation = `[${language.toUpperCase()}] ${question.question}`
+      const mockQuestionTranslation = `[EN] ${question.question}`
+      const mockOptionsTranslation = question.options.map((option) => `[EN] ${option}`)
+      const mockExplanationTranslation = question.explanation ? `[EN] ${question.explanation}` : ""
 
-      // Simulate API delay
       await new Promise((resolve) => setTimeout(resolve, 1000))
 
-      setTranslatedText(mockTranslation)
-      setShowTranslation(true)
+      setTranslatedText(mockQuestionTranslation)
+      setTranslatedOptions(mockOptionsTranslation)
+      setTranslatedExplanation(mockExplanationTranslation)
+      setInternalShowTranslation(true)
     } catch (error) {
       console.error("Translation failed:", error)
     } finally {
@@ -106,8 +124,7 @@ export default function SwipeCard({
       whileDrag={{ scale: 1.05 }}
     >
       <Card className="border-4 border-cyan-400/50 bg-gradient-to-br from-black/80 to-purple-900/80 backdrop-blur-xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 overflow-hidden relative">
-        {/* Neon glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 via-purple-500/5 to-pink-500/5 animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse"></div>
 
         <CardHeader className="relative z-10">
           <div className="flex justify-between items-start mb-4">
@@ -168,6 +185,10 @@ export default function SwipeCard({
                 alt="Question illustration"
                 className="max-w-full h-auto rounded-lg shadow-lg border-2 border-cyan-400/30"
                 style={{ maxHeight: "300px" }}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement
+                  target.src = "/placeholder.svg?height=300&width=400&text=Question+Image"
+                }}
               />
             </div>
           )}
@@ -193,7 +214,7 @@ export default function SwipeCard({
                 }`}
               >
                 <span className="mr-3 text-2xl font-black">{String.fromCharCode(65 + index)}.</span>
-                {option}
+                {showTranslation && translatedOptions[index] ? translatedOptions[index] : option}
               </motion.button>
             ))}
           </div>
@@ -218,7 +239,9 @@ export default function SwipeCard({
                 <span className="mr-2">💡</span>
                 {t.explanation}
               </h4>
-              <p className="text-white text-lg leading-relaxed">{question.explanation}</p>
+              <p className="text-white text-lg leading-relaxed">
+                {showTranslation && translatedExplanation ? translatedExplanation : question.explanation}
+              </p>
             </motion.div>
           )}
         </CardContent>
