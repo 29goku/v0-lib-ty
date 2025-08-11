@@ -1,0 +1,36 @@
+export function getCategoryEmoji(category: string): string {
+  const categoryEmojiMap: Record<string, string> = {
+    "Politik in der Demokratie": "🏛️",
+    "Geschichte und Verantwortung": "📚",
+    "Mensch und Gesellschaft": "👥",
+    "Grundlagen des Zusammenlebens": "🤝",
+    Verfassungsorgane: "⚖️",
+    Föderalismus: "🏢",
+    Rechtsstaat: "📜",
+    Sozialstaat: "🛡️",
+    Grundrechte: "✊",
+    "Wahlen und Beteiligung": "🗳️",
+    "Parteien und Verbände": "🎭",
+    Medien: "📺",
+    "Internationale Beziehungen": "🌍",
+    "Deutschland in Europa": "🇪🇺",
+    "Migration und Integration": "🌐",
+    Wirtschaft: "💼",
+    Umwelt: "🌱",
+    Bildung: "🎓",
+    Kultur: "🎨",
+    Religion: "⛪",
+    Sprache: "💬",
+    Alltag: "🏠",
+    Geografie: "🗺️",
+    Geschichte: "📖",
+    Politik: "🏛️",
+    Gesellschaft: "👥",
+    Recht: "⚖️",
+    "Wirtschaft und Arbeit": "💼",
+    "Kultur und Bildung": "🎓",
+    default: "🔥",
+  }
+
+  return categoryEmojiMap[category] || categoryEmojiMap.default
+}

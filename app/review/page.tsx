@@ -6,42 +6,51 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-import { ArrowLeft, Flag, CheckCircle, RotateCcw } from "lucide-react"
+import { ArrowLeft, Flag, CheckCircle, RotateCcw, Volume2, Languages } from "lucide-react"
 import Link from "next/link"
+import { getCategoryEmoji } from "@/lib/category-emojis"
 
 export default function ReviewPage() {
-  const { questions, setQuestions, userProgress, unflagQuestion } = useStore()
-
+  const { questions, setQuestions, userProgress, unflagQuestion, flagQuestion } = useStore()
   const [selectedQuestion, setSelectedQuestion] = useState<string | null>(null)
+  const [isTranslated, setIsTranslated] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     // Load questions for review with better error handling
     const loadQuestions = async () => {
       try {
         console.log("🔥 LOADING REVIEW QUESTIONS...")
-        const response = await fetch("/data/questions.json")
 
+        // First try to load from the store's loadQuestions method
+        const storeQuestions = await useStore.getState().loadQuestions()
+        if (storeQuestions && storeQuestions.length > 0) {
+          console.log("🚀 Successfully loaded", storeQuestions.length, "questions from store!")
+          setIsLoading(false)
+          return
+        }
+
+        // Fallback: try direct fetch
+        const response = await fetch("/data/questions.json")
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
 
-        const text = await response.text()
-        let data
-        try {
-          data = JSON.parse(text)
-        } catch (parseError) {
-          console.error("JSON parse error:", parseError)
-          throw new Error(`Invalid JSON: ${parseError.message}`)
+        const contentType = response.headers.get("content-type")
+        if (!contentType || !contentType.includes("application/json")) {
+          throw new Error("Response is not JSON")
         }
 
+        const data = await response.json()
         if (!Array.isArray(data)) {
           throw new Error("Expected an array of questions")
         }
 
-        console.log("🚀 Successfully loaded", data.length, "EPIC questions for review!")
+        console.log("🚀 Successfully loaded", data.length, "questions for review!")
         setQuestions(data)
       } catch (err) {
         console.error("Failed to load questions:", err)
+
         // Fallback: create some sample questions if loading fails
         const fallbackQuestions = [
           {
@@ -71,15 +80,36 @@ export default function ReviewPage() {
         ]
         console.log("💪 Using fallback questions for review")
         setQuestions(fallbackQuestions)
+      } finally {
+        setIsLoading(false)
       }
     }
 
     loadQuestions()
   }, [setQuestions])
 
+  const handleReadAloud = (text: string) => {
+    if ("speechSynthesis" in window) {
+      const utterance = new SpeechSynthesisUtterance(text)
+      utterance.lang = "de-DE"
+      speechSynthesis.speak(utterance)
+    }
+  }
+
   const flaggedQuestions = questions.filter((q) => userProgress.flaggedQuestions.includes(q.id))
   const completedQuestions = questions.filter((q) => userProgress.completedQuestions.includes(q.id))
   const selectedQuestionData = selectedQuestion ? questions.find((q) => q.id === selectedQuestion) : null
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-6xl mb-4 animate-spin">🔄</div>
+          <h2 className="text-2xl font-bold">Loading Questions...</h2>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden relative">
@@ -230,7 +260,7 @@ export default function ReviewPage() {
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
                             <Badge className="mb-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 font-black">
-                              🔥 {question.category.toUpperCase()}
+                              {getCategoryEmoji(question.category)} {question.category.toUpperCase()}
                             </Badge>
                             <p className="text-sm line-clamp-2 font-semibold">{question.question}</p>
                           </div>
@@ -276,7 +306,7 @@ export default function ReviewPage() {
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
                             <Badge className="mb-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 font-black">
-                              🔥 {question.category.toUpperCase()}
+                              {getCategoryEmoji(question.category)} {question.category.toUpperCase()}
                             </Badge>
                             <p className="text-sm line-clamp-2 font-semibold">{question.question}</p>
                           </div>
@@ -298,9 +328,53 @@ export default function ReviewPage() {
                 <CardHeader className="relative z-10">
                   <div className="flex items-start justify-between mb-4">
                     <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 px-4 py-2 text-lg font-black">
-                      🔥 {selectedQuestionData.category.toUpperCase()}
+                      {getCategoryEmoji(selectedQuestionData.category)} {selectedQuestionData.category.toUpperCase()}
                     </Badge>
                     <div className="flex space-x-3">
+                      {/* Action buttons */}
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="hover:bg-blue-500/20 border-2 border-blue-500/50 rounded-full p-2 transition-all transform hover:scale-110"
+                        onClick={() => setIsTranslated(!isTranslated)}
+                      >
+                        <Languages className="w-4 h-4 text-blue-400" />
+                      </Button>
+
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="hover:bg-green-500/20 border-2 border-green-500/50 rounded-full p-2 transition-all transform hover:scale-110"
+                        onClick={() => handleReadAloud(selectedQuestionData.question)}
+                      >
+                        <Volume2 className="w-4 h-4 text-green-400" />
+                      </Button>
+
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className={`border-2 rounded-full p-2 transition-all transform hover:scale-110 ${
+                          userProgress.flaggedQuestions.includes(selectedQuestionData.id)
+                            ? "bg-yellow-500/20 border-yellow-500/50 hover:bg-yellow-500/30"
+                            : "hover:bg-yellow-500/20 border-yellow-500/50"
+                        }`}
+                        onClick={() => {
+                          if (userProgress.flaggedQuestions.includes(selectedQuestionData.id)) {
+                            unflagQuestion(selectedQuestionData.id)
+                          } else {
+                            flagQuestion(selectedQuestionData.id)
+                          }
+                        }}
+                      >
+                        <Flag
+                          className={`w-4 h-4 ${
+                            userProgress.flaggedQuestions.includes(selectedQuestionData.id)
+                              ? "text-yellow-400 fill-current"
+                              : "text-yellow-400"
+                          }`}
+                        />
+                      </Button>
+
                       {userProgress.flaggedQuestions.includes(selectedQuestionData.id) && (
                         <div className="flex items-center space-x-1 bg-yellow-500/20 px-3 py-1 rounded-full border border-yellow-500/50">
                           <Flag className="w-4 h-4 text-yellow-400" />
@@ -316,8 +390,17 @@ export default function ReviewPage() {
                     </div>
                   </div>
                   <CardTitle className="text-2xl font-bold text-white leading-relaxed">
-                    {selectedQuestionData.question}
+                    {isTranslated ? "English translation would appear here" : selectedQuestionData.question}
                   </CardTitle>
+                  {selectedQuestionData.image && (
+                    <div className="mt-4">
+                      <img
+                        src={selectedQuestionData.image || "/placeholder.svg"}
+                        alt="Question image"
+                        className="w-full max-w-md mx-auto rounded-lg border-2 border-purple-500/30"
+                      />
+                    </div>
+                  )}
                 </CardHeader>
                 <CardContent className="space-y-6 relative z-10">
                   {selectedQuestionData.options.map((option, index) => (

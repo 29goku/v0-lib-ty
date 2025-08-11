@@ -161,11 +161,12 @@ export default function PracticePage() {
     }
   }
 
+  // INVERTED SWIPE BEHAVIOR: left swipe = next, right swipe = previous
   const handleSwipe = (direction: "left" | "right") => {
-    if (direction === "right") {
-      nextQuestion()
+    if (direction === "left") {
+      nextQuestion() // Swipe left goes to next question (inverted)
     } else {
-      previousQuestion()
+      previousQuestion() // Swipe right goes to previous question (inverted)
     }
   }
 
