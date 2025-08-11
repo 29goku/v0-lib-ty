@@ -154,8 +154,8 @@ export const translations: Record<Language, Translation> = {
     practiceSubtitle: "Master the German citizenship test",
     swipeInstructions: "Select an answer, then swipe or drag the card",
     selectAnswer: "Select an answer",
-    swipeRight: "Swipe RIGHT if your answer is correct",
-    swipeLeft: "Swipe LEFT if your answer is wrong",
+    swipeRight: "Swipe RIGHT for next question",
+    swipeLeft: "Swipe LEFT for previous question",
     keyboardShortcuts: "Use arrow keys or A/D for keyboard shortcuts",
 
     // Test mode
@@ -283,8 +283,8 @@ export const translations: Record<Language, Translation> = {
     practiceSubtitle: "Meistere den deutschen Einbürgerungstest",
     swipeInstructions: "Wähle eine Antwort und wische die Karte",
     selectAnswer: "Wähle eine Antwort",
-    swipeRight: "Wische RECHTS wenn deine Antwort richtig ist",
-    swipeLeft: "Wische LINKS wenn deine Antwort falsch ist",
+    swipeRight: "Wische RECHTS für die nächste Frage",
+    swipeLeft: "Wische LINKS für die vorherige Frage",
     keyboardShortcuts: "Nutze Pfeiltasten oder A/D für Tastaturkürzel",
 
     // Test mode
@@ -412,8 +412,8 @@ export const translations: Record<Language, Translation> = {
     practiceSubtitle: "Domina el examen de ciudadanía alemana",
     swipeInstructions: "Selecciona una respuesta, luego desliza la tarjeta",
     selectAnswer: "Selecciona una respuesta",
-    swipeRight: "Desliza a la DERECHA si tu respuesta es correcta",
-    swipeLeft: "Desliza a la IZQUIERDA si tu respuesta es incorrecta",
+    swipeRight: "Desliza a la DERECHA para la siguiente pregunta",
+    swipeLeft: "Desliza a la IZQUIERDA para la pregunta anterior",
     keyboardShortcuts: "Usa las flechas del teclado o A/D para atajos",
 
     // Test mode
@@ -541,8 +541,8 @@ export const translations: Record<Language, Translation> = {
     practiceSubtitle: "Maîtrisez le test de citoyenneté allemande",
     swipeInstructions: "Sélectionnez une réponse, puis glissez la carte",
     selectAnswer: "Sélectionnez une réponse",
-    swipeRight: "Glissez à DROITE si votre réponse est correcte",
-    swipeLeft: "Glissez à GAUCHE si votre réponse est incorrecte",
+    swipeRight: "Glissez à DROITE pour la question suivante",
+    swipeLeft: "Glissez à GAUCHE pour la question précédente",
     keyboardShortcuts: "Utilisez les flèches ou A/D pour les raccourcis clavier",
 
     // Test mode
@@ -670,8 +670,8 @@ export const translations: Record<Language, Translation> = {
     practiceSubtitle: "Padroneggia il test di cittadinanza tedesca",
     swipeInstructions: "Seleziona una risposta, poi scorri la carta",
     selectAnswer: "Seleziona una risposta",
-    swipeRight: "Scorri a DESTRA se la tua risposta è corretta",
-    swipeLeft: "Scorri a SINISTRA se la tua risposta è sbagliata",
+    swipeRight: "Scorri a DESTRA per la prossima domanda",
+    swipeLeft: "Scorri a SINISTRA per la domanda precedente",
     keyboardShortcuts: "Usa le frecce o A/D per le scorciatoie da tastiera",
 
     // Test mode
@@ -799,8 +799,8 @@ export const translations: Record<Language, Translation> = {
     practiceSubtitle: "Alman vatandaşlık testinde ustalaş",
     swipeInstructions: "Bir cevap seç, sonra kartı kaydır",
     selectAnswer: "Bir cevap seç",
-    swipeRight: "Cevabın doğruysa SAĞA kaydır",
-    swipeLeft: "Cevabın yanlışsa SOLA kaydır",
+    swipeRight: "Sonraki soru için SAĞA kaydır",
+    swipeLeft: "Önceki soru için SOLA kaydır",
     keyboardShortcuts: "Klavye kısayolları için ok tuşları veya A/D kullan",
 
     // Test mode
@@ -928,8 +928,8 @@ export const translations: Record<Language, Translation> = {
     practiceSubtitle: "أتقن اختبار الجنسية الألمانية",
     swipeInstructions: "اختر إجابة، ثم اسحب البطاقة",
     selectAnswer: "اختر إجابة",
-    swipeRight: "اسحب يميناً إذا كانت إجابتك صحيحة",
-    swipeLeft: "اسحب يساراً إذا كانت إجابتك خاطئة",
+    swipeRight: "اسحب يميناً للسؤال التالي",
+    swipeLeft: "اسحب يساراً للسؤال السابق",
     keyboardShortcuts: "استخدم أسهم لوحة المفاتيح أو A/D للاختصارات",
 
     // Test mode
@@ -1057,8 +1057,8 @@ export const translations: Record<Language, Translation> = {
     practiceSubtitle: "Освойте тест на немецкое гражданство",
     swipeInstructions: "Выберите ответ, затем проведите карточку",
     selectAnswer: "Выберите ответ",
-    swipeRight: "Проведите ВПРАВО, если ваш ответ правильный",
-    swipeLeft: "Проведите ВЛЕВО, если ваш ответ неправильный",
+    swipeRight: "Проведите ВПРАВО для следующего вопроса",
+    swipeLeft: "Проведите ВЛЕВО для предыдущего вопроса",
     keyboardShortcuts: "Используйте стрелки или A/D для горячих клавиш",
 
     // Test mode
@@ -1186,8 +1186,8 @@ export const translations: Record<Language, Translation> = {
     practiceSubtitle: "掌握德国入籍考试",
     swipeInstructions: "选择答案，然后滑动卡片",
     selectAnswer: "选择答案",
-    swipeRight: "如果答案正确请向右滑动",
-    swipeLeft: "如果答案错误请向左滑动",
+    swipeRight: "向右滑动查看下一个问题",
+    swipeLeft: "向左滑动查看上一个问题",
     keyboardShortcuts: "使用方向键或A/D进行键盘快捷操作",
 
     // Test mode
@@ -1315,8 +1315,8 @@ export const translations: Record<Language, Translation> = {
     practiceSubtitle: "जर्मन नागरिकता परीक्षा में महारत हासिल करें",
     swipeInstructions: "एक उत्तर चुनें, फिर कार्ड को स्वाइप करें",
     selectAnswer: "एक उत्तर चुनें",
-    swipeRight: "यदि आपका उत्तर सही है तो दाईं ओर स्वाइप करें",
-    swipeLeft: "यदि आपका उत्तर गलत है तो बाईं ओर स्वाइप करें",
+    swipeRight: "अगले प्रश्न के लिए दाईं ओर स्वाइप करें",
+    swipeLeft: "पिछले प्रश्न के लिए बाईं ओर स्वाइप करें",
     keyboardShortcuts: "कीबोर्ड शॉर्टकट के लिए एरो कीज़ या A/D का उपयोग करें",
 
     // Test mode

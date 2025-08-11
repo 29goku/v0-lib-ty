@@ -6,18 +6,35 @@ import { Card, CardContent } from "@/components/ui/card"
 import { useStore } from "@/lib/store"
 import { getTranslation } from "@/lib/i18n"
 import LanguageSelector from "@/components/LanguageSelector"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 export default function HomePage() {
-  const { language, questions, loadQuestions } = useStore()
+  const { language, questions, userProgress, loadQuestions } = useStore()
   const t = getTranslation(language)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     // Load questions to show correct stats
     if (questions.length === 0) {
       loadQuestions()
     }
   }, [questions.length, loadQuestions])
+
+  // Don't render until mounted to prevent hydration issues
+  if (!mounted) {
+    return null
+  }
+
+  // Calculate stats from store data
+  const stats = {
+    totalQuestions: questions.length || 300,
+    xp: userProgress.xp,
+    streak: userProgress.streak,
+    correctAnswers: userProgress.correctAnswers,
+    completedQuestions: userProgress.completedQuestions.length,
+    questionsAnswered: userProgress.questionsAnswered,
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden relative">
@@ -92,7 +109,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-8 mb-12 md:mb-16 px-4">
               <div className="text-center group cursor-pointer">
                 <div className="text-3xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">🔥</div>
-                <div className="text-2xl md:text-4xl font-black text-yellow-400 mb-1">{questions.length || "300+"}</div>
+                <div className="text-2xl md:text-4xl font-black text-yellow-400 mb-1">{stats.totalQuestions}</div>
                 <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">{t.totalQuestions}</div>
               </div>
               <div className="text-center group cursor-pointer">
@@ -160,7 +177,7 @@ export default function HomePage() {
                       {t.practice.toUpperCase()}
                     </h3>
                     <p className="text-gray-300 text-sm md:text-lg mb-4 md:mb-6 leading-relaxed group-hover:text-white transition-colors flex-grow">
-                      {t.swipeLearn}: {questions.length || "300+"} questions with instant feedback 🔥
+                      {t.swipeLearn}: {stats.totalQuestions} questions with instant feedback 🔥
                     </p>
                     <div className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-full font-bold text-center group-hover:scale-105 transition-transform text-sm md:text-base">
                       {t.start.toUpperCase()}! 🚀
@@ -241,6 +258,48 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Progress Section - Only show if user has progress */}
+        {stats.questionsAnswered > 0 && (
+          <div className="py-16 md:py-24 px-4 bg-gradient-to-r from-slate-800/50 to-purple-800/50 relative">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-8 md:mb-12 relative hover:scale-105 transition-transform duration-500">
+                <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+                  YOUR {t.progress.toUpperCase()}
+                </span>
+              </h2>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-8">
+                <div className="text-center group cursor-pointer">
+                  <div className="text-3xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">💎</div>
+                  <div className="text-2xl md:text-4xl font-black text-cyan-400 mb-1">{stats.xp}</div>
+                  <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">{t.xp}</div>
+                </div>
+                <div className="text-center group cursor-pointer">
+                  <div className="text-3xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">🔥</div>
+                  <div className="text-2xl md:text-4xl font-black text-orange-400 mb-1">{stats.streak}</div>
+                  <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">{t.streak}</div>
+                </div>
+                <div className="text-center group cursor-pointer">
+                  <div className="text-3xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">✅</div>
+                  <div className="text-2xl md:text-4xl font-black text-green-400 mb-1">{stats.correctAnswers}</div>
+                  <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">{t.correct}</div>
+                </div>
+                <div className="text-center group cursor-pointer">
+                  <div className="text-3xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">📚</div>
+                  <div className="text-2xl md:text-4xl font-black text-purple-400 mb-1">{stats.completedQuestions}</div>
+                  <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">
+                    {t.completedQuestions}
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-lg md:text-xl text-gray-300 mb-8">
+                You're {Math.round((stats.correctAnswers / stats.totalQuestions) * 100)}% ready for the test! 🎯
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Final CTA */}
         <div className="py-16 md:py-24 px-4 bg-gradient-to-r from-purple-900 via-pink-900 to-red-900 relative overflow-hidden">
           <div className="absolute inset-0 bg-black/40"></div>
@@ -275,7 +334,7 @@ export default function HomePage() {
             </Link>
 
             <div className="mt-6 md:mt-8 text-lg md:text-xl text-gray-300">
-              ⏰ Join now and get instant access to {questions.length || "300+"} questions!
+              ⏰ Join now and get instant access to {stats.totalQuestions} questions!
             </div>
           </div>
         </div>
