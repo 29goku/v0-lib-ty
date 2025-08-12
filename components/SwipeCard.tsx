@@ -22,8 +22,8 @@ interface SwipeCardProps {
 
 // Comprehensive translation service for German citizenship test content
 const translateText = async (text: string, targetLanguage: string): Promise<string> => {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 300))
+  // Simulate API delay for realistic UX
+  await new Promise((resolve) => setTimeout(resolve, 200))
 
   const translations: Record<string, Record<string, string>> = {
     // Common German citizenship test questions
@@ -83,28 +83,6 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "基本法",
       hi: "मूल कानून",
     },
-    Bundesgesetz: {
-      en: "Federal Law",
-      es: "Ley Federal",
-      fr: "Loi fédérale",
-      it: "Legge federale",
-      tr: "Federal Kanun",
-      ar: "القانون الاتحادي",
-      ru: "Федеральный закон",
-      zh: "联邦法",
-      hi: "संघीय कानून",
-    },
-    Verfassungsgesetz: {
-      en: "Constitutional Law",
-      es: "Ley Constitucional",
-      fr: "Loi constitutionnelle",
-      it: "Legge costituzionale",
-      tr: "Anayasa Kanunu",
-      ar: "القانون الدستوري",
-      ru: "Конституционный закон",
-      zh: "宪法",
-      hi: "संवैधानिक कानून",
-    },
     Berlin: {
       en: "Berlin",
       es: "Berlín",
@@ -149,6 +127,18 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "法兰克福",
       hi: "फ्रैंकफर्ट",
     },
+    "schwarz, rot, gold": {
+      en: "black, red, gold",
+      es: "negro, rojo, dorado",
+      fr: "noir, rouge, or",
+      it: "nero, rosso, oro",
+      tr: "siyah, kırmızı, altın",
+      ar: "أسود، أحمر، ذهبي",
+      ru: "черный, красный, золотой",
+      zh: "黑色、红色、金色",
+      hi: "काला, लाल, सुनहरा",
+    },
+    // Years
     "1949": {
       en: "1949",
       es: "1949",
@@ -193,51 +183,6 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "1990",
       hi: "1990",
     },
-    "schwarz, rot, gold": {
-      en: "black, red, gold",
-      es: "negro, rojo, dorado",
-      fr: "noir, rouge, or",
-      it: "nero, rosso, oro",
-      tr: "siyah, kırmızı, altın",
-      ar: "أسود، أحمر، ذهبي",
-      ru: "черный, красный, золотой",
-      zh: "黑色、红色、金色",
-      hi: "काला, लाल, सुनहरा",
-    },
-    // Common explanations
-    "Das Grundgesetz ist die deutsche Verfassung.": {
-      en: "The Basic Law is the German constitution.",
-      es: "La Ley Fundamental es la constitución alemana.",
-      fr: "La Loi fondamentale est la constitution allemande.",
-      it: "La Legge fondamentale è la costituzione tedesca.",
-      tr: "Temel Kanun, Alman anayasasıdır.",
-      ar: "القانون الأساسي هو الدستور الألماني.",
-      ru: "Основной закон является немецкой конституцией.",
-      zh: "基本法是德国的宪法。",
-      hi: "मूल कानून जर्मन संविधान है।",
-    },
-    "Die Bundesrepublik Deutschland wurde 1949 gegründet.": {
-      en: "The Federal Republic of Germany was founded in 1949.",
-      es: "La República Federal de Alemania fue fundada en 1949.",
-      fr: "La République fédérale d'Allemagne a été fondée en 1949.",
-      it: "La Repubblica Federale di Germania è stata fondata nel 1949.",
-      tr: "Almanya Federal Cumhuriyeti 1949'da kuruldu.",
-      ar: "تأسست جمهورية ألمانيا الاتحادية عام 1949.",
-      ru: "Федеративная Республика Германия была основана в 1949 году.",
-      zh: "德意志联邦共和国成立于1949年。",
-      hi: "जर्मनी का संघीय गणराज्य 1949 में स्थापित हुआ था।",
-    },
-    "Berlin ist die Hauptstadt von Deutschland.": {
-      en: "Berlin is the capital of Germany.",
-      es: "Berlín es la capital de Alemania.",
-      fr: "Berlin est la capitale de l'Allemagne.",
-      it: "Berlino è la capitale della Germania.",
-      tr: "Berlin, Almanya'nın başkentidir.",
-      ar: "برلين هي عاصمة ألمانيا.",
-      ru: "Берлин является столицей Германии.",
-      zh: "柏林是德国的首都。",
-      hi: "बर्लिन जर्मनी की राजधानी है।",
-    },
   }
 
   // Check for exact match first
@@ -245,7 +190,14 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
     return translations[text][targetLanguage]
   }
 
-  // For any text not in our dictionary, return a formatted version
+  // For partial matches, try to find key words
+  for (const [key, translation] of Object.entries(translations)) {
+    if (text.includes(key) && translation[targetLanguage]) {
+      return text.replace(key, translation[targetLanguage])
+    }
+  }
+
+  // Fallback: Use a simple translation service simulation
   const languageNames: Record<string, string> = {
     en: "EN",
     es: "ES",
@@ -256,6 +208,14 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
     ru: "RU",
     zh: "ZH",
     hi: "HI",
+  }
+
+  // For demonstration, provide basic translations for common patterns
+  if (targetLanguage === "es") {
+    if (text.includes("Was ist")) return text.replace("Was ist", "¿Qué es")
+    if (text.includes("Wie heißt")) return text.replace("Wie heißt", "¿Cómo se llama")
+    if (text.includes("Wann wurde")) return text.replace("Wann wurde", "¿Cuándo fue")
+    if (text.includes("Welche")) return text.replace("Welche", "¿Cuáles")
   }
 
   return `[${languageNames[targetLanguage] || targetLanguage.toUpperCase()}] ${text}`
@@ -325,18 +285,28 @@ export default function SwipeCard({
 
     if (internalShowTranslation) {
       setInternalShowTranslation(false)
+      setTranslatedText("")
+      setTranslatedOptions([])
+      setTranslatedExplanation("")
       return
     }
 
     setIsTranslating(true)
 
     try {
+      console.log("Translating to language:", language)
+
       // Translate question text to the selected language
       const translatedQuestionText = await translateText(question.question, language)
+      console.log("Translated question:", translatedQuestionText)
 
       // Translate all options to the selected language
       const translatedOptionsArray = await Promise.all(
-        question.options.map((option) => translateText(option, language)),
+        question.options.map(async (option) => {
+          const translated = await translateText(option, language)
+          console.log(`Translated option "${option}" to:`, translated)
+          return translated
+        }),
       )
 
       // Translate explanation if it exists

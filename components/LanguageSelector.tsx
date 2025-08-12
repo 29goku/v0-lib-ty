@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Globe } from "lucide-react"
@@ -11,11 +11,28 @@ import { motion, AnimatePresence } from "framer-motion"
 export default function LanguageSelector() {
   const { language, setLanguage } = useStore()
   const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   const languages: Language[] = ["en", "de", "es", "fr", "it", "tr", "ar", "ru", "zh"]
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [isOpen])
+
   return (
-    <div className="relative">
+    <div className="relative" ref={dropdownRef}>
       <Button
         onClick={() => setIsOpen(!isOpen)}
         className="bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600/50 px-4 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 backdrop-blur-sm"
@@ -60,9 +77,6 @@ export default function LanguageSelector() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Click outside to close */}
-      {isOpen && <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />}
     </div>
   )
 }
