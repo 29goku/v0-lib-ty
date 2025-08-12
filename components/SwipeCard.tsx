@@ -20,14 +20,84 @@ interface SwipeCardProps {
   onTranslate?: () => void
 }
 
-// Comprehensive translation service for German citizenship test content
+// Enhanced translation service for German citizenship test content
 const translateText = async (text: string, targetLanguage: string): Promise<string> => {
   // Simulate realistic API delay
   await new Promise((resolve) => setTimeout(resolve, 200))
 
-  // Comprehensive translation dictionary covering most German citizenship test patterns
+  console.log(`🔍 Translating: "${text}" to ${targetLanguage}`)
+
+  // Comprehensive translation dictionary covering German citizenship test patterns
   const translations: Record<string, Record<string, string>> = {
-    // Common question starters
+    // Complete common questions
+    "Wie heißt die deutsche Verfassung?": {
+      en: "What is the German constitution called?",
+      es: "¿Cómo se llama la constitución alemana?",
+      fr: "Comment s'appelle la constitution allemande?",
+      it: "Come si chiama la costituzione tedesca?",
+      tr: "Alman anayasasının adı nedir?",
+      ar: "ما اسم الدستور الألماني؟",
+      ru: "Как называется немецкая конституция?",
+      zh: "德国宪法叫什么名字？",
+      hi: "जर्मन संविधान का नाम क्या है?",
+    },
+    "Was ist die Hauptstadt von Deutschland?": {
+      en: "What is the capital of Germany?",
+      es: "¿Cuál es la capital de Alemania?",
+      fr: "Quelle est la capitale de l'Allemagne?",
+      it: "Qual è la capitale della Germania?",
+      tr: "Almanya'nın başkenti nedir?",
+      ar: "ما هي عاصمة ألمانيا؟",
+      ru: "Какая столица Германии?",
+      zh: "德国的首都是什么？",
+      hi: "जर्मनी की राजधानी क्या है?",
+    },
+    "Welche Farben hat die deutsche Flagge?": {
+      en: "What colors does the German flag have?",
+      es: "¿Qué colores tiene la bandera alemana?",
+      fr: "Quelles couleurs a le drapeau allemand?",
+      it: "Quali colori ha la bandiera tedesca?",
+      tr: "Alman bayrağının renkleri nelerdir?",
+      ar: "ما هي ألوان العلم الألماني؟",
+      ru: "Какие цвета у немецкого флага?",
+      zh: "德国国旗有什么颜色？",
+      hi: "जर्मन झंडे के रंग क्या हैं?",
+    },
+    "Wann wurde die Bundesrepublik Deutschland gegründet?": {
+      en: "When was the Federal Republic of Germany founded?",
+      es: "¿Cuándo se fundó la República Federal de Alemania?",
+      fr: "Quand la République fédérale d'Allemagne a-t-elle été fondée?",
+      it: "Quando è stata fondata la Repubblica Federale di Germania?",
+      tr: "Almanya Federal Cumhuriyeti ne zaman kuruldu?",
+      ar: "متى تأسست جمهورية ألمانيا الاتحادية؟",
+      ru: "Когда была основана Федеративная Республика Германия?",
+      zh: "德意志联邦共和国是什么时候成立的？",
+      hi: "जर्मनी का संघीय गणराज्य कब स्थापित हुआ था?",
+    },
+    "Was bedeutet Demokratie?": {
+      en: "What does democracy mean?",
+      es: "¿Qué significa democracia?",
+      fr: "Que signifie démocratie?",
+      it: "Cosa significa democrazia?",
+      tr: "Demokrasi ne demektir?",
+      ar: "ما معنى الديمقراطية؟",
+      ru: "Что означает демократия?",
+      zh: "民主是什么意思？",
+      hi: "लोकतंत्र का क्या अर्थ है?",
+    },
+    "Wer wählt den Bundeskanzler / die Bundeskanzlerin?": {
+      en: "Who elects the Federal Chancellor?",
+      es: "¿Quién elige al Canciller Federal?",
+      fr: "Qui élit le Chancelier fédéral?",
+      it: "Chi elegge il Cancelliere federale?",
+      tr: "Federal Şansölyeyi kim seçer?",
+      ar: "من ينتخب المستشار الاتحادي؟",
+      ru: "Кто избирает федерального канцлера?",
+      zh: "谁选举联邦总理？",
+      hi: "संघीय चांसलर को कौन चुनता है?",
+    },
+
+    // Question starters and patterns
     "Wie heißt": {
       en: "What is called",
       es: "¿Cómo se llama",
@@ -49,6 +119,17 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       ru: "Что такое",
       zh: "什么是",
       hi: "क्या है",
+    },
+    "Was bedeutet": {
+      en: "What does ... mean",
+      es: "¿Qué significa",
+      fr: "Que signifie",
+      it: "Cosa significa",
+      tr: "Ne demektir",
+      ar: "ما معنى",
+      ru: "Что означает",
+      zh: "什么意思",
+      hi: "का क्या अर्थ है",
     },
     "Wann wurde": {
       en: "When was",
@@ -84,6 +165,17 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       hi: "कौन से",
     },
     Welches: {
+      en: "Which",
+      es: "¿Cuál",
+      fr: "Quel",
+      it: "Quale",
+      tr: "Hangi",
+      ar: "أي",
+      ru: "Какой",
+      zh: "哪个",
+      hi: "कौन सा",
+    },
+    Welcher: {
       en: "Which",
       es: "¿Cuál",
       fr: "Quel",
@@ -137,6 +229,17 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       ru: "Сколько",
       zh: "多少",
       hi: "कितने",
+    },
+    wählt: {
+      en: "elects",
+      es: "elige",
+      fr: "élit",
+      it: "elegge",
+      tr: "seçer",
+      ar: "ينتخب",
+      ru: "избирает",
+      zh: "选举",
+      hi: "चुनता है",
     },
 
     // Key German political/legal terms
@@ -206,6 +309,17 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "联邦总理",
       hi: "संघीय चांसलर",
     },
+    Bundeskanzlerin: {
+      en: "Federal Chancellor (female)",
+      es: "Canciller Federal",
+      fr: "Chancelière fédérale",
+      it: "Cancelliera federale",
+      tr: "Federal Şansölye",
+      ar: "المستشارة الاتحادية",
+      ru: "Федеральный канцлер",
+      zh: "联邦总理",
+      hi: "संघीय चांसलर",
+    },
     Bundespräsident: {
       en: "Federal President",
       es: "Presidente Federal",
@@ -238,28 +352,6 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       ru: "правовое государство",
       zh: "法治国家",
       hi: "कानूनी राज्य",
-    },
-    Meinungsfreiheit: {
-      en: "freedom of opinion",
-      es: "libertad de opinión",
-      fr: "liberté d'opinion",
-      it: "libertà di opinione",
-      tr: "görüş özgürlüğü",
-      ar: "حرية الرأي",
-      ru: "свобода мнений",
-      zh: "言论自由",
-      hi: "मत की स्वतंत्रता",
-    },
-    Religionsfreiheit: {
-      en: "freedom of religion",
-      es: "libertad religiosa",
-      fr: "liberté religieuse",
-      it: "libertà religiosa",
-      tr: "din özgürlüğü",
-      ar: "حرية الدين",
-      ru: "свобода религии",
-      zh: "宗教自由",
-      hi: "धर्म की स्वतंत्रता",
     },
 
     // German cities
@@ -296,133 +388,19 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "汉堡",
       hi: "हैम्बर्ग",
     },
-    Frankfurt: {
-      en: "Frankfurt",
-      es: "Fráncfort",
-      fr: "Francfort",
-      it: "Francoforte",
-      tr: "Frankfurt",
-      ar: "فرانكفورت",
-      ru: "Франкфурт",
-      zh: "法兰克福",
-      hi: "फ्रैंकफर्ट",
-    },
-    Köln: {
-      en: "Cologne",
-      es: "Colonia",
-      fr: "Cologne",
-      it: "Colonia",
-      tr: "Köln",
-      ar: "كولونيا",
-      ru: "Кёльн",
-      zh: "科隆",
-      hi: "कोलोन",
-    },
-    Dresden: {
-      en: "Dresden",
-      es: "Dresde",
-      fr: "Dresde",
-      it: "Dresda",
-      tr: "Dresden",
-      ar: "درسدن",
-      ru: "Дрезден",
-      zh: "德累斯顿",
-      hi: "ड्रेसडेन",
-    },
-
-    // German states (Bundesländer)
-    Bayern: {
-      en: "Bavaria",
-      es: "Baviera",
-      fr: "Bavière",
-      it: "Baviera",
-      tr: "Bavyera",
-      ar: "بافاريا",
-      ru: "Бавария",
-      zh: "巴伐利亚",
-      hi: "बवेरिया",
-    },
-    "Baden-Württemberg": {
-      en: "Baden-Württemberg",
-      es: "Baden-Württemberg",
-      fr: "Bade-Wurtemberg",
-      it: "Baden-Württemberg",
-      tr: "Baden-Württemberg",
-      ar: "بادن فورتمبيرغ",
-      ru: "Баден-Вюртемберг",
-      zh: "巴登-符腾堡",
-      hi: "बाडेन-वुर्टेमबर्ग",
-    },
-    "Nordrhein-Westfalen": {
-      en: "North Rhine-Westphalia",
-      es: "Renania del Norte-Westfalia",
-      fr: "Rhénanie-du-Nord-Westphalie",
-      it: "Renania Settentrionale-Vestfalia",
-      tr: "Kuzey Ren-Vestfalya",
-      ar: "شمال الراين وستفاليا",
-      ru: "Северный Рейн-Вестфалия",
-      zh: "北莱茵-威斯特法伦",
-      hi: "उत्तरी राइन-वेस्टफेलिया",
-    },
-
-    // Historical terms
-    Nationalsozialismus: {
-      en: "National Socialism",
-      es: "Nacionalsocialismo",
-      fr: "National-socialisme",
-      it: "Nazionalsocialismo",
-      tr: "Nasyonal Sosyalizm",
-      ar: "الاشتراكية القومية",
-      ru: "Национал-социализм",
-      zh: "国家社会主义",
-      hi: "राष्ट्रीय समाजवाद",
-    },
-    "Zweiter Weltkrieg": {
-      en: "Second World War",
-      es: "Segunda Guerra Mundial",
-      fr: "Seconde Guerre mondiale",
-      it: "Seconda guerra mondiale",
-      tr: "İkinci Dünya Savaşı",
-      ar: "الحرب العالمية الثانية",
-      ru: "Вторая мировая война",
-      zh: "第二次世界大战",
-      hi: "द्वितीय विश्व युद्ध",
-    },
-    DDR: {
-      en: "GDR (East Germany)",
-      es: "RDA (Alemania Oriental)",
-      fr: "RDA (Allemagne de l'Est)",
-      it: "RDT (Germania Est)",
-      tr: "DDR (Doğu Almanya)",
-      ar: "ألمانيا الشرقية",
-      ru: "ГДР (Восточная Германия)",
-      zh: "东德",
-      hi: "पूर्वी जर्मनी",
-    },
-    "Berliner Mauer": {
-      en: "Berlin Wall",
-      es: "Muro de Berlín",
-      fr: "Mur de Berlin",
-      it: "Muro di Berlino",
-      tr: "Berlin Duvarı",
-      ar: "جدار برلين",
-      ru: "Берлинская стена",
-      zh: "柏林墙",
-      hi: "बर्लिन की दीवार",
-    },
-    Wiedervereinigung: {
-      en: "reunification",
-      es: "reunificación",
-      fr: "réunification",
-      it: "riunificazione",
-      tr: "yeniden birleşme",
-      ar: "إعادة التوحيد",
-      ru: "воссоединение",
-      zh: "统一",
-      hi: "पुनर्मिलन",
-    },
 
     // Colors
+    "schwarz, rot, gold": {
+      en: "black, red, gold",
+      es: "negro, rojo, dorado",
+      fr: "noir, rouge, or",
+      it: "nero, rosso, oro",
+      tr: "siyah, kırmızı, altın",
+      ar: "أسود، أحمر، ذهبي",
+      ru: "черный, красный, золотой",
+      zh: "黑色、红色、金色",
+      hi: "काला, लाल, सुनहरा",
+    },
     schwarz: {
       en: "black",
       es: "negro",
@@ -456,41 +434,8 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "金色",
       hi: "सुनहरा",
     },
-    blau: {
-      en: "blue",
-      es: "azul",
-      fr: "bleu",
-      it: "blu",
-      tr: "mavi",
-      ar: "أزرق",
-      ru: "синий",
-      zh: "蓝色",
-      hi: "नीला",
-    },
-    weiß: {
-      en: "white",
-      es: "blanco",
-      fr: "blanc",
-      it: "bianco",
-      tr: "beyaz",
-      ar: "أبيض",
-      ru: "белый",
-      zh: "白色",
-      hi: "सफेद",
-    },
 
-    // Common phrases
-    gegründet: {
-      en: "founded",
-      es: "fundada",
-      fr: "fondée",
-      it: "fondata",
-      tr: "kuruldu",
-      ar: "تأسست",
-      ru: "основана",
-      zh: "成立",
-      hi: "स्थापित",
-    },
+    // Common words
     Hauptstadt: {
       en: "capital",
       es: "capital",
@@ -535,8 +480,41 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "德国",
       hi: "जर्मनी",
     },
+    gegründet: {
+      en: "founded",
+      es: "fundada",
+      fr: "fondée",
+      it: "fondata",
+      tr: "kuruldu",
+      ar: "تأسست",
+      ru: "основана",
+      zh: "成立",
+      hi: "स्थापित",
+    },
+    hat: {
+      en: "has",
+      es: "tiene",
+      fr: "a",
+      it: "ha",
+      tr: "var",
+      ar: "لديه",
+      ru: "имеет",
+      zh: "有",
+      hi: "है",
+    },
+    von: {
+      en: "of",
+      es: "de",
+      fr: "de",
+      it: "di",
+      tr: "nin",
+      ar: "من",
+      ru: "из",
+      zh: "的",
+      hi: "का",
+    },
 
-    // Years (commonly used in citizenship tests)
+    // Years
     "1949": {
       en: "1949",
       es: "1949",
@@ -581,68 +559,11 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "1990",
       hi: "1990",
     },
-    "1961": {
-      en: "1961",
-      es: "1961",
-      fr: "1961",
-      it: "1961",
-      tr: "1961",
-      ar: "1961",
-      ru: "1961",
-      zh: "1961",
-      hi: "1961",
-    },
-    "1933": {
-      en: "1933",
-      es: "1933",
-      fr: "1933",
-      it: "1933",
-      tr: "1933",
-      ar: "1933",
-      ru: "1933",
-      zh: "1933",
-      hi: "1933",
-    },
-
-    // Common explanatory phrases
-    "ist die": {
-      en: "is the",
-      es: "es la",
-      fr: "est la",
-      it: "è la",
-      tr: "dir",
-      ar: "هو",
-      ru: "является",
-      zh: "是",
-      hi: "है",
-    },
-    wurde: {
-      en: "was",
-      es: "fue",
-      fr: "a été",
-      it: "è stato",
-      tr: "oldu",
-      ar: "كان",
-      ru: "был",
-      zh: "是",
-      hi: "था",
-    },
-    hat: {
-      en: "has",
-      es: "tiene",
-      fr: "a",
-      it: "ha",
-      tr: "var",
-      ar: "لديه",
-      ru: "имеет",
-      zh: "有",
-      hi: "है",
-    },
   }
 
   // First, try exact match
   if (translations[text] && translations[text][targetLanguage]) {
-    console.log(`Found exact translation for "${text}":`, translations[text][targetLanguage])
+    console.log(`✅ Found exact translation for "${text}":`, translations[text][targetLanguage])
     return translations[text][targetLanguage]
   }
 
@@ -655,18 +576,52 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
 
   for (const germanTerm of sortedKeys) {
     if (translatedText.includes(germanTerm) && translations[germanTerm][targetLanguage]) {
-      translatedText = translatedText.replace(new RegExp(germanTerm, "g"), translations[germanTerm][targetLanguage])
+      const replacement = translations[germanTerm][targetLanguage]
+      translatedText = translatedText.replace(new RegExp(germanTerm, "gi"), replacement)
       hasTranslations = true
-      console.log(`Replaced "${germanTerm}" with "${translations[germanTerm][targetLanguage]}"`)
+      console.log(`🔄 Replaced "${germanTerm}" with "${replacement}"`)
     }
   }
 
   // If we made any replacements, return the result
   if (hasTranslations) {
+    console.log(`✅ Partial translation result: "${translatedText}"`)
     return translatedText
   }
 
-  // Final fallback - return with language tag
+  // Third, try basic pattern matching for common German question structures
+  if (targetLanguage === "en") {
+    if (text.includes("?")) {
+      // Handle question patterns
+      if (text.startsWith("Was ist")) {
+        const result = text.replace("Was ist", "What is").replace("?", "?")
+        console.log(`🔄 Pattern match (Was ist): "${result}"`)
+        return result
+      }
+      if (text.startsWith("Wie heißt")) {
+        const result = text.replace("Wie heißt", "What is called").replace("?", "?")
+        console.log(`🔄 Pattern match (Wie heißt): "${result}"`)
+        return result
+      }
+      if (text.startsWith("Wann wurde")) {
+        const result = text.replace("Wann wurde", "When was").replace("?", "?")
+        console.log(`🔄 Pattern match (Wann wurde): "${result}"`)
+        return result
+      }
+      if (text.startsWith("Welche")) {
+        const result = text.replace("Welche", "Which").replace("?", "?")
+        console.log(`🔄 Pattern match (Welche): "${result}"`)
+        return result
+      }
+      if (text.startsWith("Wer")) {
+        const result = text.replace("Wer", "Who").replace("?", "?")
+        console.log(`🔄 Pattern match (Wer): "${result}"`)
+        return result
+      }
+    }
+  }
+
+  // Final fallback - return with language tag and original text
   const languageNames: Record<string, string> = {
     en: "EN",
     es: "ES",
@@ -679,8 +634,9 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
     hi: "HI",
   }
 
-  console.log(`No translation found for "${text}", using fallback`)
-  return `[${languageNames[targetLanguage] || targetLanguage.toUpperCase()}] ${text}`
+  const fallbackResult = `[${languageNames[targetLanguage] || targetLanguage.toUpperCase()}] ${text}`
+  console.log(`❌ No translation found for "${text}", using fallback: "${fallbackResult}"`)
+  return fallbackResult
 }
 
 export default function SwipeCard({
@@ -759,19 +715,19 @@ export default function SwipeCard({
     setIsTranslating(true)
 
     try {
-      console.log("Starting translation to language:", language)
-      console.log("Question to translate:", question.question)
+      console.log("🚀 Starting translation to language:", language)
+      console.log("📝 Question to translate:", question.question)
 
       // Translate the main question
       const translatedQuestionText = await translateText(question.question, language)
-      console.log("Translated question result:", translatedQuestionText)
+      console.log("✅ Translated question result:", translatedQuestionText)
 
       // Translate all answer options
       const translatedOptionsArray = await Promise.all(
         question.options.map(async (option, index) => {
-          console.log(`Translating option ${index}: "${option}"`)
+          console.log(`📝 Translating option ${index}: "${option}"`)
           const translated = await translateText(option, language)
-          console.log(`Translated option ${index} result:`, translated)
+          console.log(`✅ Translated option ${index} result:`, translated)
           return translated
         }),
       )
@@ -779,9 +735,9 @@ export default function SwipeCard({
       // Translate explanation if it exists
       let translatedExplanationText = ""
       if (question.explanation) {
-        console.log("Translating explanation:", question.explanation)
+        console.log("📝 Translating explanation:", question.explanation)
         translatedExplanationText = await translateText(question.explanation, language)
-        console.log("Translated explanation result:", translatedExplanationText)
+        console.log("✅ Translated explanation result:", translatedExplanationText)
       }
 
       // Update state with translations
@@ -790,9 +746,9 @@ export default function SwipeCard({
       setTranslatedExplanation(translatedExplanationText)
       setInternalShowTranslation(true)
 
-      console.log("Translation completed successfully")
+      console.log("🎉 Translation completed successfully")
     } catch (error) {
-      console.error("Translation failed:", error)
+      console.error("❌ Translation failed:", error)
       // Fallback to simple tagged format
       setTranslatedText(`[${language.toUpperCase()}] ${question.question}`)
       setTranslatedOptions(question.options.map((option) => `[${language.toUpperCase()}] ${option}`))
