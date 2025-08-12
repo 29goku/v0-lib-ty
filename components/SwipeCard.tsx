@@ -20,66 +20,137 @@ interface SwipeCardProps {
   onTranslate?: () => void
 }
 
-// Real translation service for German citizenship test content
+// Comprehensive translation service for German citizenship test content
 const translateText = async (text: string, targetLanguage: string): Promise<string> => {
   // Simulate realistic API delay
-  await new Promise((resolve) => setTimeout(resolve, 300))
+  await new Promise((resolve) => setTimeout(resolve, 200))
 
-  // Comprehensive translation dictionary for German citizenship test
+  // Comprehensive translation dictionary covering most German citizenship test patterns
   const translations: Record<string, Record<string, string>> = {
-    // Questions about German constitution
-    "Wie heißt die deutsche Verfassung?": {
-      en: "What is the German constitution called?",
-      es: "¿Cómo se llama la constitución alemana?",
-      fr: "Comment s'appelle la constitution allemande?",
-      it: "Come si chiama la costituzione tedesca?",
-      tr: "Alman anayasasının adı nedir?",
-      ar: "ما اسم الدستور الألماني؟",
-      ru: "Как называется немецкая конституция?",
-      zh: "德国宪法叫什么名字？",
-      hi: "जर्मन संविधान का नाम क्या है?",
+    // Common question starters
+    "Wie heißt": {
+      en: "What is called",
+      es: "¿Cómo se llama",
+      fr: "Comment s'appelle",
+      it: "Come si chiama",
+      tr: "Nasıl adlandırılır",
+      ar: "ما اسم",
+      ru: "Как называется",
+      zh: "什么叫做",
+      hi: "क्या कहलाता है",
+    },
+    "Was ist": {
+      en: "What is",
+      es: "¿Qué es",
+      fr: "Qu'est-ce que",
+      it: "Cos'è",
+      tr: "Nedir",
+      ar: "ما هو",
+      ru: "Что такое",
+      zh: "什么是",
+      hi: "क्या है",
+    },
+    "Wann wurde": {
+      en: "When was",
+      es: "¿Cuándo fue",
+      fr: "Quand a été",
+      it: "Quando è stato",
+      tr: "Ne zaman",
+      ar: "متى تم",
+      ru: "Когда был",
+      zh: "什么时候",
+      hi: "कब था",
+    },
+    "Wann war": {
+      en: "When was",
+      es: "¿Cuándo fue",
+      fr: "Quand était",
+      it: "Quando era",
+      tr: "Ne zaman idi",
+      ar: "متى كان",
+      ru: "Когда был",
+      zh: "什么时候是",
+      hi: "कब था",
+    },
+    Welche: {
+      en: "Which",
+      es: "¿Cuáles",
+      fr: "Quelles",
+      it: "Quali",
+      tr: "Hangi",
+      ar: "أي",
+      ru: "Какие",
+      zh: "哪些",
+      hi: "कौन से",
+    },
+    Welches: {
+      en: "Which",
+      es: "¿Cuál",
+      fr: "Quel",
+      it: "Quale",
+      tr: "Hangi",
+      ar: "أي",
+      ru: "Какой",
+      zh: "哪个",
+      hi: "कौन सा",
+    },
+    Wer: {
+      en: "Who",
+      es: "¿Quién",
+      fr: "Qui",
+      it: "Chi",
+      tr: "Kim",
+      ar: "من",
+      ru: "Кто",
+      zh: "谁",
+      hi: "कौन",
+    },
+    Wo: {
+      en: "Where",
+      es: "¿Dónde",
+      fr: "Où",
+      it: "Dove",
+      tr: "Nerede",
+      ar: "أين",
+      ru: "Где",
+      zh: "哪里",
+      hi: "कहाँ",
+    },
+    Warum: {
+      en: "Why",
+      es: "¿Por qué",
+      fr: "Pourquoi",
+      it: "Perché",
+      tr: "Neden",
+      ar: "لماذا",
+      ru: "Почему",
+      zh: "为什么",
+      hi: "क्यों",
+    },
+    "Wie viele": {
+      en: "How many",
+      es: "¿Cuántos",
+      fr: "Combien",
+      it: "Quanti",
+      tr: "Kaç tane",
+      ar: "كم عدد",
+      ru: "Сколько",
+      zh: "多少",
+      hi: "कितने",
     },
 
-    // Questions about German history
-    "Wann wurde die Bundesrepublik Deutschland gegründet?": {
-      en: "When was the Federal Republic of Germany founded?",
-      es: "¿Cuándo se fundó la República Federal de Alemania?",
-      fr: "Quand la République fédérale d'Allemagne a-t-elle été fondée?",
-      it: "Quando è stata fondata la Repubblica Federale di Germania?",
-      tr: "Almanya Federal Cumhuriyeti ne zaman kuruldu?",
-      ar: "متى تأسست جمهورية ألمانيا الاتحادية؟",
-      ru: "Когда была основана Федеративная Республика Германия?",
-      zh: "德意志联邦共和国是什么时候成立的？",
-      hi: "जर्मनी का संघीय गणराज्य कब स्थापित हुआ था?",
+    // Key German political/legal terms
+    "die deutsche Verfassung": {
+      en: "the German constitution",
+      es: "la constitución alemana",
+      fr: "la constitution allemande",
+      it: "la costituzione tedesca",
+      tr: "Alman anayasası",
+      ar: "الدستور الألماني",
+      ru: "немецкая конституция",
+      zh: "德国宪法",
+      hi: "जर्मन संविधान",
     },
-
-    // Questions about German geography
-    "Was ist die Hauptstadt von Deutschland?": {
-      en: "What is the capital of Germany?",
-      es: "¿Cuál es la capital de Alemania?",
-      fr: "Quelle est la capitale de l'Allemagne?",
-      it: "Qual è la capitale della Germania?",
-      tr: "Almanya'nın başkenti nedir?",
-      ar: "ما هي عاصمة ألمانيا؟",
-      ru: "Какая столица Германии?",
-      zh: "德国的首都是什么？",
-      hi: "जर्मनी की राजधानी क्या है?",
-    },
-
-    // Questions about German symbols
-    "Welche Farben hat die deutsche Flagge?": {
-      en: "What colors does the German flag have?",
-      es: "¿Qué colores tiene la bandera alemana?",
-      fr: "Quelles couleurs a le drapeau allemand?",
-      it: "Quali colori ha la bandiera tedesca?",
-      tr: "Alman bayrağının renkleri nelerdir?",
-      ar: "ما هي ألوان العلم الألماني؟",
-      ru: "Какие цвета у немецкого флага?",
-      zh: "德国国旗有什么颜色？",
-      hi: "जर्मन झंडे के रंग क्या हैं?",
-    },
-
-    // Answer options - Constitution
     Grundgesetz: {
       en: "Basic Law",
       es: "Ley Fundamental",
@@ -91,30 +162,107 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "基本法",
       hi: "मूल कानून",
     },
-    Bundesgesetz: {
-      en: "Federal Law",
-      es: "Ley Federal",
-      fr: "Loi fédérale",
-      it: "Legge federale",
-      tr: "Federal Kanun",
-      ar: "القانون الاتحادي",
-      ru: "Федеральный закон",
-      zh: "联邦法",
-      hi: "संघीय कानून",
+    "Bundesrepublik Deutschland": {
+      en: "Federal Republic of Germany",
+      es: "República Federal de Alemania",
+      fr: "République fédérale d'Allemagne",
+      it: "Repubblica Federale di Germania",
+      tr: "Almanya Federal Cumhuriyeti",
+      ar: "جمهورية ألمانيا الاتحادية",
+      ru: "Федеративная Республика Германия",
+      zh: "德意志联邦共和国",
+      hi: "जर्मनी का संघीय गणराज्य",
     },
-    Verfassungsgesetz: {
-      en: "Constitutional Law",
-      es: "Ley Constitucional",
-      fr: "Loi constitutionnelle",
-      it: "Legge costituzionale",
-      tr: "Anayasa Kanunu",
-      ar: "القانون الدستوري",
-      ru: "Конституционный закон",
-      zh: "宪法",
-      hi: "संवैधानिक कानून",
+    Bundestag: {
+      en: "Federal Parliament",
+      es: "Parlamento Federal",
+      fr: "Parlement fédéral",
+      it: "Parlamento federale",
+      tr: "Federal Parlamento",
+      ar: "البرلمان الاتحادي",
+      ru: "Федеральный парламент",
+      zh: "联邦议会",
+      hi: "संघीय संसद",
+    },
+    Bundesrat: {
+      en: "Federal Council",
+      es: "Consejo Federal",
+      fr: "Conseil fédéral",
+      it: "Consiglio federale",
+      tr: "Federal Konsey",
+      ar: "المجلس الاتحادي",
+      ru: "Федеральный совет",
+      zh: "联邦参议院",
+      hi: "संघीय परिषद",
+    },
+    Bundeskanzler: {
+      en: "Federal Chancellor",
+      es: "Canciller Federal",
+      fr: "Chancelier fédéral",
+      it: "Cancelliere federale",
+      tr: "Federal Şansölye",
+      ar: "المستشار الاتحادي",
+      ru: "Федеральный канцлер",
+      zh: "联邦总理",
+      hi: "संघीय चांसलर",
+    },
+    Bundespräsident: {
+      en: "Federal President",
+      es: "Presidente Federal",
+      fr: "Président fédéral",
+      it: "Presidente federale",
+      tr: "Federal Başkan",
+      ar: "الرئيس الاتحادي",
+      ru: "Федеральный президент",
+      zh: "联邦总统",
+      hi: "संघीय राष्ट्रपति",
+    },
+    Demokratie: {
+      en: "democracy",
+      es: "democracia",
+      fr: "démocratie",
+      it: "democrazia",
+      tr: "demokrasi",
+      ar: "الديمقراطية",
+      ru: "демократия",
+      zh: "民主",
+      hi: "लोकतंत्र",
+    },
+    Rechtsstaat: {
+      en: "constitutional state",
+      es: "estado de derecho",
+      fr: "état de droit",
+      it: "stato di diritto",
+      tr: "hukuk devleti",
+      ar: "دولة القانون",
+      ru: "правовое государство",
+      zh: "法治国家",
+      hi: "कानूनी राज्य",
+    },
+    Meinungsfreiheit: {
+      en: "freedom of opinion",
+      es: "libertad de opinión",
+      fr: "liberté d'opinion",
+      it: "libertà di opinione",
+      tr: "görüş özgürlüğü",
+      ar: "حرية الرأي",
+      ru: "свобода мнений",
+      zh: "言论自由",
+      hi: "मत की स्वतंत्रता",
+    },
+    Religionsfreiheit: {
+      en: "freedom of religion",
+      es: "libertad religiosa",
+      fr: "liberté religieuse",
+      it: "libertà religiosa",
+      tr: "din özgürlüğü",
+      ar: "حرية الدين",
+      ru: "свобода религии",
+      zh: "宗教自由",
+      hi: "धर्म की स्वतंत्रता",
     },
 
-    // Answer options - Cities
+    // German cities
     Berlin: {
       en: "Berlin",
       es: "Berlín",
@@ -159,32 +307,236 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "法兰克福",
       hi: "फ्रैंकफर्ट",
     },
-
-    // Answer options - Colors
-    "schwarz, rot, gold": {
-      en: "black, red, gold",
-      es: "negro, rojo, dorado",
-      fr: "noir, rouge, or",
-      it: "nero, rosso, oro",
-      tr: "siyah, kırmızı, altın",
-      ar: "أسود، أحمر، ذهبي",
-      ru: "черный, красный, золотой",
-      zh: "黑色、红色、金色",
-      hi: "काला, लाल, सुनहरा",
+    Köln: {
+      en: "Cologne",
+      es: "Colonia",
+      fr: "Cologne",
+      it: "Colonia",
+      tr: "Köln",
+      ar: "كولونيا",
+      ru: "Кёльн",
+      zh: "科隆",
+      hi: "कोलोन",
     },
-    "blau, weiß, rot": {
-      en: "blue, white, red",
-      es: "azul, blanco, rojo",
-      fr: "bleu, blanc, rouge",
-      it: "blu, bianco, rosso",
-      tr: "mavi, beyaz, kırmızı",
-      ar: "أزرق، أبيض، أحمر",
-      ru: "синий, белый, красный",
-      zh: "蓝色、白色、红色",
-      hi: "नीला, सफेद, लाल",
+    Dresden: {
+      en: "Dresden",
+      es: "Dresde",
+      fr: "Dresde",
+      it: "Dresda",
+      tr: "Dresden",
+      ar: "درسدن",
+      ru: "Дрезден",
+      zh: "德累斯顿",
+      hi: "ड्रेसडेन",
     },
 
-    // Years
+    // German states (Bundesländer)
+    Bayern: {
+      en: "Bavaria",
+      es: "Baviera",
+      fr: "Bavière",
+      it: "Baviera",
+      tr: "Bavyera",
+      ar: "بافاريا",
+      ru: "Бавария",
+      zh: "巴伐利亚",
+      hi: "बवेरिया",
+    },
+    "Baden-Württemberg": {
+      en: "Baden-Württemberg",
+      es: "Baden-Württemberg",
+      fr: "Bade-Wurtemberg",
+      it: "Baden-Württemberg",
+      tr: "Baden-Württemberg",
+      ar: "بادن فورتمبيرغ",
+      ru: "Баден-Вюртемберг",
+      zh: "巴登-符腾堡",
+      hi: "बाडेन-वुर्टेमबर्ग",
+    },
+    "Nordrhein-Westfalen": {
+      en: "North Rhine-Westphalia",
+      es: "Renania del Norte-Westfalia",
+      fr: "Rhénanie-du-Nord-Westphalie",
+      it: "Renania Settentrionale-Vestfalia",
+      tr: "Kuzey Ren-Vestfalya",
+      ar: "شمال الراين وستفاليا",
+      ru: "Северный Рейн-Вестфалия",
+      zh: "北莱茵-威斯特法伦",
+      hi: "उत्तरी राइन-वेस्टफेलिया",
+    },
+
+    // Historical terms
+    Nationalsozialismus: {
+      en: "National Socialism",
+      es: "Nacionalsocialismo",
+      fr: "National-socialisme",
+      it: "Nazionalsocialismo",
+      tr: "Nasyonal Sosyalizm",
+      ar: "الاشتراكية القومية",
+      ru: "Национал-социализм",
+      zh: "国家社会主义",
+      hi: "राष्ट्रीय समाजवाद",
+    },
+    "Zweiter Weltkrieg": {
+      en: "Second World War",
+      es: "Segunda Guerra Mundial",
+      fr: "Seconde Guerre mondiale",
+      it: "Seconda guerra mondiale",
+      tr: "İkinci Dünya Savaşı",
+      ar: "الحرب العالمية الثانية",
+      ru: "Вторая мировая война",
+      zh: "第二次世界大战",
+      hi: "द्वितीय विश्व युद्ध",
+    },
+    DDR: {
+      en: "GDR (East Germany)",
+      es: "RDA (Alemania Oriental)",
+      fr: "RDA (Allemagne de l'Est)",
+      it: "RDT (Germania Est)",
+      tr: "DDR (Doğu Almanya)",
+      ar: "ألمانيا الشرقية",
+      ru: "ГДР (Восточная Германия)",
+      zh: "东德",
+      hi: "पूर्वी जर्मनी",
+    },
+    "Berliner Mauer": {
+      en: "Berlin Wall",
+      es: "Muro de Berlín",
+      fr: "Mur de Berlin",
+      it: "Muro di Berlino",
+      tr: "Berlin Duvarı",
+      ar: "جدار برلين",
+      ru: "Берлинская стена",
+      zh: "柏林墙",
+      hi: "बर्लिन की दीवार",
+    },
+    Wiedervereinigung: {
+      en: "reunification",
+      es: "reunificación",
+      fr: "réunification",
+      it: "riunificazione",
+      tr: "yeniden birleşme",
+      ar: "إعادة التوحيد",
+      ru: "воссоединение",
+      zh: "统一",
+      hi: "पुनर्मिलन",
+    },
+
+    // Colors
+    schwarz: {
+      en: "black",
+      es: "negro",
+      fr: "noir",
+      it: "nero",
+      tr: "siyah",
+      ar: "أسود",
+      ru: "черный",
+      zh: "黑色",
+      hi: "काला",
+    },
+    rot: {
+      en: "red",
+      es: "rojo",
+      fr: "rouge",
+      it: "rosso",
+      tr: "kırmızı",
+      ar: "أحمر",
+      ru: "красный",
+      zh: "红色",
+      hi: "लाल",
+    },
+    gold: {
+      en: "gold",
+      es: "dorado",
+      fr: "or",
+      it: "oro",
+      tr: "altın",
+      ar: "ذهبي",
+      ru: "золотой",
+      zh: "金色",
+      hi: "सुनहरा",
+    },
+    blau: {
+      en: "blue",
+      es: "azul",
+      fr: "bleu",
+      it: "blu",
+      tr: "mavi",
+      ar: "أزرق",
+      ru: "синий",
+      zh: "蓝色",
+      hi: "नीला",
+    },
+    weiß: {
+      en: "white",
+      es: "blanco",
+      fr: "blanc",
+      it: "bianco",
+      tr: "beyaz",
+      ar: "أبيض",
+      ru: "белый",
+      zh: "白色",
+      hi: "सफेद",
+    },
+
+    // Common phrases
+    gegründet: {
+      en: "founded",
+      es: "fundada",
+      fr: "fondée",
+      it: "fondata",
+      tr: "kuruldu",
+      ar: "تأسست",
+      ru: "основана",
+      zh: "成立",
+      hi: "स्थापित",
+    },
+    Hauptstadt: {
+      en: "capital",
+      es: "capital",
+      fr: "capitale",
+      it: "capitale",
+      tr: "başkent",
+      ar: "عاصمة",
+      ru: "столица",
+      zh: "首都",
+      hi: "राजधानी",
+    },
+    Flagge: {
+      en: "flag",
+      es: "bandera",
+      fr: "drapeau",
+      it: "bandiera",
+      tr: "bayrak",
+      ar: "علم",
+      ru: "флаг",
+      zh: "国旗",
+      hi: "झंडा",
+    },
+    Farben: {
+      en: "colors",
+      es: "colores",
+      fr: "couleurs",
+      it: "colori",
+      tr: "renkler",
+      ar: "ألوان",
+      ru: "цвета",
+      zh: "颜色",
+      hi: "रंग",
+    },
+    Deutschland: {
+      en: "Germany",
+      es: "Alemania",
+      fr: "Allemagne",
+      it: "Germania",
+      tr: "Almanya",
+      ar: "ألمانيا",
+      ru: "Германия",
+      zh: "德国",
+      hi: "जर्मनी",
+    },
+
+    // Years (commonly used in citizenship tests)
     "1949": {
       en: "1949",
       es: "1949",
@@ -229,40 +581,62 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "1990",
       hi: "1990",
     },
+    "1961": {
+      en: "1961",
+      es: "1961",
+      fr: "1961",
+      it: "1961",
+      tr: "1961",
+      ar: "1961",
+      ru: "1961",
+      zh: "1961",
+      hi: "1961",
+    },
+    "1933": {
+      en: "1933",
+      es: "1933",
+      fr: "1933",
+      it: "1933",
+      tr: "1933",
+      ar: "1933",
+      ru: "1933",
+      zh: "1933",
+      hi: "1933",
+    },
 
-    // Common explanations
-    "Das Grundgesetz ist die deutsche Verfassung.": {
-      en: "The Basic Law is the German constitution.",
-      es: "La Ley Fundamental es la constitución alemana.",
-      fr: "La Loi fondamentale est la constitution allemande.",
-      it: "La Legge fondamentale è la costituzione tedesca.",
-      tr: "Temel Kanun, Alman anayasasıdır.",
-      ar: "القانون الأساسي هو الدستور الألماني.",
-      ru: "Основной закон является немецкой конституцией.",
-      zh: "基本法是德国的宪法。",
-      hi: "मूल कानून जर्मन संविधान है।",
+    // Common explanatory phrases
+    "ist die": {
+      en: "is the",
+      es: "es la",
+      fr: "est la",
+      it: "è la",
+      tr: "dir",
+      ar: "هو",
+      ru: "является",
+      zh: "是",
+      hi: "है",
     },
-    "Die Bundesrepublik Deutschland wurde 1949 gegründet.": {
-      en: "The Federal Republic of Germany was founded in 1949.",
-      es: "La República Federal de Alemania fue fundada en 1949.",
-      fr: "La République fédérale d'Allemagne a été fondée en 1949.",
-      it: "La Repubblica Federale di Germania è stata fondata nel 1949.",
-      tr: "Almanya Federal Cumhuriyeti 1949'da kuruldu.",
-      ar: "تأسست جمهورية ألمانيا الاتحادية عام 1949.",
-      ru: "Федеративная Республика Германия была основана в 1949 году.",
-      zh: "德意志联邦共和国成立于1949年。",
-      hi: "जर्मनी का संघीय गणराज्य 1949 में स्थापित हुआ था।",
+    wurde: {
+      en: "was",
+      es: "fue",
+      fr: "a été",
+      it: "è stato",
+      tr: "oldu",
+      ar: "كان",
+      ru: "был",
+      zh: "是",
+      hi: "था",
     },
-    "Berlin ist die Hauptstadt von Deutschland.": {
-      en: "Berlin is the capital of Germany.",
-      es: "Berlín es la capital de Alemania.",
-      fr: "Berlin est la capitale de l'Allemagne.",
-      it: "Berlino è la capitale della Germania.",
-      tr: "Berlin, Almanya'nın başkentidir.",
-      ar: "برلين هي عاصمة ألمانيا.",
-      ru: "Берлин является столицей Германии.",
-      zh: "柏林是德国的首都。",
-      hi: "बर्लिन जर्मनी की राजधानी है।",
+    hat: {
+      en: "has",
+      es: "tiene",
+      fr: "a",
+      it: "ha",
+      tr: "var",
+      ar: "لديه",
+      ru: "имеет",
+      zh: "有",
+      hi: "है",
     },
   }
 
@@ -272,37 +646,24 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
     return translations[text][targetLanguage]
   }
 
-  // Second, try to find partial matches and replace them
+  // Second, try to translate by replacing multiple terms
   let translatedText = text
-  for (const [germanText, translationMap] of Object.entries(translations)) {
-    if (text.includes(germanText) && translationMap[targetLanguage]) {
-      translatedText = translatedText.replace(germanText, translationMap[targetLanguage])
-      console.log(`Partial translation applied: "${germanText}" -> "${translationMap[targetLanguage]}"`)
+  let hasTranslations = false
+
+  // Sort by length (longest first) to avoid partial replacements
+  const sortedKeys = Object.keys(translations).sort((a, b) => b.length - a.length)
+
+  for (const germanTerm of sortedKeys) {
+    if (translatedText.includes(germanTerm) && translations[germanTerm][targetLanguage]) {
+      translatedText = translatedText.replace(new RegExp(germanTerm, "g"), translations[germanTerm][targetLanguage])
+      hasTranslations = true
+      console.log(`Replaced "${germanTerm}" with "${translations[germanTerm][targetLanguage]}"`)
     }
   }
 
   // If we made any replacements, return the result
-  if (translatedText !== text) {
+  if (hasTranslations) {
     return translatedText
-  }
-
-  // Third, try basic pattern matching for common German question structures
-  if (targetLanguage === "es") {
-    if (text.startsWith("Was ist")) {
-      return text.replace("Was ist", "¿Qué es") + "?"
-    }
-    if (text.startsWith("Wie heißt")) {
-      return text.replace("Wie heißt", "¿Cómo se llama") + "?"
-    }
-    if (text.startsWith("Wann wurde")) {
-      return text.replace("Wann wurde", "¿Cuándo fue") + "?"
-    }
-    if (text.startsWith("Welche")) {
-      return text.replace("Welche", "¿Cuáles") + "?"
-    }
-    if (text.startsWith("Wo")) {
-      return text.replace("Wo", "¿Dónde") + "?"
-    }
   }
 
   // Final fallback - return with language tag
@@ -664,7 +1025,7 @@ export default function SwipeCard({
                                     : language === "zh"
                                       ? "中文"
                                       : language === "hi"
-                                        ? "हiंदी"
+                                        ? "हिंदी"
                                         : language.toUpperCase()}{" "}
                       Translation
                     </span>

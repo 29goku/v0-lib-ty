@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Globe } from "lucide-react"
 import { useStore } from "@/lib/store"
 import { languageNames, languageFlags, type Language } from "@/lib/i18n"
 
@@ -35,8 +35,9 @@ export default function LanguageSelector() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-400/30 rounded-lg text-white hover:from-purple-600/40 hover:to-pink-600/40 transition-all duration-200"
+        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-400/30 rounded-lg text-white hover:from-purple-600/40 hover:to-pink-600/40 transition-all duration-200 backdrop-blur-sm"
       >
+        <Globe className="w-4 h-4" />
         <span className="text-lg">{languageFlags[language]}</span>
         <span className="font-medium">{languageNames[language]}</span>
         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
