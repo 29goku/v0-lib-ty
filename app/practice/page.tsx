@@ -52,7 +52,7 @@ export default function PracticePage() {
     updateStreak,
     addBadge,
     language,
-    loadQuestions, // Imported loadQuestions from useStore
+    loadQuestions,
   } = useStore()
 
   const [showAnswer, setShowAnswer] = useState(false)
@@ -66,7 +66,7 @@ export default function PracticePage() {
   const [showTranslation, setShowTranslation] = useState(false)
   const [translatedQuestion, setTranslatedQuestion] = useState("")
   const [isAutoMode, setIsAutoMode] = useState(true)
-  const [autoDelay, setAutoDelay] = useState(3000) // 3 seconds default
+  const [autoDelay, setAutoDelay] = useState(3000)
 
   const t = getTranslation(language)
 
@@ -75,12 +75,10 @@ export default function PracticePage() {
       setLoading(true)
 
       try {
-        // Load main questions if not already loaded
         if (questions.length === 0) {
           await loadQuestions()
         }
 
-        // Load state questions if available and a state is selected
         if (selectedState) {
           try {
             const stateResponse = await fetch("/data/state-questions.json")
@@ -114,7 +112,6 @@ export default function PracticePage() {
   const currentQuestion = filteredQuestions[currentIndex]
   const categories = [...new Set(allQuestions.map((q) => q.category))]
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight" || event.key === "d" || event.key === "D") {
@@ -146,13 +143,12 @@ export default function PracticePage() {
     setShowAnswer(false)
     setShowCorrect(false)
     setLastAnswer(null)
-    setShowTranslation(false) // Reset translation when moving to next question
+    setShowTranslation(false)
     if (currentIndex < filteredQuestions.length - 1) {
       setCurrentIndex(currentIndex + 1)
     } else {
-      // Optionally handle end of questions, e.g., show a summary
       alert("You've reached the end of the questions!")
-      setCurrentIndex(0) // Loop back to the start
+      setCurrentIndex(0)
     }
   }
 
@@ -162,16 +158,15 @@ export default function PracticePage() {
       setShowAnswer(false)
       setShowCorrect(false)
       setLastAnswer(null)
-      setShowTranslation(false) // Reset translation when moving to previous question
+      setShowTranslation(false)
     }
   }
 
-  // INVERTED SWIPE BEHAVIOR: left swipe = next, right swipe = previous
   const handleSwipe = (direction: "left" | "right") => {
     if (direction === "left") {
-      nextQuestion() // Swipe left goes to next question (inverted)
+      nextQuestion()
     } else {
-      previousQuestion() // Swipe right goes to previous question (inverted)
+      previousQuestion()
     }
   }
 
@@ -180,7 +175,6 @@ export default function PracticePage() {
 
     const isCorrect = selectedAnswerIndex === currentQuestion.answerIndex
 
-    // Record answer
     answerQuestion(currentQuestion.id, selectedAnswerIndex, isCorrect)
 
     if (isCorrect) {
@@ -188,11 +182,9 @@ export default function PracticePage() {
       updateStreak(true)
       setShowCorrect(true)
 
-      // Check for streak badges
       if (userProgress.streak === 5) addBadge("streak-5")
       if (userProgress.streak === 10) addBadge("streak-10")
 
-      // Check for XP badges
       if (userProgress.xp >= 100 && !userProgress.badges.includes("xp-100")) addBadge("xp-100")
       if (userProgress.xp >= 500 && !userProgress.badges.includes("xp-500")) addBadge("xp-500")
     } else {
@@ -216,19 +208,14 @@ export default function PracticePage() {
     setLastAnswer(null)
     setShowCorrect(false)
     setShowTranslation(false)
-    // Add logic to reset streak, XP, etc. if needed
-    // For now, assuming store handles resetting progress if necessary
   }
 
   const translateQuestion = async (question: string) => {
-    // This is a placeholder - you would integrate with a translation service
-    // For now, we'll show a proper translation placeholder
     setTranslatedQuestion(`[ENGLISH] ${question}`)
     setShowTranslation(true)
   }
 
   const handleReadAloud = () => {
-    // Placeholder for read aloud functionality
     console.log("Read aloud functionality triggered")
   }
 
@@ -246,7 +233,6 @@ export default function PracticePage() {
   if (loading || !currentQuestion) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-pink-900 text-white flex items-center justify-center relative overflow-hidden">
-        {/* INSANE loading background */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -267,7 +253,6 @@ export default function PracticePage() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden relative">
-      {/* INSANE vibey background */}
       <div className="fixed inset-0 z-0">
         <div
           className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"
@@ -282,7 +267,6 @@ export default function PracticePage() {
           style={{ animationDelay: "4s", animationDuration: "8s" }}
         ></div>
 
-        {/* Floating neon elements */}
         <div className="absolute top-20 left-20 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
         <div className="absolute top-40 right-32 w-6 h-6 bg-pink-500 rounded-full animate-pulse"></div>
         <div className="absolute bottom-32 left-32 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
@@ -290,7 +274,6 @@ export default function PracticePage() {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-8">
-        {/* VIBEY Header */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
           <Link href="/">
             <Button className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white border-2 border-red-400/50 px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all transform hover:scale-110 backdrop-blur-sm font-black text-sm md:text-base touch-manipulation">
@@ -320,7 +303,6 @@ export default function PracticePage() {
           </div>
         </div>
 
-        {/* Manual Mode Controls */}
         <div className="flex justify-center mb-6">
           <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-cyan-500/25">
             <CardContent className="p-4">
@@ -359,7 +341,6 @@ export default function PracticePage() {
           </Card>
         </div>
 
-        {/* NEON Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
           <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40">
             <CardContent className="p-4 md:p-6">
@@ -425,9 +406,7 @@ export default function PracticePage() {
           </Card>
         </div>
 
-        {/* INSANE Filter Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-          {/* Category Filter */}
           <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
             <CardContent className="p-4 md:p-6">
               <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
@@ -470,7 +449,6 @@ export default function PracticePage() {
             </CardContent>
           </Card>
 
-          {/* State Filter */}
           <Card className="border-2 border-pink-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-pink-500/25">
             <CardContent className="p-4 md:p-6">
               <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
@@ -516,7 +494,6 @@ export default function PracticePage() {
           </Card>
         </div>
 
-        {/* Question Card */}
         <div className="flex justify-center mb-8">
           <div className="w-full max-w-2xl">
             <SwipeCard
@@ -528,7 +505,6 @@ export default function PracticePage() {
               isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
               isTranslated={showTranslation}
               onTranslate={() => setShowTranslation(!showTranslation)}
-              onReadAloud={handleReadAloud}
             />
           </div>
         </div>
@@ -544,7 +520,6 @@ export default function PracticePage() {
           </div>
         )}
 
-        {/* Answer Feedback */}
         {showAnswer && lastAnswer && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 30 }}
@@ -573,7 +548,6 @@ export default function PracticePage() {
           </motion.div>
         )}
 
-        {/* Recent Badges */}
         {userProgress.badges.length > 0 && (
           <div className="flex justify-center">
             <Card className="w-full max-w-md border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/30 to-orange-900/30 backdrop-blur-xl shadow-lg shadow-yellow-500/25">
@@ -599,7 +573,6 @@ export default function PracticePage() {
           </div>
         )}
 
-        {/* Instructions */}
         <div className="text-center mt-12 space-y-6">
           <div className="text-3xl font-black animate-pulse">
             <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">

@@ -36,6 +36,7 @@ export default function SwipeCard({
   const [internalShowTranslation, setInternalShowTranslation] = useState(false)
   const [translatedOptions, setTranslatedOptions] = useState<string[]>([])
   const [translatedExplanation, setTranslatedExplanation] = useState<string>("")
+  const [imageError, setImageError] = useState(false)
   const { language } = useStore()
   const t = getTranslation(language)
 
@@ -53,6 +54,7 @@ export default function SwipeCard({
     setTranslatedText("")
     setTranslatedOptions([])
     setTranslatedExplanation("")
+    setImageError(false)
   }, [question.id])
 
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
@@ -111,6 +113,17 @@ export default function SwipeCard({
       utterance.lang = language === "de" ? "de-DE" : "en-US"
       speechSynthesis.speak(utterance)
     }
+  }
+
+  const handleImageError = () => {
+    setImageError(true)
+  }
+
+  const getImageSrc = () => {
+    if (imageError || !question.image) {
+      return "/placeholder.svg?height=300&width=400&text=Question+Image"
+    }
+    return question.image
   }
 
   return (
@@ -181,14 +194,11 @@ export default function SwipeCard({
           {question.image && (
             <div className="mb-6 flex justify-center">
               <img
-                src={question.image || "/placeholder.svg"}
+                src={getImageSrc() || "/placeholder.svg"}
                 alt="Question illustration"
                 className="max-w-full h-auto rounded-lg shadow-lg border-2 border-cyan-400/30"
                 style={{ maxHeight: "300px" }}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement
-                  target.src = "/placeholder.svg?height=300&width=400&text=Question+Image"
-                }}
+                onError={handleImageError}
               />
             </div>
           )}
