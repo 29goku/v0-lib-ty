@@ -1,200 +1,163 @@
 "use client"
 
-import { useEffect, useState, useCallback } from "react"
-import { useRouter } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
-import { ArrowLeft, Filter, RotateCcw, Zap, Target, MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import SwipeCard from "@/components/SwipeCard"
+import { useEffect, useState } from "react"
 import { useStore } from "@/lib/store"
+import SwipeCard from "@/components/SwipeCard"
+import ProgressBar from "@/components/ProgressBar"
+import Badge from "@/components/Badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Switch } from "@/components/ui/switch"
+import { ArrowLeft, RotateCcw, Filter, MapPin } from "lucide-react"
+import Link from "next/link"
+import { motion } from "framer-motion"
 import { getTranslation } from "@/lib/i18n"
-import { getCategoryEmoji } from "@/lib/category-emojis"
-import type { Question } from "@/lib/store"
+import LanguageSelector from "@/components/LanguageSelector"
 
-const GERMAN_STATES = [
-  "Baden-Württemberg",
-  "Bayern",
-  "Berlin",
-  "Brandenburg",
-  "Bremen",
-  "Hamburg",
-  "Hessen",
-  "Mecklenburg-Vorpommern",
-  "Niedersachsen",
-  "Nordrhein-Westfalen",
-  "Rheinland-Pfalz",
-  "Saarland",
-  "Sachsen",
-  "Sachsen-Anhalt",
-  "Schleswig-Holstein",
-  "Thüringen",
+const germanStates = [
+  { id: "baden-wuerttemberg", name: "Baden-Württemberg", emoji: "🏰" },
+  { id: "bayern", name: "Bayern", emoji: "🍺" },
+  { id: "berlin", name: "Berlin", emoji: "🐻" },
+  { id: "brandenburg", name: "Brandenburg", emoji: "🌲" },
+  { id: "bremen", name: "Bremen", emoji: "⚓" },
+  { id: "hamburg", name: "Hamburg", emoji: "🚢" },
+  { id: "hessen", name: "Hessen", emoji: "🏛️" },
+  { id: "mecklenburg-vorpommern", name: "Mecklenburg-Vorpommern", emoji: "🏖️" },
+  { id: "niedersachsen", name: "Niedersachsen", emoji: "🐎" },
+  { id: "nordrhein-westfalen", name: "Nordrhein-Westfalen", emoji: "⚡" },
+  { id: "rheinland-pfalz", name: "Rheinland-Pfalz", emoji: "🍷" },
+  { id: "saarland", name: "Saarland", emoji: "⚒️" },
+  { id: "sachsen", name: "Sachsen", emoji: "🎭" },
+  { id: "sachsen-anhalt", name: "Sachsen-Anhalt", emoji: "🏰" },
+  { id: "schleswig-holstein", name: "Schleswig-Holstein", emoji: "🌊" },
+  { id: "thueringen", name: "Thüringen", emoji: "🌿" },
 ]
 
 export default function PracticePage() {
-  const router = useRouter()
   const {
     questions,
     stateQuestions,
-    currentQuestionIndex,
-    userProgress,
-    selectedCategory,
-    selectedState,
-    language,
     setQuestions,
     setStateQuestions,
-    nextQuestion,
-    previousQuestion,
-    setCurrentQuestionIndex,
+    currentQuestionIndex,
+    setSelectedState,
+    selectedState,
+    selectedCategory,
+    setSelectedCategory,
+    userProgress,
     answerQuestion,
     flagQuestion,
     unflagQuestion,
     addXP,
     updateStreak,
-    setSelectedCategory,
-    setSelectedState,
     addBadge,
+    language,
     loadQuestions,
   } = useStore()
 
   const [showAnswer, setShowAnswer] = useState(false)
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
-  const [stateQuestionsData, setStateQuestionsData] = useState<Record<string, Question[]>>({})
+  const [lastAnswer, setLastAnswer] = useState<{
+    correct: boolean
+    selectedIndex: number
+  } | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [showCorrect, setShowCorrect] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [showTranslation, setShowTranslation] = useState(false)
+  const [translatedQuestion, setTranslatedQuestion] = useState("")
+  const [isAutoMode, setIsAutoMode] = useState(true)
+  const [autoDelay, setAutoDelay] = useState(3000)
 
   const t = getTranslation(language)
 
-  // Load questions on component mount
   useEffect(() => {
-    const initializeQuestions = async () => {
-      setIsLoading(true)
+    const initializePractice = async () => {
+      setLoading(true)
+
       try {
-        await loadQuestions()
+        if (questions.length === 0) {
+          await loadQuestions()
+        }
 
-        // Load state questions
-        const stateResponse = await fetch("/data/state-questions.json")
-        if (stateResponse.ok) {
-          const stateData = await stateResponse.json()
-          setStateQuestionsData(stateData)
-
-          // If a state is selected, set the state questions
-          if (selectedState && stateData[selectedState]) {
-            setStateQuestions(stateData[selectedState])
+        if (selectedState) {
+          try {
+            const stateResponse = await fetch("/data/state-questions.json")
+            if (stateResponse.ok) {
+              const stateData = await stateResponse.json()
+              if (stateData[selectedState]) {
+                setStateQuestions(stateData[selectedState])
+              }
+            }
+          } catch (error) {
+            console.error("Failed to load state questions:", error)
+            setStateQuestions([])
           }
+        } else {
+          setStateQuestions([])
         }
       } catch (error) {
-        console.error("Failed to load questions:", error)
+        console.error("Failed to initialize practice:", error)
       } finally {
-        setIsLoading(false)
+        setLoading(false)
       }
     }
 
-    initializeQuestions()
-  }, [loadQuestions, selectedState, setStateQuestions])
+    initializePractice()
+  }, [questions.length, loadQuestions, setStateQuestions, selectedState])
 
-  // Get the appropriate questions to use (state or main)
-  const getQuestionsToUse = useCallback((): Question[] => {
+  // Get the appropriate questions based on state selection
+  const getQuestionsToUse = () => {
     if (selectedState && stateQuestions.length > 0) {
       return stateQuestions
     }
     return questions
-  }, [selectedState, stateQuestions, questions])
+  }
 
-  // Get filtered questions based on category
-  const getFilteredQuestions = useCallback((): Question[] => {
-    const questionsToUse = getQuestionsToUse()
+  const questionsToUse = getQuestionsToUse()
 
-    if (!selectedCategory || selectedCategory === "all") {
-      return questionsToUse
+  // Get categories from the appropriate question set
+  const getCategories = () => {
+    if (selectedState && stateQuestions.length > 0) {
+      return [...new Set(stateQuestions.map((q) => q.category))]
     }
+    return [...new Set(questions.map((q) => q.category))]
+  }
 
-    return questionsToUse.filter((q) => q.category.toLowerCase() === selectedCategory.toLowerCase())
-  }, [getQuestionsToUse, selectedCategory])
-
-  // Get available categories from current question set
-  const getCategories = useCallback((): string[] => {
-    const questionsToUse = getQuestionsToUse()
-    const categories = Array.from(new Set(questionsToUse.map((q) => q.category)))
-    return categories.sort()
-  }, [getQuestionsToUse])
-
-  const filteredQuestions = getFilteredQuestions()
-  const currentQuestion = filteredQuestions[currentQuestionIndex]
   const categories = getCategories()
 
-  const handleAnswerSelect = (answerIndex: number) => {
-    if (showAnswer) return
-    setSelectedAnswer(answerIndex)
-  }
+  // Filter questions based on category
+  const filteredQuestions = selectedCategory
+    ? questionsToUse.filter((q) => q.category === selectedCategory)
+    : questionsToUse
 
-  const handleSwipe = (direction: "left" | "right") => {
-    if (direction === "right") {
-      handleNextQuestion()
-    } else {
-      handlePreviousQuestion()
-    }
-  }
+  const currentQuestion = filteredQuestions[currentIndex]
 
-  const handleNextQuestion = () => {
-    if (!currentQuestion) return
-
-    if (selectedAnswer !== null && !showAnswer) {
-      // Process the answer
-      const isCorrect = selectedAnswer === currentQuestion.answerIndex
-      answerQuestion(currentQuestion.id, selectedAnswer, isCorrect)
-      updateStreak(isCorrect)
-
-      if (isCorrect) {
-        addXP(10)
-        // Check for badges
-        if (userProgress.correctAnswers === 0) {
-          addBadge("firstCorrect")
-        }
-        if (userProgress.streak === 4) {
-          addBadge("streak5")
-        }
-        if (userProgress.streak === 9) {
-          addBadge("streak10")
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowRight" || event.key === "d" || event.key === "D") {
+        nextQuestion()
+      } else if (event.key === "ArrowLeft" || event.key === "a" || event.key === "A") {
+        previousQuestion()
+      } else if (event.key >= "1" && event.key <= "4" && !showAnswer) {
+        const optionIndex = Number.parseInt(event.key) - 1
+        if (currentQuestion && optionIndex < currentQuestion.options.length) {
+          handleAnswerSelect(optionIndex)
         }
       }
-
-      setShowAnswer(true)
-      setTimeout(() => {
-        setShowAnswer(false)
-        setSelectedAnswer(null)
-        if (currentQuestionIndex < filteredQuestions.length - 1) {
-          setCurrentQuestionIndex(currentQuestionIndex + 1)
-        } else {
-          setCurrentQuestionIndex(0) // Loop back to start
-        }
-      }, 2000)
-    } else if (showAnswer) {
-      setShowAnswer(false)
-      setSelectedAnswer(null)
-      if (currentQuestionIndex < filteredQuestions.length - 1) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1)
-      } else {
-        setCurrentQuestionIndex(0) // Loop back to start
-      }
     }
-  }
 
-  const handlePreviousQuestion = () => {
-    if (showAnswer) {
-      setShowAnswer(false)
-      setSelectedAnswer(null)
-    } else if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1)
-    } else {
-      setCurrentQuestionIndex(filteredQuestions.length - 1) // Loop to end
-    }
-  }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [currentIndex, showAnswer, currentQuestion])
+
+  // Reset category when state changes
+  useEffect(() => {
+    setSelectedCategory(null)
+    setCurrentIndex(0)
+  }, [selectedState, setSelectedCategory])
 
   const handleFlag = () => {
     if (!currentQuestion) return
-
     if (userProgress.flaggedQuestions.includes(currentQuestion.id)) {
       unflagQuestion(currentQuestion.id)
     } else {
@@ -202,249 +165,438 @@ export default function PracticePage() {
     }
   }
 
-  const handleCategorySelection = (category: string) => {
-    setSelectedCategory(category === "all" ? null : category)
-    setCurrentQuestionIndex(0)
+  const nextQuestion = () => {
     setShowAnswer(false)
-    setSelectedAnswer(null)
+    setShowCorrect(false)
+    setLastAnswer(null)
+    setShowTranslation(false)
+    if (currentIndex < filteredQuestions.length - 1) {
+      setCurrentIndex(currentIndex + 1)
+    } else {
+      alert("You've reached the end of the questions!")
+      setCurrentIndex(0)
+    }
   }
 
-  const handleStateSelection = (state: string | null) => {
-    setSelectedState(state)
-    setSelectedCategory(null) // Reset category when changing state
-    setCurrentQuestionIndex(0)
-    setShowAnswer(false)
-    setSelectedAnswer(null)
+  const previousQuestion = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1)
+      setShowAnswer(false)
+      setShowCorrect(false)
+      setLastAnswer(null)
+      setShowTranslation(false)
+    }
+  }
 
-    // Load state questions if state is selected
-    if (state && stateQuestionsData[state]) {
-      setStateQuestions(stateQuestionsData[state])
+  const handleSwipe = (direction: "left" | "right") => {
+    if (direction === "left") {
+      nextQuestion()
     } else {
-      setStateQuestions([])
+      previousQuestion()
+    }
+  }
+
+  const handleAnswerSelect = (selectedAnswerIndex: number) => {
+    if (showAnswer || !currentQuestion) return
+
+    const isCorrect = selectedAnswerIndex === currentQuestion.answerIndex
+
+    answerQuestion(currentQuestion.id, selectedAnswerIndex, isCorrect)
+
+    if (isCorrect) {
+      addXP(10)
+      updateStreak(true)
+      setShowCorrect(true)
+
+      if (userProgress.streak === 5) addBadge("streak-5")
+      if (userProgress.streak === 10) addBadge("streak-10")
+
+      if (userProgress.xp >= 100 && !userProgress.badges.includes("xp-100")) addBadge("xp-100")
+      if (userProgress.xp >= 500 && !userProgress.badges.includes("xp-500")) addBadge("xp-500")
+    } else {
+      updateStreak(false)
+      setShowCorrect(false)
+    }
+
+    setLastAnswer({ correct: isCorrect, selectedIndex: selectedAnswerIndex })
+    setShowAnswer(true)
+
+    if (isAutoMode) {
+      setTimeout(() => {
+        nextQuestion()
+      }, autoDelay)
     }
   }
 
   const resetProgress = () => {
-    setCurrentQuestionIndex(0)
+    setCurrentIndex(0)
     setShowAnswer(false)
-    setSelectedAnswer(null)
+    setLastAnswer(null)
+    setShowCorrect(false)
+    setShowTranslation(false)
   }
 
-  if (isLoading) {
+  const handleStateSelection = (stateId: string | null) => {
+    setSelectedState(stateId)
+    setSelectedCategory(null) // Reset category when state changes
+    setCurrentIndex(0)
+  }
+
+  const handleCategorySelection = (category: string | null) => {
+    setSelectedCategory(category)
+    setCurrentIndex(0)
+  }
+
+  if (loading || !currentQuestion) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-black flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-400 mx-auto mb-4"></div>
-          <p className="text-white text-xl font-bold">{t.loadingQuestions}</p>
+      <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-pink-900 text-white flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
         </div>
-      </div>
-    )
-  }
 
-  if (filteredQuestions.length === 0) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-black flex items-center justify-center">
-        <Card className="bg-black/80 border-cyan-400/50 p-8 text-center">
-          <p className="text-white text-xl mb-4">{t.failedToLoad}</p>
-          <Button onClick={() => window.location.reload()} className="bg-cyan-500 hover:bg-cyan-600">
-            {t.tryAgain}
-          </Button>
+        <Card className="w-full max-w-md border-2 border-cyan-400/50 bg-black/80 backdrop-blur-xl relative overflow-hidden shadow-2xl shadow-cyan-500/25">
+          <CardContent className="p-8 text-center relative z-10">
+            <div className="text-8xl mb-6 animate-bounce">🚀</div>
+            <div className="animate-spin rounded-full h-16 w-16 bg-gradient-to-r from-cyan-400 border-4 border-cyan-400 border-t-transparent mx-auto mb-8"></div>
+            <p className="text-cyan-300 text-2xl font-black animate-pulse">{t.loadingQuestions}</p>
+            <p className="text-pink-400 text-lg font-bold mt-4 animate-bounce">{t.getReady}</p>
+          </CardContent>
         </Card>
       </div>
     )
   }
 
-  const isFlagged = currentQuestion ? userProgress.flaggedQuestions.includes(currentQuestion.id) : false
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-black">
-      {/* Header */}
-      <div className="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-cyan-400/30">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Button
-              onClick={() => router.push("/")}
-              className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white border-0"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              {t.back}
-            </Button>
+    <div className="min-h-screen bg-black text-white overflow-hidden relative">
+      <div className="fixed inset-0 z-0">
+        <div
+          className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: "4s" }}
+        ></div>
+        <div
+          className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s", animationDuration: "6s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "4s", animationDuration: "8s" }}
+        ></div>
 
-            <div className="text-center">
-              <h1 className="text-2xl md:text-3xl font-black text-white">
-                <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
-                  {t.practiceMode}
-                </span>
-              </h1>
-              <p className="text-cyan-300 text-sm md:text-base">
-                {selectedState ? `${selectedState} - ${t.practiceSubtitle}` : t.practiceSubtitle}
-              </p>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0">
-                <Zap className="w-4 h-4 mr-1" />
-                {userProgress.xp} XP
-              </Badge>
-              <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white border-0">
-                <Target className="w-4 h-4 mr-1" />
-                {userProgress.streak}
-              </Badge>
-            </div>
-          </div>
-        </div>
+        <div className="absolute top-20 left-20 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
+        <div className="absolute top-40 right-32 w-6 h-6 bg-pink-500 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-32 left-32 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
+        <div className="absolute bottom-20 right-20 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
-          {/* Filters */}
-          <div className="mb-8">
-            <Tabs defaultValue="categories" className="w-full">
-              <TabsList className="grid w-full grid-cols-2 bg-black/60 border border-cyan-400/30">
-                <TabsTrigger
-                  value="categories"
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-cyan-500 data-[state=active]:to-blue-500 data-[state=active]:text-white"
-                >
-                  <Filter className="w-4 h-4 mr-2" />
-                  {selectedState ? `${selectedState} Categories` : t.filterByCategory}
-                </TabsTrigger>
-                <TabsTrigger
-                  value="states"
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white"
-                >
-                  <MapPin className="w-4 h-4 mr-2" />
-                  {t.selectState}
-                </TabsTrigger>
-              </TabsList>
+      <div className="relative z-10 container mx-auto px-4 py-8">
+        <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
+          <Link href="/">
+            <Button className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white border-2 border-red-400/50 px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all transform hover:scale-110 backdrop-blur-sm font-black text-sm md:text-base touch-manipulation">
+              <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+              {t.back.toUpperCase()}
+            </Button>
+          </Link>
 
-              <TabsContent value="categories" className="mt-4">
-                <div className="flex flex-wrap gap-2">
-                  <Button
-                    onClick={() => handleCategorySelection("all")}
-                    className={`${
-                      !selectedCategory
-                        ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white"
-                        : "bg-black/60 text-gray-300 hover:bg-black/80"
-                    } border border-cyan-400/30`}
-                  >
-                    {selectedState ? `All ${selectedState} Categories` : t.allCategories}
-                  </Button>
-                  {categories.map((category) => (
-                    <Button
-                      key={category}
-                      onClick={() => handleCategorySelection(category)}
-                      className={`${
-                        selectedCategory === category
-                          ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white"
-                          : "bg-black/60 text-gray-300 hover:bg-black/80"
-                      } border border-cyan-400/30`}
-                    >
-                      {getCategoryEmoji(category)} {category}
-                    </Button>
-                  ))}
-                </div>
-              </TabsContent>
-
-              <TabsContent value="states" className="mt-4">
-                <div className="flex flex-wrap gap-2">
-                  <Button
-                    onClick={() => handleStateSelection(null)}
-                    className={`${
-                      !selectedState
-                        ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white"
-                        : "bg-black/60 text-gray-300 hover:bg-black/80"
-                    } border border-cyan-400/30`}
-                  >
-                    {t.allGermany}
-                  </Button>
-                  {GERMAN_STATES.map((state) => (
-                    <Button
-                      key={state}
-                      onClick={() => handleStateSelection(state)}
-                      className={`${
-                        selectedState === state
-                          ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white"
-                          : "bg-black/60 text-gray-300 hover:bg-black/80"
-                      } border border-cyan-400/30`}
-                    >
-                      {state}
-                    </Button>
-                  ))}
-                </div>
-              </TabsContent>
-            </Tabs>
-          </div>
-
-          {/* Progress */}
-          <div className="mb-8">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-cyan-300 font-bold">
-                {t.question} {currentQuestionIndex + 1} {t.of} {filteredQuestions.length}
+          <div className="text-center">
+            <h1 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">
+              <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
+                {t.practiceMode.toUpperCase()}
               </span>
-              <Button
-                onClick={resetProgress}
-                className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white border-0 px-3 py-2"
-              >
-                <RotateCcw className="w-4 h-4 mr-1" />
-                {t.reset}
-              </Button>
-            </div>
-            <div className="w-full bg-black/60 rounded-full h-3 border border-cyan-400/30">
-              <div
-                className="bg-gradient-to-r from-cyan-400 to-blue-500 h-3 rounded-full transition-all duration-300"
-                style={{
-                  width: `${((currentQuestionIndex + 1) / filteredQuestions.length) * 100}%`,
-                }}
-              />
+            </h1>
+            <div className="text-sm md:text-lg text-pink-300 font-bold">
+              {selectedState
+                ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
+                : `${t.practiceSubtitle} 🚀`}
             </div>
           </div>
 
-          {/* Question Card */}
-          <div className="mb-8">
-            <AnimatePresence mode="wait">
-              {currentQuestion && (
-                <motion.div
-                  key={currentQuestion.id}
-                  initial={{ opacity: 0, x: 300 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -300 }}
-                  transition={{ duration: 0.3 }}
+          <div className="flex items-center gap-2 md:gap-4">
+            <LanguageSelector />
+            <Button
+              onClick={resetProgress}
+              className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-0 text-sm md:text-base touch-manipulation"
+            >
+              <RotateCcw className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+              {t.reset.toUpperCase()}
+            </Button>
+          </div>
+        </div>
+
+        <div className="flex justify-center mb-6">
+          <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-cyan-500/25">
+            <CardContent className="p-4">
+              <div className="flex items-center justify-center space-x-4">
+                <span className="text-cyan-300 font-bold">Manual Mode</span>
+                <Switch
+                  checked={isAutoMode}
+                  onCheckedChange={setIsAutoMode}
+                  className="data-[state=checked]:bg-green-500"
+                />
+                <span className="text-green-300 font-bold">Auto Mode</span>
+                {isAutoMode && (
+                  <div className="flex items-center space-x-2 ml-4">
+                    <span className="text-yellow-300 text-sm">Delay:</span>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-yellow-300 text-xs">2s</span>
+                      <input
+                        type="range"
+                        min="2000"
+                        max="5000"
+                        step="500"
+                        value={autoDelay}
+                        onChange={(e) => setAutoDelay(Number(e.target.value))}
+                        className="w-20 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
+                        style={{
+                          background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${((autoDelay - 2000) / 3000) * 100}%, #374151 ${((autoDelay - 2000) / 3000) * 100}%, #374151 100%)`,
+                        }}
+                      />
+                      <span className="text-yellow-300 text-xs">5s</span>
+                      <span className="text-yellow-300 text-sm ml-2">{autoDelay / 1000}s</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
+          <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40">
+            <CardContent className="p-4 md:p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-cyan-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.progress}</p>
+                  <p className="text-xl md:text-3xl font-black text-white">
+                    {currentIndex + 1}/{filteredQuestions.length}
+                  </p>
+                </div>
+                <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-pulse">🎯</div>
+              </div>
+              <div className="mt-2 md:mt-4">
+                <ProgressBar current={currentIndex + 1} total={filteredQuestions.length} label="" showNumbers={false} />
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-2 border-yellow-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-yellow-500/25 hover:shadow-xl hover:shadow-yellow-500/40">
+            <CardContent className="p-4 md:p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-yellow-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.xp}</p>
+                  <p className="text-xl md:text-3xl font-black text-yellow-400">{userProgress.xp}</p>
+                </div>
+                <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-bounce">⚡</div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40">
+            <CardContent className="p-4 md:p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-orange-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.streak}</p>
+                  <p className="text-xl md:text-3xl font-black text-orange-400">{userProgress.streak}</p>
+                </div>
+                <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-pulse">🔥</div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-2 border-green-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40">
+            <CardContent className="p-4 md:p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-green-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.accuracy}</p>
+                  <p className="text-xl md:text-3xl font-black text-green-400">
+                    {userProgress.questionsAnswered > 0
+                      ? Math.round((userProgress.correctAnswers / userProgress.questionsAnswered) * 100)
+                      : 0}
+                    %
+                  </p>
+                </div>
+                <div
+                  className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-spin"
+                  style={{ animationDuration: "3s" }}
                 >
-                  <SwipeCard
-                    question={currentQuestion}
-                    onSwipe={handleSwipe}
-                    onFlag={handleFlag}
-                    isFlagged={isFlagged}
-                    showAnswer={showAnswer}
-                    onAnswerSelect={handleAnswerSelect}
-                  />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Instructions */}
-          <Card className="bg-black/60 border-cyan-400/30 backdrop-blur-xl">
-            <CardContent className="p-6 text-center">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white">
-                <div className="space-y-2">
-                  <div className="text-2xl">👆</div>
-                  <p className="font-bold text-cyan-300">{t.selectAnswer}</p>
-                  <p className="text-sm text-gray-300">Choose your answer first</p>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-2xl">👈👉</div>
-                  <p className="font-bold text-cyan-300">{t.swipeInstructions}</p>
-                  <p className="text-sm text-gray-300">Drag the card left or right</p>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-2xl">⌨️</div>
-                  <p className="font-bold text-cyan-300">{t.keyboardShortcuts}</p>
-                  <p className="text-sm text-gray-300">Use arrow keys for navigation</p>
+                  📊
                 </div>
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+          <Card className="border-2 border-pink-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-pink-500/25">
+            <CardContent className="p-4 md:p-6">
+              <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                <MapPin className="w-5 h-5 md:w-6 md:h-6 text-pink-400 animate-bounce" />
+                <h3 className="text-lg md:text-xl font-black text-pink-300 uppercase tracking-wider">
+                  {t.selectState}
+                </h3>
+              </div>
+              <div className="state-filter-container">
+                <div className="state-filter-grid state-filter-scroll">
+                  <button
+                    onClick={() => handleStateSelection(null)}
+                    className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
+                      !selectedState
+                        ? "bg-gradient-to-r from-pink-500 to-red-500 text-white shadow-lg shadow-pink-500/50 border-2 border-pink-400"
+                        : "bg-black/50 text-pink-300 hover:bg-black/80 hover:text-white border-2 border-pink-400/30"
+                    }`}
+                  >
+                    🇩🇪 {t.allGermany}
+                  </button>
+                  {germanStates.map((state) => (
+                    <button
+                      key={state.id}
+                      onClick={() => handleStateSelection(state.id)}
+                      className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
+                        selectedState === state.id
+                          ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-lg shadow-yellow-500/50 border-2 border-yellow-400"
+                          : "bg-black/50 text-yellow-300 hover:bg-black/80 hover:text-white border-2 border-yellow-400/30"
+                      }`}
+                    >
+                      {state.emoji} {state.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
+            <CardContent className="p-4 md:p-6">
+              <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                <Filter className="w-5 h-5 md:w-6 md:h-6 text-purple-400 animate-pulse" />
+                <h3 className="text-lg md:text-xl font-black text-purple-300 uppercase tracking-wider">
+                  {selectedState
+                    ? `${germanStates.find((s) => s.id === selectedState)?.name} Categories`
+                    : t.filterByCategory}
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => handleCategorySelection(null)}
+                  className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                    !selectedCategory
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
+                      : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
+                  }`}
+                >
+                  🌟 {selectedState ? "All State Categories" : t.allCategories}
+                </button>
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => handleCategorySelection(category)}
+                    className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                      selectedCategory === category
+                        ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50 border-2 border-purple-400"
+                        : "bg-black/50 text-purple-300 hover:bg-black/80 hover:text-white border-2 border-purple-400/30"
+                    }`}
+                  >
+                    🔥 {category}
+                  </button>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="flex justify-center mb-8">
+          <div className="w-full max-w-2xl">
+            <SwipeCard
+              question={currentQuestion}
+              onSwipe={handleSwipe}
+              onAnswerSelect={handleAnswerSelect}
+              showAnswer={showAnswer}
+              onFlag={handleFlag}
+              isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
+              isTranslated={showTranslation}
+              onTranslate={() => setShowTranslation(!showTranslation)}
+            />
+          </div>
+        </div>
+
+        {!isAutoMode && showAnswer && (
+          <div className="flex justify-center mb-8">
+            <Button
+              onClick={nextQuestion}
+              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-black px-8 py-4 text-xl rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+            >
+              Next Question →
+            </Button>
+          </div>
+        )}
+
+        {showAnswer && lastAnswer && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
+            className="flex justify-center mb-8"
+          >
+            <Card
+              className={`w-full max-w-md border-4 shadow-2xl backdrop-blur-xl relative overflow-hidden ${
+                lastAnswer.correct
+                  ? "border-green-400 bg-gradient-to-br from-green-900/50 to-emerald-900/50 shadow-green-500/50"
+                  : "border-red-400 bg-gradient-to-br from-red-900/50 to-pink-900/50 shadow-red-500/50"
+              }`}
+            >
+              <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+              <CardContent className="p-8 text-center relative z-10">
+                <div className="text-8xl mb-4 animate-bounce">{lastAnswer.correct ? "🎉" : "💪"}</div>
+                <div
+                  className={`text-4xl font-black mb-4 animate-pulse ${lastAnswer.correct ? "text-green-400" : "text-red-400"}`}
+                >
+                  {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
+                </div>
+                <p className="text-2xl text-white font-bold">{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        )}
+
+        {userProgress.badges.length > 0 && (
+          <div className="flex justify-center">
+            <Card className="w-full max-w-md border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/30 to-orange-900/30 backdrop-blur-xl shadow-lg shadow-yellow-500/25">
+              <CardHeader>
+                <CardTitle className="text-center text-yellow-400 font-black text-2xl animate-pulse">
+                  {t.achievements}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex justify-center space-x-4">
+                  {userProgress.badges.slice(-3).map((badge, index) => (
+                    <div
+                      key={badge}
+                      className="hover:scale-125 transition-transform cursor-pointer animate-bounce"
+                      style={{ animationDelay: `${index * 0.2}s` }}
+                    >
+                      <Badge type={badge} earned size="sm" />
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+        <div className="text-center mt-12 space-y-6">
+          <div className="text-3xl font-black animate-pulse">
+            <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
+              {t.howToPractice.toUpperCase()}
+            </span>
+          </div>
+          <div className="space-y-3 text-lg max-w-2xl mx-auto">
+            <p className="text-cyan-300 font-bold">💡 {t.swipeInstructions}</p>
+            <p className="text-green-300 font-bold">⌨️ {t.keyboardShortcuts}</p>
+            <p className="text-yellow-300 font-bold">🔄 Toggle between Auto and Manual mode above</p>
+            <p className="text-pink-300 font-bold">🏛️ Select a state to practice state-specific questions</p>
+          </div>
+          <div className="text-2xl font-black text-white animate-bounce mt-8">{t.letsDominate} 🚀</div>
         </div>
       </div>
     </div>

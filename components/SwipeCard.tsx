@@ -1,292 +1,238 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState, useEffect } from "react"
+import { motion, type PanInfo, useMotionValue, useTransform } from "framer-motion"
+import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Flag, Languages, Volume2 } from "lucide-react"
-import { motion, useMotionValue, useTransform, type PanInfo } from "framer-motion"
+import { Flag, Volume2, Languages } from "lucide-react"
 import { useStore } from "@/lib/store"
 import { getTranslation } from "@/lib/i18n"
-import type { Question } from "@/lib/store"
+
+interface Question {
+  id: string
+  category: string
+  question: string
+  options: string[]
+  answerIndex: number
+  explanation: string
+  image?: string
+}
 
 interface SwipeCardProps {
   question: Question
   onSwipe: (direction: "left" | "right") => void
+  onAnswerSelect: (answerIndex: number) => void
+  showAnswer: boolean
   onFlag: () => void
   isFlagged: boolean
-  showAnswer?: boolean
-  onAnswerSelect?: (index: number) => void
   isTranslated?: boolean
   onTranslate?: () => void
 }
 
-// Translation service - simulates real translation API
-const translateText = async (text: string, targetLanguage: string): Promise<string> => {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 500))
-
-  // Mock translations for different languages
+// Translation service - maps common German citizenship test content to multiple languages
+const translateText = (text: string, targetLanguage: string): string => {
   const translations: Record<string, Record<string, string>> = {
-    en: {
-      "Wie heißt die deutsche Verfassung?": "What is the German constitution called?",
-      Grundgesetz: "Basic Law",
-      Bundesgesetz: "Federal Law",
-      Gesetzbuch: "Legal Code",
-      Verfassungsgesetz: "Constitutional Law",
-      "Das Grundgesetz ist die deutsche Verfassung.": "The Basic Law is the German constitution.",
-      "Wann wurde die Bundesrepublik Deutschland gegründet?": "When was the Federal Republic of Germany founded?",
-      "1945": "1945",
-      "1949": "1949",
-      "1989": "1989",
-      "1990": "1990",
-      "Die Bundesrepublik Deutschland wurde 1949 gegründet.": "The Federal Republic of Germany was founded in 1949.",
+    // Common question patterns
+    "Was ist die Hauptstadt von Deutschland?": {
+      en: "What is the capital of Germany?",
+      es: "¿Cuál es la capital de Alemania?",
+      fr: "Quelle est la capitale de l'Allemagne?",
+      it: "Qual è la capitale della Germania?",
+      tr: "Almanya'nın başkenti nedir?",
+      ar: "ما هي عاصمة ألمانيا؟",
+      ru: "Какая столица Германии?",
+      zh: "德国的首都是什么？",
+      hi: "जर्मनी की राजधानी क्या है?",
     },
-    es: {
-      "Wie heißt die deutsche Verfassung?": "¿Cómo se llama la constitución alemana?",
-      Grundgesetz: "Ley Fundamental",
-      Bundesgesetz: "Ley Federal",
-      Gesetzbuch: "Código Legal",
-      Verfassungsgesetz: "Ley Constitucional",
-      "Das Grundgesetz ist die deutsche Verfassung.": "La Ley Fundamental es la constitución alemana.",
-      "Wann wurde die Bundesrepublik Deutschland gegründet?": "¿Cuándo se fundó la República Federal de Alemania?",
-      "1945": "1945",
-      "1949": "1949",
-      "1989": "1989",
-      "1990": "1990",
-      "Die Bundesrepublik Deutschland wurde 1949 gegründet.": "La República Federal de Alemania fue fundada en 1949.",
+    "Wann wurde die Berliner Mauer gebaut?": {
+      en: "When was the Berlin Wall built?",
+      es: "¿Cuándo se construyó el Muro de Berlín?",
+      fr: "Quand le mur de Berlin a-t-il été construit?",
+      it: "Quando è stato costruito il Muro di Berlino?",
+      tr: "Berlin Duvarı ne zaman inşa edildi?",
+      ar: "متى تم بناء جدار برلين؟",
+      ru: "Когда была построена Берлинская стена?",
+      zh: "柏林墙是什么时候建造的？",
+      hi: "बर्लिन की दीवार कब बनाई गई थी?",
     },
-    fr: {
-      "Wie heißt die deutsche Verfassung?": "Comment s'appelle la constitution allemande?",
-      Grundgesetz: "Loi fondamentale",
-      Bundesgesetz: "Loi fédérale",
-      Gesetzbuch: "Code juridique",
-      Verfassungsgesetz: "Loi constitutionnelle",
-      "Das Grundgesetz ist die deutsche Verfassung.": "La Loi fondamentale est la constitution allemande.",
-      "Wann wurde die Bundesrepublik Deutschland gegründet?":
-        "Quand la République fédérale d'Allemagne a-t-elle été fondée?",
-      "1945": "1945",
-      "1949": "1949",
-      "1989": "1989",
-      "1990": "1990",
-      "Die Bundesrepublik Deutschland wurde 1949 gegründet.":
-        "La République fédérale d'Allemagne a été fondée en 1949.",
+    // Common options
+    Berlin: {
+      en: "Berlin",
+      es: "Berlín",
+      fr: "Berlin",
+      it: "Berlino",
+      tr: "Berlin",
+      ar: "برلين",
+      ru: "Берлин",
+      zh: "柏林",
+      hi: "बर्लिन",
     },
-    it: {
-      "Wie heißt die deutsche Verfassung?": "Come si chiama la costituzione tedesca?",
-      Grundgesetz: "Legge fondamentale",
-      Bundesgesetz: "Legge federale",
-      Gesetzbuch: "Codice legale",
-      Verfassungsgesetz: "Legge costituzionale",
-      "Das Grundgesetz ist die deutsche Verfassung.": "La Legge fondamentale è la costituzione tedesca.",
-      "Wann wurde die Bundesrepublik Deutschland gegründet?":
-        "Quando è stata fondata la Repubblica Federale di Germania?",
-      "1945": "1945",
-      "1949": "1949",
-      "1989": "1989",
-      "1990": "1990",
-      "Die Bundesrepublik Deutschland wurde 1949 gegründet.":
-        "La Repubblica Federale di Germania è stata fondata nel 1949.",
+    München: {
+      en: "Munich",
+      es: "Múnich",
+      fr: "Munich",
+      it: "Monaco",
+      tr: "Münih",
+      ar: "ميونيخ",
+      ru: "Мюнхен",
+      zh: "慕尼黑",
+      hi: "म्यूनिख",
     },
-    tr: {
-      "Wie heißt die deutsche Verfassung?": "Alman anayasasının adı nedir?",
-      Grundgesetz: "Temel Kanun",
-      Bundesgesetz: "Federal Kanun",
-      Gesetzbuch: "Kanun Kitabı",
-      Verfassungsgesetz: "Anayasa Kanunu",
-      "Das Grundgesetz ist die deutsche Verfassung.": "Temel Kanun, Alman anayasasıdır.",
-      "Wann wurde die Bundesrepublik Deutschland gegründet?": "Almanya Federal Cumhuriyeti ne zaman kuruldu?",
-      "1945": "1945",
-      "1949": "1949",
-      "1989": "1989",
-      "1990": "1990",
-      "Die Bundesrepublik Deutschland wurde 1949 gegründet.": "Almanya Federal Cumhuriyeti 1949'da kuruldu.",
+    Frankfurt: {
+      en: "Frankfurt",
+      es: "Fráncfort",
+      fr: "Francfort",
+      it: "Francoforte",
+      tr: "Frankfurt",
+      ar: "فرانكفورت",
+      ru: "Франкфурт",
+      zh: "法兰克福",
+      hi: "फ्रैंकफर्ट",
     },
-    ar: {
-      "Wie heißt die deutsche Verfassung?": "ما اسم الدستور الألماني؟",
-      Grundgesetz: "القانون الأساسي",
-      Bundesgesetz: "القانون الاتحادي",
-      Gesetzbuch: "كتاب القانون",
-      Verfassungsgesetz: "القانون الدستوري",
-      "Das Grundgesetz ist die deutsche Verfassung.": "القانون الأساسي هو الدستور الألماني.",
-      "Wann wurde die Bundesrepublik Deutschland gegründet?": "متى تأسست جمهورية ألمانيا الاتحادية؟",
-      "1945": "1945",
-      "1949": "1949",
-      "1989": "1989",
-      "1990": "1990",
-      "Die Bundesrepublik Deutschland wurde 1949 gegründet.": "تأسست جمهورية ألمانيا الاتحادية عام 1949.",
-    },
-    ru: {
-      "Wie heißt die deutsche Verfassung?": "Как называется немецкая конституция?",
-      Grundgesetz: "Основной закон",
-      Bundesgesetz: "Федеральный закон",
-      Gesetzbuch: "Кодекс законов",
-      Verfassungsgesetz: "Конституционный закон",
-      "Das Grundgesetz ist die deutsche Verfassung.": "Основной закон является немецкой конституцией.",
-      "Wann wurde die Bundesrepublik Deutschland gegründet?": "Когда была основана Федеративная Республика Германия?",
-      "1945": "1945",
-      "1949": "1949",
-      "1989": "1989",
-      "1990": "1990",
-      "Die Bundesrepublik Deutschland wurde 1949 gegründet.":
-        "Федеративная Республика Германия была основана в 1949 году.",
-    },
-    zh: {
-      "Wie heißt die deutsche Verfassung?": "德国宪法叫什么名字？",
-      Grundgesetz: "基本法",
-      Bundesgesetz: "联邦法",
-      Gesetzbuch: "法典",
-      Verfassungsgesetz: "宪法",
-      "Das Grundgesetz ist die deutsche Verfassung.": "基本法是德国的宪法。",
-      "Wann wurde die Bundesrepublik Deutschland gegründet?": "德意志联邦共和国是什么时候成立的？",
-      "1945": "1945",
-      "1949": "1949",
-      "1989": "1989",
-      "1990": "1990",
-      "Die Bundesrepublik Deutschland wurde 1949 gegründet.": "德意志联邦共和国成立于1949年。",
-    },
-    hi: {
-      "Wie heißt die deutsche Verfassung?": "जर्मन संविधान का नाम क्या है?",
-      Grundgesetz: "मूल कानून",
-      Bundesgesetz: "संघीय कानून",
-      Gesetzbuch: "कानून की किताब",
-      Verfassungsgesetz: "संवैधानिक कानून",
-      "Das Grundgesetz ist die deutsche Verfassung.": "मूल कानून जर्मन संविधान है।",
-      "Wann wurde die Bundesrepublik Deutschland gegründet?": "जर्मनी का संघीय गणराज्य कब स्थापित हुआ था?",
-      "1945": "1945",
-      "1949": "1949",
-      "1989": "1989",
-      "1990": "1990",
-      "Die Bundesrepublik Deutschland wurde 1949 gegründet.": "जर्मनी का संघीय गणराज्य 1949 में स्थापित हुआ था।",
+    Hamburg: {
+      en: "Hamburg",
+      es: "Hamburgo",
+      fr: "Hambourg",
+      it: "Amburgo",
+      tr: "Hamburg",
+      ar: "هامبورغ",
+      ru: "Гамбург",
+      zh: "汉堡",
+      hi: "हैम्बर्ग",
     },
   }
 
-  // If we have a specific translation, use it
-  if (translations[targetLanguage] && translations[targetLanguage][text]) {
-    return translations[targetLanguage][text]
+  // Check for exact matches first
+  if (translations[text] && translations[text][targetLanguage]) {
+    return translations[text][targetLanguage]
   }
 
-  // Otherwise, return a generic translation format
-  return `[${targetLanguage.toUpperCase()}] ${text}`
+  // Fallback: return formatted text with language indicator
+  const languageNames: Record<string, string> = {
+    en: "ENGLISH",
+    es: "ESPAÑOL",
+    fr: "FRANÇAIS",
+    it: "ITALIANO",
+    tr: "TÜRKÇE",
+    ar: "العربية",
+    ru: "РУССКИЙ",
+    zh: "中文",
+    hi: "हिंदी",
+  }
+
+  return `[${languageNames[targetLanguage] || targetLanguage.toUpperCase()}] ${text}`
 }
 
 export default function SwipeCard({
   question,
   onSwipe,
+  onAnswerSelect,
+  showAnswer,
   onFlag,
   isFlagged,
-  showAnswer = false,
-  onAnswerSelect,
-  isTranslated,
+  isTranslated = false,
   onTranslate,
 }: SwipeCardProps) {
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
-  const [isTranslating, setIsTranslating] = useState(false)
-  const [translatedText, setTranslatedText] = useState<string>("")
-  const [internalShowTranslation, setInternalShowTranslation] = useState(false)
-  const [translatedOptions, setTranslatedOptions] = useState<string[]>([])
-  const [translatedExplanation, setTranslatedExplanation] = useState<string>("")
-  const [imageError, setImageError] = useState(false)
   const { language } = useStore()
-  const t = getTranslation(language)
-
-  const showTranslation = isTranslated !== undefined ? isTranslated : internalShowTranslation
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
+  const [imageError, setImageError] = useState(false)
+  const [isTranslating, setIsTranslating] = useState(false)
+  const [translatedContent, setTranslatedContent] = useState<{
+    question: string
+    options: string[]
+    explanation: string
+  } | null>(null)
 
   const x = useMotionValue(0)
   const rotate = useTransform(x, [-200, 200], [-25, 25])
   const opacity = useTransform(x, [-200, -100, 0, 100, 200], [0, 1, 1, 1, 0])
 
-  const cardRef = useRef<HTMLDivElement>(null)
+  const t = getTranslation(language)
 
+  // Reset states when question changes
   useEffect(() => {
     setSelectedAnswer(null)
-    setInternalShowTranslation(false)
-    setTranslatedText("")
-    setTranslatedOptions([])
-    setTranslatedExplanation("")
     setImageError(false)
+    setTranslatedContent(null)
   }, [question.id])
 
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    const offset = info.offset.x
-    const velocity = info.velocity.x
-
-    if (Math.abs(velocity) >= 500) {
-      onSwipe(velocity > 0 ? "right" : "left")
-    } else if (Math.abs(offset) >= 100) {
-      onSwipe(offset > 0 ? "right" : "left")
-    }
-  }
-
-  const handleAnswerClick = (index: number) => {
+  const handleAnswerClick = (answerIndex: number) => {
     if (showAnswer) return
-    setSelectedAnswer(index)
-    onAnswerSelect?.(index)
+    setSelectedAnswer(answerIndex)
+    onAnswerSelect(answerIndex)
   }
 
-  const translateQuestion = async () => {
-    if (isTranslating) return
-
-    if (onTranslate) {
-      onTranslate()
-      return
+  const handleDragEnd = (event: any, info: PanInfo) => {
+    const threshold = 100
+    if (info.offset.x > threshold) {
+      onSwipe("right")
+    } else if (info.offset.x < -threshold) {
+      onSwipe("left")
     }
+  }
 
-    if (internalShowTranslation) {
-      setInternalShowTranslation(false)
-      return
-    }
+  const handleTranslate = async () => {
+    if (!onTranslate) return
 
     setIsTranslating(true)
 
     try {
-      // Translate question text
-      const translatedQuestionText = await translateText(question.question, language)
+      // Simulate translation delay for better UX
+      await new Promise((resolve) => setTimeout(resolve, 500))
 
-      // Translate all options
-      const translatedOptionsArray = await Promise.all(
-        question.options.map((option) => translateText(option, language)),
-      )
+      if (!isTranslated) {
+        // Translate to selected language
+        const translatedQuestion = translateText(question.question, language)
+        const translatedOptions = question.options.map((option) => translateText(option, language))
+        const translatedExplanation = translateText(question.explanation, language)
 
-      // Translate explanation if it exists
-      const translatedExplanationText = question.explanation ? await translateText(question.explanation, language) : ""
+        setTranslatedContent({
+          question: translatedQuestion,
+          options: translatedOptions,
+          explanation: translatedExplanation,
+        })
+      } else {
+        // Clear translation (back to German)
+        setTranslatedContent(null)
+      }
 
-      setTranslatedText(translatedQuestionText)
-      setTranslatedOptions(translatedOptionsArray)
-      setTranslatedExplanation(translatedExplanationText)
-      setInternalShowTranslation(true)
-    } catch (error) {
-      console.error("Translation failed:", error)
-      // Fallback to simple format if translation fails
-      setTranslatedText(`[${language.toUpperCase()}] ${question.question}`)
-      setTranslatedOptions(question.options.map((option) => `[${language.toUpperCase()}] ${option}`))
-      setTranslatedExplanation(question.explanation ? `[${language.toUpperCase()}] ${question.explanation}` : "")
-      setInternalShowTranslation(true)
+      onTranslate()
     } finally {
       setIsTranslating(false)
     }
   }
 
-  const speakText = (text: string) => {
+  const handleReadAloud = () => {
     if ("speechSynthesis" in window) {
-      const utterance = new SpeechSynthesisUtterance(text)
+      // Cancel any ongoing speech
+      window.speechSynthesis.cancel()
 
-      // Set language for speech synthesis based on current UI language
-      const speechLangMap: Record<string, string> = {
-        en: "en-US",
-        de: "de-DE",
-        es: "es-ES",
-        fr: "fr-FR",
-        it: "it-IT",
-        tr: "tr-TR",
-        ar: "ar-SA",
-        ru: "ru-RU",
-        zh: "zh-CN",
-        hi: "hi-IN",
+      const textToSpeak = isTranslated && translatedContent ? translatedContent.question : question.question
+
+      const utterance = new SpeechSynthesisUtterance(textToSpeak)
+
+      // Set language based on current state
+      if (isTranslated) {
+        const languageCodes: Record<string, string> = {
+          en: "en-US",
+          es: "es-ES",
+          fr: "fr-FR",
+          it: "it-IT",
+          tr: "tr-TR",
+          ar: "ar-SA",
+          ru: "ru-RU",
+          zh: "zh-CN",
+          hi: "hi-IN",
+        }
+        utterance.lang = languageCodes[language] || "en-US"
+      } else {
+        utterance.lang = "de-DE" // German
       }
 
-      utterance.lang = speechLangMap[language] || "en-US"
-      utterance.rate = 0.8 // Slightly slower for better comprehension
-      speechSynthesis.speak(utterance)
+      utterance.rate = 0.8
+      utterance.pitch = 1
+
+      window.speechSynthesis.speak(utterance)
     }
   }
 
@@ -294,158 +240,185 @@ export default function SwipeCard({
     setImageError(true)
   }
 
-  const getImageSrc = () => {
-    if (imageError || !question.image) {
-      return "/placeholder.svg?height=300&width=400&text=Question+Image"
+  const getImageSrc = (imagePath?: string) => {
+    if (!imagePath || imageError) {
+      return `/placeholder.svg?height=200&width=400&text=Question+Image`
     }
-    return question.image
+    return imagePath
   }
+
+  const displayContent =
+    isTranslated && translatedContent
+      ? translatedContent
+      : {
+          question: question.question,
+          options: question.options,
+          explanation: question.explanation,
+        }
 
   return (
     <motion.div
-      ref={cardRef}
-      className="w-full max-w-2xl mx-auto cursor-grab active:cursor-grabbing"
-      style={{ x, rotate, opacity }}
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
       onDragEnd={handleDragEnd}
-      whileDrag={{ scale: 1.05 }}
+      style={{ x, rotate, opacity }}
+      className="cursor-grab active:cursor-grabbing"
+      whileTap={{ scale: 0.95 }}
     >
-      <Card className="border-4 border-cyan-400/50 bg-gradient-to-br from-black/80 to-purple-900/80 backdrop-blur-xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse"></div>
+      <Card className="w-full max-w-2xl mx-auto border-2 border-cyan-400/50 bg-gradient-to-br from-black/80 to-purple-900/30 backdrop-blur-xl shadow-2xl shadow-cyan-500/25 relative overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 animate-pulse"></div>
 
-        <CardHeader className="relative z-10">
-          <div className="flex justify-between items-start mb-4">
-            <CardTitle className="text-2xl md:text-3xl font-black text-white leading-tight">
-              <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
-                {t.question} {question.id}
-              </span>
-            </CardTitle>
-            <div className="flex gap-2">
+        <CardContent className="p-6 md:p-8 relative z-10">
+          {/* Header with controls */}
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-2">
+              <div className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full border border-purple-400/30">
+                <span className="text-purple-300 font-bold text-sm">{question.category}</span>
+              </div>
+              {isTranslated && (
+                <div className="px-3 py-1 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full border border-green-400/30">
+                  <span className="text-green-300 font-bold text-sm">{language.toUpperCase()}</span>
+                </div>
+              )}
+            </div>
+
+            <div className="flex items-center gap-2">
               <Button
-                onClick={translateQuestion}
-                disabled={isTranslating}
-                className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white border-0 px-3 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 text-sm font-bold"
-              >
-                <Languages className="w-4 h-4 mr-1" />
-                {isTranslating ? t.translating : showTranslation ? t.translated : t.translate}
-              </Button>
-              <Button
-                onClick={() => speakText(showTranslation && translatedText ? translatedText : question.question)}
-                className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white border-0 px-3 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                onClick={handleReadAloud}
+                className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 hover:from-blue-500/40 hover:to-cyan-500/40 text-cyan-300 border border-cyan-400/30 p-2"
+                size="sm"
               >
                 <Volume2 className="w-4 h-4" />
               </Button>
+
+              {onTranslate && (
+                <Button
+                  onClick={handleTranslate}
+                  disabled={isTranslating}
+                  className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 hover:from-green-500/40 hover:to-emerald-500/40 text-green-300 border border-green-400/30 p-2"
+                  size="sm"
+                >
+                  <Languages className="w-4 h-4" />
+                </Button>
+              )}
+
               <Button
                 onClick={onFlag}
-                className={`border-0 px-3 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 ${
+                className={`p-2 border ${
                   isFlagged
-                    ? "bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white"
-                    : "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white"
+                    ? "bg-gradient-to-r from-yellow-500/40 to-orange-500/40 text-yellow-300 border-yellow-400/50"
+                    : "bg-gradient-to-r from-gray-500/20 to-gray-600/20 text-gray-300 border-gray-400/30 hover:from-yellow-500/20 hover:to-orange-500/20 hover:text-yellow-300"
                 }`}
+                size="sm"
               >
                 <Flag className="w-4 h-4" />
               </Button>
             </div>
           </div>
 
-          <div className="space-y-4">
-            <p className="text-lg md:text-xl text-white leading-relaxed font-medium">{question.question}</p>
-
-            {showTranslation && translatedText && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 p-4 rounded-lg border border-blue-400/30"
-              >
-                <div className="flex items-center mb-2">
-                  <Languages className="w-4 h-4 mr-2 text-blue-300" />
-                  <span className="text-blue-300 text-sm font-bold uppercase">{language} Translation</span>
-                </div>
-                <p className="text-blue-200 text-lg leading-relaxed font-medium">{translatedText}</p>
-              </motion.div>
-            )}
-          </div>
-        </CardHeader>
-
-        <CardContent className="relative z-10 pb-8">
-          {question.image && (
-            <div className="mb-6 flex justify-center">
-              <img
-                src={getImageSrc() || "/placeholder.svg"}
-                alt="Question illustration"
-                className="max-w-full h-auto rounded-lg shadow-lg border-2 border-cyan-400/30"
-                style={{ maxHeight: "300px" }}
-                onError={handleImageError}
-              />
+          {/* Question */}
+          <div className="mb-8">
+            <div
+              className={`p-6 rounded-xl border-2 ${
+                isTranslated
+                  ? "bg-gradient-to-r from-green-900/30 to-emerald-900/30 border-green-400/50"
+                  : "bg-gradient-to-r from-gray-900/50 to-black/50 border-gray-600/50"
+              }`}
+            >
+              <h2 className="text-xl md:text-2xl font-bold text-white leading-relaxed">
+                {isTranslating ? "Translating..." : displayContent.question}
+              </h2>
             </div>
-          )}
-
-          <div className="space-y-3">
-            {question.options.map((option, index) => (
-              <motion.button
-                key={index}
-                onClick={() => handleAnswerClick(index)}
-                disabled={showAnswer}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`w-full p-4 md:p-6 text-left rounded-xl font-bold text-lg md:text-xl transition-all duration-300 border-2 transform hover:scale-[1.02] ${
-                  showAnswer
-                    ? index === question.answerIndex
-                      ? "bg-gradient-to-r from-green-600 to-emerald-600 border-green-400 text-white shadow-lg shadow-green-500/50"
-                      : selectedAnswer === index
-                        ? "bg-gradient-to-r from-red-600 to-pink-600 border-red-400 text-white shadow-lg shadow-red-500/50"
-                        : "bg-black/40 border-gray-600 text-gray-400"
-                    : selectedAnswer === index
-                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 border-cyan-400 text-white shadow-lg shadow-cyan-500/50"
-                      : "bg-black/60 border-cyan-400/30 text-white hover:bg-black/80 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25"
-                }`}
-              >
-                <div className="flex flex-col">
-                  <div className="flex items-start">
-                    <span className="mr-3 text-2xl font-black">{String.fromCharCode(65 + index)}.</span>
-                    <span>{option}</span>
-                  </div>
-                  {showTranslation && translatedOptions[index] && (
-                    <div className="mt-2 ml-8 text-blue-200 text-base opacity-80">{translatedOptions[index]}</div>
-                  )}
-                </div>
-              </motion.button>
-            ))}
           </div>
 
-          {!showAnswer && (
-            <div className="mt-8 text-center space-y-4">
-              <p className="text-cyan-300 text-lg font-bold animate-pulse">💡 {t.selectAnswer}</p>
-              <div className="flex justify-center space-x-8 text-sm md:text-base">
-                <div className="text-green-400 font-bold">← {t.swipeLeft}</div>
-                <div className="text-red-400 font-bold">{t.swipeRight} →</div>
+          {/* Image if present */}
+          {question.image && (
+            <div className="mb-8 flex justify-center">
+              <div className="relative rounded-xl overflow-hidden border-2 border-cyan-400/30 shadow-lg shadow-cyan-500/25">
+                <img
+                  src={getImageSrc(question.image) || "/placeholder.svg"}
+                  alt="Question illustration"
+                  className="max-w-full h-auto max-h-64 object-contain"
+                  onError={handleImageError}
+                  crossOrigin="anonymous"
+                />
               </div>
             </div>
           )}
 
-          {showAnswer && question.explanation && (
+          {/* Answer Options */}
+          <div className="space-y-4 mb-8">
+            {displayContent.options.map((option, index) => {
+              const isSelected = selectedAnswer === index
+              const isCorrect = index === question.answerIndex
+              const showCorrectAnswer = showAnswer && isCorrect
+              const showIncorrectAnswer = showAnswer && isSelected && !isCorrect
+
+              return (
+                <motion.button
+                  key={index}
+                  onClick={() => handleAnswerClick(index)}
+                  disabled={showAnswer}
+                  className={`w-full p-4 md:p-6 rounded-xl border-2 text-left transition-all duration-300 transform hover:scale-[1.02] ${
+                    showCorrectAnswer
+                      ? "bg-gradient-to-r from-green-500/30 to-emerald-500/30 border-green-400 text-green-100 shadow-lg shadow-green-500/25"
+                      : showIncorrectAnswer
+                        ? "bg-gradient-to-r from-red-500/30 to-pink-500/30 border-red-400 text-red-100 shadow-lg shadow-red-500/25"
+                        : isSelected
+                          ? "bg-gradient-to-r from-cyan-500/30 to-blue-500/30 border-cyan-400 text-cyan-100 shadow-lg shadow-cyan-500/25"
+                          : "bg-gradient-to-r from-gray-800/50 to-gray-900/50 border-gray-600/50 text-gray-200 hover:border-cyan-400/50 hover:bg-gradient-to-r hover:from-cyan-900/20 hover:to-blue-900/20"
+                  }`}
+                  whileHover={{ scale: showAnswer ? 1 : 1.02 }}
+                  whileTap={{ scale: showAnswer ? 1 : 0.98 }}
+                >
+                  <div className="flex items-center">
+                    <div
+                      className={`w-8 h-8 rounded-full border-2 flex items-center justify-center mr-4 font-bold ${
+                        showCorrectAnswer
+                          ? "border-green-400 bg-green-500/30 text-green-100"
+                          : showIncorrectAnswer
+                            ? "border-red-400 bg-red-500/30 text-red-100"
+                            : isSelected
+                              ? "border-cyan-400 bg-cyan-500/30 text-cyan-100"
+                              : "border-gray-500 text-gray-400"
+                      }`}
+                    >
+                      {String.fromCharCode(65 + index)}
+                    </div>
+                    <span className="font-semibold text-base md:text-lg flex-1">{isTranslating ? "..." : option}</span>
+                    {showCorrectAnswer && <div className="text-2xl ml-4">✅</div>}
+                    {showIncorrectAnswer && <div className="text-2xl ml-4">❌</div>}
+                  </div>
+                </motion.button>
+              )
+            })}
+          </div>
+
+          {/* Explanation */}
+          {showAnswer && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-6 p-4 md:p-6 bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-xl border border-purple-400/30"
+              transition={{ duration: 0.5 }}
+              className={`p-6 rounded-xl border-2 ${
+                isTranslated
+                  ? "bg-gradient-to-r from-blue-900/30 to-indigo-900/30 border-blue-400/50"
+                  : "bg-gradient-to-r from-purple-900/30 to-pink-900/30 border-purple-400/50"
+              }`}
             >
-              <h4 className="text-xl font-black text-purple-300 mb-3 flex items-center">
-                <span className="mr-2">💡</span>
-                {t.explanation}
-              </h4>
-              <p className="text-white text-lg leading-relaxed mb-3">{question.explanation}</p>
-              {showTranslation && translatedExplanation && (
-                <div className="bg-purple-800/30 p-3 rounded-lg border border-purple-400/20">
-                  <div className="flex items-center mb-2">
-                    <Languages className="w-4 h-4 mr-2 text-purple-300" />
-                    <span className="text-purple-300 text-sm font-bold uppercase">{language} Translation</span>
-                  </div>
-                  <p className="text-purple-200 text-base leading-relaxed">{translatedExplanation}</p>
-                </div>
-              )}
+              <h3 className="text-lg font-bold text-purple-300 mb-3">💡 {t.explanation}</h3>
+              <p className="text-gray-200 leading-relaxed">
+                {isTranslating ? "Translating explanation..." : displayContent.explanation}
+              </p>
             </motion.div>
+          )}
+
+          {/* Swipe Instructions */}
+          {!showAnswer && (
+            <div className="text-center mt-8">
+              <p className="text-gray-400 text-sm font-semibold">👈 {t.swipeInstructions} 👉</p>
+            </div>
           )}
         </CardContent>
       </Card>
