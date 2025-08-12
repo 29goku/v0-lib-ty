@@ -1,68 +1,64 @@
 "use client"
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Globe } from "lucide-react"
+import { useState, useRef, useEffect } from "react"
+import { ChevronDown, Globe } from "lucide-react"
 import { useStore } from "@/lib/store"
-import { type Language, languageNames, languageFlags } from "@/lib/i18n"
-import { motion, AnimatePresence } from "framer-motion"
+import { languageNames, languageFlags, type Language } from "@/lib/i18n"
 
 export default function LanguageSelector() {
-  const { language, setLanguage } = useStore()
   const [isOpen, setIsOpen] = useState(false)
+  const { language, setLanguage } = useStore()
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
-  const languages: Language[] = ["en", "de", "es", "fr", "it", "tr", "ar", "ru", "zh"]
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [isOpen])
+
+  const handleLanguageSelect = (lang: Language) => {
+    setLanguage(lang)
+    setIsOpen(false)
+  }
 
   return (
-    <div className="relative">
-      <Button
+    <div className="relative" ref={dropdownRef}>
+      <button
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600/50 px-4 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 backdrop-blur-sm"
+        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-400/30 rounded-lg text-white hover:from-purple-600/40 hover:to-pink-600/40 transition-all duration-200 backdrop-blur-sm"
       >
-        <Globe className="w-4 h-4 mr-2" />
-        <span className="mr-2">{languageFlags[language]}</span>
-        {languageNames[language]}
-      </Button>
+        <Globe className="w-4 h-4" />
+        <span className="text-lg">{languageFlags[language]}</span>
+        <span className="font-medium">{languageNames[language]}</span>
+        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-full mt-2 right-0 z-50"
-          >
-            <Card className="border border-slate-700/50 bg-slate-900/95 backdrop-blur-xl shadow-2xl min-w-48">
-              <CardContent className="p-2">
-                <div className="grid gap-1">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang}
-                      onClick={() => {
-                        setLanguage(lang)
-                        setIsOpen(false)
-                      }}
-                      className={`w-full text-left px-3 py-2 rounded-lg transition-all flex items-center gap-3 ${
-                        language === lang
-                          ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 border border-cyan-500/30"
-                          : "hover:bg-slate-800/50 text-slate-300 hover:text-white"
-                      }`}
-                    >
-                      <span className="text-lg">{languageFlags[lang]}</span>
-                      <span className="font-medium">{languageNames[lang]}</span>
-                    </button>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Click outside to close */}
-      {isOpen && <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />}
+      {isOpen && (
+        <div className="absolute top-full left-0 mt-2 w-48 bg-black/90 backdrop-blur-xl border border-purple-400/30 rounded-lg shadow-2xl shadow-purple-500/25 z-50 max-h-64 overflow-y-auto">
+          {Object.entries(languageNames).map(([code, name]) => (
+            <button
+              key={code}
+              onClick={() => handleLanguageSelect(code as Language)}
+              className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-purple-600/20 transition-colors duration-200 ${
+                language === code ? "bg-purple-600/30 text-purple-300" : "text-white"
+              }`}
+            >
+              <span className="text-lg">{languageFlags[code as Language]}</span>
+              <span className="font-medium">{name}</span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

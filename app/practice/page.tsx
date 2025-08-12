@@ -7,9 +7,10 @@ import ProgressBar from "@/components/ProgressBar"
 import Badge from "@/components/Badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Switch } from "@/components/ui/switch"
 import { ArrowLeft, RotateCcw, Filter, MapPin } from "lucide-react"
 import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { getTranslation } from "@/lib/i18n"
 import LanguageSelector from "@/components/LanguageSelector"
 
@@ -51,7 +52,7 @@ export default function PracticePage() {
     updateStreak,
     addBadge,
     language,
-    loadQuestions, // Imported loadQuestions from useStore
+    loadQuestions,
   } = useStore()
 
   const [showAnswer, setShowAnswer] = useState(false)
@@ -64,6 +65,8 @@ export default function PracticePage() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showTranslation, setShowTranslation] = useState(false)
   const [translatedQuestion, setTranslatedQuestion] = useState("")
+  const [isAutoMode, setIsAutoMode] = useState(true)
+  const [autoDelay, setAutoDelay] = useState(3000)
 
   const t = getTranslation(language)
 
@@ -72,12 +75,10 @@ export default function PracticePage() {
       setLoading(true)
 
       try {
-        // Load main questions if not already loaded
         if (questions.length === 0) {
           await loadQuestions()
         }
 
-        // Load state questions if available and a state is selected
         if (selectedState) {
           try {
             const stateResponse = await fetch("/data/state-questions.json")
@@ -104,14 +105,33 @@ export default function PracticePage() {
     initializePractice()
   }, [questions.length, loadQuestions, setStateQuestions, selectedState])
 
-  const allQuestions = [...questions, ...stateQuestions]
-  const filteredQuestions = selectedCategory
-    ? allQuestions.filter((q) => q.category === selectedCategory)
-    : allQuestions
-  const currentQuestion = filteredQuestions[currentIndex]
-  const categories = [...new Set(allQuestions.map((q) => q.category))]
+  // Get the appropriate questions based on state selection
+  const getQuestionsToUse = () => {
+    if (selectedState && stateQuestions.length > 0) {
+      return stateQuestions
+    }
+    return questions
+  }
 
-  // Keyboard navigation
+  const questionsToUse = getQuestionsToUse()
+
+  // Get categories from the appropriate question set
+  const getCategories = () => {
+    if (selectedState && stateQuestions.length > 0) {
+      return [...new Set(stateQuestions.map((q) => q.category))]
+    }
+    return [...new Set(questions.map((q) => q.category))]
+  }
+
+  const categories = getCategories()
+
+  // Filter questions based on category
+  const filteredQuestions = selectedCategory
+    ? questionsToUse.filter((q) => q.category === selectedCategory)
+    : questionsToUse
+
+  const currentQuestion = filteredQuestions[currentIndex]
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight" || event.key === "d" || event.key === "D") {
@@ -130,6 +150,12 @@ export default function PracticePage() {
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [currentIndex, showAnswer, currentQuestion])
 
+  // Reset category when state changes
+  useEffect(() => {
+    setSelectedCategory(null)
+    setCurrentIndex(0)
+  }, [selectedState, setSelectedCategory])
+
   const handleFlag = () => {
     if (!currentQuestion) return
     if (userProgress.flaggedQuestions.includes(currentQuestion.id)) {
@@ -143,12 +169,12 @@ export default function PracticePage() {
     setShowAnswer(false)
     setShowCorrect(false)
     setLastAnswer(null)
+    setShowTranslation(false)
     if (currentIndex < filteredQuestions.length - 1) {
       setCurrentIndex(currentIndex + 1)
     } else {
-      // Optionally handle end of questions, e.g., show a summary
       alert("You've reached the end of the questions!")
-      setCurrentIndex(0) // Loop back to the start
+      setCurrentIndex(0)
     }
   }
 
@@ -158,15 +184,15 @@ export default function PracticePage() {
       setShowAnswer(false)
       setShowCorrect(false)
       setLastAnswer(null)
+      setShowTranslation(false)
     }
   }
 
-  // INVERTED SWIPE BEHAVIOR: left swipe = next, right swipe = previous
   const handleSwipe = (direction: "left" | "right") => {
     if (direction === "left") {
-      nextQuestion() // Swipe left goes to next question (inverted)
+      nextQuestion()
     } else {
-      previousQuestion() // Swipe right goes to previous question (inverted)
+      previousQuestion()
     }
   }
 
@@ -175,7 +201,6 @@ export default function PracticePage() {
 
     const isCorrect = selectedAnswerIndex === currentQuestion.answerIndex
 
-    // Record answer
     answerQuestion(currentQuestion.id, selectedAnswerIndex, isCorrect)
 
     if (isCorrect) {
@@ -183,11 +208,9 @@ export default function PracticePage() {
       updateStreak(true)
       setShowCorrect(true)
 
-      // Check for streak badges
       if (userProgress.streak === 5) addBadge("streak-5")
       if (userProgress.streak === 10) addBadge("streak-10")
 
-      // Check for XP badges
       if (userProgress.xp >= 100 && !userProgress.badges.includes("xp-100")) addBadge("xp-100")
       if (userProgress.xp >= 500 && !userProgress.badges.includes("xp-500")) addBadge("xp-500")
     } else {
@@ -198,10 +221,11 @@ export default function PracticePage() {
     setLastAnswer({ correct: isCorrect, selectedIndex: selectedAnswerIndex })
     setShowAnswer(true)
 
-    // Auto-advance after showing answer (reduced time for better mobile experience)
-    setTimeout(() => {
-      nextQuestion()
-    }, 2000)
+    if (isAutoMode) {
+      setTimeout(() => {
+        nextQuestion()
+      }, autoDelay)
+    }
   }
 
   const resetProgress = () => {
@@ -209,22 +233,23 @@ export default function PracticePage() {
     setShowAnswer(false)
     setLastAnswer(null)
     setShowCorrect(false)
-    // Add logic to reset streak, XP, etc. if needed
-    // For now, assuming store handles resetting progress if necessary
+    setShowTranslation(false)
   }
 
-  // Add translation function
-  const translateQuestion = async (question: string) => {
-    // This is a placeholder - you would integrate with a translation service
-    // For now, we'll just show the original question
-    setTranslatedQuestion(`[${language.toUpperCase()}] ${question}`)
-    setShowTranslation(true)
+  const handleStateSelection = (stateId: string | null) => {
+    setSelectedState(stateId)
+    setSelectedCategory(null) // Reset category when state changes
+    setCurrentIndex(0)
+  }
+
+  const handleCategorySelection = (category: string | null) => {
+    setSelectedCategory(category)
+    setCurrentIndex(0)
   }
 
   if (loading || !currentQuestion) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-pink-900 text-white flex items-center justify-center relative overflow-hidden">
-        {/* INSANE loading background */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -234,7 +259,7 @@ export default function PracticePage() {
         <Card className="w-full max-w-md border-2 border-cyan-400/50 bg-black/80 backdrop-blur-xl relative overflow-hidden shadow-2xl shadow-cyan-500/25">
           <CardContent className="p-8 text-center relative z-10">
             <div className="text-8xl mb-6 animate-bounce">🚀</div>
-            <div className="animate-spin rounded-full h-16 w-16 border-4 border-cyan-400 border-t-transparent mx-auto mb-8"></div>
+            <div className="animate-spin rounded-full h-16 w-16 bg-gradient-to-r from-cyan-400 border-4 border-cyan-400 border-t-transparent mx-auto mb-8"></div>
             <p className="text-cyan-300 text-2xl font-black animate-pulse">{t.loadingQuestions}</p>
             <p className="text-pink-400 text-lg font-bold mt-4 animate-bounce">{t.getReady}</p>
           </CardContent>
@@ -244,8 +269,7 @@ export default function PracticePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-pink-900 text-white overflow-hidden relative">
-      {/* INSANE vibey background */}
+    <div className="min-h-screen bg-black text-white overflow-hidden relative">
       <div className="fixed inset-0 z-0">
         <div
           className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"
@@ -260,15 +284,13 @@ export default function PracticePage() {
           style={{ animationDelay: "4s", animationDuration: "8s" }}
         ></div>
 
-        {/* Floating neon elements */}
         <div className="absolute top-20 left-20 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
         <div className="absolute top-40 right-32 w-6 h-6 bg-pink-500 rounded-full animate-pulse"></div>
         <div className="absolute bottom-32 left-32 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
         <div className="absolute bottom-20 right-20 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 py-6">
-        {/* VIBEY Header */}
+      <div className="relative z-10 container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
           <Link href="/">
             <Button className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white border-2 border-red-400/50 px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all transform hover:scale-110 backdrop-blur-sm font-black text-sm md:text-base touch-manipulation">
@@ -283,7 +305,11 @@ export default function PracticePage() {
                 {t.practiceMode.toUpperCase()}
               </span>
             </h1>
-            <div className="text-sm md:text-lg text-pink-300 font-bold">{t.practiceSubtitle} 🚀</div>
+            <div className="text-sm md:text-lg text-pink-300 font-bold">
+              {selectedState
+                ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
+                : `${t.practiceSubtitle} 🚀`}
+            </div>
           </div>
 
           <div className="flex items-center gap-2 md:gap-4">
@@ -298,7 +324,44 @@ export default function PracticePage() {
           </div>
         </div>
 
-        {/* NEON Stats Grid */}
+        <div className="flex justify-center mb-6">
+          <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-cyan-500/25">
+            <CardContent className="p-4">
+              <div className="flex items-center justify-center space-x-4">
+                <span className="text-cyan-300 font-bold">Manual Mode</span>
+                <Switch
+                  checked={isAutoMode}
+                  onCheckedChange={setIsAutoMode}
+                  className="data-[state=checked]:bg-green-500"
+                />
+                <span className="text-green-300 font-bold">Auto Mode</span>
+                {isAutoMode && (
+                  <div className="flex items-center space-x-2 ml-4">
+                    <span className="text-yellow-300 text-sm">Delay:</span>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-yellow-300 text-xs">2s</span>
+                      <input
+                        type="range"
+                        min="2000"
+                        max="5000"
+                        step="500"
+                        value={autoDelay}
+                        onChange={(e) => setAutoDelay(Number(e.target.value))}
+                        className="w-20 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
+                        style={{
+                          background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${((autoDelay - 2000) / 3000) * 100}%, #374151 ${((autoDelay - 2000) / 3000) * 100}%, #374151 100%)`,
+                        }}
+                      />
+                      <span className="text-yellow-300 text-xs">5s</span>
+                      <span className="text-yellow-300 text-sm ml-2">{autoDelay / 1000}s</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
           <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40">
             <CardContent className="p-4 md:p-6">
@@ -364,52 +427,7 @@ export default function PracticePage() {
           </Card>
         </div>
 
-        {/* INSANE Filter Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-          {/* Category Filter */}
-          <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                <Filter className="w-5 h-5 md:w-6 md:h-6 text-purple-400 animate-pulse" />
-                <h3 className="text-lg md:text-xl font-black text-purple-300 uppercase tracking-wider">
-                  {t.filterByCategory}
-                </h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  onClick={() => {
-                    setSelectedCategory(null)
-                    setCurrentIndex(0)
-                  }}
-                  className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                    !selectedCategory
-                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
-                      : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
-                  }`}
-                >
-                  🌟 {t.allCategories}
-                </button>
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => {
-                      setSelectedCategory(category)
-                      setCurrentIndex(0)
-                    }}
-                    className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                      selectedCategory === category
-                        ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50 border-2 border-purple-400"
-                        : "bg-black/50 text-purple-300 hover:bg-black/80 hover:text-white border-2 border-purple-400/30"
-                    }`}
-                  >
-                    🔥 {category}
-                  </button>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* State Filter */}
           <Card className="border-2 border-pink-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-pink-500/25">
             <CardContent className="p-4 md:p-6">
               <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
@@ -421,10 +439,7 @@ export default function PracticePage() {
               <div className="state-filter-container">
                 <div className="state-filter-grid state-filter-scroll">
                   <button
-                    onClick={() => {
-                      setSelectedState(null)
-                      setCurrentIndex(0)
-                    }}
+                    onClick={() => handleStateSelection(null)}
                     className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
                       !selectedState
                         ? "bg-gradient-to-r from-pink-500 to-red-500 text-white shadow-lg shadow-pink-500/50 border-2 border-pink-400"
@@ -436,10 +451,7 @@ export default function PracticePage() {
                   {germanStates.map((state) => (
                     <button
                       key={state.id}
-                      onClick={() => {
-                        setSelectedState(state.id)
-                        setCurrentIndex(0)
-                      }}
+                      onClick={() => handleStateSelection(state.id)}
                       className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
                         selectedState === state.id
                           ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-lg shadow-yellow-500/50 border-2 border-yellow-400"
@@ -453,40 +465,77 @@ export default function PracticePage() {
               </div>
             </CardContent>
           </Card>
+
+          <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
+            <CardContent className="p-4 md:p-6">
+              <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                <Filter className="w-5 h-5 md:w-6 md:h-6 text-purple-400 animate-pulse" />
+                <h3 className="text-lg md:text-xl font-black text-purple-300 uppercase tracking-wider">
+                  {selectedState
+                    ? `${germanStates.find((s) => s.id === selectedState)?.name} Categories`
+                    : t.filterByCategory}
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => handleCategorySelection(null)}
+                  className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                    !selectedCategory
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
+                      : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
+                  }`}
+                >
+                  🌟 {selectedState ? "All State Categories" : t.allCategories}
+                </button>
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => handleCategorySelection(category)}
+                    className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                      selectedCategory === category
+                        ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50 border-2 border-purple-400"
+                        : "bg-black/50 text-purple-300 hover:bg-black/80 hover:text-white border-2 border-purple-400/30"
+                    }`}
+                  >
+                    🔥 {category}
+                  </button>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
-        {/* Main Card Area */}
         <div className="flex justify-center mb-8">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={`${currentQuestion.id}-${showAnswer}`}
-              initial={{ opacity: 0, y: 50, scale: 0.9, rotateY: -15 }}
-              animate={{ opacity: 1, y: 0, scale: 1, rotateY: 0 }}
-              exit={{ opacity: 0, y: -50, scale: 0.9, rotateY: 15 }}
-              transition={{
-                duration: 0.5,
-                type: "spring",
-                stiffness: 300,
-                damping: 25,
-              }}
-            >
-              <SwipeCard
-                question={currentQuestion}
-                onSwipe={handleSwipe}
-                onFlag={handleFlag}
-                isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
-                showAnswer={showAnswer}
-                onAnswerSelect={handleAnswerSelect}
-              />
-            </motion.div>
-          </AnimatePresence>
+          <div className="w-full max-w-2xl">
+            <SwipeCard
+              question={currentQuestion}
+              onSwipe={handleSwipe}
+              onAnswerSelect={handleAnswerSelect}
+              showAnswer={showAnswer}
+              onFlag={handleFlag}
+              isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
+              isTranslated={showTranslation}
+              onTranslate={() => setShowTranslation(!showTranslation)}
+            />
+          </div>
         </div>
 
-        {/* Answer Feedback */}
+        {!isAutoMode && showAnswer && (
+          <div className="flex justify-center mb-8">
+            <Button
+              onClick={nextQuestion}
+              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-black px-8 py-4 text-xl rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+            >
+              Next Question →
+            </Button>
+          </div>
+        )}
+
         {showAnswer && lastAnswer && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
             className="flex justify-center mb-8"
           >
             <Card
@@ -510,7 +559,6 @@ export default function PracticePage() {
           </motion.div>
         )}
 
-        {/* Recent Badges */}
         {userProgress.badges.length > 0 && (
           <div className="flex justify-center">
             <Card className="w-full max-w-md border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/30 to-orange-900/30 backdrop-blur-xl shadow-lg shadow-yellow-500/25">
@@ -536,7 +584,6 @@ export default function PracticePage() {
           </div>
         )}
 
-        {/* Instructions */}
         <div className="text-center mt-12 space-y-6">
           <div className="text-3xl font-black animate-pulse">
             <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
@@ -546,6 +593,8 @@ export default function PracticePage() {
           <div className="space-y-3 text-lg max-w-2xl mx-auto">
             <p className="text-cyan-300 font-bold">💡 {t.swipeInstructions}</p>
             <p className="text-green-300 font-bold">⌨️ {t.keyboardShortcuts}</p>
+            <p className="text-yellow-300 font-bold">🔄 Toggle between Auto and Manual mode above</p>
+            <p className="text-pink-300 font-bold">🏛️ Select a state to practice state-specific questions</p>
           </div>
           <div className="text-2xl font-black text-white animate-bounce mt-8">{t.letsDominate} 🚀</div>
         </div>
