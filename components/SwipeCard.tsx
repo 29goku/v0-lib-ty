@@ -20,6 +20,155 @@ interface SwipeCardProps {
   onTranslate?: () => void
 }
 
+// Translation service - simulates real translation API
+const translateText = async (text: string, targetLanguage: string): Promise<string> => {
+  // Simulate API delay
+  await new Promise((resolve) => setTimeout(resolve, 500))
+
+  // Mock translations for different languages
+  const translations: Record<string, Record<string, string>> = {
+    en: {
+      "Wie heißt die deutsche Verfassung?": "What is the German constitution called?",
+      Grundgesetz: "Basic Law",
+      Bundesgesetz: "Federal Law",
+      Gesetzbuch: "Legal Code",
+      Verfassungsgesetz: "Constitutional Law",
+      "Das Grundgesetz ist die deutsche Verfassung.": "The Basic Law is the German constitution.",
+      "Wann wurde die Bundesrepublik Deutschland gegründet?": "When was the Federal Republic of Germany founded?",
+      "1945": "1945",
+      "1949": "1949",
+      "1989": "1989",
+      "1990": "1990",
+      "Die Bundesrepublik Deutschland wurde 1949 gegründet.": "The Federal Republic of Germany was founded in 1949.",
+    },
+    es: {
+      "Wie heißt die deutsche Verfassung?": "¿Cómo se llama la constitución alemana?",
+      Grundgesetz: "Ley Fundamental",
+      Bundesgesetz: "Ley Federal",
+      Gesetzbuch: "Código Legal",
+      Verfassungsgesetz: "Ley Constitucional",
+      "Das Grundgesetz ist die deutsche Verfassung.": "La Ley Fundamental es la constitución alemana.",
+      "Wann wurde die Bundesrepublik Deutschland gegründet?": "¿Cuándo se fundó la República Federal de Alemania?",
+      "1945": "1945",
+      "1949": "1949",
+      "1989": "1989",
+      "1990": "1990",
+      "Die Bundesrepublik Deutschland wurde 1949 gegründet.": "La República Federal de Alemania fue fundada en 1949.",
+    },
+    fr: {
+      "Wie heißt die deutsche Verfassung?": "Comment s'appelle la constitution allemande?",
+      Grundgesetz: "Loi fondamentale",
+      Bundesgesetz: "Loi fédérale",
+      Gesetzbuch: "Code juridique",
+      Verfassungsgesetz: "Loi constitutionnelle",
+      "Das Grundgesetz ist die deutsche Verfassung.": "La Loi fondamentale est la constitution allemande.",
+      "Wann wurde die Bundesrepublik Deutschland gegründet?":
+        "Quand la République fédérale d'Allemagne a-t-elle été fondée?",
+      "1945": "1945",
+      "1949": "1949",
+      "1989": "1989",
+      "1990": "1990",
+      "Die Bundesrepublik Deutschland wurde 1949 gegründet.":
+        "La République fédérale d'Allemagne a été fondée en 1949.",
+    },
+    it: {
+      "Wie heißt die deutsche Verfassung?": "Come si chiama la costituzione tedesca?",
+      Grundgesetz: "Legge fondamentale",
+      Bundesgesetz: "Legge federale",
+      Gesetzbuch: "Codice legale",
+      Verfassungsgesetz: "Legge costituzionale",
+      "Das Grundgesetz ist die deutsche Verfassung.": "La Legge fondamentale è la costituzione tedesca.",
+      "Wann wurde die Bundesrepublik Deutschland gegründet?":
+        "Quando è stata fondata la Repubblica Federale di Germania?",
+      "1945": "1945",
+      "1949": "1949",
+      "1989": "1989",
+      "1990": "1990",
+      "Die Bundesrepublik Deutschland wurde 1949 gegründet.":
+        "La Repubblica Federale di Germania è stata fondata nel 1949.",
+    },
+    tr: {
+      "Wie heißt die deutsche Verfassung?": "Alman anayasasının adı nedir?",
+      Grundgesetz: "Temel Kanun",
+      Bundesgesetz: "Federal Kanun",
+      Gesetzbuch: "Kanun Kitabı",
+      Verfassungsgesetz: "Anayasa Kanunu",
+      "Das Grundgesetz ist die deutsche Verfassung.": "Temel Kanun, Alman anayasasıdır.",
+      "Wann wurde die Bundesrepublik Deutschland gegründet?": "Almanya Federal Cumhuriyeti ne zaman kuruldu?",
+      "1945": "1945",
+      "1949": "1949",
+      "1989": "1989",
+      "1990": "1990",
+      "Die Bundesrepublik Deutschland wurde 1949 gegründet.": "Almanya Federal Cumhuriyeti 1949'da kuruldu.",
+    },
+    ar: {
+      "Wie heißt die deutsche Verfassung?": "ما اسم الدستور الألماني؟",
+      Grundgesetz: "القانون الأساسي",
+      Bundesgesetz: "القانون الاتحادي",
+      Gesetzbuch: "كتاب القانون",
+      Verfassungsgesetz: "القانون الدستوري",
+      "Das Grundgesetz ist die deutsche Verfassung.": "القانون الأساسي هو الدستور الألماني.",
+      "Wann wurde die Bundesrepublik Deutschland gegründet?": "متى تأسست جمهورية ألمانيا الاتحادية؟",
+      "1945": "1945",
+      "1949": "1949",
+      "1989": "1989",
+      "1990": "1990",
+      "Die Bundesrepublik Deutschland wurde 1949 gegründet.": "تأسست جمهورية ألمانيا الاتحادية عام 1949.",
+    },
+    ru: {
+      "Wie heißt die deutsche Verfassung?": "Как называется немецкая конституция?",
+      Grundgesetz: "Основной закон",
+      Bundesgesetz: "Федеральный закон",
+      Gesetzbuch: "Кодекс законов",
+      Verfassungsgesetz: "Конституционный закон",
+      "Das Grundgesetz ist die deutsche Verfassung.": "Основной закон является немецкой конституцией.",
+      "Wann wurde die Bundesrepublik Deutschland gegründet?": "Когда была основана Федеративная Республика Германия?",
+      "1945": "1945",
+      "1949": "1949",
+      "1989": "1989",
+      "1990": "1990",
+      "Die Bundesrepublik Deutschland wurde 1949 gegründet.":
+        "Федеративная Республика Германия была основана в 1949 году.",
+    },
+    zh: {
+      "Wie heißt die deutsche Verfassung?": "德国宪法叫什么名字？",
+      Grundgesetz: "基本法",
+      Bundesgesetz: "联邦法",
+      Gesetzbuch: "法典",
+      Verfassungsgesetz: "宪法",
+      "Das Grundgesetz ist die deutsche Verfassung.": "基本法是德国的宪法。",
+      "Wann wurde die Bundesrepublik Deutschland gegründet?": "德意志联邦共和国是什么时候成立的？",
+      "1945": "1945",
+      "1949": "1949",
+      "1989": "1989",
+      "1990": "1990",
+      "Die Bundesrepublik Deutschland wurde 1949 gegründet.": "德意志联邦共和国成立于1949年。",
+    },
+    hi: {
+      "Wie heißt die deutsche Verfassung?": "जर्मन संविधान का नाम क्या है?",
+      Grundgesetz: "मूल कानून",
+      Bundesgesetz: "संघीय कानून",
+      Gesetzbuch: "कानून की किताब",
+      Verfassungsgesetz: "संवैधानिक कानून",
+      "Das Grundgesetz ist die deutsche Verfassung.": "मूल कानून जर्मन संविधान है।",
+      "Wann wurde die Bundesrepublik Deutschland gegründet?": "जर्मनी का संघीय गणराज्य कब स्थापित हुआ था?",
+      "1945": "1945",
+      "1949": "1949",
+      "1989": "1989",
+      "1990": "1990",
+      "Die Bundesrepublik Deutschland wurde 1949 gegründet.": "जर्मनी का संघीय गणराज्य 1949 में स्थापित हुआ था।",
+    },
+  }
+
+  // If we have a specific translation, use it
+  if (translations[targetLanguage] && translations[targetLanguage][text]) {
+    return translations[targetLanguage][text]
+  }
+
+  // Otherwise, return a generic translation format
+  return `[${targetLanguage.toUpperCase()}] ${text}`
+}
+
 export default function SwipeCard({
   question,
   onSwipe,
@@ -90,30 +239,28 @@ export default function SwipeCard({
     setIsTranslating(true)
 
     try {
-      // Simulate translation API call
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      // Translate question text
+      const translatedQuestionText = await translateText(question.question, language)
 
-      // Mock translation service - in a real app, you'd call a translation API
-      const translateText = (text: string) => {
-        if (language === "de") {
-          // If current language is German, translate to English
-          return `[EN] ${text}`
-        } else {
-          // If current language is English, translate to German
-          return `[DE] ${text}`
-        }
-      }
+      // Translate all options
+      const translatedOptionsArray = await Promise.all(
+        question.options.map((option) => translateText(option, language)),
+      )
 
-      const mockQuestionTranslation = translateText(question.question)
-      const mockOptionsTranslation = question.options.map((option) => translateText(option))
-      const mockExplanationTranslation = question.explanation ? translateText(question.explanation) : ""
+      // Translate explanation if it exists
+      const translatedExplanationText = question.explanation ? await translateText(question.explanation, language) : ""
 
-      setTranslatedText(mockQuestionTranslation)
-      setTranslatedOptions(mockOptionsTranslation)
-      setTranslatedExplanation(mockExplanationTranslation)
+      setTranslatedText(translatedQuestionText)
+      setTranslatedOptions(translatedOptionsArray)
+      setTranslatedExplanation(translatedExplanationText)
       setInternalShowTranslation(true)
     } catch (error) {
       console.error("Translation failed:", error)
+      // Fallback to simple format if translation fails
+      setTranslatedText(`[${language.toUpperCase()}] ${question.question}`)
+      setTranslatedOptions(question.options.map((option) => `[${language.toUpperCase()}] ${option}`))
+      setTranslatedExplanation(question.explanation ? `[${language.toUpperCase()}] ${question.explanation}` : "")
+      setInternalShowTranslation(true)
     } finally {
       setIsTranslating(false)
     }
@@ -122,7 +269,23 @@ export default function SwipeCard({
   const speakText = (text: string) => {
     if ("speechSynthesis" in window) {
       const utterance = new SpeechSynthesisUtterance(text)
-      utterance.lang = language === "de" ? "de-DE" : "en-US"
+
+      // Set language for speech synthesis based on current UI language
+      const speechLangMap: Record<string, string> = {
+        en: "en-US",
+        de: "de-DE",
+        es: "es-ES",
+        fr: "fr-FR",
+        it: "it-IT",
+        tr: "tr-TR",
+        ar: "ar-SA",
+        ru: "ru-RU",
+        zh: "zh-CN",
+        hi: "hi-IN",
+      }
+
+      utterance.lang = speechLangMap[language] || "en-US"
+      utterance.rate = 0.8 // Slightly slower for better comprehension
       speechSynthesis.speak(utterance)
     }
   }
@@ -168,7 +331,7 @@ export default function SwipeCard({
                 {isTranslating ? t.translating : showTranslation ? t.translated : t.translate}
               </Button>
               <Button
-                onClick={() => speakText(question.question)}
+                onClick={() => speakText(showTranslation && translatedText ? translatedText : question.question)}
                 className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white border-0 px-3 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
               >
                 <Volume2 className="w-4 h-4" />
@@ -196,6 +359,10 @@ export default function SwipeCard({
                 exit={{ opacity: 0, height: 0 }}
                 className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 p-4 rounded-lg border border-blue-400/30"
               >
+                <div className="flex items-center mb-2">
+                  <Languages className="w-4 h-4 mr-2 text-blue-300" />
+                  <span className="text-blue-300 text-sm font-bold uppercase">{language} Translation</span>
+                </div>
                 <p className="text-blue-200 text-lg leading-relaxed font-medium">{translatedText}</p>
               </motion.div>
             )}
@@ -235,8 +402,15 @@ export default function SwipeCard({
                       : "bg-black/60 border-cyan-400/30 text-white hover:bg-black/80 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25"
                 }`}
               >
-                <span className="mr-3 text-2xl font-black">{String.fromCharCode(65 + index)}.</span>
-                {showTranslation && translatedOptions[index] ? translatedOptions[index] : option}
+                <div className="flex flex-col">
+                  <div className="flex items-start">
+                    <span className="mr-3 text-2xl font-black">{String.fromCharCode(65 + index)}.</span>
+                    <span>{option}</span>
+                  </div>
+                  {showTranslation && translatedOptions[index] && (
+                    <div className="mt-2 ml-8 text-blue-200 text-base opacity-80">{translatedOptions[index]}</div>
+                  )}
+                </div>
               </motion.button>
             ))}
           </div>
@@ -261,9 +435,16 @@ export default function SwipeCard({
                 <span className="mr-2">💡</span>
                 {t.explanation}
               </h4>
-              <p className="text-white text-lg leading-relaxed">
-                {showTranslation && translatedExplanation ? translatedExplanation : question.explanation}
-              </p>
+              <p className="text-white text-lg leading-relaxed mb-3">{question.explanation}</p>
+              {showTranslation && translatedExplanation && (
+                <div className="bg-purple-800/30 p-3 rounded-lg border border-purple-400/20">
+                  <div className="flex items-center mb-2">
+                    <Languages className="w-4 h-4 mr-2 text-purple-300" />
+                    <span className="text-purple-300 text-sm font-bold uppercase">{language} Translation</span>
+                  </div>
+                  <p className="text-purple-200 text-base leading-relaxed">{translatedExplanation}</p>
+                </div>
+              )}
             </motion.div>
           )}
         </CardContent>
