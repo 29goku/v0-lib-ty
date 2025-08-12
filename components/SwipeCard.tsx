@@ -90,11 +90,23 @@ export default function SwipeCard({
     setIsTranslating(true)
 
     try {
-      const mockQuestionTranslation = `[EN] ${question.question}`
-      const mockOptionsTranslation = question.options.map((option) => `[EN] ${option}`)
-      const mockExplanationTranslation = question.explanation ? `[EN] ${question.explanation}` : ""
-
+      // Simulate translation API call
       await new Promise((resolve) => setTimeout(resolve, 1000))
+
+      // Mock translation service - in a real app, you'd call a translation API
+      const translateText = (text: string) => {
+        if (language === "de") {
+          // If current language is German, translate to English
+          return `[EN] ${text}`
+        } else {
+          // If current language is English, translate to German
+          return `[DE] ${text}`
+        }
+      }
+
+      const mockQuestionTranslation = translateText(question.question)
+      const mockOptionsTranslation = question.options.map((option) => translateText(option))
+      const mockExplanationTranslation = question.explanation ? translateText(question.explanation) : ""
 
       setTranslatedText(mockQuestionTranslation)
       setTranslatedOptions(mockOptionsTranslation)

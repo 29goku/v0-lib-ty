@@ -105,12 +105,32 @@ export default function PracticePage() {
     initializePractice()
   }, [questions.length, loadQuestions, setStateQuestions, selectedState])
 
-  const allQuestions = [...questions, ...stateQuestions]
+  // Get the appropriate questions based on state selection
+  const getQuestionsToUse = () => {
+    if (selectedState && stateQuestions.length > 0) {
+      return stateQuestions
+    }
+    return questions
+  }
+
+  const questionsToUse = getQuestionsToUse()
+
+  // Get categories from the appropriate question set
+  const getCategories = () => {
+    if (selectedState && stateQuestions.length > 0) {
+      return [...new Set(stateQuestions.map((q) => q.category))]
+    }
+    return [...new Set(questions.map((q) => q.category))]
+  }
+
+  const categories = getCategories()
+
+  // Filter questions based on category
   const filteredQuestions = selectedCategory
-    ? allQuestions.filter((q) => q.category === selectedCategory)
-    : allQuestions
+    ? questionsToUse.filter((q) => q.category === selectedCategory)
+    : questionsToUse
+
   const currentQuestion = filteredQuestions[currentIndex]
-  const categories = [...new Set(allQuestions.map((q) => q.category))]
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -129,6 +149,12 @@ export default function PracticePage() {
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [currentIndex, showAnswer, currentQuestion])
+
+  // Reset category when state changes
+  useEffect(() => {
+    setSelectedCategory(null)
+    setCurrentIndex(0)
+  }, [selectedState, setSelectedCategory])
 
   const handleFlag = () => {
     if (!currentQuestion) return
@@ -210,25 +236,16 @@ export default function PracticePage() {
     setShowTranslation(false)
   }
 
-  const translateQuestion = async (question: string) => {
-    setTranslatedQuestion(`[ENGLISH] ${question}`)
-    setShowTranslation(true)
+  const handleStateSelection = (stateId: string | null) => {
+    setSelectedState(stateId)
+    setSelectedCategory(null) // Reset category when state changes
+    setCurrentIndex(0)
   }
 
-  const handleReadAloud = () => {
-    console.log("Read aloud functionality triggered")
+  const handleCategorySelection = (category: string | null) => {
+    setSelectedCategory(category)
+    setCurrentIndex(0)
   }
-
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
-  const [isCorrect, setIsCorrect] = useState<boolean | null>(null)
-  const [showResult, setShowResult] = useState<boolean>(false)
-  const [isTranslated, setIsTranslated] = useState<boolean>(false)
-
-  useEffect(() => {
-    setSelectedAnswer(null)
-    setIsCorrect(null)
-    setShowResult(false)
-  }, [currentIndex])
 
   if (loading || !currentQuestion) {
     return (
@@ -288,7 +305,11 @@ export default function PracticePage() {
                 {t.practiceMode.toUpperCase()}
               </span>
             </h1>
-            <div className="text-sm md:text-lg text-pink-300 font-bold">{t.practiceSubtitle} 🚀</div>
+            <div className="text-sm md:text-lg text-pink-300 font-bold">
+              {selectedState
+                ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
+                : `${t.practiceSubtitle} 🚀`}
+            </div>
           </div>
 
           <div className="flex items-center gap-2 md:gap-4">
@@ -407,48 +428,6 @@ export default function PracticePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-          <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                <Filter className="w-5 h-5 md:w-6 md:h-6 text-purple-400 animate-pulse" />
-                <h3 className="text-lg md:text-xl font-black text-purple-300 uppercase tracking-wider">
-                  {t.filterByCategory}
-                </h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  onClick={() => {
-                    setSelectedCategory(null)
-                    setCurrentIndex(0)
-                  }}
-                  className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                    !selectedCategory
-                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
-                      : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
-                  }`}
-                >
-                  🌟 {t.allCategories}
-                </button>
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => {
-                      setSelectedCategory(category)
-                      setCurrentIndex(0)
-                    }}
-                    className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                      selectedCategory === category
-                        ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50 border-2 border-purple-400"
-                        : "bg-black/50 text-purple-300 hover:bg-black/80 hover:text-white border-2 border-purple-400/30"
-                    }`}
-                  >
-                    🔥 {category}
-                  </button>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
           <Card className="border-2 border-pink-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-pink-500/25">
             <CardContent className="p-4 md:p-6">
               <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
@@ -460,10 +439,7 @@ export default function PracticePage() {
               <div className="state-filter-container">
                 <div className="state-filter-grid state-filter-scroll">
                   <button
-                    onClick={() => {
-                      setSelectedState(null)
-                      setCurrentIndex(0)
-                    }}
+                    onClick={() => handleStateSelection(null)}
                     className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
                       !selectedState
                         ? "bg-gradient-to-r from-pink-500 to-red-500 text-white shadow-lg shadow-pink-500/50 border-2 border-pink-400"
@@ -475,10 +451,7 @@ export default function PracticePage() {
                   {germanStates.map((state) => (
                     <button
                       key={state.id}
-                      onClick={() => {
-                        setSelectedState(state.id)
-                        setCurrentIndex(0)
-                      }}
+                      onClick={() => handleStateSelection(state.id)}
                       className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
                         selectedState === state.id
                           ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-lg shadow-yellow-500/50 border-2 border-yellow-400"
@@ -489,6 +462,44 @@ export default function PracticePage() {
                     </button>
                   ))}
                 </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
+            <CardContent className="p-4 md:p-6">
+              <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                <Filter className="w-5 h-5 md:w-6 md:h-6 text-purple-400 animate-pulse" />
+                <h3 className="text-lg md:text-xl font-black text-purple-300 uppercase tracking-wider">
+                  {selectedState
+                    ? `${germanStates.find((s) => s.id === selectedState)?.name} Categories`
+                    : t.filterByCategory}
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => handleCategorySelection(null)}
+                  className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                    !selectedCategory
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
+                      : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
+                  }`}
+                >
+                  🌟 {selectedState ? "All State Categories" : t.allCategories}
+                </button>
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => handleCategorySelection(category)}
+                    className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                      selectedCategory === category
+                        ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50 border-2 border-purple-400"
+                        : "bg-black/50 text-purple-300 hover:bg-black/80 hover:text-white border-2 border-purple-400/30"
+                    }`}
+                  >
+                    🔥 {category}
+                  </button>
+                ))}
               </div>
             </CardContent>
           </Card>
@@ -583,6 +594,7 @@ export default function PracticePage() {
             <p className="text-cyan-300 font-bold">💡 {t.swipeInstructions}</p>
             <p className="text-green-300 font-bold">⌨️ {t.keyboardShortcuts}</p>
             <p className="text-yellow-300 font-bold">🔄 Toggle between Auto and Manual mode above</p>
+            <p className="text-pink-300 font-bold">🏛️ Select a state to practice state-specific questions</p>
           </div>
           <div className="text-2xl font-black text-white animate-bounce mt-8">{t.letsDominate} 🚀</div>
         </div>
