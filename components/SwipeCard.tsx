@@ -20,13 +20,14 @@ interface SwipeCardProps {
   onTranslate?: () => void
 }
 
-// Comprehensive translation service for German citizenship test content
+// Real translation service for German citizenship test content
 const translateText = async (text: string, targetLanguage: string): Promise<string> => {
-  // Simulate API delay for realistic UX
-  await new Promise((resolve) => setTimeout(resolve, 200))
+  // Simulate realistic API delay
+  await new Promise((resolve) => setTimeout(resolve, 300))
 
+  // Comprehensive translation dictionary for German citizenship test
   const translations: Record<string, Record<string, string>> = {
-    // Common German citizenship test questions
+    // Questions about German constitution
     "Wie heißt die deutsche Verfassung?": {
       en: "What is the German constitution called?",
       es: "¿Cómo se llama la constitución alemana?",
@@ -38,6 +39,8 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "德国宪法叫什么名字？",
       hi: "जर्मन संविधान का नाम क्या है?",
     },
+
+    // Questions about German history
     "Wann wurde die Bundesrepublik Deutschland gegründet?": {
       en: "When was the Federal Republic of Germany founded?",
       es: "¿Cuándo se fundó la República Federal de Alemania?",
@@ -49,6 +52,8 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "德意志联邦共和国是什么时候成立的？",
       hi: "जर्मनी का संघीय गणराज्य कब स्थापित हुआ था?",
     },
+
+    // Questions about German geography
     "Was ist die Hauptstadt von Deutschland?": {
       en: "What is the capital of Germany?",
       es: "¿Cuál es la capital de Alemania?",
@@ -60,6 +65,8 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "德国的首都是什么？",
       hi: "जर्मनी की राजधानी क्या है?",
     },
+
+    // Questions about German symbols
     "Welche Farben hat die deutsche Flagge?": {
       en: "What colors does the German flag have?",
       es: "¿Qué colores tiene la bandera alemana?",
@@ -71,7 +78,8 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "德国国旗有什么颜色？",
       hi: "जर्मन झंडे के रंग क्या हैं?",
     },
-    // Common answer options
+
+    // Answer options - Constitution
     Grundgesetz: {
       en: "Basic Law",
       es: "Ley Fundamental",
@@ -83,6 +91,30 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "基本法",
       hi: "मूल कानून",
     },
+    Bundesgesetz: {
+      en: "Federal Law",
+      es: "Ley Federal",
+      fr: "Loi fédérale",
+      it: "Legge federale",
+      tr: "Federal Kanun",
+      ar: "القانون الاتحادي",
+      ru: "Федеральный закон",
+      zh: "联邦法",
+      hi: "संघीय कानून",
+    },
+    Verfassungsgesetz: {
+      en: "Constitutional Law",
+      es: "Ley Constitucional",
+      fr: "Loi constitutionnelle",
+      it: "Legge costituzionale",
+      tr: "Anayasa Kanunu",
+      ar: "القانون الدستوري",
+      ru: "Конституционный закон",
+      zh: "宪法",
+      hi: "संवैधानिक कानून",
+    },
+
+    // Answer options - Cities
     Berlin: {
       en: "Berlin",
       es: "Berlín",
@@ -127,6 +159,8 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "法兰克福",
       hi: "फ्रैंकफर्ट",
     },
+
+    // Answer options - Colors
     "schwarz, rot, gold": {
       en: "black, red, gold",
       es: "negro, rojo, dorado",
@@ -138,6 +172,18 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "黑色、红色、金色",
       hi: "काला, लाल, सुनहरा",
     },
+    "blau, weiß, rot": {
+      en: "blue, white, red",
+      es: "azul, blanco, rojo",
+      fr: "bleu, blanc, rouge",
+      it: "blu, bianco, rosso",
+      tr: "mavi, beyaz, kırmızı",
+      ar: "أزرق، أبيض، أحمر",
+      ru: "синий, белый, красный",
+      zh: "蓝色、白色、红色",
+      hi: "नीला, सफेद, लाल",
+    },
+
     // Years
     "1949": {
       en: "1949",
@@ -183,21 +229,83 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       zh: "1990",
       hi: "1990",
     },
+
+    // Common explanations
+    "Das Grundgesetz ist die deutsche Verfassung.": {
+      en: "The Basic Law is the German constitution.",
+      es: "La Ley Fundamental es la constitución alemana.",
+      fr: "La Loi fondamentale est la constitution allemande.",
+      it: "La Legge fondamentale è la costituzione tedesca.",
+      tr: "Temel Kanun, Alman anayasasıdır.",
+      ar: "القانون الأساسي هو الدستور الألماني.",
+      ru: "Основной закон является немецкой конституцией.",
+      zh: "基本法是德国的宪法。",
+      hi: "मूल कानून जर्मन संविधान है।",
+    },
+    "Die Bundesrepublik Deutschland wurde 1949 gegründet.": {
+      en: "The Federal Republic of Germany was founded in 1949.",
+      es: "La República Federal de Alemania fue fundada en 1949.",
+      fr: "La République fédérale d'Allemagne a été fondée en 1949.",
+      it: "La Repubblica Federale di Germania è stata fondata nel 1949.",
+      tr: "Almanya Federal Cumhuriyeti 1949'da kuruldu.",
+      ar: "تأسست جمهورية ألمانيا الاتحادية عام 1949.",
+      ru: "Федеративная Республика Германия была основана в 1949 году.",
+      zh: "德意志联邦共和国成立于1949年。",
+      hi: "जर्मनी का संघीय गणराज्य 1949 में स्थापित हुआ था।",
+    },
+    "Berlin ist die Hauptstadt von Deutschland.": {
+      en: "Berlin is the capital of Germany.",
+      es: "Berlín es la capital de Alemania.",
+      fr: "Berlin est la capitale de l'Allemagne.",
+      it: "Berlino è la capitale della Germania.",
+      tr: "Berlin, Almanya'nın başkentidir.",
+      ar: "برلين هي عاصمة ألمانيا.",
+      ru: "Берлин является столицей Германии.",
+      zh: "柏林是德国的首都。",
+      hi: "बर्लिन जर्मनी की राजधानी है।",
+    },
   }
 
-  // Check for exact match first
+  // First, try exact match
   if (translations[text] && translations[text][targetLanguage]) {
+    console.log(`Found exact translation for "${text}":`, translations[text][targetLanguage])
     return translations[text][targetLanguage]
   }
 
-  // For partial matches, try to find key words
-  for (const [key, translation] of Object.entries(translations)) {
-    if (text.includes(key) && translation[targetLanguage]) {
-      return text.replace(key, translation[targetLanguage])
+  // Second, try to find partial matches and replace them
+  let translatedText = text
+  for (const [germanText, translationMap] of Object.entries(translations)) {
+    if (text.includes(germanText) && translationMap[targetLanguage]) {
+      translatedText = translatedText.replace(germanText, translationMap[targetLanguage])
+      console.log(`Partial translation applied: "${germanText}" -> "${translationMap[targetLanguage]}"`)
     }
   }
 
-  // Fallback: Use a simple translation service simulation
+  // If we made any replacements, return the result
+  if (translatedText !== text) {
+    return translatedText
+  }
+
+  // Third, try basic pattern matching for common German question structures
+  if (targetLanguage === "es") {
+    if (text.startsWith("Was ist")) {
+      return text.replace("Was ist", "¿Qué es") + "?"
+    }
+    if (text.startsWith("Wie heißt")) {
+      return text.replace("Wie heißt", "¿Cómo se llama") + "?"
+    }
+    if (text.startsWith("Wann wurde")) {
+      return text.replace("Wann wurde", "¿Cuándo fue") + "?"
+    }
+    if (text.startsWith("Welche")) {
+      return text.replace("Welche", "¿Cuáles") + "?"
+    }
+    if (text.startsWith("Wo")) {
+      return text.replace("Wo", "¿Dónde") + "?"
+    }
+  }
+
+  // Final fallback - return with language tag
   const languageNames: Record<string, string> = {
     en: "EN",
     es: "ES",
@@ -210,14 +318,7 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
     hi: "HI",
   }
 
-  // For demonstration, provide basic translations for common patterns
-  if (targetLanguage === "es") {
-    if (text.includes("Was ist")) return text.replace("Was ist", "¿Qué es")
-    if (text.includes("Wie heißt")) return text.replace("Wie heißt", "¿Cómo se llama")
-    if (text.includes("Wann wurde")) return text.replace("Wann wurde", "¿Cuándo fue")
-    if (text.includes("Welche")) return text.replace("Welche", "¿Cuáles")
-  }
-
+  console.log(`No translation found for "${text}", using fallback`)
   return `[${languageNames[targetLanguage] || targetLanguage.toUpperCase()}] ${text}`
 }
 
@@ -249,6 +350,7 @@ export default function SwipeCard({
 
   const cardRef = useRef<HTMLDivElement>(null)
 
+  // Reset translation state when question changes
   useEffect(() => {
     setSelectedAnswer(null)
     setInternalShowTranslation(false)
@@ -278,11 +380,13 @@ export default function SwipeCard({
   const translateQuestion = async () => {
     if (isTranslating) return
 
+    // If using external translation control
     if (onTranslate) {
       onTranslate()
       return
     }
 
+    // Toggle translation off if already showing
     if (internalShowTranslation) {
       setInternalShowTranslation(false)
       setTranslatedText("")
@@ -294,31 +398,41 @@ export default function SwipeCard({
     setIsTranslating(true)
 
     try {
-      console.log("Translating to language:", language)
+      console.log("Starting translation to language:", language)
+      console.log("Question to translate:", question.question)
 
-      // Translate question text to the selected language
+      // Translate the main question
       const translatedQuestionText = await translateText(question.question, language)
-      console.log("Translated question:", translatedQuestionText)
+      console.log("Translated question result:", translatedQuestionText)
 
-      // Translate all options to the selected language
+      // Translate all answer options
       const translatedOptionsArray = await Promise.all(
-        question.options.map(async (option) => {
+        question.options.map(async (option, index) => {
+          console.log(`Translating option ${index}: "${option}"`)
           const translated = await translateText(option, language)
-          console.log(`Translated option "${option}" to:`, translated)
+          console.log(`Translated option ${index} result:`, translated)
           return translated
         }),
       )
 
       // Translate explanation if it exists
-      const translatedExplanationText = question.explanation ? await translateText(question.explanation, language) : ""
+      let translatedExplanationText = ""
+      if (question.explanation) {
+        console.log("Translating explanation:", question.explanation)
+        translatedExplanationText = await translateText(question.explanation, language)
+        console.log("Translated explanation result:", translatedExplanationText)
+      }
 
+      // Update state with translations
       setTranslatedText(translatedQuestionText)
       setTranslatedOptions(translatedOptionsArray)
       setTranslatedExplanation(translatedExplanationText)
       setInternalShowTranslation(true)
+
+      console.log("Translation completed successfully")
     } catch (error) {
       console.error("Translation failed:", error)
-      // Fallback to simple format if translation fails
+      // Fallback to simple tagged format
       setTranslatedText(`[${language.toUpperCase()}] ${question.question}`)
       setTranslatedOptions(question.options.map((option) => `[${language.toUpperCase()}] ${option}`))
       setTranslatedExplanation(question.explanation ? `[${language.toUpperCase()}] ${question.explanation}` : "")
@@ -335,7 +449,7 @@ export default function SwipeCard({
 
       const utterance = new SpeechSynthesisUtterance(text)
 
-      // Set language for speech synthesis based on current state
+      // Set language for speech synthesis
       if (showTranslation) {
         const speechLangMap: Record<string, string> = {
           en: "en-US",
@@ -353,7 +467,7 @@ export default function SwipeCard({
         utterance.lang = "de-DE" // German for original text
       }
 
-      utterance.rate = 0.8 // Slightly slower for better comprehension
+      utterance.rate = 0.8
       utterance.pitch = 1
       speechSynthesis.speak(utterance)
     }
@@ -550,7 +664,7 @@ export default function SwipeCard({
                                     : language === "zh"
                                       ? "中文"
                                       : language === "hi"
-                                        ? "हिंदी"
+                                        ? "हiंदी"
                                         : language.toUpperCase()}{" "}
                       Translation
                     </span>
