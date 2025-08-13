@@ -3,35 +3,224 @@
     "id": "q001",
     "category": "Politics",
     "question": "In Deutschland dürfen Menschen offen etwas gegen die Regierung sagen, weil …",
+    "translations": {
+      "en": "In Germany, people are allowed to openly say something against the government because …",
+      "es": "En Alemania, las personas pueden decir abiertamente algo contra el gobierno porque …",
+      "fr": "En Allemagne, les gens peuvent ouvertement dire quelque chose contre le gouvernement parce que …",
+      "it": "In Germania, le persone possono dire apertamente qualcosa contro il governo perché …",
+      "tr": "Almanya'da insanlar hükümete karşı açıkça bir şey söyleyebilirler çünkü …",
+      "ar": "في ألمانيا، يُسمح للناس بقول شيء ضد الحكومة علناً لأن …",
+      "ru": "В Германии люди могут открыто говорить что-то против правительства, потому что …",
+      "zh": "在德国，人们可以公开反对政府，因为 …",
+      "hi": "जर्मनी में लोग सरकार के खिलाफ खुले तौर पर कुछ कह सकते हैं क्योंकि …"
+    },
     "options": [
       "hier Religionsfreiheit gilt.",
       "die Menschen Steuern zahlen.",
       "die Menschen das Wahlrecht haben.",
       "hier Meinungsfreiheit gilt."
     ],
+    "optionTranslations": {
+      "en": [
+        "religious freedom applies here.",
+        "people pay taxes.",
+        "people have the right to vote.",
+        "freedom of opinion applies here."
+      ],
+      "es": [
+        "aquí se aplica la libertad religiosa.",
+        "las personas pagan impuestos.",
+        "las personas tienen derecho al voto.",
+        "aquí se aplica la libertad de opinión."
+      ],
+      "fr": [
+        "la liberté religieuse s'applique ici.",
+        "les gens paient des impôts.",
+        "les gens ont le droit de vote.",
+        "la liberté d'opinion s'applique ici."
+      ],
+      "it": [
+        "qui si applica la libertà religiosa.",
+        "le persone pagano le tasse.",
+        "le persone hanno il diritto di voto.",
+        "qui si applica la libertà di opinione."
+      ],
+      "tr": [
+        "burada din özgürlüğü geçerlidir.",
+        "insanlar vergi öderler.",
+        "insanların oy hakkı vardır.",
+        "burada görüş özgürlüğü geçerlidir."
+      ],
+      "ar": [
+        "تطبق هنا حرية الدين.",
+        "الناس يدفعون الضرائب.",
+        "الناس لديهم حق التصويت.",
+        "تطبق هنا حرية الرأي."
+      ],
+      "ru": [
+        "здесь действует свобода вероисповедания.",
+        "люди платят налоги.",
+        "люди имеют право голоса.",
+        "здесь действует свобода мнений."
+      ],
+      "zh": [
+        "这里适用宗教自由。",
+        "人们缴纳税款。",
+        "人们有选举权。",
+        "这里适用言论自由。"
+      ],
+      "hi": [
+        "यहाँ धार्मिक स्वतंत्रता लागू होती है।",
+        "लोग कर देते हैं।",
+        "लोगों को मतदान का अधिकार है।",
+        "यहाँ मत की स्वतंत्रता लागू होती है।"
+      ]
+    },
     "answerIndex": 3,
-    "explanation": "In Deutschland gilt die Meinungsfreiheit als Grundrecht. Menschen dürfen ihre Meinung frei äußern, auch wenn sie kritisch gegenüber der Regierung ist."
+    "explanation": "In Deutschland gilt die Meinungsfreiheit als Grundrecht. Menschen dürfen ihre Meinung frei äußern, auch wenn sie kritisch gegenüber der Regierung ist.",
+    "explanationTranslations": {
+      "en": "In Germany, freedom of opinion is a fundamental right. People are allowed to express their opinion freely, even if they are critical of the government.",
+      "es": "En Alemania, la libertad de opinión es un derecho fundamental. Las personas pueden expresar su opinión libremente, incluso si son críticas con el gobierno.",
+      "fr": "En Allemagne, la liberté d'opinion est un droit fondamental. Les gens peuvent exprimer leur opinion librement, même s'ils sont critiques envers le gouvernement.",
+      "it": "In Germania, la libertà di opinione è un diritto fondamentale. Le persone possono esprimere la loro opinione liberamente, anche se sono critiche nei confronti del governo.",
+      "tr": "Almanya'da görüş özgürlüğü temel bir haktır. İnsanlar hükümete eleştirel olsalar bile görüşlerini özgürce ifade edebilirler.",
+      "ar": "في ألمانيا، حرية الرأي حق أساسي. يُسمح للناس بالتعبير عن رأيهم بحرية، حتى لو كانوا ينتقدون الحكومة.",
+      "ru": "В Германии свобода мнений является основным правом. Люди могут свободно выражать свое мнение, даже если они критически настроены по отношению к правительству.",
+      "zh": "在德国，言论自由是一项基本权利。人们可以自由表达自己的观点，即使他们对政府持批评态度。",
+      "hi": "जर्मनी में मत की स्वतंत्रता एक मौलिक अधिकार है। लोग अपनी राय स्वतंत्र रूप से व्यक्त कर सकते हैं, भले ही वे सरकार के आलोचक हों।"
+    }
   },
   {
     "id": "q002",
     "category": "Politics",
     "question": "In Deutschland können Eltern bis zum 14. Lebensjahr ihres Kindes entscheiden, ob es in der Schule am … teilnimmt.",
+    "translations": {
+      "en": "In Germany, parents can decide until their child's 14th birthday whether they participate in … at school.",
+      "es": "En Alemania, los padres pueden decidir hasta el 14º cumpleaños de su hijo si participa en … en la escuela.",
+      "fr": "En Allemagne, les parents peuvent décider jusqu'au 14e anniversaire de leur enfant s'il participe à … à l'école.",
+      "it": "In Germania, i genitori possono decidere fino al 14° compleanno del loro bambino se partecipa a … a scuola.",
+      "tr": "Almanya'da ebeveynler çocuklarının 14. yaş gününe kadar okulda … dersine katılıp katılmayacağına karar verebilirler.",
+      "ar": "في ألمانيا، يمكن للوالدين أن يقرروا حتى عيد ميلاد طفلهم الرابع عشر ما إذا كان يشارك في … في المدرسة.",
+      "ru": "В Германии родители могут решать до 14-летия своего ребенка, участвует ли он в … в школе.",
+      "zh": "在德国，父母可以决定直到孩子14岁生日是否参加学校的…",
+      "hi": "जर्मनी में माता-पिता अपने बच्चे के 14वें जन्मदिन तक यह तय कर सकते हैं कि वह स्कूल में … में भाग लेता है या नहीं।"
+    },
     "options": ["Geschichtsunterricht", "Religionsunterricht", "Politikunterricht", "Sprachunterricht"],
+    "optionTranslations": {
+      "en": ["History class", "Religious education", "Politics class", "Language class"],
+      "es": ["Clase de historia", "Educación religiosa", "Clase de política", "Clase de idioma"],
+      "fr": ["Cours d'histoire", "Éducation religieuse", "Cours de politique", "Cours de langue"],
+      "it": ["Lezione di storia", "Educazione religiosa", "Lezione di politica", "Lezione di lingua"],
+      "tr": ["Tarih dersi", "Din dersi", "Politika dersi", "Dil dersi"],
+      "ar": ["درس التاريخ", "التعليم الديني", "درس السياسة", "درس اللغة"],
+      "ru": ["Урок истории", "Религиозное образование", "Урок политики", "Урок языка"],
+      "zh": ["历史课", "宗教教育", "政治课", "语言课"],
+      "hi": ["इतिहास की कक्षा", "धार्मिक शिक्षा", "राजनीति की कक्षा", "भाषा की कक्षा"]
+    },
     "answerIndex": 1,
-    "explanation": "Eltern haben das Recht zu entscheiden, ob ihr Kind am Religionsunterricht teilnimmt. Dies ist Teil der Religionsfreiheit in Deutschland."
+    "explanation": "Eltern haben das Recht zu entscheiden, ob ihr Kind am Religionsunterricht teilnimmt. Dies ist Teil der Religionsfreiheit in Deutschland.",
+    "explanationTranslations": {
+      "en": "Parents have the right to decide whether their child participates in religious education. This is part of religious freedom in Germany.",
+      "es": "Los padres tienen el derecho de decidir si su hijo participa en educación religiosa. Esto es parte de la libertad religiosa en Alemania.",
+      "fr": "Les parents ont le droit de décider si leur enfant participe à l'éducation religieuse. Cela fait partie de la liberté religieuse en Allemagne.",
+      "it": "I genitori hanno il diritto di decidere se il loro bambino partecipa all'educazione religiosa. Questo fa parte della libertà religiosa in Germania.",
+      "tr": "Ebeveynlerin çocuklarının din dersine katılıp katılmayacağına karar verme hakları vardır. Bu Almanya'daki din özgürlüğünün bir parçasıdır.",
+      "ar": "للوالدين الحق في تقرير ما إذا كان طفلهم يشارك في التعليم الديني. هذا جزء من الحرية الدينية في ألمانيا.",
+      "ru": "Родители имеют право решать, участвует ли их ребенок в религиозном образовании. Это часть религиозной свободы в Германии.",
+      "zh": "父母有权决定他们的孩子是否参加宗教教育。这是德国宗教自由的一部分。",
+      "hi": "माता-पिता को यह तय करने का अधिकार है कि उनका बच्चा धार्मिक शिक्षा में भाग लेता है या नहीं। यह जर्मनी में धार्मिक स्वतंत्रता का हिस्सा है।"
+    }
   },
   {
     "id": "q003",
     "category": "Law",
     "question": "Deutschland ist ein Rechtsstaat. Was ist damit gemeint?",
+    "translations": {
+      "en": "Germany is a constitutional state. What does this mean?",
+      "es": "Alemania es un estado de derecho. ¿Qué significa esto?",
+      "fr": "L'Allemagne est un État de droit. Qu'est-ce que cela signifie?",
+      "it": "La Germania è uno stato di diritto. Cosa significa questo?",
+      "tr": "Almanya bir hukuk devletidir. Bu ne anlama gelir?",
+      "ar": "ألمانيا دولة قانون. ماذا يعني هذا؟",
+      "ru": "Германия - правовое государство. Что это означает?",
+      "zh": "德国是一个法治国家。这意味着什么？",
+      "hi": "जर्मनी एक कानूनी राज्य है। इसका क्या मतलब है？"
+    },
     "options": [
       "Alle Einwohnerinnen/Einwohner und der Staat müssen sich an die Gesetze halten.",
       "Der Staat muss sich nicht an die Gesetze halten.",
       "Nur Deutsche müssen die Gesetze befolgen.",
       "Die Gerichte machen die Gesetze."
     ],
+    "optionTranslations": {
+      "en": [
+        "All residents and the state must abide by the laws.",
+        "The state does not have to abide by the laws.",
+        "Only Germans must follow the laws.",
+        "The courts make the laws."
+      ],
+      "es": [
+        "Todos los residentes y el estado deben cumplir las leyes.",
+        "El estado no tiene que cumplir las leyes.",
+        "Solo los alemanes deben seguir las leyes.",
+        "Los tribunales hacen las leyes."
+      ],
+      "fr": [
+        "Tous les résidents et l'État doivent respecter les lois.",
+        "L'État n'a pas à respecter les lois.",
+        "Seuls les Allemands doivent suivre les lois.",
+        "Les tribunaux font les lois."
+      ],
+      "it": [
+        "Tutti i residenti e lo stato devono rispettare le leggi.",
+        "Lo stato non deve rispettare le leggi.",
+        "Solo i tedeschi devono seguire le leggi.",
+        "I tribunali fanno le leggi."
+      ],
+      "tr": [
+        "Tüm sakinler ve devlet yasalara uymak zorundadır.",
+        "Devlet yasalara uymak zorunda değildir.",
+        "Sadece Almanlar yasalara uymak zorundadır.",
+        "Mahkemeler yasaları yapar."
+      ],
+      "ar": [
+        "جميع السكان والدولة يجب أن يلتزموا بالقوانين.",
+        "الدولة لا يجب أن تلتزم بالقوانين.",
+        "فقط الألمان يجب أن يتبعوا القوانين.",
+        "المحاكم تصنع القوانين."
+      ],
+      "ru": [
+        "Все жители и государство должны соблюдать законы.",
+        "Государство не должно соблюдать законы.",
+        "Только немцы должны соблюдать законы.",
+        "Суды создают законы."
+      ],
+      "zh": [
+        "所有居民和国家都必须遵守法律。",
+        "国家不必遵守法律。",
+        "只有德国人必须遵守法律。",
+        "法院制定法律。"
+      ],
+      "hi": [
+        "सभी निवासियों और राज्य को कानूनों का पालन करना चाहिए।",
+        "राज्य को कानूनों का पालन करने की आवश्यकता नहीं है।",
+        "केवल जर्मनों को कानूनों का पालन करना चाहिए।",
+        "अदालतें कानून बनाती हैं।"
+      ]
+    },
     "answerIndex": 0,
-    "explanation": "In einem Rechtsstaat sind alle - sowohl Bürger als auch staatliche Institutionen - an das Gesetz gebunden. Niemand steht über dem Gesetz."
+    "explanation": "In einem Rechtsstaat sind alle - sowohl Bürger als auch staatliche Institutionen - an das Gesetz gebunden. Niemand steht über dem Gesetz.",
+    "explanationTranslations": {
+      "en": "In a constitutional state, everyone - both citizens and state institutions - is bound by the law. No one is above the law.",
+      "es": "En un estado de derecho, todos - tanto ciudadanos como instituciones estatales - están sujetos a la ley. Nadie está por encima de la ley.",
+      "fr": "Dans un État de droit, tout le monde - citoyens et institutions étatiques - est lié par la loi. Personne n'est au-dessus de la loi.",
+      "it": "In uno stato di diritto, tutti - sia cittadini che istituzioni statali - sono vincolati dalla legge. Nessuno è al di sopra della legge.",
+      "tr": "Bir hukuk devletinde herkes - hem vatandaşlar hem de devlet kurumları - yasaya bağlıdır. Hiç kimse yasanın üstünde değildir.",
+      "ar": "في دولة القانون، الجميع - المواطنون والمؤسسات الحكومية - ملزمون بالقانون. لا أحد فوق القانون.",
+      "ru": "В правовом государстве все - как граждане, так и государственные институты - связаны законом. Никто не стоит выше закона.",
+      "zh": "在法治国家中，每个人——公民和国家机构——都受法律约束。没有人凌驾于法律之上。",
+      "hi": "एक कानूनी राज्य में सभी - नागरिक और राज्य संस्थान दोनों - कानून से बंधे होते हैं। कोई भी कानून से ऊपर नहीं है।"
+    }
   },
   {
     "id": "q004",
@@ -3083,106 +3272,3 @@
   {
     "id": "q291",
     "category": "Economy",
-    "question": "Warum muss man in Deutschland bei der Steuererklärung aufschreiben, ob man zu einer Kirche gehört oder nicht? Weil …",
-    "options": [
-      "es eine Kirchensteuer gibt, die an die Einkommen- und Lohnsteuer geknüpft ist.",
-      "das für die Statistik in Deutschland wichtig ist.",
-      "man mehr Steuern zahlen muss, wenn man nicht zu einer Kirche gehört.",
-      "die Kirche für die Steuererklärung verantwortlich ist."
-    ],
-    "answerIndex": 0,
-    "explanation": "In Deutschland wird die Kirchensteuer vom Finanzamt eingezogen und richtet sich nach dem Einkommen[cite: 3080]."
-  },
-  {
-    "id": "q292",
-    "category": "Culture",
-    "question": "Die Menschen in Deutschland leben nach dem Grundsatz der religiösen Toleranz. Was bedeutet das?",
-    "options": [
-      "Es dürfen keine Moscheen gebaut werden.",
-      "Alle Menschen glauben an Gott.",
-      "Jeder kann glauben, was er möchte.",
-      "Der Staat entscheidet, an welchen Gott die Menschen glauben."
-    ],
-    "answerIndex": 2,
-    "explanation": "Religiöse Toleranz ist die Akzeptanz anderer Religionen und die freie Ausübung des Glaubens[cite: 3085]."
-  },
-  {
-    "id": "q293",
-    "category": "Culture",
-    "question": "Was ist in Deutschland ein Brauch zu Ostern?",
-    "options": [
-      "Kürbisse vor die Tür stellen",
-      "einen Tannenbaum schmücken",
-      "Eier bemalen",
-      "Raketen in die Luft schießen"
-    ],
-    "answerIndex": 2,
-    "explanation": "Das Bemalen von Eiern ist ein bekannter Osterbrauch in Deutschland[cite: 3087]."
-  },
-  {
-    "id": "q294",
-    "category": "Culture",
-    "question": "Pfingsten ist ein …",
-    "options": ["christlicher Feiertag.", "deutscher Gedenktag.", "internationaler Trauertag.", "bayerischer Brauch."],
-    "answerIndex": 0,
-    "explanation": "Pfingsten ist ein christliches Fest, das an die Ausgießung des Heiligen Geistes erinnert[cite: 3088]."
-  },
-  {
-    "id": "q295",
-    "category": "History",
-    "question": "Welche Religion hat die europäische und deutsche Kultur geprägt?",
-    "options": ["der Hinduismus", "das Christentum", "der Buddhismus", "der Islam"],
-    "answerIndex": 1,
-    "explanation": "Das Christentum hat die europäische und deutsche Kultur maßgeblich geprägt[cite: 3090]."
-  },
-  {
-    "id": "q296",
-    "category": "Culture",
-    "question": "In Deutschland nennt man die letzten vier Wochen vor Weihnachten …",
-    "options": ["den Buß- und Bettag.", "das Erntedankfest.", "die Adventszeit.", "Allerheiligen."],
-    "answerIndex": 2,
-    "explanation": "Die vier Wochen vor Weihnachten sind die Adventszeit[cite: 3092]."
-  },
-  {
-    "id": "q297",
-    "category": "Demographics",
-    "question": "Aus welchem Land sind die meisten Migrantinnen und Migranten nach Deutschland gekommen?",
-    "options": ["Italien", "Polen", "Marokko", "Türkei"],
-    "answerIndex": 3,
-    "explanation": "Die Türkei ist das Land, aus dem die meisten Migranten nach Deutschland gekommen sind[cite: 3094]."
-  },
-  {
-    "id": "q298",
-    "category": "History",
-    "question": "In der DDR lebten vor allem Migrantinnen und Migranten aus …",
-    "options": [
-      "Vietnam, Polen, Mosambik.",
-      "Frankreich, Rumänien, Somalia.",
-      "Chile, Ungarn, Simbabwe.",
-      "Nordkorea, Mexiko, Ägypten."
-    ],
-    "answerIndex": 0,
-    "explanation": "In der DDR lebten vor allem Vertragsarbeiter aus Vietnam, Polen und Mosambik[cite: 3095]."
-  },
-  {
-    "id": "q299",
-    "category": "History",
-    "question": "Ausländische Arbeitnehmerinnen und Arbeitnehmer, die in den 50er und 60er Jahren von der Bundesrepublik Deutschland angeworben wurden, nannte man …",
-    "options": [
-      "Schwarzarbeiterinnen/Schwarzarbeiter.",
-      "Gastarbeiterinnen/Gastarbeiter.",
-      "Zeitarbeiterinnen/Zeitarbeiter.",
-      "Schichtarbeiterinnen/Schichtarbeiter."
-    ],
-    "answerIndex": 1,
-    "explanation": "Die angeworbenen Arbeitskräfte ausländischer Herkunft wurden als Gastarbeiter bezeichnet[cite: 3097]."
-  },
-  {
-    "id": "q300",
-    "category": "History",
-    "question": "Aus welchem Land kamen die ersten Gastarbeiterinnen und Gastarbeiter in die Bundesrepublik Deutschland?",
-    "options": ["Italien", "Spanien", "Portugal", "Türkei"],
-    "answerIndex": 0,
-    "explanation": "Die ersten Gastarbeiter kamen aus Italien[cite: 3098]."
-  }
-]

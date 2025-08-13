@@ -39,14 +39,33 @@ export const languageDisplayNames: Record<string, string> = {
   hi: "हिंदी",
 }
 
-// Enhanced translation service for German citizenship test content
+// Get translated question content from JSON data
+export const getTranslatedQuestion = (question: any, targetLanguage: string) => {
+  console.log(`🔍 Getting translation for question ${question.id} in ${targetLanguage}`)
+
+  // Check if translations exist in the question data
+  if (question.translations && question.translations[targetLanguage]) {
+    console.log(`✅ Found pre-translated question for ${targetLanguage}`)
+
+    return {
+      question: question.translations[targetLanguage],
+      options: question.optionTranslations?.[targetLanguage] || question.options,
+      explanation: question.explanationTranslations?.[targetLanguage] || question.explanation,
+    }
+  }
+
+  console.log(`❌ No pre-translation found for ${targetLanguage}, falling back to word-by-word`)
+  return null
+}
+
+// Enhanced translation service - now prioritizes JSON translations
 export const translateText = async (text: string, targetLanguage: string): Promise<string> => {
   // Simulate realistic API delay
   await new Promise((resolve) => setTimeout(resolve, 200))
 
   console.log(`🔍 Translating: "${text}" to ${targetLanguage}`)
 
-  // First, try exact match
+  // First, try exact match from dictionary
   if (translationDictionary[text] && translationDictionary[text][targetLanguage]) {
     console.log(`✅ Found exact translation for "${text}":`, translationDictionary[text][targetLanguage])
     return translationDictionary[text][targetLanguage]
