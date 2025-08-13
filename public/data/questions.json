@@ -1119,7 +1119,7 @@
     "category": "Politics",
     "question": "Welche Partei wurde 1959 gegründet?",
     "options": ["Die Grünen", "Die Linke", "FDP", "SPD"],
-    "answerIndex": 0,
-    "explanation": "Die Grünen wurden 1980 gegründet, nicht 1959. Diese Frage scheint einen Fehler zu enthalten."
+    "answerIndex": 2,
+    "explanation": "Die FDP wurde 1948 gegründet."
   }
 ]

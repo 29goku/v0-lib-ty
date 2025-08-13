@@ -24,8 +24,9 @@
 }
 
 :root {
-  --font-geist-sans: var(--font-sans);
-  --font-geist-mono: var(--font-mono);
+  /* updated font variables to match Google Fonts from layout.tsx */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 @layer base {
