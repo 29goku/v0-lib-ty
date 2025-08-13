@@ -206,5 +206,920 @@
       "zh": "在法治国家中，每个人——公民和国家机构——都受法律约束。没有人凌驾于法律之上。",
       "hi": "एक कानूनी राज्य में सभी - नागरिक और राज्य संस्थान दोनों - कानून से बंधे होते हैं। कोई भी कानून से ऊपर नहीं है।"
     }
+  },
+  {
+    "id": "q004",
+    "category": "Politics",
+    "question": "Welches Recht gehört zu den Grundrechten in Deutschland?",
+    "translations": {
+      "en": "Which right belongs to the fundamental rights in Germany?",
+      "es": "¿Qué derecho pertenece a los derechos fundamentales en Alemania?",
+      "fr": "Quel droit appartient aux droits fondamentaux en Allemagne?",
+      "it": "Quale diritto appartiene ai diritti fondamentali in Germania?",
+      "tr": "Almanya'da temel haklara hangi hak aittir?",
+      "ar": "أي حق ينتمي إلى الحقوق الأساسية في ألمانيا؟",
+      "ru": "Какое право относится к основным правам в Германии?",
+      "zh": "哪项权利属于德国的基本权利？",
+      "hi": "जर्मनी में कौन सा अधिकार मौलिक अधिकारों से संबंधित है？"
+    },
+    "options": ["Waffenbesitz", "Faustrecht", "Meinungsfreiheit", "Selbstjustiz"],
+    "optionTranslations": {
+      "en": ["Gun ownership", "Might makes right", "Freedom of opinion", "Vigilante justice"],
+      "es": ["Posesión de armas", "La ley del más fuerte", "Libertad de opinión", "Justicia por mano propia"],
+      "fr": ["Possession d'armes", "La loi du plus fort", "Liberté d'opinion", "Justice privée"],
+      "it": ["Possesso di armi", "La legge del più forte", "Libertà di opinione", "Giustizia fai-da-te"],
+      "tr": ["Silah bulundurma", "Güçlünün hakkı", "Görüş özgürlüğü", "Öz adalet"],
+      "ar": ["حيازة الأسلحة", "قانون الأقوى", "حرية الرأي", "العدالة الذاتية"],
+      "ru": ["Владение оружием", "Право сильного", "Свобода мнений", "Самосуд"],
+      "zh": ["拥有武器", "强权即公理", "言论自由", "私刑正义"],
+      "hi": ["हथियार रखना", "ताकत का अधिकार", "मत की स्वतंत्रता", "स्व-न्याय"]
+    },
+    "answerIndex": 2,
+    "explanation": "Die Meinungsfreiheit ist ein fundamentales Grundrecht in Deutschland und im Grundgesetz verankert.",
+    "explanationTranslations": {
+      "en": "Freedom of opinion is a fundamental right in Germany and is enshrined in the Basic Law.",
+      "es": "La libertad de opinión es un derecho fundamental en Alemania y está consagrada en la Ley Fundamental.",
+      "fr": "La liberté d'opinion est un droit fondamental en Allemagne et est inscrite dans la Loi fondamentale.",
+      "it": "La libertà di opinione è un diritto fondamentale in Germania ed è sancita nella Legge fondamentale.",
+      "tr": "Görüş özgürlüğü Almanya'da temel bir haktır ve Anayasa'da yer almaktadır.",
+      "ar": "حرية الرأي حق أساسي في ألمانيا ومنصوص عليها في القانون الأساسي.",
+      "ru": "Свобода мнений является основным правом в Германии и закреплена в Основном законе.",
+      "zh": "言论自由是德国的一项基本权利，载于《基本法》中。",
+      "hi": "मत की स्वतंत्रता जर्मनी में एक मौलिक अधिकार है और मूल कानून में निहित है।"
+    }
+  },
+  {
+    "id": "q005",
+    "category": "Politics",
+    "question": "Wahlen in Deutschland sind frei. Was bedeutet das?",
+    "translations": {
+      "en": "Elections in Germany are free. What does this mean?",
+      "es": "Las elecciones en Alemania son libres. ¿Qué significa esto?",
+      "fr": "Les élections en Allemagne sont libres. Qu'est-ce que cela signifie?",
+      "it": "Le elezioni in Germania sono libere. Cosa significa questo?",
+      "tr": "Almanya'da seçimler özgürdür. Bu ne anlama gelir?",
+      "ar": "الانتخابات في ألمانيا حرة. ماذا يعني هذا؟",
+      "ru": "Выборы в Германии свободные. Что это означает?",
+      "zh": "德国的选举是自由的。这意味着什么？",
+      "hi": "जर्मनी में चुनाव स्वतंत्र हैं। इसका क्या मतलब है？"
+    },
+    "options": [
+      "Man darf Geld annehmen, wenn man dafür eine bestimmte Kandidatin/einen bestimmten Kandidaten wählt.",
+      "Nur Personen, die noch nie im Gefängnis waren, dürfen wählen.",
+      "Die Wählerin/der Wähler darf bei der Wahl weder beeinflusst noch zu einer bestimmten Stimmabgabe gezwungen werden und keine Nachteile durch die Wahl haben.",
+      "Alle wahlberechtigten Personen müssen wählen."
+    ],
+    "optionTranslations": {
+      "en": [
+        "One may accept money for voting for a specific candidate.",
+        "Only people who have never been in prison may vote.",
+        "The voter may neither be influenced nor forced to vote in a particular way and must not suffer any disadvantages from voting.",
+        "All eligible persons must vote."
+      ],
+      "es": [
+        "Se puede aceptar dinero por votar por un candidato específico.",
+        "Solo las personas que nunca han estado en prisión pueden votar.",
+        "El votante no puede ser influenciado ni obligado a votar de una manera particular y no debe sufrir desventajas por votar.",
+        "Todas las personas elegibles deben votar."
+      ],
+      "fr": [
+        "On peut accepter de l'argent pour voter pour un candidat spécifique.",
+        "Seules les personnes qui n'ont jamais été en prison peuvent voter.",
+        "L'électeur ne peut être ni influencé ni forcé à voter d'une manière particulière et ne doit subir aucun désavantage du fait de voter.",
+        "Toutes les personnes éligibles doivent voter."
+      ],
+      "it": [
+        "Si può accettare denaro per votare per un candidato specifico.",
+        "Solo le persone che non sono mai state in prigione possono votare.",
+        "L'elettore non può essere né influenzato né costretto a votare in un modo particolare e non deve subire svantaggi dal voto.",
+        "Tutte le persone idonee devono votare."
+      ],
+      "tr": [
+        "Belirli bir adaya oy vermek için para kabul edilebilir.",
+        "Sadece hiç hapiste olmamış kişiler oy verebilir.",
+        "Seçmen ne etkilenebilir ne de belirli bir şekilde oy vermeye zorlanabilir ve oydan dolayı herhangi bir dezavantaj yaşamamalıdır.",
+        "Tüm seçme hakkı olan kişiler oy vermek zorundadır."
+      ],
+      "ar": [
+        "يمكن قبول المال مقابل التصويت لمرشح معين.",
+        "فقط الأشخاص الذين لم يكونوا في السجن من قبل يمكنهم التصويت.",
+        "لا يجوز التأثير على الناخب أو إجباره على التصويت بطريقة معينة ولا يجب أن يعاني من أي عيوب من التصويت.",
+        "جميع الأشخاص المؤهلين يجب أن يصوتوا."
+      ],
+      "ru": [
+        "Можно принимать деньги за голосование за определенного кандидата.",
+        "Только люди, которые никогда не были в тюрьме, могут голосовать.",
+        "На избирателя нельзя влиять или принуждать голосовать определенным образом, и он не должен нести никаких недостатков от голосования.",
+        "Все имеющие право лица должны голосовать."
+      ],
+      "zh": [
+        "可以接受金钱来投票给特定候选人。",
+        "只有从未入狱的人才能投票。",
+        "选民不得受到影响或被迫以特定方式投票，也不得因投票而遭受任何不利。",
+        "所有符合条件的人都必须投票。"
+      ],
+      "hi": [
+        "किसी विशिष्ट उम्मीदवार को वोट देने के लिए पैसे स्वीकार कर सकते हैं।",
+        "केवल वे लोग जो कभी जेल में नहीं गए हैं, वोट दे सकते हैं।",
+        "मतदाता को न तो प्रभावित किया जा सकता है और न ही किसी विशेष तरीके से वोट देने के लिए मजबूर किया जा सकता है और वोट देने से कोई नुकसान नहीं होना चाहिए।",
+        "सभी योग्य व्यक्तियों को वोट देना चाहिए।"
+      ]
+    },
+    "answerIndex": 2,
+    "explanation": "Freie Wahlen bedeuten, dass Wähler ohne Zwang, Bestechung oder Einschüchterung ihre Stimme abgeben können.",
+    "explanationTranslations": {
+      "en": "Free elections mean that voters can cast their vote without coercion, bribery, or intimidation.",
+      "es": "Las elecciones libres significan que los votantes pueden emitir su voto sin coacción, soborno o intimidación.",
+      "fr": "Les élections libres signifient que les électeurs peuvent voter sans contrainte, corruption ou intimidation.",
+      "it": "Le elezioni libere significano che gli elettori possono votare senza coercizione, corruzione o intimidazione.",
+      "tr": "Özgür seçimler, seçmenlerin zorlama, rüşvet veya gözdağı olmadan oy verebilmeleri anlamına gelir.",
+      "ar": "الانتخابات الحرة تعني أن الناخبين يمكنهم الإدلاء بأصواتهم دون إكراه أو رشوة أو تخويف.",
+      "ru": "Свободные выборы означают, что избиратели могут голосовать без принуждения, подкупа или запугивания.",
+      "zh": "自由选举意味着选民可以在没有强制、贿赂或恐吓的情况下投票。",
+      "hi": "स्वतंत्र चुनाव का मतलब है कि मतदाता बिना दबाव, रिश्वत या धमकी के अपना वोट डाल सकते हैं।"
+    }
+  },
+  {
+    "id": "q006",
+    "category": "Politics",
+    "question": "Wie heißt die deutsche Verfassung?",
+    "options": ["Volksgesetz", "Bundesgesetz", "Deutsches Gesetz", "Grundgesetz"],
+    "answerIndex": 3,
+    "explanation": "Das Grundgesetz ist die Verfassung der Bundesrepublik Deutschland und wurde 1949 verabschiedet."
+  },
+  {
+    "id": "q007",
+    "category": "Politics",
+    "question": "Welches Recht gehört zu den Grundrechten, die nach der deutschen Verfassung garantiert werden? Das Recht auf …",
+    "options": ["Glaubens- und Gewissensfreiheit", "Unterhaltung", "Arbeit", "Wohnung"],
+    "answerIndex": 0,
+    "explanation": "Die Glaubens- und Gewissensfreiheit ist ein im Grundgesetz garantiertes Grundrecht (Artikel 4)."
+  },
+  {
+    "id": "q008",
+    "category": "Politics",
+    "question": "Was steht nicht im Grundgesetz von Deutschland?",
+    "options": [
+      "Die Würde des Menschen ist unantastbar.",
+      "Alle sollen gleich viel Geld haben.",
+      "Jeder Mensch darf seine Meinung sagen.",
+      "Alle sind vor dem Gesetz gleich."
+    ],
+    "answerIndex": 1,
+    "explanation": "Das Grundgesetz garantiert Gleichberechtigung vor dem Gesetz, aber nicht gleichen Besitz oder gleiche Einkommen."
+  },
+  {
+    "id": "q009",
+    "category": "Politics",
+    "question": "Welches Grundrecht gilt in Deutschland nur für Ausländerinnen/Ausländer? Das Grundrecht auf …",
+    "options": ["Schutz der Familie", "Menschenwürde", "Asyl", "Meinungsfreiheit"],
+    "answerIndex": 2,
+    "explanation": "Das Asylrecht gilt nur für Ausländer, da deutsche Staatsangehörige bereits Schutz durch ihre Staatsangehörigkeit haben."
+  },
+  {
+    "id": "q010",
+    "category": "Law",
+    "question": "Was ist mit dem deutschen Grundgesetz vereinbar?",
+    "options": ["die Prügelstrafe", "die Folter", "die Todesstrafe", "die Geldstrafe"],
+    "answerIndex": 3,
+    "explanation": "Geldstrafen sind rechtmäßige Sanktionen im deutschen Rechtssystem. Körperstrafen und Todesstrafe sind verfassungswidrig."
+  },
+  {
+    "id": "q011",
+    "category": "Politics",
+    "question": "Wie wird die Verfassung der Bundesrepublik Deutschland genannt?",
+    "options": ["Grundgesetz", "Bundesverfassung", "Gesetzbuch", "Verfassungsvertrag"],
+    "answerIndex": 0,
+    "explanation": "Die deutsche Verfassung heißt 'Grundgesetz' und wurde 1949 verabschiedet."
+  },
+  {
+    "id": "q012",
+    "category": "Politics",
+    "question": "Eine Partei im Deutschen Bundestag will die Pressefreiheit abschaffen. Ist das möglich?",
+    "options": [
+      "Ja, wenn mehr als die Hälfte der Abgeordneten im Bundestag dafür sind.",
+      "Ja, aber dazu müssen zwei Drittel der Abgeordneten im Bundestag dafür sein.",
+      "Nein, denn die Pressefreiheit ist ein Grundrecht. Sie kann nicht abgeschafft werden.",
+      "Nein, denn nur der Bundesrat kann die Pressefreiheit abschaffen."
+    ],
+    "answerIndex": 2,
+    "explanation": "Die Pressefreiheit ist ein unveränderliches Grundrecht und kann auch nicht durch Verfassungsänderung abgeschafft werden."
+  },
+  {
+    "id": "q013",
+    "category": "Politics",
+    "question": "Im Parlament steht der Begriff 'Opposition' für …",
+    "options": [
+      "die regierenden Parteien.",
+      "die Fraktion mit den meisten Abgeordneten.",
+      "alle Parteien, die bei der letzten Wahl die 5%-Hürde erreichen konnten.",
+      "alle Abgeordneten, die nicht zu der Regierungspartei/den Regierungsparteien gehören."
+    ],
+    "answerIndex": 3,
+    "explanation": "Die Opposition besteht aus allen Parteien im Parlament, die nicht an der Regierung beteiligt sind."
+  },
+  {
+    "id": "q014",
+    "category": "Politics",
+    "question": "Meinungsfreiheit in Deutschland heißt, dass ich …",
+    "options": [
+      "Passanten auf der Straße beschimpfen darf.",
+      "meine Meinung im Internet äußern kann.",
+      "Nazi-, Hamas- oder Islamischer Staat-Symbole öffentlich tragen darf.",
+      "meine Meinung nur dann äußern darf, solange ich der Regierung nicht widerspreche."
+    ],
+    "answerIndex": 1,
+    "explanation": "Meinungsfreiheit bedeutet, dass man seine Meinung frei äußern kann, aber nicht andere beleidigen oder verfassungsfeindliche Symbole verwenden darf."
+  },
+  {
+    "id": "q015",
+    "category": "Politics",
+    "question": "Was verbietet das deutsche Grundgesetz?",
+    "options": ["Militärdienst", "Zwangsarbeit", "freie Berufswahl", "Arbeit im Ausland"],
+    "answerIndex": 1,
+    "explanation": "Das Grundgesetz verbietet Zwangsarbeit explizit. Jeder hat das Recht auf freie Berufswahl."
+  },
+  {
+    "id": "q016",
+    "category": "Politics",
+    "question": "Wann ist die Meinungsfreiheit in Deutschland eingeschränkt?",
+    "options": [
+      "bei der öffentlichen Verbreitung falscher Behauptungen über einzelne Personen",
+      "bei Meinungsäußerungen über die Bundesregierung",
+      "bei Diskussionen über Religionen",
+      "bei Kritik am Staat"
+    ],
+    "answerIndex": 0,
+    "explanation": "Meinungsfreiheit hat Grenzen, wenn sie die Rechte anderer verletzt, z.B. durch Verleumdung oder üble Nachrede."
+  },
+  {
+    "id": "q017",
+    "category": "Law",
+    "question": "Die deutschen Gesetze verbieten …",
+    "options": [
+      "Meinungsfreiheit der Einwohnerinnen und Einwohner.",
+      "Petitionen der Bürgerinnen und Bürger.",
+      "Versammlungsfreiheit der Einwohnerinnen und Einwohner.",
+      "Ungleichbehandlung der Bürgerinnen und Bürger durch den Staat."
+    ],
+    "answerIndex": 3,
+    "explanation": "Deutsche Gesetze verbieten Diskriminierung und Ungleichbehandlung durch staatliche Stellen."
+  },
+  {
+    "id": "q018",
+    "category": "Politics",
+    "question": "Welches Grundrecht ist in Artikel 1 des Grundgesetzes der Bundesrepublik Deutschland garantiert?",
+    "options": [
+      "die Unantastbarkeit der Menschenwürde",
+      "das Recht auf Leben",
+      "Religionsfreiheit",
+      "Meinungsfreiheit"
+    ],
+    "answerIndex": 0,
+    "explanation": "Artikel 1 des Grundgesetzes beginnt mit 'Die Würde des Menschen ist unantastbar' - dies ist das oberste Grundrecht."
+  },
+  {
+    "id": "q019",
+    "category": "Politics",
+    "question": "Was versteht man unter dem Recht der 'Freizügigkeit' in Deutschland?",
+    "options": [
+      "Man darf sich seinen Wohnort selbst aussuchen.",
+      "Man kann seinen Beruf wechseln.",
+      "Man darf sich für eine andere Religion entscheiden.",
+      "Man darf sich in der Öffentlichkeit nur leicht bekleidet bewegen."
+    ],
+    "answerIndex": 0,
+    "explanation": "Freizügigkeit bedeutet das Recht, innerhalb Deutschlands frei zu reisen und seinen Wohnort zu wählen."
+  },
+  {
+    "id": "q020",
+    "category": "Politics",
+    "question": "Eine Partei in Deutschland verfolgt das Ziel, eine Diktatur zu errichten. Sie ist dann …",
+    "options": ["tolerant.", "rechtsstaatlich orientiert.", "gesetzestreu.", "verfassungswidrig."],
+    "answerIndex": 3,
+    "explanation": "Parteien, die die demokratische Grundordnung abschaffen wollen, sind verfassungswidrig und können verboten werden."
+  },
+  {
+    "id": "q021",
+    "category": "Culture",
+    "question": "Welches ist das Wappen der Bundesrepublik Deutschland?",
+    "image": "/images/coat-of-arms-question.jpg",
+    "options": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
+    "answerIndex": 0,
+    "explanation": "Das Wappen der Bundesrepublik Deutschland zeigt den Bundesadler - einen schwarzen Adler auf goldenem Grund. Dies ist das offizielle Staatswappen seit 1950."
+  },
+  {
+    "id": "q022",
+    "category": "Geography",
+    "question": "Was für eine Staatsform hat Deutschland?",
+    "options": ["Monarchie", "Diktatur", "Republik", "Fürstentum"],
+    "answerIndex": 2,
+    "explanation": "Deutschland ist eine Bundesrepublik, eine demokratische Staatsform ohne Monarchen."
+  },
+  {
+    "id": "q023",
+    "category": "Politics",
+    "question": "In Deutschland sind die meisten Erwerbstätigen …",
+    "options": [
+      "in kleinen Familienunternehmen beschäftigt.",
+      "ehrenamtlich für ein Bundesland tätig.",
+      "selbstständig mit einer eigenen Firma tätig.",
+      "bei einer Firma oder Behörde beschäftigt."
+    ],
+    "answerIndex": 3,
+    "explanation": "Die meisten Deutschen arbeiten als Angestellte in Unternehmen oder öffentlichen Einrichtungen."
+  },
+  {
+    "id": "q024",
+    "category": "Geography",
+    "question": "Wie viele Bundesländer hat die Bundesrepublik Deutschland?",
+    "options": ["14", "15", "16", "17"],
+    "answerIndex": 2,
+    "explanation": "Deutschland besteht aus 16 Bundesländern, einschließlich der drei Stadtstaaten Berlin, Hamburg und Bremen."
+  },
+  {
+    "id": "q025",
+    "category": "Geography",
+    "question": "Was ist kein Bundesland der Bundesrepublik Deutschland?",
+    "options": ["Elsass-Lothringen", "Nordrhein-Westfalen", "Mecklenburg-Vorpommern", "Sachsen-Anhalt"],
+    "answerIndex": 0,
+    "explanation": "Elsass-Lothringen gehört zu Frankreich, nicht zu Deutschland."
+  },
+  {
+    "id": "q026",
+    "category": "Politics",
+    "question": "Deutschland ist …",
+    "options": [
+      "eine kommunistische Republik.",
+      "ein demokratischer und sozialer Bundesstaat.",
+      "eine kapitalistische und soziale Monarchie.",
+      "ein sozialer und sozialistischer Bundesstaat."
+    ],
+    "answerIndex": 1,
+    "explanation": "Deutschland ist laut Grundgesetz ein demokratischer und sozialer Bundesstaat."
+  },
+  {
+    "id": "q027",
+    "category": "Politics",
+    "question": "Deutschland ist …",
+    "options": ["ein sozialistischer Staat.", "ein Bundesstaat.", "eine Diktatur.", "eine Monarchie."],
+    "answerIndex": 1,
+    "explanation": "Deutschland ist ein föderaler Bundesstaat mit 16 Bundesländern."
+  },
+  {
+    "id": "q028",
+    "category": "Politics",
+    "question": "Wer wählt in Deutschland die Abgeordneten zum Bundestag?",
+    "options": ["das Militär", "die Wirtschaft", "das wahlberechtigte Volk", "die Verwaltung"],
+    "answerIndex": 2,
+    "explanation": "Die Bundestagsabgeordneten werden vom wahlberechtigten Volk in freien, geheimen und direkten Wahlen gewählt."
+  },
+  {
+    "id": "q029",
+    "category": "Culture",
+    "question": "Welches Tier ist das Wappentier der Bundesrepublik Deutschland?",
+    "options": ["Löwe", "Adler", "Bär", "Pferd"],
+    "answerIndex": 1,
+    "explanation": "Der Bundesadler ist das Wappentier Deutschlands und Symbol der Bundesrepublik."
+  },
+  {
+    "id": "q030",
+    "category": "Politics",
+    "question": "Was ist kein Merkmal unserer Demokratie?",
+    "options": ["regelmäßige Wahlen", "Pressezensur", "Meinungsfreiheit", "verschiedene Parteien"],
+    "answerIndex": 1,
+    "explanation": "Pressezensur widerspricht den demokratischen Grundprinzipien. In einer Demokratie herrscht Pressefreiheit."
+  },
+  {
+    "id": "q031",
+    "category": "Politics",
+    "question": "Die Zusammenarbeit von Parteien zur Bildung einer Regierung nennt man in Deutschland …",
+    "options": ["Einheit.", "Koalition.", "Ministerium.", "Fraktion."],
+    "answerIndex": 1,
+    "explanation": "Eine Koalition ist ein Bündnis mehrerer Parteien zur gemeinsamen Regierungsbildung."
+  },
+  {
+    "id": "q032",
+    "category": "Politics",
+    "question": "Was ist keine staatliche Gewalt in Deutschland?",
+    "options": ["Gesetzgebung", "Regierung", "Presse", "Rechtsprechung"],
+    "answerIndex": 2,
+    "explanation": "Die Presse ist keine staatliche Gewalt, sondern ein wichtiges Kontrollorgan der Demokratie (vierte Gewalt)."
+  },
+  {
+    "id": "q033",
+    "category": "Politics",
+    "question": "Welche Aussage ist richtig? In Deutschland …",
+    "options": [
+      "sind Staat und Religionsgemeinschaften voneinander getrennt.",
+      "bilden die Religionsgemeinschaften den Staat.",
+      "ist der Staat abhängig von den Religionsgemeinschaften.",
+      "bilden Staat und Religionsgemeinschaften eine Einheit."
+    ],
+    "answerIndex": 0,
+    "explanation": "Deutschland praktiziert die Trennung von Staat und Kirche, auch wenn es Kooperationen gibt (z.B. Kirchensteuer)."
+  },
+  {
+    "id": "q034",
+    "category": "Politics",
+    "question": "Was ist Deutschland nicht?",
+    "options": ["eine Demokratie", "ein Rechtsstaat", "eine Monarchie", "ein Sozialstaat"],
+    "answerIndex": 2,
+    "explanation": "Deutschland ist eine Republik, keine Monarchie. Es gibt keinen König oder Kaiser."
+  },
+  {
+    "id": "q035",
+    "category": "Politics",
+    "question": "Womit finanziert der deutsche Staat die Sozialversicherung?",
+    "options": ["Kirchensteuer", "Sozialabgaben", "Spendengeldern", "Vereinsbeiträgen"],
+    "answerIndex": 1,
+    "explanation": "Die Sozialversicherung wird hauptsächlich durch Beiträge von Arbeitnehmern und Arbeitgebern finanziert."
+  },
+  {
+    "id": "q036",
+    "category": "Politics",
+    "question": "Welche Maßnahme schafft in Deutschland soziale Sicherheit?",
+    "options": [
+      "die Krankenversicherung",
+      "die Autoversicherung",
+      "die Gebäudeversicherung",
+      "die Haftpflichtversicherung"
+    ],
+    "answerIndex": 0,
+    "explanation": "Die Krankenversicherung ist Teil des sozialen Sicherungssystems und schützt vor den finanziellen Folgen von Krankheit."
+  },
+  {
+    "id": "q037",
+    "category": "Politics",
+    "question": "Wie werden die Regierungschefinnen/Regierungschefs der meisten Bundesländer in Deutschland genannt?",
+    "options": [
+      "Erste Ministerin/Erster Minister",
+      "Premierministerin/Premierminister",
+      "Senatorin/Senator",
+      "Ministerpräsidentin/Ministerpräsident"
+    ],
+    "answerIndex": 3,
+    "explanation": "Die Regierungschefs der Bundesländer heißen Ministerpräsident/in (außer in den Stadtstaaten)."
+  },
+  {
+    "id": "q038",
+    "category": "Politics",
+    "question": "Die Bundesrepublik Deutschland ist ein demokratischer und sozialer …",
+    "options": ["Staatenverbund.", "Bundesstaat.", "Staatenbund.", "Zentralstaat."],
+    "answerIndex": 1,
+    "explanation": "Deutschland ist ein Bundesstaat - die Länder haben eigene Kompetenzen, aber der Bund hat die Oberhoheit."
+  },
+  {
+    "id": "q039",
+    "category": "Politics",
+    "question": "Was hat jedes deutsche Bundesland?",
+    "options": [
+      "eine eigene Außenministerin/einen eigenen Außenminister",
+      "eine eigene Währung",
+      "eine eigene Armee",
+      "eine eigene Regierung"
+    ],
+    "answerIndex": 3,
+    "explanation": "Jedes Bundesland hat eine eigene Landesregierung mit einem Ministerpräsidenten an der Spitze."
+  },
+  {
+    "id": "q040",
+    "category": "Culture",
+    "question": "Mit welchen Worten beginnt die deutsche Nationalhymne?",
+    "options": [
+      "Völker, hört die Signale …",
+      "Einigkeit und Recht und Freiheit …",
+      "Freude schöner Götterfunken …",
+      "Deutschland einig Vaterland …"
+    ],
+    "answerIndex": 1,
+    "explanation": "Die deutsche Nationalhymne beginnt mit 'Einigkeit und Recht und Freiheit' (dritte Strophe des Deutschlandlieds)."
+  },
+  {
+    "id": "q041",
+    "category": "Politics",
+    "question": "Warum gibt es in einer Demokratie mehr als eine Partei?",
+    "options": [
+      "weil dadurch die unterschiedlichen Meinungen der Bürgerinnen und Bürger vertreten werden",
+      "damit Bestechung in der Politik begrenzt wird",
+      "um politische Demonstrationen zu verhindern",
+      "um wirtschaftlichen Wettbewerb anzuregen"
+    ],
+    "answerIndex": 0,
+    "explanation": "Mehrere Parteien sind notwendig, um die Vielfalt der politischen Meinungen in einer Demokratie widerzuspiegeln."
+  },
+  {
+    "id": "q042",
+    "category": "Politics",
+    "question": "Wer beschließt in Deutschland ein neues Gesetz?",
+    "options": ["die Regierung", "das Parlament", "die Gerichte", "die Polizei"],
+    "answerIndex": 1,
+    "explanation": "Neue Gesetze werden in Deutschland vom Parlament (Bundestag und Bundesrat) beschlossen."
+  },
+  {
+    "id": "q043",
+    "category": "Politics",
+    "question": "Wann kann in Deutschland eine Partei verboten werden?",
+    "options": [
+      "wenn ihr Wahlkampf zu teuer ist",
+      "wenn sie gegen die Verfassung kämpft",
+      "wenn sie Kritik am Staatsoberhaupt äußert",
+      "wenn ihr Programm eine neue Richtung vorschlägt"
+    ],
+    "answerIndex": 1,
+    "explanation": "Eine Partei kann vom Bundesverfassungsgericht verboten werden, wenn sie sich aktiv gegen die freiheitlich-demokratische Grundordnung richtet."
+  },
+  {
+    "id": "q044",
+    "category": "Politics",
+    "question": "Wen kann man als Bürgerin/Bürger in Deutschland nicht direkt wählen?",
+    "options": [
+      "Abgeordnete des EU-Parlaments",
+      "Die Bundespräsidentin/den Bundespräsidenten",
+      "Landtagsabgeordnete",
+      "Bundestagsabgeordnete"
+    ],
+    "answerIndex": 1,
+    "explanation": "Die Bundespräsidentin/der Bundespräsident wird nicht direkt vom Volk, sondern von der Bundesversammlung gewählt."
+  },
+  {
+    "id": "q045",
+    "category": "Politics",
+    "question": "Zu welcher Versicherung gehört die Pflegeversicherung?",
+    "options": [
+      "Sozialversicherung",
+      "Unfallversicherung",
+      "Hausratsversicherung",
+      "Haftpflicht- und Feuerversicherung"
+    ],
+    "answerIndex": 0,
+    "explanation": "Die Pflegeversicherung ist ein gesetzlicher Zweig der Sozialversicherung und soll die finanzielle Belastung im Pflegefall abfedern."
+  },
+  {
+    "id": "q046",
+    "category": "Politics",
+    "question": "Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört dazu?",
+    "options": [
+      "Er baut Straßen und Schulen.",
+      "Er verkauft Lebensmittel und Kleidung.",
+      "Er versorgt alle Einwohnerinnen und Einwohner kostenlos mit Zeitungen.",
+      "Er produziert Autos und Busse."
+    ],
+    "answerIndex": 0,
+    "explanation": "Der Bau und die Instandhaltung von Infrastruktur wie Straßen und Schulen sind Kernaufgaben des Staates."
+  },
+  {
+    "id": "q047",
+    "category": "Politics",
+    "question": "Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört nicht dazu?",
+    "options": [
+      "Er bezahlt für alle Staatsangehörigen Urlaubsreisen.",
+      "Er zahlt Kindergeld.",
+      "Er unterstützt Museen.",
+      "Er fördert Sportlerinnen und Sportler."
+    ],
+    "answerIndex": 0,
+    "explanation": "Urlaubsreisen zu bezahlen gehört nicht zu den Aufgaben des Staates. Er unterstützt aber durch Kindergeld, Kultur- und Sportförderung."
+  },
+  {
+    "id": "q048",
+    "category": "Politics",
+    "question": "Welches Organ gehört nicht zu den Verfassungsorganen Deutschlands?",
+    "options": ["der Bundesrat", "die Bundespräsidentin/der Bundespräsident", "die Bürgerversammlung", "die Regierung"],
+    "answerIndex": 2,
+    "explanation": "Verfassungsorgane sind der Bundestag, der Bundesrat, der Bundespräsident, die Bundesregierung und das Bundesverfassungsgericht. Eine Bürgerversammlung ist kein Verfassungsorgan."
+  },
+  {
+    "id": "q049",
+    "category": "Politics",
+    "question": "Wer bestimmt in Deutschland die Schulpolitik?",
+    "options": ["die Lehrer und Lehrerinnen", "die Bundesländer", "das Familienministerium", "die Universitäten"],
+    "answerIndex": 1,
+    "explanation": "Die Schulpolitik liegt in Deutschland in der Kompetenz der einzelnen Bundesländer."
+  },
+  {
+    "id": "q050",
+    "category": "Politics",
+    "question": "Die Wirtschaftsform in Deutschland nennt man …",
+    "options": [
+      "freie Zentralwirtschaft.",
+      "soziale Marktwirtschaft.",
+      "gelenkte Zentralwirtschaft.",
+      "Planwirtschaft."
+    ],
+    "answerIndex": 1,
+    "explanation": "Die soziale Marktwirtschaft ist die Wirtschaftsordnung in Deutschland, die die freie Marktwirtschaft mit sozialen Aspekten verbindet."
+  },
+  {
+    "id": "q051",
+    "category": "Law",
+    "question": "Zu einem demokratischen Rechtsstaat gehört es nicht, dass …",
+    "options": [
+      "Menschen sich kritisch über die Regierung äußern können.",
+      "Bürger friedlich demonstrieren gehen dürfen.",
+      "Menschen von einer Privatpolizei ohne Grund verhaftet werden.",
+      "jemand ein Verbrechen begeht und deshalb verhaftet wird."
+    ],
+    "answerIndex": 2,
+    "explanation": "Die willkürliche Verhaftung durch eine Privatpolizei widerspricht dem Rechtsstaatsprinzip. Nur staatliche Organe wie die Polizei dürfen jemanden aufgrund eines Haftbefehls verhaften."
+  },
+  {
+    "id": "q052",
+    "category": "Politics",
+    "question": "Was bedeutet 'Volkssouveränität'? Alle Staatsgewalt geht vom ...",
+    "options": ["Volke aus.", "Bundestag aus.", "preußischen König aus.", "Bundesverfassungsgericht aus."],
+    "answerIndex": 0,
+    "explanation": "Volkssouveränität ist ein demokratisches Prinzip, das besagt, dass die Staatsgewalt vom Volk ausgeht."
+  },
+  {
+    "id": "q053",
+    "category": "Law",
+    "question": "Was bedeutet 'Rechtsstaat' in Deutschland?",
+    "options": [
+      "Der Staat hat Recht.",
+      "Es gibt nur rechte Parteien.",
+      "Die Bürgerinnen und Bürger entscheiden über Gesetze.",
+      "Der Staat muss die Gesetze einhalten."
+    ],
+    "answerIndex": 3,
+    "explanation": "Im Rechtsstaat ist der Staat selbst an Recht und Gesetz gebunden."
+  },
+  {
+    "id": "q054",
+    "category": "Politics",
+    "question": "Was ist keine staatliche Gewalt in Deutschland?",
+    "options": ["Legislative", "Judikative", "Exekutive", "Direktive"],
+    "answerIndex": 3,
+    "explanation": "Die drei Staatsgewalten sind Legislative (Gesetzgebung), Exekutive (ausführende Gewalt) und Judikative (Rechtsprechung). 'Direktive' ist keine staatliche Gewalt."
+  },
+  {
+    "id": "q055",
+    "category": "Politics",
+    "question": "Was zeigt dieses Bild?",
+    "image": "/images/bundestag-building.jpg",
+    "options": [
+      "den Bundestagssitz in Berlin",
+      "das Bundesverfassungsgericht in Karlsruhe",
+      "das Bundesratsgebäude in Berlin",
+      "das Bundeskanzleramt in Berlin"
+    ],
+    "answerIndex": 0,
+    "explanation": "Das Bild zeigt das Reichstagsgebäude in Berlin, den Sitz des Deutschen Bundestages."
+  },
+  {
+    "id": "q056",
+    "category": "Politics",
+    "question": "Welches Amt gehört in Deutschland zur Gemeindeverwaltung?",
+    "options": ["Pfarramt", "Ordnungsamt", "Finanzamt", "Auswärtiges Amt"],
+    "answerIndex": 1,
+    "explanation": "Das Ordnungsamt ist eine kommunale Behörde und gehört zur Gemeindeverwaltung."
+  },
+  {
+    "id": "q057",
+    "category": "Politics",
+    "question": "Wer wird meistens zur Präsidentin/zum Präsidenten des Deutschen Bundestages gewählt?",
+    "options": [
+      "die/der älteste Abgeordnete im Parlament",
+      "die Ministerpräsidentin/der Ministerpräsident des größten Bundeslandes",
+      "eine ehemalige Bundeskanzlerin/ein ehemaliger Bundeskanzler",
+      "eine Abgeordnete/ein Abgeordneter der stärksten Fraktion"
+    ],
+    "answerIndex": 3,
+    "explanation": "Normalerweise wird der Bundestagspräsident aus den Reihen der stärksten Fraktion gewählt."
+  },
+  {
+    "id": "q058",
+    "category": "Politics",
+    "question": "Wer ernennt in Deutschland die Ministerinnen/die Minister der Bundesregierung?",
+    "options": [
+      "die Präsidentin/der Präsident des Bundesverfassungsgerichtes",
+      "die Bundespräsidentin/der Bundespräsident",
+      "die Bundesratspräsidentin/der Bundesratspräsident",
+      "die Bundestagspräsidentin/der Bundestagspräsident"
+    ],
+    "answerIndex": 1,
+    "explanation": "Die Bundespräsidentin/der Bundespräsident ernennt die Bundesminister auf Vorschlag des Bundeskanzlers."
+  },
+  {
+    "id": "q059",
+    "category": "History",
+    "question": "Vor wie vielen Jahren gab es erstmals eine jüdische Gemeinde auf dem Gebiet des heutigen Deutschlands?",
+    "options": ["vor etwa 300 Jahren", "vor etwa 700 Jahren", "vor etwa 1150 Jahren", "vor etwa 1700 Jahren"],
+    "answerIndex": 3,
+    "explanation": "Jüdische Gemeinden in Deutschland existieren seit der Römerzeit, der erste schriftliche Beleg stammt aus dem Jahr 321 nach Christus."
+  },
+  {
+    "id": "q060",
+    "category": "Politics",
+    "question": "In Deutschland gehören der Bundestag und der Bundesrat zur …",
+    "options": ["Exekutive.", "Legislative.", "Direktive.", "Judikative."],
+    "answerIndex": 1,
+    "explanation": "Bundestag und Bundesrat sind die gesetzgebenden Organe (Legislative)."
+  },
+  {
+    "id": "q061",
+    "category": "Politics",
+    "question": "Was bedeutet 'Volkssouveränität'?",
+    "options": [
+      "Die Königin/der König herrscht über das Volk.",
+      "Das Bundesverfassungsgericht steht über der Verfassung.",
+      "Die Interessenverbände üben die Souveränität zusammen mit der Regierung aus.",
+      "Die Staatsgewalt geht vom Volke aus."
+    ],
+    "answerIndex": 3,
+    "explanation": "Volkssouveränität ist das Prinzip, dass die oberste Gewalt im Staat vom Volk ausgeht."
+  },
+  {
+    "id": "q062",
+    "category": "Politics",
+    "question": "Wenn das Parlament eines deutschen Bundeslandes gewählt wird, nennt man das …",
+    "options": ["Kommunalwahl", "Landtagswahl", "Europawahl", "Bundestagswahl"],
+    "answerIndex": 1,
+    "explanation": "Das Parlament auf Landesebene heißt Landtag, daher wird die Wahl als Landtagswahl bezeichnet."
+  },
+  {
+    "id": "q063",
+    "category": "Politics",
+    "question": "Was gehört in Deutschland nicht zur Exekutive?",
+    "options": ["die Polizei", "die Gerichte", "das Finanzamt", "die Ministerien"],
+    "answerIndex": 1,
+    "explanation": "Die Gerichte gehören zur Judikative, während Polizei, Finanzamt und Ministerien zur Exekutive (ausführende Gewalt) gehören."
+  },
+  {
+    "id": "q064",
+    "category": "Politics",
+    "question": "Die Bundesrepublik Deutschland ist heute gegliedert in …",
+    "options": [
+      "vier Besatzungszonen.",
+      "einen Oststaat und einen Weststaat.",
+      "16 Kantone.",
+      "Bund, Länder und Kommunen."
+    ],
+    "answerIndex": 3,
+    "explanation": "Deutschland ist föderal aufgebaut und besteht aus drei Ebenen: dem Bund, den Ländern und den Kommunen."
+  },
+  {
+    "id": "q065",
+    "category": "Politics",
+    "question": "Es gehört nicht zu den Aufgaben des Deutschen Bundestages, …",
+    "options": [
+      "Gesetze zu entwerfen.",
+      "die Bundesregierung zu kontrollieren.",
+      "die Bundeskanzlerin/den Bundeskanzler zu wählen.",
+      "das Bundeskabinett zu bilden."
+    ],
+    "answerIndex": 3,
+    "explanation": "Das Bundeskabinett wird vom Bundeskanzler gebildet und nicht vom Bundestag."
+  },
+  {
+    "id": "q066",
+    "category": "History",
+    "question": "Welche Städte haben die größten jüdischen Gemeinden in Deutschland?",
+    "options": ["Berlin und München", "Hamburg und Essen", "Nürnberg und Stuttgart", "Worms und Speyer"],
+    "answerIndex": 0,
+    "explanation": "Die größten jüdischen Gemeinden in Deutschland gibt es in Berlin und München."
+  },
+  {
+    "id": "q067",
+    "category": "Politics",
+    "question": "Was ist in Deutschland vor allem eine Aufgabe der Bundesländer?",
+    "options": ["Verteidigungspolitik", "Außenpolitik", "Wirtschaftspolitik", "Schulpolitik"],
+    "answerIndex": 3,
+    "explanation": "Die Schulpolitik fällt in die Zuständigkeit der Bundesländer."
+  },
+  {
+    "id": "q068",
+    "category": "Politics",
+    "question": "Warum kontrolliert der Staat in Deutschland das Schulwesen?",
+    "options": [
+      "weil es in Deutschland nur staatliche Schulen gibt",
+      "weil alle Schülerinnen und Schüler einen Schulabschluss haben müssen",
+      "weil es in den Bundesländern verschiedene Schulen gibt",
+      "weil es nach dem Grundgesetz seine Aufgabe ist"
+    ],
+    "answerIndex": 3,
+    "explanation": "Der Staat hat nach dem Grundgesetz die Aufsicht über das gesamte Schulwesen."
+  },
+  {
+    "id": "q069",
+    "category": "Politics",
+    "question": "Die Bundesrepublik Deutschland hat einen dreistufigen Verwaltungsaufbau. Wie heißt die unterste politische Stufe?",
+    "options": ["Stadträte", "Landräte", "Gemeinden", "Bezirksämter"],
+    "answerIndex": 2,
+    "explanation": "Die unterste politische Stufe im Verwaltungsaufbau Deutschlands sind die Gemeinden."
+  },
+  {
+    "id": "q070",
+    "category": "Politics",
+    "question": "Der deutsche Bundespräsident Gustav Heinemann gibt Helmut Schmidt 1974 die Ernennungsurkunde zum deutschen Bundeskanzler. Was gehört zu den Aufgaben der deutschen Bundespräsidentin/des deutschen Bundespräsidenten?",
+    "image": "/images/federal-president-duties.jpg",
+    "options": [
+      "Sie/Er führt die Regierungsgeschäfte.",
+      "Sie/Er kontrolliert die Regierungspartei.",
+      "Sie/Er wählt die Ministerinnen/Minister aus.",
+      "Sie/Er schlägt die Kanzlerin/den Kanzler zur Wahl vor."
+    ],
+    "answerIndex": 3,
+    "explanation": "Der Bundespräsident schlägt dem Bundestag den Kanzler zur Wahl vor."
+  },
+  {
+    "id": "q071",
+    "category": "Politics",
+    "question": "Wo hält sich die deutsche Bundeskanzlerin/der deutsche Bundeskanzler am häufigsten auf? Am häufigsten ist sie/er …",
+    "options": [
+      "in Bonn, weil sich dort das Bundeskanzleramt und der Bundestag befinden.",
+      "auf Schloss Meseberg, dem Gästehaus der Bundesregierung, um Staatsgäste zu empfangen.",
+      "auf Schloss Bellevue, dem Amtssitz der Bundespräsidentin/des Bundespräsidenten, um Staatsgäste zu empfangen.",
+      "in Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden."
+    ],
+    "answerIndex": 3,
+    "explanation": "Der Hauptsitz der Bundesregierung und des Bundestages ist Berlin."
+  },
+  {
+    "id": "q072",
+    "category": "Politics",
+    "question": "Wie heißt die jetzige Bundeskanzlerin/der jetzige Bundeskanzler von Deutschland?",
+    "options": ["Gerhard Schröder", "Angela Merkel", "Ursula von der Leyen", "Olaf Scholz"],
+    "answerIndex": 3,
+    "explanation": "Olaf Scholz ist der aktuelle Bundeskanzler von Deutschland."
+  },
+  {
+    "id": "q073",
+    "category": "Politics",
+    "question": "Die beiden größten Fraktionen im Deutschen Bundestag heißen zurzeit …",
+    "options": ["CDU/CSU und SPD.", "Die Linke und Bündnis 90/Die Grünen.", "FDP und SPD.", "Die Linke und CDU/CSU."],
+    "answerIndex": 0,
+    "explanation": "Die größten Fraktionen im Deutschen Bundestag sind traditionell CDU/CSU und SPD."
+  },
+  {
+    "id": "q074",
+    "category": "Politics",
+    "question": "Wie heißt das Parlament für ganz Deutschland?",
+    "options": ["Bundesversammlung", "Volkskammer", "Bundestag", "Bundesgerichtshof"],
+    "answerIndex": 2,
+    "explanation": "Der Bundestag ist das deutsche Parlament auf Bundesebene."
+  },
+  {
+    "id": "q075",
+    "category": "Politics",
+    "question": "Wie heißt Deutschlands heutiges Staatsoberhaupt?",
+    "options": ["Frank-Walter Steinmeier", "Bärbel Bas", "Bodo Ramelow", "Joachim Gauck"],
+    "answerIndex": 0,
+    "explanation": "Frank-Walter Steinmeier ist das Staatsoberhaupt der Bundesrepublik Deutschland."
+  },
+  {
+    "id": "q076",
+    "category": "Politics",
+    "question": "Was bedeutet die Abkürzung CDU in Deutschland?",
+    "options": [
+      "Christliche Deutsche Union",
+      "Club Deutscher Unternehmer",
+      "Christlicher Deutscher Umweltschutz",
+      "Christlich Demokratische Union"
+    ],
+    "answerIndex": 3,
+    "explanation": "CDU steht für Christlich Demokratische Union."
+  },
+  {
+    "id": "q077",
+    "category": "Politics",
+    "question": "Was ist die Bundeswehr?",
+    "options": ["die deutsche Polizei", "ein deutscher Hafen", "eine deutsche Bürgerinitiative", "die deutsche Armee"],
+    "answerIndex": 3,
+    "explanation": "Die Bundeswehr ist die Armee Deutschlands."
+  },
+  {
+    "id": "q078",
+    "category": "Politics",
+    "question": "Was bedeutet die Abkürzung SPD?",
+    "options": [
+      "Sozialistische Partei Deutschlands",
+      "Sozialpolitische Partei Deutschlands",
+      "Sozialdemokratische Partei Deutschlands",
+      "Sozialgerechte Partei Deutschlands"
+    ],
+    "answerIndex": 2,
+    "explanation": "SPD steht für Sozialdemokratische Partei Deutschlands."
+  },
+  {
+    "id": "q079",
+    "category": "Politics",
+    "question": "Was bedeutet die Abkürzung FDP in Deutschland?",
+    "options": [
+      "Friedliche Demokratische Partei",
+      "Freie Demokratische Partei",
+      "Führende Demokratische Partei",
+      "Föderalistische Demokratische Partei"
+    ],
+    "answerIndex": 1,
+    "explanation": "FDP steht für Freie Demokratische Partei."
+  },
+  {
+    "id": "q080",
+    "category": "Politics",
+    "question": "Welche Partei wurde 1959 gegründet?",
+    "options": ["Die Grünen", "Die Linke", "FDP", "SPD"],
+    "answerIndex": 0,
+    "explanation": "Die Grünen wurden 1980 gegründet, nicht 1959. Diese Frage scheint einen Fehler zu enthalten."
   }
 ]
