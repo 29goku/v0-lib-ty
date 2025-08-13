@@ -343,783 +343,255 @@
     "id": "q006",
     "category": "Politics",
     "question": "Wie heißt die deutsche Verfassung?",
+    "translations": {
+      "en": "What is the German constitution called?",
+      "es": "¿Cómo se llama la constitución alemana?",
+      "fr": "Comment s'appelle la constitution allemande?",
+      "it": "Come si chiama la costituzione tedesca?",
+      "tr": "Alman anayasasının adı nedir?",
+      "ar": "ما اسم الدستور الألماني؟",
+      "ru": "Как называется немецкая конституция?",
+      "zh": "德国宪法叫什么？",
+      "hi": "जर्मन संविधान का नाम क्या है？"
+    },
     "options": ["Volksgesetz", "Bundesgesetz", "Deutsches Gesetz", "Grundgesetz"],
+    "optionTranslations": {
+      "en": ["People's Law", "Federal Law", "German Law", "Basic Law"],
+      "es": ["Ley del Pueblo", "Ley Federal", "Ley Alemana", "Ley Fundamental"],
+      "fr": ["Loi du Peuple", "Loi Fédérale", "Loi Allemande", "Loi Fondamentale"],
+      "it": ["Legge del Popolo", "Legge Federale", "Legge Tedesca", "Legge Fondamentale"],
+      "tr": ["Halk Yasası", "Federal Yasa", "Alman Yasası", "Temel Yasa"],
+      "ar": ["قانون الشعب", "القانون الاتحادي", "القانون الألماني", "القانون الأساسي"],
+      "ru": ["Народный закон", "Федеральный закон", "Немецкий закон", "Основной закон"],
+      "zh": ["人民法", "联邦法", "德国法", "基本法"],
+      "hi": ["जन कानून", "संघीय कानून", "जर्मन कानून", "मूल कानून"]
+    },
     "answerIndex": 3,
-    "explanation": "Das Grundgesetz ist die Verfassung der Bundesrepublik Deutschland und wurde 1949 verabschiedet."
+    "explanation": "Das Grundgesetz ist die Verfassung der Bundesrepublik Deutschland und wurde 1949 verabschiedet.",
+    "explanationTranslations": {
+      "en": "The Basic Law is the constitution of the Federal Republic of Germany and was adopted in 1949.",
+      "es": "La Ley Fundamental es la constitución de la República Federal de Alemania y fue adoptada en 1949.",
+      "fr": "La Loi fondamentale est la constitution de la République fédérale d'Allemagne et a été adoptée en 1949.",
+      "it": "La Legge fondamentale è la costituzione della Repubblica federale di Germania ed è stata adottata nel 1949.",
+      "tr": "Temel Yasa, Almanya Federal Cumhuriyeti'nin anayasasıdır ve 1949'da kabul edilmiştir.",
+      "ar": "القانون الأساسي هو دستور جمهورية ألمانيا الاتحادية وتم اعتماده في عام 1949.",
+      "ru": "Основной закон является конституцией Федеративной Республики Германии и был принят в 1949 году.",
+      "zh": "《基本法》是德意志联邦共和国的宪法，于1949年通过。",
+      "hi": "मूल कानून जर्मनी के संघीय गणराज्य का संविधान है और 1949 में अपनाया गया था।"
+    }
   },
   {
     "id": "q007",
     "category": "Politics",
     "question": "Welches Recht gehört zu den Grundrechten, die nach der deutschen Verfassung garantiert werden? Das Recht auf …",
+    "translations": {
+      "en": "Which right belongs to the fundamental rights guaranteed by the German constitution? The right to …",
+      "es": "¿Qué derecho pertenece a los derechos fundamentales garantizados por la constitución alemana? El derecho a …",
+      "fr": "Quel droit appartient aux droits fondamentaux garantis par la constitution allemande? Le droit à …",
+      "it": "Quale diritto appartiene ai diritti fondamentali garantiti dalla costituzione tedesca? Il diritto a …",
+      "tr": "Alman anayasası tarafından garanti edilen temel haklardan hangisi? … hakkı",
+      "ar": "أي حق ينتمي إلى الحقوق الأساسية المضمونة في الدستور الألماني؟ الحق في …",
+      "ru": "Какое право относится к основным правам, гарантированным немецкой конституцией? Право на …",
+      "zh": "哪项权利属于德国宪法保障的基本权利？…的权利",
+      "hi": "जर्मन संविधान द्वारा गारंटीकृत मौलिक अधिकारों में से कौन सा अधिकार है? … का अधिकार"
+    },
     "options": ["Glaubens- und Gewissensfreiheit", "Unterhaltung", "Arbeit", "Wohnung"],
+    "optionTranslations": {
+      "en": ["Freedom of belief and conscience", "Entertainment", "Work", "Housing"],
+      "es": ["Libertad de creencia y conciencia", "Entretenimiento", "Trabajo", "Vivienda"],
+      "fr": ["Liberté de croyance et de conscience", "Divertissement", "Travail", "Logement"],
+      "it": ["Libertà di credo e coscienza", "Intrattenimento", "Lavoro", "Abitazione"],
+      "tr": ["İnanç ve vicdan özgürlüğü", "Eğlence", "Çalışma", "Konut"],
+      "ar": ["حرية المعتقد والضمير", "الترفيه", "العمل", "السكن"],
+      "ru": ["Свобода веры и совести", "Развлечения", "Работа", "Жилье"],
+      "zh": ["信仰和良心自由", "娱乐", "工作", "住房"],
+      "hi": ["विश्वास और अंतरात्मा की स्वतंत्रता", "मनोरंजन", "काम", "आवास"]
+    },
     "answerIndex": 0,
-    "explanation": "Die Glaubens- und Gewissensfreiheit ist ein im Grundgesetz garantiertes Grundrecht (Artikel 4)."
+    "explanation": "Die Glaubens- und Gewissensfreiheit ist ein im Grundgesetz garantiertes Grundrecht (Artikel 4).",
+    "explanationTranslations": {
+      "en": "Freedom of belief and conscience is a fundamental right guaranteed in the Basic Law (Article 4).",
+      "es": "La libertad de creencia y conciencia es un derecho fundamental garantizado en la Ley Fundamental (Artículo 4).",
+      "fr": "La liberté de croyance et de conscience est un droit fondamental garanti dans la Loi fondamentale (Article 4).",
+      "it": "La libertà di credo e coscienza è un diritto fondamentale garantito nella Legge fondamentale (Articolo 4).",
+      "tr": "İnanç ve vicdan özgürlüğü Temel Yasa'da (Madde 4) garanti edilen temel bir haktır.",
+      "ar": "حرية المعتقد والضمير حق أساسي مضمون في القانون الأساسي (المادة 4).",
+      "ru": "Свобода веры и совести является основным правом, гарантированным в Основном законе (статья 4).",
+      "zh": "信仰和良心自由是《基本法》（第4条）保障的基本权利。",
+      "hi": "विश्वास और अंतरात्मा की स्वतंत्रता मूल कानून (अनुच्छेद 4) में गारंटीकृत एक मौलिक अधिकार है।"
+    }
   },
   {
     "id": "q008",
     "category": "Politics",
     "question": "Was steht nicht im Grundgesetz von Deutschland?",
+    "translations": {
+      "en": "What is not in the Basic Law of Germany?",
+      "es": "¿Qué no está en la Ley Fundamental de Alemania?",
+      "fr": "Qu'est-ce qui n'est pas dans la Loi fondamentale de l'Allemagne?",
+      "it": "Cosa non è nella Legge fondamentale della Germania?",
+      "tr": "Almanya'nın Temel Yasası'nda ne yoktur?",
+      "ar": "ما الذي لا يوجد في القانون الأساسي لألمانيا؟",
+      "ru": "Чего нет в Основном законе Германии?",
+      "zh": "德国《基本法》中没有什么？",
+      "hi": "जर्मनी के मूल कानून में क्या नहीं है？"
+    },
     "options": [
       "Die Würde des Menschen ist unantastbar.",
       "Alle sollen gleich viel Geld haben.",
       "Jeder Mensch darf seine Meinung sagen.",
       "Alle sind vor dem Gesetz gleich."
     ],
+    "optionTranslations": {
+      "en": [
+        "Human dignity is inviolable.",
+        "Everyone should have the same amount of money.",
+        "Every person may express their opinion.",
+        "All are equal before the law."
+      ],
+      "es": [
+        "La dignidad humana es inviolable.",
+        "Todos deberían tener la misma cantidad de dinero.",
+        "Cada persona puede expresar su opinión.",
+        "Todos son iguales ante la ley."
+      ],
+      "fr": [
+        "La dignité humaine est inviolable.",
+        "Tout le monde devrait avoir la même somme d'argent.",
+        "Chaque personne peut exprimer son opinion.",
+        "Tous sont égaux devant la loi."
+      ],
+      "it": [
+        "La dignità umana è inviolabile.",
+        "Tutti dovrebbero avere la stessa quantità di denaro.",
+        "Ogni persona può esprimere la propria opinione.",
+        "Tutti sono uguali davanti alla legge."
+      ],
+      "tr": [
+        "İnsan onuru dokunulmazdır.",
+        "Herkes aynı miktarda paraya sahip olmalıdır.",
+        "Her insan fikrini söyleyebilir.",
+        "Herkes yasa önünde eşittir."
+      ],
+      "ar": [
+        "كرامة الإنسان مقدسة.",
+        "يجب أن يكون لدى الجميع نفس المبلغ من المال.",
+        "كل شخص يمكنه التعبير عن رأيه.",
+        "الجميع متساوون أمام القانون."
+      ],
+      "ru": [
+        "Человеческое достоинство неприкосновенно.",
+        "У всех должно быть одинаковое количество денег.",
+        "Каждый человек может выражать свое мнение.",
+        "Все равны перед законом."
+      ],
+      "zh": [
+        "人的尊严不可侵犯。",
+        "每个人都应该有同样多的钱。",
+        "每个人都可以表达自己的意见。",
+        "人人在法律面前一律平等。"
+      ],
+      "hi": [
+        "मानव गरिमा अनुल्लंघनीय है।",
+        "सभी के पास समान मात्रा में पैसा होना चाहिए।",
+        "हर व्यक्ति अपनी राय व्यक्त कर सकता है।",
+        "सभी कानून के समक्ष समान हैं।"
+      ]
+    },
     "answerIndex": 1,
-    "explanation": "Das Grundgesetz garantiert Gleichberechtigung vor dem Gesetz, aber nicht gleichen Besitz oder gleiche Einkommen."
+    "explanation": "Das Grundgesetz garantiert Gleichberechtigung vor dem Gesetz, aber nicht gleichen Besitz oder gleiche Einkommen.",
+    "explanationTranslations": {
+      "en": "The Basic Law guarantees equal rights before the law, but not equal possessions or equal income.",
+      "es": "La Ley Fundamental garantiza la igualdad de derechos ante la ley, pero no la igualdad de posesiones o ingresos.",
+      "fr": "La Loi fondamentale garantit l'égalité des droits devant la loi, mais pas l'égalité des possessions ou des revenus.",
+      "it": "La Legge fondamentale garantisce pari diritti davanti alla legge, ma non uguali possedimenti o redditi uguali.",
+      "tr": "Temel Yasa yasa önünde eşit hakları garanti eder, ancak eşit mülkiyet veya eşit geliri garanti etmez.",
+      "ar": "يضمن القانون الأساسي المساواة في الحقوق أمام القانون، ولكن ليس المساواة في الممتلكات أو الدخل.",
+      "ru": "Основной закон гарантирует равные права перед законом, но не равное имущество или равный доход.",
+      "zh": "《基本法》保障法律面前的平等权利，但不保障财产或收入的平等。",
+      "hi": "मूल कानून कानून के समक्ष समान अधिकारों की गारंटी देता है, लेकिन समान संपत्ति या समान आय की नहीं।"
+    }
   },
   {
     "id": "q009",
     "category": "Politics",
     "question": "Welches Grundrecht gilt in Deutschland nur für Ausländerinnen/Ausländer? Das Grundrecht auf …",
+    "translations": {
+      "en": "Which fundamental right in Germany applies only to foreigners? The fundamental right to …",
+      "es": "¿Qué derecho fundamental en Alemania se aplica solo a los extranjeros? El derecho fundamental a …",
+      "fr": "Quel droit fondamental en Allemagne ne s'applique qu'aux étrangers? Le droit fondamental à …",
+      "it": "Quale diritto fondamentale in Germania si applica solo agli stranieri? Il diritto fondamentale a …",
+      "tr": "Almanya'da hangi temel hak sadece yabancılar için geçerlidir? … temel hakkı",
+      "ar": "أي حق أساسي في ألمانيا ينطبق فقط على الأجانب؟ الحق الأساسي في …",
+      "ru": "Какое основное право в Германии применяется только к иностранцам? Основное право на …",
+      "zh": "德国哪项基本权利仅适用于外国人？…的基本权利",
+      "hi": "जर्मनी में कौन सा मौलिक अधिकार केवल विदेशियों के लिए लागू होता है? … का मौलिक अधिकार"
+    },
     "options": ["Schutz der Familie", "Menschenwürde", "Asyl", "Meinungsfreiheit"],
+    "optionTranslations": {
+      "en": ["Protection of the family", "Human dignity", "Asylum", "Freedom of opinion"],
+      "es": ["Protección de la familia", "Dignidad humana", "Asilo", "Libertad de opinión"],
+      "fr": ["Protection de la famille", "Dignité humaine", "Asile", "Liberté d'opinion"],
+      "it": ["Protezione della famiglia", "Dignità umana", "Asilo", "Libertà di opinione"],
+      "tr": ["Ailenin korunması", "İnsan onuru", "Sığınma", "Görüş özgürlüğü"],
+      "ar": ["حماية الأسرة", "كرامة الإنسان", "اللجوء", "حرية الرأي"],
+      "ru": ["Защита семьи", "Человеческое достоинство", "Убежище", "Свобода мнений"],
+      "zh": ["家庭保护", "人的尊严", "庇护", "言论自由"],
+      "hi": ["परिवार की सुरक्षा", "मानव गरिमा", "शरण", "मत की स्वतंत्रता"]
+    },
     "answerIndex": 2,
-    "explanation": "Das Asylrecht gilt nur für Ausländer, da deutsche Staatsangehörige bereits Schutz durch ihre Staatsangehörigkeit haben."
+    "explanation": "Das Asylrecht gilt nur für Ausländer, da deutsche Staatsangehörige bereits Schutz durch ihre Staatsangehörigkeit haben.",
+    "explanationTranslations": {
+      "en": "The right to asylum applies only to foreigners, as German citizens already have protection through their citizenship.",
+      "es": "El derecho de asilo se aplica solo a los extranjeros, ya que los ciudadanos alemanes ya tienen protección a través de su ciudadanía.",
+      "fr": "Le droit d'asile ne s'applique qu'aux étrangers, car les citoyens allemands ont déjà une protection par leur citoyenneté.",
+      "it": "Il diritto di asilo si applica solo agli stranieri, poiché i cittadini tedeschi hanno già protezione attraverso la loro cittadinanza.",
+      "tr": "Sığınma hakkı sadece yabancılar için geçerlidir, çünkü Alman vatandaşları zaten vatandaşlıkları yoluyla koruma altındadır.",
+      "ar": "حق اللجوء ينطبق فقط على الأجانب، لأن المواطنين الألمان لديهم بالفعل حماية من خلال جنسيتهم.",
+      "ru": "Право на убежище применяется только к иностранцам, поскольку немецкие граждане уже имеют защиту через свое гражданство.",
+      "zh": "庇护权仅适用于外国人，因为德国公民已经通过其公民身份获得保护。",
+      "hi": "शरण का अधिकार केवल विदेशियों के लिए लागू होता है, क्योंकि जर्मन नागरिकों को पहले से ही अपनी नागरिकता के माध्यम से सुरक्षा प्राप्त है।"
+    }
   },
   {
     "id": "q010",
     "category": "Law",
     "question": "Was ist mit dem deutschen Grundgesetz vereinbar?",
+    "translations": {
+      "en": "What is compatible with the German Basic Law?",
+      "es": "¿Qué es compatible con la Ley Fundamental alemana?",
+      "fr": "Qu'est-ce qui est compatible avec la Loi fondamentale allemande?",
+      "it": "Cosa è compatibile con la Legge fondamentale tedesca?",
+      "tr": "Alman Temel Yasası ile uyumlu olan nedir?",
+      "ar": "ما الذي يتوافق مع القانون الأساسي الألماني؟",
+      "ru": "Что совместимо с немецким Основным законом?",
+      "zh": "什么与德国《基本法》相符？",
+      "hi": "जर्मन मूल कानून के साथ क्या संगत है？"
+    },
     "options": ["die Prügelstrafe", "die Folter", "die Todesstrafe", "die Geldstrafe"],
+    "optionTranslations": {
+      "en": ["Corporal punishment", "Torture", "Death penalty", "Monetary fine"],
+      "es": ["Castigo corporal", "Tortura", "Pena de muerte", "Multa monetaria"],
+      "fr": ["Châtiment corporel", "Torture", "Peine de mort", "Amende pécuniaire"],
+      "it": ["Punizione corporale", "Tortura", "Pena di morte", "Multa pecuniaria"],
+      "tr": ["Bedensel ceza", "İşkence", "Ölüm cezası", "Para cezası"],
+      "ar": ["العقاب البدني", "التعذيب", "عقوبة الإعدام", "الغرامة المالية"],
+      "ru": ["Телесное наказание", "Пытки", "Смертная казнь", "Денежный штраф"],
+      "zh": ["体罚", "酷刑", "死刑", "罚金"],
+      "hi": ["शारीरिक दंड", "यातना", "मृत्युदंड", "मौद्रिक जुर्माना"]
+    },
     "answerIndex": 3,
-    "explanation": "Geldstrafen sind rechtmäßige Sanktionen im deutschen Rechtssystem. Körperstrafen und Todesstrafe sind verfassungswidrig."
-  },
-  {
-    "id": "q011",
-    "category": "Politics",
-    "question": "Wie wird die Verfassung der Bundesrepublik Deutschland genannt?",
-    "options": ["Grundgesetz", "Bundesverfassung", "Gesetzbuch", "Verfassungsvertrag"],
-    "answerIndex": 0,
-    "explanation": "Die deutsche Verfassung heißt 'Grundgesetz' und wurde 1949 verabschiedet."
-  },
-  {
-    "id": "q012",
-    "category": "Politics",
-    "question": "Eine Partei im Deutschen Bundestag will die Pressefreiheit abschaffen. Ist das möglich?",
-    "options": [
-      "Ja, wenn mehr als die Hälfte der Abgeordneten im Bundestag dafür sind.",
-      "Ja, aber dazu müssen zwei Drittel der Abgeordneten im Bundestag dafür sein.",
-      "Nein, denn die Pressefreiheit ist ein Grundrecht. Sie kann nicht abgeschafft werden.",
-      "Nein, denn nur der Bundesrat kann die Pressefreiheit abschaffen."
-    ],
-    "answerIndex": 2,
-    "explanation": "Die Pressefreiheit ist ein unveränderliches Grundrecht und kann auch nicht durch Verfassungsänderung abgeschafft werden."
-  },
-  {
-    "id": "q013",
-    "category": "Politics",
-    "question": "Im Parlament steht der Begriff 'Opposition' für …",
-    "options": [
-      "die regierenden Parteien.",
-      "die Fraktion mit den meisten Abgeordneten.",
-      "alle Parteien, die bei der letzten Wahl die 5%-Hürde erreichen konnten.",
-      "alle Abgeordneten, die nicht zu der Regierungspartei/den Regierungsparteien gehören."
-    ],
-    "answerIndex": 3,
-    "explanation": "Die Opposition besteht aus allen Parteien im Parlament, die nicht an der Regierung beteiligt sind."
-  },
-  {
-    "id": "q014",
-    "category": "Politics",
-    "question": "Meinungsfreiheit in Deutschland heißt, dass ich …",
-    "options": [
-      "Passanten auf der Straße beschimpfen darf.",
-      "meine Meinung im Internet äußern kann.",
-      "Nazi-, Hamas- oder Islamischer Staat-Symbole öffentlich tragen darf.",
-      "meine Meinung nur dann äußern darf, solange ich der Regierung nicht widerspreche."
-    ],
-    "answerIndex": 1,
-    "explanation": "Meinungsfreiheit bedeutet, dass man seine Meinung frei äußern kann, aber nicht andere beleidigen oder verfassungsfeindliche Symbole verwenden darf."
-  },
-  {
-    "id": "q015",
-    "category": "Politics",
-    "question": "Was verbietet das deutsche Grundgesetz?",
-    "options": ["Militärdienst", "Zwangsarbeit", "freie Berufswahl", "Arbeit im Ausland"],
-    "answerIndex": 1,
-    "explanation": "Das Grundgesetz verbietet Zwangsarbeit explizit. Jeder hat das Recht auf freie Berufswahl."
-  },
-  {
-    "id": "q016",
-    "category": "Politics",
-    "question": "Wann ist die Meinungsfreiheit in Deutschland eingeschränkt?",
-    "options": [
-      "bei der öffentlichen Verbreitung falscher Behauptungen über einzelne Personen",
-      "bei Meinungsäußerungen über die Bundesregierung",
-      "bei Diskussionen über Religionen",
-      "bei Kritik am Staat"
-    ],
-    "answerIndex": 0,
-    "explanation": "Meinungsfreiheit hat Grenzen, wenn sie die Rechte anderer verletzt, z.B. durch Verleumdung oder üble Nachrede."
-  },
-  {
-    "id": "q017",
-    "category": "Law",
-    "question": "Die deutschen Gesetze verbieten …",
-    "options": [
-      "Meinungsfreiheit der Einwohnerinnen und Einwohner.",
-      "Petitionen der Bürgerinnen und Bürger.",
-      "Versammlungsfreiheit der Einwohnerinnen und Einwohner.",
-      "Ungleichbehandlung der Bürgerinnen und Bürger durch den Staat."
-    ],
-    "answerIndex": 3,
-    "explanation": "Deutsche Gesetze verbieten Diskriminierung und Ungleichbehandlung durch staatliche Stellen."
-  },
-  {
-    "id": "q018",
-    "category": "Politics",
-    "question": "Welches Grundrecht ist in Artikel 1 des Grundgesetzes der Bundesrepublik Deutschland garantiert?",
-    "options": [
-      "die Unantastbarkeit der Menschenwürde",
-      "das Recht auf Leben",
-      "Religionsfreiheit",
-      "Meinungsfreiheit"
-    ],
-    "answerIndex": 0,
-    "explanation": "Artikel 1 des Grundgesetzes beginnt mit 'Die Würde des Menschen ist unantastbar' - dies ist das oberste Grundrecht."
-  },
-  {
-    "id": "q019",
-    "category": "Politics",
-    "question": "Was versteht man unter dem Recht der 'Freizügigkeit' in Deutschland?",
-    "options": [
-      "Man darf sich seinen Wohnort selbst aussuchen.",
-      "Man kann seinen Beruf wechseln.",
-      "Man darf sich für eine andere Religion entscheiden.",
-      "Man darf sich in der Öffentlichkeit nur leicht bekleidet bewegen."
-    ],
-    "answerIndex": 0,
-    "explanation": "Freizügigkeit bedeutet das Recht, innerhalb Deutschlands frei zu reisen und seinen Wohnort zu wählen."
-  },
-  {
-    "id": "q020",
-    "category": "Politics",
-    "question": "Eine Partei in Deutschland verfolgt das Ziel, eine Diktatur zu errichten. Sie ist dann …",
-    "options": ["tolerant.", "rechtsstaatlich orientiert.", "gesetzestreu.", "verfassungswidrig."],
-    "answerIndex": 3,
-    "explanation": "Parteien, die die demokratische Grundordnung abschaffen wollen, sind verfassungswidrig und können verboten werden."
-  },
-  {
-    "id": "q021",
-    "category": "Culture",
-    "question": "Welches ist das Wappen der Bundesrepublik Deutschland?",
-    "image": "/images/coat-of-arms-question.jpg",
-    "options": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
-    "answerIndex": 0,
-    "explanation": "Das Wappen der Bundesrepublik Deutschland zeigt den Bundesadler - einen schwarzen Adler auf goldenem Grund. Dies ist das offizielle Staatswappen seit 1950."
-  },
-  {
-    "id": "q022",
-    "category": "Geography",
-    "question": "Was für eine Staatsform hat Deutschland?",
-    "options": ["Monarchie", "Diktatur", "Republik", "Fürstentum"],
-    "answerIndex": 2,
-    "explanation": "Deutschland ist eine Bundesrepublik, eine demokratische Staatsform ohne Monarchen."
-  },
-  {
-    "id": "q023",
-    "category": "Politics",
-    "question": "In Deutschland sind die meisten Erwerbstätigen …",
-    "options": [
-      "in kleinen Familienunternehmen beschäftigt.",
-      "ehrenamtlich für ein Bundesland tätig.",
-      "selbstständig mit einer eigenen Firma tätig.",
-      "bei einer Firma oder Behörde beschäftigt."
-    ],
-    "answerIndex": 3,
-    "explanation": "Die meisten Deutschen arbeiten als Angestellte in Unternehmen oder öffentlichen Einrichtungen."
-  },
-  {
-    "id": "q024",
-    "category": "Geography",
-    "question": "Wie viele Bundesländer hat die Bundesrepublik Deutschland?",
-    "options": ["14", "15", "16", "17"],
-    "answerIndex": 2,
-    "explanation": "Deutschland besteht aus 16 Bundesländern, einschließlich der drei Stadtstaaten Berlin, Hamburg und Bremen."
-  },
-  {
-    "id": "q025",
-    "category": "Geography",
-    "question": "Was ist kein Bundesland der Bundesrepublik Deutschland?",
-    "options": ["Elsass-Lothringen", "Nordrhein-Westfalen", "Mecklenburg-Vorpommern", "Sachsen-Anhalt"],
-    "answerIndex": 0,
-    "explanation": "Elsass-Lothringen gehört zu Frankreich, nicht zu Deutschland."
-  },
-  {
-    "id": "q026",
-    "category": "Politics",
-    "question": "Deutschland ist …",
-    "options": [
-      "eine kommunistische Republik.",
-      "ein demokratischer und sozialer Bundesstaat.",
-      "eine kapitalistische und soziale Monarchie.",
-      "ein sozialer und sozialistischer Bundesstaat."
-    ],
-    "answerIndex": 1,
-    "explanation": "Deutschland ist laut Grundgesetz ein demokratischer und sozialer Bundesstaat."
-  },
-  {
-    "id": "q027",
-    "category": "Politics",
-    "question": "Deutschland ist …",
-    "options": ["ein sozialistischer Staat.", "ein Bundesstaat.", "eine Diktatur.", "eine Monarchie."],
-    "answerIndex": 1,
-    "explanation": "Deutschland ist ein föderaler Bundesstaat mit 16 Bundesländern."
-  },
-  {
-    "id": "q028",
-    "category": "Politics",
-    "question": "Wer wählt in Deutschland die Abgeordneten zum Bundestag?",
-    "options": ["das Militär", "die Wirtschaft", "das wahlberechtigte Volk", "die Verwaltung"],
-    "answerIndex": 2,
-    "explanation": "Die Bundestagsabgeordneten werden vom wahlberechtigten Volk in freien, geheimen und direkten Wahlen gewählt."
-  },
-  {
-    "id": "q029",
-    "category": "Culture",
-    "question": "Welches Tier ist das Wappentier der Bundesrepublik Deutschland?",
-    "options": ["Löwe", "Adler", "Bär", "Pferd"],
-    "answerIndex": 1,
-    "explanation": "Der Bundesadler ist das Wappentier Deutschlands und Symbol der Bundesrepublik."
-  },
-  {
-    "id": "q030",
-    "category": "Politics",
-    "question": "Was ist kein Merkmal unserer Demokratie?",
-    "options": ["regelmäßige Wahlen", "Pressezensur", "Meinungsfreiheit", "verschiedene Parteien"],
-    "answerIndex": 1,
-    "explanation": "Pressezensur widerspricht den demokratischen Grundprinzipien. In einer Demokratie herrscht Pressefreiheit."
-  },
-  {
-    "id": "q031",
-    "category": "Politics",
-    "question": "Die Zusammenarbeit von Parteien zur Bildung einer Regierung nennt man in Deutschland …",
-    "options": ["Einheit.", "Koalition.", "Ministerium.", "Fraktion."],
-    "answerIndex": 1,
-    "explanation": "Eine Koalition ist ein Bündnis mehrerer Parteien zur gemeinsamen Regierungsbildung."
-  },
-  {
-    "id": "q032",
-    "category": "Politics",
-    "question": "Was ist keine staatliche Gewalt in Deutschland?",
-    "options": ["Gesetzgebung", "Regierung", "Presse", "Rechtsprechung"],
-    "answerIndex": 2,
-    "explanation": "Die Presse ist keine staatliche Gewalt, sondern ein wichtiges Kontrollorgan der Demokratie (vierte Gewalt)."
-  },
-  {
-    "id": "q033",
-    "category": "Politics",
-    "question": "Welche Aussage ist richtig? In Deutschland …",
-    "options": [
-      "sind Staat und Religionsgemeinschaften voneinander getrennt.",
-      "bilden die Religionsgemeinschaften den Staat.",
-      "ist der Staat abhängig von den Religionsgemeinschaften.",
-      "bilden Staat und Religionsgemeinschaften eine Einheit."
-    ],
-    "answerIndex": 0,
-    "explanation": "Deutschland praktiziert die Trennung von Staat und Kirche, auch wenn es Kooperationen gibt (z.B. Kirchensteuer)."
-  },
-  {
-    "id": "q034",
-    "category": "Politics",
-    "question": "Was ist Deutschland nicht?",
-    "options": ["eine Demokratie", "ein Rechtsstaat", "eine Monarchie", "ein Sozialstaat"],
-    "answerIndex": 2,
-    "explanation": "Deutschland ist eine Republik, keine Monarchie. Es gibt keinen König oder Kaiser."
-  },
-  {
-    "id": "q035",
-    "category": "Politics",
-    "question": "Womit finanziert der deutsche Staat die Sozialversicherung?",
-    "options": ["Kirchensteuer", "Sozialabgaben", "Spendengeldern", "Vereinsbeiträgen"],
-    "answerIndex": 1,
-    "explanation": "Die Sozialversicherung wird hauptsächlich durch Beiträge von Arbeitnehmern und Arbeitgebern finanziert."
-  },
-  {
-    "id": "q036",
-    "category": "Politics",
-    "question": "Welche Maßnahme schafft in Deutschland soziale Sicherheit?",
-    "options": [
-      "die Krankenversicherung",
-      "die Autoversicherung",
-      "die Gebäudeversicherung",
-      "die Haftpflichtversicherung"
-    ],
-    "answerIndex": 0,
-    "explanation": "Die Krankenversicherung ist Teil des sozialen Sicherungssystems und schützt vor den finanziellen Folgen von Krankheit."
-  },
-  {
-    "id": "q037",
-    "category": "Politics",
-    "question": "Wie werden die Regierungschefinnen/Regierungschefs der meisten Bundesländer in Deutschland genannt?",
-    "options": [
-      "Erste Ministerin/Erster Minister",
-      "Premierministerin/Premierminister",
-      "Senatorin/Senator",
-      "Ministerpräsidentin/Ministerpräsident"
-    ],
-    "answerIndex": 3,
-    "explanation": "Die Regierungschefs der Bundesländer heißen Ministerpräsident/in (außer in den Stadtstaaten)."
-  },
-  {
-    "id": "q038",
-    "category": "Politics",
-    "question": "Die Bundesrepublik Deutschland ist ein demokratischer und sozialer …",
-    "options": ["Staatenverbund.", "Bundesstaat.", "Staatenbund.", "Zentralstaat."],
-    "answerIndex": 1,
-    "explanation": "Deutschland ist ein Bundesstaat - die Länder haben eigene Kompetenzen, aber der Bund hat die Oberhoheit."
-  },
-  {
-    "id": "q039",
-    "category": "Politics",
-    "question": "Was hat jedes deutsche Bundesland?",
-    "options": [
-      "eine eigene Außenministerin/einen eigenen Außenminister",
-      "eine eigene Währung",
-      "eine eigene Armee",
-      "eine eigene Regierung"
-    ],
-    "answerIndex": 3,
-    "explanation": "Jedes Bundesland hat eine eigene Landesregierung mit einem Ministerpräsidenten an der Spitze."
-  },
-  {
-    "id": "q040",
-    "category": "Culture",
-    "question": "Mit welchen Worten beginnt die deutsche Nationalhymne?",
-    "options": [
-      "Völker, hört die Signale …",
-      "Einigkeit und Recht und Freiheit …",
-      "Freude schöner Götterfunken …",
-      "Deutschland einig Vaterland …"
-    ],
-    "answerIndex": 1,
-    "explanation": "Die deutsche Nationalhymne beginnt mit 'Einigkeit und Recht und Freiheit' (dritte Strophe des Deutschlandlieds)."
-  },
-  {
-    "id": "q041",
-    "category": "Politics",
-    "question": "Warum gibt es in einer Demokratie mehr als eine Partei?",
-    "options": [
-      "weil dadurch die unterschiedlichen Meinungen der Bürgerinnen und Bürger vertreten werden",
-      "damit Bestechung in der Politik begrenzt wird",
-      "um politische Demonstrationen zu verhindern",
-      "um wirtschaftlichen Wettbewerb anzuregen"
-    ],
-    "answerIndex": 0,
-    "explanation": "Mehrere Parteien sind notwendig, um die Vielfalt der politischen Meinungen in einer Demokratie widerzuspiegeln."
-  },
-  {
-    "id": "q042",
-    "category": "Politics",
-    "question": "Wer beschließt in Deutschland ein neues Gesetz?",
-    "options": ["die Regierung", "das Parlament", "die Gerichte", "die Polizei"],
-    "answerIndex": 1,
-    "explanation": "Neue Gesetze werden in Deutschland vom Parlament (Bundestag und Bundesrat) beschlossen."
-  },
-  {
-    "id": "q043",
-    "category": "Politics",
-    "question": "Wann kann in Deutschland eine Partei verboten werden?",
-    "options": [
-      "wenn ihr Wahlkampf zu teuer ist",
-      "wenn sie gegen die Verfassung kämpft",
-      "wenn sie Kritik am Staatsoberhaupt äußert",
-      "wenn ihr Programm eine neue Richtung vorschlägt"
-    ],
-    "answerIndex": 1,
-    "explanation": "Eine Partei kann vom Bundesverfassungsgericht verboten werden, wenn sie sich aktiv gegen die freiheitlich-demokratische Grundordnung richtet."
-  },
-  {
-    "id": "q044",
-    "category": "Politics",
-    "question": "Wen kann man als Bürgerin/Bürger in Deutschland nicht direkt wählen?",
-    "options": [
-      "Abgeordnete des EU-Parlaments",
-      "Die Bundespräsidentin/den Bundespräsidenten",
-      "Landtagsabgeordnete",
-      "Bundestagsabgeordnete"
-    ],
-    "answerIndex": 1,
-    "explanation": "Die Bundespräsidentin/der Bundespräsident wird nicht direkt vom Volk, sondern von der Bundesversammlung gewählt."
-  },
-  {
-    "id": "q045",
-    "category": "Politics",
-    "question": "Zu welcher Versicherung gehört die Pflegeversicherung?",
-    "options": [
-      "Sozialversicherung",
-      "Unfallversicherung",
-      "Hausratsversicherung",
-      "Haftpflicht- und Feuerversicherung"
-    ],
-    "answerIndex": 0,
-    "explanation": "Die Pflegeversicherung ist ein gesetzlicher Zweig der Sozialversicherung und soll die finanzielle Belastung im Pflegefall abfedern."
-  },
-  {
-    "id": "q046",
-    "category": "Politics",
-    "question": "Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört dazu?",
-    "options": [
-      "Er baut Straßen und Schulen.",
-      "Er verkauft Lebensmittel und Kleidung.",
-      "Er versorgt alle Einwohnerinnen und Einwohner kostenlos mit Zeitungen.",
-      "Er produziert Autos und Busse."
-    ],
-    "answerIndex": 0,
-    "explanation": "Der Bau und die Instandhaltung von Infrastruktur wie Straßen und Schulen sind Kernaufgaben des Staates."
-  },
-  {
-    "id": "q047",
-    "category": "Politics",
-    "question": "Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört nicht dazu?",
-    "options": [
-      "Er bezahlt für alle Staatsangehörigen Urlaubsreisen.",
-      "Er zahlt Kindergeld.",
-      "Er unterstützt Museen.",
-      "Er fördert Sportlerinnen und Sportler."
-    ],
-    "answerIndex": 0,
-    "explanation": "Urlaubsreisen zu bezahlen gehört nicht zu den Aufgaben des Staates. Er unterstützt aber durch Kindergeld, Kultur- und Sportförderung."
-  },
-  {
-    "id": "q048",
-    "category": "Politics",
-    "question": "Welches Organ gehört nicht zu den Verfassungsorganen Deutschlands?",
-    "options": ["der Bundesrat", "die Bundespräsidentin/der Bundespräsident", "die Bürgerversammlung", "die Regierung"],
-    "answerIndex": 2,
-    "explanation": "Verfassungsorgane sind der Bundestag, der Bundesrat, der Bundespräsident, die Bundesregierung und das Bundesverfassungsgericht. Eine Bürgerversammlung ist kein Verfassungsorgan."
-  },
-  {
-    "id": "q049",
-    "category": "Politics",
-    "question": "Wer bestimmt in Deutschland die Schulpolitik?",
-    "options": ["die Lehrer und Lehrerinnen", "die Bundesländer", "das Familienministerium", "die Universitäten"],
-    "answerIndex": 1,
-    "explanation": "Die Schulpolitik liegt in Deutschland in der Kompetenz der einzelnen Bundesländer."
-  },
-  {
-    "id": "q050",
-    "category": "Politics",
-    "question": "Die Wirtschaftsform in Deutschland nennt man …",
-    "options": [
-      "freie Zentralwirtschaft.",
-      "soziale Marktwirtschaft.",
-      "gelenkte Zentralwirtschaft.",
-      "Planwirtschaft."
-    ],
-    "answerIndex": 1,
-    "explanation": "Die soziale Marktwirtschaft ist die Wirtschaftsordnung in Deutschland, die die freie Marktwirtschaft mit sozialen Aspekten verbindet."
-  },
-  {
-    "id": "q051",
-    "category": "Law",
-    "question": "Zu einem demokratischen Rechtsstaat gehört es nicht, dass …",
-    "options": [
-      "Menschen sich kritisch über die Regierung äußern können.",
-      "Bürger friedlich demonstrieren gehen dürfen.",
-      "Menschen von einer Privatpolizei ohne Grund verhaftet werden.",
-      "jemand ein Verbrechen begeht und deshalb verhaftet wird."
-    ],
-    "answerIndex": 2,
-    "explanation": "Die willkürliche Verhaftung durch eine Privatpolizei widerspricht dem Rechtsstaatsprinzip. Nur staatliche Organe wie die Polizei dürfen jemanden aufgrund eines Haftbefehls verhaften."
-  },
-  {
-    "id": "q052",
-    "category": "Politics",
-    "question": "Was bedeutet 'Volkssouveränität'? Alle Staatsgewalt geht vom ...",
-    "options": ["Volke aus.", "Bundestag aus.", "preußischen König aus.", "Bundesverfassungsgericht aus."],
-    "answerIndex": 0,
-    "explanation": "Volkssouveränität ist ein demokratisches Prinzip, das besagt, dass die Staatsgewalt vom Volk ausgeht."
-  },
-  {
-    "id": "q053",
-    "category": "Law",
-    "question": "Was bedeutet 'Rechtsstaat' in Deutschland?",
-    "options": [
-      "Der Staat hat Recht.",
-      "Es gibt nur rechte Parteien.",
-      "Die Bürgerinnen und Bürger entscheiden über Gesetze.",
-      "Der Staat muss die Gesetze einhalten."
-    ],
-    "answerIndex": 3,
-    "explanation": "Im Rechtsstaat ist der Staat selbst an Recht und Gesetz gebunden."
-  },
-  {
-    "id": "q054",
-    "category": "Politics",
-    "question": "Was ist keine staatliche Gewalt in Deutschland?",
-    "options": ["Legislative", "Judikative", "Exekutive", "Direktive"],
-    "answerIndex": 3,
-    "explanation": "Die drei Staatsgewalten sind Legislative (Gesetzgebung), Exekutive (ausführende Gewalt) und Judikative (Rechtsprechung). 'Direktive' ist keine staatliche Gewalt."
-  },
-  {
-    "id": "q055",
-    "category": "Politics",
-    "question": "Was zeigt dieses Bild?",
-    "image": "/images/bundestag-building.jpg",
-    "options": [
-      "den Bundestagssitz in Berlin",
-      "das Bundesverfassungsgericht in Karlsruhe",
-      "das Bundesratsgebäude in Berlin",
-      "das Bundeskanzleramt in Berlin"
-    ],
-    "answerIndex": 0,
-    "explanation": "Das Bild zeigt das Reichstagsgebäude in Berlin, den Sitz des Deutschen Bundestages."
-  },
-  {
-    "id": "q056",
-    "category": "Politics",
-    "question": "Welches Amt gehört in Deutschland zur Gemeindeverwaltung?",
-    "options": ["Pfarramt", "Ordnungsamt", "Finanzamt", "Auswärtiges Amt"],
-    "answerIndex": 1,
-    "explanation": "Das Ordnungsamt ist eine kommunale Behörde und gehört zur Gemeindeverwaltung."
-  },
-  {
-    "id": "q057",
-    "category": "Politics",
-    "question": "Wer wird meistens zur Präsidentin/zum Präsidenten des Deutschen Bundestages gewählt?",
-    "options": [
-      "die/der älteste Abgeordnete im Parlament",
-      "die Ministerpräsidentin/der Ministerpräsident des größten Bundeslandes",
-      "eine ehemalige Bundeskanzlerin/ein ehemaliger Bundeskanzler",
-      "eine Abgeordnete/ein Abgeordneter der stärksten Fraktion"
-    ],
-    "answerIndex": 3,
-    "explanation": "Normalerweise wird der Bundestagspräsident aus den Reihen der stärksten Fraktion gewählt."
-  },
-  {
-    "id": "q058",
-    "category": "Politics",
-    "question": "Wer ernennt in Deutschland die Ministerinnen/die Minister der Bundesregierung?",
-    "options": [
-      "die Präsidentin/der Präsident des Bundesverfassungsgerichtes",
-      "die Bundespräsidentin/der Bundespräsident",
-      "die Bundesratspräsidentin/der Bundesratspräsident",
-      "die Bundestagspräsidentin/der Bundestagspräsident"
-    ],
-    "answerIndex": 1,
-    "explanation": "Die Bundespräsidentin/der Bundespräsident ernennt die Bundesminister auf Vorschlag des Bundeskanzlers."
-  },
-  {
-    "id": "q059",
-    "category": "History",
-    "question": "Vor wie vielen Jahren gab es erstmals eine jüdische Gemeinde auf dem Gebiet des heutigen Deutschlands?",
-    "options": ["vor etwa 300 Jahren", "vor etwa 700 Jahren", "vor etwa 1150 Jahren", "vor etwa 1700 Jahren"],
-    "answerIndex": 3,
-    "explanation": "Jüdische Gemeinden in Deutschland existieren seit der Römerzeit, der erste schriftliche Beleg stammt aus dem Jahr 321 nach Christus."
-  },
-  {
-    "id": "q060",
-    "category": "Politics",
-    "question": "In Deutschland gehören der Bundestag und der Bundesrat zur …",
-    "options": ["Exekutive.", "Legislative.", "Direktive.", "Judikative."],
-    "answerIndex": 1,
-    "explanation": "Bundestag und Bundesrat sind die gesetzgebenden Organe (Legislative)."
-  },
-  {
-    "id": "q061",
-    "category": "Politics",
-    "question": "Was bedeutet 'Volkssouveränität'?",
-    "options": [
-      "Die Königin/der König herrscht über das Volk.",
-      "Das Bundesverfassungsgericht steht über der Verfassung.",
-      "Die Interessenverbände üben die Souveränität zusammen mit der Regierung aus.",
-      "Die Staatsgewalt geht vom Volke aus."
-    ],
-    "answerIndex": 3,
-    "explanation": "Volkssouveränität ist das Prinzip, dass die oberste Gewalt im Staat vom Volk ausgeht."
-  },
-  {
-    "id": "q062",
-    "category": "Politics",
-    "question": "Wenn das Parlament eines deutschen Bundeslandes gewählt wird, nennt man das …",
-    "options": ["Kommunalwahl", "Landtagswahl", "Europawahl", "Bundestagswahl"],
-    "answerIndex": 1,
-    "explanation": "Das Parlament auf Landesebene heißt Landtag, daher wird die Wahl als Landtagswahl bezeichnet."
-  },
-  {
-    "id": "q063",
-    "category": "Politics",
-    "question": "Was gehört in Deutschland nicht zur Exekutive?",
-    "options": ["die Polizei", "die Gerichte", "das Finanzamt", "die Ministerien"],
-    "answerIndex": 1,
-    "explanation": "Die Gerichte gehören zur Judikative, während Polizei, Finanzamt und Ministerien zur Exekutive (ausführende Gewalt) gehören."
-  },
-  {
-    "id": "q064",
-    "category": "Politics",
-    "question": "Die Bundesrepublik Deutschland ist heute gegliedert in …",
-    "options": [
-      "vier Besatzungszonen.",
-      "einen Oststaat und einen Weststaat.",
-      "16 Kantone.",
-      "Bund, Länder und Kommunen."
-    ],
-    "answerIndex": 3,
-    "explanation": "Deutschland ist föderal aufgebaut und besteht aus drei Ebenen: dem Bund, den Ländern und den Kommunen."
-  },
-  {
-    "id": "q065",
-    "category": "Politics",
-    "question": "Es gehört nicht zu den Aufgaben des Deutschen Bundestages, …",
-    "options": [
-      "Gesetze zu entwerfen.",
-      "die Bundesregierung zu kontrollieren.",
-      "die Bundeskanzlerin/den Bundeskanzler zu wählen.",
-      "das Bundeskabinett zu bilden."
-    ],
-    "answerIndex": 3,
-    "explanation": "Das Bundeskabinett wird vom Bundeskanzler gebildet und nicht vom Bundestag."
-  },
-  {
-    "id": "q066",
-    "category": "History",
-    "question": "Welche Städte haben die größten jüdischen Gemeinden in Deutschland?",
-    "options": ["Berlin und München", "Hamburg und Essen", "Nürnberg und Stuttgart", "Worms und Speyer"],
-    "answerIndex": 0,
-    "explanation": "Die größten jüdischen Gemeinden in Deutschland gibt es in Berlin und München."
-  },
-  {
-    "id": "q067",
-    "category": "Politics",
-    "question": "Was ist in Deutschland vor allem eine Aufgabe der Bundesländer?",
-    "options": ["Verteidigungspolitik", "Außenpolitik", "Wirtschaftspolitik", "Schulpolitik"],
-    "answerIndex": 3,
-    "explanation": "Die Schulpolitik fällt in die Zuständigkeit der Bundesländer."
-  },
-  {
-    "id": "q068",
-    "category": "Politics",
-    "question": "Warum kontrolliert der Staat in Deutschland das Schulwesen?",
-    "options": [
-      "weil es in Deutschland nur staatliche Schulen gibt",
-      "weil alle Schülerinnen und Schüler einen Schulabschluss haben müssen",
-      "weil es in den Bundesländern verschiedene Schulen gibt",
-      "weil es nach dem Grundgesetz seine Aufgabe ist"
-    ],
-    "answerIndex": 3,
-    "explanation": "Der Staat hat nach dem Grundgesetz die Aufsicht über das gesamte Schulwesen."
-  },
-  {
-    "id": "q069",
-    "category": "Politics",
-    "question": "Die Bundesrepublik Deutschland hat einen dreistufigen Verwaltungsaufbau. Wie heißt die unterste politische Stufe?",
-    "options": ["Stadträte", "Landräte", "Gemeinden", "Bezirksämter"],
-    "answerIndex": 2,
-    "explanation": "Die unterste politische Stufe im Verwaltungsaufbau Deutschlands sind die Gemeinden."
-  },
-  {
-    "id": "q070",
-    "category": "Politics",
-    "question": "Der deutsche Bundespräsident Gustav Heinemann gibt Helmut Schmidt 1974 die Ernennungsurkunde zum deutschen Bundeskanzler. Was gehört zu den Aufgaben der deutschen Bundespräsidentin/des deutschen Bundespräsidenten?",
-    "image": "/images/federal-president-duties.jpg",
-    "options": [
-      "Sie/Er führt die Regierungsgeschäfte.",
-      "Sie/Er kontrolliert die Regierungspartei.",
-      "Sie/Er wählt die Ministerinnen/Minister aus.",
-      "Sie/Er schlägt die Kanzlerin/den Kanzler zur Wahl vor."
-    ],
-    "answerIndex": 3,
-    "explanation": "Der Bundespräsident schlägt dem Bundestag den Kanzler zur Wahl vor."
-  },
-  {
-    "id": "q071",
-    "category": "Politics",
-    "question": "Wo hält sich die deutsche Bundeskanzlerin/der deutsche Bundeskanzler am häufigsten auf? Am häufigsten ist sie/er …",
-    "options": [
-      "in Bonn, weil sich dort das Bundeskanzleramt und der Bundestag befinden.",
-      "auf Schloss Meseberg, dem Gästehaus der Bundesregierung, um Staatsgäste zu empfangen.",
-      "auf Schloss Bellevue, dem Amtssitz der Bundespräsidentin/des Bundespräsidenten, um Staatsgäste zu empfangen.",
-      "in Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden."
-    ],
-    "answerIndex": 3,
-    "explanation": "Der Hauptsitz der Bundesregierung und des Bundestages ist Berlin."
-  },
-  {
-    "id": "q072",
-    "category": "Politics",
-    "question": "Wie heißt die jetzige Bundeskanzlerin/der jetzige Bundeskanzler von Deutschland?",
-    "options": ["Gerhard Schröder", "Angela Merkel", "Ursula von der Leyen", "Olaf Scholz"],
-    "answerIndex": 3,
-    "explanation": "Olaf Scholz ist der aktuelle Bundeskanzler von Deutschland."
-  },
-  {
-    "id": "q073",
-    "category": "Politics",
-    "question": "Die beiden größten Fraktionen im Deutschen Bundestag heißen zurzeit …",
-    "options": ["CDU/CSU und SPD.", "Die Linke und Bündnis 90/Die Grünen.", "FDP und SPD.", "Die Linke und CDU/CSU."],
-    "answerIndex": 0,
-    "explanation": "Die größten Fraktionen im Deutschen Bundestag sind traditionell CDU/CSU und SPD."
-  },
-  {
-    "id": "q074",
-    "category": "Politics",
-    "question": "Wie heißt das Parlament für ganz Deutschland?",
-    "options": ["Bundesversammlung", "Volkskammer", "Bundestag", "Bundesgerichtshof"],
-    "answerIndex": 2,
-    "explanation": "Der Bundestag ist das deutsche Parlament auf Bundesebene."
-  },
-  {
-    "id": "q075",
-    "category": "Politics",
-    "question": "Wie heißt Deutschlands heutiges Staatsoberhaupt?",
-    "options": ["Frank-Walter Steinmeier", "Bärbel Bas", "Bodo Ramelow", "Joachim Gauck"],
-    "answerIndex": 0,
-    "explanation": "Frank-Walter Steinmeier ist das Staatsoberhaupt der Bundesrepublik Deutschland."
-  },
-  {
-    "id": "q076",
-    "category": "Politics",
-    "question": "Was bedeutet die Abkürzung CDU in Deutschland?",
-    "options": [
-      "Christliche Deutsche Union",
-      "Club Deutscher Unternehmer",
-      "Christlicher Deutscher Umweltschutz",
-      "Christlich Demokratische Union"
-    ],
-    "answerIndex": 3,
-    "explanation": "CDU steht für Christlich Demokratische Union."
-  },
-  {
-    "id": "q077",
-    "category": "Politics",
-    "question": "Was ist die Bundeswehr?",
-    "options": ["die deutsche Polizei", "ein deutscher Hafen", "eine deutsche Bürgerinitiative", "die deutsche Armee"],
-    "answerIndex": 3,
-    "explanation": "Die Bundeswehr ist die Armee Deutschlands."
-  },
-  {
-    "id": "q078",
-    "category": "Politics",
-    "question": "Was bedeutet die Abkürzung SPD?",
-    "options": [
-      "Sozialistische Partei Deutschlands",
-      "Sozialpolitische Partei Deutschlands",
-      "Sozialdemokratische Partei Deutschlands",
-      "Sozialgerechte Partei Deutschlands"
-    ],
-    "answerIndex": 2,
-    "explanation": "SPD steht für Sozialdemokratische Partei Deutschlands."
-  },
-  {
-    "id": "q079",
-    "category": "Politics",
-    "question": "Was bedeutet die Abkürzung FDP in Deutschland?",
-    "options": [
-      "Friedliche Demokratische Partei",
-      "Freie Demokratische Partei",
-      "Führende Demokratische Partei",
-      "Föderalistische Demokratische Partei"
-    ],
-    "answerIndex": 1,
-    "explanation": "FDP steht für Freie Demokratische Partei."
-  },
-  {
-    "id": "q080",
-    "category": "Politics",
-    "question": "Welche Partei wurde 1959 gegründet?",
-    "options": ["Die Grünen", "Die Linke", "FDP", "SPD"],
-    "answerIndex": 0,
-    "explanation": "Die Grünen wurden 1980 gegründet, nicht 1959. Diese Frage scheint einen Fehler zu enthalten."
+    "explanation": "Geldstrafen sind rechtmäßige Sanktionen im deutschen Rechtssystem. Körperstrafen und Todesstrafe sind verfassungswidrig.",
+    "explanationTranslations": {
+      "en": "Monetary fines are lawful sanctions in the German legal system. Corporal punishment and the death penalty are unconstitutional.",
+      "es": "Las multas monetarias son sanciones legales en el sistema jurídico alemán. El castigo corporal y la pena de muerte son inconstitucionales.",
+      "fr": "Les amendes pécuniaires sont des sanctions légales dans le système juridique allemand. Les châtiments corporels et la peine de mort sont inconstitutionnels.",
+      "it": "Le multe pecuniarie sono sanzioni legali nel sistema giuridico tedesco. Le punizioni corporali e la pena di morte sono incostituzionali.",
+      "tr": "Para cezaları Alman hukuk sisteminde yasal yaptırımlardır. Bedensel cezalar ve ölüm cezası anayasaya aykırıdır.",
+      "ar": "الغرامات المالية عقوبات قانونية في النظام القانوني الألماني. العقاب البدني وعقوبة الإعدام غير دستوريين.",
+      "ru": "Денежные штрафы являются законными санкциями в немецкой правовой системе. Телесные наказания и смертная казнь неконституционны.",
+      "zh": "罚金是德国法律制度中的合法制裁。体罚和死刑是违宪的。",
+      "hi": "मौद्रिक जुर्माना जर्मन कानूनी प्रणाली में वैध प्रतिबंध हैं। शारीरिक दंड और मृत्युदंड असंवैधानिक हैं।"
+    }
   }
 ]
