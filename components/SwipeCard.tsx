@@ -1,22 +1,33 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useRef, useEffect } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Flag, Languages, Volume2 } from "lucide-react"
-import { motion, useMotionValue, useTransform, type PanInfo } from "framer-motion"
-import { useStore } from "@/lib/store"
-import { getTranslation } from "@/lib/i18n"
+import { Badge } from "@/components/ui/badge"
+import { Flag, Volume2, Languages, Loader2 } from "lucide-react"
+import { getCategoryEmoji } from "@/lib/category-emojis"
 import { translateText, speechLangMap, languageDisplayNames } from "@/lib/translate-utils"
-import type { Question } from "@/lib/store"
+import { useStore } from "@/lib/store"
+
+interface Question {
+  id: string
+  question: string
+  options: string[]
+  answerIndex: number
+  explanation?: string
+  category: string
+  image?: string
+}
 
 interface SwipeCardProps {
   question: Question
   onSwipe: (direction: "left" | "right") => void
-  onFlag: () => void
-  isFlagged: boolean
-  showAnswer?: boolean
   onAnswerSelect?: (index: number) => void
+  showAnswer?: boolean
+  onFlag?: () => void
+  isFlagged?: boolean
   isTranslated?: boolean
   onTranslate?: () => void
 }
@@ -24,49 +35,91 @@ interface SwipeCardProps {
 export default function SwipeCard({
   question,
   onSwipe,
-  onFlag,
-  isFlagged,
-  showAnswer = false,
   onAnswerSelect,
-  isTranslated,
+  showAnswer = false,
+  onFlag,
+  isFlagged = false,
+  isTranslated = false,
   onTranslate,
 }: SwipeCardProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
+  const [isDragging, setIsDragging] = useState(false)
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
   const [isTranslating, setIsTranslating] = useState(false)
-  const [translatedText, setTranslatedText] = useState<string>("")
-  const [internalShowTranslation, setInternalShowTranslation] = useState(false)
-  const [translatedOptions, setTranslatedOptions] = useState<string[]>([])
-  const [translatedExplanation, setTranslatedExplanation] = useState<string>("")
-  const [imageError, setImageError] = useState(false)
-  const { language } = useStore()
-  const t = getTranslation(language)
-
-  const showTranslation = isTranslated !== undefined ? isTranslated : internalShowTranslation
-
-  const x = useMotionValue(0)
-  const rotate = useTransform(x, [-200, 200], [-25, 25])
-  const opacity = useTransform(x, [-200, -100, 0, 100, 200], [0, 1, 1, 1, 0])
-
+  const [translatedContent, setTranslatedContent] = useState<{
+    question: string
+    options: string[]
+    explanation?: string
+  } | null>(null)
   const cardRef = useRef<HTMLDivElement>(null)
+  const startPos = useRef({ x: 0, y: 0 })
+  const { language } = useStore()
 
-  // Reset translation state when question changes
+  // Reset translation when question changes
   useEffect(() => {
-    setSelectedAnswer(null)
-    setInternalShowTranslation(false)
-    setTranslatedText("")
-    setTranslatedOptions([])
-    setTranslatedExplanation("")
-    setImageError(false)
+    setTranslatedContent(null)
+    setIsTranslating(false)
   }, [question.id])
 
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    const offset = info.offset.x
-    const velocity = info.velocity.x
+  const handleTranslate = async () => {
+    if (!onTranslate) return
 
-    if (Math.abs(velocity) >= 500) {
-      onSwipe(velocity > 0 ? "right" : "left")
-    } else if (Math.abs(offset) >= 100) {
-      onSwipe(offset > 0 ? "right" : "left")
+    if (isTranslated && translatedContent) {
+      // Toggle back to original
+      onTranslate()
+      return
+    }
+
+    setIsTranslating(true)
+    console.log("🌐 Starting translation process...")
+
+    try {
+      // Translate question
+      const translatedQuestion = await translateText(question.question, language)
+
+      // Translate all options
+      const translatedOptions = await Promise.all(question.options.map((option) => translateText(option, language)))
+
+      // Translate explanation if it exists
+      let translatedExplanation: string | undefined
+      if (question.explanation) {
+        translatedExplanation = await translateText(question.explanation, language)
+      }
+
+      setTranslatedContent({
+        question: translatedQuestion,
+        options: translatedOptions,
+        explanation: translatedExplanation,
+      })
+
+      console.log("✅ Translation completed successfully!")
+      onTranslate()
+    } catch (error) {
+      console.error("❌ Translation failed:", error)
+    } finally {
+      setIsTranslating(false)
+    }
+  }
+
+  const handleReadAloud = (text: string) => {
+    if ("speechSynthesis" in window) {
+      // Stop any ongoing speech
+      speechSynthesis.cancel()
+
+      const utterance = new SpeechSynthesisUtterance(text)
+
+      // Use translated language if available, otherwise default to German
+      if (isTranslated && translatedContent) {
+        utterance.lang = speechLangMap[language] || "en-US"
+      } else {
+        utterance.lang = "de-DE"
+      }
+
+      utterance.rate = 0.8
+      utterance.pitch = 1
+      utterance.volume = 1
+
+      speechSynthesis.speak(utterance)
     }
   }
 
@@ -76,260 +129,272 @@ export default function SwipeCard({
     onAnswerSelect?.(index)
   }
 
-  const translateQuestion = async () => {
-    if (isTranslating) return
-
-    // If using external translation control
-    if (onTranslate) {
-      onTranslate()
-      return
-    }
-
-    // Toggle translation off if already showing
-    if (internalShowTranslation) {
-      setInternalShowTranslation(false)
-      setTranslatedText("")
-      setTranslatedOptions([])
-      setTranslatedExplanation("")
-      return
-    }
-
-    setIsTranslating(true)
-
-    try {
-      console.log("🚀 Starting translation to language:", language)
-      console.log("📝 Question to translate:", question.question)
-
-      // Translate the main question
-      const translatedQuestionText = await translateText(question.question, language)
-      console.log("✅ Translated question result:", translatedQuestionText)
-
-      // Translate all answer options
-      const translatedOptionsArray = await Promise.all(
-        question.options.map(async (option, index) => {
-          console.log(`📝 Translating option ${index}: "${option}"`)
-          const translated = await translateText(option, language)
-          console.log(`✅ Translated option ${index} result:`, translated)
-          return translated
-        }),
-      )
-
-      // Translate explanation if it exists
-      let translatedExplanationText = ""
-      if (question.explanation) {
-        console.log("📝 Translating explanation:", question.explanation)
-        translatedExplanationText = await translateText(question.explanation, language)
-        console.log("✅ Translated explanation result:", translatedExplanationText)
-      }
-
-      // Update state with translations
-      setTranslatedText(translatedQuestionText)
-      setTranslatedOptions(translatedOptionsArray)
-      setTranslatedExplanation(translatedExplanationText)
-      setInternalShowTranslation(true)
-
-      console.log("🎉 Translation completed successfully")
-    } catch (error) {
-      console.error("❌ Translation failed:", error)
-      // Fallback to simple tagged format
-      setTranslatedText(`[${language.toUpperCase()}] ${question.question}`)
-      setTranslatedOptions(question.options.map((option) => `[${language.toUpperCase()}] ${option}`))
-      setTranslatedExplanation(question.explanation ? `[${language.toUpperCase()}] ${question.explanation}` : "")
-      setInternalShowTranslation(true)
-    } finally {
-      setIsTranslating(false)
-    }
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true)
+    startPos.current = { x: e.clientX, y: e.clientY }
   }
 
-  const speakText = (text: string) => {
-    if ("speechSynthesis" in window) {
-      // Cancel any ongoing speech
-      window.speechSynthesis.cancel()
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return
+    const deltaX = e.clientX - startPos.current.x
+    const deltaY = e.clientY - startPos.current.y
+    setDragOffset({ x: deltaX, y: deltaY })
+  }
 
-      const utterance = new SpeechSynthesisUtterance(text)
+  const handleMouseUp = () => {
+    if (!isDragging) return
+    setIsDragging(false)
 
-      // Set language for speech synthesis
-      if (showTranslation) {
-        utterance.lang = speechLangMap[language] || "en-US"
-      } else {
-        utterance.lang = "de-DE" // German for original text
-      }
-
-      utterance.rate = 0.8
-      utterance.pitch = 1
-      speechSynthesis.speak(utterance)
+    const threshold = 100
+    if (Math.abs(dragOffset.x) > threshold) {
+      onSwipe(dragOffset.x > 0 ? "right" : "left")
     }
+
+    setDragOffset({ x: 0, y: 0 })
   }
 
-  const handleImageError = () => {
-    setImageError(true)
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0]
+    setIsDragging(true)
+    startPos.current = { x: touch.clientX, y: touch.clientY }
   }
 
-  const getImageSrc = () => {
-    if (imageError || !question.image) {
-      return "/placeholder.svg?height=300&width=400&text=Question+Image"
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return
+    const touch = e.touches[0]
+    const deltaX = touch.clientX - startPos.current.x
+    const deltaY = touch.clientY - startPos.current.y
+    setDragOffset({ x: deltaX, y: deltaY })
+  }
+
+  const handleTouchEnd = () => {
+    if (!isDragging) return
+    setIsDragging(false)
+
+    const threshold = 100
+    if (Math.abs(dragOffset.x) > threshold) {
+      onSwipe(dragOffset.x > 0 ? "right" : "left")
     }
-    return question.image
+
+    setDragOffset({ x: 0, y: 0 })
   }
 
-  const getLanguageDisplayName = (lang: string) => {
-    return languageDisplayNames[lang] || lang.toUpperCase()
+  // Get display content (original or translated)
+  const displayContent = isTranslated && translatedContent ? translatedContent : question
+
+  const getSwipeHint = () => {
+    if (Math.abs(dragOffset.x) > 50) {
+      return dragOffset.x > 0 ? "👈 Previous" : "Next 👉"
+    }
+    return null
   }
 
   return (
-    <motion.div
-      ref={cardRef}
-      className="w-full max-w-2xl mx-auto cursor-grab active:cursor-grabbing"
-      style={{ x, rotate, opacity }}
-      drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleDragEnd}
-      whileDrag={{ scale: 1.05 }}
-    >
-      <Card className="border-4 border-cyan-400/50 bg-gradient-to-br from-black/80 to-purple-900/80 backdrop-blur-xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse"></div>
+    <div className="relative w-full max-w-2xl mx-auto">
+      {/* Swipe hint */}
+      {getSwipeHint() && (
+        <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-full font-bold text-sm animate-bounce">
+            {getSwipeHint()}
+          </div>
+        </div>
+      )}
 
-        <CardHeader className="relative z-10">
-          <div className="flex justify-between items-start mb-4">
-            <CardTitle className="text-2xl md:text-3xl font-black text-white leading-tight">
-              <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
-                {t.question} {question.id}
-              </span>
-            </CardTitle>
-            <div className="flex gap-2">
+      <Card
+        ref={cardRef}
+        className={`border-2 border-cyan-400/50 bg-gradient-to-br from-black/80 to-purple-900/50 backdrop-blur-xl shadow-2xl shadow-cyan-500/25 transition-all duration-300 cursor-grab active:cursor-grabbing select-none ${
+          isDragging ? "scale-105 rotate-1" : "hover:scale-102"
+        }`}
+        style={{
+          transform: `translate(${dragOffset.x}px, ${dragOffset.y}px) ${isDragging ? "rotate(2deg)" : ""}`,
+        }}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        <CardContent className="p-6 md:p-8 relative">
+          {/* Header with category and actions */}
+          <div className="flex items-center justify-between mb-6">
+            <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 px-4 py-2 text-sm font-bold">
+              {getCategoryEmoji(question.category)} {question.category.toUpperCase()}
+            </Badge>
+
+            <div className="flex items-center space-x-2">
+              {/* Translation button */}
+              {onTranslate && (
+                <Button
+                  onClick={handleTranslate}
+                  disabled={isTranslating}
+                  className={`p-2 rounded-full transition-all transform hover:scale-110 ${
+                    isTranslated
+                      ? "bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600"
+                      : "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+                  } text-white border-0 shadow-lg`}
+                  title={
+                    isTranslating
+                      ? "Translating..."
+                      : isTranslated
+                        ? `Translated to ${languageDisplayNames[language] || language.toUpperCase()}`
+                        : `Translate to ${languageDisplayNames[language] || language.toUpperCase()}`
+                  }
+                >
+                  {isTranslating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Languages className="w-4 h-4" />}
+                </Button>
+              )}
+
+              {/* Text-to-speech button */}
               <Button
-                onClick={translateQuestion}
-                disabled={isTranslating}
-                className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white border-0 px-3 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 text-sm font-bold"
-              >
-                <Languages className="w-4 h-4 mr-1" />
-                {isTranslating ? t.translating : showTranslation ? t.translated : t.translate}
-              </Button>
-              <Button
-                onClick={() => speakText(showTranslation && translatedText ? translatedText : question.question)}
-                className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white border-0 px-3 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                onClick={() => handleReadAloud(displayContent.question)}
+                className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white p-2 rounded-full border-0 shadow-lg transition-all transform hover:scale-110"
+                title="Read question aloud"
               >
                 <Volume2 className="w-4 h-4" />
               </Button>
-              <Button
-                onClick={onFlag}
-                className={`border-0 px-3 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 ${
-                  isFlagged
-                    ? "bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white"
-                    : "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white"
-                }`}
-              >
-                <Flag className="w-4 h-4" />
-              </Button>
+
+              {/* Flag button */}
+              {onFlag && (
+                <Button
+                  onClick={onFlag}
+                  className={`p-2 rounded-full transition-all transform hover:scale-110 ${
+                    isFlagged
+                      ? "bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600"
+                      : "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800"
+                  } text-white border-0 shadow-lg`}
+                  title={isFlagged ? "Remove flag" : "Flag for review"}
+                >
+                  <Flag className="w-4 h-4" />
+                </Button>
+              )}
             </div>
           </div>
 
-          <div className="space-y-4">
-            <p className="text-lg md:text-xl text-white leading-relaxed font-medium">{question.question}</p>
+          {/* Question */}
+          <div className="mb-8">
+            <div className="flex items-start justify-between mb-4">
+              <h2 className="text-xl md:text-2xl font-bold text-white leading-relaxed flex-1 pr-4">
+                {displayContent.question}
+              </h2>
+              {isTranslated && (
+                <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 px-3 py-1 text-xs font-bold shrink-0">
+                  {languageDisplayNames[language] || language.toUpperCase()}
+                </Badge>
+              )}
+            </div>
 
-            {showTranslation && translatedText && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 p-4 rounded-lg border border-blue-400/30"
-              >
-                <div className="flex items-center mb-2">
-                  <Languages className="w-4 h-4 mr-2 text-blue-300" />
-                  <span className="text-blue-300 text-sm font-bold uppercase">
-                    {getLanguageDisplayName(language)} Translation
-                  </span>
-                </div>
-                <p className="text-blue-200 text-lg leading-relaxed font-medium">{translatedText}</p>
-              </motion.div>
+            {/* Question image if available */}
+            {question.image && (
+              <div className="mb-6 flex justify-center">
+                <img
+                  src={question.image || "/placeholder.svg"}
+                  alt="Question illustration"
+                  className="max-w-full h-auto rounded-lg border-2 border-cyan-400/30 shadow-lg"
+                  style={{ maxHeight: "300px" }}
+                />
+              </div>
             )}
           </div>
-        </CardHeader>
 
-        <CardContent className="relative z-10 pb-8">
-          {question.image && (
-            <div className="mb-6 flex justify-center">
-              <img
-                src={getImageSrc() || "/placeholder.svg"}
-                alt="Question illustration"
-                className="max-w-full h-auto rounded-lg shadow-lg border-2 border-cyan-400/30"
-                style={{ maxHeight: "300px" }}
-                onError={handleImageError}
-              />
-            </div>
-          )}
+          {/* Answer options */}
+          <div className="space-y-4 mb-6">
+            {displayContent.options.map((option, index) => {
+              const isSelected = selectedAnswer === index
+              const isCorrect = index === question.answerIndex
+              const showCorrectAnswer = showAnswer && isCorrect
+              const showIncorrectAnswer = showAnswer && isSelected && !isCorrect
 
-          <div className="space-y-3">
-            {question.options.map((option, index) => (
-              <motion.button
-                key={index}
-                onClick={() => handleAnswerClick(index)}
-                disabled={showAnswer}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`w-full p-4 md:p-6 text-left rounded-xl font-bold text-lg md:text-xl transition-all duration-300 border-2 transform hover:scale-[1.02] ${
-                  showAnswer
-                    ? index === question.answerIndex
-                      ? "bg-gradient-to-r from-green-600 to-emerald-600 border-green-400 text-white shadow-lg shadow-green-500/50"
-                      : selectedAnswer === index
-                        ? "bg-gradient-to-r from-red-600 to-pink-600 border-red-400 text-white shadow-lg shadow-red-500/50"
-                        : "bg-black/40 border-gray-600 text-gray-400"
-                    : selectedAnswer === index
-                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 border-cyan-400 text-white shadow-lg shadow-cyan-500/50"
-                      : "bg-black/60 border-cyan-400/30 text-white hover:bg-black/80 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25"
-                }`}
-              >
-                <div className="flex flex-col">
-                  <div className="flex items-start">
-                    <span className="mr-3 text-2xl font-black">{String.fromCharCode(65 + index)}.</span>
-                    <span>{option}</span>
-                  </div>
-                  {showTranslation && translatedOptions[index] && (
-                    <div className="mt-2 ml-8 text-blue-200 text-base opacity-80 font-medium">
-                      {translatedOptions[index]}
+              return (
+                <button
+                  key={index}
+                  onClick={() => handleAnswerClick(index)}
+                  disabled={showAnswer}
+                  className={`w-full p-4 md:p-6 text-left rounded-xl border-2 transition-all duration-300 transform hover:scale-102 ${
+                    showCorrectAnswer
+                      ? "border-green-400 bg-gradient-to-r from-green-900/50 to-emerald-900/50 shadow-lg shadow-green-500/25"
+                      : showIncorrectAnswer
+                        ? "border-red-400 bg-gradient-to-r from-red-900/50 to-pink-900/50 shadow-lg shadow-red-500/25"
+                        : isSelected
+                          ? "border-yellow-400 bg-gradient-to-r from-yellow-900/50 to-orange-900/50 shadow-lg shadow-yellow-500/25"
+                          : "border-gray-600 bg-gradient-to-r from-gray-900/50 to-black/50 hover:border-cyan-400 hover:bg-gradient-to-r hover:from-cyan-900/30 hover:to-blue-900/30"
+                  } ${showAnswer ? "cursor-default" : "cursor-pointer"}`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-4">
+                      <div
+                        className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
+                          showCorrectAnswer
+                            ? "bg-green-500 text-white"
+                            : showIncorrectAnswer
+                              ? "bg-red-500 text-white"
+                              : isSelected
+                                ? "bg-yellow-500 text-black"
+                                : "bg-gray-700 text-gray-300"
+                        }`}
+                      >
+                        {String.fromCharCode(65 + index)}
+                      </div>
+                      <span
+                        className={`text-base md:text-lg font-medium ${
+                          showCorrectAnswer
+                            ? "text-green-300"
+                            : showIncorrectAnswer
+                              ? "text-red-300"
+                              : isSelected
+                                ? "text-yellow-300"
+                                : "text-white"
+                        }`}
+                      >
+                        {option}
+                      </span>
                     </div>
-                  )}
-                </div>
-              </motion.button>
-            ))}
+                    {showCorrectAnswer && <span className="text-2xl">✅</span>}
+                    {showIncorrectAnswer && <span className="text-2xl">❌</span>}
+                  </div>
+                </button>
+              )
+            })}
           </div>
 
-          {!showAnswer && (
-            <div className="mt-8 text-center space-y-4">
-              <p className="text-cyan-300 text-lg font-bold animate-pulse">💡 {t.selectAnswer}</p>
-              <div className="flex justify-center space-x-8 text-sm md:text-base">
-                <div className="text-green-400 font-bold">← {t.swipeLeft}</div>
-                <div className="text-red-400 font-bold">{t.swipeRight} →</div>
+          {/* Explanation */}
+          {showAnswer && displayContent.explanation && (
+            <div className="mt-6 p-4 md:p-6 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-xl border-2 border-blue-400/30">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-lg font-bold text-blue-300 flex items-center">
+                  💡 Explanation
+                  {isTranslated && (
+                    <Badge className="ml-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 px-2 py-1 text-xs font-bold">
+                      {languageDisplayNames[language] || language.toUpperCase()}
+                    </Badge>
+                  )}
+                </h3>
+                <Button
+                  onClick={() => handleReadAloud(displayContent.explanation || "")}
+                  className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white p-2 rounded-full border-0 shadow-lg transition-all transform hover:scale-110"
+                  title="Read explanation aloud"
+                >
+                  <Volume2 className="w-4 h-4" />
+                </Button>
               </div>
+              <p className="text-gray-300 leading-relaxed">{displayContent.explanation}</p>
             </div>
           )}
 
-          {showAnswer && question.explanation && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-6 p-4 md:p-6 bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-xl border border-purple-400/30"
-            >
-              <h4 className="text-xl font-black text-purple-300 mb-3 flex items-center">
-                <span className="mr-2">💡</span>
-                {t.explanation}
-              </h4>
-              <p className="text-white text-lg leading-relaxed mb-3">{question.explanation}</p>
-              {showTranslation && translatedExplanation && (
-                <div className="bg-purple-800/30 p-3 rounded-lg border border-purple-400/20 mt-3">
-                  <div className="flex items-center mb-2">
-                    <Languages className="w-4 h-4 mr-2 text-purple-300" />
-                    <span className="text-purple-300 text-sm font-bold uppercase">
-                      {getLanguageDisplayName(language)} Translation
-                    </span>
-                  </div>
-                  <p className="text-purple-200 text-base leading-relaxed">{translatedExplanation}</p>
-                </div>
-              )}
-            </motion.div>
-          )}
+          {/* Swipe instructions */}
+          <div className="mt-8 text-center">
+            <div className="text-sm text-gray-400 space-y-2">
+              <p className="font-bold">💡 Swipe or drag the card to navigate</p>
+              <div className="flex justify-center space-x-6 text-xs">
+                <span>👈 Previous (A key)</span>
+                <span>Next (D key) 👉</span>
+              </div>
+              <p className="text-xs">Use number keys 1-4 to select answers</p>
+            </div>
+          </div>
         </CardContent>
       </Card>
-    </motion.div>
+    </div>
   )
 }
