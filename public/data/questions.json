@@ -593,5 +593,137 @@
       "zh": "罚金是德国法律制度中的合法制裁。体罚和死刑是违宪的。",
       "hi": "मौद्रिक जुर्माना जर्मन कानूनी प्रणाली में वैध प्रतिबंध हैं। शारीरिक दंड और मृत्युदंड असंवैधानिक हैं।"
     }
+  },
+  {
+    "id": "q011",
+    "category": "Politics",
+    "question": "Wie wird die Verfassung der Bundesrepublik Deutschland genannt?",
+    "translations": {
+      "en": "What is the constitution of the Federal Republic of Germany called?",
+      "es": "¿Cómo se llama la constitución de la República Federal de Alemania?",
+      "fr": "Comment s'appelle la constitution de la République fédérale d'Allemagne?",
+      "it": "Come si chiama la costituzione della Repubblica federale di Germania?",
+      "tr": "Almanya Federal Cumhuriyeti'nin anayasasına ne denir?",
+      "ar": "ماذا يُطلق على دستور جمهورية ألمانيا الاتحادية؟",
+      "ru": "Как называется конституция Федеративной Республики Германии?",
+      "zh": "德意志联邦共和国的宪法叫什么？",
+      "hi": "जर्मनी के संघीय गणराज्य के संविधान को क्या कहा जाता है？"
+    },
+    "options": ["Grundgesetz", "Bundesverfassung", "Gesetzbuch", "Verfassungsvertrag"],
+    "optionTranslations": {
+      "en": ["Basic Law", "Federal Constitution", "Legal Code", "Constitutional Treaty"],
+      "es": ["Ley Fundamental", "Constitución Federal", "Código Legal", "Tratado Constitucional"],
+      "fr": ["Loi fondamentale", "Constitution fédérale", "Code juridique", "Traité constitutionnel"],
+      "it": ["Legge fondamentale", "Costituzione federale", "Codice legale", "Trattato costituzionale"],
+      "tr": ["Temel Yasa", "Federal Anayasa", "Hukuk Kitabı", "Anayasal Antlaşma"],
+      "ar": ["القانون الأساسي", "الدستور الاتحادي", "القانون المدني", "المعاهدة الدستورية"],
+      "ru": ["Основной закон", "Федеральная конституция", "Правовой кодекс", "Конституционный договор"],
+      "zh": ["基本法", "联邦宪法", "法典", "宪法条约"],
+      "hi": ["मूल कानून", "संघीय संविधान", "कानूनी संहिता", "संवैधानिक संधि"]
+    },
+    "answerIndex": 0,
+    "explanation": "Die deutsche Verfassung heißt 'Grundgesetz' und wurde 1949 verabschiedet.",
+    "explanationTranslations": {
+      "en": "The German constitution is called 'Basic Law' and was adopted in 1949.",
+      "es": "La constitución alemana se llama 'Ley Fundamental' y fue adoptada en 1949.",
+      "fr": "La constitution allemande s'appelle 'Loi fondamentale' et a été adoptée en 1949.",
+      "it": "La costituzione tedesca si chiama 'Legge fondamentale' ed è stata adottata nel 1949.",
+      "tr": "Alman anayasasına 'Temel Yasa' denir ve 1949'da kabul edilmiştir.",
+      "ar": "يُطلق على الدستور الألماني 'القانون الأساسي' وتم اعتماده في عام 1949.",
+      "ru": "Немецкая конституция называется 'Основной закон' и была принята в 1949 году.",
+      "zh": "德国宪法被称为'基本法'，于1949年通过。",
+      "hi": "जर्मन संविधान को 'मूल कानून' कहा जाता है और यह 1949 में अपनाया गया था।"
+    }
+  },
+  {
+    "id": "q012",
+    "category": "Politics",
+    "question": "Eine Partei im Deutschen Bundestag will die Pressefreiheit abschaffen. Ist das möglich?",
+    "translations": {
+      "en": "A party in the German Bundestag wants to abolish press freedom. Is this possible?",
+      "es": "Un partido en el Bundestag alemán quiere abolir la libertad de prensa. ¿Es esto posible?",
+      "fr": "Un parti au Bundestag allemand veut abolir la liberté de la presse. Est-ce possible?",
+      "it": "Un partito nel Bundestag tedesco vuole abolire la libertà di stampa. È possibile?",
+      "tr": "Alman Bundestag'ında bir parti basın özgürlüğünü kaldırmak istiyor. Bu mümkün mü?",
+      "ar": "يريد حزب في البوندستاغ الألماني إلغاء حرية الصحافة. هل هذا ممكن؟",
+      "ru": "Партия в немецком Бундестаге хочет отменить свободу прессы. Возможно ли это?",
+      "zh": "德国联邦议院的一个政党想要废除新闻自由。这可能吗？",
+      "hi": "जर्मन बुंडेस्टाग में एक पार्टी प्रेस की स्वतंत्रता को समाप्त करना चाहती है। क्या यह संभव है？"
+    },
+    "options": [
+      "Ja, wenn mehr als die Hälfte der Abgeordneten im Bundestag dafür sind.",
+      "Ja, aber dazu müssen zwei Drittel der Abgeordneten im Bundestag dafür sein.",
+      "Nein, denn die Pressefreiheit ist ein Grundrecht. Sie kann nicht abgeschafft werden.",
+      "Nein, denn nur der Bundesrat kann die Pressefreiheit abschaffen."
+    ],
+    "optionTranslations": {
+      "en": [
+        "Yes, if more than half of the members of the Bundestag are in favor.",
+        "Yes, but two-thirds of the members of the Bundestag must be in favor.",
+        "No, because press freedom is a fundamental right. It cannot be abolished.",
+        "No, because only the Bundesrat can abolish press freedom."
+      ],
+      "es": [
+        "Sí, si más de la mitad de los miembros del Bundestag están a favor.",
+        "Sí, pero dos tercios de los miembros del Bundestag deben estar a favor.",
+        "No, porque la libertad de prensa es un derecho fundamental. No puede ser abolida.",
+        "No, porque solo el Bundesrat puede abolir la libertad de prensa."
+      ],
+      "fr": [
+        "Oui, si plus de la moitié des membres du Bundestag sont favorables.",
+        "Oui, mais les deux tiers des membres du Bundestag doivent être favorables.",
+        "Non, car la liberté de la presse est un droit fondamental. Elle ne peut pas être abolie.",
+        "Non, car seul le Bundesrat peut abolir la liberté de la presse."
+      ],
+      "it": [
+        "Sì, se più della metà dei membri del Bundestag sono favorevoli.",
+        "Sì, ma due terzi dei membri del Bundestag devono essere favorevoli.",
+        "No, perché la libertà di stampa è un diritto fondamentale. Non può essere abolita.",
+        "No, perché solo il Bundesrat può abolire la libertà di stampa."
+      ],
+      "tr": [
+        "Evet, eğer Bundestag üyelerinin yarısından fazlası lehte ise.",
+        "Evet, ama Bundestag üyelerinin üçte ikisi lehte olmalıdır.",
+        "Hayır, çünkü basın özgürlüğü temel bir haktır. Kaldırılamaz.",
+        "Hayır, çünkü sadece Bundesrat basın özgürlüğünü kaldırabilir."
+      ],
+      "ar": [
+        "نعم، إذا كان أكثر من نصف أعضاء البوندستاغ مؤيدين.",
+        "نعم، ولكن يجب أن يكون ثلثا أعضاء البوندستاغ مؤيدين.",
+        "لا، لأن حرية الصحافة حق أساسي. لا يمكن إلغاؤها.",
+        "لا، لأن البوندسرات فقط يمكنه إلغاء حرية الصحافة."
+      ],
+      "ru": [
+        "Да, если более половины членов Бундестага за это.",
+        "Да, но две трети членов Бундестага должны быть за это.",
+        "Нет, потому что свобода прессы - это основное право. Его нельзя отменить.",
+        "Нет, потому что только Бундесрат может отменить свободу прессы."
+      ],
+      "zh": [
+        "是的，如果联邦议院超过一半的成员赞成。",
+        "是的，但联邦议院三分之二的成员必须赞成。",
+        "不，因为新闻自由是一项基本权利。它不能被废除。",
+        "不，因为只有联邦参议院可以废除新闻自由。"
+      ],
+      "hi": [
+        "हाँ, अगर बुंडेस्टाग के आधे से अधिक सदस्य इसके पक्ष में हैं।",
+        "हाँ, लेकिन बुंडेस्टाग के दो-तिहाई सदस्यों को इसके पक्ष में होना चाहिए।",
+        "नहीं, क्योंकि प्रेस की स्वतंत्रता एक मौलिक अधिकार है। इसे समाप्त नहीं किया जा सकता।",
+        "नहीं, क्योंकि केवल बुंडेसरात प्रेस की स्वतंत्रता को समाप्त कर सकता है।"
+      ]
+    },
+    "answerIndex": 2,
+    "explanation": "Die Pressefreiheit ist ein unveränderliches Grundrecht und kann auch nicht durch Verfassungsänderung abgeschafft werden.",
+    "explanationTranslations": {
+      "en": "Press freedom is an immutable fundamental right and cannot be abolished even through constitutional amendment.",
+      "es": "La libertad de prensa es un derecho fundamental inmutable y no puede ser abolida ni siquiera mediante enmienda constitucional.",
+      "fr": "La liberté de la presse est un droit fondamental immuable et ne peut être abolie même par amendement constitutionnel.",
+      "it": "La libertà di stampa è un diritto fondamentale immutabile e non può essere abolita nemmeno attraverso emendamento costituzionale.",
+      "tr": "Basın özgürlüğü değişmez bir temel haktır ve anayasa değişikliği ile bile kaldırılamaz.",
+      "ar": "حرية الصحافة حق أساسي غير قابل للتغيير ولا يمكن إلغاؤها حتى من خلال التعديل الدستوري.",
+      "ru": "Свобода прессы является неизменным основным правом и не может быть отменена даже путем конституционной поправки.",
+      "zh": "新闻自由是不可改变的基本权利，即使通过宪法修正案也不能废除。",
+      "hi": "प्रेस की स्वतंत्रता एक अपरिवर्तनीय मौलिक अधिकार है और संवैधानिक संशोधन के माध्यम से भी इसे समाप्त नहीं किया जा सकता।"
+    }
   }
 ]
