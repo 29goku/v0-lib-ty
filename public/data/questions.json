@@ -196,11 +196,11 @@
     "answerIndex": 0,
     "explanation": "In einem Rechtsstaat sind alle - sowohl Bürger als auch staatliche Institutionen - an das Gesetz gebunden. Niemand steht über dem Gesetz.",
     "explanationTranslations": {
-      "en": "In a constitutional state, everyone - both citizens and state institutions - is bound by the law. No one is above the law.",
+      "en": "In a constitutional state, everyone - both citizens and state institutions - are bound by the law. No one is above the law.",
       "es": "En un estado de derecho, todos - tanto ciudadanos como instituciones estatales - están sujetos a la ley. Nadie está por encima de la ley.",
       "fr": "Dans un État de droit, tout le monde - citoyens et institutions étatiques - est lié par la loi. Personne n'est au-dessus de la loi.",
       "it": "In uno stato di diritto, tutti - sia cittadini che istituzioni statali - sono vincolati dalla legge. Nessuno è al di sopra della legge.",
-      "tr": "Bir hukuk devletinde herkes - hem vatandaşlar hem de devlet kurumları - yasaya bağlıdır. Hiç kimse yasanın üstünde değildir.",
+      "tr": "Bir hukuk devletinde herkes - hem vatandaşlar hem de devlet kurumları - yasayla bağlıdır. Hiç kimse yasanın üstünde değildir.",
       "ar": "في دولة القانون، الجميع - المواطنون والمؤسسات الحكومية - ملزمون بالقانون. لا أحد فوق القانون.",
       "ru": "В правовом государстве все - как граждане, так и государственные институты - связаны законом. Никто не стоит выше закона.",
       "zh": "在法治国家中，每个人——公民和国家机构——都受法律约束。没有人凌驾于法律之上。",
@@ -216,11 +216,11 @@
       "es": "¿Qué derecho pertenece a los derechos fundamentales en Alemania?",
       "fr": "Quel droit appartient aux droits fondamentaux en Allemagne?",
       "it": "Quale diritto appartiene ai diritti fondamentali in Germania?",
-      "tr": "Almanya'da temel haklara hangi hak aittir?",
+      "tr": "Hangi hak Almanya'daki temel haklara aittir?",
       "ar": "أي حق ينتمي إلى الحقوق الأساسية في ألمانيا؟",
       "ru": "Какое право относится к основным правам в Германии?",
       "zh": "哪项权利属于德国的基本权利？",
-      "hi": "जर्मनी में कौन सा अधिकार मौलिक अधिकारों से संबंधित है？"
+      "hi": "कौन सा अधिकार जर्मनी में मौलिक अधिकारों से संबंधित है？"
     },
     "options": ["Waffenbesitz", "Faustrecht", "Meinungsfreiheit", "Selbstjustiz"],
     "optionTranslations": {
@@ -231,20 +231,20 @@
       "tr": ["Silah bulundurma", "Güçlünün hakkı", "Görüş özgürlüğü", "Öz adalet"],
       "ar": ["حيازة الأسلحة", "قانون الأقوى", "حرية الرأي", "العدالة الذاتية"],
       "ru": ["Владение оружием", "Право сильного", "Свобода мнений", "Самосуд"],
-      "zh": ["拥有武器", "强权即公理", "言论自由", "私刑正义"],
+      "zh": ["拥有武器", "强权即公理", "言论自由", "私刑"],
       "hi": ["हथियार रखना", "ताकत का अधिकार", "मत की स्वतंत्रता", "स्व-न्याय"]
     },
     "answerIndex": 2,
     "explanation": "Die Meinungsfreiheit ist ein fundamentales Grundrecht in Deutschland und im Grundgesetz verankert.",
     "explanationTranslations": {
-      "en": "Freedom of opinion is a fundamental right in Germany and is enshrined in the Basic Law.",
+      "en": "Freedom of opinion is a fundamental right in Germany and enshrined in the Basic Law.",
       "es": "La libertad de opinión es un derecho fundamental en Alemania y está consagrada en la Ley Fundamental.",
-      "fr": "La liberté d'opinion est un droit fondamental en Allemagne et est inscrite dans la Loi fondamentale.",
-      "it": "La libertà di opinione è un diritto fondamentale in Germania ed è sancita nella Legge fondamentale.",
+      "fr": "La liberté d'opinion est un droit fondamental en Allemagne et inscrite dans la Loi fondamentale.",
+      "it": "La libertà di opinione è un diritto fondamentale in Germania e sancita nella Legge fondamentale.",
       "tr": "Görüş özgürlüğü Almanya'da temel bir haktır ve Anayasa'da yer almaktadır.",
-      "ar": "حرية الرأي حق أساسي في ألمانيا ومنصوص عليها في القانون الأساسي.",
+      "ar": "حرية الرأي حق أساسي في ألمانيا ومكرس في القانون الأساسي.",
       "ru": "Свобода мнений является основным правом в Германии и закреплена в Основном законе.",
-      "zh": "言论自由是德国的一项基本权利，载于《基本法》中。",
+      "zh": "言论自由是德国的一项基本权利，载入《基本法》。",
       "hi": "मत की स्वतंत्रता जर्मनी में एक मौलिक अधिकार है और मूल कानून में निहित है।"
     }
   },
@@ -1096,7 +1096,7 @@
       "Sozialistische Partei Deutschlands",
       "Sozialpolitische Partei Deutschlands",
       "Sozialdemokratische Partei Deutschlands",
-      "Sozialgerechte Partei Deutschlands"
+      "Sozialdemokratische Partei Deutschlands"
     ],
     "answerIndex": 2,
     "explanation": "SPD steht für Sozialdemokratische Partei Deutschlands."
