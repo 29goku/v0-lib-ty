@@ -86,12 +86,12 @@ export default function HomePage() {
             </DialogTrigger>
             <DialogContent className="bg-black/90 border-2 border-blue-500/50 text-white">
               <DialogHeader>
-                <DialogTitle className="text-xl font-bold text-blue-400">🌐 Translation Feature</DialogTitle>
+                <DialogTitle className="text-xl font-bold text-blue-400">🌐 {t.translate} Feature</DialogTitle>
               </DialogHeader>
               <div className="p-4">
                 <p className="text-gray-300 mb-4">
-                  Our translation feature helps you understand German citizenship questions in English. Look for the
-                  translation button on question cards throughout the app.
+                  Our translation feature helps you understand German citizenship questions in your preferred language.
+                  Look for the translation button on question cards throughout the app.
                 </p>
                 <div className="bg-blue-900/50 p-4 rounded-lg border border-blue-400/30 mb-4">
                   <h4 className="text-blue-300 font-bold mb-2">🎯 How to use:</h4>
@@ -100,7 +100,9 @@ export default function HomePage() {
                       • Look for the <Languages className="w-4 h-4 inline mx-1 text-blue-400" /> button on question
                       cards in Practice and Review modes
                     </li>
-                    <li>• Click to translate the question, all answer options, and explanations to English</li>
+                    <li>
+                      • Click to translate the question, all answer options, and explanations to your selected language
+                    </li>
                     <li>• Click again to toggle back to the original German text</li>
                     <li>• Translation resets automatically when you move to the next question</li>
                   </ul>
@@ -124,7 +126,7 @@ export default function HomePage() {
             <div className="mb-8 md:mb-12 relative">
               <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-2 md:mb-4 leading-none relative hover:scale-105 transition-transform duration-500">
                 <span className="bg-gradient-to-r from-yellow-300 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                  LEBEN
+                  {t.heroTitle}
                 </span>
               </h1>
 
@@ -133,7 +135,7 @@ export default function HomePage() {
                   🇩🇪
                 </span>
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  IN DEUTSCHLAND
+                  {t.heroTitle.includes("LEBEN") ? t.heroTitle : "LEBEN IN DEUTSCHLAND"}
                 </span>
                 <span className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-white ml-2 md:ml-4">
                   🇩🇪
