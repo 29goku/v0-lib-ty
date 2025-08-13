@@ -2,21 +2,24 @@
 
 import type React from "react"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Flag, Volume2, Languages, Loader2 } from "lucide-react"
 import { getCategoryEmoji } from "@/lib/category-emojis"
-import { translateText, speechLangMap, languageDisplayNames } from "@/lib/translate-utils"
+import { speechLangMap, languageDisplayNames } from "@/lib/translate-utils"
 import { useStore } from "@/lib/store"
 
 interface Question {
   id: string
   question: string
+  translations?: Record<string, string>
   options: string[]
+  optionTranslations?: Record<string, string[]>
   answerIndex: number
   explanation?: string
+  explanationTranslations?: Record<string, string>
   category: string
   image?: string
 }
@@ -46,59 +49,22 @@ export default function SwipeCard({
   const [isDragging, setIsDragging] = useState(false)
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
   const [isTranslating, setIsTranslating] = useState(false)
-  const [translatedContent, setTranslatedContent] = useState<{
-    question: string
-    options: string[]
-    explanation?: string
-  } | null>(null)
   const cardRef = useRef<HTMLDivElement>(null)
   const startPos = useRef({ x: 0, y: 0 })
   const { language } = useStore()
 
-  // Reset translation when question changes
-  useEffect(() => {
-    setTranslatedContent(null)
-    setIsTranslating(false)
-  }, [question.id])
-
   const handleTranslate = async () => {
     if (!onTranslate) return
-
-    if (isTranslated && translatedContent) {
-      // Toggle back to original
-      onTranslate()
-      return
-    }
 
     setIsTranslating(true)
     console.log("🌐 Starting translation process...")
 
-    try {
-      // Translate question
-      const translatedQuestion = await translateText(question.question, language)
+    // Simulate a brief loading time
+    await new Promise((resolve) => setTimeout(resolve, 300))
 
-      // Translate all options
-      const translatedOptions = await Promise.all(question.options.map((option) => translateText(option, language)))
-
-      // Translate explanation if it exists
-      let translatedExplanation: string | undefined
-      if (question.explanation) {
-        translatedExplanation = await translateText(question.explanation, language)
-      }
-
-      setTranslatedContent({
-        question: translatedQuestion,
-        options: translatedOptions,
-        explanation: translatedExplanation,
-      })
-
-      console.log("✅ Translation completed successfully!")
-      onTranslate()
-    } catch (error) {
-      console.error("❌ Translation failed:", error)
-    } finally {
-      setIsTranslating(false)
-    }
+    console.log("✅ Translation completed successfully!")
+    onTranslate()
+    setIsTranslating(false)
   }
 
   const handleReadAloud = (text: string) => {
@@ -109,7 +75,7 @@ export default function SwipeCard({
       const utterance = new SpeechSynthesisUtterance(text)
 
       // Use translated language if available, otherwise default to German
-      if (isTranslated && translatedContent) {
+      if (isTranslated) {
         utterance.lang = speechLangMap[language] || "en-US"
       } else {
         utterance.lang = "de-DE"
@@ -180,7 +146,26 @@ export default function SwipeCard({
   }
 
   // Get display content (original or translated)
-  const displayContent = isTranslated && translatedContent ? translatedContent : question
+  const getDisplayQuestion = () => {
+    if (isTranslated && question.translations && question.translations[language]) {
+      return question.translations[language]
+    }
+    return question.question
+  }
+
+  const getDisplayOptions = () => {
+    if (isTranslated && question.optionTranslations && question.optionTranslations[language]) {
+      return question.optionTranslations[language]
+    }
+    return question.options
+  }
+
+  const getDisplayExplanation = () => {
+    if (isTranslated && question.explanationTranslations && question.explanationTranslations[language]) {
+      return question.explanationTranslations[language]
+    }
+    return question.explanation
+  }
 
   const getSwipeHint = () => {
     if (Math.abs(dragOffset.x) > 50) {
@@ -188,6 +173,9 @@ export default function SwipeCard({
     }
     return null
   }
+
+  // Check if translation is available for current language
+  const hasTranslation = question.translations && question.translations[language]
 
   return (
     <div className="relative w-full max-w-2xl mx-auto">
@@ -225,7 +213,7 @@ export default function SwipeCard({
 
             <div className="flex items-center space-x-2">
               {/* Translation button */}
-              {onTranslate && (
+              {onTranslate && hasTranslation && (
                 <Button
                   onClick={handleTranslate}
                   disabled={isTranslating}
@@ -248,7 +236,7 @@ export default function SwipeCard({
 
               {/* Text-to-speech button */}
               <Button
-                onClick={() => handleReadAloud(displayContent.question)}
+                onClick={() => handleReadAloud(getDisplayQuestion())}
                 className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white p-2 rounded-full border-0 shadow-lg transition-all transform hover:scale-110"
                 title="Read question aloud"
               >
@@ -276,7 +264,7 @@ export default function SwipeCard({
           <div className="mb-8">
             <div className="flex items-start justify-between mb-4">
               <h2 className="text-xl md:text-2xl font-bold text-white leading-relaxed flex-1 pr-4">
-                {displayContent.question}
+                {getDisplayQuestion()}
               </h2>
               {isTranslated && (
                 <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 px-3 py-1 text-xs font-bold shrink-0">
@@ -300,7 +288,7 @@ export default function SwipeCard({
 
           {/* Answer options */}
           <div className="space-y-4 mb-6">
-            {displayContent.options.map((option, index) => {
+            {getDisplayOptions().map((option, index) => {
               const isSelected = selectedAnswer === index
               const isCorrect = index === question.answerIndex
               const showCorrectAnswer = showAnswer && isCorrect
@@ -359,7 +347,7 @@ export default function SwipeCard({
           </div>
 
           {/* Explanation */}
-          {showAnswer && displayContent.explanation && (
+          {showAnswer && getDisplayExplanation() && (
             <div className="mt-6 p-4 md:p-6 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-xl border-2 border-blue-400/30">
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-lg font-bold text-blue-300 flex items-center">
@@ -371,14 +359,14 @@ export default function SwipeCard({
                   )}
                 </h3>
                 <Button
-                  onClick={() => handleReadAloud(displayContent.explanation || "")}
+                  onClick={() => handleReadAloud(getDisplayExplanation() || "")}
                   className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white p-2 rounded-full border-0 shadow-lg transition-all transform hover:scale-110"
                   title="Read explanation aloud"
                 >
                   <Volume2 className="w-4 h-4" />
                 </Button>
               </div>
-              <p className="text-gray-300 leading-relaxed">{displayContent.explanation}</p>
+              <p className="text-gray-300 leading-relaxed">{getDisplayExplanation()}</p>
             </div>
           )}
 
