@@ -13,6 +13,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { getTranslation } from "@/lib/i18n"
 import LanguageSelector from "@/components/LanguageSelector"
+import { getCategoryEmoji } from "@/lib/category-emojis"
 
 const germanStates = [
   { id: "baden-wuerttemberg", name: "Baden-Württemberg", emoji: "🏰" },
@@ -497,7 +498,7 @@ export default function PracticePage() {
                         : "bg-black/50 text-purple-300 hover:bg-black/80 hover:text-white border-2 border-purple-400/30"
                     }`}
                   >
-                    🔥 {category}
+                    {getCategoryEmoji(category)} {category}
                   </button>
                 ))}
               </div>
