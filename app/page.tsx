@@ -7,8 +7,6 @@ import { useStore } from "@/lib/store"
 import { getTranslation } from "@/lib/i18n"
 import LanguageSelector from "@/components/LanguageSelector"
 import { useEffect, useState } from "react"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { Languages } from "lucide-react"
 
 export default function HomePage() {
   const { language, questions, userProgress, loadQuestions } = useStore()
@@ -70,13 +68,18 @@ export default function HomePage() {
           🎯
         </div>
       </div>
+      <div className="absolute top-6 right-6 z-50">
+        <LanguageSelector />
+      </div>
 
       <div className="relative z-10">
         
 
         {/* Hero Section */}
         <div className="min-h-screen flex items-center justify-center px-4 relative">
+
           <div className="text-center max-w-6xl mx-auto">
+
             {/* Main title with smooth effects */}
             <div className="mb-8 md:mb-12 relative">
               <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-2 md:mb-4 leading-none relative hover:scale-105 transition-transform duration-500">
