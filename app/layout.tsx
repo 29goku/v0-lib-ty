@@ -1,4 +1,6 @@
-import type React from "react"
+import React from "react"
+import ChatWidgetClient from "../components/ChatWidgetClient";
+import dynamic from 'next/dynamic';
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
@@ -57,9 +59,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className={GeistSans.className}>
-      
         <Suspense fallback={null}>{children}</Suspense>
-          <SpeedInsights />
+        <ChatWidgetClient />
+        <SpeedInsights />
         <Analytics />
       </body>
     </html>
