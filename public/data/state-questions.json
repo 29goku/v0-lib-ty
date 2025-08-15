@@ -5072,99 +5072,95 @@
       "explanation": "Die Regierungschefin/der Regierungschef des Stadtstaates Bremen wird als Erste Bürgermeisterin/Erster Bürgermeister bezeichnet.",
       "translations": {
         "en": {
-          "question": "What is the head of government of the city-state of Bremen called?"
+          "question": "What is the head of government of the city-state of Bremen called?",
+          "options": [
+            "Minister-President",
+            "First Mayor",
+            "President of the Senate",
+            "Governing Mayor"
+          ],
+          "explanation": "The head of government of the city-state of Bremen is called the First Mayor."
         },
         "es": {
-          "question": "¿Cómo se llama el jefe de gobierno de la ciudad-estado de Bremen?"
+          "question": "¿Cómo se llama el jefe de gobierno de la ciudad-estado de Bremen?",
+          "options": [
+            "Ministra-Presidenta/Ministro-Presidente",
+            "Primera Alcaldesa/Primer Alcalde",
+            "Presidenta/Presidente del Senado",
+            "Alcaldesa Gobernadora/Alcalde Gobernador"
+          ],
+          "explanation": "El jefe de gobierno de la ciudad-estado de Bremen se llama Primer Alcalde."
         },
         "fr": {
-          "question": "Comment s'appelle le chef du gouvernement de la ville-État de Brême ?"
+          "question": "Comment s'appelle le chef du gouvernement de la ville-État de Brême ?",
+          "options": [
+            "Ministre-présidente/Ministre-président",
+            "Première mairesse/Premier maire",
+            "Présidente/Président du Sénat",
+            "Maire gouvernant/Maire gouvernant"
+          ],
+          "explanation": "Le chef du gouvernement de la ville-État de Brême est appelé le Premier maire."
         },
         "it": {
-          "question": "Come si chiama il capo del governo della città-stato di Brema?"
+          "question": "Come si chiama il capo del governo della città-stato di Brema?",
+          "options": [
+            "Ministro-Presidente",
+            "Prima sindaca/Primo sindaco",
+            "Presidente del Senato",
+            "Sindaca governante/Sindaco governante"
+          ],
+          "explanation": "Il capo del governo della città-stato di Brema è chiamato il Primo sindaco."
         },
         "tr": {
-          "question": "Bremen şehir-devletinin hükümet başkanına ne ad verilir?"
+          "question": "Bremen şehir-devletinin hükümet başkanına ne ad verilir?",
+          "options": [
+            "Bakan-Başkan",
+            "İlk Belediye Başkanı",
+            "Senato Başkanı",
+            "Yönetici Belediye Başkanı"
+          ],
+          "explanation": "Bremen şehir-devletinin hükümet başkanı İlk Belediye Başkanı olarak adlandırılır."
         },
         "ar": {
-          "question": "ماذا يسمى رئيس/رئيسة حكومة ولاية بريمن؟"
+          "question": "ماذا يسمى رئيس/رئيسة حكومة ولاية بريمن؟",
+          "options": [
+            "وزير/وزيرة رئيس",
+            "رئيس/رئيسة البلدية الأول",
+            "رئيس/رئيسة مجلس الشيوخ",
+            "رئيس/رئيسة البلدية الحاكم"
+          ],
+          "explanation": "يُطلق على رئيس حكومة ولاية بريمن اسم رئيس البلدية الأول."
         },
         "ru": {
-          "question": "Как называется глава правительства города-государства Бремен?"
+          "question": "Как называется глава правительства города-государства Бремен?",
+          "options": [
+            "Министр-президент",
+            "Первый бургомистр",
+            "Председатель Сената",
+            "Правящий бургомистр"
+          ],
+          "explanation": "Глава правительства города-государства Бремен называется Первый бургомистр."
         },
         "zh": {
-          "question": "不来梅城邦的政府首脑叫什么？"
+          "question": "不来梅城邦的政府首脑叫什么？",
+          "options": [
+            "州长/州长",
+            "第一市长/第一市长",
+            "参议院议长/参议院议长",
+            "执政市长/执政市长"
+          ],
+          "explanation": "不来梅城邦的政府首脑被称为第一市长。"
         },
         "hi": {
-          "question": "ब्रेमेन शहर-राज्य के सरकार के प्रमुख को क्या कहा जाता है?"
+          "question": "ब्रेमेन शहर-राज्य के सरकार के प्रमुख को क्या कहा जाता है?",
+          "options": [
+            "मंत्री-अध्यक्ष",
+            "पहली महापौर/पहले महापौर",
+            "सीनेट के अध्यक्ष",
+            "शासक महापौर"
+          ],
+          "explanation": "ब्रेमेन शहर-राज्य के सरकार के प्रमुख को पहले महापौर कहा जाता है।"
         }
-      },
-      "optionTranslations": {
-        "en": [
-          "Minister-President",
-          "First Mayor",
-          "President of the Senate",
-          "Governing Mayor"
-        ],
-        "es": [
-          "Ministra-Presidenta/Ministro-Presidente",
-          "Primera Alcaldesa/Primer Alcalde",
-          "Presidenta/Presidente del Senado",
-          "Alcaldesa Gobernadora/Alcalde Gobernador"
-        ],
-        "fr": [
-          "Ministre-présidente/Ministre-président",
-          "Première mairesse/Premier maire",
-          "Présidente/Président du Sénat",
-          "Maire gouvernant/Maire gouvernant"
-        ],
-        "it": [
-          "Ministro-Presidente",
-          "Prima sindaca/Primo sindaco",
-          "Presidente del Senato",
-          "Sindaca governante/Sindaco governante"
-        ],
-        "tr": [
-          "Bakan-Başkan",
-          "İlk Belediye Başkanı",
-          "Senato Başkanı",
-          "Yönetici Belediye Başkanı"
-        ],
-        "ar": [
-          "وزير/وزيرة رئيس",
-          "رئيس/رئيسة البلدية الأول",
-          "رئيس/رئيسة مجلس الشيوخ",
-          "رئيس/رئيسة البلدية الحاكم"
-        ],
-        "ru": [
-          "Министр-президент",
-          "Первый бургомистр",
-          "Председатель Сената",
-          "Правящий бургомистр"
-        ],
-        "zh": [
-          "州长/州长",
-          "第一市长/第一市长",
-          "参议院议长/参议院议长",
-          "执政市长/执政市长"
-        ],
-        "hi": [
-          "मंत्री-अध्यक्ष",
-          "पहली महापौर/पहले महापौर",
-          "सीनेट के अध्यक्ष",
-          "शासक महापौर"
-        ]
-      },
-      "explanationTranslations": {
-        "en": "The head of government of the city-state of Bremen is called the First Mayor.",
-        "es": "El jefe de gobierno de la ciudad-estado de Bremen se llama Primer Alcalde.",
-        "fr": "Le chef du gouvernement de la ville-État de Brême est appelé le Premier maire.",
-        "it": "Il capo del governo della città-stato di Brema è chiamato il Primo sindaco.",
-        "tr": "Bremen şehir-devletinin hükümet başkanı İlk Belediye Başkanı olarak adlandırılır.",
-        "ar": "يُطلق على رئيس حكومة ولاية بريمن اسم رئيس البلدية الأول.",
-        "ru": "Глава правительства города-государства Бремен называется Первый бургомистр.",
-        "zh": "不来梅城邦的政府首脑被称为第一市长。",
-        "hi": "ब्रेमेन शहर-राज्य के सरकार के प्रमुख को पहले महापौर कहा जाता है।"
       }
     },
     {
@@ -5181,93 +5177,97 @@
       "explanation": "Bremen hat keinen Senator für Außenbeziehungen, da dies eine Aufgabe der Bundesregierung ist.",
       "translations": {
         "en": {
-          "question": "Which senator does Bremen not have?"
+          "question": "Which senator does Bremen not have?",
+          "options": [
+            "Senator for Foreign Relations",
+            "Senator for Finance",
+            "Senator for Justice",
+            "Senator for the Interior"
+          ],
+          "explanation": "Bremen does not have a Senator for Foreign Relations, as this is a task of the federal government."
         },
         "es": {
-          "question": "¿Qué senador no tiene Bremen?"
+          "question": "¿Qué senador no tiene Bremen?",
+          "options": [
+            "Senador/a de Relaciones Exteriores",
+            "Senador/a de Finanzas",
+            "Senador/a de Justicia",
+            "Senador/a del Interior"
+          ],
+          "explanation": "Bremen no tiene un Senador de Relaciones Exteriores, ya que esta es una tarea del gobierno federal."
         },
         "fr": {
-          "question": "Quel sénateur Brême n'a-t-il pas ?"
+          "question": "Quel sénateur Brême n'a-t-il pas ?",
+          "options": [
+            "Sénateur/Sénatrice des relations extérieures",
+            "Sénateur/Sénatrice des finances",
+            "Sénateur/Sénatrice de la justice",
+            "Sénateur/Sénatrice de l'intérieur"
+          ],
+          "explanation": "Brême n'a pas de sénateur des relations extérieures, car c'est une tâche du gouvernement fédéral."
         },
         "it": {
-          "question": "Quale senatore non ha Brema?"
+          "question": "Quale senatore non ha Brema?",
+          "options": [
+            "Senatore/Senatrice per le relazioni estere",
+            "Senatore/Senatrice per le finanze",
+            "Senatore/Senatrice per la giustizia",
+            "Senatore/Senatrice per l'interno"
+          ],
+          "explanation": "Brema non ha un Senatore per le relazioni estere, poiché questo è un compito del governo federale."
         },
-        "tr": "Bremen'in hangi senatörü yoktur?",
-        "ar": "أي من هؤلاء السيناتورات لا يوجد في بريمن؟",
-        "ru": "Какого сенатора нет в Бремене?",
-        "zh": "不来梅没有哪位参议员？",
-        "hi": "ब्रेमेन में कौन से सीनेटर नहीं होते हैं?"
-      },
-      "optionTranslations": {
-        "en": [
-          "Senator for Foreign Relations",
-          "Senator for Finance",
-          "Senator for Justice",
-          "Senator for the Interior"
-        ],
-        "es": [
-          "Senador/a de Relaciones Exteriores",
-          "Senador/a de Finanzas",
-          "Senador/a de Justicia",
-          "Senador/a del Interior"
-        ],
-        "fr": [
-          "Sénateur/Sénatrice des relations extérieures",
-          "Sénateur/Sénatrice des finances",
-          "Sénateur/Sénatrice de la justice",
-          "Sénateur/Sénatrice de l'intérieur"
-        ],
-        "it": [
-          "Senatore/Senatrice per le relazioni estere",
-          "Senatore/Senatrice per le finanze",
-          "Senatore/Senatrice per la giustizia",
-          "Senatore/Senatrice per l'interno"
-        ],
-        "tr": [
-          "Dış İlişkiler Senatörü",
-          "Maliye Senatörü",
-          "Adalet Senatörü",
-          "İçişleri Senatörü"
-        ],
-        "ar": [
-          "السيناتور/السيناتورة للعلاقات الخارجية",
-          "السيناتور/السيناتورة للشؤون المالية",
-          "السيناتور/السيناتورة للعدالة",
-          "السيناتور/السيناتورة للشؤون الداخلية"
-        ],
-        "ru": [
-          "Сенатор по внешним связям",
-          "Сенатор по финансам",
-          "Сенатор по юстиции",
-          "Сенатор по внутренним делам"
-        ],
-        "zh": [
-          "对外关系参议员",
-          "财政参议员",
-          "司法参议员",
-          "内政参议员"
-        ],
-        "hi": [
-          "विदेश संबंधों के लिए सीनेटर",
-          "वित्त के लिए सीनेटर",
-          "न्याय के लिए सीनेटर",
-          "आंतरिक मामलों के लिए सीनेटर"
-        ]
-      },
-      "explanationTranslations": {
-        "en": "Bremen does not have a Senator for Foreign Relations, as this is a task of the federal government.",
-        "es": "Bremen no tiene un Senador de Relaciones Exteriores, ya que esta es una tarea del gobierno federal.",
-        "fr": "Brême n'a pas de sénateur des relations extérieures, car c'est une tâche du gouvernement fédéral.",
-        "it": "Brema non ha un Senatore per le relazioni estere, poiché questo è un compito del governo federale.",
-        "tr": "Bremen'in Dış İlişkiler Senatörü yoktur, çünkü bu federal hükümetin bir görevidir.",
-        "ar": "لا يوجد في بريمن سيناتور للعلاقات الخارجية، لأن هذه مهمة الحكومة الفيدرالية.",
-        "ru": "В Бремене нет сенатора по внешним связям, так как это задача федерального правительства.",
-        "zh": "不来梅没有对外关系参议员，因为这是联邦政府的一项任务。",
-        "hi": "ब्रेमेन में विदेश संबंधों के लिए कोई सीनेटर नहीं होता है, क्योंकि यह संघीय सरकार का कार्य है।"
+        "tr": {
+          "question": "Bremen'in hangi senatörü yoktur?",
+          "options": [
+            "Dış İlişkiler Senatörü",
+            "Maliye Senatörü",
+            "Adalet Senatörü",
+            "İçişleri Senatörü"
+          ],
+          "explanation": "Bremen'in Dış İlişkiler Senatörü yoktur, çünkü bu federal hükümetin bir görevidir."
+        },
+        "ar": {
+          "question": "أي من هؤلاء السيناتورات لا يوجد في بريمن؟",
+          "options": [
+            "السيناتور/السيناتورة للعلاقات الخارجية",
+            "السيناتور/السيناتورة للشؤون المالية",
+            "السيناتور/السيناتورة للعدالة",
+            "السيناتور/السيناتورة للشؤون الداخلية"
+          ],
+          "explanation": "لا يوجد في بريمن سيناتور للعلاقات الخارجية، لأن هذه مهمة الحكومة الفيدرالية."
+        },
+        "ru": {
+          "question": "Какого сенатора нет в Бремене?",
+          "options": [
+            "Сенатор по внешним связям",
+            "Сенатор по финансам",
+            "Сенатор по юстиции",
+            "Сенатор по внутренним делам"
+          ],
+          "explanation": "В Бремене нет сенатора по внешним связям, так как это задача федерального правительства."
+        },
+        "zh": {
+          "question": "不来梅没有哪位参议员？",
+          "options": [
+            "对外关系参议员",
+            "财政参议员",
+            "司法参议员",
+            "内政参议员"
+          ],
+          "explanation": "不来梅没有对外关系参议员，因为这是联邦政府的一项任务。"
+        },
+        "hi": {
+          "question": "ब्रेमेन में कौन से सीनेटर नहीं होते हैं?",
+          "options": [
+            "विदेश संबंधों के लिए सीनेटर",
+            "वित्त के लिए सीनेटर",
+            "न्याय के लिए सीनेटर",
+            "आंतरिक मामलों के लिए सीनेटर"
+          ],
+          "explanation": "ब्रेमेन में विदेश संबंधों के लिए कोई सीनेटर नहीं होता है, क्योंकि यह संघीय सरकार का कार्य है।"
+        }
       }
-    }
-  ],
-  "hamburg": [
+    },
     {
       "id": "hh001",
       "category": "State",
@@ -5283,99 +5283,95 @@
       "explanation": "Das Wappen der Freien und Hansestadt Hamburg (Bild 2) zeigt eine Burg mit drei Türmen.",
       "translations": {
         "en": {
-          "question": "Which coat of arms belongs to the Free and Hanseatic City of Hamburg?"
+          "question": "Which coat of arms belongs to the Free and Hanseatic City of Hamburg?",
+          "options": [
+            "Image 1",
+            "Image 2",
+            "Image 3",
+            "Image 4"
+          ],
+          "explanation": "The coat of arms of the Free and Hanseatic City of Hamburg (Image 2) shows a castle with three towers."
         },
         "es": {
-          "question": "¿Qué escudo de armas pertenece a la Ciudad Libre y Hanseática de Hamburgo?"
+          "question": "¿Qué escudo de armas pertenece a la Ciudad Libre y Hanseática de Hamburgo?",
+          "options": [
+            "Imagen 1",
+            "Imagen 2",
+            "Imagen 3",
+            "Imagen 4"
+          ],
+          "explanation": "El escudo de armas de la Ciudad Libre y Hanseática de Hamburgo (Imagen 2) muestra un castillo con tres torres."
         },
         "fr": {
-          "question": "Quel blason appartient à la Ville Libre et Hanséatique de Hambourg ?"
+          "question": "Quel blason appartient à la Ville Libre et Hanséatique de Hambourg ?",
+          "options": [
+            "Image 1",
+            "Image 2",
+            "Image 3",
+            "Image 4"
+          ],
+          "explanation": "Le blason de la Ville Libre et Hanséatique de Hambourg (Image 2) montre un château avec trois tours."
         },
         "it": {
-          "question": "Quale stemma appartiene alla Città Libera e Anseatica di Amburgo?"
+          "question": "Quale stemma appartiene alla Città Libera e Anseatica di Amburgo?",
+          "options": [
+            "Immagine 1",
+            "Immagine 2",
+            "Immagine 3",
+            "Immagine 4"
+          ],
+          "explanation": "Lo stemma della Città Libera e Anseatica di Amburgo (Immagine 2) mostra un castello con tre torri."
         },
         "tr": {
-          "question": "Özgür ve Hansa Şehri Hamburg'a hangi arma aittir?"
+          "question": "Özgür ve Hansa Şehri Hamburg'a hangi arma aittir?",
+          "options": [
+            "Resim 1",
+            "Resim 2",
+            "Resim 3",
+            "Resim 4"
+          ],
+          "explanation": "Özgür ve Hansa Şehri Hamburg'un arması (Resim 2), üç kuleli bir kale gösterir."
         },
         "ar": {
-          "question": "أي شعار نبالة ينتمي إلى مدينة هامبورغ الحرة والهانزية؟"
+          "question": "أي شعار نبالة ينتمي إلى مدينة هامبورغ الحرة والهانزية؟",
+          "options": [
+            "الصورة 1",
+            "الصورة 2",
+            "الصورة 3",
+            "الصورة 4"
+          ],
+          "explanation": "شعار نبالة مدينة هامبورغ الحرة والهانزية (الصورة 2) يظهر قلعة بثلاثة أبراج."
         },
         "ru": {
-          "question": "Какой герб принадлежит Вольному и ганзейскому городу Гамбургу?"
+          "question": "Какой герб принадлежит Вольному и ганзейскому городу Гамбургу?",
+          "options": [
+            "Изображение 1",
+            "Изображение 2",
+            "Изображение 3",
+            "Изображение 4"
+          ],
+          "explanation": "Герб Вольного и ганзейского города Гамбурга (Изображение 2) показывает замок с тремя башнями."
         },
         "zh": {
-          "question": "哪个纹章属于汉堡自由汉萨城？"
+          "question": "哪个纹章属于汉堡自由汉萨城？",
+          "options": [
+            "图1",
+            "图2",
+            "图3",
+            "图4"
+          ],
+          "explanation": "汉堡自由汉萨城（图 2）的纹章展示了一座带有三座塔楼的城堡。"
         },
         "hi": {
-          "question": "कौन सा प्रतीक चिन्ह हैम्बर्ग के स्वतंत्र और हैन्सेटिक शहर का है?"
+          "question": "कौन सा प्रतीक चिन्ह हैम्बर्ग के स्वतंत्र और हैन्सेटिक शहर का है?",
+          "options": [
+            "छवि 1",
+            "छवि 2",
+            "छवि 3",
+            "छवि 4"
+          ],
+          "explanation": "हैम्बर्ग के स्वतंत्र और हैन्सेटिक शहर का प्रतीक चिन्ह (छवि 2) तीन टावरों वाला एक महल दिखाता है।"
         }
-      },
-      "optionTranslations": {
-        "en": [
-          "Image 1",
-          "Image 2",
-          "Image 3",
-          "Image 4"
-        ],
-        "es": [
-          "Imagen 1",
-          "Imagen 2",
-          "Imagen 3",
-          "Imagen 4"
-        ],
-        "fr": [
-          "Image 1",
-          "Image 2",
-          "Image 3",
-          "Image 4"
-        ],
-        "it": [
-          "Immagine 1",
-          "Immagine 2",
-          "Immagine 3",
-          "Immagine 4"
-        ],
-        "tr": [
-          "Resim 1",
-          "Resim 2",
-          "Resim 3",
-          "Resim 4"
-        ],
-        "ar": [
-          "الصورة 1",
-          "الصورة 2",
-          "الصورة 3",
-          "الصورة 4"
-        ],
-        "ru": [
-          "Изображение 1",
-          "Изображение 2",
-          "Изображение 3",
-          "Изображение 4"
-        ],
-        "zh": [
-          "图片 1",
-          "图片 2",
-          "图片 3",
-          "图片 4"
-        ],
-        "hi": [
-          "छवि 1",
-          "छवि 2",
-          "छवि 3",
-          "छवि 4"
-        ]
-      },
-      "explanationTranslations": {
-        "en": "The coat of arms of the Free and Hanseatic City of Hamburg (Image 2) shows a castle with three towers.",
-        "es": "El escudo de armas de la Ciudad Libre y Hanseática de Hamburgo (Imagen 2) muestra un castillo con tres torres.",
-        "fr": "Le blason de la Ville Libre et Hanséatique de Hambourg (Image 2) montre un château avec trois tours.",
-        "it": "Lo stemma della Città Libera e Anseatica di Amburgo (Immagine 2) mostra un castello con tre torri.",
-        "tr": "Özgür ve Hansa Şehri Hamburg'un arması (Resim 2), üç kuleli bir kale gösterir.",
-        "ar": "شعار نبالة مدينة هامبورغ الحرة والهانزية (الصورة 2) يظهر قلعة بثلاثة أبراج.",
-        "ru": "Герб Вольного и ганзейского города Гамбурга (Изображение 2) показывает замок с тремя башнями.",
-        "zh": "汉堡自由汉萨城（图 2）的纹章展示了一座带有三座塔楼的城堡。",
-        "hi": "हैम्बर्ग के स्वतंत्र और हैन्सेटिक शहर का प्रतीक चिन्ह (छवि 2) तीन टावरों वाला एक महल दिखाता है।"
       }
     },
     {
@@ -5392,99 +5388,95 @@
       "explanation": "Altona ist ein Bezirk von Hamburg.",
       "translations": {
         "en": {
-          "question": "Which one is a district of Hamburg?"
+          "question": "Which one is a district of Hamburg?",
+          "options": [
+            "Altona",
+            "Hemelingen",
+            "Pankow",
+            "Mecklenburgische Seenplatte"
+          ],
+          "explanation": "Altona is a district of Hamburg."
         },
         "es": {
-          "question": "¿Cuál es un distrito de Hamburgo?"
+          "question": "¿Cuál es un distrito de Hamburgo?",
+          "options": [
+            "Altona",
+            "Hemelingen",
+            "Pankow",
+            "Mecklenburgische Seenplatte"
+          ],
+          "explanation": "Altona es un distrito de Hamburgo."
         },
         "fr": {
-          "question": "Quel est un quartier de Hambourg ?"
+          "question": "Quel est un quartier de Hambourg ?",
+          "options": [
+            "Altona",
+            "Hemelingen",
+            "Pankow",
+            "Mecklenburgische Seenplatte"
+          ],
+          "explanation": "Altona est un quartier de Hambourg."
         },
         "it": {
-          "question": "Quale è un distretto di Amburgo?"
+          "question": "Quale è un distretto di Amburgo?",
+          "options": [
+            "Altona",
+            "Hemelingen",
+            "Pankow",
+            "Mecklenburgische Seenplatte"
+          ],
+          "explanation": "Altona è un distretto di Amburgo."
         },
         "tr": {
-          "question": "Hangisi Hamburg'un bir ilçesidir?"
+          "question": "Hangisi Hamburg'un bir ilçesidir?",
+          "options": [
+            "Altona",
+            "Hemelingen",
+            "Pankow",
+            "Mecklenburgische Seenplatte"
+          ],
+          "explanation": "Altona, Hamburg'un bir ilçesidir."
         },
         "ar": {
-          "question": "أي من هذه المناطق هو حي في هامبورغ؟"
+          "question": "أي من هذه المناطق هو حي في هامبورغ؟",
+          "options": [
+            "ألتونا",
+            "هيميلينجن",
+            "بانكو",
+            "مكلنبورغيشه زينبلاته"
+          ],
+          "explanation": "ألتونا هو حي في هامبورغ."
         },
         "ru": {
-          "question": "Какой из них является районом Гамбурга?"
+          "question": "Какой из них является районом Гамбурга?",
+          "options": [
+            "Альтона",
+            "Хемелинген",
+            "Панков",
+            "Мекленбургское Поозерье"
+          ],
+          "explanation": "Альтона - это район Гамбурга."
         },
         "zh": {
-          "question": "哪个是汉堡的一个区？"
+          "question": "哪个是汉堡的一个区？",
+          "options": [
+            "阿尔托纳",
+            "海默林根",
+            "潘科夫",
+            "梅克伦堡湖区"
+          ],
+          "explanation": "阿尔托纳是汉堡的一个区。"
         },
         "hi": {
-          "question": "हैम्बर्ग का कौन सा एक जिला है?"
+          "question": "हैम्बर्ग का कौन सा एक जिला है?",
+          "options": [
+            "अल्टोना",
+            "हेमेलिंगेन",
+            "पैनकोव",
+            "मेक्लेनबुर्गिश सीनप्लाटे"
+          ],
+          "explanation": "अल्टोना हैम्बर्ग का एक जिला है।"
         }
-      },
-      "optionTranslations": {
-        "en": [
-          "Altona",
-          "Hemelingen",
-          "Pankow",
-          "Mecklenburgische Seenplatte"
-        ],
-        "es": [
-          "Altona",
-          "Hemelingen",
-          "Pankow",
-          "Mecklenburgische Seenplatte"
-        ],
-        "fr": [
-          "Altona",
-          "Hemelingen",
-          "Pankow",
-          "Mecklenburgische Seenplatte"
-        ],
-        "it": [
-          "Altona",
-          "Hemelingen",
-          "Pankow",
-          "Mecklenburgische Seenplatte"
-        ],
-        "tr": [
-          "Altona",
-          "Hemelingen",
-          "Pankow",
-          "Mecklenburgische Seenplatte"
-        ],
-        "ar": [
-          "ألتونا",
-          "هيميلينجن",
-          "بانكو",
-          "مكلنبورغيشه زينبلاته"
-        ],
-        "ru": [
-          "Альтона",
-          "Хемелинген",
-          "Панков",
-          "Мекленбургское Поозерье"
-        ],
-        "zh": [
-          "阿尔托纳",
-          "海默林根",
-          "潘科夫",
-          "梅克伦堡湖区"
-        ],
-        "hi": [
-          "अल्टोना",
-          "हेमेलिंगेन",
-          "पैनकोव",
-          "मेक्लेनबुर्गिश सीनप्लाटे"
-        ]
-      },
-      "explanationTranslations": {
-        "en": "Altona is a district of Hamburg.",
-        "es": "Altona es un distrito de Hamburgo.",
-        "fr": "Altona est un quartier de Hambourg.",
-        "it": "Altona è un distretto di Amburgo.",
-        "tr": "Altona, Hamburg'un bir ilçesidir.",
-        "ar": "ألتونا هو حي في هامبورغ.",
-        "ru": "Альтона - это район Гамбурга.",
-        "zh": "阿尔托纳是汉堡的一个区。",
-        "hi": "अल्टोना हैम्बर्ग का एक जिला है।"
       }
     },
     {
@@ -5501,99 +5493,95 @@
       "explanation": "Das Landesparlament in Hamburg wird für 5 Jahre gewählt.",
       "translations": {
         "en": {
-          "question": "For how many years is the state parliament in Hamburg elected?"
+          "question": "For how many years is the state parliament in Hamburg elected?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "explanation": "The state parliament in Hamburg is elected for 5 years."
         },
         "es": {
-          "question": "¿Por cuántos años se elige el parlamento estatal en Hamburgo?"
+          "question": "¿Por cuántos años se elige el parlamento estatal en Hamburgo?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "explanation": "El parlamento estatal en Hamburgo se elige por 5 años."
         },
         "fr": {
-          "question": "Pour combien d'années le parlement d'État à Hambourg est-il élu ?"
+          "question": "Pour combien d'années le parlement d'État à Hambourg est-il élu ?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "explanation": "Le parlement d'État à Hambourg est élu pour 5 ans."
         },
         "it": {
-          "question": "Per quanti anni viene eletto il parlamento statale ad Amburgo?"
+          "question": "Per quanti anni viene eletto il parlamento statale ad Amburgo?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "explanation": "Il parlamento statale ad Amburgo viene eletto per 5 anni."
         },
         "tr": {
-          "question": "Hamburg'daki eyalet parlamentosu kaç yıllığına seçilir?"
+          "question": "Hamburg'daki eyalet parlamentosu kaç yıllığına seçilir?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "explanation": "Hamburg'daki eyalet parlamentosu 5 yıllığına seçilir."
         },
         "ar": {
-          "question": "لكم سنة يتم انتخاب برلمان الولاية في هامبورغ؟"
+          "question": "لكم سنة يتم انتخاب برلمان الولاية في هامبورغ؟",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "explanation": "يتم انتخاب برلمان الولاية في هامبورغ لمدة 5 سنوات."
         },
         "ru": {
-          "question": "На сколько лет избирается парламент земли в Гамбурге?"
+          "question": "На сколько лет избирается парламент земли в Гамбурге?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "explanation": "Парламент земли в Гамбурге избирается на 5 лет."
         },
         "zh": {
-          "question": "汉堡的州议会任期为多少年？"
+          "question": "汉堡的州议会任期为多少年？",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "explanation": "汉堡的州议会任期为5年。"
         },
         "hi": {
-          "question": "हैम्बर्ग में राज्य संसद का चुनाव कितने वर्षों के लिए होता है?"
+          "question": "हैम्बर्ग में राज्य संसद का चुनाव कितने वर्षों के लिए होता है?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "explanation": "हैम्बर्ग में राज्य संसद का चुनाव 5 वर्षों के लिए होता है।"
         }
-      },
-      "optionTranslations": {
-        "en": [
-          "3",
-          "4",
-          "5",
-          "6"
-        ],
-        "es": [
-          "3",
-          "4",
-          "5",
-          "6"
-        ],
-        "fr": [
-          "3",
-          "4",
-          "5",
-          "6"
-        ],
-        "it": [
-          "3",
-          "4",
-          "5",
-          "6"
-        ],
-        "tr": [
-          "3",
-          "4",
-          "5",
-          "6"
-        ],
-        "ar": [
-          "3",
-          "4",
-          "5",
-          "6"
-        ],
-        "ru": [
-          "3",
-          "4",
-          "5",
-          "6"
-        ],
-        "zh": [
-          "3",
-          "4",
-          "5",
-          "6"
-        ],
-        "hi": [
-          "3",
-          "4",
-          "5",
-          "6"
-        ]
-      },
-      "explanationTranslations": {
-        "en": "The state parliament in Hamburg is elected for 5 years.",
-        "es": "El parlamento estatal en Hamburgo se elige por 5 años.",
-        "fr": "Le parlement d'État à Hambourg est élu pour 5 ans.",
-        "it": "Il parlamento statale ad Amburgo viene eletto per 5 anni.",
-        "tr": "Hamburg'daki eyalet parlamentosu 5 yıllığına seçilir.",
-        "ar": "يتم انتخاب برلمان الولاية في هامبورغ لمدة 5 سنوات.",
-        "ru": "Парламент земли в Гамбурге избирается на 5 лет.",
-        "zh": "汉堡的州议会任期为5年。",
-        "hi": "हैम्बर्ग में राज्य संसद का चुनाव 5 वर्षों के लिए होता है।"
       }
     },
     {
@@ -5610,99 +5598,95 @@
       "explanation": "In Hamburg darf man ab 16 Jahren bei Kommunalwahlen wählen.",
       "translations": {
         "en": {
-          "question": "From what age can one vote in municipal elections (election of the district assemblies) in Hamburg?"
+          "question": "From what age can one vote in municipal elections (election of the district assemblies) in Hamburg?",
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "explanation": "In Hamburg, you can vote in municipal elections from the age of 16."
         },
         "es": {
-          "question": "¿A partir de qué edad se puede votar en las elecciones municipales (elección de las asambleas de distrito) en Hamburgo?"
+          "question": "¿A partir de qué edad se puede votar en las elecciones municipales (elección de las asambleas de distrito) en Hamburgo?",
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "explanation": "En Hamburgo, se puede votar en las elecciones municipales a partir de los 16 años."
         },
         "fr": {
-          "question": "À partir de quel âge peut-on voter aux élections communales (élection des assemblées de district) à Hambourg ?"
+          "question": "À partir de quel âge peut-on voter aux élections communales (élection des assemblées de district) à Hambourg ?",
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "explanation": "À Hambourg, on peut voter aux élections municipales à partir de 16 ans."
         },
         "it": {
-          "question": "A partire da quale età si può votare alle elezioni comunali (elezione delle assemblee distrettuali) ad Amburgo?"
+          "question": "A partire da quale età si può votare alle elezioni comunali (elezione delle assemblee distrettuali) ad Amburgo?",
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "explanation": "Ad Amburgo, si può votare alle elezioni comunali a partire dai 16 anni."
         },
         "tr": {
-          "question": "Hamburg'da belediye seçimlerinde (ilçe meclisleri seçimi) kaç yaşından itibaren oy kullanabilirsiniz?"
+          "question": "Hamburg'da belediye seçimlerinde (ilçe meclisleri seçimi) kaç yaşından itibaren oy kullanabilirsiniz?",
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "explanation": "Hamburg'da, 16 yaşından itibaren belediye seçimlerinde oy kullanabilirsiniz."
         },
         "ar": {
-          "question": "من أي عمر يسمح بالتصويت في الانتخابات المحلية (انتخابات مجالس الأحياء) في هامبورغ؟"
+          "question": "من أي عمر يسمح بالتصويت في الانتخابات المحلية (انتخابات مجالس الأحياء) في هامبورغ؟",
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "explanation": "في هامبورغ، يمكن التصويت في الانتخابات المحلية من عمر 16 سنة."
         },
         "ru": {
-          "question": "С какого возраста можно голосовать на муниципальных выборах (выборах в районные собрания) в Гамбурге?"
+          "question": "С какого возраста можно голосовать на муниципальных выборах (выборах в районные собрания) в Гамбурге?",
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "explanation": "В Гамбурге можно голосовать на муниципальных выборах с 16 лет."
         },
         "zh": {
-          "question": "在汉堡，从几岁开始可以参加市政选举（区议会选举）？"
+          "question": "在汉堡，从几岁开始可以参加市政选举（区议会选举）？",
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "explanation": "在汉堡，年满16岁即可参加市政选举。"
         },
         "hi": {
-          "question": "हैम्बर्ग में किस उम्र से नगर निगम चुनावों (जिला सभाओं के चुनाव) में वोट दिया जा सकता है?"
+          "question": "हैम्बर्ग में किस उम्र से नगर निगम चुनावों (जिला सभाओं के चुनाव) में वोट दिया जा सकता है?",
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "explanation": "हैम्बर्ग में, 16 वर्ष की आयु से नगर निगम चुनावों में मतदान किया जा सकता है।"
         }
-      },
-      "optionTranslations": {
-        "en": [
-          "14",
-          "16",
-          "18",
-          "20"
-        ],
-        "es": [
-          "14",
-          "16",
-          "18",
-          "20"
-        ],
-        "fr": [
-          "14",
-          "16",
-          "18",
-          "20"
-        ],
-        "it": [
-          "14",
-          "16",
-          "18",
-          "20"
-        ],
-        "tr": [
-          "14",
-          "16",
-          "18",
-          "20"
-        ],
-        "ar": [
-          "14",
-          "16",
-          "18",
-          "20"
-        ],
-        "ru": [
-          "14",
-          "16",
-          "18",
-          "20"
-        ],
-        "zh": [
-          "14",
-          "16",
-          "18",
-          "20"
-        ],
-        "hi": [
-          "14",
-          "16",
-          "18",
-          "20"
-        ]
-      },
-      "explanationTranslations": {
-        "en": "In Hamburg, you can vote in municipal elections from the age of 16.",
-        "es": "En Hamburgo, se puede votar en las elecciones municipales a partir de los 16 años.",
-        "fr": "À Hambourg, on peut voter aux élections municipales à partir de 16 ans.",
-        "it": "Ad Amburgo, si può votare alle elezioni comunali a partire dai 16 anni.",
-        "tr": "Hamburg'da, 16 yaşından itibaren belediye seçimlerinde oy kullanabilirsiniz.",
-        "ar": "في هامبورغ، يمكن التصويت في الانتخابات المحلية من عمر 16 سنة.",
-        "ru": "В Гамбурге можно голосовать на муниципальных выборах с 16 лет.",
-        "zh": "在汉堡，年满16岁即可参加市政选举。",
-        "hi": "हैम्बर्ग में, 16 वर्ष की आयु से नगर निगम चुनावों में मतदान किया जा सकता है।"
       }
     },
     {
@@ -5719,99 +5703,95 @@
       "explanation": "Die Landesflagge von Hamburg ist weiß-rot.",
       "translations": {
         "en": {
-          "question": "What colors does the state flag of Hamburg have?"
+          "question": "What colors does the state flag of Hamburg have?",
+          "options": [
+            "blue-white-red",
+            "white-red",
+            "green-white-red",
+            "black-yellow"
+          ],
+          "explanation": "The state flag of Hamburg is white-red."
         },
         "es": {
-          "question": "¿Qué colores tiene la bandera del estado de Hamburgo?"
+          "question": "¿Qué colores tiene la bandera del estado de Hamburgo?",
+          "options": [
+            "azul-blanco-rojo",
+            "blanco-rojo",
+            "verde-blanco-rojo",
+            "negro-amarillo"
+          ],
+          "explanation": "La bandera del estado de Hamburgo es blanca y roja."
         },
         "fr": {
-          "question": "Quelles couleurs a le drapeau de l'État de Hambourg ?"
+          "question": "Quelles couleurs a le drapeau de l'État de Hambourg ?",
+          "options": [
+            "bleu-blanc-rouge",
+            "blanc-rouge",
+            "vert-blanc-rouge",
+            "noir-jaune"
+          ],
+          "explanation": "Le drapeau de l'État de Hambourg est blanc et rouge."
         },
         "it": {
-          "question": "Quali colori ha la bandiera dello stato di Amburgo?"
+          "question": "Quali colori ha la bandiera dello stato di Amburgo?",
+          "options": [
+            "blu-bianco-rosso",
+            "bianco-rosso",
+            "verde-bianco-rosso",
+            "nero-giallo"
+          ],
+          "explanation": "La bandiera dello stato di Amburgo è bianca e rossa."
         },
         "tr": {
-          "question": "Hamburg eyalet bayrağının renkleri nelerdir?"
+          "question": "Hamburg eyalet bayrağının renkleri nelerdir?",
+          "options": [
+            "mavi-beyaz-kırmızı",
+            "beyaz-kırmızı",
+            "yeşil-beyaz-kırmızı",
+            "siyah-sarı"
+          ],
+          "explanation": "Hamburg eyalet bayrağı beyaz-kırmızıdır."
         },
         "ar": {
-          "question": "ما هي ألوان علم ولاية هامبورغ؟"
+          "question": "ما هي ألوان علم ولاية هامبورغ؟",
+          "options": [
+            "أزرق-أبيض-أحمر",
+            "أبيض-أحمر",
+            "أخضر-أبيض-أحمر",
+            "أسود-أصفر"
+          ],
+          "explanation": "علم ولاية هامبورغ هو أبيض وأحمر."
         },
         "ru": {
-          "question": "Какие цвета у флага земли Гамбург?"
+          "question": "Какие цвета у флага земли Гамбург?",
+          "options": [
+            "сине-бело-красный",
+            "бело-красный",
+            "зелено-бело-красный",
+            "черно-желтый"
+          ],
+          "explanation": "Флаг земли Гамбург - бело-красный."
         },
         "zh": {
-          "question": "汉堡州旗是什么颜色的？"
+          "question": "汉堡州旗是什么颜色的？",
+          "options": [
+            "蓝-白-红",
+            "白-红",
+            "绿-白-红",
+            "黑-黄"
+          ],
+          "explanation": "汉堡州旗是白红相间的。"
         },
         "hi": {
-          "question": "हैम्बर्ग के राज्य ध्वज का रंग क्या है?"
+          "question": "हैम्बर्ग के राज्य ध्वज का रंग क्या है?",
+          "options": [
+            "नीला-सफेद-लाल",
+            "सफेद-लाल",
+            "हरा-सफेद-लाल",
+            "काला-पीला"
+          ],
+          "explanation": "हैम्बर्ग का राज्य ध्वज सफेद-लाल है।"
         }
-      },
-      "optionTranslations": {
-        "en": [
-          "blue-white-red",
-          "white-red",
-          "green-white-red",
-          "black-yellow"
-        ],
-        "es": [
-          "azul-blanco-rojo",
-          "blanco-rojo",
-          "verde-blanco-rojo",
-          "negro-amarillo"
-        ],
-        "fr": [
-          "bleu-blanc-rouge",
-          "blanc-rouge",
-          "vert-blanc-rouge",
-          "noir-jaune"
-        ],
-        "it": [
-          "blu-bianco-rosso",
-          "bianco-rosso",
-          "verde-bianco-rosso",
-          "nero-giallo"
-        ],
-        "tr": [
-          "mavi-beyaz-kırmızı",
-          "beyaz-kırmızı",
-          "yeşil-beyaz-kırmızı",
-          "siyah-sarı"
-        ],
-        "ar": [
-          "أزرق-أبيض-أحمر",
-          "أبيض-أحمر",
-          "أخضر-أبيض-أحمر",
-          "أسود-أصفر"
-        ],
-        "ru": [
-          "сине-бело-красный",
-          "бело-красный",
-          "зелено-бело-красный",
-          "черно-желтый"
-        ],
-        "zh": [
-          "蓝-白-红",
-          "白-红",
-          "绿-白-红",
-          "黑-黄"
-        ],
-        "hi": [
-          "नीला-सफेद-लाल",
-          "सफेद-लाल",
-          "हरा-सफेद-लाल",
-          "काला-पीला"
-        ]
-      },
-      "explanationTranslations": {
-        "en": "The state flag of Hamburg is white-red.",
-        "es": "La bandera del estado de Hamburgo es blanca y roja.",
-        "fr": "Le drapeau de l'État de Hambourg est blanc et rouge.",
-        "it": "La bandiera dello stato di Amburgo è bianca e rossa.",
-        "tr": "Hamburg eyalet bayrağı beyaz-kırmızıdır.",
-        "ar": "علم ولاية هامبورغ هو أبيض وأحمر.",
-        "ru": "Флаг земли Гамбург - бело-красный.",
-        "zh": "汉堡州旗是白红相间的。",
-        "hi": "हैम्बर्ग का राज्य ध्वज सफेद-लाल है।"
       }
     },
     {
@@ -5828,99 +5808,95 @@
       "explanation": "In Hamburg können Sie sich bei der Landeszentrale für politische Bildung über politische Themen informieren.",
       "translations": {
         "en": {
-          "question": "Where can you get information about political topics in Hamburg?"
+          "question": "Where can you get information about political topics in Hamburg?",
+          "options": [
+            "at the local public order office",
+            "at the consumer advice center",
+            "at the churches",
+            "at the state center for political education"
+          ],
+          "explanation": "In Hamburg, you can get information about political topics at the state center for political education."
         },
         "es": {
-          "question": "¿Dónde puede obtener información sobre temas políticos en Hamburgo?"
+          "question": "¿Dónde puede obtener información sobre temas políticos en Hamburgo?",
+          "options": [
+            "en la oficina local de orden público",
+            "en el centro de asesoramiento al consumidor",
+            "en las iglesias",
+            "en el centro estatal de educación política"
+          ],
+          "explanation": "En Hamburgo, puede obtener información sobre temas políticos en el centro estatal de educación política."
         },
         "fr": {
-          "question": "Où pouvez-vous vous informer sur les sujets politiques à Hambourg ?"
+          "question": "Où pouvez-vous vous informer sur les sujets politiques à Hambourg ?",
+          "options": [
+            "au service de l'ordre public local",
+            "au centre de conseil aux consommateurs",
+            "dans les églises",
+            "au centre d'État pour l'éducation politique"
+          ],
+          "explanation": "À Hambourg, vous pouvez vous informer sur les sujets politiques au centre d'État pour l'éducation politique."
         },
         "it": {
-          "question": "Dove potete informarvi su temi politici ad Amburgo?"
+          "question": "Dove potete informarvi su temi politici ad Amburgo?",
+          "options": [
+            "all'ufficio dell'ordine pubblico comunale",
+            "presso il centro di consulenza per i consumatori",
+            "presso le chiese",
+            "presso il centro statale per l'educazione politica"
+          ],
+          "explanation": "Ad Amburgo, potete informarvi su temi politici presso il centro statale per l'educazione politica."
         },
         "tr": {
-          "question": "Hamburg'da siyasi konular hakkında nereden bilgi edinebilirsiniz?"
+          "question": "Hamburg'da siyasi konular hakkında nereden bilgi edinebilirsiniz?",
+          "options": [
+            "belediyenin düzen ofisinde",
+            "tüketici danışma merkezinde",
+            "kiliselerde",
+            "eyalet siyasi eğitim merkezinde"
+          ],
+          "explanation": "Hamburg'da siyasi konular hakkında eyalet siyasi eğitim merkezinden bilgi edinebilirsiniz."
         },
         "ar": {
-          "question": "أين يمكنك الحصول على معلومات حول الموضوعات السياسية في هامبورغ؟"
+          "question": "أين يمكنك الحصول على معلومات حول الموضوعات السياسية في هامبورغ؟",
+          "options": [
+            "في مكتب النظام العام المحلي",
+            "في مركز استشارات المستهلك",
+            "في الكنائس",
+            "في المركز الحكومي للتثقيف السياسي"
+          ],
+          "explanation": "في هامبورغ، يمكنك الحصول على معلومات حول الموضوعات السياسية من المركز الحكومي للتثقيف السياسي."
         },
         "ru": {
-          "question": "Где вы можете получить информацию о политических темах в Гамбурге?"
+          "question": "Где вы можете получить информацию о политических темах в Гамбурге?",
+          "options": [
+            "в местном управлении по поддержанию порядка",
+            "в центре по защите прав потребителей",
+            "в церквях",
+            "в государственном центре политического образования"
+          ],
+          "explanation": "В Гамбурге вы можете получить информацию о политических темах в государственном центре политического образования."
         },
         "zh": {
-          "question": "在汉堡，您可以在哪里获取有关政治话题的信息？"
+          "question": "在汉堡，您可以在哪里获取有关政治话题的信息？",
+          "options": [
+            "在社区秩序局",
+            "在消费者咨询中心",
+            "在教堂",
+            "在州政治教育中心"
+          ],
+          "explanation": "在汉堡，您可以在州政治教育中心获取有关政治话题的信息。"
         },
         "hi": {
-          "question": "हैम्बर्ग में आप राजनीतिक विषयों के बारे में जानकारी कहाँ से प्राप्त कर सकते हैं?"
+          "question": "हैम्बर्ग में आप राजनीतिक विषयों के बारे में जानकारी कहाँ से प्राप्त कर सकते हैं?",
+          "options": [
+            "नगरपालिका के व्यवस्था कार्यालय में",
+            "उपभोक्ता परामर्श केंद्र में",
+            "चर्चों में",
+            "राज्य राजनीतिक शिक्षा केंद्र में"
+          ],
+          "explanation": "हैम्बर्ग में, आप राज्य राजनीतिक शिक्षा केंद्र से राजनीतिक विषयों के बारे में जानकारी प्राप्त कर सकते हैं।"
         }
-      },
-      "optionTranslations": {
-        "en": [
-          "at the local public order office",
-          "at the consumer advice center",
-          "at the churches",
-          "at the state center for political education"
-        ],
-        "es": [
-          "en la oficina local de orden público",
-          "en el centro de asesoramiento al consumidor",
-          "en las iglesias",
-          "en el centro estatal de educación política"
-        ],
-        "fr": [
-          "au service de l'ordre public local",
-          "au centre de conseil aux consommateurs",
-          "dans les églises",
-          "au centre d'État pour l'éducation politique"
-        ],
-        "it": [
-          "all'ufficio dell'ordine pubblico comunale",
-          "presso il centro di consulenza per i consumatori",
-          "presso le chiese",
-          "presso il centro statale per l'educazione politica"
-        ],
-        "tr": [
-          "belediyenin düzen ofisinde",
-          "tüketici danışma merkezinde",
-          "kiliselerde",
-          "eyalet siyasi eğitim merkezinde"
-        ],
-        "ar": [
-          "في مكتب النظام العام المحلي",
-          "في مركز استشارات المستهلك",
-          "في الكنائس",
-          "في المركز الحكومي للتثقيف السياسي"
-        ],
-        "ru": [
-          "в местном управлении по поддержанию порядка",
-          "в центре по защите прав потребителей",
-          "в церквях",
-          "в государственном центре политического образования"
-        ],
-        "zh": [
-          "在社区秩序局",
-          "在消费者咨询中心",
-          "在教堂",
-          "在州政治教育中心"
-        ],
-        "hi": [
-          "नगरपालिका के व्यवस्था कार्यालय में",
-          "उपभोक्ता परामर्श केंद्र में",
-          "चर्चों में",
-          "राज्य राजनीतिक शिक्षा केंद्र में"
-        ]
-      },
-      "explanationTranslations": {
-        "en": "In Hamburg, you can get information about political topics at the state center for political education.",
-        "es": "En Hamburgo, puede obtener información sobre temas políticos en el centro estatal de educación política.",
-        "fr": "À Hambourg, vous pouvez vous informer sur les sujets politiques au centre d'État pour l'éducation politique.",
-        "it": "Ad Amburgo, potete informarvi su temi politici presso il centro statale per l'educazione politica.",
-        "tr": "Hamburg'da siyasi konular hakkında eyalet siyasi eğitim merkezinden bilgi edinebilirsiniz.",
-        "ar": "في هامبورغ، يمكنك الحصول على معلومات حول الموضوعات السياسية من المركز الحكومي للتثقيف السياسي.",
-        "ru": "В Гамбурге вы можете получить информацию о политических темах в государственном центре политического образования.",
-        "zh": "在汉堡，您可以在州政治教育中心获取有关政治话题的信息。",
-        "hi": "हैम्बर्ग में, आप राज्य राजनीतिक शिक्षा केंद्र से राजनीतिक विषयों के बारे में जानकारी प्राप्त कर सकते हैं।"
       }
     },
     {
@@ -5937,99 +5913,95 @@
       "explanation": "Hamburg ist ein Stadtstaat.",
       "translations": {
         "en": {
-          "question": "Which state is a city-state?"
+          "question": "Which state is a city-state?",
+          "options": [
+            "Hamburg",
+            "Saxony",
+            "Bavaria",
+            "Thuringia"
+          ],
+          "explanation": "Hamburg is a city-state."
         },
         "es": {
-          "question": "¿Qué estado federal es una ciudad-estado?"
+          "question": "¿Qué estado federal es una ciudad-estado?",
+          "options": [
+            "Hamburgo",
+            "Sajonia",
+            "Baviera",
+            "Turingia"
+          ],
+          "explanation": "Hamburgo es una ciudad-estado."
         },
         "fr": {
-          "question": "Quel État est une ville-État ?"
+          "question": "Quel État est une ville-État ?",
+          "options": [
+            "Hambourg",
+            "Saxe",
+            "Bavière",
+            "Thuringe"
+          ],
+          "explanation": "Hambourg est une ville-État."
         },
         "it": {
-          "question": "Quale stato federale è una città-stato?"
+          "question": "Quale stato federale è una città-stato?",
+          "options": [
+            "Amburgo",
+            "Sassonia",
+            "Baviera",
+            "Turingia"
+          ],
+          "explanation": "Amburgo è una città-stato."
         },
         "tr": {
-          "question": "Hangi eyalet bir şehir devletidir?"
+          "question": "Hangi eyalet bir şehir devletidir?",
+          "options": [
+            "Hamburg",
+            "Saksonya",
+            "Bavyera",
+            "Türingiya"
+          ],
+          "explanation": "Hamburg bir şehir devletidir."
         },
         "ar": {
-          "question": "أي ولاية فدرالية هي مدينة-دولة؟"
+          "question": "أي ولاية فدرالية هي مدينة-دولة؟",
+          "options": [
+            "هامبورغ",
+            "ساكسونيا",
+            "بافاريا",
+            "تورينغن"
+          ],
+          "explanation": "هامبورغ هي مدينة-دولة."
         },
         "ru": {
-          "question": "Какая федеральная земля является городом-государством?"
+          "question": "Какая федеральная земля является городом-государством?",
+          "options": [
+            "Гамбург",
+            "Саксония",
+            "Бавария",
+            "Тюрингия"
+          ],
+          "explanation": "Гамбург - это город-государство."
         },
         "zh": {
-          "question": "哪个州是城邦？"
+          "question": "哪个州是城邦？",
+          "options": [
+            "汉堡",
+            "萨克森",
+            "巴伐利亚",
+            "图林根"
+          ],
+          "explanation": "汉堡是一个城邦。"
         },
         "hi": {
-          "question": "कौन सा राज्य एक शहर-राज्य है?"
+          "question": "कौन सा राज्य एक शहर-राज्य है?",
+          "options": [
+            "हैम्बर्ग",
+            "सैक्सनी",
+            "बवेरिया",
+            "थुरिंगिया"
+          ],
+          "explanation": "हैम्बर्ग एक शहर-राज्य है।"
         }
-      },
-      "optionTranslations": {
-        "en": [
-          "Hamburg",
-          "Saxony",
-          "Bavaria",
-          "Thuringia"
-        ],
-        "es": [
-          "Hamburgo",
-          "Sajonia",
-          "Baviera",
-          "Turingia"
-        ],
-        "fr": [
-          "Hambourg",
-          "Saxe",
-          "Bavière",
-          "Thuringe"
-        ],
-        "it": [
-          "Amburgo",
-          "Sassonia",
-          "Baviera",
-          "Turingia"
-        ],
-        "tr": [
-          "Hamburg",
-          "Saksonya",
-          "Bavyera",
-          "Türingiya"
-        ],
-        "ar": [
-          "هامبورغ",
-          "ساكسونيا",
-          "بافاريا",
-          "تورينغن"
-        ],
-        "ru": [
-          "Гамбург",
-          "Саксония",
-          "Бавария",
-          "Тюрингия"
-        ],
-        "zh": [
-          "汉堡",
-          "萨克森",
-          "巴伐利亚",
-          "图林根"
-        ],
-        "hi": [
-          "हैम्बर्ग",
-          "सैक्सनी",
-          "बवेरिया",
-          "थुरिंगिया"
-        ]
-      },
-      "explanationTranslations": {
-        "en": "Hamburg is a city-state.",
-        "es": "Hamburgo es una ciudad-estado.",
-        "fr": "Hambourg est une ville-État.",
-        "it": "Amburgo è una città-stato.",
-        "tr": "Hamburg bir şehir devletidir.",
-        "ar": "هامبورغ هي مدينة-دولة.",
-        "ru": "Гамбург - это город-государство.",
-        "zh": "汉堡是一个城邦。",
-        "hi": "हैम्बर्ग एक शहर-राज्य है।"
       }
     },
     {
@@ -6047,208 +6019,200 @@
       "explanation": "Auf der Karte ist Hamburg mit der Nummer 3 gekennzeichnet.",
       "translations": {
         "en": {
-          "question": "Which state is Hamburg?"
+          "question": "Which state is Hamburg?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "explanation": "On the map, Hamburg is marked with the number 3."
         },
         "es": {
-          "question": "¿Qué estado es Hamburgo?"
+          "question": "¿Qué estado es Hamburgo?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "explanation": "En el mapa, Hamburgo está marcado con el número 3."
         },
         "fr": {
-          "question": "Quel Land est Hambourg ?"
+          "question": "Quel Land est Hambourg ?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "explanation": "Sur la carte, Hambourg est marqué du numéro 3."
         },
         "it": {
-          "question": "Quale stato federato è Amburgo?"
+          "question": "Quale stato federato è Amburgo?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "explanation": "Sulla mappa, Amburgo è contrassegnata con il numero 3."
         },
         "tr": {
-          "question": "Hangi eyalet Hamburg'dur?"
+          "question": "Hangi eyalet Hamburg'dur?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "explanation": "Haritada Hamburg, 3 numaralı ile işaretlenmiştir."
         },
         "ar": {
-          "question": "ما هي ولاية هامبورغ؟"
+          "question": "ما هي ولاية هامبورغ؟",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "explanation": "على الخريطة، تم تحديد هامبورغ بالرقم 3."
         },
         "ru": {
-          "question": "Какая федеральная земля - Гамбург?"
+          "question": "Какая федеральная земля - Гамбург?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "explanation": "На карте Гамбург обозначен номером 3."
         },
         "zh": {
-          "question": "哪个州是汉堡？"
+          "question": "哪个州是汉堡？",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "explanation": "在地图上，汉堡标记为3号。"
         },
         "hi": {
-          "question": "कौन सा राज्य हैम्बर्ग है?"
+          "question": "कौन सा राज्य हैम्बर्ग है?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "explanation": "नक्शे पर, हैम्बर्ग को संख्या 3 से चिह्नित किया गया है।"
         }
-      },
-      "optionTranslations": {
-        "en": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "es": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "fr": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "it": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "tr": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "ar": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "ru": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "zh": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "hi": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ]
-      },
-      "explanationTranslations": {
-        "en": "On the map, Hamburg is marked with the number 3.",
-        "es": "En el mapa, Hamburgo está marcado con el número 3.",
-        "fr": "Sur la carte, Hambourg est marqué du numéro 3.",
-        "it": "Sulla mappa, Amburgo è contrassegnata con il numero 3.",
-        "tr": "Haritada Hamburg, 3 numaralı ile işaretlenmiştir.",
-        "ar": "على الخريطة، تم تحديد هامبورغ بالرقم 3.",
-        "ru": "На карте Гамбург обозначен номером 3.",
-        "zh": "在地图上，汉堡标记为3号。",
-        "hi": "नक्शे पर, हैम्बर्ग को संख्या 3 से चिह्नित किया गया है।"
       }
     },
     {
       "id": "hh009",
       "category": "State",
       "question": "Wie nennt man die Regierungschefin/den Regierungschef des Stadtstaates Hamburg?",
-      "translations": {
-        "en": {
-          "question": "What is the head of government of the city-state of Hamburg called?"
-        },
-        "es": {
-          "question": "¿Cómo se llama el jefe de gobierno de la ciudad-estado de Hamburgo?"
-        },
-        "fr": {
-          "question": "Comment s'appelle le chef du gouvernement de la ville-État de Hambourg ?"
-        },
-        "it": {
-          "question": "Come si chiama il capo del governo della città-stato di Amburgo?"
-        },
-        "tr": {
-          "question": "Hamburg şehir-devletinin hükümet başkanına ne ad verilir?"
-        },
-        "ar": {
-          "question": "ماذا يسمى رئيس/رئيسة حكومة ولاية هامبورغ؟"
-        },
-        "ru": {
-          "question": "Как называется глава правительства города-государства Гамбурга?"
-        },
-        "zh": {
-          "question": "汉堡城邦的政府首脑叫什么？"
-        },
-        "hi": {
-          "question": "हैम्बर्ग शहर-राज्य के सरकार के प्रमुख को क्या कहा जाता है?"
-        }
-      },
       "options": [
         "Ministerpräsidentin/Ministerpräsident",
         "Erste Bürgermeisterin/Erster Bürgermeister",
         "Regierende Senatorin/Regierender Senator",
         "Oberbürgermeisterin/Oberbürgermeister"
       ],
-      "optionTranslations": {
-        "en": [
-          "Minister-President",
-          "First Mayor",
-          "Governing Senator",
-          "Lord Mayor"
-        ],
-        "es": [
-          "Ministra-Presidenta/Ministro-Presidente",
-          "Primera Alcaldesa/Primer Alcalde",
-          "Senadora/Senador Gobernador",
-          "Alcaldesa Mayor/Alcalde Mayor"
-        ],
-        "fr": [
-          "Ministre-présidente/Ministre-président",
-          "Première mairesse/Premier maire",
-          "Sénatrice/Sénateur gouvernant",
-          "Mairesse principale/Maire principal"
-        ],
-        "it": [
-          "Ministro-Presidente",
-          "Prima sindaca/Primo sindaco",
-          "Senatrice/Senatore governante",
-          "Sindaca principale/Sindaco principale"
-        ],
-        "tr": [
-          "Bakan-Başkan",
-          "İlk Belediye Başkanı",
-          "Yönetici Senatör",
-          "Büyükşehir Belediye Başkanı"
-        ],
-        "ar": [
-          "وزير/وزيرة رئيس",
-          "رئيس/رئيسة البلدية الأول",
-          "سيناتور/سيناتورة حاكمة",
-          "رئيس/رئيسة البلدية الأكبر"
-        ],
-        "ru": [
-          "Министр-президент",
-          "Первый бургомистр",
-          "Правящий сенатор",
-          "Обер-бургомистр"
-        ],
-        "zh": [
-          "州长/州长",
-          "第一市长/第一市长",
-          "执政参议员/执政参议员",
-          "市长/市长"
-        ],
-        "hi": [
-          "मंत्री-अध्यक्ष",
-          "पहली महापौर/पहले महापौर",
-          "शासक सीनेटर",
-          "महापौर"
-        ]
-      },
       "answerIndex": 1,
       "explanation": "Die Regierungschefin/der Regierungschef des Stadtstaates Hamburg wird als Erste Bürgermeisterin/Erster Bürgermeister bezeichnet.",
-      "explanationTranslations": {
-        "en": "The head of government of the city-state of Hamburg is called the First Mayor.",
-        "es": "El jefe de gobierno de la ciudad-estado de Hamburgo se llama Primer Alcalde.",
-        "fr": "Le chef du gouvernement de la ville-État de Hambourg est appelé le Premier maire.",
-        "it": "Il capo del governo della città-stato di Amburgo è chiamato il Primo sindaco.",
-        "tr": "Hamburg şehir-devletinin hükümet başkanı İlk Belediye Başkanı olarak adlandırılır.",
-        "ar": "يُطلق على رئيس حكومة ولاية هامبورغ اسم رئيس البلدية الأول.",
-        "ru": "Глава правительства города-государства Гамбурга называется Первый бургомистр.",
-        "zh": "汉堡城邦的政府首脑被称为第一市长。",
-        "hi": "हैम्बर्ग शहर-राज्य के सरकार के प्रमुख को पहले महापौर कहा जाता है।"
+      "translations": {
+        "en": {
+          "question": "What is the head of government of the city-state of Hamburg called?",
+          "options": [
+            "Minister-President",
+            "First Mayor",
+            "Governing Senator",
+            "Lord Mayor"
+          ],
+          "explanation": "The head of government of the city-state of Hamburg is called the First Mayor."
+        },
+        "es": {
+          "question": "¿Cómo se llama el jefe de gobierno de la ciudad-estado de Hamburgo?",
+          "options": [
+            "Ministra-Presidenta/Ministro-Presidente",
+            "Primera Alcaldesa/Primer Alcalde",
+            "Senadora/Senador Gobernador",
+            "Alcaldesa Mayor/Alcalde Mayor"
+          ],
+          "explanation": "El jefe de gobierno de la ciudad-estado de Hamburgo se llama Primer Alcalde."
+        },
+        "fr": {
+          "question": "Comment s'appelle le chef du gouvernement de la ville-État de Hambourg ?",
+          "options": [
+            "Ministre-présidente/Ministre-président",
+            "Première mairesse/Premier maire",
+            "Sénatrice/Sénateur gouvernant",
+            "Mairesse principale/Maire principal"
+          ],
+          "explanation": "Le chef du gouvernement de la ville-État de Hambourg est appelé le Premier maire."
+        },
+        "it": {
+          "question": "Come si chiama il capo del governo della città-stato di Amburgo?",
+          "options": [
+            "Ministro-Presidente",
+            "Prima sindaca/Primo sindaco",
+            "Senatrice/Senatore governante",
+            "Sindaca principale/Sindaco principale"
+          ],
+          "explanation": "Il capo del governo della città-stato di Amburgo è chiamato il Primo sindaco."
+        },
+        "tr": {
+          "question": "Hamburg şehir-devletinin hükümet başkanına ne ad verilir?",
+          "options": [
+            "Bakan-Başkan",
+            "İlk Belediye Başkanı",
+            "Yönetici Senatör",
+            "Büyükşehir Belediye Başkanı"
+          ],
+          "explanation": "Hamburg şehir-devletinin hükümet başkanı İlk Belediye Başkanı olarak adlandırılır."
+        },
+        "ar": {
+          "question": "ماذا يسمى رئيس/رئيسة حكومة ولاية هامبورغ؟",
+          "options": [
+            "وزير/وزيرة رئيس",
+            "رئيس/رئيسة البلدية الأول",
+            "سيناتور/سيناتورة حاكمة",
+            "رئيس/رئيسة البلدية الأكبر"
+          ],
+          "explanation": "يُطلق على رئيس حكومة ولاية هامبورغ اسم رئيس البلدية الأول."
+        },
+        "ru": {
+          "question": "Как называется глава правительства города-государства Гамбурга?",
+          "options": [
+            "Министр-президент",
+            "Первый бургомистр",
+            "Правящий сенатор",
+            "Обер-бургомистр"
+          ],
+          "explanation": "Глава правительства города-государства Гамбурга называется Первый бургомистр."
+        },
+        "zh": {
+          "question": "汉堡城邦的政府首脑叫什么？",
+          "options": [
+            "州长/州长",
+            "第一市长/第一市长",
+            "执政参议员/执政参议员",
+            "市长/市长"
+          ],
+          "explanation": "汉堡城邦的政府首脑被称为第一市长。"
+        },
+        "hi": {
+          "question": "हैम्बर्ग शहर-राज्य के सरकार के प्रमुख को क्या कहा जाता है?",
+          "options": [
+            "मंत्री-अध्यक्ष",
+            "पहली महापौर/पहले महापौर",
+            "शासक सीनेटर",
+            "महापौर"
+          ],
+          "explanation": "हैम्बर्ग शहर-राज्य के सरकार के प्रमुख को पहले महापौर कहा जाता है।"
+        }
       }
     },
     {
