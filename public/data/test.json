@@ -1,0 +1,2523 @@
+[
+  {
+    "id": "q042",
+    "category": "Politics",
+    "question": "Wer beschließt in Deutschland ein neues Gesetz?",
+    "options": [
+      "die Regierung",
+      "das Parlament",
+      "die Gerichte",
+      "die Polizei"
+    ],
+    "answerIndex": 1,
+    "explanation": "Neue Gesetze werden in Deutschland vom Parlament (Bundestag und Bundesrat) beschlossen.",
+    "translations": {
+      "en": {
+        "question": "Who decides on a new law in Germany?",
+        "optionTranslations": [
+          "the government",
+          "the parliament",
+          "the courts",
+          "the police"
+        ],
+        "explanation": "New laws are decided on in Germany by the parliament (Bundestag and Bundesrat)."
+      },
+      "es": {
+        "question": "¿Quién decide sobre una nueva ley en Alemania?",
+        "optionTranslations": [
+          "el gobierno",
+          "el parlamento",
+          "los tribunales",
+          "la policía"
+        ],
+        "explanation": "Las nuevas leyes son decididas en Alemania por el parlamento (Bundestag y Bundesrat)."
+      },
+      "fr": {
+        "question": "Qui décide d'une nouvelle loi en Allemagne ?",
+        "optionTranslations": [
+          "le gouvernement",
+          "le parlement",
+          "les tribunaux",
+          "la police"
+        ],
+        "explanation": "Les nouvelles lois sont décidées en Allemagne par le parlement (Bundestag et Bundesrat)."
+      },
+      "it": {
+        "question": "Chi decide su una nuova legge in Germania?",
+        "optionTranslations": [
+          "il governo",
+          "il parlamento",
+          "i tribunali",
+          "la polizia"
+        ],
+        "explanation": "Le nuove leggi vengono decise in Germania dal parlamento (Bundestag e Bundesrat)."
+      },
+      "tr": {
+        "question": "Almanya'da yeni bir yasaya kim karar verir?",
+        "optionTranslations": [
+          "hükümet",
+          "parlamento",
+          "mahkemeler",
+          "polis"
+        ],
+        "explanation": "Almanya'da yeni yasalar parlamento (Federal Meclis ve Federal Konsey) tarafından kararlaştırılır."
+      },
+      "ar": {
+        "question": "من الذي يقر قانونًا جديدًا في ألمانيا؟",
+        "optionTranslations": [
+          "الحكومة",
+          "البرلمان",
+          "المحاكم",
+          "الشرطة"
+        ],
+        "explanation": "يتم إقرار القوانين الجديدة في ألمانيا من قبل البرلمان (البوندستاغ والبوندسرات)."
+      },
+      "ru": {
+        "question": "Кто принимает новый закон в Германии?",
+        "optionTranslations": [
+          "правительство",
+          "парламент",
+          "суды",
+          "полиция"
+        ],
+        "explanation": "Новые законы в Германии принимаются парламентом (Бундестагом и Бундесратом)."
+      },
+      "zh": {
+        "question": "在德国，谁决定制定新法律？",
+        "optionTranslations": [
+          "政府",
+          "议会",
+          "法院",
+          "警察"
+        ],
+        "explanation": "在德国，新法律由议会（联邦议院和联邦参议院）决定。"
+      },
+      "hi": {
+        "question": "जर्मनी में एक नए कानून पर कौन फैसला करता है?",
+        "optionTranslations": [
+          "सरकार",
+          "संसद",
+          "अदालतें",
+          "पुलिस"
+        ],
+        "explanation": "जर्मनी में नए कानून संसद (बुंडेस्टाग और बुंडसरात) द्वारा तय किए जाते हैं।"
+      }
+    }
+  },
+  {
+    "id": "q043",
+    "category": "Politics",
+    "question": "Wann kann in Deutschland eine Partei verboten werden?",
+    "options": [
+      "wenn ihr Wahlkampf zu teuer ist",
+      "wenn sie gegen die Verfassung kämpft",
+      "wenn sie Kritik am Staatsoberhaupt äußert",
+      "wenn ihr Programm eine neue Richtung vorschlägt"
+    ],
+    "answerIndex": 1,
+    "explanation": "Eine Partei kann vom Bundesverfassungsgericht verboten werden, wenn sie sich aktiv gegen die freiheitlich-demokratische Grundordnung richtet.",
+    "translations": {
+      "en": {
+        "question": "When can a party be banned in Germany?",
+        "optionTranslations": [
+          "if their election campaign is too expensive",
+          "if it fights against the constitution",
+          "if it expresses criticism of the head of state",
+          "if its program suggests a new direction"
+        ],
+        "explanation": "A party can be banned by the Federal Constitutional Court if it actively acts against the liberal-democratic basic order."
+      },
+      "es": {
+        "question": "¿Cuándo se puede prohibir un partido en Alemania?",
+        "optionTranslations": [
+          "si su campaña electoral es demasiado cara",
+          "si lucha contra la constitución",
+          "si expresa críticas al jefe de estado",
+          "si su programa propone una nueva dirección"
+        ],
+        "explanation": "Un partido puede ser prohibido por el Tribunal Constitucional Federal si actúa activamente contra el orden democrático-liberal básico."
+      },
+      "fr": {
+        "question": "Quand un parti peut-il être interdit en Allemagne ?",
+        "optionTranslations": [
+          "si sa campagne électorale est trop chère",
+          "s'il lutte contre la constitution",
+          "s'il exprime des critiques à l'égard du chef de l'État",
+          "si son programme propose une nouvelle orientation"
+        ],
+        "explanation": "Un parti peut être interdit par la Cour constitutionnelle fédérale s'il agit activement contre l'ordre démocratique libéral de base."
+      },
+      "it": {
+        "question": "Quando può un partito essere bandito in Germania?",
+        "optionTranslations": [
+          "se la sua campagna elettorale è troppo costosa",
+          "se lotta contro la costituzione",
+          "se esprime critiche al capo di stato",
+          "se il suo programma propone una nuova direzione"
+        ],
+        "explanation": "Un partito può essere bandito dalla Corte costituzionale federale se agisce attivamente contro l'ordine democratico-liberale di base."
+      },
+      "tr": {
+        "question": "Almanya'da bir parti ne zaman yasaklanabilir?",
+        "optionTranslations": [
+          "seçim kampanyası çok pahalıysa",
+          "anayasaya karşı mücadele ediyorsa",
+          "devlet başkanını eleştiriyorsa",
+          "programı yeni bir yön öneriyorsa"
+        ],
+        "explanation": "Bir parti, liberal demokratik temel düzene karşı aktif olarak hareket ederse Federal Anayasa Mahkemesi tarafından yasaklanabilir."
+      },
+      "ar": {
+        "question": "متى يمكن حظر حزب في ألمانيا؟",
+        "optionTranslations": [
+          "إذا كانت حملتها الانتخابية مكلفة جدًا",
+          "إذا كانت تحارب الدستور",
+          "إذا كانت تعبر عن انتقاد لرئيس الدولة",
+          "إذا كان برنامجها يقترح اتجاهًا جديدًا"
+        ],
+        "explanation": "يمكن حظر حزب من قبل المحكمة الدستورية الفيدرالية إذا كان يتصرف بنشاط ضد النظام الأساسي الديمقراطي الليبرالي."
+      },
+      "ru": {
+        "question": "Когда партия может быть запрещена в Германии?",
+        "optionTranslations": [
+          "если ее избирательная кампания слишком дорогая",
+          "если она борется против конституции",
+          "если она выражает критику в адрес главы государства",
+          "если ее программа предлагает новое направление"
+        ],
+        "explanation": "Партия может быть запрещена Федеральным конституционным судом, если она активно выступает против либерально-демократического основного порядка."
+      },
+      "zh": {
+        "question": "在德国，一个政党何时可以被禁止？",
+        "optionTranslations": [
+          "如果其竞选活动过于昂贵",
+          "如果它反对宪法",
+          "如果它对国家元首表达批评",
+          "如果其纲领提出了新的方向"
+        ],
+        "explanation": "如果一个政党积极反对自由民主的基本秩序，联邦宪法法院可以禁止它。"
+      },
+      "hi": {
+        "question": "जर्मनी में एक पार्टी को कब प्रतिबंधित किया जा सकता है?",
+        "optionTranslations": [
+          "यदि उनका चुनावी अभियान बहुत महंगा है",
+          "यदि यह संविधान के खिलाफ लड़ता है",
+          "यदि यह राज्य प्रमुख की आलोचना करता है",
+          "यदि इसका कार्यक्रम एक नई दिशा का सुझाव देता है"
+        ],
+        "explanation": "एक पार्टी को संघीय संवैधानिक न्यायालय द्वारा प्रतिबंधित किया जा सकता है यदि वह सक्रिय रूप से उदार-लोकतांत्रिक मूल व्यवस्था के खिलाफ कार्य करती है।"
+      }
+    }
+  },
+  {
+    "id": "q044",
+    "category": "Politics",
+    "question": "Wen kann man als Bürgerin/Bürger in Deutschland nicht direkt wählen?",
+    "options": [
+      "Abgeordnete des EU-Parlaments",
+      "Die Bundespräsidentin/den Bundespräsidenten",
+      "Landtagsabgeordnete",
+      "Bundestagsabgeordnete"
+    ],
+    "answerIndex": 1,
+    "explanation": "Die Bundespräsidentin/der Bundespräsident wird nicht direkt vom Volk, sondern von der Bundesversammlung gewählt.",
+    "translations": {
+      "en": {
+        "question": "As a citizen in Germany, whom can you not elect directly?",
+        "optionTranslations": [
+          "Members of the EU Parliament",
+          "The Federal President",
+          "State parliament members",
+          "Bundestag members"
+        ],
+        "explanation": "The Federal President is not elected directly by the people, but by the Federal Convention."
+      },
+      "es": {
+        "question": "Como ciudadano en Alemania, ¿a quién no se puede elegir directamente?",
+        "optionTranslations": [
+          "Diputados del Parlamento de la UE",
+          "El Presidente Federal",
+          "Diputados del parlamento estatal",
+          "Diputados del Bundestag"
+        ],
+        "explanation": "El Presidente Federal no es elegido directamente por el pueblo, sino por la Convención Federal."
+      },
+      "fr": {
+        "question": "En tant que citoyen en Allemagne, qui ne peut-on pas élire directement ?",
+        "optionTranslations": [
+          "Députés du Parlement européen",
+          "Le Président fédéral",
+          "Députés du parlement d'État",
+          "Députés du Bundestag"
+        ],
+        "explanation": "Le Président fédéral n'est pas élu directement par le peuple, mais par l'Assemblée fédérale."
+      },
+      "it": {
+        "question": "Come cittadino in Germania, chi non si può eleggere direttamente?",
+        "optionTranslations": [
+          "Membri del Parlamento dell'UE",
+          "Il Presidente federale",
+          "Membri del parlamento statale",
+          "Membri del Bundestag"
+        ],
+        "explanation": "Il Presidente federale non è eletto direttamente dal popolo, ma dall'Assemblea federale."
+      },
+      "tr": {
+        "question": "Almanya'da bir vatandaş olarak kimi doğrudan seçemezsiniz?",
+        "optionTranslations": [
+          "AB Parlamentosu milletvekilleri",
+          "Federal Başkan",
+          "Eyalet parlamentosu milletvekilleri",
+          "Federal Meclis milletvekilleri"
+        ],
+        "explanation": "Federal Başkan doğrudan halk tarafından değil, Federal Konvansiyon tarafından seçilir."
+      },
+      "ar": {
+        "question": "كمواطن في ألمانيا، من لا يمكنك انتخابه مباشرة؟",
+        "optionTranslations": [
+          "أعضاء البرلمان الأوروبي",
+          "الرئيس الاتحادي",
+          "أعضاء برلمان الولاية",
+          "أعضاء البوندستاغ"
+        ],
+        "explanation": "لا يتم انتخاب الرئيس الاتحادي مباشرة من قبل الشعب، بل من قبل الجمعية الفيدرالية."
+      },
+      "ru": {
+        "question": "Кого гражданин Германии не может выбрать напрямую?",
+        "optionTranslations": [
+          "Депутатов Европарламента",
+          "Федерального президента",
+          "Депутатов парламента земли",
+          "Депутатов Бундестага"
+        ],
+        "explanation": "Федеральный президент избирается не напрямую народом, а Федеральным собранием."
+      },
+      "zh": {
+        "question": "作为德国公民，你不能直接选举谁？",
+        "optionTranslations": [
+          "欧盟议会议员",
+          "联邦总统",
+          "州议会议员",
+          "联邦议会议员"
+        ],
+        "explanation": "联邦总统不是由人民直接选举产生，而是由联邦大会选举产生。"
+      },
+      "hi": {
+        "question": "जर्मनी में एक नागरिक के रूप में, आप सीधे किसे नहीं चुन सकते हैं?",
+        "optionTranslations": [
+          "यूरोपीय संघ संसद के सदस्य",
+          "संघीय राष्ट्रपति",
+          "राज्य संसद के सदस्य",
+          "बुंडेस्टाग के सदस्य"
+        ],
+        "explanation": "संघीय राष्ट्रपति सीधे जनता द्वारा नहीं, बल्कि संघीय कन्वेंशन द्वारा चुने जाते हैं।"
+      }
+    }
+  },
+  {
+    "id": "q045",
+    "category": "Politics",
+    "question": "Zu welcher Versicherung gehört die Pflegeversicherung?",
+    "options": [
+      "Sozialversicherung",
+      "Unfallversicherung",
+      "Hausratsversicherung",
+      "Haftpflicht- und Feuerversicherung"
+    ],
+    "answerIndex": 0,
+    "explanation": "Die Pflegeversicherung ist ein gesetzlicher Zweig der Sozialversicherung und soll die finanzielle Belastung im Pflegefall abfedern.",
+    "translations": {
+      "en": {
+        "question": "To which insurance does long-term care insurance belong?",
+        "optionTranslations": [
+          "social insurance",
+          "accident insurance",
+          "household contents insurance",
+          "liability and fire insurance"
+        ],
+        "explanation": "Long-term care insurance is a statutory branch of social insurance and is intended to cushion the financial burden in case of a need for care."
+      },
+      "es": {
+        "question": "¿A qué seguro pertenece el seguro de cuidados a largo plazo?",
+        "optionTranslations": [
+          "seguro social",
+          "seguro de accidentes",
+          "seguro de hogar",
+          "seguro de responsabilidad civil e incendio"
+        ],
+        "explanation": "El seguro de cuidados a largo plazo es una rama estatutaria del seguro social y tiene como objetivo amortiguar la carga financiera en caso de necesidad de cuidados."
+      },
+      "fr": {
+        "question": "À quelle assurance appartient l'assurance dépendance ?",
+        "optionTranslations": [
+          "assurance sociale",
+          "assurance accidents",
+          "assurance habitation",
+          "assurance responsabilité civile et incendie"
+        ],
+        "explanation": "L'assurance dépendance est une branche statutaire de l'assurance sociale et est destinée à amortir la charge financière en cas de besoin de soins."
+      },
+      "it": {
+        "question": "A quale assicurazione appartiene l'assicurazione per l'assistenza a lungo termine?",
+        "optionTranslations": [
+          "assicurazione sociale",
+          "assicurazione contro gli infortuni",
+          "assicurazione sulla casa",
+          "assicurazione di responsabilità civile e antincendio"
+        ],
+        "explanation": "L'assicurazione per l'assistenza a lungo termine è una branca statutaria dell'assicurazione sociale ed è destinata ad ammortizzare l'onere finanziario in caso di necessità di cure."
+      },
+      "tr": {
+        "question": "Uzun vadeli bakım sigortası hangi sigortaya aittir?",
+        "optionTranslations": [
+          "sosyal sigorta",
+          "kaza sigortası",
+          "ev eşyası sigortası",
+          "sorumluluk ve yangın sigortası"
+        ],
+        "explanation": "Uzun vadeli bakım sigortası, sosyal sigortanın yasal bir dalıdır ve bakım ihtiyacı durumunda finansal yükü hafifletmeyi amaçlar."
+      },
+      "ar": {
+        "question": "إلى أي تأمين ينتمي تأمين الرعاية الطويلة الأجل؟",
+        "optionTranslations": [
+          "التأمين الاجتماعي",
+          "تأمين الحوادث",
+          "تأمين محتويات المنزل",
+          "تأمين المسؤولية والحريق"
+        ],
+        "explanation": "تأمين الرعاية الطويلة الأجل هو فرع قانوني من التأمين الاجتماعي ويهدف إلى تخفيف العبء المالي في حالة الحاجة إلى الرعاية."
+      },
+      "ru": {
+        "question": "К какому виду страхования относится страхование по уходу?",
+        "optionTranslations": [
+          "социальное страхование",
+          "страхование от несчастных случаев",
+          "страхование домашнего имущества",
+          "страхование гражданской ответственности и от пожара"
+        ],
+        "explanation": "Страхование по уходу является установленной законом ветвью социального страхования и предназначено для смягчения финансовой нагрузки в случае необходимости ухода."
+      },
+      "zh": {
+        "question": "长期护理保险属于哪种保险？",
+        "optionTranslations": [
+          "社会保险",
+          "意外险",
+          "家庭财产保险",
+          "责任和火灾保险"
+        ],
+        "explanation": "长期护理保险是社会保险的法定分支，旨在减轻需要护理时的经济负担。"
+      },
+      "hi": {
+        "question": "दीर्घकालिक देखभाल बीमा किस बीमा से संबंधित है?",
+        "optionTranslations": [
+          "सामाजिक बीमा",
+          "दुर्घटना बीमा",
+          "गृह बीमा",
+          "दायित्व और अग्नि बीमा"
+        ],
+        "explanation": "दीर्घकालिक देखभाल बीमा सामाजिक बीमा की एक वैधानिक शाखा है और इसका उद्देश्य देखभाल की आवश्यकता होने पर वित्तीय बोझ को कम करना है।"
+      }
+    }
+  },
+  {
+    "id": "q046",
+    "category": "Politics",
+    "question": "Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört dazu?",
+    "options": [
+      "Er baut Straßen und Schulen.",
+      "Er verkauft Lebensmittel und Kleidung.",
+      "Er versorgt alle Einwohnerinnen und Einwohner kostenlos mit Zeitungen.",
+      "Er produziert Autos und Busse."
+    ],
+    "answerIndex": 0,
+    "explanation": "Der Bau und die Instandhaltung von Infrastruktur wie Straßen und Schulen sind Kernaufgaben des Staates.",
+    "translations": {
+      "en": {
+        "question": "The German state has many tasks. Which task belongs to it?",
+        "optionTranslations": [
+          "It builds roads and schools.",
+          "It sells food and clothes.",
+          "It provides all residents with free newspapers.",
+          "It produces cars and buses."
+        ],
+        "explanation": "The construction and maintenance of infrastructure such as roads and schools are core tasks of the state."
+      },
+      "es": {
+        "question": "El estado alemán tiene muchas tareas. ¿Qué tarea le corresponde?",
+        "optionTranslations": [
+          "Construye carreteras y escuelas.",
+          "Vende alimentos y ropa.",
+          "Proporciona periódicos gratuitos a todos los residentes.",
+          "Produce automóviles y autobuses."
+        ],
+        "explanation": "La construcción y el mantenimiento de infraestructuras como carreteras y escuelas son tareas principales del estado."
+      },
+      "fr": {
+        "question": "L'État allemand a de nombreuses tâches. Quelle tâche en fait partie?",
+        "optionTranslations": [
+          "Il construit des routes et des écoles.",
+          "Il vend de la nourriture et des vêtements.",
+          "Il fournit des journaux gratuits à tous les habitants.",
+          "Il produit des voitures et des bus."
+        ],
+        "explanation": "La construction et l'entretien des infrastructures telles que les routes et les écoles sont des tâches essentielles de l'État."
+      },
+      "it": {
+        "question": "Lo stato tedesco ha molti compiti. Quale compito ne fa parte?",
+        "optionTranslations": [
+          "Costruisce strade e scuole.",
+          "Vende cibo e vestiti.",
+          "Fornisce a tutti i residenti giornali gratuiti.",
+          "Produce auto e autobus."
+        ],
+        "explanation": "La costruzione e la manutenzione delle infrastrutture come strade e scuole sono compiti fondamentali dello stato."
+      },
+      "tr": {
+        "question": "Alman devletinin birçok görevi vardır. Bunlardan hangisi bu görevlere aittir?",
+        "optionTranslations": [
+          "Yol ve okul inşa eder.",
+          "Yiyecek ve giysi satar.",
+          "Tüm sakinlere ücretsiz gazete sağlar.",
+          "Otomobil ve otobüs üretir."
+        ],
+        "explanation": "Yollar ve okullar gibi altyapıların inşası ve bakımı devletin temel görevlerindendir."
+      },
+      "ar": {
+        "question": "الدولة الألمانية لديها العديد من المهام. أي مهمة تنتمي إليها؟",
+        "optionTranslations": [
+          "يبني الطرق والمدارس.",
+          "يبيع الطعام والملابس.",
+          "يزود جميع السكان بالصحف مجانًا.",
+          "ينتج السيارات والحافلات."
+        ],
+        "explanation": "بناء وصيانة البنية التحتية مثل الطرق والمدارس هي مهام أساسية للدولة."
+      },
+      "ru": {
+        "question": "У немецкого государства много задач. Какая из них к ним относится?",
+        "optionTranslations": [
+          "Он строит дороги и школы.",
+          "Он продает продукты питания и одежду.",
+          "Он бесплатно предоставляет газеты всем жителям.",
+          "Он производит автомобили и автобусы."
+        ],
+        "explanation": "Строительство и обслуживание инфраструктуры, такой как дороги и школы, являются основными задачами государства."
+      },
+      "zh": {
+        "question": "德国政府有很多任务。哪项任务属于其中？",
+        "optionTranslations": [
+          "它修建道路和学校。",
+          "它出售食物和衣服。",
+          "它为所有居民提供免费报纸。",
+          "它生产汽车和公共汽车。"
+        ],
+        "explanation": "道路和学校等基础设施的建设和维护是国家的首要任务。"
+      },
+      "hi": {
+        "question": "जर्मन राज्य के कई कार्य हैं। कौन सा कार्य इनमें से एक है?",
+        "optionTranslations": [
+          "यह सड़कें और स्कूल बनाता है।",
+          "यह भोजन और कपड़े बेचता है।",
+          "यह सभी निवासियों को मुफ्त समाचार पत्र प्रदान करता है।",
+          "यह कार और बसें बनाता है।"
+        ],
+        "explanation": "सड़कों और स्कूलों जैसे बुनियादी ढांचे का निर्माण और रखरखाव राज्य के मुख्य कार्य हैं।"
+      }
+    }
+  },
+  {
+    "id": "q047",
+    "category": "Politics",
+    "question": "Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört nicht dazu?",
+    "options": [
+      "Er bezahlt für alle Staatsangehörigen Urlaubsreisen.",
+      "Er zahlt Kindergeld.",
+      "Er unterstützt Museen.",
+      "Er fördert Sportlerinnen und Sportler."
+    ],
+    "answerIndex": 0,
+    "explanation": "Urlaubsreisen zu bezahlen gehört nicht zu den Aufgaben des Staates. Er unterstützt aber durch Kindergeld, Kultur- und Sportförderung.",
+    "translations": {
+      "en": {
+        "question": "The German state has many tasks. Which task does not belong to it?",
+        "optionTranslations": [
+          "It pays for holiday trips for all citizens.",
+          "It pays child benefits.",
+          "It supports museums.",
+          "It promotes athletes."
+        ],
+        "explanation": "Paying for holiday trips is not one of the tasks of the state. However, it does support through child benefits, cultural, and sports funding."
+      },
+      "es": {
+        "question": "El estado alemán tiene muchas tareas. ¿Qué tarea no le corresponde?",
+        "optionTranslations": [
+          "Paga viajes de vacaciones para todos los ciudadanos.",
+          "Paga el subsidio por hijos.",
+          "Apoya a los museos.",
+          "Promueve a los atletas."
+        ],
+        "explanation": "Pagar los viajes de vacaciones no es una de las tareas del estado. Sin embargo, sí apoya a través del subsidio por hijos, la financiación de la cultura y el deporte."
+      },
+      "fr": {
+        "question": "L'État allemand a de nombreuses tâches. Quelle tâche n'en fait pas partie?",
+        "optionTranslations": [
+          "Il paie les voyages de vacances pour tous les citoyens.",
+          "Il verse l'allocation familiale.",
+          "Il soutient les musées.",
+          "Il promeut les athlètes."
+        ],
+        "explanation": "Payer les voyages de vacances ne fait pas partie des tâches de l'État. Cependant, il soutient à travers l'allocation familiale, le financement de la culture et du sport."
+      },
+      "it": {
+        "question": "Lo stato tedesco ha molti compiti. Quale compito non ne fa parte?",
+        "optionTranslations": [
+          "Paga i viaggi di vacanza per tutti i cittadini.",
+          "Paga gli assegni familiari.",
+          "Sostiene i musei.",
+          "Promuove gli atleti."
+        ],
+        "explanation": "Pagare i viaggi di vacanza non è uno dei compiti dello stato. Tuttavia, sostiene attraverso gli assegni familiari, il finanziamento della cultura e dello sport."
+      },
+      "tr": {
+        "question": "Alman devletinin birçok görevi vardır. Bunlardan hangisi bu görevlere ait değildir?",
+        "optionTranslations": [
+          "Tüm vatandaşlar için tatil gezileri öder.",
+          "Çocuk parası öder.",
+          "Müzeleri destekler.",
+          "Sporcuları destekler."
+        ],
+        "explanation": "Tatil gezileri için ödeme yapmak devletin görevlerinden biri değildir. Ancak, çocuk parası, kültür ve spor desteği ile yardımcı olur."
+      },
+      "ar": {
+        "question": "للدولة الألمانية مهام عديدة. أي مهمة لا تنتمي إليها؟",
+        "optionTranslations": [
+          "يدفع تكاليف السفر في العطلة لجميع المواطنين.",
+          "يدفع علاوة الأطفال.",
+          "يدعم المتاحف.",
+          "يدعم الرياضيين."
+        ],
+        "explanation": "دفع تكاليف السفر في العطلات ليس من مهام الدولة. ومع ذلك، فهي تدعم من خلال علاوة الأطفال، وتمويل الثقافة والرياضة."
+      },
+      "ru": {
+        "question": "У немецкого государства много задач. Какая из них к ним не относится?",
+        "optionTranslations": [
+          "Он оплачивает отпуска для всех граждан.",
+          "Он выплачивает детские пособия.",
+          "Он поддерживает музеи.",
+          "Он поддерживает спортсменов."
+        ],
+        "explanation": "Оплата отпусков не является одной из задач государства. Однако оно поддерживает через детские пособия, культурное и спортивное финансирование."
+      },
+      "zh": {
+        "question": "德国政府有很多任务。哪项任务不属于其中？",
+        "optionTranslations": [
+          "它为所有公民支付度假旅行费用。",
+          "它支付儿童津贴。",
+          "它支持博物馆。",
+          "它资助运动员。"
+        ],
+        "explanation": "支付度假旅行费用不是国家的任务之一。然而，它确实通过儿童津贴、文化和体育资助提供支持。"
+      },
+      "hi": {
+        "question": "जर्मन राज्य के कई कार्य हैं। कौन सा कार्य इनमें से एक नहीं है?",
+        "optionTranslations": [
+          "यह सभी नागरिकों के लिए छुट्टियों के लिए भुगतान करता है।",
+          "यह बाल लाभ का भुगतान करता है।",
+          "यह संग्रहालयों का समर्थन करता है।",
+          "यह एथलीटों को बढ़ावा देता है।"
+        ],
+        "explanation": "छुट्टियों के लिए भुगतान करना राज्य के कार्यों में से एक नहीं है। हालांकि, यह बाल लाभ, संस्कृति और खेल के वित्त पोषण के माध्यम से समर्थन करता है।"
+      }
+    }
+  },
+  {
+    "id": "q048",
+    "category": "Politics",
+    "question": "Welches Organ gehört nicht zu den Verfassungsorganen Deutschlands?",
+    "options": [
+      "der Bundesrat",
+      "die Bundespräsidentin/der Bundespräsident",
+      "die Bürgerversammlung",
+      "die Regierung"
+    ],
+    "answerIndex": 2,
+    "explanation": "Verfassungsorgane sind der Bundestag, der Bundesrat, der Bundespräsident, die Bundesregierung und das Bundesverfassungsgericht. Eine Bürgerversammlung ist kein Verfassungsorgan.",
+    "translations": {
+      "en": {
+        "question": "Which body is not a constitutional body of Germany?",
+        "optionTranslations": [
+          "the Bundesrat",
+          "the Federal President",
+          "the citizen's assembly",
+          "the government"
+        ],
+        "explanation": "Constitutional bodies are the Bundestag, the Bundesrat, the Federal President, the Federal Government, and the Federal Constitutional Court. A citizen's assembly is not a constitutional body."
+      },
+      "es": {
+        "question": "¿Qué órgano no es un órgano constitucional de Alemania?",
+        "optionTranslations": [
+          "el Bundesrat",
+          "el Presidente Federal",
+          "la asamblea de ciudadanos",
+          "el gobierno"
+        ],
+        "explanation": "Los órganos constitucionales son el Bundestag, el Bundesrat, el Presidente Federal, el Gobierno Federal y el Tribunal Constitucional Federal. Una asamblea de ciudadanos no es un órgano constitucional."
+      },
+      "fr": {
+        "question": "Quel organe ne fait pas partie des organes constitutionnels de l'Allemagne?",
+        "optionTranslations": [
+          "le Bundesrat",
+          "le Président fédéral",
+          "l'assemblée des citoyens",
+          "le gouvernement"
+        ],
+        "explanation": "Les organes constitutionnels sont le Bundestag, le Bundesrat, le Président fédéral, le Gouvernement fédéral et la Cour constitutionnelle fédérale. Une assemblée de citoyens n'est pas un organe constitutionnel."
+      },
+      "it": {
+        "question": "Quale organo non fa parte degli organi costituzionali della Germania?",
+        "optionTranslations": [
+          "il Bundesrat",
+          "il Presidente federale",
+          "l'assemblea dei cittadini",
+          "il governo"
+        ],
+        "explanation": "Gli organi costituzionali sono il Bundestag, il Bundesrat, il Presidente federale, il Governo federale e la Corte costituzionale federale. Un'assemblea dei cittadini non è un organo costituzionale."
+      },
+      "tr": {
+        "question": "Almanya'nın anayasal organlarından hangisi değildir?",
+        "optionTranslations": [
+          "Federal Konsey",
+          "Federal Başkan",
+          "vatandaşlar meclisi",
+          "hükümet"
+        ],
+        "explanation": "Anayasal organlar Federal Meclis, Federal Konsey, Federal Başkan, Federal Hükümet ve Federal Anayasa Mahkemesi'dir. Bir vatandaşlar meclisi anayasal bir organ değildir."
+      },
+      "ar": {
+        "question": "أي هيئة ليست هيئة دستورية في ألمانيا؟",
+        "optionTranslations": [
+          "البوندسرات (المجلس الاتحادي)",
+          "الرئيس الاتحادي",
+          "جمعية المواطنين",
+          "الحكومة"
+        ],
+        "explanation": "الهيئات الدستورية هي البوندستاغ، البوندسرات، الرئيس الاتحادي، الحكومة الفيدرالية، والمحكمة الدستورية الفيدرالية. جمعية المواطنين ليست هيئة دستورية."
+      },
+      "ru": {
+        "question": "Какой орган не относится к конституционным органам Германии?",
+        "optionTranslations": [
+          "Бундесрат (Федеральный совет)",
+          "Федеральный президент",
+          "гражданское собрание",
+          "правительство"
+        ],
+        "explanation": "Конституционными органами являются Бундестаг, Бундесрат, Федеральный президент, Федеральное правительство и Федеральный конституционный суд. Гражданское собрание не является конституционным органом."
+      },
+      "zh": {
+        "question": "哪个机构不属于德国的宪法机构？",
+        "optionTranslations": [
+          "联邦参议院",
+          "联邦总统",
+          "公民大会",
+          "政府"
+        ],
+        "explanation": "宪法机构是联邦议院、联邦参议院、联邦总统、联邦政府和联邦宪法法院。公民大会不是宪法机构。"
+      },
+      "hi": {
+        "question": "कौन सा अंग जर्मनी के संवैधानिक अंगों में से एक नहीं है?",
+        "optionTranslations": [
+          "बुंडसरात",
+          "संघीय राष्ट्रपति",
+          "नागरिक सभा",
+          "सरकार"
+        ],
+        "explanation": "संवैधानिक निकाय बुंडेस्टाग, बुंडसरात, संघीय राष्ट्रपति, संघीय सरकार और संघीय संवैधानिक न्यायालय हैं। एक नागरिक सभा एक संवैधानिक निकाय नहीं है।"
+      }
+    }
+  },
+  {
+    "id": "q049",
+    "category": "Politics",
+    "question": "Wer bestimmt in Deutschland die Schulpolitik?",
+    "options": [
+      "die Lehrer und Lehrerinnen",
+      "die Bundesländer",
+      "das Familienministerium",
+      "die Universitäten"
+    ],
+    "answerIndex": 1,
+    "explanation": "Die Schulpolitik liegt in Deutschland in der Kompetenz der einzelnen Bundesländer.",
+    "translations": {
+      "en": {
+        "question": "Who determines education policy in Germany?",
+        "optionTranslations": [
+          "the teachers",
+          "the states",
+          "the Ministry of Family Affairs",
+          "the universities"
+        ],
+        "explanation": "Education policy in Germany is the responsibility of the individual states."
+      },
+      "es": {
+        "question": "Quién determina la política educativa en Alemania?",
+        "optionTranslations": [
+          "los profesores",
+          "los estados federales",
+          "el Ministerio de Familia",
+          "las universidades"
+        ],
+        "explanation": "La política educativa en Alemania es responsabilidad de los estados federales individuales."
+      },
+      "fr": {
+        "question": "Qui détermine la politique scolaire en Allemagne?",
+        "optionTranslations": [
+          "les enseignants",
+          "les États fédéraux",
+          "le ministère de la Famille",
+          "les universités"
+        ],
+        "explanation": "La politique scolaire en Allemagne est de la compétence des différents États fédéraux."
+      },
+      "it": {
+        "question": "Chi determina la politica scolastica in Germania?",
+        "optionTranslations": [
+          "gli insegnanti",
+          "gli stati federali",
+          "il Ministero della Famiglia",
+          "le università"
+        ],
+        "explanation": "La politica scolastica in Germania è di competenza dei singoli stati federali."
+      },
+      "tr": {
+        "question": "Almanya'da eğitim politikasını kim belirler?",
+        "optionTranslations": [
+          "öğretmenler",
+          "eyaletler",
+          "Aile Bakanlığı",
+          "üniversiteler"
+        ],
+        "explanation": "Almanya'da eğitim politikası, bireysel eyaletlerin yetkisindedir."
+      },
+      "ar": {
+        "question": "من يحدد السياسة التعليمية في ألمانيا؟",
+        "optionTranslations": [
+          "المعلمون والمعلمات",
+          "الولايات الفيدرالية",
+          "وزارة شؤون الأسرة",
+          "الجامعات"
+        ],
+        "explanation": "السياسة التعليمية في ألمانيا هي من مسؤولية الولايات الفيدرالية الفردية."
+      },
+      "ru": {
+        "question": "Кто определяет школьную политику в Германии?",
+        "optionTranslations": [
+          "учителя",
+          "федеральные земли",
+          "министерство по делам семьи",
+          "университеты"
+        ],
+        "explanation": "Школьная политика в Германии находится в компетенции отдельных федеральных земель."
+      },
+      "zh": {
+        "question": "在德国，谁决定教育政策？",
+        "optionTranslations": [
+          "教师",
+          "州",
+          "家庭事务部",
+          "大学"
+        ],
+        "explanation": "德国的教育政策由各州负责。"
+      },
+      "hi": {
+        "question": "जर्मनी में शिक्षा नीति कौन निर्धारित करता है?",
+        "optionTranslations": [
+          "शिक्षक",
+          "राज्य",
+          "परिवार मंत्रालय",
+          "विश्वविद्यालय"
+        ],
+        "explanation": "जर्मनी में शिक्षा नीति व्यक्तिगत राज्यों की जिम्मेदारी है।"
+      }
+    }
+  },
+  {
+    "id": "q050",
+    "category": "Politics",
+    "question": "Die Wirtschaftsform in Deutschland nennt man …",
+    "options": [
+      "freie Zentralwirtschaft.",
+      "soziale Marktwirtschaft.",
+      "gelenkte Zentralwirtschaft.",
+      "Planwirtschaft."
+    ],
+    "answerIndex": 1,
+    "explanation": "Die soziale Marktwirtschaft ist die Wirtschaftsordnung in Deutschland, die die freie Marktwirtschaft mit sozialen Aspekten verbindet.",
+    "translations": {
+      "en": {
+        "question": "The form of economy in Germany is called …",
+        "optionTranslations": [
+          "free central economy.",
+          "social market economy.",
+          "controlled central economy.",
+          "planned economy."
+        ],
+        "explanation": "The social market economy is the economic system in Germany that combines the free market economy with social aspects."
+      },
+      "es": {
+        "question": "La forma de economía en Alemania se llama …",
+        "optionTranslations": [
+          "economía central libre.",
+          "economía social de mercado.",
+          "economía central dirigida.",
+          "economía planificada."
+        ],
+        "explanation": "La economía social de mercado es el sistema económico en Alemania que combina la economía de libre mercado con aspectos sociales."
+      },
+      "fr": {
+        "question": "La forme d'économie en Allemagne s'appelle …",
+        "optionTranslations": [
+          "économie centrale libre.",
+          "économie sociale de marché.",
+          "économie centrale dirigée.",
+          "économie planifiée."
+        ],
+        "explanation": "L'économie sociale de marché est le système économique en Allemagne qui combine l'économie de marché libre avec des aspects sociaux."
+      },
+      "it": {
+        "question": "La forma di economia in Germania si chiama …",
+        "optionTranslations": [
+          "economia centrale libera.",
+          "economia sociale di mercato.",
+          "economia centrale controllata.",
+          "economia pianificata."
+        ],
+        "explanation": "L'economia sociale di mercato è il sistema economico in Germania che combina l'economia di libero mercato con aspetti sociali."
+      },
+      "tr": {
+        "question": "Almanya'daki ekonomik sistem … olarak adlandırılır.",
+        "optionTranslations": [
+          "serbest merkezi ekonomi.",
+          "sosyal piyasa ekonomisi.",
+          "yönetilen merkezi ekonomi.",
+          "planlı ekonomi."
+        ],
+        "explanation": "Sosyal piyasa ekonomisi, Almanya'da serbest piyasa ekonomisini sosyal yönlerle birleştiren ekonomik sistemdir."
+      },
+      "ar": {
+        "question": "شكل الاقتصاد في ألمانيا يسمى …",
+        "optionTranslations": [
+          "اقتصاد مركزي حر.",
+          "اقتصاد السوق الاجتماعي.",
+          "اقتصاد مركزي موجه.",
+          "الاقتصاد المخطط."
+        ],
+        "explanation": "اقتصاد السوق الاجتماعي هو النظام الاقتصادي في ألمانيا الذي يجمع بين اقتصاد السوق الحر والجوانب الاجتماعية."
+      },
+      "ru": {
+        "question": "Форма экономики в Германии называется …",
+        "optionTranslations": [
+          "свободная централизованная экономика.",
+          "социальная рыночная экономика.",
+          "управляемая централизованная экономика.",
+          "плановая экономика."
+        ],
+        "explanation": "Социальная рыночная экономика - это экономическая система в Германии, которая сочетает свободную рыночную экономику с социальными аспектами."
+      },
+      "zh": {
+        "question": "德国的经济形式被称为 …",
+        "optionTranslations": [
+          "自由中央经济。",
+          "社会市场经济。",
+          "受控中央经济。",
+          "计划经济。"
+        ],
+        "explanation": "社会市场经济是德国的经济体系，它将自由市场经济与社会方面相结合。"
+      },
+      "hi": {
+        "question": "जर्मनी में अर्थव्यवस्था के रूप को … कहा जाता है।",
+        "optionTranslations": [
+          "मुक्त केंद्रीय अर्थव्यवस्था।",
+          "सामाजिक बाजार अर्थव्यवस्था।",
+          "नियंत्रित केंद्रीय अर्थव्यवस्था।",
+          "नियोजित अर्थव्यवस्था।"
+        ],
+        "explanation": "सामाजिक बाजार अर्थव्यवस्था जर्मनी में एक आर्थिक प्रणाली है जो मुक्त बाजार अर्थव्यवस्था को सामाजिक पहलुओं के साथ जोड़ती है।"
+      }
+    }
+  },
+  {
+    "id": "q051",
+    "category": "Law",
+    "question": "Zu einem demokratischen Rechtsstaat gehört es nicht, dass …",
+    "options": [
+      "Menschen sich kritisch über die Regierung äußern können.",
+      "Bürger friedlich demonstrieren gehen dürfen.",
+      "Menschen von einer Privatpolizei ohne Grund verhaftet werden.",
+      "jemand ein Verbrechen begeht und deshalb verhaftet wird."
+    ],
+    "answerIndex": 2,
+    "explanation": "Die willkürliche Verhaftung durch eine Privatpolizei widerspricht dem Rechtsstaatsprinzip. Nur staatliche Organe wie die Polizei dürfen jemanden aufgrund eines Haftbefehls verhaften.",
+    "translations": {
+      "en": {
+        "question": "It is not part of a democratic constitutional state that …",
+        "optionTranslations": [
+          "people can express themselves critically about the government.",
+          "citizens are allowed to demonstrate peacefully.",
+          "people are arrested without reason by a private police force.",
+          "someone commits a crime and is arrested for it."
+        ],
+        "explanation": "Arbitrary arrest by a private police force contradicts the principle of the rule of law. Only state bodies such as the police may arrest someone on the basis of an arrest warrant."
+      },
+      "es": {
+        "question": "No es parte de un estado de derecho democrático que …",
+        "optionTranslations": [
+          "las personas pueden expresarse críticamente sobre el gobierno.",
+          "los ciudadanos pueden manifestarse pacíficamente.",
+          "las personas son arrestadas sin motivo por una policía privada.",
+          "alguien comete un crimen y es arrestado por ello."
+        ],
+        "explanation": "La detención arbitraria por una policía privada contradice el principio del estado de derecho. Solo los órganos estatales como la policía pueden arrestar a alguien en base a una orden de arresto."
+      },
+      "fr": {
+        "question": "Il ne fait pas partie d'un État de droit démocratique que …",
+        "optionTranslations": [
+          "les gens peuvent s'exprimer de manière critique sur le gouvernement.",
+          "les citoyens sont autorisés à manifester pacifiquement.",
+          "les gens sont arrêtés sans raison par une police privée.",
+          "quelqu'un commet un crime et est arrêté pour cela."
+        ],
+        "explanation": "L'arrestation arbitraire par une police privée contredit le principe de l'État de droit. Seuls les organes d'État comme la police peuvent arrêter quelqu'un sur la base d'un mandat d'arrêt."
+      },
+      "it": {
+        "question": "Non fa parte di uno stato di diritto democratico che …",
+        "optionTranslations": [
+          "le persone possono esprimersi criticamente sul governo.",
+          "i cittadini possono manifestare pacificamente.",
+          "le persone vengono arrestate senza motivo da una polizia privata.",
+          "qualcuno commette un crimine e per questo viene arrestato."
+        ],
+        "explanation": "L'arresto arbitrario da parte di una polizia privata contraddice il principio dello stato di diritto. Solo gli organi statali come la polizia possono arrestare qualcuno sulla base di un mandato di arresto."
+      },
+      "tr": {
+        "question": "Demokratik bir hukuk devletinin özelliği olmayan şey …'dir.",
+        "optionTranslations": [
+          "insanlar hükümeti eleştirel bir şekilde ifade edebilirler.",
+          "vatandaşlar barışçıl bir şekilde gösteri yapabilirler.",
+          "insanlar özel bir polis gücü tarafından sebepsiz yere tutuklanır.",
+          "biri bir suç işler ve bu yüzden tutuklanır."
+        ],
+        "explanation": "Özel bir polis gücü tarafından keyfi tutuklama, hukuk devleti ilkesine aykırıdır. Sadece polis gibi devlet organları bir tutuklama emrine dayanarak birini tutuklayabilir."
+      },
+      "ar": {
+        "question": "ليس من خصائص دولة القانون الديمقراطية أن …",
+        "optionTranslations": [
+          "يستطيع الناس التعبير عن آرائهم بشكل نقدي حول الحكومة.",
+          "يُسمح للمواطنين بالقيام بمظاهرات سلمية.",
+          "يتم اعتقال الأشخاص دون سبب من قبل شرطة خاصة.",
+          "يرتكب شخص ما جريمة ويتم اعتقاله بسببها."
+        ],
+        "explanation": "الاعتقال التعسفي من قبل قوة شرطة خاصة يتعارض مع مبدأ سيادة القانون. فقط الهيئات الحكومية مثل الشرطة يمكنها اعتقال شخص بناءً على أمر اعتقال."
+      },
+      "ru": {
+        "question": "К демократическому правовому государству не относится то, что …",
+        "optionTranslations": [
+          "люди могут критически высказываться о правительстве.",
+          "гражданам разрешено мирно демонстрировать.",
+          "людей арестовывает частная полиция без причины.",
+          "кто-то совершает преступление и поэтому арестовывается."
+        ],
+        "explanation": "Произвольный арест частной полицией противоречит принципу правового государства. Только государственные органы, такие как полиция, могут арестовывать кого-либо на основании ордера на арест."
+      },
+      "zh": {
+        "question": "以下哪项不属于民主法治国家的特征？",
+        "optionTranslations": [
+          "人们可以批判性地表达对政府的意见。",
+          "公民可以和平示威。",
+          "人们无故被私人警察逮捕。",
+          "有人犯罪并因此被捕。"
+        ],
+        "explanation": "私人警察的任意逮捕违背了法治原则。只有警察等国家机构才能根据逮捕令逮捕某人。"
+      },
+      "hi": {
+        "question": "यह एक लोकतांत्रिक संवैधानिक राज्य का हिस्सा नहीं है कि...",
+        "optionTranslations": [
+          "लोग सरकार के बारे में आलोचनात्मक रूप से व्यक्त कर सकते हैं।",
+          "नागरिकों को शांतिपूर्ण प्रदर्शन करने की अनुमति है।",
+          "लोगों को बिना किसी कारण के एक निजी पुलिस बल द्वारा गिरफ्तार किया जाता है।",
+          "कोई अपराध करता है और इसलिए उसे गिरफ्तार किया जाता है।"
+        ],
+        "explanation": "एक निजी पुलिस बल द्वारा मनमानी गिरफ्तारी कानून के शासन के सिद्धांत के खिलाफ है। केवल पुलिस जैसे राज्य अंग ही गिरफ्तारी वारंट के आधार पर किसी को गिरफ्तार कर सकते हैं।"
+      }
+    }
+  },
+  {
+    "id": "q052",
+    "category": "Politics",
+    "question": "Was bedeutet 'Volkssouveränität'? Alle Staatsgewalt geht vom ...",
+    "options": [
+      "Volke aus.",
+      "Bundestag aus.",
+      "preußischen König aus.",
+      "Bundesverfassungsgericht aus."
+    ],
+    "answerIndex": 0,
+    "explanation": "Volkssouveränität ist ein demokratisches Prinzip, das besagt, dass die Staatsgewalt vom Volk ausgeht.",
+    "translations": {
+      "en": {
+        "question": "What does 'popular sovereignty' mean? All state power emanates from the ...",
+        "optionTranslations": [
+          "people.",
+          "Bundestag.",
+          "Prussian king.",
+          "Federal Constitutional Court."
+        ],
+        "explanation": "Popular sovereignty is a democratic principle that states that state power emanates from the people."
+      },
+      "es": {
+        "question": "¿Qué significa 'soberanía popular'? Todo el poder del estado emana del ...",
+        "optionTranslations": [
+          "pueblo.",
+          "Bundestag.",
+          "rey prusiano.",
+          "Tribunal Constitucional Federal."
+        ],
+        "explanation": "La soberanía popular es un principio democrático que establece que el poder estatal emana del pueblo."
+      },
+      "fr": {
+        "question": "Que signifie 'souveraineté populaire' ? Tout le pouvoir de l'État émane du …",
+        "optionTranslations": [
+          "peuple.",
+          "Bundestag.",
+          "roi prussien.",
+          "Cour constitutionnelle fédérale."
+        ],
+        "explanation": "La souveraineté populaire est un principe démocratique qui stipule que le pouvoir de l'État émane du peuple."
+      },
+      "it": {
+        "question": "Cosa significa 'sovranità popolare'? Tutto il potere dello stato emana dal …",
+        "optionTranslations": [
+          "popolo.",
+          "Bundestag.",
+          "re prussiano.",
+          "Corte costituzionale federale."
+        ],
+        "explanation": "La sovranità popolare è un principio democratico che afferma che il potere dello stato emana dal popolo."
+      },
+      "tr": {
+        "question": "'Halk egemenliği' ne anlama gelir? Tüm devlet gücü …'dan gelir.",
+        "optionTranslations": [
+          "halktan.",
+          "Federal Meclisten.",
+          "Prusya kralından.",
+          "Federal Anayasa Mahkemesinden."
+        ],
+        "explanation": "Halk egemenliği, devlet gücünün halktan geldiğini belirten demokratik bir ilkedir."
+      },
+      "ar": {
+        "question": "ماذا تعني 'السيادة الشعبية'؟ كل سلطة الدولة تنبع من …",
+        "optionTranslations": [
+          "الشعب.",
+          "البوندستاغ (البرلمان الاتحادي).",
+          "الملك البروسي.",
+          "المحكمة الدستورية الاتحادية."
+        ],
+        "explanation": "السيادة الشعبية هي مبدأ ديمقراطي ينص على أن سلطة الدولة تنبع من الشعب."
+      },
+      "ru": {
+        "question": "Что означает «народный суверенитет»? Вся государственная власть исходит от …",
+        "optionTranslations": [
+          "народа.",
+          "Бундестага.",
+          "прусского короля.",
+          "Федерального конституционного суда."
+        ],
+        "explanation": "Народный суверенитет - это демократический принцип, согласно которому государственная власть исходит от народа."
+      },
+      "zh": {
+        "question": "“人民主权”意味着什么？所有国家权力都来自 …",
+        "optionTranslations": [
+          "人民。",
+          "联邦议院。",
+          "普鲁士国王。",
+          "联邦宪法法院。"
+        ],
+        "explanation": "人民主权是一项民主原则，它规定国家权力来自人民。"
+      },
+      "hi": {
+        "question": "'लोकप्रिय संप्रभुता' का क्या मतलब है? सभी राज्य शक्ति ... से निकलती है।",
+        "optionTranslations": [
+          "जनता।",
+          "बुंडेस्टाग।",
+          "प्रशियाई राजा।",
+          "संघीय संवैधानिक न्यायालय।"
+        ],
+        "explanation": "लोकप्रिय संप्रभुता एक लोकतांत्रिक सिद्धांत है जो बताता है कि राज्य की शक्ति जनता से निकलती है।"
+      }
+    }
+  },
+  {
+    "id": "q053",
+    "category": "Law",
+    "question": "Was bedeutet 'Rechtsstaat' in Deutschland?",
+    "options": [
+      "Der Staat hat Recht.",
+      "Es gibt nur rechte Parteien.",
+      "Die Bürgerinnen und Bürger entscheiden über Gesetze.",
+      "Der Staat muss die Gesetze einhalten."
+    ],
+    "answerIndex": 3,
+    "explanation": "Im Rechtsstaat ist der Staat selbst an Recht und Gesetz gebunden.",
+    "translations": {
+      "en": {
+        "question": "What does 'rule of law' mean in Germany?",
+        "optionTranslations": [
+          "The state is right.",
+          "There are only right-wing parties.",
+          "The citizens decide on laws.",
+          "The state must comply with the laws."
+        ],
+        "explanation": "In a constitutional state, the state itself is bound by law and justice."
+      },
+      "es": {
+        "question": "¿Qué significa 'estado de derecho' en Alemania?",
+        "optionTranslations": [
+          "El estado tiene la razón.",
+          "Solo hay partidos de derecha.",
+          "Los ciudadanos deciden sobre las leyes.",
+          "El estado debe cumplir con las leyes."
+        ],
+        "explanation": "En un estado de derecho, el estado mismo está obligado por la ley y la justicia."
+      },
+      "fr": {
+        "question": "Que signifie 'État de droit' en Allemagne?",
+        "optionTranslations": [
+          "L'État a raison.",
+          "Il n'y a que des partis de droite.",
+          "Les citoyens décident des lois.",
+          "L'État doit respecter les lois."
+        ],
+        "explanation": "Dans un État de droit, l'État lui-même est lié par le droit et la justice."
+      },
+      "it": {
+        "question": "Cosa significa 'stato di diritto' in Germania?",
+        "optionTranslations": [
+          "Lo stato ha ragione.",
+          "Ci sono solo partiti di destra.",
+          "I cittadini decidono le leggi.",
+          "Lo stato deve rispettare le leggi."
+        ],
+        "explanation": "In uno stato di diritto, lo stato stesso è vincolato dalla legge e dalla giustizia."
+      },
+      "tr": {
+        "question": "Almanya'da 'hukuk devleti' ne anlama gelir?",
+        "optionTranslations": [
+          "Devlet haklıdır.",
+          "Sadece sağcı partiler vardır.",
+          "Vatandaşlar yasalara karar verir.",
+          "Devlet yasalara uymak zorundadır."
+        ],
+        "explanation": "Bir hukuk devletinde, devletin kendisi de yasalara ve hukuka bağlıdır."
+      },
+      "ar": {
+        "question": "ماذا يعني 'دولة القانون' في ألمانيا؟",
+        "optionTranslations": [
+          "الدولة على حق.",
+          "لا توجد سوى أحزاب يمينية.",
+          "المواطنون يقررون القوانين.",
+          "يجب على الدولة الالتزام بالقوانين."
+        ],
+        "explanation": "في دولة القانون، الدولة نفسها ملزمة بالقانون والعدالة."
+      },
+      "ru": {
+        "question": "Что означает «правовое государство» в Германии?",
+        "optionTranslations": [
+          "Государство право.",
+          "Существуют только правые партии.",
+          "Граждане принимают решения о законах.",
+          "Государство должно соблюдать законы."
+        ],
+        "explanation": "В правовом государстве само государство связано правом и законом."
+      },
+      "zh": {
+        "question": "在德国，“法治国家”是什么意思？",
+        "optionTranslations": [
+          "国家是正确的。",
+          "只有右翼政党。",
+          "公民决定法律。",
+          "国家必须遵守法律。"
+        ],
+        "explanation": "在法治国家中，国家本身也受法律和正义的约束。"
+      },
+      "hi": {
+        "question": "जर्मनी में 'कानून का शासन' का क्या मतलब है?",
+        "optionTranslations": [
+          "राज्य सही है।",
+          "केवल दक्षिणपंथी दल हैं।",
+          "नागरिक कानूनों पर फैसला करते हैं।",
+          "राज्य को कानूनों का पालन करना चाहिए।"
+        ],
+        "explanation": "एक संवैधानिक राज्य में, राज्य स्वयं कानून और न्याय से बंधा होता है।"
+      }
+    }
+  },
+  {
+    "id": "q054",
+    "category": "Politics",
+    "question": "Was ist keine staatliche Gewalt in Deutschland?",
+    "options": [
+      "Legislative",
+      "Judikative",
+      "Exekutive",
+      "Direktive"
+    ],
+    "answerIndex": 3,
+    "explanation": "Die drei Staatsgewalten sind Legislative (Gesetzgebung), Exekutive (ausführende Gewalt) und Judikative (Rechtsprechung). 'Direktive' ist keine staatliche Gewalt.",
+    "translations": {
+      "en": {
+        "question": "What is not a state power in Germany?",
+        "optionTranslations": [
+          "Legislature",
+          "Judiciary",
+          "Executive",
+          "Directive"
+        ],
+        "explanation": "The three branches of government are the legislative (legislation), the executive (executive power), and the judiciary (judicature). 'Directive' is not a state power."
+      },
+      "es": {
+        "question": "¿Qué no es un poder estatal en Alemania?",
+        "optionTranslations": [
+          "Legislativo",
+          "Judicial",
+          "Ejecutivo",
+          "Directivo"
+        ],
+        "explanation": "Los tres poderes del estado son el legislativo (legislación), el ejecutivo (poder ejecutivo) y el judicial (poder judicial). 'Directivo' no es un poder estatal."
+      },
+      "fr": {
+        "question": "Qu'est-ce qui n'appartient pas au pouvoir exécutif en Allemagne?",
+        "optionTranslations": [
+          "Législatif",
+          "Judiciaire",
+          "Exécutif",
+          "Directif"
+        ],
+        "explanation": "Les trois pouvoirs de l'État sont le législatif (législation), l'exécutif (pouvoir exécutif) et le judiciaire (pouvoir judiciaire). 'Directif' n'est pas un pouvoir de l'État."
+      },
+      "it": {
+        "question": "Quale non è un potere statale in Germania?",
+        "optionTranslations": [
+          "Legislativo",
+          "Giudiziario",
+          "Esecutivo",
+          "Direttivo"
+        ],
+        "explanation": "I tre poteri dello stato sono il legislativo (legislazione), l'esecutivo (potere esecutivo) e il giudiziario (giurisdizione). 'Direttivo' non è un potere statale."
+      },
+      "tr": {
+        "question": "Almanya'da hangisi bir devlet gücü değildir?",
+        "optionTranslations": [
+          "Yasama",
+          "Yargı",
+          "Yürütme",
+          "Direktif"
+        ],
+        "explanation": "Devletin üç gücü Yasama (yasama), Yürütme (yürütme gücü) ve Yargı'dır (yargı). 'Direktif', bir devlet gücü değildir."
+      },
+      "ar": {
+        "question": "ما الذي لا يعتبر سلطة حكومية في ألمانيا؟",
+        "optionTranslations": [
+          "التشريعي",
+          "القضائي",
+          "التنفيذي",
+          "التوجيهي"
+        ],
+        "explanation": "السلطات الحكومية الثلاث هي السلطة التشريعية (سن القوانين)، السلطة التنفيذية (السلطة المنفذة) والسلطة القضائية (القضاء). 'التوجيهية' ليست سلطة حكومية."
+      },
+      "ru": {
+        "question": "Что не является государственной властью в Германии?",
+        "optionTranslations": [
+          "Законодательная",
+          "Судебная",
+          "Исполнительная",
+          "Директивная"
+        ],
+        "explanation": "Три ветви государственной власти - это законодательная (законотворчество), исполнительная (исполнительная власть) и судебная (судопроизводство). «Директивная» не является государственной властью."
+      },
+      "zh": {
+        "question": "什么不是德国的国家权力？",
+        "optionTranslations": [
+          "立法",
+          "司法",
+          "行政",
+          "指令"
+        ],
+        "explanation": "国家的三权是立法（立法）、行政（行政权）和司法（司法权）。“指令”不是国家权力。"
+      },
+      "hi": {
+        "question": "जर्मनी में क्या राज्य शक्ति नहीं है?",
+        "optionTranslations": [
+          "विधायिका",
+          "न्यायपालिका",
+          "कार्यपालिका",
+          "निदेश"
+        ],
+        "explanation": "राज्य की तीन शाखाएँ विधायिका (कानून), कार्यपालिका (कार्यकारी शक्ति) और न्यायपालिका (न्याय) हैं। 'निर्देश' एक राज्य शक्ति नहीं है।"
+      }
+    }
+  },
+  {
+    "id": "q055",
+    "category": "Politics",
+    "question": "Was zeigt dieses Bild?",
+    "image": "/images/bundestag-building.jpg",
+    "options": [
+      "den Bundestagssitz in Berlin",
+      "das Bundesverfassungsgericht in Karlsruhe",
+      "das Bundesratsgebäude in Berlin",
+      "das Bundeskanzleramt in Berlin"
+    ],
+    "answerIndex": 0,
+    "explanation": "Das Bild zeigt das Reichstagsgebäude in Berlin, den Sitz des Deutschen Bundestages.",
+    "translations": {
+      "en": {
+        "question": "What does this image show?",
+        "optionTranslations": [
+          "the Bundestag seat in Berlin",
+          "the Federal Constitutional Court in Karlsruhe",
+          "the Bundesrat building in Berlin",
+          "the Federal Chancellery in Berlin"
+        ],
+        "explanation": "The image shows the Reichstag building in Berlin, the seat of the German Bundestag."
+      },
+      "es": {
+        "question": "¿Qué muestra esta imagen?",
+        "optionTranslations": [
+          "la sede del Bundestag en Berlín",
+          "el Tribunal Constitucional Federal en Karlsruhe",
+          "el edificio del Bundesrat en Berlín",
+          "la Cancillería Federal en Berlín"
+        ],
+        "explanation": "La imagen muestra el edificio del Reichstag en Berlín, la sede del Bundestag alemán."
+      },
+      "fr": {
+        "question": "Que montre cette image?",
+        "optionTranslations": [
+          "le siège du Bundestag à Berlin",
+          "la Cour constitutionnelle fédérale à Karlsruhe",
+          "le bâtiment du Bundesrat à Berlin",
+          "la Chancellerie fédérale à Berlin"
+        ],
+        "explanation": "L'image montre le bâtiment du Reichstag à Berlin, le siège du Bundestag allemand."
+      },
+      "it": {
+        "question": "Cosa mostra questa immagine?",
+        "optionTranslations": [
+          "la sede del Bundestag a Berlino",
+          "la Corte costituzionale federale a Karlsruhe",
+          "l'edificio del Bundesrat a Berlino",
+          "la Cancelleria federale a Berlino"
+        ],
+        "explanation": "L'immagine mostra l'edificio del Reichstag a Berlino, la sede del Bundestag tedesco."
+      },
+      "tr": {
+        "question": "Bu resim neyi gösteriyor?",
+        "optionTranslations": [
+          "Berlin'deki Federal Meclis'in binası",
+          "Karlsruhe'deki Federal Anayasa Mahkemesi",
+          "Berlin'deki Federal Konsey binası",
+          "Berlin'deki Federal Şansölyelik"
+        ],
+        "explanation": "Resim, Berlin'deki Reichstag binasını, yani Alman Federal Meclisi'nin koltuğunu gösteriyor."
+      },
+      "ar": {
+        "question": "ماذا تُظهر هذه الصورة؟",
+        "optionTranslations": [
+          "مقر البوندستاغ في برلين",
+          "المحكمة الدستورية الفيدرالية في كارلسروه",
+          "مبنى البوندسرات في برلين",
+          "مكتب المستشارية الفيدرالية في برلين"
+        ],
+        "explanation": "تظهر الصورة مبنى الرايخستاغ في برلين، مقر البوندستاغ الألماني."
+      },
+      "ru": {
+        "question": "Что показывает это изображение?",
+        "optionTranslations": [
+          "здание Бундестага в Берлине",
+          "Федеральный конституционный суд в Карлсруэ",
+          "здание Бундесрата в Берлине",
+          "Федеральная канцелярия в Берлине"
+        ],
+        "explanation": "Изображение показывает здание Рейхстага в Берлине, место заседания немецкого Бундестага."
+      },
+      "zh": {
+        "question": "这张图片展示了什么？",
+        "optionTranslations": [
+          "联邦议院在柏林的所在地",
+          "位于卡尔斯鲁厄的联邦宪法法院",
+          "位于柏林的联邦参议院大楼",
+          "位于柏林的联邦总理府"
+        ],
+        "explanation": "这张图片展示了位于柏林的帝国国会大厦，即德国联邦议院的所在地。"
+      },
+      "hi": {
+        "question": "यह छवि क्या दिखाती है?",
+        "optionTranslations": [
+          "बर्लिन में बुंडेस्टाग की सीट",
+          "कार्लज़ूहे में संघीय संवैधानिक न्यायालय",
+          "बर्लिन में बुंडसरात भवन",
+          "बर्लिन में संघीय चांसलरी"
+        ],
+        "explanation": "छवि बर्लिन में रीचस्टाग भवन को दिखाती है, जो जर्मन बुंडेस्टाग की सीट है।"
+      }
+    }
+  },
+  {
+    "id": "q056",
+    "category": "Politics",
+    "question": "Welches Amt gehört in Deutschland zur Gemeindeverwaltung?",
+    "options": [
+      "Pfarramt",
+      "Ordnungsamt",
+      "Finanzamt",
+      "Auswärtiges Amt"
+    ],
+    "answerIndex": 1,
+    "explanation": "Das Ordnungsamt ist eine kommunale Behörde und gehört zur Gemeindeverwaltung.",
+    "translations": {
+      "en": {
+        "question": "Which office in Germany belongs to the municipal administration?",
+        "optionTranslations": [
+          "Parish office",
+          "Public order office",
+          "Tax office",
+          "Foreign Office"
+        ],
+        "explanation": "The public order office is a municipal authority and belongs to the municipal administration."
+      },
+      "es": {
+        "question": "¿Qué oficina en Alemania pertenece a la administración municipal?",
+        "optionTranslations": [
+          "Oficina parroquial",
+          "Oficina de orden público",
+          "Oficina de impuestos",
+          "Ministerio de Asuntos Exteriores"
+        ],
+        "explanation": "La oficina de orden público es una autoridad municipal y pertenece a la administración municipal."
+      },
+      "fr": {
+        "question": "Quel bureau en Allemagne appartient à l'administration municipale?",
+        "optionTranslations": [
+          "Bureau paroissial",
+          "Bureau d'ordre public",
+          "Bureau des impôts",
+          "Ministère des Affaires étrangères"
+        ],
+        "explanation": "Le bureau d'ordre public est une autorité municipale et fait partie de l'administration municipale."
+      },
+      "it": {
+        "question": "Quale ufficio in Germania appartiene all'amministrazione comunale?",
+        "optionTranslations": [
+          "Ufficio parrocchiale",
+          "Ufficio dell'ordine pubblico",
+          "Ufficio delle imposte",
+          "Ministero degli Esteri"
+        ],
+        "explanation": "L'ufficio dell'ordine pubblico è un'autorità comunale e appartiene all'amministrazione comunale."
+      },
+      "tr": {
+        "question": "Almanya'da hangi makam belediye yönetimine aittir?",
+        "optionTranslations": [
+          "Kilise ofisi",
+          "Düzen Ofisi",
+          "Vergi dairesi",
+          "Dışişleri Bakanlığı"
+        ],
+        "explanation": "Düzen ofisi, belediye yönetiminin bir parçası olan bir belediye makamıdır."
+      },
+      "ar": {
+        "question": "أي مكتب في ألمانيا ينتمي إلى الإدارة البلدية؟",
+        "optionTranslations": [
+          "مكتب الرعية",
+          "مكتب النظام العام",
+          "مكتب الضرائب",
+          "وزارة الخارجية"
+        ],
+        "explanation": "مكتب النظام العام هو سلطة بلدية وينتمي إلى الإدارة البلدية."
+      },
+      "ru": {
+        "question": "Какое ведомство в Германии относится к муниципальному управлению?",
+        "optionTranslations": [
+          "Приходская канцелярия",
+          "Управление общественного порядка",
+          "Налоговое управление",
+          "Министерство иностранных дел"
+        ],
+        "explanation": "Управление общественного порядка - это муниципальный орган и относится к муниципальному управлению."
+      },
+      "zh": {
+        "question": "在德国，哪个机构属于市政管理部门？",
+        "optionTranslations": [
+          "教区办事处",
+          "秩序局",
+          "税务局",
+          "外交部"
+        ],
+        "explanation": "秩序局是一个市政机构，属于市政管理部门。"
+      },
+      "hi": {
+        "question": "जर्मनी में कौन सा कार्यालय नगर पालिका प्रशासन से संबंधित है?",
+        "optionTranslations": [
+          "पैरिश कार्यालय",
+          "सार्वजनिक व्यवस्था कार्यालय",
+          "कर कार्यालय",
+          "विदेश मंत्रालय"
+        ],
+        "explanation": "सार्वजनिक व्यवस्था कार्यालय एक नगरपालिका प्राधिकरण है और नगरपालिका प्रशासन से संबंधित है।"
+      }
+    }
+  },
+  {
+    "id": "q057",
+    "category": "Politics",
+    "question": "Wer wird meistens zur Präsidentin/zum Präsidenten des Deutschen Bundestages gewählt?",
+    "options": [
+      "die/der älteste Abgeordnete im Parlament",
+      "die Ministerpräsidentin/der Ministerpräsident des größten Bundeslandes",
+      "eine ehemalige Bundeskanzlerin/ein ehemaliger Bundeskanzler",
+      "eine Abgeordnete/ein Abgeordneter der stärksten Fraktion"
+    ],
+    "answerIndex": 3,
+    "explanation": "Normalerweise wird der Bundestagspräsident aus den Reihen der stärksten Fraktion gewählt.",
+    "translations": {
+      "en": {
+        "question": "Who is usually elected President of the German Bundestag?",
+        "optionTranslations": [
+          "the oldest member of parliament",
+          "the Minister-President of the largest state",
+          "a former Federal Chancellor",
+          "a member of the strongest parliamentary group"
+        ],
+        "explanation": "Usually, the President of the Bundestag is elected from the ranks of the strongest parliamentary group."
+      },
+      "es": {
+        "question": "¿Quién es elegido generalmente Presidente del Bundestag alemán?",
+        "optionTranslations": [
+          "el/la diputado/a más antiguo/a del parlamento",
+          "el/la Ministro/a-Presidente/a del estado más grande",
+          "un/a ex-Canciller Federal",
+          "un/a diputado/a del grupo parlamentario más fuerte"
+        ],
+        "explanation": "Normalmente, el Presidente del Bundestag es elegido de las filas del grupo parlamentario más fuerte."
+      },
+      "fr": {
+        "question": "Qui est généralement élu Président du Bundestag allemand?",
+        "optionTranslations": [
+          "le/la plus ancien/ne député/e du parlement",
+          "le/la ministre-président/e du plus grand État fédéral",
+          "un/e ancien/ne chancelier/ère fédéral/e",
+          "un/e député/e du groupe parlementaire le plus fort"
+        ],
+        "explanation": "Normalement, le Président du Bundestag est élu parmi les rangs du groupe parlementaire le plus fort."
+      },
+      "it": {
+        "question": "Chi viene di solito eletto Presidente del Bundestag tedesco?",
+        "optionTranslations": [
+          "il/la deputato/a più anziano/a nel parlamento",
+          "il/la Ministro-Presidente dello stato più grande",
+          "un/a ex Cancelliere/a federale",
+          "un/a deputato/a del gruppo parlamentare più forte"
+        ],
+        "explanation": "Di solito, il Presidente del Bundestag viene eletto dai ranghi del gruppo parlamentare più forte."
+      },
+      "tr": {
+        "question": "Alman Federal Meclisi Başkanlığına genellikle kim seçilir?",
+        "optionTranslations": [
+          "parlamentodaki en yaşlı milletvekili",
+          "en büyük eyaletin Bakan-Başkanı",
+          "eski bir Federal Şansölye",
+          "en güçlü parlamento grubunun bir milletvekili"
+        ],
+        "explanation": "Genellikle Federal Meclis Başkanı, en güçlü parlamento grubunun saflarından seçilir."
+      },
+      "ar": {
+        "question": "من يُنتخب عادةً رئيسًا للبرلمان الألماني?",
+        "optionTranslations": [
+          "أقدم عضو في البرلمان",
+          "وزير رئيس أكبر ولاية",
+          "مستشار فيدرالي سابق",
+          "عضو في الكتلة البرلمانية الأقوى"
+        ],
+        "explanation": "عادةً، يُنتخب رئيس البوندستاغ من صفوف الكتلة البرلمانية الأقوى."
+      },
+      "ru": {
+        "question": "Кто обычно избирается Председателем немецкого Бундестага?",
+        "optionTranslations": [
+          "самый/ая старый/ая депутат в парламенте",
+          "министр-президент самой большой федеральной земли",
+          "бывший/ая федеральный/ая канцлер/ка",
+          "депутат/ка от самой сильной фракции"
+        ],
+        "explanation": "Обычно Председатель Бундестага избирается из числа самой сильной фракции."
+      },
+      "zh": {
+        "question": "谁通常被选为德国联邦议院议长？",
+        "optionTranslations": [
+          "议会中最年长的议员",
+          "最大州的州长",
+          "一位前联邦总理",
+          "最强议会党团的议员"
+        ],
+        "explanation": "通常，联邦议院议长从最强大的议会党团中选出。"
+      },
+      "hi": {
+        "question": "जर्मन बुंडेस्टाग का अध्यक्ष आमतौर पर कौन चुना जाता है?",
+        "optionTranslations": [
+          "संसद में सबसे पुराना सदस्य",
+          "सबसे बड़े राज्य का मंत्री-अध्यक्ष",
+          "एक पूर्व संघीय चांसलर",
+          "सबसे मजबूत संसदीय समूह का एक सदस्य"
+        ],
+        "explanation": "आमतौर पर, बुंडेस्टाग के अध्यक्ष को सबसे मजबूत संसदीय समूह के सदस्यों में से चुना जाता है।"
+      }
+    }
+  },
+  {
+    "id": "q058",
+    "category": "Politics",
+    "question": "Wer ernennt in Deutschland die Ministerinnen/die Minister der Bundesregierung?",
+    "options": [
+      "die Präsidentin/der Präsident des Bundesverfassungsgerichtes",
+      "die Bundespräsidentin/der Bundespräsident",
+      "die Bundesratspräsidentin/der Bundesratspräsident",
+      "die Bundestagspräsidentin/der Bundestagspräsident"
+    ],
+    "answerIndex": 1,
+    "explanation": "Die Bundespräsidentin/der Bundespräsident ernennt die Bundesminister auf Vorschlag des Bundeskanzlers.",
+    "translations": {
+      "en": {
+        "question": "Who appoints the ministers of the Federal Government in Germany?",
+        "optionTranslations": [
+          "the President of the Federal Constitutional Court",
+          "the Federal President",
+          "the President of the Bundesrat",
+          "the President of the Bundestag"
+        ],
+        "explanation": "The Federal President appoints the federal ministers on the recommendation of the Federal Chancellor."
+      },
+      "es": {
+        "question": "¿Quién nombra a los ministros del Gobierno Federal en Alemania?",
+        "optionTranslations": [
+          "el Presidente del Tribunal Constitucional Federal",
+          "el Presidente Federal",
+          "el Presidente del Bundesrat",
+          "el Presidente del Bundestag"
+        ],
+        "explanation": "El Presidente Federal nombra a los ministros federales a propuesta del Canciller Federal."
+      },
+      "fr": {
+        "question": "Qui nomme les ministres du gouvernement fédéral en Allemagne?",
+        "optionTranslations": [
+          "le Président de la Cour constitutionnelle fédérale",
+          "le Président fédéral",
+          "le Président du Bundesrat",
+          "le Président du Bundestag"
+        ],
+        "explanation": "Le Président fédéral nomme les ministres fédéraux sur proposition du Chancelier fédéral."
+      },
+      "it": {
+        "question": "Chi nomina i ministri del Governo federale in Germania?",
+        "optionTranslations": [
+          "il Presidente della Corte costituzionale federale",
+          "il Presidente federale",
+          "il Presidente del Bundesrat",
+          "il Presidente del Bundestag"
+        ],
+        "explanation": "Il Presidente federale nomina i ministri federali su proposta del Cancelliere federale."
+      },
+      "tr": {
+        "question": "Almanya'da Federal Hükümetin bakanlarını kim atar?",
+        "optionTranslations": [
+          "Federal Anayasa Mahkemesi Başkanı",
+          "Federal Başkan",
+          "Federal Konsey Başkanı",
+          "Federal Meclis Başkanı"
+        ],
+        "explanation": "Federal Başkan, federal bakanları Federal Şansölye'nin önerisi üzerine atar."
+      },
+      "ar": {
+        "question": "من يعين وزراء الحكومة الفيدرالية في ألمانيا?",
+        "optionTranslations": [
+          "رئيس المحكمة الدستورية الاتحادية",
+          "الرئيس الاتحادي",
+          "رئيس البوندسرات",
+          "رئيس البوندستاغ"
+        ],
+        "explanation": "يعين الرئيس الاتحادي الوزراء الاتحاديين بناءً على اقتراح المستشار الاتحادي."
+      },
+      "ru": {
+        "question": "Кто назначает министров федерального правительства в Германии?",
+        "optionTranslations": [
+          "Председатель Федерального конституционного суда",
+          "Федеральный президент",
+          "Председатель Бундесрата",
+          "Председатель Бундестага"
+        ],
+        "explanation": "Федеральный президент назначает федеральных министров по предложению федерального канцлера."
+      },
+      "zh": {
+        "question": "在德国，谁任命联邦政府的部长？",
+        "optionTranslations": [
+          "联邦宪法法院院长",
+          "联邦总统",
+          "联邦参议院院长",
+          "联邦议院议长"
+        ],
+        "explanation": "联邦总统根据联邦总理的建议任命联邦部长。"
+      },
+      "hi": {
+        "question": "जर्मनी में संघीय सरकार के मंत्रियों की नियुक्ति कौन करता है?",
+        "optionTranslations": [
+          "संघीय संवैधानिक न्यायालय के अध्यक्ष",
+          "संघीय राष्ट्रपति",
+          "बुंडसरात के अध्यक्ष",
+          "बुंडेस्टाग के अध्यक्ष"
+        ],
+        "explanation": "संघीय राष्ट्रपति संघीय चांसलर की सिफारिश पर संघीय मंत्रियों की नियुक्ति करते हैं।"
+      }
+    }
+  },
+  {
+    "id": "q059",
+    "category": "History",
+    "question": "Vor wie vielen Jahren gab es erstmals eine jüdische Gemeinde auf dem Gebiet des heutigen Deutschlands?",
+    "options": [
+      "vor etwa 300 Jahren",
+      "vor etwa 700 Jahren",
+      "vor etwa 1150 Jahren",
+      "vor etwa 1700 Jahren"
+    ],
+    "answerIndex": 3,
+    "explanation": "Jüdische Gemeinden in Deutschland existieren seit der Römerzeit, der erste schriftliche Beleg stammt aus dem Jahr 321 nach Christus.",
+    "translations": {
+      "en": {
+        "question": "How many years ago was there a Jewish community for the first time in the area of today's Germany?",
+        "optionTranslations": [
+          "about 300 years ago",
+          "about 700 years ago",
+          "about 1150 years ago",
+          "about 1700 years ago"
+        ],
+        "explanation": "Jewish communities in Germany have existed since Roman times; the first written evidence dates back to the year 321 AD."
+      },
+      "es": {
+        "question": "¿Hace cuántos años hubo por primera vez una comunidad judía en el área de la actual Alemania?",
+        "optionTranslations": [
+          "hace unos 300 años",
+          "hace unos 700 años",
+          "hace unos 1150 años",
+          "hace unos 1700 años"
+        ],
+        "explanation": "Las comunidades judías en Alemania han existido desde la época romana; la primera evidencia escrita data del año 321 d.C."
+      },
+      "fr": {
+        "question": "Il y a combien d'années a-t-il eu pour la première fois une communauté juive sur le territoire de l'Allemagne actuelle?",
+        "optionTranslations": [
+          "il y a environ 300 ans",
+          "il y a environ 700 ans",
+          "il y a environ 1150 ans",
+          "il y a environ 1700 ans"
+        ],
+        "explanation": "Les communautés juives en Allemagne existent depuis l'époque romaine ; la première preuve écrite remonte à l'an 321 après J.-C."
+      },
+      "it": {
+        "question": "Quanti anni fa c'è stata per la prima volta una comunità ebraica nell'area dell'odierna Germania?",
+        "optionTranslations": [
+          "circa 300 anni fa",
+          "circa 700 anni fa",
+          "circa 1150 anni fa",
+          "circa 1700 anni fa"
+        ],
+        "explanation": "Le comunità ebraiche in Germania esistono sin dall'epoca romana; la prima prova scritta risale all'anno 321 d.C."
+      },
+      "tr": {
+        "question": "Bugünkü Almanya topraklarında ilk kez kaç yıl önce bir Yahudi cemaati vardı?",
+        "optionTranslations": [
+          "yaklaşık 300 yıl önce",
+          "yaklaşık 700 yıl önce",
+          "yaklaşık 1150 yıl önce",
+          "yaklaşık 1700 yıl önce"
+        ],
+        "explanation": "Almanya'daki Yahudi cemaatleri Roma döneminden beri var olmuştur; ilk yazılı kanıt M.S. 321 yılına dayanmaktadır."
+      },
+      "ar": {
+        "question": "منذ كم عام وُجدت لأول مرة جماعة يهودية في منطقة ألمانيا الحالية؟",
+        "optionTranslations": [
+          "قبل حوالي 300 عام",
+          "قبل حوالي 700 عام",
+          "قبل حوالي 1150 عام",
+          "قبل حوالي 1700 عام"
+        ],
+        "explanation": "الجاليات اليهودية في ألمانيا موجودة منذ العصر الروماني، وأول دليل كتابي يعود إلى عام 321 بعد الميلاد."
+      },
+      "ru": {
+        "question": "Сколько лет назад впервые существовала еврейская община на территории современной Германии?",
+        "optionTranslations": [
+          "около 300 лет назад",
+          "около 700 лет назад",
+          "около 1150 лет назад",
+          "около 1700 лет назад"
+        ],
+        "explanation": "Еврейские общины в Германии существуют со времен Римской империи; первое письменное свидетельство датируется 321 годом нашей эры."
+      },
+      "zh": {
+        "question": "在今天的德国地区，首次出现犹太社区是在多少年前？",
+        "optionTranslations": [
+          "大约300年前",
+          "大约700年前",
+          "大约1150年前",
+          "大约1700年前"
+        ],
+        "explanation": "德国的犹太社区自罗马时代以来就已存在；最早的书面证据可追溯到公元321年。"
+      },
+      "hi": {
+        "question": "आज के जर्मनी के क्षेत्र में पहली बार एक यहूदी समुदाय कितने साल पहले था?",
+        "optionTranslations": [
+          "लगभग 300 साल पहले",
+          "लगभग 700 साल पहले",
+          "लगभग 1150 साल पहले",
+          "लगभग 1700 साल पहले"
+        ],
+        "explanation": "जर्मनी में यहूदी समुदाय रोमन काल से मौजूद हैं; पहला लिखित साक्ष्य 321 ईस्वी का है।"
+      }
+    }
+  },
+  {
+    "id": "q060",
+    "category": "Politics",
+    "question": "In Deutschland gehören der Bundestag und der Bundesrat zur …",
+    "options": [
+      "Exekutive.",
+      "Legislative.",
+      "Direktive.",
+      "Judikative."
+    ],
+    "answerIndex": 1,
+    "explanation": "Bundestag und Bundesrat sind die gesetzgebenden Organe (Legislative).",
+    "translations": {
+      "en": {
+        "question": "In Germany, the Bundestag and the Bundesrat belong to the …",
+        "optionTranslations": [
+          "Executive.",
+          "Legislature.",
+          "Directive.",
+          "Judiciary."
+        ],
+        "explanation": "The Bundestag and Bundesrat are the legislative bodies (legislature)."
+      },
+      "es": {
+        "question": "En Alemania, el Bundestag y el Bundesrat pertenecen al …",
+        "optionTranslations": [
+          "Ejecutivo.",
+          "Legislativo.",
+          "Directivo.",
+          "Judicial."
+        ],
+        "explanation": "El Bundestag y el Bundesrat son los órganos legislativos (legislativo)."
+      },
+      "fr": {
+        "question": "En Allemagne, le Bundestag et le Bundesrat appartiennent au …",
+        "optionTranslations": [
+          "Exécutif.",
+          "Législatif.",
+          "Directif.",
+          "Judiciaire."
+        ],
+        "explanation": "Le Bundestag et le Bundesrat sont les organes législatifs (législatif)."
+      },
+      "it": {
+        "question": "In Germania, il Bundestag e il Bundesrat appartengono al …",
+        "optionTranslations": [
+          "Esecutivo.",
+          "Legislativo.",
+          "Direttivo.",
+          "Giudiziario."
+        ],
+        "explanation": "Il Bundestag e il Bundesrat sono gli organi legislativi (legislativo)."
+      },
+      "tr": {
+        "question": "Almanya'da Federal Meclis ve Federal Konsey …'ya aittir.",
+        "optionTranslations": [
+          "Yürütme.",
+          "Yasama.",
+          "Direktif.",
+          "Yargı."
+        ],
+        "explanation": "Federal Meclis ve Federal Konsey, yasama organlarıdır (yasama)."
+      },
+      "ar": {
+        "question": "في ألمانيا، ينتمي البوندستاغ والبوندسرات إلى …",
+        "optionTranslations": [
+          "السلطة التنفيذية.",
+          "السلطة التشريعية.",
+          "السلطة التوجيهية.",
+          "السلطة القضائية."
+        ],
+        "explanation": "البوندستاغ والبوندسرات هما الهيئتان التشريعيتان (السلطة التشريعية)."
+      },
+      "ru": {
+        "question": "В Германии Бундестаг и Бундесрат относятся к …",
+        "optionTranslations": [
+          "Исполнительной власти.",
+          "Законодательной власти.",
+          "Директивной власти.",
+          "Судебной власти."
+        ],
+        "explanation": "Бундестаг и Бундесрат являются законодательными органами (законодательная власть)."
+      },
+      "zh": {
+        "question": "在德国，联邦议院和联邦参议院属于 …",
+        "optionTranslations": [
+          "行政。",
+          "立法。",
+          "指令。",
+          "司法。"
+        ],
+        "explanation": "联邦议院和联邦参议院是立法机构（立法）。"
+      },
+      "hi": {
+        "question": "जर्मनी में, बुंडेस्टाग और बुंडसरात … से संबंधित हैं।",
+        "optionTranslations": [
+          "कार्यपालिका।",
+          "विधायिका।",
+          "निर्देशात्मक।",
+          "न्यायपालिका।"
+        ],
+        "explanation": "बुंडेस्टाग और बुंडसरात विधायी निकाय (विधायिका) हैं।"
+      }
+    }
+  },
+  {
+    "id": "q061",
+    "category": "Politics",
+    "question": "Was bedeutet 'Volkssouveränität'?",
+    "options": [
+      "Die Königin/der König herrscht über das Volk.",
+      "Das Bundesverfassungsgericht steht über der Verfassung.",
+      "Die Interessenverbände üben die Souveränität zusammen mit der Regierung aus.",
+      "Die Staatsgewalt geht vom Volke aus."
+    ],
+    "answerIndex": 3,
+    "explanation": "Volkssouveränität ist das Prinzip, dass die oberste Gewalt im Staat vom Volk ausgeht.",
+    "translations": {
+      "en": {
+        "question": "What does 'popular sovereignty' mean?",
+        "optionTranslations": [
+          "The queen/king rules over the people.",
+          "The Federal Constitutional Court is above the constitution.",
+          "Interest groups exercise sovereignty together with the government.",
+          "State power emanates from the people."
+        ],
+        "explanation": "Popular sovereignty is the principle that the supreme power in the state emanates from the people."
+      },
+      "es": {
+        "question": "¿Qué significa 'soberanía popular'?",
+        "optionTranslations": [
+          "La reina/el rey gobierna sobre el pueblo.",
+          "El Tribunal Constitucional Federal está por encima de la constitución.",
+          "Los grupos de interés ejercen la soberanía junto con el gobierno.",
+          "El poder estatal emana del pueblo."
+        ],
+        "explanation": "La soberanía popular es el principio de que el poder supremo en el estado emana del pueblo."
+      },
+      "fr": {
+        "question": "Que signifie 'souveraineté populaire'?",
+        "optionTranslations": [
+          "La reine/le roi règne sur le peuple.",
+          "La Cour constitutionnelle fédérale est au-dessus de la constitution.",
+          "Les groupes d'intérêt exercent la souveraineté avec le gouvernement.",
+          "Le pouvoir de l'État émane du peuple."
+        ],
+        "explanation": "La souveraineté populaire est le principe selon lequel le pouvoir suprême de l'État émane du peuple."
+      },
+      "it": {
+        "question": "Cosa significa 'sovranità popolare'?",
+        "optionTranslations": [
+          "La regina/il re governa sul popolo.",
+          "La Corte costituzionale federale è al di sopra della costituzione.",
+          "I gruppi di interesse esercitano la sovranità insieme al governo.",
+          "Il potere dello stato emana dal popolo."
+        ],
+        "explanation": "La sovranità popolare è il principio secondo cui il potere supremo dello stato emana dal popolo."
+      },
+      "tr": {
+        "question": "'Halk egemenliği' ne anlama gelir?",
+        "optionTranslations": [
+          "Kraliçe/kral halk üzerinde hüküm sürer.",
+          "Federal Anayasa Mahkemesi anayasanın üzerindedir.",
+          "Çıkar grupları egemenliği hükümetle birlikte kullanır.",
+          "Devlet gücü halktan gelir."
+        ],
+        "explanation": "Halk egemenliği, devletteki en yüksek gücün halktan geldiği ilkesidir."
+      },
+      "ar": {
+        "question": "ماذا تعني 'السيادة الشعبية'؟",
+        "optionTranslations": [
+          "الملكة/الملك يحكم على الشعب.",
+          "المحكمة الدستورية الفيدرالية فوق الدستور.",
+          "تمارس جماعات المصالح السيادة مع الحكومة.",
+          "سلطة الدولة تنبع من الشعب."
+        ],
+        "explanation": "السيادة الشعبية هي المبدأ الذي ينص على أن السلطة العليا في الدولة تنبع من الشعب."
+      },
+      "ru": {
+        "question": "Что означает «народный суверенитет»?",
+        "optionTranslations": [
+          "Королева/король правит народом.",
+          "Федеральный конституционный суд стоит выше конституции.",
+          "Группы по интересам осуществляют суверенитет вместе с правительством.",
+          "Государственная власть исходит от народа."
+        ],
+        "explanation": "Народный суверенитет - это принцип, согласно которому верховная власть в государстве исходит от народа."
+      },
+      "zh": {
+        "question": "“人民主权”是什么意思？",
+        "optionTranslations": [
+          "女王/国王统治人民。",
+          "联邦宪法法院凌驾于宪法之上。",
+          "利益集团与政府共同行使主权。",
+          "国家权力来自人民。"
+        ],
+        "explanation": "人民主权是国家最高权力来自人民的原则。"
+      },
+      "hi": {
+        "question": "'लोकप्रिय संप्रभुता' का क्या मतलब है?",
+        "optionTranslations": [
+          "रानी/राजा लोगों पर शासन करता है।",
+          "संघीय संवैधानिक न्यायालय संविधान से ऊपर है।",
+          "हित समूह सरकार के साथ मिलकर संप्रभुता का प्रयोग करते हैं।",
+          "राज्य शक्ति जनता से निकलती है।"
+        ],
+        "explanation": "लोकप्रिय संप्रभुता वह सिद्धांत है कि राज्य में सर्वोच्च शक्ति जनता से निकलती है।"
+      }
+    }
+  },
+  {
+    "id": "q062",
+    "category": "Politics",
+    "question": "Wenn das Parlament eines deutschen Bundeslandes gewählt wird, nennt man das …",
+    "options": [
+      "Kommunalwahl",
+      "Landtagswahl",
+      "Europawahl",
+      "Bundestagswahl"
+    ],
+    "answerIndex": 1,
+    "explanation": "Das Parlament auf Landesebene heißt Landtag, daher wird die Wahl als Landtagswahl bezeichnet.",
+    "translations": {
+      "en": {
+        "question": "When the parliament of a German state is elected, it is called …",
+        "optionTranslations": [
+          "municipal election",
+          "state election",
+          "European election",
+          "federal election"
+        ],
+        "explanation": "The parliament at the state level is called the 'Landtag', which is why the election is called a 'Landtagswahl' (state election)."
+      },
+      "es": {
+        "question": "Cuando se elige el parlamento de un estado federal alemán, se llama …",
+        "optionTranslations": [
+          "elección municipal",
+          "elección estatal",
+          "elección europea",
+          "elección federal"
+        ],
+        "explanation": "El parlamento a nivel estatal se llama 'Landtag', por lo que la elección se llama 'Landtagswahl' (elección estatal)."
+      },
+      "fr": {
+        "question": "Lorsque le parlement d'un État fédéral allemand est élu, on appelle cela …",
+        "optionTranslations": [
+          "élection municipale",
+          "élection d'État",
+          "élection européenne",
+          "élection fédérale"
+        ],
+        "explanation": "Le parlement au niveau de l'État s'appelle le 'Landtag', c'est pourquoi l'élection est appelée 'Landtagswahl' (élection d'État)."
+      },
+      "it": {
+        "question": "Quando il parlamento di uno stato federale tedesco viene eletto, si chiama …",
+        "optionTranslations": [
+          "elezione comunale",
+          "elezione statale",
+          "elezione europea",
+          "elezione federale"
+        ],
+        "explanation": "Il parlamento a livello statale si chiama 'Landtag', motivo per cui l'elezione si chiama 'Landtagswahl' (elezione statale)."
+      },
+      "tr": {
+        "question": "Bir Alman eyaletinin parlamentosu seçildiğinde, buna … denir.",
+        "optionTranslations": [
+          "belediye seçimi",
+          "eyalet seçimi",
+          "Avrupa seçimi",
+          "federal seçim"
+        ],
+        "explanation": "Eyalet düzeyindeki parlamentoya 'Landtag' denir, bu nedenle seçime 'Landtagswahl' (eyalet seçimi) denir."
+      },
+      "ar": {
+        "question": "عندما يتم انتخاب برلمان ولاية ألمانية، يطلق على ذلك اسم …",
+        "optionTranslations": [
+          "انتخابات بلدية",
+          "انتخابات الولاية",
+          "انتخابات أوروبية",
+          "انتخابات البوندستاغ (البرلمانية)"
+        ],
+        "explanation": "يسمى البرلمان على مستوى الولاية 'البرلمان المحلي'، ولهذا السبب تسمى الانتخابات 'انتخابات برلمانية للولاية'."
+      },
+      "ru": {
+        "question": "Когда избирается парламент немецкой федеральной земли, это называется …",
+        "optionTranslations": [
+          "муниципальные выборы",
+          "выборы в парламент земли",
+          "выборы в Европейский парламент",
+          "выборы в Бундестаг"
+        ],
+        "explanation": "Парламент на уровне земли называется «Ландтаг», поэтому выборы называются «выборами в Ландтаг» (выборами в парламент земли)."
+      },
+      "zh": {
+        "question": "当德国某个州的议会进行选举时，这被称为 …",
+        "optionTranslations": [
+          "市政选举",
+          "州议会选举",
+          "欧洲议会选举",
+          "联邦议院选举"
+        ],
+        "explanation": "州一级的议会被称为“州议会”，这就是为什么选举被称为“州议会选举”。"
+      },
+      "hi": {
+        "question": "जब किसी जर्मन संघीय राज्य की संसद का चुनाव होता है, तो इसे ... कहा जाता है।",
+        "optionTranslations": [
+          "नगरपालिका चुनाव",
+          "राज्य चुनाव",
+          "यूरोपीय चुनाव",
+          "संघीय चुनाव"
+        ],
+        "explanation": "राज्य स्तर पर संसद को 'लैंडटाग' कहा जाता है, यही कारण है कि चुनाव को 'लैंडटाग्सवाह्ल' (राज्य चुनाव) कहा जाता है।"
+      }
+    }
+  },
+  {
+    "id": "q063",
+    "category": "Politics",
+    "question": "Was gehört in Deutschland nicht zur Exekutive?",
+    "options": [
+      "die Polizei",
+      "die Gerichte",
+      "das Finanzamt",
+      "die Ministerien"
+    ],
+    "answerIndex": 1,
+    "explanation": "Die Gerichte gehören zur Judikative, während Polizei, Finanzamt und Ministerien zur Exekutive (ausführende Gewalt) gehören.",
+    "translations": {
+      "en": {
+        "question": "What does not belong to the executive branch in Germany?",
+        "optionTranslations": [
+          "the police",
+          "the courts",
+          "the tax office",
+          "the ministries"
+        ],
+        "explanation": "The courts belong to the judiciary, while the police, tax office, and ministries belong to the executive branch (executive power)."
+      },
+      "es": {
+        "question": "¿Qué no pertenece al poder ejecutivo en Alemania?",
+        "optionTranslations": [
+          "la policía",
+          "los tribunales",
+          "la oficina de impuestos",
+          "los ministerios"
+        ],
+        "explanation": "Los tribunales pertenecen al poder judicial, mientras que la policía, la oficina de impuestos y los ministerios pertenecen al poder ejecutivo (poder ejecutivo)."
+      },
+      "fr": {
+        "question": "Qu'est-ce qui n'appartient pas au pouvoir exécutif en Allemagne?",
+        "optionTranslations": [
+          "la police",
+          "les tribunaux",
+          "le bureau des impôts",
+          "les ministères"
+        ],
+        "explanation": "Les tribunaux appartiennent au pouvoir judiciaire, tandis que la police, le bureau des impôts et les ministères appartiennent au pouvoir exécutif (pouvoir exécutif)."
+      },
+      "it": {
+        "question": "Cosa non appartiene al potere esecutivo in Germania?",
+        "optionTranslations": [
+          "la polizia",
+          "i tribunali",
+          "l'ufficio delle imposte",
+          "i ministeri"
+        ],
+        "explanation": "I tribunali appartengono al potere giudiziario, mentre la polizia, l'ufficio delle imposte e i ministeri appartengono al potere esecutivo (potere esecutivo)."
+      },
+      "tr": {
+        "question": "Almanya'da hangisi bir devlet gücü değildir?",
+        "optionTranslations": [
+          "polis",
+          "mahkemeler",
+          "vergi dairesi",
+          "bakanlıklar"
+        ],
+        "explanation": "Mahkemeler yargı organına aittir, polis, vergi dairesi ve bakanlıklar ise yürütme organına (yürütme gücü) aittir."
+      },
+      "ar": {
+        "question": "ما الذي لا ينتمي إلى السلطة التنفيذية في ألمانيا؟",
+        "optionTranslations": [
+          "الشرطة",
+          "المحاكم",
+          "مكتب الضرائب",
+          "الوزارات"
+        ],
+        "explanation": "المحاكم تنتمي إلى السلطة القضائية، بينما الشرطة، مكتب الضرائب، والوزارات تنتمي إلى السلطة التنفيذية (السلطة المنفذة)."
+      },
+      "ru": {
+        "question": "Что не относится к исполнительной власти в Германии?",
+        "optionTranslations": [
+          "полиция",
+          "суды",
+          "налоговая инспекция",
+          "министерства"
+        ],
+        "explanation": "Суды относятся к судебной власти, в то время как полиция, налоговая инспекция и министерства относятся к исполнительной власти (исполнительная власть)."
+      },
+      "zh": {
+        "question": "在德国，什么不属于行政部门？",
+        "optionTranslations": [
+          "警察",
+          "法院",
+          "税务局",
+          "各部委"
+        ],
+        "explanation": "法院属于司法部门，而警察、税务局和各部委属于行政部门（行政权）。"
+      },
+      "hi": {
+        "question": "जर्मनी में क्या कार्यपालिका से संबंधित नहीं है?",
+        "optionTranslations": [
+          "पुलिस",
+          "अदालतें",
+          "कर कार्यालय",
+          "मंत्रालय"
+        ],
+        "explanation": "अदालतें न्यायपालिका से संबंधित हैं, जबकि पुलिस, कर कार्यालय और मंत्रालय कार्यपालिका (कार्यकारी शक्ति) से संबंधित हैं।"
+      }
+    }
+  },
+  {
+    "id": "q064",
+    "category": "Politics",
+    "question": "Die Bundesrepublik Deutschland ist heute gegliedert in …",
+    "options": [
+      "vier Besatzungszonen.",
+      "einen Oststaat und einen Weststaat.",
+      "16 Kantone.",
+      "Bund, Länder und Kommunen."
+    ],
+    "answerIndex": 3,
+    "explanation": "Deutschland ist föderal aufgebaut und besteht aus drei Ebenen: dem Bund, den Ländern und den Kommunen.",
+    "translations": {
+      "en": {
+        "question": "The Federal Republic of Germany is structured today into …",
+        "optionTranslations": [
+          "four occupation zones.",
+          "an East state and a West state.",
+          "16 cantons.",
+          "Federation, states, and municipalities."
+        ],
+        "explanation": "Germany is federally structured and consists of three levels: the federal level, the states, and the municipalities."
+      },
+      "es": {
+        "question": "La República Federal de Alemania se estructura hoy en …",
+        "optionTranslations": [
+          "cuatro zonas de ocupación.",
+          "un estado del Este y un estado del Oeste.",
+          "16 cantones.",
+          "Federación, estados y municipios."
+        ],
+        "explanation": "Alemania tiene una estructura federal y consta de tres niveles: el nivel federal, los estados y los municipios."
+      },
+      "fr": {
+        "question": "La République fédérale d'Allemagne est aujourd'hui structurée en …",
+        "optionTranslations": [
+          "quatre zones d'occupation.",
+          "un État de l'Est et un État de l'Ouest.",
+          "16 cantons.",
+          "Fédération, États et communes."
+        ],
+        "explanation": "L'Allemagne a une structure fédérale et se compose de trois niveaux : le niveau fédéral, les États et les communes."
+      },
+      "it": {
+        "question": "La Repubblica Federale di Germania è oggi strutturata in …",
+        "optionTranslations": [
+          "quattro zone di occupazione.",
+          "uno stato orientale e uno stato occidentale.",
+          "16 cantoni.",
+          "Federazione, stati e comuni."
+        ],
+        "explanation": "La Germania è strutturata in modo federale e consiste di tre livelli: il livello federale, gli stati e i comuni."
+      },
+      "tr": {
+        "question": "Almanya Federal Cumhuriyeti bugün … olarak yapılandırılmıştır.",
+        "optionTranslations": [
+          "dört işgal bölgesi.",
+          "bir Doğu devleti ve bir Batı devleti.",
+          "16 kanton.",
+          "Federal düzey, eyaletler ve belediyeler."
+        ],
+        "explanation": "Almanya federal bir yapıya sahiptir ve üç düzeyden oluşur: federal düzey, eyaletler ve belediyeler."
+      },
+      "ar": {
+        "question": "جمهورية ألمانيا الاتحادية مقسمة اليوم إلى …",
+        "optionTranslations": [
+          "أربع مناطق احتلال.",
+          "دولة شرقية ودولة غربية.",
+          "16 كانتون.",
+          "الاتحاد، والولايات، والبلديات."
+        ],
+        "explanation": "ألمانيا منظمة بشكل فيدرالي وتتكون من ثلاثة مستويات: المستوى الاتحادي، والولايات، والبلديات."
+      },
+      "ru": {
+        "question": "Федеративная Республика Германия сегодня структурирована на …",
+        "optionTranslations": [
+          "четыре оккупационные зоны.",
+          "Восточное государство и Западное государство.",
+          "16 кантонов.",
+          "Федерация, земли и муниципалитеты."
+        ],
+        "explanation": "Германия имеет федеративную структуру и состоит из трех уровней: федерального уровня, земель и муниципалитетов."
+      },
+      "zh": {
+        "question": "德意志联邦共和国今天被划分为 …",
+        "optionTranslations": [
+          "四个占领区。",
+          "一个东部国家和一个西部国家。",
+          "16个州。",
+          "联邦、州和地方政府。"
+        ],
+        "explanation": "德国采用联邦制结构，由三个层次组成：联邦、州和市。"
+      },
+      "hi": {
+        "question": "जर्मनी का संघीय गणराज्य आज ... में संरचित है।",
+        "optionTranslations": [
+          "चार कब्जे वाले क्षेत्र।",
+          "एक पूर्वी राज्य और एक पश्चिमी राज्य।",
+          "16 केंटन।",
+          "संघ, राज्य और नगरपालिकाएं।"
+        ],
+        "explanation": "जर्मनी संघीय रूप से संरचित है और इसमें तीन स्तर होते हैं: संघीय स्तर, राज्य और नगरपालिकाएँ।"
+      }
+    }
+  },
+  {
+    "id": "q065",
+    "category": "Politics",
+    "question": "Es gehört nicht zu den Aufgaben des Deutschen Bundestages, …",
+    "options": [
+      "Gesetze zu entwerfen.",
+      "die Bundesregierung zu kontrollieren.",
+      "die Bundeskanzlerin/den Bundeskanzler zu wählen.",
+      "das Bundeskabinett zu bilden."
+    ],
+    "answerIndex": 3,
+    "explanation": "Das Bundeskabinett wird vom Bundeskanzler gebildet und nicht vom Bundestag.",
+    "translations": {
+      "en": {
+        "question": "It is not one of the tasks of the German Bundestag to …",
+        "optionTranslations": [
+          "draft laws.",
+          "control the federal government.",
+          "elect the Federal Chancellor.",
+          "form the federal cabinet."
+        ],
+        "explanation": "The federal cabinet is formed by the Federal Chancellor and not by the Bundestag."
+      },
+      "es": {
+        "question": "No es una de las tareas del Bundestag alemán …",
+        "optionTranslations": [
+          "elaborar leyes.",
+          "controlar al gobierno federal.",
+          "elegir al Canciller Federal.",
+          "formar el gabinete federal."
+        ],
+        "explanation": "El gabinete federal es formado por el Canciller Federal y no por el Bundestag."
+      },
+      "fr": {
+        "question": "Il ne fait pas partie des tâches du Bundestag allemand de …",
+        "optionTranslations": [
+          "rédiger des lois.",
+          "contrôler le gouvernement fédéral.",
+          "élire le Chancelier fédéral.",
+          "former le cabinet fédéral."
+        ],
+        "explanation": "Le cabinet fédéral est formé par le Chancelier fédéral et non par le Bundestag."
+      },
+      "it": {
+        "question": "Non è uno dei compiti del Bundestag tedesco …",
+        "optionTranslations": [
+          "redigere leggi.",
+          "controllare il governo federale.",
+          "eleggere il Cancelliere federale.",
+          "formare il gabinetto federale."
+        ],
+        "explanation": "Il gabinetto federale è formato dal Cancelliere federale e non dal Bundestag."
+      },
+      "tr": {
+        "question": "Alman Federal Meclisi'nin görevlerinden biri … değildir.",
+        "optionTranslations": [
+          "yasalar taslağı hazırlamak.",
+          "federal hükümeti denetlemek.",
+          "Federal Şansölye'yi seçmek.",
+          "federal kabineyi oluşturmak."
+        ],
+        "explanation": "Federal kabine Federal Şansölye tarafından oluşturulur, Federal Meclis tarafından değil."
+      },
+      "ar": {
+        "question": "ليس من مهام البوندستاغ الألماني أن …",
+        "optionTranslations": [
+          "صياغة القوانين.",
+          "مراقبة الحكومة الفيدرالية.",
+          "انتخاب المستشار الاتحادي.",
+          "تشكيل مجلس الوزراء الاتحادي."
+        ],
+        "explanation": "يتم تشكيل مجلس الوزراء الاتحادي من قبل المستشار الاتحادي وليس من قبل البوندستاغ."
+      },
+      "ru": {
+        "question": "К задачам немецкого Бундестага не относится …",
+        "optionTranslations": [
+          "разрабатывать законы.",
+          "контролировать федеральное правительство.",
+          "выбирать федерального канцлера.",
+          "формировать федеральный кабинет."
+        ],
+        "explanation": "Федеральный кабинет формируется федеральным канцлером, а не Бундестагом."
+      },
+      "zh": {
+        "question": "以下哪项不属于德国联邦议院的任务？",
+        "optionTranslations": [
+          "起草法律。",
+          "监督联邦政府。",
+          "选举联邦总理。",
+          "组建联邦内阁。"
+        ],
+        "explanation": "联邦内阁由联邦总理而非联邦议院组建。"
+      },
+      "hi": {
+        "question": "जर्मन बुंडेस्टाग के कार्यों में से एक ... नहीं है।",
+        "optionTranslations": [
+          "कानूनों का मसौदा तैयार करना।",
+          "संघीय सरकार को नियंत्रित करना।",
+          "संघीय चांसलर का चुनाव करना।",
+          "संघीय मंत्रिमंडल का गठन करना।"
+        ],
+        "explanation": "संघीय मंत्रिमंडल का गठन संघीय चांसलर द्वारा किया जाता है, न कि बुंडेस्टाग द्वारा।"
+      }
+    }
+  }
+]
