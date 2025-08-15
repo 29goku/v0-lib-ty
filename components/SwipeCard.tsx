@@ -7,6 +7,8 @@ import { Flag, Languages, Volume2 } from "lucide-react"
 import { motion, useMotionValue, useTransform, type PanInfo } from "framer-motion"
 import { useStore } from "@/lib/store"
 import { getTranslation } from "@/lib/i18n"
+import { getStateQuestionTranslation } from "@/lib/utils"
+import stateQuestionsData from "@/public/data/state-questions.json"
 import type { Question } from "@/lib/store"
 
 interface SwipeCardProps {
@@ -659,7 +661,29 @@ export default function SwipeCard({
   const { language } = useStore()
   const t = getTranslation(language)
 
+  // Try to get state question translation if available
+  let stateTranslation = null
+  if (question.id) {
+    // Flatten all state arrays into one array of questions
+    const allStateQuestions = Object.values(stateQuestionsData).flat()
+    stateTranslation = getStateQuestionTranslation(allStateQuestions, question.id, language)
+  }
+
   const showTranslation = isTranslated !== undefined ? isTranslated : internalShowTranslation
+
+  // Also check if the current question has built-in translations (questions.json)
+  const questionTranslations = (question as any).translations?.[language]
+
+  // Resolved translation priority: stateTranslation -> question.translations -> fallback translatedText/options
+  const resolvedTranslation = stateTranslation || questionTranslations || null
+
+  // For rendering: main question stays as original German. Translation box uses resolved translations first, then translatedText.
+  const translationBoxQuestion = resolvedTranslation?.question || translatedText || ""
+  const translationBoxOptions: string[] = resolvedTranslation?.options || translatedOptions
+  // eslint-disable-next-line no-console
+  console.log("[SwipeCard display] translationBoxQuestion:", translationBoxQuestion)
+  // eslint-disable-next-line no-console
+  console.log("[SwipeCard display] translationBoxOptions:", translationBoxOptions)
 
   const x = useMotionValue(0)
   const rotate = useTransform(x, [-200, 200], [-25, 25])
@@ -676,6 +700,51 @@ export default function SwipeCard({
     setTranslatedExplanation("")
     setImageError(false)
   }, [question.id])
+
+    // Translate when translation mode is enabled (external or internal),
+    // or when language/question changes while translation is enabled.
+  useEffect(() => {
+  if (!showTranslation) {
+        // Clear translations when translation mode is turned off
+        setTranslatedText("")
+        setTranslatedOptions([])
+        setTranslatedExplanation("")
+        setIsTranslating(false)
+        return
+      }
+
+      let mounted = true
+      ;(async () => {
+        setIsTranslating(true)
+        try {
+          // If question is a state question and stateTranslation exists, we already use it for display.
+          // But still populate translated state so UI shows a consistent translatedExplanation if needed.
+          const translatedQuestionText = await translateText(question.question, language)
+          const translatedOptionsArray = await Promise.all(
+            question.options.map(async (option) => await translateText(option, language))
+          )
+          let translatedExplanationText = ""
+          if (question.explanation) {
+            translatedExplanationText = await translateText(question.explanation, language)
+          }
+          if (!mounted) return
+          setTranslatedText(translatedQuestionText)
+          setTranslatedOptions(translatedOptionsArray)
+          setTranslatedExplanation(translatedExplanationText)
+        } catch (error) {
+          if (!mounted) return
+          setTranslatedText(`[${language.toUpperCase()}] ${question.question}`)
+          setTranslatedOptions(question.options.map((option) => `[${language.toUpperCase()}] ${option}`))
+          setTranslatedExplanation(question.explanation ? `[${language.toUpperCase()}] ${question.explanation}` : "")
+        } finally {
+          if (mounted) setIsTranslating(false)
+        }
+      })()
+
+      return () => {
+        mounted = false
+      }
+    }, [showTranslation, language, question])
 
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const offset = info.offset.x
@@ -697,9 +766,13 @@ export default function SwipeCard({
   const translateQuestion = async () => {
     if (isTranslating) return
 
-    // If using external translation control
+    // If using external translation control, notify parent and return (parent will toggle showTranslation)
     if (onTranslate) {
-      onTranslate()
+      try {
+        onTranslate()
+      } catch (e) {
+        // ignore
+      }
       return
     }
 
@@ -712,48 +785,29 @@ export default function SwipeCard({
       return
     }
 
+    setInternalShowTranslation(true) 
     setIsTranslating(true)
 
     try {
-      console.log("🚀 Starting translation to language:", language)
-      console.log("📝 Question to translate:", question.question)
-
       // Translate the main question
       const translatedQuestionText = await translateText(question.question, language)
-      console.log("✅ Translated question result:", translatedQuestionText)
-
       // Translate all answer options
       const translatedOptionsArray = await Promise.all(
-        question.options.map(async (option, index) => {
-          console.log(`📝 Translating option ${index}: "${option}"`)
-          const translated = await translateText(option, language)
-          console.log(`✅ Translated option ${index} result:`, translated)
-          return translated
-        }),
+        question.options.map(async (option) => await translateText(option, language))
       )
-
       // Translate explanation if it exists
       let translatedExplanationText = ""
       if (question.explanation) {
-        console.log("📝 Translating explanation:", question.explanation)
         translatedExplanationText = await translateText(question.explanation, language)
-        console.log("✅ Translated explanation result:", translatedExplanationText)
       }
-
       // Update state with translations
       setTranslatedText(translatedQuestionText)
       setTranslatedOptions(translatedOptionsArray)
       setTranslatedExplanation(translatedExplanationText)
-      setInternalShowTranslation(true)
-
-      console.log("🎉 Translation completed successfully")
     } catch (error) {
-      console.error("❌ Translation failed:", error)
-      // Fallback to simple tagged format
       setTranslatedText(`[${language.toUpperCase()}] ${question.question}`)
       setTranslatedOptions(question.options.map((option) => `[${language.toUpperCase()}] ${option}`))
       setTranslatedExplanation(question.explanation ? `[${language.toUpperCase()}] ${question.explanation}` : "")
-      setInternalShowTranslation(true)
     } finally {
       setIsTranslating(false)
     }
@@ -849,10 +903,14 @@ export default function SwipeCard({
             </div>
           </div>
 
-          <div className="space-y-4">
-            <p className="text-lg md:text-xl text-white leading-relaxed font-medium">{question.question}</p>
+          
 
-            {showTranslation && translatedText && (
+          <div className="space-y-4">
+            <p className="text-lg md:text-xl text-white leading-relaxed font-medium">
+              {question.question}
+            </p>
+            {/* Optionally, keep the translation box for reference, or remove if not needed */}
+            {showTranslation && (translationBoxQuestion || (Array.isArray(translationBoxOptions) && translationBoxOptions.length > 0)) && (
               <motion.div
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
@@ -884,7 +942,7 @@ export default function SwipeCard({
                     Translation
                   </span>
                 </div>
-                <p className="text-blue-200 text-lg leading-relaxed font-medium">{translatedText}</p>
+                <p className="text-blue-200 text-lg leading-relaxed font-medium">{translationBoxQuestion}</p>
               </motion.div>
             )}
           </div>
@@ -904,7 +962,10 @@ export default function SwipeCard({
           )}
 
           <div className="space-y-3">
-            {question.options.map((option, index) => (
+            {question.options.map((originalOption: string, index: number) => {
+              const translatedOption = Array.isArray(translationBoxOptions) ? translationBoxOptions[index] : undefined
+              const optionToShow = originalOption
+              return (
               <motion.button
                 key={index}
                 onClick={() => handleAnswerClick(index)}
@@ -926,16 +987,15 @@ export default function SwipeCard({
                 <div className="flex flex-col">
                   <div className="flex items-start">
                     <span className="mr-3 text-2xl font-black">{String.fromCharCode(65 + index)}.</span>
-                    <span>{option}</span>
+                    <span>{optionToShow}</span>
                   </div>
-                  {showTranslation && translatedOptions[index] && (
-                    <div className="mt-2 ml-8 text-blue-200 text-base opacity-80 font-medium">
-                      {translatedOptions[index]}
-                    </div>
+                  {showTranslation && translatedOption && (
+                    <div className="mt-2 ml-8 text-blue-200 text-base opacity-80 font-medium">{translatedOption}</div>
                   )}
                 </div>
               </motion.button>
-            ))}
+              )
+            })}
           </div>
 
           {!showAnswer && (
