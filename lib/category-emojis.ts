@@ -39,7 +39,6 @@ export function getCategoryEmoji(category: string): string {
     Economy: "💼",
     Environment: "�",
     Education: "�🎓",
-    Religion: "⛪",
     Language: "💬",
     Everyday: "🏠",
     Geography: "🗺️",
