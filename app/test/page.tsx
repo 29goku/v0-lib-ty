@@ -7,7 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Slider } from "@/components/ui/slider"
-import { ArrowLeft, Clock, Flag, Volume2, Languages } from "lucide-react"
+import { ArrowLeft, Clock } from "lucide-react"
+import SwipeCard from "@/components/SwipeCard"
 import Link from "next/link"
 import { getCategoryEmoji } from "@/lib/category-emojis"
 
@@ -374,97 +375,27 @@ export default function TestPage() {
           <Progress value={((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100} className="h-2" />
         </div>
 
-        <Card className="mb-6 border-2 border-purple-500/50 bg-gradient-to-br from-purple-900/30 to-black/50 backdrop-blur-sm">
-          <CardHeader>
-            <div className="flex items-start justify-between mb-4">
-              <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 px-4 py-2 text-lg font-black">
-                {getCategoryEmoji(currentQuestion.category)} {currentQuestion.category.toUpperCase()}
-              </Badge>
-
-              <div className="flex space-x-2">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="hover:bg-blue-500/20 border-2 border-blue-500/50 rounded-full p-2 transition-all transform hover:scale-110"
-                  onClick={() => setIsTranslated(!isTranslated)}
-                >
-                  <Languages className="w-4 h-4 text-blue-400" />
-                </Button>
-
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="hover:bg-green-500/20 border-2 border-green-500/50 rounded-full p-2 transition-all transform hover:scale-110"
-                  onClick={() => handleReadAloud(currentQuestion.question)}
-                >
-                  <Volume2 className="w-4 h-4 text-green-400" />
-                </Button>
-
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className={`border-2 rounded-full p-2 transition-all transform hover:scale-110 ${
-                    userProgress.flaggedQuestions.includes(currentQuestion.id)
-                      ? "bg-yellow-500/20 border-yellow-500/50 hover:bg-yellow-500/30"
-                      : "hover:bg-yellow-500/20 border-yellow-500/50"
-                  }`}
-                  onClick={() => {
-                    if (userProgress.flaggedQuestions.includes(currentQuestion.id)) {
-                      unflagQuestion(currentQuestion.id)
-                    } else {
-                      flagQuestion(currentQuestion.id)
-                    }
-                  }}
-                >
-                  <Flag
-                    className={`w-4 h-4 ${
-                      userProgress.flaggedQuestions.includes(currentQuestion.id)
-                        ? "text-yellow-400 fill-current"
-                        : "text-yellow-400"
-                    }`}
-                  />
-                </Button>
-              </div>
-            </div>
-
-            <CardTitle className="text-2xl font-bold leading-relaxed">
-              {isTranslated ? "English translation would appear here" : currentQuestion.question}
-            </CardTitle>
-
-            {currentQuestion.image && (
-              <div className="mt-4">
-                <img
-                  src={currentQuestion.image || "/placeholder.svg"}
-                  alt="Question image"
-                  className="w-full max-w-md mx-auto rounded-lg border-2 border-purple-500/30"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement
-                    target.src = "/abstract-question.png"
-                  }}
-                />
-              </div>
-            )}
-          </CardHeader>
-
-          <CardContent className="space-y-4">
-            {currentQuestion.options.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswerSelect(index)}
-                className={`w-full p-4 text-left rounded-xl border-2 transition-all transform hover:scale-105 ${
-                  selectedAnswer === index || currentAnswer?.selectedIndex === index
-                    ? "bg-gradient-to-r from-blue-900/50 to-purple-900/50 border-blue-400 text-blue-300 shadow-lg shadow-blue-500/25"
-                    : "bg-gradient-to-r from-gray-900/50 to-black/50 border-gray-600 text-gray-300 hover:border-gray-500"
-                }`}
-              >
-                <div className="flex items-center">
-                  <span className="mr-4 font-black text-xl w-8 text-yellow-400">{String.fromCharCode(65 + index)}</span>
-                  <span className="flex-1 font-semibold">{option}</span>
-                </div>
-              </button>
-            ))}
-          </CardContent>
-        </Card>
+        <div className="mb-6">
+          <SwipeCard
+            question={currentQuestion}
+            onSwipe={(dir) => {
+              if (dir === "right") handleNext()
+              else handlePrevious()
+            }}
+            onFlag={() => {
+              if (userProgress.flaggedQuestions.includes(currentQuestion.id)) {
+                unflagQuestion(currentQuestion.id)
+              } else {
+                flagQuestion(currentQuestion.id)
+              }
+            }}
+            isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
+            showAnswer={Boolean(currentAnswer)}
+            onAnswerSelect={handleAnswerSelect}
+            isTranslated={isTranslated}
+            onTranslate={() => setIsTranslated(!isTranslated)}
+          />
+        </div>
 
         <div className="flex justify-between items-center mb-6">
           <Button
