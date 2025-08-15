@@ -10,15 +10,204 @@
       "hier Meinungsfreiheit gilt."
     ],
     "answerIndex": 3,
-    "explanation": "In Deutschland gilt die Meinungsfreiheit als Grundrecht. Menschen dürfen ihre Meinung frei äußern, auch wenn sie kritisch gegenüber der Regierung ist."
+    "explanation": "In Deutschland gilt die Meinungsfreiheit als Grundrecht. Menschen dürfen ihre Meinung frei äußern, auch wenn sie kritisch gegenüber der Regierung ist.",
+    "translations": {
+      "en": {
+        "question": "In Germany, people are allowed to openly say something against the government because …",
+        "options": [
+          "there is freedom of religion here.",
+          "people pay taxes.",
+          "people have the right to vote.",
+          "there is freedom of expression here."
+        ],
+        "explanation": "In Germany, freedom of expression is a fundamental right. People can express their opinions freely, even if they are critical of the government."
+      },
+      "es": {
+        "question": "En Alemania, las personas pueden decir abiertamente algo contra el gobierno porque …",
+        "options": [
+          "aquí hay libertad de religión.",
+          "la gente paga impuestos.",
+          "la gente tiene derecho a votar.",
+          "aquí hay libertad de expresión."
+        ],
+        "explanation": "En Alemania, la libertad de expresión es un derecho fundamental. Las personas pueden expresar libremente sus opiniones, incluso si son críticas con el gobierno."
+      },
+      "fr": {
+        "question": "En Allemagne, les gens peuvent dire ouvertement quelque chose contre le gouvernement parce que …",
+        "options": [
+          "il y a la liberté de religion ici.",
+          "les gens paient des impôts.",
+          "les gens ont le droit de vote.",
+          "il y a la liberté d'expression ici."
+        ],
+        "explanation": "En Allemagne, la liberté d'expression est un droit fondamental. Les gens peuvent exprimer librement leur opinion, même si elle est critique envers le gouvernement."
+      },
+      "it": {
+        "question": "In Germania le persone possono dire apertamente qualcosa contro il governo perché …",
+        "options": [
+          "qui c'è libertà di religione.",
+          "le persone pagano le tasse.",
+          "le persone hanno il diritto di voto.",
+          "qui c'è libertà di espressione."
+        ],
+        "explanation": "In Germania la libertà di espressione è un diritto fondamentale. Le persone possono esprimere liberamente la propria opinione, anche se critica verso il governo."
+      },
+      "tr": {
+        "question": "Almanya'da insanlar hükümete karşı açıkça bir şey söyleyebilir çünkü …",
+        "options": [
+          "burada din özgürlüğü vardır.",
+          "insanlar vergi öder.",
+          "insanların oy hakkı vardır.",
+          "burada ifade özgürlüğü vardır."
+        ],
+        "explanation": "Almanya'da ifade özgürlüğü temel bir haktır. İnsanlar, hükümeti eleştirseler bile, fikirlerini özgürce ifade edebilirler."
+      },
+      "ar": {
+        "question": "في ألمانيا يُسمح للناس بالتعبير علنًا عن رأيهم ضد الحكومة لأن …",
+        "options": [
+          "هنا توجد حرية دينية.",
+          "الناس يدفعون الضرائب.",
+          "الناس لديهم حق التصويت.",
+          "هنا توجد حرية التعبير."
+        ],
+        "explanation": "في ألمانيا، حرية التعبير حق أساسي. يمكن للناس التعبير عن آرائهم بحرية حتى لو كانت ناقدة للحكومة."
+      },
+      "ru": {
+        "question": "В Германии люди могут открыто высказываться против правительства, потому что …",
+        "options": [
+          "здесь есть свобода вероисповедания.",
+          "люди платят налоги.",
+          "у людей есть избирательное право.",
+          "здесь есть свобода слова."
+        ],
+        "explanation": "В Германии свобода слова является основным правом. Люди могут свободно выражать свое мнение, даже если оно критично по отношению к правительству."
+      },
+      "zh": {
+        "question": "在德国，人们可以公开说反对政府的话，因为……",
+        "options": [
+          "这里有宗教自由。",
+          "人们缴税。",
+          "人们有选举权。",
+          "这里有言论自由。"
+        ],
+        "explanation": "在德国，言论自由是一项基本权利。人们可以自由表达自己的观点，即使是对政府的批评。"
+      },
+      "hi": {
+        "question": "जर्मनी में लोग सरकार के खिलाफ खुलकर कुछ कह सकते हैं क्योंकि …",
+        "options": [
+          "यहाँ धार्मिक स्वतंत्रता है।",
+          "लोग टैक्स देते हैं।",
+          "लोगों को मतदान का अधिकार है।",
+          "यहाँ अभिव्यक्ति की स्वतंत्रता है।"
+        ],
+        "explanation": "जर्मनी में अभिव्यक्ति की स्वतंत्रता एक मौलिक अधिकार है। लोग अपनी राय स्वतंत्र रूप से व्यक्त कर सकते हैं, भले ही वह सरकार की आलोचना हो।"
+      }
+    }
   },
   {
     "id": "q002",
     "category": "Politics",
     "question": "In Deutschland können Eltern bis zum 14. Lebensjahr ihres Kindes entscheiden, ob es in der Schule am … teilnimmt.",
-    "options": ["Geschichtsunterricht", "Religionsunterricht", "Politikunterricht", "Sprachunterricht"],
+    "options": [
+      "Geschichtsunterricht",
+      "Religionsunterricht",
+      "Politikunterricht",
+      "Sprachunterricht"
+    ],
     "answerIndex": 1,
-    "explanation": "Eltern haben das Recht zu entscheiden, ob ihr Kind am Religionsunterricht teilnimmt. Dies ist Teil der Religionsfreiheit in Deutschland."
+    "explanation": "Eltern haben das Recht zu entscheiden, ob ihr Kind am Religionsunterricht teilnimmt. Dies ist Teil der Religionsfreiheit in Deutschland.",
+    "translations": {
+      "en": {
+        "question": "In Germany, parents can decide until their child is 14 years old whether they participate in … at school.",
+        "options": [
+          "history lessons",
+          "religious education",
+          "politics lessons",
+          "language lessons"
+        ],
+        "explanation": "Parents have the right to decide whether their child participates in religious education. This is part of religious freedom in Germany."
+      },
+      "es": {
+        "question": "En Alemania, los padres pueden decidir hasta que su hijo cumpla 14 años si participa en … en la escuela.",
+        "options": [
+          "clases de historia",
+          "clases de religión",
+          "clases de política",
+          "clases de idiomas"
+        ],
+        "explanation": "Los padres tienen derecho a decidir si su hijo asiste a clases de religión. Esto forma parte de la libertad religiosa en Alemania."
+      },
+      "fr": {
+        "question": "En Allemagne, les parents peuvent décider jusqu'aux 14 ans de leur enfant s'il participe à … à l'école.",
+        "options": [
+          "cours d'histoire",
+          "cours de religion",
+          "cours de politique",
+          "cours de langue"
+        ],
+        "explanation": "Les parents ont le droit de décider si leur enfant participe au cours de religion. Cela fait partie de la liberté religieuse en Allemagne."
+      },
+      "it": {
+        "question": "In Germania, i genitori possono decidere fino ai 14 anni del figlio se partecipa a … a scuola.",
+        "options": [
+          "lezioni di storia",
+          "lezioni di religione",
+          "lezioni di politica",
+          "lezioni di lingua"
+        ],
+        "explanation": "I genitori hanno il diritto di decidere se il figlio partecipa alle lezioni di religione. Questo fa parte della libertà religiosa in Germania."
+      },
+      "tr": {
+        "question": "Almanya'da ebeveynler, çocukları 14 yaşına gelene kadar okulda … dersine katılıp katılmayacağına karar verebilir.",
+        "options": [
+          "tarih dersi",
+          "din dersi",
+          "siyaset dersi",
+          "dil dersi"
+        ],
+        "explanation": "Ebeveynler, çocuklarının din dersine katılıp katılmayacağına karar verme hakkına sahiptir. Bu, Almanya'da din özgürlüğünün bir parçasıdır."
+      },
+      "ar": {
+        "question": "في ألمانيا، يمكن للوالدين حتى سن الرابعة عشرة لطفلهما أن يقررا ما إذا كان سيشارك في … في المدرسة.",
+        "options": [
+          "دروس التاريخ",
+          "دروس الدين",
+          "دروس السياسة",
+          "دروس اللغة"
+        ],
+        "explanation": "يحق للوالدين أن يقررا ما إذا كان طفلهما سيشارك في دروس الدين. هذا جزء من حرية الدين في ألمانيا."
+      },
+      "ru": {
+        "question": "В Германии родители могут до 14 лет решать, будет ли их ребенок посещать … в школе.",
+        "options": [
+          "уроки истории",
+          "уроки религии",
+          "уроки политики",
+          "уроки языка"
+        ],
+        "explanation": "Родители имеют право решать, будет ли их ребенок посещать уроки религии. Это часть свободы вероисповедания в Германии."
+      },
+      "zh": {
+        "question": "在德国，父母可以决定孩子在14岁之前是否参加学校的……课程。",
+        "options": [
+          "历史课",
+          "宗教课",
+          "政治课",
+          "语言课"
+        ],
+        "explanation": "父母有权决定孩子是否参加宗教课。这是德国宗教自由的一部分。"
+      },
+      "hi": {
+        "question": "जर्मनी में माता-पिता अपने बच्चे के 14 वर्ष की आयु तक यह तय कर सकते हैं कि वह स्कूल में … में भाग लेगा या नहीं।",
+        "options": [
+          "इतिहास की कक्षा",
+          "धर्म की कक्षा",
+          "राजनीति की कक्षा",
+          "भाषा की कक्षा"
+        ],
+        "explanation": "माता-पिता को यह तय करने का अधिकार है कि उनका बच्चा धर्म की कक्षा में भाग लेगा या नहीं। यह जर्मनी में धार्मिक स्वतंत्रता का हिस्सा है।"
+      }
+    }
   },
   {
     "id": "q003",
@@ -31,15 +220,204 @@
       "Die Gerichte machen die Gesetze."
     ],
     "answerIndex": 0,
-    "explanation": "In einem Rechtsstaat sind alle - sowohl Bürger als auch staatliche Institutionen - an das Gesetz gebunden. Niemand steht über dem Gesetz."
+    "explanation": "In einem Rechtsstaat sind alle - sowohl Bürger als auch staatliche Institutionen - an das Gesetz gebunden. Niemand steht über dem Gesetz.",
+    "translations": {
+      "en": {
+        "question": "Germany is a constitutional state. What does that mean?",
+        "options": [
+          "All residents and the state must obey the law.",
+          "The state does not have to obey the law.",
+          "Only Germans must obey the law.",
+          "The courts make the laws."
+        ],
+        "explanation": "In a constitutional state, everyone – both citizens and state institutions – is bound by the law. No one is above the law."
+      },
+      "es": {
+        "question": "Alemania es un estado de derecho. ¿Qué significa eso?",
+        "options": [
+          "Todos los residentes y el Estado deben obedecer la ley.",
+          "El Estado no tiene que obedecer la ley.",
+          "Solo los alemanes deben obedecer la ley.",
+          "Los tribunales hacen las leyes."
+        ],
+        "explanation": "En un estado de derecho, todos – tanto los ciudadanos como las instituciones estatales – están sujetos a la ley. Nadie está por encima de la ley."
+      },
+      "fr": {
+        "question": "L'Allemagne est un État de droit. Qu'est-ce que cela signifie ?",
+        "options": [
+          "Tous les habitants et l'État doivent respecter la loi.",
+          "L'État n'a pas à respecter la loi.",
+          "Seuls les Allemands doivent respecter la loi.",
+          "Les tribunaux font les lois."
+        ],
+        "explanation": "Dans un État de droit, tout le monde – citoyens et institutions de l'État – est soumis à la loi. Personne n'est au-dessus de la loi."
+      },
+      "it": {
+        "question": "La Germania è uno stato di diritto. Cosa significa?",
+        "options": [
+          "Tutti i residenti e lo Stato devono rispettare la legge.",
+          "Lo Stato non deve rispettare la legge.",
+          "Solo i tedeschi devono rispettare la legge.",
+          "I tribunali fanno le leggi."
+        ],
+        "explanation": "In uno stato di diritto, tutti – sia i cittadini che le istituzioni statali – sono vincolati dalla legge. Nessuno è al di sopra della legge."
+      },
+      "tr": {
+        "question": "Almanya bir hukuk devletidir. Bu ne anlama gelir?",
+        "options": [
+          "Tüm sakinler ve devlet yasalara uymak zorundadır.",
+          "Devlet yasalara uymak zorunda değildir.",
+          "Sadece Almanlar yasalara uymak zorundadır.",
+          "Mahkemeler yasaları yapar."
+        ],
+        "explanation": "Bir hukuk devletinde herkes – hem vatandaşlar hem de devlet kurumları – yasaya tabidir. Hiç kimse yasanın üstünde değildir."
+      },
+      "ar": {
+        "question": "ألمانيا دولة قانون. ماذا يعني ذلك؟",
+        "options": [
+          "يجب على جميع السكان والدولة الالتزام بالقانون.",
+          "الدولة ليست ملزمة بالقانون.",
+          "فقط الألمان ملزمون بالقانون.",
+          "المحاكم تضع القوانين."
+        ],
+        "explanation": "في دولة القانون، الجميع – المواطنون والمؤسسات الحكومية – ملزمون بالقانون. لا أحد فوق القانون."
+      },
+      "ru": {
+        "question": "Германия — правовое государство. Что это значит?",
+        "options": [
+          "Все жители и государство должны соблюдать законы.",
+          "Государство не обязано соблюдать законы.",
+          "Только немцы должны соблюдать законы.",
+          "Суды принимают законы."
+        ],
+        "explanation": "В правовом государстве все – и граждане, и государственные учреждения – подчиняются закону. Никто не стоит выше закона."
+      },
+      "zh": {
+        "question": "德国是法治国家。这是什么意思？",
+        "options": [
+          "所有居民和国家都必须遵守法律。",
+          "国家不必遵守法律。",
+          "只有德国人必须遵守法律。",
+          "法院制定法律。"
+        ],
+        "explanation": "在法治国家，所有人——包括公民和国家机构——都必须遵守法律。没有人凌驾于法律之上。"
+      },
+      "hi": {
+        "question": "जर्मनी एक कानून का राज्य है। इसका क्या अर्थ है?",
+        "options": [
+          "सभी निवासी और राज्य को कानून का पालन करना चाहिए।",
+          "राज्य को कानून का पालन नहीं करना है।",
+          "केवल जर्मनों को कानून का पालन करना है।",
+          "अदालतें कानून बनाती हैं।"
+        ],
+        "explanation": "एक कानून के राज्य में सभी – नागरिक और राज्य संस्थाएँ – कानून के अधीन होते हैं। कोई भी कानून से ऊपर नहीं है।"
+      }
+    }
   },
   {
     "id": "q004",
     "category": "Politics",
     "question": "Welches Recht gehört zu den Grundrechten in Deutschland?",
-    "options": ["Waffenbesitz", "Faustrecht", "Meinungsfreiheit", "Selbstjustiz"],
+    "options": [
+      "Waffenbesitz",
+      "Faustrecht",
+      "Meinungsfreiheit",
+      "Selbstjustiz"
+    ],
     "answerIndex": 2,
-    "explanation": "Die Meinungsfreiheit ist ein fundamentales Grundrecht in Deutschland und im Grundgesetz verankert."
+    "explanation": "Die Meinungsfreiheit ist ein fundamentales Grundrecht in Deutschland und im Grundgesetz verankert.",
+    "translations": {
+      "en": {
+        "question": "Which right is one of the fundamental rights in Germany?",
+        "options": [
+          "Gun ownership",
+          "Right of fist",
+          "Freedom of expression",
+          "Vigilantism"
+        ],
+        "explanation": "Freedom of expression is a fundamental right in Germany and is enshrined in the Basic Law."
+      },
+      "es": {
+        "question": "¿Qué derecho es uno de los derechos fundamentales en Alemania?",
+        "options": [
+          "Posesión de armas",
+          "Derecho de puño",
+          "Libertad de expresión",
+          "Justicia por mano propia"
+        ],
+        "explanation": "La libertad de expresión es un derecho fundamental en Alemania y está consagrada en la Ley Fundamental."
+      },
+      "fr": {
+        "question": "Quel droit fait partie des droits fondamentaux en Allemagne ?",
+        "options": [
+          "Possession d'armes",
+          "Droit du poing",
+          "Liberté d'expression",
+          "Justice personnelle"
+        ],
+        "explanation": "La liberté d'expression est un droit fondamental en Allemagne et est inscrite dans la Loi fondamentale."
+      },
+      "it": {
+        "question": "Quale diritto è uno dei diritti fondamentali in Germania?",
+        "options": [
+          "Possesso di armi",
+          "Diritto del pugno",
+          "Libertà di espressione",
+          "Giustizia fai da te"
+        ],
+        "explanation": "La libertà di espressione è un diritto fondamentale in Germania ed è sancita nella Legge fondamentale."
+      },
+      "tr": {
+        "question": "Almanya'daki temel haklardan biri hangisidir?",
+        "options": [
+          "Silah sahipliği",
+          "Yumruk hakkı",
+          "İfade özgürlüğü",
+          "Kendi adaletini sağlama"
+        ],
+        "explanation": "İfade özgürlüğü, Almanya'da temel bir haktır ve Temel Kanun'da yer almaktadır."
+      },
+      "ar": {
+        "question": "ما هو الحق الذي يُعتبر من الحقوق الأساسية في ألمانيا؟",
+        "options": [
+          "امتلاك الأسلحة",
+          "حق القبضة",
+          "حرية التعبير",
+          "العدالة الذاتية"
+        ],
+        "explanation": "حرية التعبير هي حق أساسي في ألمانيا ومكرسة في القانون الأساسي."
+      },
+      "ru": {
+        "question": "Какое право является одним из основных прав в Германии?",
+        "options": [
+          "Владение оружием",
+          "Право кулака",
+          "Свобода выражения",
+          "Самосуд"
+        ],
+        "explanation": "Свобода выражения является основным правом в Германии и закреплена в Основном законе."
+      },
+      "zh": {
+        "question": "德国的基本权利之一是什么？",
+        "options": [
+          "持枪权",
+          "拳头权",
+          "言论自由",
+          "私刑"
+        ],
+        "explanation": "言论自由是德国的一项基本权利，并被载入基本法。"
+      },
+      "hi": {
+        "question": "जर्मनी में कौन सा अधिकार मौलिक अधिकारों में से एक है?",
+        "options": [
+          "हथियार रखने का अधिकार",
+          "मुक्का अधिकार",
+          "अभिव्यक्ति की स्वतंत्रता",
+          "स्वयं न्याय"
+        ],
+        "explanation": "अभिव्यक्ति की स्वतंत्रता जर्मनी में एक मौलिक अधिकार है और इसे बुनियादी कानून में दर्ज किया गया है।"
+      }
+    }
   },
   {
     "id": "q005",
@@ -52,13 +430,110 @@
       "Alle wahlberechtigten Personen müssen wählen."
     ],
     "answerIndex": 2,
-    "explanation": "Freie Wahlen bedeuten, dass Wähler ohne Zwang, Bestechung oder Einschüchterung ihre Stimme abgeben können."
+    "explanation": "Freie Wahlen bedeuten, dass Wähler ohne Zwang, Bestechung oder Einschüchterung ihre Stimme abgeben können.",
+    "translations": {
+      "en": {
+        "question": "Elections in Germany are free. What does that mean?",
+        "options": [
+          "You can accept money if you vote for a specific candidate.",
+          "Only people who have never been in prison are allowed to vote.",
+          "Voters must not be influenced or forced to vote in a certain way and must not suffer disadvantages because of their vote.",
+          "All eligible voters must vote."
+        ],
+        "explanation": "Free elections mean that voters can cast their votes without coercion, bribery, or intimidation."
+      },
+      "es": {
+        "question": "Las elecciones en Alemania son libres. ¿Qué significa eso?",
+        "options": [
+          "Puedes aceptar dinero si votas por un candidato específico.",
+          "Solo las personas que nunca han estado en prisión pueden votar.",
+          "Los votantes no deben ser influenciados ni obligados a votar de cierta manera y no deben sufrir desventajas por su voto.",
+          "Todos los votantes elegibles deben votar."
+        ],
+        "explanation": "Las elecciones libres significan que los votantes pueden emitir su voto sin coerción, soborno o intimidación."
+      },
+      "fr": {
+        "question": "Les élections en Allemagne sont libres. Qu'est-ce que cela signifie ?",
+        "options": [
+          "Vous pouvez accepter de l'argent si vous votez pour un candidat spécifique.",
+          "Seules les personnes qui n'ont jamais été en prison peuvent voter.",
+          "Les électeurs ne doivent pas être influencés ou forcés à voter d'une certaine manière et ne doivent pas subir de désavantages à cause de leur vote.",
+          "Tous les électeurs éligibles doivent voter."
+        ],
+        "explanation": "Les élections libres signifient que les électeurs peuvent voter sans contrainte, corruption ou intimidation."
+      },
+      "it": {
+        "question": "Le elezioni in Germania sono libere. Cosa significa?",
+        "options": [
+          "Puoi accettare denaro se voti per un candidato specifico.",
+          "Solo le persone che non sono mai state in prigione possono votare.",
+          "Gli elettori non devono essere influenzati o costretti a votare in un certo modo e non devono subire svantaggi a causa del loro voto.",
+          "Tutti gli elettori idonei devono votare."
+        ],
+        "explanation": "Le elezioni libere significano che gli elettori possono esprimere il loro voto senza coercizione, corruzione o intimidazione."
+      },
+      "tr": {
+        "question": "Almanya'da seçimler özgürdür. Bu ne anlama gelir?",
+        "options": [
+          "Belirli bir adaya oy verirseniz para kabul edebilirsiniz.",
+          "Sadece hiç hapse girmemiş kişiler oy kullanabilir.",
+          "Seçmenler etkilenmemeli veya belirli bir şekilde oy kullanmaya zorlanmamalı ve oyları nedeniyle dezavantaj yaşamamalıdır.",
+          "Tüm uygun seçmenler oy kullanmalıdır."
+        ],
+        "explanation": "Özgür seçimler, seçmenlerin oylarını zorla, rüşvet veya tehdit olmadan kullanabilmeleri anlamına gelir."
+      },
+      "ar": {
+        "question": "الانتخابات في ألمانيا حرة. ماذا يعني ذلك؟",
+        "options": [
+          "يمكنك قبول المال إذا صوتت لمرشح معين.",
+          "فقط الأشخاص الذين لم يدخلوا السجن من قبل يمكنهم التصويت.",
+          "يجب ألا يتأثر الناخبون أو يُجبروا على التصويت بطريقة معينة ويجب ألا يعانوا من عيوب بسبب تصويتهم.",
+          "يجب على جميع الناخبين المؤهلين التصويت."
+        ],
+        "explanation": "الانتخابات الحرة تعني أن الناخبين يمكنهم الإدلاء بأصواتهم دون إكراه أو رشوة أو تخويف."
+      },
+      "ru": {
+        "question": "Выборы в Германии свободны. Что это значит?",
+        "options": [
+          "Вы можете принять деньги, если проголосуете за определенного кандидата.",
+          "Только люди, которые никогда не были в тюрьме, могут голосовать.",
+          "Избиратели не должны подвергаться влиянию или принуждению голосовать определенным образом и не должны страдать от недостатков из-за своего голоса.",
+          "Все имеющие право голоса должны голосовать."
+        ],
+        "explanation": "Свободные выборы означают, что избиратели могут голосовать без принуждения, взяточничества или запугивания."
+      },
+      "zh": {
+        "question": "德国的选举是自由的。这是什么意思？",
+        "options": [
+          "如果你为特定候选人投票，可以接受金钱。",
+          "只有从未入狱的人才可以投票。",
+          "选民不得被影响或强迫以某种方式投票，也不得因投票而遭受不利影响。",
+          "所有符合条件的选民都必须投票。"
+        ],
+        "explanation": "自由选举意味着选民可以在没有强迫、贿赂或恐吓的情况下投票。"
+      },
+      "hi": {
+        "question": "जर्मनी में चुनाव स्वतंत्र हैं। इसका क्या मतलब है?",
+        "options": [
+          "यदि आप किसी विशेष उम्मीदवार को वोट देते हैं तो आप पैसे स्वीकार कर सकते हैं।",
+          "केवल वे लोग जो कभी जेल में नहीं गए हैं, वोट देने के लिए पात्र हैं।",
+          "मतदाताओं को प्रभावित या किसी विशेष तरीके से वोट देने के लिए मजबूर नहीं किया जाना चाहिए और उनके वोट के कारण उन्हें नुकसान नहीं होना चाहिए।",
+          "सभी पात्र मतदाताओं को वोट देना चाहिए।"
+        ],
+        "explanation": "स्वतंत्र चुनाव का मतलब है कि मतदाता बिना किसी दबाव, रिश्वत या धमकी के अपना वोट डाल सकते हैं।"
+      }
+    }
   },
   {
     "id": "q006",
     "category": "Politics",
     "question": "Wie heißt die deutsche Verfassung?",
-    "options": ["Volksgesetz", "Bundesgesetz", "Deutsches Gesetz", "Grundgesetz"],
+    "options": [
+      "Volksgesetz",
+      "Bundesgesetz",
+      "Deutsches Gesetz",
+      "Grundgesetz"
+    ],
     "answerIndex": 3,
     "explanation": "Das Grundgesetz ist die Verfassung der Bundesrepublik Deutschland und wurde 1949 verabschiedet."
   },
@@ -66,7 +541,12 @@
     "id": "q007",
     "category": "Politics",
     "question": "Welches Recht gehört zu den Grundrechten, die nach der deutschen Verfassung garantiert werden? Das Recht auf …",
-    "options": ["Glaubens- und Gewissensfreiheit", "Unterhaltung", "Arbeit", "Wohnung"],
+    "options": [
+      "Glaubens- und Gewissensfreiheit",
+      "Unterhaltung",
+      "Arbeit",
+      "Wohnung"
+    ],
     "answerIndex": 0,
     "explanation": "Die Glaubens- und Gewissensfreiheit ist ein im Grundgesetz garantiertes Grundrecht (Artikel 4)."
   },
@@ -87,7 +567,12 @@
     "id": "q009",
     "category": "Politics",
     "question": "Welches Grundrecht gilt in Deutschland nur für Ausländerinnen/Ausländer? Das Grundrecht auf …",
-    "options": ["Schutz der Familie", "Menschenwürde", "Asyl", "Meinungsfreiheit"],
+    "options": [
+      "Schutz der Familie",
+      "Menschenwürde",
+      "Asyl",
+      "Meinungsfreiheit"
+    ],
     "answerIndex": 2,
     "explanation": "Das Asylrecht gilt nur für Ausländer, da deutsche Staatsangehörige bereits Schutz durch ihre Staatsangehörigkeit haben."
   },
@@ -95,7 +580,12 @@
     "id": "q010",
     "category": "Law",
     "question": "Was ist mit dem deutschen Grundgesetz vereinbar?",
-    "options": ["die Prügelstrafe", "die Folter", "die Todesstrafe", "die Geldstrafe"],
+    "options": [
+      "die Prügelstrafe",
+      "die Folter",
+      "die Todesstrafe",
+      "die Geldstrafe"
+    ],
     "answerIndex": 3,
     "explanation": "Geldstrafen sind rechtmäßige Sanktionen im deutschen Rechtssystem. Körperstrafen und Todesstrafe sind verfassungswidrig."
   },
@@ -103,7 +593,12 @@
     "id": "q011",
     "category": "Politics",
     "question": "Wie wird die Verfassung der Bundesrepublik Deutschland genannt?",
-    "options": ["Grundgesetz", "Bundesverfassung", "Gesetzbuch", "Verfassungsvertrag"],
+    "options": [
+      "Grundgesetz",
+      "Bundesverfassung",
+      "Gesetzbuch",
+      "Verfassungsvertrag"
+    ],
     "answerIndex": 0,
     "explanation": "Die deutsche Verfassung heißt 'Grundgesetz' und wurde 1949 verabschiedet."
   },
@@ -150,7 +645,12 @@
     "id": "q015",
     "category": "Politics",
     "question": "Was verbietet das deutsche Grundgesetz?",
-    "options": ["Militärdienst", "Zwangsarbeit", "freie Berufswahl", "Arbeit im Ausland"],
+    "options": [
+      "Militärdienst",
+      "Zwangsarbeit",
+      "freie Berufswahl",
+      "Arbeit im Ausland"
+    ],
     "answerIndex": 1,
     "explanation": "Das Grundgesetz verbietet Zwangsarbeit explizit. Jeder hat das Recht auf freie Berufswahl."
   },
@@ -210,7 +710,12 @@
     "id": "q020",
     "category": "Politics",
     "question": "Eine Partei in Deutschland verfolgt das Ziel, eine Diktatur zu errichten. Sie ist dann …",
-    "options": ["tolerant.", "rechtsstaatlich orientiert.", "gesetzestreu.", "verfassungswidrig."],
+    "options": [
+      "tolerant.",
+      "rechtsstaatlich orientiert.",
+      "gesetzestreu.",
+      "verfassungswidrig."
+    ],
     "answerIndex": 3,
     "explanation": "Parteien, die die demokratische Grundordnung abschaffen wollen, sind verfassungswidrig und können verboten werden."
   },
@@ -219,7 +724,12 @@
     "category": "Culture",
     "question": "Welches ist das Wappen der Bundesrepublik Deutschland?",
     "image": "/images/coat-of-arms-question.jpg",
-    "options": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
+    "options": [
+      "Bild 1",
+      "Bild 2",
+      "Bild 3",
+      "Bild 4"
+    ],
     "answerIndex": 0,
     "explanation": "Das Wappen der Bundesrepublik Deutschland zeigt den Bundesadler - einen schwarzen Adler auf goldenem Grund. Dies ist das offizielle Staatswappen seit 1950."
   },
@@ -227,7 +737,12 @@
     "id": "q022",
     "category": "Geography",
     "question": "Was für eine Staatsform hat Deutschland?",
-    "options": ["Monarchie", "Diktatur", "Republik", "Fürstentum"],
+    "options": [
+      "Monarchie",
+      "Diktatur",
+      "Republik",
+      "Fürstentum"
+    ],
     "answerIndex": 2,
     "explanation": "Deutschland ist eine Bundesrepublik, eine demokratische Staatsform ohne Monarchen."
   },
@@ -248,7 +763,12 @@
     "id": "q024",
     "category": "Geography",
     "question": "Wie viele Bundesländer hat die Bundesrepublik Deutschland?",
-    "options": ["14", "15", "16", "17"],
+    "options": [
+      "14",
+      "15",
+      "16",
+      "17"
+    ],
     "answerIndex": 2,
     "explanation": "Deutschland besteht aus 16 Bundesländern, einschließlich der drei Stadtstaaten Berlin, Hamburg und Bremen."
   },
@@ -256,7 +776,12 @@
     "id": "q025",
     "category": "Geography",
     "question": "Was ist kein Bundesland der Bundesrepublik Deutschland?",
-    "options": ["Elsass-Lothringen", "Nordrhein-Westfalen", "Mecklenburg-Vorpommern", "Sachsen-Anhalt"],
+    "options": [
+      "Elsass-Lothringen",
+      "Nordrhein-Westfalen",
+      "Mecklenburg-Vorpommern",
+      "Sachsen-Anhalt"
+    ],
     "answerIndex": 0,
     "explanation": "Elsass-Lothringen gehört zu Frankreich, nicht zu Deutschland."
   },
@@ -277,7 +802,12 @@
     "id": "q027",
     "category": "Politics",
     "question": "Deutschland ist …",
-    "options": ["ein sozialistischer Staat.", "ein Bundesstaat.", "eine Diktatur.", "eine Monarchie."],
+    "options": [
+      "ein sozialistischer Staat.",
+      "ein Bundesstaat.",
+      "eine Diktatur.",
+      "eine Monarchie."
+    ],
     "answerIndex": 1,
     "explanation": "Deutschland ist ein föderaler Bundesstaat mit 16 Bundesländern."
   },
@@ -285,7 +815,12 @@
     "id": "q028",
     "category": "Politics",
     "question": "Wer wählt in Deutschland die Abgeordneten zum Bundestag?",
-    "options": ["das Militär", "die Wirtschaft", "das wahlberechtigte Volk", "die Verwaltung"],
+    "options": [
+      "das Militär",
+      "die Wirtschaft",
+      "das wahlberechtigte Volk",
+      "die Verwaltung"
+    ],
     "answerIndex": 2,
     "explanation": "Die Bundestagsabgeordneten werden vom wahlberechtigten Volk in freien, geheimen und direkten Wahlen gewählt."
   },
@@ -293,7 +828,12 @@
     "id": "q029",
     "category": "Culture",
     "question": "Welches Tier ist das Wappentier der Bundesrepublik Deutschland?",
-    "options": ["Löwe", "Adler", "Bär", "Pferd"],
+    "options": [
+      "Löwe",
+      "Adler",
+      "Bär",
+      "Pferd"
+    ],
     "answerIndex": 1,
     "explanation": "Der Bundesadler ist das Wappentier Deutschlands und Symbol der Bundesrepublik."
   },
@@ -301,7 +841,12 @@
     "id": "q030",
     "category": "Politics",
     "question": "Was ist kein Merkmal unserer Demokratie?",
-    "options": ["regelmäßige Wahlen", "Pressezensur", "Meinungsfreiheit", "verschiedene Parteien"],
+    "options": [
+      "regelmäßige Wahlen",
+      "Pressezensur",
+      "Meinungsfreiheit",
+      "verschiedene Parteien"
+    ],
     "answerIndex": 1,
     "explanation": "Pressezensur widerspricht den demokratischen Grundprinzipien. In einer Demokratie herrscht Pressefreiheit."
   },
@@ -309,7 +854,12 @@
     "id": "q031",
     "category": "Politics",
     "question": "Die Zusammenarbeit von Parteien zur Bildung einer Regierung nennt man in Deutschland …",
-    "options": ["Einheit.", "Koalition.", "Ministerium.", "Fraktion."],
+    "options": [
+      "Einheit.",
+      "Koalition.",
+      "Ministerium.",
+      "Fraktion."
+    ],
     "answerIndex": 1,
     "explanation": "Eine Koalition ist ein Bündnis mehrerer Parteien zur gemeinsamen Regierungsbildung."
   },
@@ -317,7 +867,12 @@
     "id": "q032",
     "category": "Politics",
     "question": "Was ist keine staatliche Gewalt in Deutschland?",
-    "options": ["Gesetzgebung", "Regierung", "Presse", "Rechtsprechung"],
+    "options": [
+      "Gesetzgebung",
+      "Regierung",
+      "Presse",
+      "Rechtsprechung"
+    ],
     "answerIndex": 2,
     "explanation": "Die Presse ist keine staatliche Gewalt, sondern ein wichtiges Kontrollorgan der Demokratie (vierte Gewalt)."
   },
@@ -338,7 +893,12 @@
     "id": "q034",
     "category": "Politics",
     "question": "Was ist Deutschland nicht?",
-    "options": ["eine Demokratie", "ein Rechtsstaat", "eine Monarchie", "ein Sozialstaat"],
+    "options": [
+      "eine Demokratie",
+      "ein Rechtsstaat",
+      "eine Monarchie",
+      "ein Sozialstaat"
+    ],
     "answerIndex": 2,
     "explanation": "Deutschland ist eine Republik, keine Monarchie. Es gibt keinen König oder Kaiser."
   },
@@ -346,7 +906,12 @@
     "id": "q035",
     "category": "Politics",
     "question": "Womit finanziert der deutsche Staat die Sozialversicherung?",
-    "options": ["Kirchensteuer", "Sozialabgaben", "Spendengeldern", "Vereinsbeiträgen"],
+    "options": [
+      "Kirchensteuer",
+      "Sozialabgaben",
+      "Spendengeldern",
+      "Vereinsbeiträgen"
+    ],
     "answerIndex": 1,
     "explanation": "Die Sozialversicherung wird hauptsächlich durch Beiträge von Arbeitnehmern und Arbeitgebern finanziert."
   },
@@ -380,7 +945,12 @@
     "id": "q038",
     "category": "Politics",
     "question": "Die Bundesrepublik Deutschland ist ein demokratischer und sozialer …",
-    "options": ["Staatenverbund.", "Bundesstaat.", "Staatenbund.", "Zentralstaat."],
+    "options": [
+      "Staatenverbund.",
+      "Bundesstaat.",
+      "Staatenbund.",
+      "Zentralstaat."
+    ],
     "answerIndex": 1,
     "explanation": "Deutschland ist ein Bundesstaat - die Länder haben eigene Kompetenzen, aber der Bund hat die Oberhoheit."
   },
@@ -427,7 +997,12 @@
     "id": "q042",
     "category": "Politics",
     "question": "Wer beschließt in Deutschland ein neues Gesetz?",
-    "options": ["die Regierung", "das Parlament", "die Gerichte", "die Polizei"],
+    "options": [
+      "die Regierung",
+      "das Parlament",
+      "die Gerichte",
+      "die Polizei"
+    ],
     "answerIndex": 1,
     "explanation": "Neue Gesetze werden in Deutschland vom Parlament (Bundestag und Bundesrat) beschlossen."
   },
@@ -500,7 +1075,12 @@
     "id": "q048",
     "category": "Politics",
     "question": "Welches Organ gehört nicht zu den Verfassungsorganen Deutschlands?",
-    "options": ["der Bundesrat", "die Bundespräsidentin/der Bundespräsident", "die Bürgerversammlung", "die Regierung"],
+    "options": [
+      "der Bundesrat",
+      "die Bundespräsidentin/der Bundespräsident",
+      "die Bürgerversammlung",
+      "die Regierung"
+    ],
     "answerIndex": 2,
     "explanation": "Verfassungsorgane sind der Bundestag, der Bundesrat, der Bundespräsident, die Bundesregierung und das Bundesverfassungsgericht. Eine Bürgerversammlung ist kein Verfassungsorgan."
   },
@@ -508,7 +1088,12 @@
     "id": "q049",
     "category": "Politics",
     "question": "Wer bestimmt in Deutschland die Schulpolitik?",
-    "options": ["die Lehrer und Lehrerinnen", "die Bundesländer", "das Familienministerium", "die Universitäten"],
+    "options": [
+      "die Lehrer und Lehrerinnen",
+      "die Bundesländer",
+      "das Familienministerium",
+      "die Universitäten"
+    ],
     "answerIndex": 1,
     "explanation": "Die Schulpolitik liegt in Deutschland in der Kompetenz der einzelnen Bundesländer."
   },
@@ -542,7 +1127,12 @@
     "id": "q052",
     "category": "Politics",
     "question": "Was bedeutet 'Volkssouveränität'? Alle Staatsgewalt geht vom ...",
-    "options": ["Volke aus.", "Bundestag aus.", "preußischen König aus.", "Bundesverfassungsgericht aus."],
+    "options": [
+      "Volke aus.",
+      "Bundestag aus.",
+      "preußischen König aus.",
+      "Bundesverfassungsgericht aus."
+    ],
     "answerIndex": 0,
     "explanation": "Volkssouveränität ist ein demokratisches Prinzip, das besagt, dass die Staatsgewalt vom Volk ausgeht."
   },
@@ -563,7 +1153,12 @@
     "id": "q054",
     "category": "Politics",
     "question": "Was ist keine staatliche Gewalt in Deutschland?",
-    "options": ["Legislative", "Judikative", "Exekutive", "Direktive"],
+    "options": [
+      "Legislative",
+      "Judikative",
+      "Exekutive",
+      "Direktive"
+    ],
     "answerIndex": 3,
     "explanation": "Die drei Staatsgewalten sind Legislative (Gesetzgebung), Exekutive (ausführende Gewalt) und Judikative (Rechtsprechung). 'Direktive' ist keine staatliche Gewalt."
   },
@@ -585,7 +1180,12 @@
     "id": "q056",
     "category": "Politics",
     "question": "Welches Amt gehört in Deutschland zur Gemeindeverwaltung?",
-    "options": ["Pfarramt", "Ordnungsamt", "Finanzamt", "Auswärtiges Amt"],
+    "options": [
+      "Pfarramt",
+      "Ordnungsamt",
+      "Finanzamt",
+      "Auswärtiges Amt"
+    ],
     "answerIndex": 1,
     "explanation": "Das Ordnungsamt ist eine kommunale Behörde und gehört zur Gemeindeverwaltung."
   },
@@ -619,7 +1219,12 @@
     "id": "q059",
     "category": "History",
     "question": "Vor wie vielen Jahren gab es erstmals eine jüdische Gemeinde auf dem Gebiet des heutigen Deutschlands?",
-    "options": ["vor etwa 300 Jahren", "vor etwa 700 Jahren", "vor etwa 1150 Jahren", "vor etwa 1700 Jahren"],
+    "options": [
+      "vor etwa 300 Jahren",
+      "vor etwa 700 Jahren",
+      "vor etwa 1150 Jahren",
+      "vor etwa 1700 Jahren"
+    ],
     "answerIndex": 3,
     "explanation": "Jüdische Gemeinden in Deutschland existieren seit der Römerzeit, der erste schriftliche Beleg stammt aus dem Jahr 321 nach Christus."
   },
@@ -627,7 +1232,12 @@
     "id": "q060",
     "category": "Politics",
     "question": "In Deutschland gehören der Bundestag und der Bundesrat zur …",
-    "options": ["Exekutive.", "Legislative.", "Direktive.", "Judikative."],
+    "options": [
+      "Exekutive.",
+      "Legislative.",
+      "Direktive.",
+      "Judikative."
+    ],
     "answerIndex": 1,
     "explanation": "Bundestag und Bundesrat sind die gesetzgebenden Organe (Legislative)."
   },
@@ -648,7 +1258,12 @@
     "id": "q062",
     "category": "Politics",
     "question": "Wenn das Parlament eines deutschen Bundeslandes gewählt wird, nennt man das …",
-    "options": ["Kommunalwahl", "Landtagswahl", "Europawahl", "Bundestagswahl"],
+    "options": [
+      "Kommunalwahl",
+      "Landtagswahl",
+      "Europawahl",
+      "Bundestagswahl"
+    ],
     "answerIndex": 1,
     "explanation": "Das Parlament auf Landesebene heißt Landtag, daher wird die Wahl als Landtagswahl bezeichnet."
   },
@@ -656,7 +1271,12 @@
     "id": "q063",
     "category": "Politics",
     "question": "Was gehört in Deutschland nicht zur Exekutive?",
-    "options": ["die Polizei", "die Gerichte", "das Finanzamt", "die Ministerien"],
+    "options": [
+      "die Polizei",
+      "die Gerichte",
+      "das Finanzamt",
+      "die Ministerien"
+    ],
     "answerIndex": 1,
     "explanation": "Die Gerichte gehören zur Judikative, während Polizei, Finanzamt und Ministerien zur Exekutive (ausführende Gewalt) gehören."
   },
@@ -690,7 +1310,12 @@
     "id": "q066",
     "category": "History",
     "question": "Welche Städte haben die größten jüdischen Gemeinden in Deutschland?",
-    "options": ["Berlin und München", "Hamburg und Essen", "Nürnberg und Stuttgart", "Worms und Speyer"],
+    "options": [
+      "Berlin und München",
+      "Hamburg und Essen",
+      "Nürnberg und Stuttgart",
+      "Worms und Speyer"
+    ],
     "answerIndex": 0,
     "explanation": "Die größten jüdischen Gemeinden in Deutschland gibt es in Berlin und München."
   },
@@ -698,7 +1323,12 @@
     "id": "q067",
     "category": "Politics",
     "question": "Was ist in Deutschland vor allem eine Aufgabe der Bundesländer?",
-    "options": ["Verteidigungspolitik", "Außenpolitik", "Wirtschaftspolitik", "Schulpolitik"],
+    "options": [
+      "Verteidigungspolitik",
+      "Außenpolitik",
+      "Wirtschaftspolitik",
+      "Schulpolitik"
+    ],
     "answerIndex": 3,
     "explanation": "Die Schulpolitik fällt in die Zuständigkeit der Bundesländer."
   },
@@ -719,7 +1349,12 @@
     "id": "q069",
     "category": "Politics",
     "question": "Die Bundesrepublik Deutschland hat einen dreistufigen Verwaltungsaufbau. Wie heißt die unterste politische Stufe?",
-    "options": ["Stadträte", "Landräte", "Gemeinden", "Bezirksämter"],
+    "options": [
+      "Stadträte",
+      "Landräte",
+      "Gemeinden",
+      "Bezirksämter"
+    ],
     "answerIndex": 2,
     "explanation": "Die unterste politische Stufe im Verwaltungsaufbau Deutschlands sind die Gemeinden."
   },
@@ -754,7 +1389,12 @@
     "id": "q072",
     "category": "Politics",
     "question": "Wie heißt die jetzige Bundeskanzlerin/der jetzige Bundeskanzler von Deutschland?",
-    "options": ["Gerhard Schröder", "Angela Merkel", "Ursula von der Leyen", "Friedrich Merz"],
+    "options": [
+      "Gerhard Schröder",
+      "Angela Merkel",
+      "Ursula von der Leyen",
+      "Friedrich Merz"
+    ],
     "answerIndex": 3,
     "explanation": "Friedrich Merz ist der aktuelle Bundeskanzler von Deutschland."
   },
@@ -775,7 +1415,12 @@
     "id": "q074",
     "category": "Politics",
     "question": "Wie heißt das Parlament für ganz Deutschland?",
-    "options": ["Bundesversammlung", "Volkskammer", "Bundestag", "Bundesgerichtshof"],
+    "options": [
+      "Bundesversammlung",
+      "Volkskammer",
+      "Bundestag",
+      "Bundesgerichtshof"
+    ],
     "answerIndex": 2,
     "explanation": "Der Bundestag ist das deutsche Parlament auf Bundesebene."
   },
@@ -783,7 +1428,12 @@
     "id": "q075",
     "category": "Politics",
     "question": "Wie heißt Deutschlands heutiges Staatsoberhaupt?",
-    "options": ["Frank-Walter Steinmeier", "Bärbel Bas", "Bodo Ramelow", "Joachim Gauck"],
+    "options": [
+      "Frank-Walter Steinmeier",
+      "Bärbel Bas",
+      "Bodo Ramelow",
+      "Joachim Gauck"
+    ],
     "answerIndex": 0,
     "explanation": "Frank-Walter Steinmeier ist das Staatsoberhaupt der Bundesrepublik Deutschland."
   },
@@ -804,7 +1454,12 @@
     "id": "q077",
     "category": "Politics",
     "question": "Was ist die Bundeswehr?",
-    "options": ["die deutsche Polizei", "ein deutscher Hafen", "eine deutsche Bürgerinitiative", "die deutsche Armee"],
+    "options": [
+      "die deutsche Polizei",
+      "ein deutscher Hafen",
+      "eine deutsche Bürgerinitiative",
+      "die deutsche Armee"
+    ],
     "answerIndex": 3,
     "explanation": "Die Bundeswehr ist die Armee Deutschlands."
   },
@@ -838,7 +1493,12 @@
     "id": "q080",
     "category": "Law",
     "question": "Welches Gericht in Deutschland ist zuständig für die Auslegung des Grundgesetzes?",
-    "options": ["Oberlandesgericht", "Amtsgericht", "Bundesverfassungsgericht", "Verwaltungsgericht"],
+    "options": [
+      "Oberlandesgericht",
+      "Amtsgericht",
+      "Bundesverfassungsgericht",
+      "Verwaltungsgericht"
+    ],
     "answerIndex": 2,
     "explanation": "Das Bundesverfassungsgericht ist das höchste Gericht in Deutschland und zuständig für die Auslegung des Grundgesetzes."
   },
@@ -846,7 +1506,12 @@
     "id": "q081",
     "category": "Politics",
     "question": "Wer wählt die Bundeskanzlerin/den Bundeskanzler in Deutschland?",
-    "options": ["der Bundesrat", "die Bundesversammlung", "das Volk", "der Bundestag"],
+    "options": [
+      "der Bundesrat",
+      "die Bundesversammlung",
+      "das Volk",
+      "der Bundestag"
+    ],
     "answerIndex": 3,
     "explanation": "Der Bundestag wählt den Bundeskanzler."
   },
@@ -867,7 +1532,12 @@
     "id": "q083",
     "category": "Politics",
     "question": "Wer wählt die deutsche Bundeskanzlerin/den deutschen Bundeskanzler?",
-    "options": ["das Volk", "die Bundesversammlung", "der Bundestag", "die Bundesregierung"],
+    "options": [
+      "das Volk",
+      "die Bundesversammlung",
+      "der Bundestag",
+      "die Bundesregierung"
+    ],
     "answerIndex": 2,
     "explanation": "Der Bundeskanzler wird vom Bundestag gewählt."
   },
@@ -901,7 +1571,12 @@
     "id": "q086",
     "category": "Politics",
     "question": "Wer wählt in Deutschland die Bundespräsidentin/den Bundespräsidenten?",
-    "options": ["die Bundesversammlung", "der Bundesrat", "das Bundesparlament", "das Bundesverfassungsgericht"],
+    "options": [
+      "die Bundesversammlung",
+      "der Bundesrat",
+      "das Bundesparlament",
+      "das Bundesverfassungsgericht"
+    ],
     "answerIndex": 0,
     "explanation": "Die Bundespräsidentin/der Bundespräsident wird von der Bundesversammlung gewählt, die sich aus Bundestagsabgeordneten und Vertretern der Länder zusammensetzt."
   },
@@ -935,7 +1610,12 @@
     "id": "q089",
     "category": "Politics",
     "question": "Wie nennt man in Deutschland die Vereinigung von Abgeordneten einer Partei im Parlament?",
-    "options": ["Verband", "Ältestenrat", "Fraktion", "Opposition"],
+    "options": [
+      "Verband",
+      "Ältestenrat",
+      "Fraktion",
+      "Opposition"
+    ],
     "answerIndex": 2,
     "explanation": "Eine Fraktion ist eine Gruppe von Abgeordneten, die derselben Partei angehören."
   },
@@ -943,7 +1623,12 @@
     "id": "q090",
     "category": "Politics",
     "question": "Die deutschen Bundesländer wirken an der Gesetzgebung des Bundes mit durch …",
-    "options": ["den Bundesrat.", "die Bundesversammlung.", "den Bundestag.", "die Bundesregierung."],
+    "options": [
+      "den Bundesrat.",
+      "die Bundesversammlung.",
+      "den Bundestag.",
+      "die Bundesregierung."
+    ],
     "answerIndex": 0,
     "explanation": "Der Bundesrat vertritt die Interessen der Länder bei der Gesetzgebung des Bundes."
   },
@@ -990,7 +1675,12 @@
     "id": "q094",
     "category": "Politics",
     "question": "Ab welchem Alter darf man in Deutschland an der Wahl zum Deutschen Bundestag teilnehmen?",
-    "options": ["16", "18", "21", "23"],
+    "options": [
+      "16",
+      "18",
+      "21",
+      "23"
+    ],
     "answerIndex": 1,
     "explanation": "Das Mindestalter für die Teilnahme an der Bundestagswahl ist 18 Jahre."
   },
@@ -998,7 +1688,12 @@
     "id": "q095",
     "category": "Education",
     "question": "Was gilt für die meisten Kinder in Deutschland?",
-    "options": ["Wahlpflicht", "Schulpflicht", "Schweigepflicht", "Religionspflicht"],
+    "options": [
+      "Wahlpflicht",
+      "Schulpflicht",
+      "Schweigepflicht",
+      "Religionspflicht"
+    ],
     "answerIndex": 1,
     "explanation": "In Deutschland besteht für Kinder ab einem bestimmten Alter die Schulpflicht."
   },
@@ -1019,7 +1714,12 @@
     "id": "q097",
     "category": "Economy",
     "question": "Was bezahlt man in Deutschland automatisch, wenn man fest angestellt ist?",
-    "options": ["Sozialversicherung", "Sozialhilfe", "Kindergeld", "Wohngeld"],
+    "options": [
+      "Sozialversicherung",
+      "Sozialhilfe",
+      "Kindergeld",
+      "Wohngeld"
+    ],
     "answerIndex": 0,
     "explanation": "Fest Angestellte zahlen automatisch Beiträge zur Sozialversicherung (Kranken-, Pflege-, Renten-, Arbeitslosen- und Unfallversicherung)."
   },
@@ -1144,7 +1844,12 @@
     "id": "q107",
     "category": "Politics",
     "question": "Für wie viele Jahre wird der Bundestag in Deutschland gewählt?",
-    "options": ["2 Jahre", "4 Jahre", "6 Jahre", "8 Jahre"],
+    "options": [
+      "2 Jahre",
+      "4 Jahre",
+      "6 Jahre",
+      "8 Jahre"
+    ],
     "answerIndex": 1,
     "explanation": "Der Bundestag wird für eine Legislaturperiode von vier Jahren gewählt."
   },
@@ -1165,7 +1870,12 @@
     "id": "q109",
     "category": "Politics",
     "question": "Wie oft gibt es normalerweise Bundestagswahlen in Deutschland?",
-    "options": ["alle drei Jahre", "alle vier Jahre", "alle fünf Jahre", "alle sechs Jahre"],
+    "options": [
+      "alle drei Jahre",
+      "alle vier Jahre",
+      "alle fünf Jahre",
+      "alle sechs Jahre"
+    ],
     "answerIndex": 1,
     "explanation": "Bundestagswahlen finden in der Regel alle vier Jahre statt."
   },
@@ -1173,7 +1883,12 @@
     "id": "q110",
     "category": "Politics",
     "question": "Für wie viele Jahre wird der Bundestag in Deutschland gewählt?",
-    "options": ["2 Jahre", "3 Jahre", "4 Jahre", "5 Jahre"],
+    "options": [
+      "2 Jahre",
+      "3 Jahre",
+      "4 Jahre",
+      "5 Jahre"
+    ],
     "answerIndex": 2,
     "explanation": "Die Wahlperiode des Bundestages beträgt vier Jahre."
   },
@@ -1194,7 +1909,12 @@
     "id": "q112",
     "category": "Politics",
     "question": "Die Wahlen in Deutschland sind …",
-    "options": ["speziell.", "geheim.", "berufsbezogen.", "geschlechtsabhängig."],
+    "options": [
+      "speziell.",
+      "geheim.",
+      "berufsbezogen.",
+      "geschlechtsabhängig."
+    ],
     "answerIndex": 1,
     "explanation": "Wahlen in Deutschland sind geheim, das heißt, niemand erfährt, wen ein anderer gewählt hat."
   },
@@ -1215,7 +1935,12 @@
     "id": "q114",
     "category": "Politics",
     "question": "An demokratischen Wahlen in Deutschland teilzunehmen ist …",
-    "options": ["eine Pflicht.", "ein Recht.", "ein Zwang.", "eine Last."],
+    "options": [
+      "eine Pflicht.",
+      "ein Recht.",
+      "ein Zwang.",
+      "eine Last."
+    ],
     "answerIndex": 1,
     "explanation": "Die Teilnahme an Wahlen ist ein Recht, aber keine Pflicht."
   },
@@ -1236,7 +1961,12 @@
     "id": "q116",
     "category": "Politics",
     "question": "Wenn Sie bei einer Bundestagswahl in Deutschland wählen dürfen, heißt das …",
-    "options": ["aktive Wahlkampagne.", "aktives Wahlverfahren.", "aktiver Wahlkampf.", "aktives Wahlrecht."],
+    "options": [
+      "aktive Wahlkampagne.",
+      "aktives Wahlverfahren.",
+      "aktiver Wahlkampf.",
+      "aktives Wahlrecht."
+    ],
     "answerIndex": 3,
     "explanation": "Das Recht zu wählen wird als aktives Wahlrecht bezeichnet."
   },
@@ -1244,7 +1974,12 @@
     "id": "q117",
     "category": "Politics",
     "question": "Wie viel Prozent der Zweitstimmen müssen Parteien mindestens bekommen, um in den Deutschen Bundestag gewählt zu werden?",
-    "options": ["3%", "4%", "5%", "6%"],
+    "options": [
+      "3%",
+      "4%",
+      "5%",
+      "6%"
+    ],
     "answerIndex": 2,
     "explanation": "Um in den Bundestag zu kommen, muss eine Partei mindestens 5% der Zweitstimmen erreichen (5%-Hürde)."
   },
@@ -1252,7 +1987,12 @@
     "id": "q118",
     "category": "Culture",
     "question": "Wer darf bei den rund 40 jüdischen Makkabi-Sportvereinen Mitglied werden?",
-    "options": ["nur Deutsche", "nur Israelis", "nur religiöse Menschen", "alle Menschen"],
+    "options": [
+      "nur Deutsche",
+      "nur Israelis",
+      "nur religiöse Menschen",
+      "alle Menschen"
+    ],
     "answerIndex": 3,
     "explanation": "Die Makkabi-Sportvereine sind offen für alle Menschen, unabhängig von ihrer Religion oder Herkunft."
   },
@@ -1286,7 +2026,12 @@
     "id": "q121",
     "category": "Politics",
     "question": "Eine Partei möchte in den Deutschen Bundestag. Sie muss aber einen Mindestanteil an Wählerstimmen haben. Das heißt …",
-    "options": ["5%-Hürde.", "Zulassungsgrenze.", "Basiswert.", "Richtlinie."],
+    "options": [
+      "5%-Hürde.",
+      "Zulassungsgrenze.",
+      "Basiswert.",
+      "Richtlinie."
+    ],
     "answerIndex": 0,
     "explanation": "Die 5%-Hürde ist die Mindestanzahl an Stimmen, die eine Partei für den Einzug in den Bundestag benötigt."
   },
@@ -1399,7 +2144,12 @@
     "category": "Politics",
     "question": "Welcher Stimmzettel wäre bei einer Bundestagswahl gültig?",
     "image": "/images/german-ballot-examples.jpg",
-    "options": ["1", "2", "3", "4"],
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
     "answerIndex": 1,
     "explanation": "Stimmzettel 2 ist gültig, weil er in jeder Spalte nur ein Kreuz hat."
   },
@@ -1459,7 +2209,12 @@
     "id": "q135",
     "category": "Economy",
     "question": "Wen vertreten die Gewerkschaften in Deutschland?",
-    "options": ["große Unternehmen", "kleine Unternehmen", "Selbstständige", "Arbeitnehmerinnen und Arbeitnehmer"],
+    "options": [
+      "große Unternehmen",
+      "kleine Unternehmen",
+      "Selbstständige",
+      "Arbeitnehmerinnen und Arbeitnehmer"
+    ],
     "answerIndex": 3,
     "explanation": "Gewerkschaften vertreten die Interessen der Arbeitnehmer gegenüber den Arbeitgebern."
   },
@@ -1480,7 +2235,12 @@
     "id": "q137",
     "category": "Law",
     "question": "Welches Gericht ist in Deutschland bei Konflikten in der Arbeitswelt zuständig?",
-    "options": ["das Familiengericht", "das Strafgericht", "das Arbeitsgericht", "das Amtsgericht"],
+    "options": [
+      "das Familiengericht",
+      "das Strafgericht",
+      "das Arbeitsgericht",
+      "das Amtsgericht"
+    ],
     "answerIndex": 2,
     "explanation": "Arbeitsgerichte sind spezialisierte Gerichte für Streitigkeiten im Arbeitsrecht."
   },
@@ -1553,7 +2313,12 @@
     "id": "q143",
     "category": "Politics",
     "question": "Eine Richterin/ein Richter in Deutschland gehört zur …",
-    "options": ["Judikative.", "Exekutive.", "Operative.", "Legislative."],
+    "options": [
+      "Judikative.",
+      "Exekutive.",
+      "Operative.",
+      "Legislative."
+    ],
     "answerIndex": 0,
     "explanation": "Richter gehören zur rechtsprechenden Gewalt (Judikative)."
   },
@@ -1561,7 +2326,12 @@
     "id": "q144",
     "category": "Politics",
     "question": "Eine Richterin/ein Richter gehört in Deutschland zur …",
-    "options": ["vollziehenden Gewalt.", "rechtsprechenden Gewalt.", "planenden Gewalt.", "gesetzgebenden Gewalt."],
+    "options": [
+      "vollziehenden Gewalt.",
+      "rechtsprechenden Gewalt.",
+      "planenden Gewalt.",
+      "gesetzgebenden Gewalt."
+    ],
     "answerIndex": 1,
     "explanation": "Richter üben die rechtsprechende Gewalt aus."
   },
@@ -1569,7 +2339,12 @@
     "id": "q145",
     "category": "Politics",
     "question": "In Deutschland wird die Staatsgewalt geteilt. Für welche Staatsgewalt arbeitet eine Richterin/ein Richter? Für die …",
-    "options": ["Judikative", "Exekutive", "Presse", "Legislative"],
+    "options": [
+      "Judikative",
+      "Exekutive",
+      "Presse",
+      "Legislative"
+    ],
     "answerIndex": 0,
     "explanation": "Richter sind Teil der Judikative."
   },
@@ -1577,7 +2352,12 @@
     "id": "q146",
     "category": "Law",
     "question": "Wie nennt man in Deutschland ein Verfahren vor einem Gericht?",
-    "options": ["Programm", "Prozedur", "Protokoll", "Prozess"],
+    "options": [
+      "Programm",
+      "Prozedur",
+      "Protokoll",
+      "Prozess"
+    ],
     "answerIndex": 3,
     "explanation": "Ein Verfahren vor Gericht wird als Prozess bezeichnet."
   },
@@ -1585,7 +2365,12 @@
     "id": "q147",
     "category": "Law",
     "question": "Was ist die Arbeit einer Richterin/eines Richters in Deutschland?",
-    "options": ["Deutschland regieren", "Recht sprechen", "Pläne erstellen", "Gesetze erlassen"],
+    "options": [
+      "Deutschland regieren",
+      "Recht sprechen",
+      "Pläne erstellen",
+      "Gesetze erlassen"
+    ],
     "answerIndex": 1,
     "explanation": "Die Aufgabe eines Richters ist es, Recht zu sprechen und Urteile zu fällen."
   },
@@ -1632,7 +2417,12 @@
     "id": "q151",
     "category": "History",
     "question": "Wer baute die Mauer in Berlin?",
-    "options": ["Großbritannien", "die DDR", "die Bundesrepublik Deutschland", "die USA"],
+    "options": [
+      "Großbritannien",
+      "die DDR",
+      "die Bundesrepublik Deutschland",
+      "die USA"
+    ],
     "answerIndex": 1,
     "explanation": "Die DDR baute 1961 die Berliner Mauer, um die Flucht aus dem Osten zu verhindern."
   },
@@ -1640,7 +2430,12 @@
     "id": "q152",
     "category": "History",
     "question": "Wann waren die Nationalsozialisten mit Adolf Hitler in Deutschland an der Macht?",
-    "options": ["1918 bis 1923", "1932 bis 1950", "1933 bis 1945", "1945 bis 1989"],
+    "options": [
+      "1918 bis 1923",
+      "1932 bis 1950",
+      "1933 bis 1945",
+      "1945 bis 1989"
+    ],
     "answerIndex": 2,
     "explanation": "Die Zeit des Nationalsozialismus in Deutschland dauerte von 1933 bis 1945."
   },
@@ -1661,7 +2456,12 @@
     "id": "q154",
     "category": "History",
     "question": "Wann war der Zweite Weltkrieg zu Ende?",
-    "options": ["1933", "1945", "1949", "1961"],
+    "options": [
+      "1933",
+      "1945",
+      "1949",
+      "1961"
+    ],
     "answerIndex": 1,
     "explanation": "Der Zweite Weltkrieg endete 1945."
   },
@@ -1669,7 +2469,12 @@
     "id": "q155",
     "category": "History",
     "question": "Wann waren die Nationalsozialisten in Deutschland an der Macht?",
-    "options": ["1888 bis 1918", "1921 bis 1934", "1933 bis 1945", "1949 bis 1963"],
+    "options": [
+      "1888 bis 1918",
+      "1921 bis 1934",
+      "1933 bis 1945",
+      "1949 bis 1963"
+    ],
     "answerIndex": 2,
     "explanation": "Die Nationalsozialisten regierten von 1933 bis 1945."
   },
@@ -1677,7 +2482,12 @@
     "id": "q156",
     "category": "History",
     "question": "In welchem Jahr wurde Hitler Reichskanzler?",
-    "options": ["1923", "1927", "1933", "1936"],
+    "options": [
+      "1923",
+      "1927",
+      "1933",
+      "1936"
+    ],
     "answerIndex": 2,
     "explanation": "Adolf Hitler wurde 1933 zum Reichskanzler ernannt."
   },
@@ -1685,7 +2495,12 @@
     "id": "q157",
     "category": "History",
     "question": "Die Nationalsozialisten mit Adolf Hitler errichteten 1933 in Deutschland …",
-    "options": ["eine Diktatur.", "einen demokratischen Staat.", "eine Monarchie.", "ein Fürstentum."],
+    "options": [
+      "eine Diktatur.",
+      "einen demokratischen Staat.",
+      "eine Monarchie.",
+      "ein Fürstentum."
+    ],
     "answerIndex": 0,
     "explanation": "Nach 1933 verwandelte Hitler Deutschland in eine Diktatur."
   },
@@ -1693,7 +2508,12 @@
     "id": "q158",
     "category": "History",
     "question": "Das 'Dritte Reich' war eine …",
-    "options": ["Diktatur.", "Demokratie.", "Monarchie.", "Räterepublik."],
+    "options": [
+      "Diktatur.",
+      "Demokratie.",
+      "Monarchie.",
+      "Räterepublik."
+    ],
     "answerIndex": 0,
     "explanation": "Das 'Dritte Reich' unter den Nationalsozialisten war eine Diktatur."
   },
@@ -1701,7 +2521,12 @@
     "id": "q159",
     "category": "History",
     "question": "Was gab es in Deutschland nicht während der Zeit des Nationalsozialismus?",
-    "options": ["freie Wahlen", "Pressezensur", "willkürliche Verhaftungen", "Verfolgung von Juden"],
+    "options": [
+      "freie Wahlen",
+      "Pressezensur",
+      "willkürliche Verhaftungen",
+      "Verfolgung von Juden"
+    ],
     "answerIndex": 0,
     "explanation": "Während des Nationalsozialismus gab es keine freien Wahlen mehr."
   },
@@ -1709,7 +2534,12 @@
     "id": "q160",
     "category": "History",
     "question": "Welcher Krieg dauerte von 1939 bis 1945?",
-    "options": ["der Erste Weltkrieg", "der Zweite Weltkrieg", "der Vietnamkrieg", "der Golfkrieg"],
+    "options": [
+      "der Erste Weltkrieg",
+      "der Zweite Weltkrieg",
+      "der Vietnamkrieg",
+      "der Golfkrieg"
+    ],
     "answerIndex": 1,
     "explanation": "Der Zweite Weltkrieg dauerte von 1939 bis 1945."
   },
@@ -1743,7 +2573,12 @@
     "id": "q163",
     "category": "History",
     "question": "In welchem Jahr zerstörten die Nationalsozialisten Synagogen und jüdische Geschäfte in Deutschland?",
-    "options": ["1925", "1930", "1938", "1945"],
+    "options": [
+      "1925",
+      "1930",
+      "1938",
+      "1945"
+    ],
     "answerIndex": 2,
     "explanation": "In der Reichspogromnacht am 9. November 1938 wurden Synagogen und jüdische Geschäfte zerstört."
   },
@@ -1764,7 +2599,12 @@
     "id": "q165",
     "category": "History",
     "question": "Wie hieß der erste Bundeskanzler der Bundesrepublik Deutschland?",
-    "options": ["Konrad Adenauer", "Kurt Georg Kiesinger", "Helmut Schmidt", "Willy Brandt"],
+    "options": [
+      "Konrad Adenauer",
+      "Kurt Georg Kiesinger",
+      "Helmut Schmidt",
+      "Willy Brandt"
+    ],
     "answerIndex": 0,
     "explanation": "Konrad Adenauer war von 1949 bis 1963 der erste Bundeskanzler der Bundesrepublik."
   },
@@ -1798,7 +2638,12 @@
     "id": "q168",
     "category": "History",
     "question": "Welches Land war keine 'Alliierte Besatzungsmacht' in Deutschland?",
-    "options": ["USA", "Sowjetunion", "Frankreich", "Japan"],
+    "options": [
+      "USA",
+      "Sowjetunion",
+      "Frankreich",
+      "Japan"
+    ],
     "answerIndex": 3,
     "explanation": "Japan gehörte zu den Achsenmächten im Zweiten Weltkrieg und war keine Besatzungsmacht."
   },
@@ -1806,7 +2651,12 @@
     "id": "q169",
     "category": "History",
     "question": "Wann wurde die Bundesrepublik Deutschland gegründet?",
-    "options": ["1939", "1945", "1949", "1951"],
+    "options": [
+      "1939",
+      "1945",
+      "1949",
+      "1951"
+    ],
     "answerIndex": 2,
     "explanation": "Die Bundesrepublik Deutschland wurde am 23. Mai 1949 gegründet."
   },
@@ -1866,7 +2716,12 @@
     "id": "q174",
     "category": "History",
     "question": "Wann wurde die DDR gegründet?",
-    "options": ["1947", "1949", "1953", "1956"],
+    "options": [
+      "1947",
+      "1949",
+      "1953",
+      "1956"
+    ],
     "answerIndex": 1,
     "explanation": "Die DDR wurde am 7. Oktober 1949 gegründet."
   },
@@ -1874,7 +2729,12 @@
     "id": "q175",
     "category": "History",
     "question": "Wie viele Besatzungszonen gab es in Deutschland nach dem Zweiten Weltkrieg?",
-    "options": ["3", "4", "5", "6"],
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
     "answerIndex": 1,
     "explanation": "Deutschland wurde in vier Besatzungszonen aufgeteilt: die amerikanische, britische, französische und sowjetische Zone."
   },
@@ -1896,7 +2756,12 @@
     "id": "q177",
     "category": "History",
     "question": "Welche deutsche Stadt wurde nach dem Zweiten Weltkrieg in vier Sektoren aufgeteilt?",
-    "options": ["München", "Berlin", "Dresden", "Frankfurt/Oder"],
+    "options": [
+      "München",
+      "Berlin",
+      "Dresden",
+      "Frankfurt/Oder"
+    ],
     "answerIndex": 1,
     "explanation": "Auch Berlin, die ehemalige Hauptstadt, wurde in vier Besatzungssektoren aufgeteilt."
   },
@@ -1930,7 +2795,12 @@
     "id": "q180",
     "category": "History",
     "question": "Der erste Bundeskanzler der Bundesrepublik Deutschland war …",
-    "options": ["Ludwig Erhard.", "Willy Brandt.", "Konrad Adenauer.", "Gerhard Schröder."],
+    "options": [
+      "Ludwig Erhard.",
+      "Willy Brandt.",
+      "Konrad Adenauer.",
+      "Gerhard Schröder."
+    ],
     "answerIndex": 2,
     "explanation": "Konrad Adenauer war von 1949 bis 1963 der erste Bundeskanzler."
   },
@@ -1952,7 +2822,12 @@
     "id": "q182",
     "category": "Culture",
     "question": "Wie heißt das jüdische Gebetshaus?",
-    "options": ["Basilika", "Moschee", "Synagoge", "Kirche"],
+    "options": [
+      "Basilika",
+      "Moschee",
+      "Synagoge",
+      "Kirche"
+    ],
     "answerIndex": 2,
     "explanation": "Eine Synagoge ist ein jüdisches Gebetshaus[cite: 2063]."
   },
@@ -1960,7 +2835,12 @@
     "id": "q183",
     "category": "History",
     "question": "Wann war in der Bundesrepublik Deutschland das \"Wirtschaftswunder\"?",
-    "options": ["40er Jahre", "50er Jahre", "70er Jahre", "80er Jahre"],
+    "options": [
+      "40er Jahre",
+      "50er Jahre",
+      "70er Jahre",
+      "80er Jahre"
+    ],
     "answerIndex": 1,
     "explanation": "Das Wirtschaftswunder in der Bundesrepublik Deutschland fand in den 50er Jahren statt[cite: 2073]."
   },
@@ -1994,7 +2874,12 @@
     "id": "q186",
     "category": "History",
     "question": "Im Jahr 1953 gab es in der DDR einen Aufstand, an den lange Zeit in der Bundesrepublik Deutschland ein Feiertag erinnerte. Wann war das?",
-    "options": ["1. Mai", "17. Juni", "20. Juli", "9. November"],
+    "options": [
+      "1. Mai",
+      "17. Juni",
+      "20. Juli",
+      "9. November"
+    ],
     "answerIndex": 1,
     "explanation": "Der Aufstand in der DDR fand am 17. Juni 1953 statt[cite: 2104]."
   },
@@ -2003,7 +2888,12 @@
     "category": "History",
     "question": "Welcher deutsche Staat hatte eine schwarz-rot-goldene Flagge mit Hammer, Zirkel und Ährenkranz?",
     "image": "/images/east-german-flag.jpg",
-    "options": ["Preußen", "Bundesrepublik Deutschland", "\"Drittes Reich\"", "DDR"],
+    "options": [
+      "Preußen",
+      "Bundesrepublik Deutschland",
+      "\"Drittes Reich\"",
+      "DDR"
+    ],
     "answerIndex": 3,
     "explanation": "Die Deutsche Demokratische Republik (DDR) hatte eine Flagge mit diesem Symbol[cite: 2118]."
   },
@@ -2011,7 +2901,12 @@
     "id": "q188",
     "category": "History",
     "question": "In welchem Jahr wurde die Mauer in Berlin gebaut?",
-    "options": ["1953", "1956", "1959", "1961"],
+    "options": [
+      "1953",
+      "1956",
+      "1959",
+      "1961"
+    ],
     "answerIndex": 3,
     "explanation": "Die Berliner Mauer wurde 1961 von der DDR gebaut[cite: 2128]."
   },
@@ -2019,7 +2914,12 @@
     "id": "q189",
     "category": "History",
     "question": "Wann baute die DDR die Mauer in Berlin?",
-    "options": ["1919", "1933", "1961", "1990"],
+    "options": [
+      "1919",
+      "1933",
+      "1961",
+      "1990"
+    ],
     "answerIndex": 2,
     "explanation": "Die DDR baute die Mauer in Berlin im Jahr 1961[cite: 2139]."
   },
@@ -2040,7 +2940,12 @@
     "id": "q191",
     "category": "History",
     "question": "Wann wurde die Mauer in Berlin für alle geöffnet?",
-    "options": ["1987", "1989", "1992", "1995"],
+    "options": [
+      "1987",
+      "1989",
+      "1992",
+      "1995"
+    ],
     "answerIndex": 1,
     "explanation": "Die Mauer wurde am 9. November 1989 geöffnet[cite: 2157]."
   },
@@ -2048,7 +2953,12 @@
     "id": "q192",
     "category": "History",
     "question": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
-    "options": ["Brandenburg", "Bayern", "Saarland", "Hessen"],
+    "options": [
+      "Brandenburg",
+      "Bayern",
+      "Saarland",
+      "Hessen"
+    ],
     "answerIndex": 0,
     "explanation": "Brandenburg war ein Bundesland, das zum Gebiet der DDR gehörte[cite: 2170]."
   },
@@ -2069,7 +2979,12 @@
     "id": "q194",
     "category": "Culture",
     "question": "Am 3. Oktober feiert man in Deutschland den Tag der Deutschen …",
-    "options": ["Einheit.", "Nation.", "Bundesländer.", "Städte."],
+    "options": [
+      "Einheit.",
+      "Nation.",
+      "Bundesländer.",
+      "Städte."
+    ],
     "answerIndex": 0,
     "explanation": "Der 3. Oktober ist der Tag der Deutschen Einheit[cite: 2189]."
   },
@@ -2077,7 +2992,12 @@
     "id": "q195",
     "category": "History",
     "question": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
-    "options": ["Hessen", "Sachsen-Anhalt", "Nordrhein-Westfalen", "Saarland"],
+    "options": [
+      "Hessen",
+      "Sachsen-Anhalt",
+      "Nordrhein-Westfalen",
+      "Saarland"
+    ],
     "answerIndex": 1,
     "explanation": "Sachsen-Anhalt gehörte früher zum Gebiet der DDR[cite: 2202]."
   },
@@ -2098,7 +3018,12 @@
     "id": "q197",
     "category": "History",
     "question": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
-    "options": ["Thüringen", "Hessen", "Bayern", "Bremen"],
+    "options": [
+      "Thüringen",
+      "Hessen",
+      "Bayern",
+      "Bremen"
+    ],
     "answerIndex": 0,
     "explanation": "Thüringen gehörte früher zum Gebiet der DDR[cite: 2219]."
   },
@@ -2106,7 +3031,12 @@
     "id": "q198",
     "category": "History",
     "question": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
-    "options": ["Bayern", "Niedersachsen", "Sachsen", "Baden-Württemberg"],
+    "options": [
+      "Bayern",
+      "Niedersachsen",
+      "Sachsen",
+      "Baden-Württemberg"
+    ],
     "answerIndex": 2,
     "explanation": "Sachsen gehörte früher zum Gebiet der DDR[cite: 2236]."
   },
@@ -2127,7 +3057,12 @@
     "id": "q200",
     "category": "History",
     "question": "Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?",
-    "options": ["Hessen", "Schleswig-Holstein", "Mecklenburg-Vorpommern", "Saarland"],
+    "options": [
+      "Hessen",
+      "Schleswig-Holstein",
+      "Mecklenburg-Vorpommern",
+      "Saarland"
+    ],
     "answerIndex": 2,
     "explanation": "Mecklenburg-Vorpommern gehörte früher zum Gebiet der DDR[cite: 2255]."
   },
@@ -2148,7 +3083,12 @@
     "id": "q202",
     "category": "History",
     "question": "Zu wem gehörte die DDR im \"Kalten Krieg\"?",
-    "options": ["zu den Westmächten", "zum Warschauer Pakt", "zur NATO", "zu den blockfreien Staaten"],
+    "options": [
+      "zu den Westmächten",
+      "zum Warschauer Pakt",
+      "zur NATO",
+      "zu den blockfreien Staaten"
+    ],
     "answerIndex": 1,
     "explanation": "Die DDR war Mitglied des Warschauer Pakts, des militärischen Bündnisses der Ostblockstaaten[cite: 2274]."
   },
@@ -2156,7 +3096,12 @@
     "id": "q203",
     "category": "Economy",
     "question": "Wie hieß das Wirtschaftssystem der DDR?",
-    "options": ["Marktwirtschaft", "Planwirtschaft", "Angebot und Nachfrage", "Kapitalismus"],
+    "options": [
+      "Marktwirtschaft",
+      "Planwirtschaft",
+      "Angebot und Nachfrage",
+      "Kapitalismus"
+    ],
     "answerIndex": 1,
     "explanation": "Die DDR hatte eine sozialistische Planwirtschaft, in der der Staat die Wirtschaft lenkte[cite: 2285]."
   },
@@ -2203,7 +3148,12 @@
     "id": "q207",
     "category": "History",
     "question": "In welchem Militärbündnis war die DDR Mitglied?",
-    "options": ["in der NATO", "im Rheinbund", "im Warschauer Pakt", "im Europabündnis"],
+    "options": [
+      "in der NATO",
+      "im Rheinbund",
+      "im Warschauer Pakt",
+      "im Europabündnis"
+    ],
     "answerIndex": 2,
     "explanation": "Die DDR war Mitglied im Warschauer Pakt[cite: 2331]."
   },
@@ -2225,7 +3175,12 @@
     "category": "History",
     "question": "Welches war das Wappen der Deutschen Demokratischen Republik?",
     "image": "/images/east-german-coat-of-arms.jpg",
-    "options": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
+    "options": [
+      "Bild 1",
+      "Bild 2",
+      "Bild 3",
+      "Bild 4"
+    ],
     "answerIndex": 1,
     "explanation": "Das Wappen der DDR (Bild 2) zeigt einen Hammer, einen Zirkel und einen Ährenkranz[cite: 2357]."
   },
@@ -2246,7 +3201,12 @@
     "id": "q211",
     "category": "Politics",
     "question": "Welcher Politiker steht für die \"Ostverträge\"?",
-    "options": ["Helmut Kohl", "Willy Brandt", "Michail Gorbatschow", "Ludwig Erhard"],
+    "options": [
+      "Helmut Kohl",
+      "Willy Brandt",
+      "Michail Gorbatschow",
+      "Ludwig Erhard"
+    ],
     "answerIndex": 1,
     "explanation": "Willy Brandt hat als Bundeskanzler die Ostverträge ausgehandelt, die eine Entspannungspolitik mit den Ostblockstaaten einleiteten[cite: 2377]."
   },
@@ -2267,7 +3227,12 @@
     "id": "q213",
     "category": "Demographics",
     "question": "Wie viele Einwohner hat Deutschland?",
-    "options": ["70 Millionen", "78 Millionen", "84 Millionen", "90 Millionen"],
+    "options": [
+      "70 Millionen",
+      "78 Millionen",
+      "84 Millionen",
+      "90 Millionen"
+    ],
     "answerIndex": 2,
     "explanation": "Deutschland hat ungefähr 84 Millionen Einwohner[cite: 2399]."
   },
@@ -2275,7 +3240,12 @@
     "id": "q214",
     "category": "Culture",
     "question": "Welche Farben hat die deutsche Flagge?",
-    "options": ["schwarz-rot-gold", "rot-weiß-schwarz", "schwarz-rot-grün", "schwarz-gelb-rot"],
+    "options": [
+      "schwarz-rot-gold",
+      "rot-weiß-schwarz",
+      "schwarz-rot-grün",
+      "schwarz-gelb-rot"
+    ],
     "answerIndex": 0,
     "explanation": "Die deutsche Nationalflagge ist schwarz-rot-gold[cite: 2410]."
   },
@@ -2283,7 +3253,12 @@
     "id": "q215",
     "category": "History",
     "question": "Wer wird als \"Kanzler der Deutschen Einheit\" bezeichnet?",
-    "options": ["Gerhard Schröder", "Helmut Kohl", "Konrad Adenauer", "Helmut Schmidt"],
+    "options": [
+      "Gerhard Schröder",
+      "Helmut Kohl",
+      "Konrad Adenauer",
+      "Helmut Schmidt"
+    ],
     "answerIndex": 1,
     "explanation": "Helmut Kohl wird als 'Kanzler der Deutschen Einheit' bezeichnet, weil er die Wiedervereinigung vorangetrieben hat[cite: 2421]."
   },
@@ -2292,7 +3267,12 @@
     "category": "Politics",
     "question": "Welches Symbol ist im Plenarsaal des Deutschen Bundestages zu sehen?",
     "image": "/images/bundestag-interior-eagle.jpg",
-    "options": ["der Bundesadler", "die Fahne der Stadt Berlin", "der Reichsadler", "die Reichskrone"],
+    "options": [
+      "der Bundesadler",
+      "die Fahne der Stadt Berlin",
+      "der Reichsadler",
+      "die Reichskrone"
+    ],
     "answerIndex": 0,
     "explanation": "Im Plenarsaal des Bundestages ist der Bundesadler als nationales Symbol zu sehen[cite: 2433]."
   },
@@ -2300,7 +3280,12 @@
     "id": "q217",
     "category": "History",
     "question": "In welchem Zeitraum gab es die Deutsche Demokratische Republik (DDR)?",
-    "options": ["1919 bis 1927", "1933 bis 1945", "1945 bis 1961", "1949 bis 1990"],
+    "options": [
+      "1919 bis 1927",
+      "1933 bis 1945",
+      "1945 bis 1961",
+      "1949 bis 1990"
+    ],
     "answerIndex": 3,
     "explanation": "Die DDR existierte von ihrer Gründung 1949 bis zur Wiedervereinigung 1990[cite: 2446]."
   },
@@ -2308,7 +3293,12 @@
     "id": "q218",
     "category": "History",
     "question": "Wie viele Bundesländer kamen bei der Wiedervereinigung 1990 zur Bundesrepublik Deutschland hinzu?",
-    "options": ["4", "5", "6", "7"],
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
     "answerIndex": 1,
     "explanation": "Bei der Wiedervereinigung traten 5 neue Bundesländer der Bundesrepublik bei[cite: 2456]."
   },
@@ -2316,7 +3306,12 @@
     "id": "q219",
     "category": "History",
     "question": "Die Bundesrepublik Deutschland hat die Grenzen von heute seit …",
-    "options": ["1933", "1949", "1971", "1990"],
+    "options": [
+      "1933",
+      "1949",
+      "1971",
+      "1990"
+    ],
     "answerIndex": 3,
     "explanation": "Seit der Wiedervereinigung im Jahr 1990 hat Deutschland seine heutigen Grenzen[cite: 2468]."
   },
@@ -2350,7 +3345,12 @@
     "id": "q222",
     "category": "Geography",
     "question": "Welches Land ist ein Nachbarland von Deutschland?",
-    "options": ["Ungarn", "Portugal", "Spanien", "Schweiz"],
+    "options": [
+      "Ungarn",
+      "Portugal",
+      "Spanien",
+      "Schweiz"
+    ],
     "answerIndex": 3,
     "explanation": "Die Schweiz ist ein Nachbarland Deutschlands[cite: 2499]."
   },
@@ -2358,7 +3358,12 @@
     "id": "q223",
     "category": "Geography",
     "question": "Welches Land ist ein Nachbarland von Deutschland?",
-    "options": ["Rumänien", "Bulgarien", "Polen", "Griechenland"],
+    "options": [
+      "Rumänien",
+      "Bulgarien",
+      "Polen",
+      "Griechenland"
+    ],
     "answerIndex": 2,
     "explanation": "Polen ist ein Nachbarland Deutschlands[cite: 2507]."
   },
@@ -2366,7 +3371,12 @@
     "id": "q224",
     "category": "Politics",
     "question": "Was bedeutet die Abkürzung EU?",
-    "options": ["Europäische Unternehmen", "Europäische Union", "Einheitliche Union", "Euro Union"],
+    "options": [
+      "Europäische Unternehmen",
+      "Europäische Union",
+      "Einheitliche Union",
+      "Euro Union"
+    ],
     "answerIndex": 1,
     "explanation": "EU steht für Europäische Union[cite: 2517]."
   },
@@ -2374,7 +3384,12 @@
     "id": "q225",
     "category": "Demographics",
     "question": "In welchem anderen Land gibt es eine große deutschsprachige Bevölkerung?",
-    "options": ["Tschechien", "Norwegen", "Spanien", "Österreich"],
+    "options": [
+      "Tschechien",
+      "Norwegen",
+      "Spanien",
+      "Österreich"
+    ],
     "answerIndex": 3,
     "explanation": "Österreich ist ein deutschsprachiges Nachbarland[cite: 2528]."
   },
@@ -2383,7 +3398,12 @@
     "category": "Politics",
     "question": "Welche ist die Flagge der Europäischen Union?",
     "image": "/images/eu-flag-identification.jpg",
-    "options": ["Bild 1", "Bild 2", "Bild 3", "Bild 4"],
+    "options": [
+      "Bild 1",
+      "Bild 2",
+      "Bild 3",
+      "Bild 4"
+    ],
     "answerIndex": 2,
     "explanation": "Die Flagge der Europäischen Union (Bild 3) ist blau mit 12 goldenen Sternen[cite: 2542]."
   },
@@ -2391,7 +3411,12 @@
     "id": "q227",
     "category": "Geography",
     "question": "Welches Land ist ein Nachbarland von Deutschland?",
-    "options": ["Finnland", "Dänemark", "Norwegen", "Schweden"],
+    "options": [
+      "Finnland",
+      "Dänemark",
+      "Norwegen",
+      "Schweden"
+    ],
     "answerIndex": 1,
     "explanation": "Dänemark ist ein Nachbarland von Deutschland[cite: 2551]."
   },
@@ -2399,7 +3424,12 @@
     "id": "q228",
     "category": "History",
     "question": "Wie wird der Beitritt der DDR zur Bundesrepublik Deutschland im Jahr 1990 allgemein genannt?",
-    "options": ["NATO-Osterweiterung", "EU-Osterweiterung", "Deutsche Wiedervereinigung", "Europäische Gemeinschaft"],
+    "options": [
+      "NATO-Osterweiterung",
+      "EU-Osterweiterung",
+      "Deutsche Wiedervereinigung",
+      "Europäische Gemeinschaft"
+    ],
     "answerIndex": 2,
     "explanation": "Der Zusammenschluss der beiden deutschen Staaten im Jahr 1990 wird Deutsche Wiedervereinigung genannt[cite: 2563]."
   },
@@ -2407,7 +3437,12 @@
     "id": "q229",
     "category": "Geography",
     "question": "Welches Land ist ein Nachbarland von Deutschland?",
-    "options": ["Spanien", "Bulgarien", "Norwegen", "Luxemburg"],
+    "options": [
+      "Spanien",
+      "Bulgarien",
+      "Norwegen",
+      "Luxemburg"
+    ],
     "answerIndex": 3,
     "explanation": "Luxemburg ist ein Nachbarland von Deutschland[cite: 2576]."
   },
@@ -2415,7 +3450,12 @@
     "id": "q230",
     "category": "Politics",
     "question": "Das Europäische Parlament wird regelmäßig gewählt, nämlich alle …",
-    "options": ["5 Jahre.", "6 Jahre.", "7 Jahre.", "8 Jahre."],
+    "options": [
+      "5 Jahre.",
+      "6 Jahre.",
+      "7 Jahre.",
+      "8 Jahre."
+    ],
     "answerIndex": 0,
     "explanation": "Die Wahlperiode des Europäischen Parlaments beträgt fünf Jahre[cite: 2583]."
   },
@@ -2449,7 +3489,12 @@
     "id": "q233",
     "category": "Geography",
     "question": "Welches Land ist ein Nachbarland von Deutschland?",
-    "options": ["Tschechien", "Bulgarien", "Griechenland", "Portugal"],
+    "options": [
+      "Tschechien",
+      "Bulgarien",
+      "Griechenland",
+      "Portugal"
+    ],
     "answerIndex": 0,
     "explanation": "Tschechien ist ein Nachbarland von Deutschland[cite: 2613]."
   },
@@ -2457,7 +3502,12 @@
     "id": "q234",
     "category": "Politics",
     "question": "Wo ist ein Sitz des Europäischen Parlaments?",
-    "options": ["London", "Paris", "Berlin", "Straßburg"],
+    "options": [
+      "London",
+      "Paris",
+      "Berlin",
+      "Straßburg"
+    ],
     "answerIndex": 3,
     "explanation": "Das Europäische Parlament hat einen seiner Sitze in Straßburg[cite: 2627]."
   },
@@ -2479,7 +3529,12 @@
     "id": "q236",
     "category": "Politics",
     "question": "Wie viele Mitgliedstaaten hat die EU heute?",
-    "options": ["21", "23", "25", "27"],
+    "options": [
+      "21",
+      "23",
+      "25",
+      "27"
+    ],
     "answerIndex": 3,
     "explanation": "Die EU hat aktuell 27 Mitgliedsstaaten[cite: 2652]."
   },
@@ -2526,7 +3581,12 @@
     "id": "q240",
     "category": "Economy",
     "question": "Seit wann bezahlt man in Deutschland mit dem Euro in bar?",
-    "options": ["1995", "1998", "2002", "2005"],
+    "options": [
+      "1995",
+      "1998",
+      "2002",
+      "2005"
+    ],
     "answerIndex": 2,
     "explanation": "Die Euro-Banknoten und -Münzen wurden am 1. Januar 2002 als Bargeld eingeführt[cite: 2692]."
   },
@@ -2547,7 +3607,12 @@
     "id": "q242",
     "category": "Education",
     "question": "Wer entscheidet, ob ein Kind in Deutschland in den Kindergarten geht?",
-    "options": ["der Staat", "die Bundesländer", "die Eltern/die Erziehungsberechtigten", "die Schulen"],
+    "options": [
+      "der Staat",
+      "die Bundesländer",
+      "die Eltern/die Erziehungsberechtigten",
+      "die Schulen"
+    ],
     "answerIndex": 2,
     "explanation": "Die Eltern entscheiden, ob ihr Kind einen Kindergarten besucht[cite: 2713]."
   },
@@ -2568,7 +3633,12 @@
     "id": "q244",
     "category": "Education",
     "question": "Welchen Schulabschluss braucht man normalerweise, um an einer Universität in Deutschland ein Studium zu beginnen?",
-    "options": ["das Abitur", "ein Diplom", "die Prokura", "eine Gesellenprüfung"],
+    "options": [
+      "das Abitur",
+      "ein Diplom",
+      "die Prokura",
+      "eine Gesellenprüfung"
+    ],
     "answerIndex": 0,
     "explanation": "Das Abitur ist der höchste deutsche Schulabschluss und berechtigt zum Studium an einer Universität[cite: 2737]."
   },
@@ -2589,7 +3659,12 @@
     "id": "q246",
     "category": "Law",
     "question": "Ab welchem Alter ist man in Deutschland volljährig?",
-    "options": ["16", "18", "19", "21"],
+    "options": [
+      "16",
+      "18",
+      "19",
+      "21"
+    ],
     "answerIndex": 1,
     "explanation": "Die Volljährigkeit tritt mit der Vollendung des 18. Lebensjahres ein[cite: 2760]."
   },
@@ -2597,7 +3672,12 @@
     "id": "q247",
     "category": "Law",
     "question": "Eine Frau ist schwanger. Sie ist kurz vor und nach der Geburt ihres Kindes vom Gesetz besonders beschützt. Wie heißt dieser Schutz?",
-    "options": ["Elternzeit", "Mutterschutz", "Geburtsvorbereitung", "Wochenbett"],
+    "options": [
+      "Elternzeit",
+      "Mutterschutz",
+      "Geburtsvorbereitung",
+      "Wochenbett"
+    ],
     "answerIndex": 1,
     "explanation": "Der Schutz für schwangere und stillende Mütter heißt Mutterschutz und ist gesetzlich geregelt[cite: 2767]."
   },
@@ -2605,7 +3685,12 @@
     "id": "q248",
     "category": "Family",
     "question": "Die Erziehung der Kinder ist in Deutschland ist vor allem Aufgabe …",
-    "options": ["des Staates.", "der Eltern.", "der Großeltern.", "der Schulen."],
+    "options": [
+      "des Staates.",
+      "der Eltern.",
+      "der Großeltern.",
+      "der Schulen."
+    ],
     "answerIndex": 1,
     "explanation": "Die Eltern sind in Deutschland die Hauptverantwortlichen für die Erziehung ihrer Kinder[cite: 2781]."
   },
@@ -2613,7 +3698,12 @@
     "id": "q249",
     "category": "Family",
     "question": "Wer ist in Deutschland hauptsächlich verantwortlich für die Kindererziehung?",
-    "options": ["der Staat", "die Eltern", "die Verwandten", "die Schulen"],
+    "options": [
+      "der Staat",
+      "die Eltern",
+      "die Verwandten",
+      "die Schulen"
+    ],
     "answerIndex": 1,
     "explanation": "In Deutschland haben die Eltern die Hauptverantwortung für die Kindererziehung[cite: 2791]."
   },
@@ -2621,7 +3711,12 @@
     "id": "q250",
     "category": "Economy",
     "question": "In Deutschland hat man die besten Chancen auf einen gut bezahlten Arbeitsplatz, wenn man …",
-    "options": ["katholisch ist.", "gut ausgebildet ist.", "eine Frau ist.", "Mitglied einer Partei ist."],
+    "options": [
+      "katholisch ist.",
+      "gut ausgebildet ist.",
+      "eine Frau ist.",
+      "Mitglied einer Partei ist."
+    ],
     "answerIndex": 1,
     "explanation": "Eine gute Ausbildung verbessert die Chancen auf einen gut bezahlten Arbeitsplatz[cite: 2801]."
   },
@@ -2655,7 +3750,12 @@
     "id": "q253",
     "category": "Law",
     "question": "Wo müssen Sie sich anmelden, wenn Sie in Deutschland umziehen?",
-    "options": ["beim Einwohnermeldeamt", "beim Standesamt", "beim Ordnungsamt", "beim Gewerbeamt"],
+    "options": [
+      "beim Einwohnermeldeamt",
+      "beim Standesamt",
+      "beim Ordnungsamt",
+      "beim Gewerbeamt"
+    ],
     "answerIndex": 0,
     "explanation": "Jeder, der in Deutschland umzieht, muss sich beim Einwohnermeldeamt anmelden[cite: 2831]."
   },
@@ -2676,7 +3776,12 @@
     "id": "q255",
     "category": "Family",
     "question": "Bei Erziehungsproblemen können Eltern in Deutschland Hilfe erhalten vom…",
-    "options": ["Ordnungsamt.", "Schulamt.", "Jugendamt.", "Gesundheitsamt."],
+    "options": [
+      "Ordnungsamt.",
+      "Schulamt.",
+      "Jugendamt.",
+      "Gesundheitsamt."
+    ],
     "answerIndex": 2,
     "explanation": "Das Jugendamt bietet Unterstützung und Beratung bei Erziehungsproblemen[cite: 2859]."
   },
@@ -2697,7 +3802,12 @@
     "id": "q257",
     "category": "Education",
     "question": "Eine erwachsene Frau möchte in Deutschland das Abitur nachholen. Das kann sie an …",
-    "options": ["einer Hochschule.", "einem Abendgymnasium.", "einer Hauptschule.", "einer Privatuniversität."],
+    "options": [
+      "einer Hochschule.",
+      "einem Abendgymnasium.",
+      "einer Hauptschule.",
+      "einer Privatuniversität."
+    ],
     "answerIndex": 1,
     "explanation": "Ein Abendgymnasium ist eine Einrichtung für Erwachsene, die einen Schulabschluss nachholen wollen[cite: 2876]."
   },
@@ -2718,7 +3828,12 @@
     "id": "q259",
     "category": "Economy",
     "question": "Das Berufsinformationszentrum BIZ bei der Bundesagentur für Arbeit in Deutschland hilft bei der …",
-    "options": ["Rentenberechnung.", "Lehrstellensuche.", "Steuererklärung.", "Krankenversicherung."],
+    "options": [
+      "Rentenberechnung.",
+      "Lehrstellensuche.",
+      "Steuererklärung.",
+      "Krankenversicherung."
+    ],
     "answerIndex": 1,
     "explanation": "Das BIZ bietet Informationen und Unterstützung bei der Suche nach Ausbildungs- und Arbeitsplätzen[cite: 2896]."
   },
@@ -2739,7 +3854,12 @@
     "id": "q261",
     "category": "Education",
     "question": "Ein Mann möchte mit 30 Jahren in Deutschland sein Abitur nachholen. Wo kann er das tun? An …",
-    "options": ["einer Hochschule.", "einem Abendgymnasium.", "einer Hauptschule.", "einer Privatuniversität."],
+    "options": [
+      "einer Hochschule.",
+      "einem Abendgymnasium.",
+      "einer Hauptschule.",
+      "einer Privatuniversität."
+    ],
     "answerIndex": 1,
     "explanation": "Ein Abendgymnasium ist speziell für Erwachsene, die einen höheren Schulabschluss erwerben möchten[cite: 2922]."
   },
@@ -2773,7 +3893,12 @@
     "id": "q264",
     "category": "Culture",
     "question": "Zu welchem Fest tragen Menschen in Deutschland bunte Kostüme und Masken?",
-    "options": ["am Rosenmontag", "am Maifeiertag", "beim Oktoberfest", "an Pfingsten"],
+    "options": [
+      "am Rosenmontag",
+      "am Maifeiertag",
+      "beim Oktoberfest",
+      "an Pfingsten"
+    ],
     "answerIndex": 0,
     "explanation": "Am Rosenmontag findet der Höhepunkt des Karnevals statt, bei dem sich Menschen verkleiden[cite: 2950]."
   },
@@ -2781,7 +3906,12 @@
     "id": "q265",
     "category": "Law",
     "question": "Wohin muss man in Deutschland zuerst gehen, wenn man heiraten möchte?",
-    "options": ["zum Einwohnermeldeamt", "zum Ordnungsamt", "zur Agentur für Arbeit", "zum Standesamt"],
+    "options": [
+      "zum Einwohnermeldeamt",
+      "zum Ordnungsamt",
+      "zur Agentur für Arbeit",
+      "zum Standesamt"
+    ],
     "answerIndex": 3,
     "explanation": "Die standesamtliche Trauung ist die einzige rechtsgültige Form der Eheschließung in Deutschland[cite: 2963]."
   },
@@ -2789,7 +3919,12 @@
     "id": "q266",
     "category": "Law",
     "question": "Wann beginnt die gesetzliche Nachtruhe in Deutschland?",
-    "options": ["wenn die Sonne untergeht", "wenn die Nachbarn schlafen gehen", "um 0 Uhr, Mitternacht", "um 22 Uhr"],
+    "options": [
+      "wenn die Sonne untergeht",
+      "wenn die Nachbarn schlafen gehen",
+      "um 0 Uhr, Mitternacht",
+      "um 22 Uhr"
+    ],
     "answerIndex": 3,
     "explanation": "Die gesetzliche Nachtruhe beginnt in Deutschland um 22 Uhr[cite: 2976]."
   },
@@ -2875,7 +4010,12 @@
     "id": "q273",
     "category": "Family",
     "question": "Bei Erziehungsproblemen gehen Sie in Deutschland …",
-    "options": ["zur Ärztin/zum Arzt.", "zum Gesundheitsamt.", "zum Einwohnermeldeamt.", "zum Jugendamt."],
+    "options": [
+      "zur Ärztin/zum Arzt.",
+      "zum Gesundheitsamt.",
+      "zum Einwohnermeldeamt.",
+      "zum Jugendamt."
+    ],
     "answerIndex": 3,
     "explanation": "Das Jugendamt ist die richtige Anlaufstelle bei Erziehungsproblemen[cite: 3039]."
   },
@@ -2883,7 +4023,12 @@
     "id": "q274",
     "category": "Law",
     "question": "Sie haben in Deutschland absichtlich einen Brief geöffnet, der an eine andere Person adressiert ist. Was haben Sie nicht beachtet?",
-    "options": ["das Schweigerecht", "das Briefgeheimnis", "die Schweigepflicht", "die Meinungsfreiheit"],
+    "options": [
+      "das Schweigerecht",
+      "das Briefgeheimnis",
+      "die Schweigepflicht",
+      "die Meinungsfreiheit"
+    ],
     "answerIndex": 1,
     "explanation": "Das Briefgeheimnis ist ein Grundrecht und besagt, dass Briefe nicht von Dritten geöffnet werden dürfen[cite: 3040]."
   },
@@ -2969,7 +4114,12 @@
     "id": "q281",
     "category": "Law",
     "question": "Zwei Freunde wollen in ein öffentliches Schwimmbad in Deutschland. Beide haben eine dunkle Hautfarbe und werden deshalb nicht hineingelassen. Welches Recht wird in dieser Situation verletzt? Das Recht auf …",
-    "options": ["Meinungsfreiheit", "Gleichbehandlung", "Versammlungsfreiheit", "Freizügigkeit"],
+    "options": [
+      "Meinungsfreiheit",
+      "Gleichbehandlung",
+      "Versammlungsfreiheit",
+      "Freizügigkeit"
+    ],
     "answerIndex": 1,
     "explanation": "Die Ungleichbehandlung aufgrund der Hautfarbe verstößt gegen das Recht auf Gleichbehandlung[cite: 3058]."
   },
@@ -2977,7 +4127,12 @@
     "id": "q282",
     "category": "Politics",
     "question": "Welches Ehrenamt müssen deutsche Staatsbürgerinnen und Staatsbürger übernehmen, wenn sie dazu aufgefordert werden?",
-    "options": ["Vereinstrainerin/Vereinstrainer", "Wahlhelferin/Wahlhelfer", "Bibliotheksaufsicht", "Lehrerin/Lehrer"],
+    "options": [
+      "Vereinstrainerin/Vereinstrainer",
+      "Wahlhelferin/Wahlhelfer",
+      "Bibliotheksaufsicht",
+      "Lehrerin/Lehrer"
+    ],
     "answerIndex": 1,
     "explanation": "Deutsche Staatsbürger können zur Unterstützung bei Wahlen als Wahlhelfer berufen werden[cite: 3059]."
   },
@@ -3037,7 +4192,12 @@
     "id": "q287",
     "category": "Economy",
     "question": "Sie möchten bei einer Firma in Deutschland ihr Arbeitsverhältnis beenden. Was müssen Sie beachten?",
-    "options": ["die Gehaltszahlungen", "die Arbeitszeit", "die Kündigungsfrist", "die Versicherungspflicht"],
+    "options": [
+      "die Gehaltszahlungen",
+      "die Arbeitszeit",
+      "die Kündigungsfrist",
+      "die Versicherungspflicht"
+    ],
     "answerIndex": 2,
     "explanation": "Bei der Kündigung muss die vertraglich vereinbarte Kündigungsfrist eingehalten werden[cite: 3071]."
   },
@@ -3123,7 +4283,12 @@
     "id": "q294",
     "category": "Culture",
     "question": "Pfingsten ist ein …",
-    "options": ["christlicher Feiertag.", "deutscher Gedenktag.", "internationaler Trauertag.", "bayerischer Brauch."],
+    "options": [
+      "christlicher Feiertag.",
+      "deutscher Gedenktag.",
+      "internationaler Trauertag.",
+      "bayerischer Brauch."
+    ],
     "answerIndex": 0,
     "explanation": "Pfingsten ist ein christliches Fest, das an die Ausgießung des Heiligen Geistes erinnert[cite: 3088]."
   },
@@ -3131,7 +4296,12 @@
     "id": "q295",
     "category": "History",
     "question": "Welche Religion hat die europäische und deutsche Kultur geprägt?",
-    "options": ["der Hinduismus", "das Christentum", "der Buddhismus", "der Islam"],
+    "options": [
+      "der Hinduismus",
+      "das Christentum",
+      "der Buddhismus",
+      "der Islam"
+    ],
     "answerIndex": 1,
     "explanation": "Das Christentum hat die europäische und deutsche Kultur maßgeblich geprägt[cite: 3090]."
   },
@@ -3139,7 +4309,12 @@
     "id": "q296",
     "category": "Culture",
     "question": "In Deutschland nennt man die letzten vier Wochen vor Weihnachten …",
-    "options": ["den Buß- und Bettag.", "das Erntedankfest.", "die Adventszeit.", "Allerheiligen."],
+    "options": [
+      "den Buß- und Bettag.",
+      "das Erntedankfest.",
+      "die Adventszeit.",
+      "Allerheiligen."
+    ],
     "answerIndex": 2,
     "explanation": "Die vier Wochen vor Weihnachten sind die Adventszeit[cite: 3092]."
   },
@@ -3147,7 +4322,12 @@
     "id": "q297",
     "category": "Demographics",
     "question": "Aus welchem Land sind die meisten Migrantinnen und Migranten nach Deutschland gekommen?",
-    "options": ["Italien", "Polen", "Marokko", "Türkei"],
+    "options": [
+      "Italien",
+      "Polen",
+      "Marokko",
+      "Türkei"
+    ],
     "answerIndex": 3,
     "explanation": "Die Türkei ist das Land, aus dem die meisten Migranten nach Deutschland gekommen sind[cite: 3094]."
   },
@@ -3181,7 +4361,12 @@
     "id": "q300",
     "category": "History",
     "question": "Aus welchem Land kamen die ersten Gastarbeiterinnen und Gastarbeiter in die Bundesrepublik Deutschland?",
-    "options": ["Italien", "Spanien", "Portugal", "Türkei"],
+    "options": [
+      "Italien",
+      "Spanien",
+      "Portugal",
+      "Türkei"
+    ],
     "answerIndex": 0,
     "explanation": "Die ersten Gastarbeiter kamen aus Italien[cite: 3098]."
   }
