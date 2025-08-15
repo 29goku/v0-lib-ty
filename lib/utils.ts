@@ -10,10 +10,13 @@ export function getStateQuestionTranslation(
   // If there's no translation for the requested language, return null so callers
   // can fall back to runtime translation instead of receiving German text.
   if (!translation) return null
-
+  // Support both inline keys (`options`, `explanation`) and the
+  // older/alternate naming used in some data files
+  // (`optionTranslations`, `explanationTranslations`).
   const questionText = translation.question || q.question || null
-  const options = translation.options || q.options || []
-  const explanation = translation.explanation || q.explanation || ""
+  const options = translation.options || translation.optionTranslations || q.options || []
+  const explanation =
+    translation.explanation || translation.explanationTranslations || q.explanation || ""
   return {
     question: questionText,
     options,

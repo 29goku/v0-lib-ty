@@ -672,7 +672,20 @@ export default function SwipeCard({
   const showTranslation = isTranslated !== undefined ? isTranslated : internalShowTranslation
 
   // Also check if the current question has built-in translations (questions.json)
-  const questionTranslations = (question as any).translations?.[language]
+  // Normalize translations: some data files use `optionTranslations` and
+  // `explanationTranslations` instead of `options`/`explanation` inside the
+  // language object. Normalize into a consistent shape: { question, options, explanation }
+  const rawQuestionTranslations = (question as any).translations?.[language]
+  let questionTranslations = rawQuestionTranslations
+  if (rawQuestionTranslations) {
+    const normalizedOptions = rawQuestionTranslations.options || rawQuestionTranslations.optionTranslations || undefined
+    const normalizedExplanation = rawQuestionTranslations.explanation || rawQuestionTranslations.explanationTranslations || undefined
+    questionTranslations = {
+      question: rawQuestionTranslations.question || question.question,
+      options: normalizedOptions,
+      explanation: normalizedExplanation,
+    }
+  }
 
   // Resolved translation priority: stateTranslation -> question.translations -> fallback translatedText/options
   const resolvedTranslation = stateTranslation || questionTranslations || null

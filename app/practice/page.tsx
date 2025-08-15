@@ -85,9 +85,7 @@ export default function PracticePage() {
             const stateResponse = await fetch("/data/state-questions.json")
             if (stateResponse.ok) {
               const stateData = await stateResponse.json()
-              if (stateData[selectedState]) {
-                setStateQuestions(stateData[selectedState])
-              }
+                setStateQuestions(stateData[selectedState] || [])
             }
           } catch (error) {
             console.error("Failed to load state questions:", error)
