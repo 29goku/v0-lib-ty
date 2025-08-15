@@ -72,50 +72,7 @@ export default function HomePage() {
       </div>
 
       <div className="relative z-10">
-        {/* Language Selector */}
-        <div className="absolute top-4 right-4 md:top-6 md:right-6 flex items-center space-x-4">
-          <Dialog open={showTranslationDialog} onOpenChange={setShowTranslationDialog}>
-            <DialogTrigger asChild>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="hover:bg-blue-500/20 border-2 border-blue-500/50 rounded-full p-2 transition-all transform hover:scale-110"
-              >
-                <Languages className="w-4 h-4 text-blue-400" />
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="bg-black/90 border-2 border-blue-500/50 text-white">
-              <DialogHeader>
-                <DialogTitle className="text-xl font-bold text-blue-400">🌐 Translation Feature</DialogTitle>
-              </DialogHeader>
-              <div className="p-4">
-                <p className="text-gray-300 mb-4">
-                  Our translation feature helps you understand German citizenship questions in English. Look for the
-                  translation button on question cards throughout the app.
-                </p>
-                <div className="bg-blue-900/50 p-4 rounded-lg border border-blue-400/30 mb-4">
-                  <h4 className="text-blue-300 font-bold mb-2">🎯 How to use:</h4>
-                  <ul className="text-sm text-gray-300 space-y-2">
-                    <li>
-                      • Look for the <Languages className="w-4 h-4 inline mx-1 text-blue-400" /> button on question
-                      cards in Practice and Review modes
-                    </li>
-                    <li>• Click to translate the question, all answer options, and explanations to English</li>
-                    <li>• Click again to toggle back to the original German text</li>
-                    <li>• Translation resets automatically when you move to the next question</li>
-                  </ul>
-                </div>
-                <div className="bg-yellow-900/50 p-4 rounded-lg border border-yellow-400/30">
-                  <p className="text-yellow-300 font-semibold">
-                    💡 Pro Tip: Use translation sparingly to build your German comprehension skills for the real test!
-                  </p>
-                </div>
-              </div>
-            </DialogContent>
-          </Dialog>
-
-          <LanguageSelector />
-        </div>
+        
 
         {/* Hero Section */}
         <div className="min-h-screen flex items-center justify-center px-4 relative">
