@@ -754,8 +754,9 @@ export default function SwipeCard({
           // If question is a state question and stateTranslation exists, we already use it for display.
           // But still populate translated state so UI shows a consistent translatedExplanation if needed.
           const translatedQuestionText = await translateText(question.question, language)
+          // Translate all answer options
           const translatedOptionsArray = await Promise.all(
-            question.options.map(async (option) => await translateText(option, language))
+            (Array.isArray(question.options) ? question.options : []).map(async (option) => await translateText(option, language))
           )
           let translatedExplanationText = ""
           if (question.explanation) {
@@ -768,7 +769,11 @@ export default function SwipeCard({
         } catch (error) {
           if (!mounted) return
           setTranslatedText(`[${language.toUpperCase()}] ${question.question}`)
-          setTranslatedOptions(question.options.map((option) => `[${language.toUpperCase()}] ${option}`))
+          setTranslatedOptions(
+            Array.isArray(question.options)
+              ? question.options.map((option) => `[${language.toUpperCase()}] ${option}`)
+              : []
+          )
           setTranslatedExplanation(question.explanation ? `[${language.toUpperCase()}] ${question.explanation}` : "")
         } finally {
           if (mounted) setIsTranslating(false)
@@ -827,7 +832,7 @@ export default function SwipeCard({
       const translatedQuestionText = await translateText(question.question, language)
       // Translate all answer options
       const translatedOptionsArray = await Promise.all(
-        question.options.map(async (option) => await translateText(option, language))
+        (Array.isArray(question.options) ? question.options : []).map(async (option) => await translateText(option, language))
       )
       // Translate explanation if it exists
       let translatedExplanationText = ""
@@ -840,7 +845,11 @@ export default function SwipeCard({
       setTranslatedExplanation(translatedExplanationText)
     } catch (error) {
       setTranslatedText(`[${language.toUpperCase()}] ${question.question}`)
-      setTranslatedOptions(question.options.map((option) => `[${language.toUpperCase()}] ${option}`))
+      setTranslatedOptions(
+        Array.isArray(question.options)
+          ? question.options.map((option) => `[${language.toUpperCase()}] ${option}`)
+          : []
+      )
       setTranslatedExplanation(question.explanation ? `[${language.toUpperCase()}] ${question.explanation}` : "")
     } finally {
       setIsTranslating(false)
