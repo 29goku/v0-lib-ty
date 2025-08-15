@@ -47,49 +47,14 @@ export default function SettingsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden relative">
-      {/* INSANE animated background */}
+    <div className="min-h-screen bg-gradient-to-br from-pink-900 via-purple-900 to-black text-white overflow-hidden relative">
+      {/* INSANE animated background and floating emojis */}
       <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-black"></div>
-
-        {/* Floating elements */}
-        <div
-          className="absolute top-10 left-10 w-4 h-4 bg-yellow-400 rotate-45 animate-spin"
-          style={{ animationDuration: "3s" }}
-        ></div>
-        <div
-          className="absolute top-32 right-20 w-6 h-6 bg-pink-500 rounded-full animate-bounce"
-          style={{ animationDelay: "0.5s" }}
-        ></div>
-        <div
-          className="absolute bottom-40 left-32 w-8 h-8 bg-green-400 rotate-45 animate-pulse"
-          style={{ animationDelay: "1s" }}
-        ></div>
-        <div
-          className="absolute bottom-20 right-40 w-3 h-3 bg-cyan-400 animate-ping"
-          style={{ animationDelay: "1.5s" }}
-        ></div>
-
-        {/* Moving orbs */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-3xl animate-pulse"></div>
-        <div
-          className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "1s" }}
-        ></div>
-
-        {/* Floating emojis */}
-        <div className="absolute top-20 left-20 text-3xl animate-bounce" style={{ animationDelay: "0s" }}>
-          ⚙️
-        </div>
-        <div className="absolute top-40 right-32 text-2xl animate-bounce" style={{ animationDelay: "1s" }}>
-          🎮
-        </div>
-        <div className="absolute bottom-32 left-32 text-4xl animate-bounce" style={{ animationDelay: "2s" }}>
-          🔧
-        </div>
-        <div className="absolute bottom-20 right-20 text-2xl animate-bounce" style={{ animationDelay: "3s" }}>
-          💎
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-900 via-purple-900 to-black"></div>
+        <div className="absolute top-10 left-10 text-6xl animate-bounce" style={{ animationDelay: '0s' }}>🛠️</div>
+        <div className="absolute top-32 right-20 text-5xl animate-bounce" style={{ animationDelay: '1s' }}>🎮</div>
+        <div className="absolute bottom-32 left-32 text-7xl animate-bounce" style={{ animationDelay: '2s' }}>🔧</div>
+        <div className="absolute bottom-20 right-20 text-5xl animate-bounce" style={{ animationDelay: '3s' }}>💎</div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-8">

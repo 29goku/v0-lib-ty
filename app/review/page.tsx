@@ -88,23 +88,40 @@ export default function ReviewPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-black flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-8xl mb-8 animate-bounce">🚀</div>
-          <h2 className="text-4xl font-black text-white mb-4">LOADING REVIEW...</h2>
-          <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden">
-            <div className="h-full bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full animate-pulse"></div>
+      <div className="min-h-screen bg-gradient-to-br from-pink-900 via-purple-900 to-black flex items-center justify-center overflow-hidden relative">
+        {/* Animated background and floating emojis */}
+        <div className="fixed inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-pink-900 via-purple-900 to-black"></div>
+          <div className="absolute top-10 left-10 text-6xl animate-bounce" style={{ animationDelay: '0s' }}>🎯</div>
+          <div className="absolute top-32 right-20 text-5xl animate-bounce" style={{ animationDelay: '1s' }}>🔥</div>
+          <div className="absolute bottom-32 left-32 text-7xl animate-bounce" style={{ animationDelay: '2s' }}>🏆</div>
+          <div className="absolute bottom-20 right-20 text-5xl animate-bounce" style={{ animationDelay: '3s' }}>✨</div>
+        </div>
+        <div className="text-center z-10">
+          <div className="text-8xl mb-8 animate-bounce">🎯</div>
+          <h2 className="text-5xl font-black bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x mb-4">REVIEW MODE</h2>
+          <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden mx-auto">
+            <div className="h-full bg-gradient-to-r from-yellow-400 to-pink-500 rounded-full animate-pulse"></div>
           </div>
+          <div className="mt-6 text-xl text-pink-200 animate-pulse">Loading your flagged & completed questions...</div>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-black text-white">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header with MAXIMUM ENERGY */}
-        <div className="flex items-center justify-between mb-8">
+    <div className="min-h-screen bg-gradient-to-br from-pink-900 via-purple-900 to-black text-white overflow-hidden relative">
+      {/* Animated background and floating emojis */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-900 via-purple-900 to-black"></div>
+        <div className="absolute top-10 left-10 text-6xl animate-bounce" style={{ animationDelay: '0s' }}>🎯</div>
+        <div className="absolute top-32 right-20 text-5xl animate-bounce" style={{ animationDelay: '1s' }}>🔥</div>
+        <div className="absolute bottom-32 left-32 text-7xl animate-bounce" style={{ animationDelay: '2s' }}>🏆</div>
+        <div className="absolute bottom-20 right-20 text-5xl animate-bounce" style={{ animationDelay: '3s' }}>✨</div>
+      </div>
+      <div className="container mx-auto px-4 py-8 relative z-10">
+        {/* Header with MAXIMUM ENERGY & mobile friendly */}
+        <div className="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
           <div className="flex items-center space-x-4">
             <Link href="/">
               <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
@@ -112,18 +129,37 @@ export default function ReviewPage() {
                 BACK TO HOME
               </Button>
             </Link>
-            <h1 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
-              🎯 REVIEW CENTER
+            <h1 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">
+              🎯 REVIEW MODE
             </h1>
+            <Badge variant="outline" className="ml-2 text-xs bg-pink-700/30 border-pink-400 text-pink-200 shadow-lg animate-pulse">Review flagged & completed questions</Badge>
           </div>
           <Button
             onClick={handleResetProgress}
-            className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white border-0 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+            className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white border-0 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 animate-bounce"
           >
             <RotateCcw className="w-5 h-5 mr-2" />
             RESET PROGRESS
           </Button>
         </div>
+        {/* Mobile UI improvements */}
+        <style jsx global>{`
+          @media (max-width: 640px) {
+            .flex.flex-col.sm\:flex-row.items-center.justify-between.mb-8.gap-4 {
+              flex-direction: column;
+              gap: 1rem;
+            }
+          }
+          .animate-gradient-x {
+            background-size: 200% 200%;
+            animation: gradient-x 3s ease infinite;
+          }
+          @keyframes gradient-x {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+        `}</style>
 
         {/* Stats Overview with INSANE ENERGY */}
         <div className="grid md:grid-cols-4 gap-6 mb-8">

@@ -12,6 +12,19 @@ import Link from "next/link"
 import { getCategoryEmoji } from "@/lib/category-emojis"
 
 export default function TestPage() {
+  // Start test with selected number of questions
+  const handleStartTest = () => {
+    // Shuffle and select questions
+    const shuffled = [...questions].sort(() => Math.random() - 0.5)
+    const selectedQuestions = shuffled.slice(0, selectedQuestionCount[0])
+    setQuestions(selectedQuestions)
+    setShowConfig(false)
+    startTest()
+    setCurrentQuestionIndex(0)
+    setSelectedAnswer(null)
+    setIsTranslated(false)
+    setTimeRemaining(60 * 60)
+  }
   const {
     questions,
     setQuestions,
@@ -47,21 +60,11 @@ export default function TestPage() {
         setIsLoading(false)
       }
     }
-
     initializeTest()
   }, [loadQuestions])
 
-  const handleStartTest = () => {
-    const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5)
-    const selectedQuestions = shuffledQuestions.slice(0, selectedQuestionCount[0])
-    setQuestions(selectedQuestions)
-    setShowConfig(false)
-    startTest()
-  }
-
   useEffect(() => {
     if (!testMode || showResults || showConfig) return
-
     const timer = setInterval(() => {
       setTimeRemaining((prev) => {
         if (prev <= 1) {
@@ -71,7 +74,6 @@ export default function TestPage() {
         return prev - 1
       })
     }, 1000)
-
     return () => clearInterval(timer)
   }, [testMode, showResults, showConfig])
 
@@ -142,10 +144,22 @@ export default function TestPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-6xl mb-4 animate-spin">🔄</div>
-          <h2 className="text-2xl font-bold">Loading Test...</h2>
+      <div className="min-h-screen bg-gradient-to-br from-pink-900 via-purple-900 to-black flex items-center justify-center overflow-hidden relative">
+        {/* Animated background and floating emojis */}
+        <div className="fixed inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-pink-900 via-purple-900 to-black"></div>
+          <div className="absolute top-10 left-10 text-6xl animate-bounce" style={{ animationDelay: '0s' }}>📝</div>
+          <div className="absolute top-32 right-20 text-5xl animate-bounce" style={{ animationDelay: '1s' }}>⏱️</div>
+          <div className="absolute bottom-32 left-32 text-7xl animate-bounce" style={{ animationDelay: '2s' }}>🏆</div>
+          <div className="absolute bottom-20 right-20 text-5xl animate-bounce" style={{ animationDelay: '3s' }}>✨</div>
+        </div>
+        <div className="text-center z-10">
+          <div className="text-8xl mb-8 animate-bounce">�</div>
+          <h2 className="text-5xl font-black bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x mb-4">TEST MODE</h2>
+          <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden mx-auto">
+            <div className="h-full bg-gradient-to-r from-yellow-400 to-pink-500 rounded-full animate-pulse"></div>
+          </div>
+          <div className="mt-6 text-xl text-pink-200 animate-pulse">Loading your official simulation...</div>
         </div>
       </div>
     )
