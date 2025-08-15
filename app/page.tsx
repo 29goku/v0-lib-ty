@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Head from "next/head"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { useStore } from "@/lib/store"
@@ -38,7 +39,119 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden relative">
+      <>
+        <Head>
+          <title>Leben in Deutschland Test 2025 – 310 Offizielle Fragen & Vorbereitung</title>
+          <meta name="description" content="Kostenlose Vorbereitung für den Leben in Deutschland Test 2025 mit allen 310 offiziellen Fragen, Antworten und Erklärungen. Interaktiv, mobilfreundlich und perfekt für den Einbürgerungstest." />
+          <meta name="robots" content="index, follow" />
+          <link rel="canonical" href="https://lebeninde.com/" />
+          <link rel="alternate" href="https://lebeninde.com/en/" hrefLang="en" />
+          <link rel="alternate" href="https://lebeninde.com/" hrefLang="de" />
+          {/* Open Graph */}
+          <meta property="og:title" content="Leben in Deutschland Test 2025 – 310 Offizielle Fragen & Vorbereitung" />
+          <meta property="og:description" content="Kostenlose Vorbereitung für den Leben in Deutschland Test 2025 mit allen 310 offiziellen Fragen, Antworten und Erklärungen. Interaktiv, mobilfreundlich und perfekt für den Einbürgerungstest." />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://lebeninde.com/" />
+          <meta property="og:image" content="/public/placeholder-logo.png" />
+          {/* Twitter Card */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Leben in Deutschland Test 2025 – 310 Offizielle Fragen & Vorbereitung" />
+          <meta name="twitter:description" content="Kostenlose Vorbereitung für den Leben in Deutschland Test 2025 mit allen 310 offiziellen Fragen, Antworten und Erklärungen. Interaktiv, mobilfreundlich und perfekt für den Einbürgerungstest." />
+          <meta name="twitter:image" content="/public/placeholder-logo.png" />
+          {/* Schema.org Structured Data */}
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Leben in Deutschland Test 2025",
+            "description": "Kostenlose Vorbereitung für den Leben in Deutschland Test 2025 mit allen 310 offiziellen Fragen, Antworten und Erklärungen.",
+            "url": "https://lebeninde.com/",
+            "inLanguage": "de",
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://lebeninde.com/"},
+                {"@type": "ListItem", "position": 2, "name": "Fragenkatalog", "item": "https://lebeninde.com/fragenkatalog"},
+                {"@type": "ListItem", "position": 3, "name": "Test", "item": "https://lebeninde.com/test"}
+              ]
+            },
+            "mainEntity": [
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Wie viele Fragen hat der Leben in Deutschland Test?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Der Test besteht aus 33 Fragen, davon 3 zu Ihrem Bundesland."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Besteht man den Test ohne Vorbereitung?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Eine gezielte Vorbereitung erhöht die Erfolgschancen deutlich."
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "Quiz",
+                "name": "Leben in Deutschland Test Quiz",
+                "about": "310 offizielle Fragen zum Leben in Deutschland Test",
+                "url": "https://lebeninde.com/test"
+              }
+            ]
+          }) }} />
+          {/* English alternate structured data */}
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Life in Germany Test 2025",
+            "description": "Free preparation for the Life in Germany Test 2025 with all 310 official questions, answers, and explanations. Interactive, mobile-friendly, and perfect for the citizenship test.",
+            "url": "https://lebeninde.com/en/",
+            "inLanguage": "en",
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://lebeninde.com/en/"},
+                {"@type": "ListItem", "position": 2, "name": "Question Catalog", "item": "https://lebeninde.com/en/questions"},
+                {"@type": "ListItem", "position": 3, "name": "Test", "item": "https://lebeninde.com/en/test"}
+              ]
+            },
+            "mainEntity": [
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How many questions are in the Life in Germany Test?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "The test consists of 33 questions, including 3 about your federal state."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can you pass the test without preparation?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Targeted preparation significantly increases your chances of success."
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "Quiz",
+                "name": "Life in Germany Test Quiz",
+                "about": "310 official questions for the Life in Germany Test",
+                "url": "https://lebeninde.com/en/test"
+              }
+            ]
+          }) }} />
+        </Head>
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden relative">
       {/* Modern background */}
       <div className="fixed inset-0 z-0">
         <div
@@ -342,6 +455,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
