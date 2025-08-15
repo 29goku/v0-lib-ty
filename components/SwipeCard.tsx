@@ -680,10 +680,31 @@ export default function SwipeCard({
   // For rendering: main question stays as original German. Translation box uses resolved translations first, then translatedText.
   const translationBoxQuestion = resolvedTranslation?.question || translatedText || ""
   const translationBoxOptions: string[] = resolvedTranslation?.options || translatedOptions
-  // eslint-disable-next-line no-console
-  console.log("[SwipeCard display] translationBoxQuestion:", translationBoxQuestion)
-  // eslint-disable-next-line no-console
-  console.log("[SwipeCard display] translationBoxOptions:", translationBoxOptions)
+  // Heuristic: detect if a string looks like German (common words). If a resolved
+  // translation exists but still appears German while the selected language is not
+  // German, prefer the runtime translatedExplanation (from translateText) when available.
+  const isLikelyGerman = (text: string | undefined) => {
+    if (!text) return false
+    const s = text.toLowerCase()
+    // quick set of common German words/phrases
+    const germanHints = [" der ", " die ", " das ", " und ", " ist ", " ein ", " eine ", " in deutschland", " jahr", "jahre", "das ist", "die " ,"der ","in \b"]
+    return germanHints.some((hint) => s.includes(hint))
+  }
+
+  let translationBoxExplanation = ""
+  if (resolvedTranslation?.explanation) {
+    const resolvedExpl = resolvedTranslation.explanation
+    if (language !== "de" && isLikelyGerman(resolvedExpl) && translatedExplanation) {
+      translationBoxExplanation = translatedExplanation
+    } else if (question.explanation && resolvedExpl === question.explanation && translatedExplanation) {
+      // If the resolved explanation equals the original (untranslated), prefer runtime translation
+      translationBoxExplanation = translatedExplanation
+    } else {
+      translationBoxExplanation = resolvedExpl
+    }
+  } else {
+    translationBoxExplanation = translatedExplanation || ""
+  }
 
   const x = useMotionValue(0)
   const rotate = useTransform(x, [-200, 200], [-25, 25])
@@ -1019,7 +1040,7 @@ export default function SwipeCard({
                 {t.explanation}
               </h4>
               <p className="text-white text-lg leading-relaxed mb-3">{question.explanation}</p>
-              {showTranslation && translatedExplanation && (
+              {showTranslation && translationBoxExplanation && (
                 <div className="bg-purple-800/30 p-3 rounded-lg border border-purple-400/20 mt-3">
                   <div className="flex items-center mb-2">
                     <Languages className="w-4 h-4 mr-2 text-purple-300" />
@@ -1046,7 +1067,7 @@ export default function SwipeCard({
                       Translation
                     </span>
                   </div>
-                  <p className="text-purple-200 text-base leading-relaxed">{translatedExplanation}</p>
+                  <p className="text-purple-200 text-base leading-relaxed">{translationBoxExplanation}</p>
                 </div>
               )}
             </motion.div>
