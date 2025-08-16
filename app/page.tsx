@@ -108,8 +108,8 @@ export default function HomePage() {
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Life in Germany Test 2025",
-            "description": "Free preparation for the Life in Germany Test 2025 with all 310 official questions, answers, and explanations. Interactive, mobile-friendly, and perfect for the citizenship test.",
+            "name": "Leben in Deutschland Test 2025",
+            "description": "Free preparation for the Leben in Deutschland Test 2025 with all 310 official questions, answers, and explanations. Interactive, mobile-friendly, and perfect for the citizenship test.",
             "url": "https://lebeninde.com/en/",
             "inLanguage": "en",
             "breadcrumb": {
@@ -126,7 +126,7 @@ export default function HomePage() {
                 "mainEntity": [
                   {
                     "@type": "Question",
-                    "name": "How many questions are in the Life in Germany Test?",
+                    "name": "How many questions are in the Leben in Deutschland Test?",
                     "acceptedAnswer": {
                       "@type": "Answer",
                       "text": "The test consists of 33 questions, including 3 about your federal state."
@@ -144,8 +144,8 @@ export default function HomePage() {
               },
               {
                 "@type": "Quiz",
-                "name": "Life in Germany Test Quiz",
-                "about": "310 official questions for the Life in Germany Test",
+                "name": "Leben in Deutschland Test Quiz",
+                "about": "310 official questions for the Leben in Deutschland Test",
                 "url": "https://lebeninde.com/en/test"
               }
             ]
