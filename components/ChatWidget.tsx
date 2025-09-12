@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const chatIcon = (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
@@ -10,6 +10,36 @@ const ChatWidget: React.FC = () => {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState('');
   const [sent, setSent] = React.useState(false);
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+
+  // Auto-open feedback on first visit after a short delay (only once)
+  useEffect(() => {
+    try {
+      const alreadyOpened = localStorage.getItem('feedbackAutoOpened');
+      if (!alreadyOpened) {
+        const timer = window.setTimeout(() => {
+          setOpen(true);
+          // mark that we've auto-opened so this only happens once
+          try {
+            localStorage.setItem('feedbackAutoOpened', '1');
+          } catch (e) {
+            // ignore storage errors
+          }
+        }, 3000); // 3s delay before auto-opening
+
+        return () => clearTimeout(timer);
+      }
+    } catch (e) {
+      // localStorage not available; do nothing
+    }
+  }, []);
+
+  // Focus textarea whenever the widget is opened
+  useEffect(() => {
+    if (open && textareaRef.current) {
+      textareaRef.current.focus();
+    }
+  }, [open]);
 
   const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -64,14 +94,15 @@ const ChatWidget: React.FC = () => {
             {!sent ? (
               <form onSubmit={sendMessage} className="w-full flex flex-col gap-4">
                 <textarea
+                  ref={textareaRef}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Your feedback or message..."
                   className="w-full border border-gray-200 rounded-lg px-4 py-3 text-base bg-gray-100 resize-none font-sans"
                   rows={4}
                   disabled={loading}
-                  autoFocus
-                />
+                  // autofocus handled via ref when opened
+                 />
                 {error && <div className="text-red-500 text-sm">{error}</div>}
                 <button
                   type="submit"
