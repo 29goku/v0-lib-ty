@@ -145,7 +145,7 @@ export default function ReviewPage() {
         {/* Mobile UI improvements */}
         <style jsx global>{`
           @media (max-width: 640px) {
-            .flex.flex-col.sm\:flex-row.items-center.justify-between.mb-8.gap-4 {
+            .flex.flex-col.items-center.justify-between.mb-8.gap-4 {
               flex-direction: column;
               gap: 1rem;
             }
