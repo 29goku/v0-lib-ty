@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useStore } from "@/lib/store"
 import SwipeCard from "@/components/SwipeCard"
 import ProgressBar from "@/components/ProgressBar"
@@ -38,9 +38,7 @@ export default function PracticePage() {
   const {
     questions,
     stateQuestions,
-    setQuestions,
     setStateQuestions,
-    currentQuestionIndex,
     setSelectedState,
     selectedState,
     selectedCategory,
@@ -62,12 +60,14 @@ export default function PracticePage() {
     selectedIndex: number
   } | null>(null)
   const [loading, setLoading] = useState(true)
-  const [showCorrect, setShowCorrect] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(0)
   const [showTranslation, setShowTranslation] = useState(false)
-  const [translatedQuestion, setTranslatedQuestion] = useState("")
   const [isAutoMode, setIsAutoMode] = useState(true)
   const [autoDelay, setAutoDelay] = useState(3000)
+  // local UI state
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [showCorrect, setShowCorrect] = useState(false)
+  const [overviewCollapsed, setOverviewCollapsed] = useState(false)
+  const overviewRef = useRef<HTMLDivElement | null>(null)
 
   const t = getTranslation(language)
 
@@ -85,7 +85,7 @@ export default function PracticePage() {
             const stateResponse = await fetch("/data/state-questions.json")
             if (stateResponse.ok) {
               const stateData = await stateResponse.json()
-                setStateQuestions(stateData[selectedState] || [])
+              setStateQuestions(stateData[selectedState] || [])
             }
           } catch (error) {
             console.error("Failed to load state questions:", error)
@@ -126,34 +126,27 @@ export default function PracticePage() {
 
   // Filter questions based on category
   const filteredQuestions = selectedCategory
-    ? questionsToUse.filter((q) => q.category === selectedCategory)
-    : questionsToUse
+      ? questionsToUse.filter((q) => q.category === selectedCategory)
+      : questionsToUse
 
   const currentQuestion = filteredQuestions[currentIndex]
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowRight" || event.key === "d" || event.key === "D") {
-        nextQuestion()
-      } else if (event.key === "ArrowLeft" || event.key === "a" || event.key === "A") {
-        previousQuestion()
-      } else if (event.key >= "1" && event.key <= "4" && !showAnswer) {
-        const optionIndex = Number.parseInt(event.key) - 1
-        if (currentQuestion && optionIndex < currentQuestion.options.length) {
-          handleAnswerSelect(optionIndex)
-        }
-      }
-    }
-
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [currentIndex, showAnswer, currentQuestion])
+  // Keyboard handling (navigation and answer hotkeys) is centralized inside the SwipeCard component.
+  // This keeps keyboard concerns localized to the active card and avoids duplicate listeners.
 
   // Reset category when state changes
   useEffect(() => {
     setSelectedCategory(null)
     setCurrentIndex(0)
   }, [selectedState, setSelectedCategory])
+
+  useEffect(() => {
+    if (!overviewRef.current) return
+    const el = overviewRef.current.querySelector(`[data-index="${currentIndex}"]`) as HTMLElement | null
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+    }
+  }, [currentIndex])
 
   const handleFlag = () => {
     if (!currentQuestion) return
@@ -172,6 +165,7 @@ export default function PracticePage() {
     if (currentIndex < filteredQuestions.length - 1) {
       setCurrentIndex(currentIndex + 1)
     } else {
+      // wrap or reset to start
       alert("You've reached the end of the questions!")
       setCurrentIndex(0)
     }
@@ -187,11 +181,21 @@ export default function PracticePage() {
     }
   }
 
+  // Allow jumping to any question in practice mode and reset transient UI
+  const handleQuestionJump = (index: number) => {
+    setCurrentIndex(index)
+    setShowAnswer(false)
+    setLastAnswer(null)
+    setShowCorrect(false)
+    setShowTranslation(false)
+  }
+  // Invert swipe-to-navigation mapping: swipe LEFT should move to previous question (like tapping left arrow),
+  // swipe RIGHT should move to next question. This matches keyboard ArrowLeft/ArrowRight expectations.
   const handleSwipe = (direction: "left" | "right") => {
     if (direction === "left") {
-      nextQuestion()
-    } else {
       previousQuestion()
+    } else {
+      nextQuestion()
     }
   }
 
@@ -248,356 +252,415 @@ export default function PracticePage() {
 
   if (loading || !currentQuestion) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-pink-900 text-white flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
-        </div>
+        <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-pink-900 text-white flex items-center justify-center relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+          </div>
 
-        <Card className="w-full max-w-md border-2 border-cyan-400/50 bg-black/80 backdrop-blur-xl relative overflow-hidden shadow-2xl shadow-cyan-500/25">
-          <CardContent className="p-8 text-center relative z-10">
-            <div className="text-8xl mb-6 animate-bounce">🚀</div>
-            <div className="animate-spin rounded-full h-16 w-16 bg-gradient-to-r from-cyan-400 border-4 border-cyan-400 border-t-transparent mx-auto mb-8"></div>
-            <p className="text-cyan-300 text-2xl font-black animate-pulse">{t.loadingQuestions}</p>
-            <p className="text-pink-400 text-lg font-bold mt-4 animate-bounce">{t.getReady}</p>
-          </CardContent>
-        </Card>
-      </div>
+          <Card className="w-full max-w-md border-2 border-cyan-400/50 bg-black/80 backdrop-blur-xl relative overflow-hidden shadow-2xl shadow-cyan-500/25">
+            <CardContent className="p-8 text-center relative z-10">
+              <div className="text-8xl mb-6 animate-bounce">🚀</div>
+              <div className="animate-spin rounded-full h-16 w-16 bg-gradient-to-r from-cyan-400 border-4 border-cyan-400 border-t-transparent mx-auto mb-8"></div>
+              <p className="text-cyan-300 text-2xl font-black animate-pulse">{t.loadingQuestions}</p>
+              <p className="text-pink-400 text-lg font-bold mt-4 animate-bounce">{t.getReady}</p>
+            </CardContent>
+          </Card>
+        </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden relative">
-      <div className="fixed inset-0 z-0">
-        <div
-          className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"
-          style={{ animationDuration: "4s" }}
-        ></div>
-        <div
-          className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "2s", animationDuration: "6s" }}
-        ></div>
-        <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "4s", animationDuration: "8s" }}
-        ></div>
+      <div className="min-h-screen bg-black text-white overflow-hidden relative">
+        <div className="fixed inset-0 z-0">
+          <div
+              className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"
+              style={{ animationDuration: "4s" }}
+          ></div>
+          <div
+              className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: "2s", animationDuration: "6s" }}
+          ></div>
+          <div
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: "4s", animationDuration: "8s" }}
+          ></div>
 
-        <div className="absolute top-20 left-20 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
-        <div className="absolute top-40 right-32 w-6 h-6 bg-pink-500 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-32 left-32 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-20 right-20 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
-      </div>
+          <div className="absolute top-20 left-20 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
+          <div className="absolute top-40 right-32 w-6 h-6 bg-pink-500 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-32 left-32 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-20 right-20 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
+        </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
-          <Link href="/">
-            <Button className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white border-2 border-red-400/50 px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all transform hover:scale-110 backdrop-blur-sm font-black text-sm md:text-base touch-manipulation">
-              <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
-              {t.back.toUpperCase()}
-            </Button>
-          </Link>
+        <div className="relative z-10 container mx-auto px-4 py-8">
+          <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
+            <Link href="/">
+              <Button className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white border-2 border-red-400/50 px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all transform hover:scale-110 backdrop-blur-sm font-black text-sm md:text-base touch-manipulation">
+                <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                {t.back.toUpperCase()}
+              </Button>
+            </Link>
 
-          <div className="text-center">
-            <h1 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">
+            <div className="text-center">
+              <h1 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">
               <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
                 {t.practiceMode.toUpperCase()}
               </span>
-            </h1>
-            <div className="text-sm md:text-lg text-pink-300 font-bold">
-              {selectedState
-                ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
-                : `${t.practiceSubtitle} 🚀`}
+              </h1>
+              <div className="text-sm md:text-lg text-pink-300 font-bold">
+                {selectedState
+                    ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
+                    : `${t.practiceSubtitle} 🚀`}
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 md:gap-4">
+              <LanguageSelector />
+              <Button
+                  onClick={resetProgress}
+                  className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-0 text-sm md:text-base touch-manipulation"
+              >
+                <RotateCcw className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                {t.reset.toUpperCase()}
+              </Button>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 md:gap-4">
-            <LanguageSelector />
-            <Button
-              onClick={resetProgress}
-              className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-0 text-sm md:text-base touch-manipulation"
-            >
-              <RotateCcw className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
-              {t.reset.toUpperCase()}
-            </Button>
+          <div className="flex justify-center mb-6">
+            <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-cyan-500/25">
+              <CardContent className="p-4">
+                <div className="flex items-center justify-center space-x-4">
+                  <span className="text-cyan-300 font-bold">Manual Mode</span>
+                  <Switch
+                      checked={isAutoMode}
+                      onCheckedChange={setIsAutoMode}
+                      className="data-[state=checked]:bg-green-500"
+                  />
+                  <span className="text-green-300 font-bold">Auto Mode</span>
+                  {isAutoMode && (
+                      <div className="flex items-center space-x-2 ml-4">
+                        <span className="text-yellow-300 text-sm">Delay:</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-yellow-300 text-xs">2s</span>
+                          <input
+                              type="range"
+                              min="2000"
+                              max="5000"
+                              step="500"
+                              value={autoDelay}
+                              onChange={(e) => setAutoDelay(Number(e.target.value))}
+                              className="w-20 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
+                              style={{
+                                background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${((autoDelay - 2000) / 3000) * 100}%, #374151 ${((autoDelay - 2000) / 3000) * 100}%, #374151 100%)`,
+                              }}
+                          />
+                          <span className="text-yellow-300 text-xs">5s</span>
+                          <span className="text-yellow-300 text-sm ml-2">{autoDelay / 1000}s</span>
+                        </div>
+                      </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
           </div>
-        </div>
 
-        <div className="flex justify-center mb-6">
-          <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-cyan-500/25">
-            <CardContent className="p-4">
-              <div className="flex items-center justify-center space-x-4">
-                <span className="text-cyan-300 font-bold">Manual Mode</span>
-                <Switch
-                  checked={isAutoMode}
-                  onCheckedChange={setIsAutoMode}
-                  className="data-[state=checked]:bg-green-500"
-                />
-                <span className="text-green-300 font-bold">Auto Mode</span>
-                {isAutoMode && (
-                  <div className="flex items-center space-x-2 ml-4">
-                    <span className="text-yellow-300 text-sm">Delay:</span>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-yellow-300 text-xs">2s</span>
-                      <input
-                        type="range"
-                        min="2000"
-                        max="5000"
-                        step="500"
-                        value={autoDelay}
-                        onChange={(e) => setAutoDelay(Number(e.target.value))}
-                        className="w-20 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
-                        style={{
-                          background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${((autoDelay - 2000) / 3000) * 100}%, #374151 ${((autoDelay - 2000) / 3000) * 100}%, #374151 100%)`,
-                        }}
-                      />
-                      <span className="text-yellow-300 text-xs">5s</span>
-                      <span className="text-yellow-300 text-sm ml-2">{autoDelay / 1000}s</span>
-                    </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
+            <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-cyan-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.progress}</p>
+                    <p className="text-xl md:text-3xl font-black text-white">
+                      {currentIndex + 1}/{filteredQuestions.length}
+                    </p>
                   </div>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
-          <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-cyan-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.progress}</p>
-                  <p className="text-xl md:text-3xl font-black text-white">
-                    {currentIndex + 1}/{filteredQuestions.length}
-                  </p>
+                  <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-pulse">🎯</div>
                 </div>
-                <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-pulse">🎯</div>
-              </div>
-              <div className="mt-2 md:mt-4">
-                <ProgressBar current={currentIndex + 1} total={filteredQuestions.length} label="" showNumbers={false} />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-2 border-yellow-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-yellow-500/25 hover:shadow-xl hover:shadow-yellow-500/40">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-yellow-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.xp}</p>
-                  <p className="text-xl md:text-3xl font-black text-yellow-400">{userProgress.xp}</p>
+                <div className="mt-2 md:mt-4">
+                  <ProgressBar current={currentIndex + 1} total={filteredQuestions.length} label="" showNumbers={false} />
                 </div>
-                <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-bounce">⚡</div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
 
-          <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-orange-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.streak}</p>
-                  <p className="text-xl md:text-3xl font-black text-orange-400">{userProgress.streak}</p>
+            <Card className="border-2 border-yellow-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-yellow-500/25 hover:shadow-xl hover:shadow-yellow-500/40">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-yellow-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.xp}</p>
+                    <p className="text-xl md:text-3xl font-black text-yellow-400">{userProgress.xp}</p>
+                  </div>
+                  <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-bounce">⚡</div>
                 </div>
-                <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-pulse">🔥</div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
 
-          <Card className="border-2 border-green-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-green-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.accuracy}</p>
-                  <p className="text-xl md:text-3xl font-black text-green-400">
-                    {userProgress.questionsAnswered > 0
-                      ? Math.round((userProgress.correctAnswers / userProgress.questionsAnswered) * 100)
-                      : 0}
-                    %
-                  </p>
+            <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-orange-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.streak}</p>
+                    <p className="text-xl md:text-3xl font-black text-orange-400">{userProgress.streak}</p>
+                  </div>
+                  <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-pulse">🔥</div>
                 </div>
-                <div
-                  className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-spin"
-                  style={{ animationDuration: "3s" }}
-                >
-                  📊
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+              </CardContent>
+            </Card>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-          <Card className="border-2 border-pink-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-pink-500/25">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                <MapPin className="w-5 h-5 md:w-6 md:h-6 text-pink-400 animate-bounce" />
-                <h3 className="text-lg md:text-xl font-black text-pink-300 uppercase tracking-wider">
-                  {t.selectState}
-                </h3>
-              </div>
-              <div className="state-filter-container">
-                <div className="state-filter-grid state-filter-scroll">
-                  <button
-                    onClick={() => handleStateSelection(null)}
-                    className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
-                      !selectedState
-                        ? "bg-gradient-to-r from-pink-500 to-red-500 text-white shadow-lg shadow-pink-500/50 border-2 border-pink-400"
-                        : "bg-black/50 text-pink-300 hover:bg-black/80 hover:text-white border-2 border-pink-400/30"
-                    }`}
+            <Card className="border-2 border-green-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-green-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.accuracy}</p>
+                    <p className="text-xl md:text-3xl font-black text-green-400">
+                      {userProgress.questionsAnswered > 0
+                          ? Math.round((userProgress.correctAnswers / userProgress.questionsAnswered) * 100)
+                          : 0}
+                      %
+                    </p>
+                  </div>
+                  <div
+                      className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-spin"
+                      style={{ animationDuration: "3s" }}
                   >
-                    🇩🇪 {t.allGermany}
-                  </button>
-                  {germanStates.map((state) => (
+                    📊
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+            <Card className="border-2 border-pink-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-pink-500/25">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                  <MapPin className="w-5 h-5 md:w-6 md:h-6 text-pink-400 animate-bounce" />
+                  <h3 className="text-lg md:text-xl font-black text-pink-300 uppercase tracking-wider">
+                    {t.selectState}
+                  </h3>
+                </div>
+                <div className="state-filter-container">
+                  <div className="state-filter-grid state-filter-scroll">
                     <button
-                      key={state.id}
-                      onClick={() => handleStateSelection(state.id)}
-                      className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
-                        selectedState === state.id
-                          ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-lg shadow-yellow-500/50 border-2 border-yellow-400"
-                          : "bg-black/50 text-yellow-300 hover:bg-black/80 hover:text-white border-2 border-yellow-400/30"
+                        onClick={() => handleStateSelection(null)}
+                        className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
+                            !selectedState
+                                ? "bg-gradient-to-r from-pink-500 to-red-500 text-white shadow-lg shadow-pink-500/50 border-2 border-pink-400"
+                                : "bg-black/50 text-pink-300 hover:bg-black/80 hover:text-white border-2 border-pink-400/30"
+                        }`}
+                    >
+                      🇩🇪 {t.allGermany}
+                    </button>
+                    {germanStates.map((state) => (
+                        <button
+                            key={state.id}
+                            onClick={() => handleStateSelection(state.id)}
+                            className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
+                                selectedState === state.id
+                                    ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-lg shadow-yellow-500/50 border-2 border-yellow-400"
+                                    : "bg-black/50 text-yellow-300 hover:bg-black/80 hover:text-white border-2 border-yellow-400/30"
+                            }`}
+                        >
+                          {state.emoji} {state.name}
+                        </button>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                  <Filter className="w-5 h-5 md:w-6 md:h-6 text-purple-400 animate-pulse" />
+                  <h3 className="text-lg md:text-xl font-black text-purple-300 uppercase tracking-wider">
+                    {selectedState
+                        ? `${germanStates.find((s) => s.id === selectedState)?.name} Categories`
+                        : t.filterByCategory}
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                      onClick={() => handleCategorySelection(null)}
+                      className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                          !selectedCategory
+                              ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
+                              : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
+                      }`}
+                  >
+                    🌟 {selectedState ? "All State Categories" : t.allCategories}
+                  </button>
+                  {categories.map((category) => (
+                      <button
+                          key={category}
+                          onClick={() => handleCategorySelection(category)}
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                              selectedCategory === category
+                                  ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50 border-2 border-purple-400"
+                                  : "bg-black/50 text-purple-300 hover:bg-black/80 hover:text-white border-2 border-purple-400/30"
+                          }`}
+                      >
+                        {getCategoryEmoji(category)} {category}
+                      </button>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="flex justify-center mb-8">
+            <div className="w-full max-w-2xl">
+              <SwipeCard
+                  question={currentQuestion}
+                  onSwipe={handleSwipe}
+                  onAnswerSelect={handleAnswerSelect}
+                  showAnswer={showAnswer}
+                  onFlag={handleFlag}
+                  isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
+                  isTranslated={showTranslation}
+                  onTranslate={() => setShowTranslation(!showTranslation)}
+              />
+            </div>
+          </div>
+
+          {!isAutoMode && showAnswer && (
+              <div className="flex justify-center mb-8">
+                <Button
+                    onClick={nextQuestion}
+                    className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-black px-8 py-4 text-xl rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                >
+                  Next Question →
+                </Button>
+              </div>
+          )}
+
+          {showAnswer && lastAnswer && (
+              <motion.div
+                  initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
+                  className="flex justify-center mb-8"
+              >
+                <Card
+                    className={`w-full max-w-md border-4 shadow-2xl backdrop-blur-xl relative overflow-hidden ${
+                        lastAnswer.correct
+                            ? "border-green-400 bg-gradient-to-br from-green-900/50 to-emerald-900/50 shadow-green-500/50"
+                            : "border-red-400 bg-gradient-to-br from-red-900/50 to-pink-900/50 shadow-red-500/50"
+                    }`}
+                >
+                  <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+                  <CardContent className="p-8 text-center relative z-10">
+                    <div className="text-8xl mb-4 animate-bounce">{lastAnswer.correct ? "🎉" : "💪"}</div>
+                    <div
+                        className={`text-4xl font-black mb-4 animate-pulse ${lastAnswer.correct ? "text-green-400" : "text-red-400"}`}
+                    >
+                      {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
+                    </div>
+                    <p className="text-2xl text-white font-bold">{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+          )}
+
+          {/* Mini Answer Overview - lets user jump between practice questions */}
+          <Card className="border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 backdrop-blur-sm mb-6">
+            <CardHeader>
+              <CardTitle className="text-center text-2xl font-black text-yellow-400">🏆 ANSWER OVERVIEW</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-11 gap-2 mb-4">
+                {filteredQuestions.map((_, index) => {
+                  const qId = filteredQuestions[index]?.id
+                  const isAnswered = userProgress.completedQuestions.includes(qId)
+                  const isCurrent = index === currentIndex
+                  const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
+
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => handleQuestionJump(index)}
+                      className={`relative aspect-square rounded-lg font-bold text-sm transition-all transform hover:scale-110 border-2 ${
+                        isCurrent
+                          ? "bg-cyan-400 text-black border-cyan-300 shadow-lg shadow-cyan-500/50"
+                          : isAnswered
+                            ? "bg-green-500 text-white border-green-400 hover:bg-green-600"
+                            : "bg-gray-600 text-gray-300 border-gray-500 hover:bg-gray-500"
                       }`}
                     >
-                      {state.emoji} {state.name}
+                      {index + 1}
+                      {isFlagged && (
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
+                      )}
                     </button>
-                  ))}
+                  )
+                })}
+              </div>
+
+              <div className="flex justify-center items-center space-x-8 text-sm">
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-green-500 rounded border-2 border-green-400"></div>
+                  <span className="text-green-400 font-bold">✅ ANSWERED</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-gray-600 rounded border-2 border-gray-500"></div>
+                  <span className="text-gray-400 font-bold">❓ UNANSWERED</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                  <span className="text-red-400 font-bold">🚩 FLAGGED</span>
+                </div>
+                <div className="text-cyan-400 font-bold">
+                  🎯 {userProgress.completedQuestions.length} / {filteredQuestions.length} COMPLETED
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
-            <CardContent className="p-4 md:p-6">
-              <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                <Filter className="w-5 h-5 md:w-6 md:h-6 text-purple-400 animate-pulse" />
-                <h3 className="text-lg md:text-xl font-black text-purple-300 uppercase tracking-wider">
-                  {selectedState
-                    ? `${germanStates.find((s) => s.id === selectedState)?.name} Categories`
-                    : t.filterByCategory}
-                </h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  onClick={() => handleCategorySelection(null)}
-                  className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                    !selectedCategory
-                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
-                      : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
-                  }`}
-                >
-                  🌟 {selectedState ? "All State Categories" : t.allCategories}
-                </button>
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => handleCategorySelection(category)}
-                    className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                      selectedCategory === category
-                        ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50 border-2 border-purple-400"
-                        : "bg-black/50 text-purple-300 hover:bg-black/80 hover:text-white border-2 border-purple-400/30"
-                    }`}
-                  >
-                    {getCategoryEmoji(category)} {category}
-                  </button>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="flex justify-center mb-8">
-          <div className="w-full max-w-2xl">
-            <SwipeCard
-              question={currentQuestion}
-              onSwipe={handleSwipe}
-              onAnswerSelect={handleAnswerSelect}
-              showAnswer={showAnswer}
-              onFlag={handleFlag}
-              isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
-              isTranslated={showTranslation}
-              onTranslate={() => setShowTranslation(!showTranslation)}
-            />
-          </div>
-        </div>
-
-        {!isAutoMode && showAnswer && (
-          <div className="flex justify-center mb-8">
-            <Button
-              onClick={nextQuestion}
-              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-black px-8 py-4 text-xl rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
-            >
-              Next Question →
-            </Button>
-          </div>
-        )}
-
-        {showAnswer && lastAnswer && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
-            className="flex justify-center mb-8"
-          >
-            <Card
-              className={`w-full max-w-md border-4 shadow-2xl backdrop-blur-xl relative overflow-hidden ${
-                lastAnswer.correct
-                  ? "border-green-400 bg-gradient-to-br from-green-900/50 to-emerald-900/50 shadow-green-500/50"
-                  : "border-red-400 bg-gradient-to-br from-red-900/50 to-pink-900/50 shadow-red-500/50"
-              }`}
-            >
-              <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-              <CardContent className="p-8 text-center relative z-10">
-                <div className="text-8xl mb-4 animate-bounce">{lastAnswer.correct ? "🎉" : "💪"}</div>
-                <div
-                  className={`text-4xl font-black mb-4 animate-pulse ${lastAnswer.correct ? "text-green-400" : "text-red-400"}`}
-                >
-                  {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
-                </div>
-                <p className="text-2xl text-white font-bold">{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        )}
-
-        {userProgress.badges.length > 0 && (
-          <div className="flex justify-center">
-            <Card className="w-full max-w-md border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/30 to-orange-900/30 backdrop-blur-xl shadow-lg shadow-yellow-500/25">
-              <CardHeader>
-                <CardTitle className="text-center text-yellow-400 font-black text-2xl animate-pulse">
-                  {t.achievements}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex justify-center space-x-4">
-                  {userProgress.badges.slice(-3).map((badge, index) => (
-                    <div
-                      key={badge}
-                      className="hover:scale-125 transition-transform cursor-pointer animate-bounce"
-                      style={{ animationDelay: `${index * 0.2}s` }}
-                    >
-                      <Badge type={badge} earned size="sm" />
+          {userProgress.badges.length > 0 && (
+              <div className="flex justify-center">
+                <Card className="w-full max-w-md border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/30 to-orange-900/30 backdrop-blur-xl shadow-lg shadow-yellow-500/25">
+                  <CardHeader>
+                    <CardTitle className="text-center text-yellow-400 font-black text-2xl animate-pulse">
+                      {t.achievements}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex justify-center space-x-4">
+                      {userProgress.badges.slice(-3).map((badge, index) => (
+                          <div
+                              key={badge}
+                              className="hover:scale-125 transition-transform cursor-pointer animate-bounce"
+                              style={{ animationDelay: `${index * 0.2}s` }}
+                          >
+                            <Badge type={badge} earned size="sm" />
+                          </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        )}
+                  </CardContent>
+                </Card>
+              </div>
+          )}
 
-        <div className="text-center mt-12 space-y-6">
-          <div className="text-3xl font-black animate-pulse">
+          <div className="text-center mt-12 space-y-6">
+            <div className="text-3xl font-black animate-pulse">
             <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
               {t.howToPractice.toUpperCase()}
             </span>
+            </div>
+            <div className="space-y-3 text-lg max-w-2xl mx-auto">
+              <p className="text-cyan-300 font-bold">💡 {t.swipeInstructions}</p>
+              <p className="text-green-300 font-bold">⌨️ {t.keyboardShortcuts}</p>
+              <p className="text-yellow-300 font-bold">🔄 Toggle between Auto and Manual mode above</p>
+              <p className="text-pink-300 font-bold">🏛️ Select a state to practice state-specific questions</p>
+              <div>
+                <p className="text-sm text-gray-300 font-semibold">
+                  Press <span className="font-black">1 / 2 / 3 / 4</span> — the matching option <span className="font-black">A / B / C / D</span> will be selected and will trigger the same behavior as clicking the option.
+                </p>
+              </div>
+            </div>
+            <div className="text-2xl font-black text-white animate-bounce mt-8">{t.letsDominate} 🚀</div>
           </div>
-          <div className="space-y-3 text-lg max-w-2xl mx-auto">
-            <p className="text-cyan-300 font-bold">💡 {t.swipeInstructions}</p>
-            <p className="text-green-300 font-bold">⌨️ {t.keyboardShortcuts}</p>
-            <p className="text-yellow-300 font-bold">🔄 Toggle between Auto and Manual mode above</p>
-            <p className="text-pink-300 font-bold">🏛️ Select a state to practice state-specific questions</p>
-          </div>
-          <div className="text-2xl font-black text-white animate-bounce mt-8">{t.letsDominate} 🚀</div>
         </div>
       </div>
-    </div>
   )
 }

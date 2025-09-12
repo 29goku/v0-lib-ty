@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, useLayoutEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Flag, Languages, Volume2 } from "lucide-react"
@@ -20,6 +20,7 @@ interface SwipeCardProps {
   onAnswerSelect?: (index: number) => void
   isTranslated?: boolean
   onTranslate?: () => void
+  externalSelectedAnswer?: number | null
 }
 
 // Enhanced translation service for German citizenship test content
@@ -94,7 +95,7 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       it: "Chi elegge il Cancelliere federale?",
       tr: "Federal Şansölyeyi kim seçer?",
       ar: "من ينتخب المستشار الاتحادي؟",
-      ru: "Кто избирает федерального канцлера?",
+      ru: "Кто избир��ет федерального канцлера?",
       zh: "谁选举联邦总理？",
       hi: "संघीय चांसलर को कौन चुनता है?",
     },
@@ -252,7 +253,7 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       it: "la costituzione tedesca",
       tr: "Alman anayasası",
       ar: "الدستور الألماني",
-      ru: "немецкая конституция",
+      ru: "нем��цкая конституция",
       zh: "德国宪法",
       hi: "जर्मन संविधान",
     },
@@ -265,7 +266,7 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       ar: "القانون الأساسي",
       ru: "Основной закон",
       zh: "基本法",
-      hi: "मूल कानून",
+      hi: "म���ल कानून",
     },
     "Bundesrepublik Deutschland": {
       en: "Federal Republic of Germany",
@@ -489,7 +490,7 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       it: "fondata",
       tr: "kuruldu",
       ar: "تأسست",
-      ru: "основана",
+      ru: "ос��ована",
       zh: "成立",
       hi: "स्थापित",
     },
@@ -650,6 +651,7 @@ export default function SwipeCard({
   onAnswerSelect,
   isTranslated,
   onTranslate,
+  externalSelectedAnswer = undefined,
 }: SwipeCardProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
   const [isTranslating, setIsTranslating] = useState(false)
@@ -724,6 +726,34 @@ export default function SwipeCard({
   const opacity = useTransform(x, [-200, -100, 0, 100, 200], [0, 1, 1, 1, 0])
 
   const cardRef = useRef<HTMLDivElement>(null)
+  // ref to measure the rendered Card content height
+  const contentRef = useRef<HTMLDivElement | null>(null)
+  const [containerHeight, setContainerHeight] = useState<number | null>(null)
+
+  // Keep the container height in sync with the inner content to avoid layout jumps when content changes
+  useLayoutEffect(() => {
+    if (!contentRef.current) return
+    // initial measurement
+    const measure = () => {
+      const h = contentRef.current ? Math.ceil(contentRef.current.getBoundingClientRect().height) : 0
+      setContainerHeight(h || null)
+    }
+
+    measure()
+
+    // Observe resize of the content to update container height
+    const ro = new ResizeObserver(() => measure())
+    ro.observe(contentRef.current)
+    return () => ro.disconnect()
+  }, [question.id, showTranslation, imageError, selectedAnswer])
+
+  // Sync external selected answer (from parent keyboard handler) into local state
+  useEffect(() => {
+    // Only update local selected answer when parent provides an explicit value (including null)
+    if (externalSelectedAnswer !== undefined) {
+      setSelectedAnswer(externalSelectedAnswer)
+    }
+  }, [externalSelectedAnswer])
 
   // Reset translation state when question changes
   useEffect(() => {
@@ -735,64 +765,122 @@ export default function SwipeCard({
     setImageError(false)
   }, [question.id])
 
-    // Translate when translation mode is enabled (external or internal),
-    // or when language/question changes while translation is enabled.
+  // Keyboard support: map keys 1-4 (Digit1..Digit4, Numpad1..Numpad4, plain keys) to options A-D
+  // Also handle navigation keys (ArrowLeft/ArrowRight, A/D) and forward them via onSwipe
   useEffect(() => {
-  if (!showTranslation) {
-        // Clear translations when translation mode is turned off
-        setTranslatedText("")
-        setTranslatedOptions([])
-        setTranslatedExplanation("")
-        setIsTranslating(false)
+    const handleKeyDown = (event: KeyboardEvent) => {
+      // Ignore if typing into inputs, textareas or contenteditable elements
+      const target = event.target as HTMLElement | null
+      if (target) {
+        const tag = target.tagName
+        const isEditable = target.getAttribute && (target.getAttribute('contenteditable') === 'true')
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || isEditable) return
+      }
+
+      // Navigation: Arrow keys or A/D
+      // NOTE: invert mapping so keyboard arrows produce reversed swipe behavior
+      if (event.key === 'ArrowRight' || event.key === 'd' || event.key === 'D') {
+        event.preventDefault()
+        onSwipe('right')
+        return
+      }
+      if (event.key === 'ArrowLeft' || event.key === 'a' || event.key === 'A') {
+        event.preventDefault()
+        onSwipe('left')
         return
       }
 
-      let mounted = true
-      ;(async () => {
-        setIsTranslating(true)
-        try {
-          // If question is a state question and stateTranslation exists, we already use it for display.
-          // But still populate translated state so UI shows a consistent translatedExplanation if needed.
-          const translatedQuestionText = await translateText(question.question, language)
-          // Translate all answer options
-          const translatedOptionsArray = await Promise.all(
-            (Array.isArray(question.options) ? question.options : []).map(async (option) => await translateText(option, language))
-          )
-          let translatedExplanationText = ""
-          if (question.explanation) {
-            translatedExplanationText = await translateText(question.explanation, language)
-          }
-          if (!mounted) return
-          setTranslatedText(translatedQuestionText)
-          setTranslatedOptions(translatedOptionsArray)
-          setTranslatedExplanation(translatedExplanationText)
-        } catch (error) {
-          if (!mounted) return
-          setTranslatedText(`[${language.toUpperCase()}] ${question.question}`)
-          setTranslatedOptions(
-            Array.isArray(question.options)
-              ? question.options.map((option) => `[${language.toUpperCase()}] ${option}`)
-              : []
-          )
-          setTranslatedExplanation(question.explanation ? `[${language.toUpperCase()}] ${question.explanation}` : "")
-        } finally {
-          if (mounted) setIsTranslating(false)
-        }
-      })()
+      let optionIndex: number | null = null
 
-      return () => {
-        mounted = false
+      // Prefer event.code when available (handles physical key position and numpad reliably)
+      if (typeof (event as any).code === 'string') {
+        const code: string = (event as any).code
+        const digitMatch = code.match(/^Digit([1-4])$/)
+        const numpadMatch = code.match(/^Numpad([1-4])$/)
+        if (digitMatch) {
+          optionIndex = Number(digitMatch[1]) - 1
+        } else if (numpadMatch) {
+          optionIndex = Number(numpadMatch[1]) - 1
+        }
       }
-    }, [showTranslation, language, question])
+
+      // Fallback to event.key (covers cases like mobile keyboards or older browsers)
+      if (optionIndex === null) {
+        if (/^[1-4]$/.test((event as KeyboardEvent).key)) {
+          optionIndex = Number((event as KeyboardEvent).key) - 1
+        }
+      }
+
+      if (optionIndex !== null && !showAnswer) {
+        if (question && optionIndex < (Array.isArray(question.options) ? question.options.length : 0)) {
+          event.preventDefault()
+          handleAnswerClick(optionIndex)
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [question?.id, question?.options, showAnswer, onSwipe])
+
+  // Also translate when language changes
+  useEffect(() => {
+    if (!showTranslation) {
+      // Clear translations when translation mode is turned off
+      setTranslatedText("")
+      setTranslatedOptions([])
+      setTranslatedExplanation("")
+      setIsTranslating(false)
+      return
+    }
+
+    let mounted = true
+    ;(async () => {
+      setIsTranslating(true)
+      try {
+        // If question is a state question and stateTranslation exists, we already use it for display.
+        // But still populate translated state so UI shows a consistent translatedExplanation if needed.
+        const translatedQuestionText = await translateText(question.question, language)
+        // Translate all answer options
+        const translatedOptionsArray = await Promise.all(
+          (Array.isArray(question.options) ? question.options : []).map(async (option) => await translateText(option, language))
+        )
+        let translatedExplanationText = ""
+        if (question.explanation) {
+          translatedExplanationText = await translateText(question.explanation, language)
+        }
+        if (!mounted) return
+        setTranslatedText(translatedQuestionText)
+        setTranslatedOptions(translatedOptionsArray)
+        setTranslatedExplanation(translatedExplanationText)
+      } catch (error) {
+        if (!mounted) return
+        setTranslatedText(`[${language.toUpperCase()}] ${question.question}`)
+        setTranslatedOptions(
+          Array.isArray(question.options)
+            ? question.options.map((option) => `[${language.toUpperCase()}] ${option}`)
+            : []
+        )
+        setTranslatedExplanation(question.explanation ? `[${language.toUpperCase()}] ${question.explanation}` : "")
+      } finally {
+        if (mounted) setIsTranslating(false)
+      }
+    })()
+
+    return () => {
+      mounted = false
+    }
+  }, [showTranslation, language, question])
 
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const offset = info.offset.x
     const velocity = info.velocity.x
 
+    // Invert drag mapping: a drag to the right (positive offset/velocity) should emit 'left' to parent
     if (Math.abs(velocity) >= 500) {
-      onSwipe(velocity > 0 ? "right" : "left")
+      onSwipe(velocity > 0 ? "left" : "right")
     } else if (Math.abs(offset) >= 100) {
-      onSwipe(offset > 0 ? "right" : "left")
+      onSwipe(offset > 0 ? "left" : "right")
     }
   }
 
@@ -902,13 +990,22 @@ export default function SwipeCard({
     <motion.div
       ref={cardRef}
       className="w-full max-w-2xl mx-auto cursor-grab active:cursor-grabbing"
-      style={{ x, rotate, opacity }}
-      drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleDragEnd}
-      whileDrag={{ scale: 1.05 }}
-    >
-      <Card className="border-4 border-cyan-400/50 bg-gradient-to-br from-black/80 to-purple-900/80 backdrop-blur-xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 overflow-hidden relative">
+      // set an explicit height (animated via CSS) based on inner content to avoid visual jumps
+      style={{
+        x,
+        rotate,
+        opacity,
+        height: containerHeight ? `${containerHeight}px` : undefined,
+        minHeight: 560,
+        transition: 'height 200ms ease',
+        overflow: 'hidden',
+      }}
+       drag="x"
+       dragConstraints={{ left: 0, right: 0 }}
+       onDragEnd={handleDragEnd}
+       whileDrag={{ scale: 1.05 }}
+     >
+      <Card ref={contentRef} className="border-4 border-cyan-400/50 bg-gradient-to-br from-black/80 to-purple-900/80 backdrop-blur-xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 overflow-hidden relative">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse"></div>
 
         <CardHeader className="relative z-10">
