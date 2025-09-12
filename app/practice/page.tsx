@@ -564,11 +564,8 @@ export default function PracticePage() {
 
           {/* Mini Answer Overview - lets user jump between practice questions */}
           <Card className="border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 backdrop-blur-sm mb-6">
-            <CardHeader>
-              <CardTitle className="text-center text-2xl font-black text-yellow-400">🏆 ANSWER OVERVIEW</CardTitle>
-            </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-11 gap-2 mb-4">
+              <div className="grid grid-cols-10 gap-0.5 mb-4">
                 {filteredQuestions.map((_, index) => {
                   const qId = filteredQuestions[index]?.id
                   const isAnswered = userProgress.completedQuestions.includes(qId)
@@ -579,7 +576,7 @@ export default function PracticePage() {
                     <button
                       key={index}
                       onClick={() => handleQuestionJump(index)}
-                      className={`relative aspect-square rounded-lg font-bold text-sm transition-all transform hover:scale-110 border-2 ${
+                      className={`relative aspect-square rounded-lg font-bold text-sm transition-all transform hover:scale-110 border-4 ${
                         isCurrent
                           ? "bg-cyan-400 text-black border-cyan-300 shadow-lg shadow-cyan-500/50"
                           : isAnswered
