@@ -22,6 +22,7 @@ export interface UserProgress {
   completedQuestions: string[]
   badges: string[]
   lastStudyDate: string
+  incorrectAnswers?: string[] // newly added optional list of incorrect question IDs
 }
 
 export interface AppState {
@@ -71,6 +72,7 @@ const initialProgress: UserProgress = {
   completedQuestions: [],
   badges: [],
   lastStudyDate: new Date().toISOString().split("T")[0],
+  incorrectAnswers: [], // initialize as empty array
 }
 
 // Fallback questions in case of loading errors
@@ -132,6 +134,14 @@ export const useStore = create<AppState>()(
           newProgress.questionsAnswered += 1
           if (correct) {
             newProgress.correctAnswers += 1
+            // If previously marked incorrect, remove from incorrectAnswers
+            if (newProgress.incorrectAnswers) {
+              newProgress.incorrectAnswers = newProgress.incorrectAnswers.filter((id) => id !== questionId)
+            }
+          } else {
+            // mark as incorrect (avoid duplicates)
+            if (!newProgress.incorrectAnswers) newProgress.incorrectAnswers = []
+            if (!newProgress.incorrectAnswers.includes(questionId)) newProgress.incorrectAnswers.push(questionId)
           }
 
           if (!newProgress.completedQuestions.includes(questionId)) {
@@ -260,7 +270,8 @@ export const useStore = create<AppState>()(
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`)
           }
-          const questions = await response.json()
+          // cast to Question[] so TypeScript knows the shape
+          const questions = (await response.json()) as Question[]
           console.log("🚀 Successfully loaded", questions.length, "questions!")
           set({ questions })
           return questions
@@ -274,7 +285,7 @@ export const useStore = create<AppState>()(
             }
             const stateData = await stateResponse.json()
             // Flatten all state questions into a single array
-            const allQuestions = Object.values(stateData).flat()
+            const allQuestions = (Object.values(stateData).flat() as Question[])
             console.log("🚀 Successfully loaded", allQuestions.length, "state questions!")
             set({ questions: allQuestions })
             return allQuestions
