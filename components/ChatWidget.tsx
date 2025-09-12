@@ -25,7 +25,7 @@ const ChatWidget: React.FC = () => {
           } catch (e) {
             // ignore storage errors
           }
-        }, 3000); // 3s delay before auto-opening
+        }, 13000); // 3s delay before auto-opening
 
         return () => clearTimeout(timer);
       }
