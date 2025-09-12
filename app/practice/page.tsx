@@ -65,8 +65,6 @@ export default function PracticePage() {
   const [autoDelay, setAutoDelay] = useState(3000)
   // local UI state
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [showCorrect, setShowCorrect] = useState(false)
-  const [overviewCollapsed, setOverviewCollapsed] = useState(false)
   const overviewRef = useRef<HTMLDivElement | null>(null)
 
   const t = getTranslation(language)
@@ -159,7 +157,6 @@ export default function PracticePage() {
 
   const nextQuestion = () => {
     setShowAnswer(false)
-    setShowCorrect(false)
     setLastAnswer(null)
     setShowTranslation(false)
     if (currentIndex < filteredQuestions.length - 1) {
@@ -175,7 +172,6 @@ export default function PracticePage() {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1)
       setShowAnswer(false)
-      setShowCorrect(false)
       setLastAnswer(null)
       setShowTranslation(false)
     }
@@ -186,7 +182,6 @@ export default function PracticePage() {
     setCurrentIndex(index)
     setShowAnswer(false)
     setLastAnswer(null)
-    setShowCorrect(false)
     setShowTranslation(false)
   }
   // Invert swipe-to-navigation mapping: swipe LEFT should move to previous question (like tapping left arrow),
@@ -209,7 +204,6 @@ export default function PracticePage() {
     if (isCorrect) {
       addXP(10)
       updateStreak(true)
-      setShowCorrect(true)
 
       if (userProgress.streak === 5) addBadge("streak-5")
       if (userProgress.streak === 10) addBadge("streak-10")
@@ -218,7 +212,6 @@ export default function PracticePage() {
       if (userProgress.xp >= 500 && !userProgress.badges.includes("xp-500")) addBadge("xp-500")
     } else {
       updateStreak(false)
-      setShowCorrect(false)
     }
 
     setLastAnswer({ correct: isCorrect, selectedIndex: selectedAnswerIndex })
@@ -235,7 +228,6 @@ export default function PracticePage() {
     setCurrentIndex(0)
     setShowAnswer(false)
     setLastAnswer(null)
-    setShowCorrect(false)
     setShowTranslation(false)
   }
 
@@ -509,109 +501,119 @@ export default function PracticePage() {
           </div>
 
           <div className="flex justify-center mb-8">
-            <div className="w-full max-w-2xl">
-              <SwipeCard
-                  question={currentQuestion}
-                  onSwipe={handleSwipe}
-                  onAnswerSelect={handleAnswerSelect}
-                  showAnswer={showAnswer}
-                  onFlag={handleFlag}
-                  isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
-                  isTranslated={showTranslation}
-                  onTranslate={() => setShowTranslation(!showTranslation)}
-              />
+            <div className="w-full max-w-6xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+                {/* Left: Swipe Card (takes 50%) */}
+                <div className="w-full">
+                  <div className="w-full">
+                    <SwipeCard
+                      question={currentQuestion}
+                      onSwipe={handleSwipe}
+                      onAnswerSelect={handleAnswerSelect}
+                      showAnswer={showAnswer}
+                      onFlag={handleFlag}
+                      isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
+                      isTranslated={showTranslation}
+                      onTranslate={() => setShowTranslation(!showTranslation)}
+                    />
+
+                    {!isAutoMode && showAnswer && (
+                      <div className="flex justify-start mt-4">
+                        <Button
+                          onClick={nextQuestion}
+                          className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-black px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                        >
+                          Next Question →
+                        </Button>
+                      </div>
+                    )}
+
+                    {showAnswer && lastAnswer && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
+                        className="mt-6"
+                      >
+                        <Card
+                          className={`w-full border-4 shadow-2xl backdrop-blur-xl relative overflow-hidden ${
+                            lastAnswer.correct
+                              ? "border-green-400 bg-gradient-to-br from-green-900/50 to-emerald-900/50 shadow-green-500/50"
+                              : "border-red-400 bg-gradient-to-br from-red-900/50 to-pink-900/50 shadow-red-500/50"
+                          }`}
+                        >
+                          <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+                          <CardContent className="p-8 text-center relative z-10">
+                            <div className="text-8xl mb-4 animate-bounce">{lastAnswer.correct ? "🎉" : "💪"}</div>
+                            <div
+                              className={`text-4xl font-black mb-4 animate-pulse ${lastAnswer.correct ? "text-green-400" : "text-red-400"}`}
+                            >
+                              {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
+                            </div>
+                            <p className="text-2xl text-white font-bold">{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Right: Mini Answer Overview (takes 50%) */}
+                <div className="w-full">
+                  <Card className="h-full border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 backdrop-blur-sm">
+                    <CardContent>
+                      <div ref={overviewRef} className="grid grid-cols-[repeat(10,minmax(0,1fr))] lg:grid-cols-[repeat(15,minmax(0,1fr))] gap-0.5 mb-4">
+                        {filteredQuestions.map((_, index) => {
+                          const qId = filteredQuestions[index]?.id
+                          const isAnswered = userProgress.completedQuestions.includes(qId)
+                          const isCurrent = index === currentIndex
+                          const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
+
+                          return (
+                            <button
+                              key={index}
+                              data-index={index}
+                              onClick={() => handleQuestionJump(index)}
+                              className={`relative aspect-square rounded-lg font-bold text-sm transition-all transform hover:scale-110 border-4 ${
+                                isCurrent
+                                  ? "bg-cyan-400 text-black border-cyan-300 shadow-lg shadow-cyan-500/50"
+                                  : isAnswered
+                                  ? "bg-green-500 text-white border-green-400 hover:bg-green-600"
+                                  : "bg-gray-600 text-gray-300 border-gray-500 hover:bg-gray-500"
+                              }`}
+                            >
+                              {index + 1}
+                              {isFlagged && (
+                                <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
+                              )}
+                            </button>
+                          )
+                        })}
+                      </div>
+
+                      <div className="flex justify-center items-center space-x-4 text-sm">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-4 h-4 bg-green-500 rounded border-2 border-green-400"></div>
+                          <span className="text-green-400 font-bold">✅ ANSWERED</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-4 h-4 bg-gray-600 rounded border-2 border-gray-500"></div>
+                          <span className="text-gray-400 font-bold">❓ UNANSWERED</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                          <span className="text-red-400 font-bold">🚩 FLAGGED</span>
+                        </div>
+                        <div className="text-cyan-400 font-bold">
+                          🎯 {userProgress.completedQuestions.length} / {filteredQuestions.length} COMPLETED
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
           </div>
-
-          {!isAutoMode && showAnswer && (
-              <div className="flex justify-center mb-8">
-                <Button
-                    onClick={nextQuestion}
-                    className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-black px-8 py-4 text-xl rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
-                >
-                  Next Question →
-                </Button>
-              </div>
-          )}
-
-          {showAnswer && lastAnswer && (
-              <motion.div
-                  initial={{ opacity: 0, scale: 0.8, y: 30 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
-                  className="flex justify-center mb-8"
-              >
-                <Card
-                    className={`w-full max-w-md border-4 shadow-2xl backdrop-blur-xl relative overflow-hidden ${
-                        lastAnswer.correct
-                            ? "border-green-400 bg-gradient-to-br from-green-900/50 to-emerald-900/50 shadow-green-500/50"
-                            : "border-red-400 bg-gradient-to-br from-red-900/50 to-pink-900/50 shadow-red-500/50"
-                    }`}
-                >
-                  <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-                  <CardContent className="p-8 text-center relative z-10">
-                    <div className="text-8xl mb-4 animate-bounce">{lastAnswer.correct ? "🎉" : "💪"}</div>
-                    <div
-                        className={`text-4xl font-black mb-4 animate-pulse ${lastAnswer.correct ? "text-green-400" : "text-red-400"}`}
-                    >
-                      {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
-                    </div>
-                    <p className="text-2xl text-white font-bold">{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-          )}
-
-          {/* Mini Answer Overview - lets user jump between practice questions */}
-          <Card className="border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 backdrop-blur-sm mb-6">
-            <CardContent>
-              <div className="grid grid-cols-10 gap-0.5 mb-4">
-                {filteredQuestions.map((_, index) => {
-                  const qId = filteredQuestions[index]?.id
-                  const isAnswered = userProgress.completedQuestions.includes(qId)
-                  const isCurrent = index === currentIndex
-                  const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
-
-                  return (
-                    <button
-                      key={index}
-                      onClick={() => handleQuestionJump(index)}
-                      className={`relative aspect-square rounded-lg font-bold text-sm transition-all transform hover:scale-110 border-4 ${
-                        isCurrent
-                          ? "bg-cyan-400 text-black border-cyan-300 shadow-lg shadow-cyan-500/50"
-                          : isAnswered
-                            ? "bg-green-500 text-white border-green-400 hover:bg-green-600"
-                            : "bg-gray-600 text-gray-300 border-gray-500 hover:bg-gray-500"
-                      }`}
-                    >
-                      {index + 1}
-                      {isFlagged && (
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
-                      )}
-                    </button>
-                  )
-                })}
-              </div>
-
-              <div className="flex justify-center items-center space-x-8 text-sm">
-                <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-green-500 rounded border-2 border-green-400"></div>
-                  <span className="text-green-400 font-bold">✅ ANSWERED</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-gray-600 rounded border-2 border-gray-500"></div>
-                  <span className="text-gray-400 font-bold">❓ UNANSWERED</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-red-500 rounded-full"></div>
-                  <span className="text-red-400 font-bold">🚩 FLAGGED</span>
-                </div>
-                <div className="text-cyan-400 font-bold">
-                  🎯 {userProgress.completedQuestions.length} / {filteredQuestions.length} COMPLETED
-                </div>
-              </div>
-            </CardContent>
-          </Card>
 
           {userProgress.badges.length > 0 && (
               <div className="flex justify-center">

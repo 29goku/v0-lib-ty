@@ -145,7 +145,7 @@ export default function ReviewPage() {
         {/* Mobile UI improvements */}
         <style jsx global>{`
           @media (max-width: 640px) {
-            .flex.flex-col.sm\:flex-row.items-center.justify-between.mb-8.gap-4 {
+            .flex.flex-col.items-center.justify-between.mb-8.gap-4 {
               flex-direction: column;
               gap: 1rem;
             }
@@ -204,8 +204,8 @@ export default function ReviewPage() {
         <div className="grid lg:grid-cols-5 gap-8">
           {/* Question Lists */}
           <div className="lg:col-span-3">
-            <Tabs defaultValue="flagged" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 bg-black/50 border-2 border-purple-500/50 rounded-xl p-2">
+            <Tabs defaultValue="flagged" className="w-full ">
+              <TabsList className="grid w-full h-full grid-cols-3 bg-black/50 border-2 border-purple-500/50 rounded-xl p-2">
                 <TabsTrigger
                   value="flagged"
                   className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-red-500 data-[state=active]:to-pink-500 data-[state=active]:text-white font-bold text-lg py-3 rounded-lg transition-all"
