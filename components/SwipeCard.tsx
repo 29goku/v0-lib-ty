@@ -781,12 +781,12 @@ export default function SwipeCard({
       // NOTE: invert mapping so keyboard arrows produce reversed swipe behavior
       if (event.key === 'ArrowRight' || event.key === 'd' || event.key === 'D') {
         event.preventDefault()
-        onSwipe('left')
+        onSwipe('right')
         return
       }
       if (event.key === 'ArrowLeft' || event.key === 'a' || event.key === 'A') {
         event.preventDefault()
-        onSwipe('right')
+        onSwipe('left')
         return
       }
 
