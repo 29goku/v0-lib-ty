@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, useLayoutEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Flag, Languages, Volume2 } from "lucide-react"
@@ -95,7 +95,7 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       it: "Chi elegge il Cancelliere federale?",
       tr: "Federal Şansölyeyi kim seçer?",
       ar: "من ينتخب المستشار الاتحادي؟",
-      ru: "Кто избирает федерального канцлера?",
+      ru: "Кто избир��ет федерального канцлера?",
       zh: "谁选举联邦总理？",
       hi: "संघीय चांसलर को कौन चुनता है?",
     },
@@ -266,7 +266,7 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       ar: "القانون الأساسي",
       ru: "Основной закон",
       zh: "基本法",
-      hi: "मूल कानून",
+      hi: "म���ल कानून",
     },
     "Bundesrepublik Deutschland": {
       en: "Federal Republic of Germany",
@@ -492,7 +492,7 @@ const translateText = async (text: string, targetLanguage: string): Promise<stri
       ar: "تأسست",
       ru: "ос��ована",
       zh: "成立",
-      hi: "��्थापित",
+      hi: "स्थापित",
     },
     hat: {
       en: "has",
@@ -726,6 +726,26 @@ export default function SwipeCard({
   const opacity = useTransform(x, [-200, -100, 0, 100, 200], [0, 1, 1, 1, 0])
 
   const cardRef = useRef<HTMLDivElement>(null)
+  // ref to measure the rendered Card content height
+  const contentRef = useRef<HTMLDivElement | null>(null)
+  const [containerHeight, setContainerHeight] = useState<number | null>(null)
+
+  // Keep the container height in sync with the inner content to avoid layout jumps when content changes
+  useLayoutEffect(() => {
+    if (!contentRef.current) return
+    // initial measurement
+    const measure = () => {
+      const h = contentRef.current ? Math.ceil(contentRef.current.getBoundingClientRect().height) : 0
+      setContainerHeight(h || null)
+    }
+
+    measure()
+
+    // Observe resize of the content to update container height
+    const ro = new ResizeObserver(() => measure())
+    ro.observe(contentRef.current)
+    return () => ro.disconnect()
+  }, [question.id, showTranslation, imageError, selectedAnswer])
 
   // Sync external selected answer (from parent keyboard handler) into local state
   useEffect(() => {
@@ -758,14 +778,15 @@ export default function SwipeCard({
       }
 
       // Navigation: Arrow keys or A/D
+      // NOTE: invert mapping so keyboard arrows produce reversed swipe behavior
       if (event.key === 'ArrowRight' || event.key === 'd' || event.key === 'D') {
         event.preventDefault()
-        onSwipe('right')
+        onSwipe('left')
         return
       }
       if (event.key === 'ArrowLeft' || event.key === 'a' || event.key === 'A') {
         event.preventDefault()
-        onSwipe('left')
+        onSwipe('right')
         return
       }
 
@@ -855,10 +876,11 @@ export default function SwipeCard({
     const offset = info.offset.x
     const velocity = info.velocity.x
 
+    // Invert drag mapping: a drag to the right (positive offset/velocity) should emit 'left' to parent
     if (Math.abs(velocity) >= 500) {
-      onSwipe(velocity > 0 ? "right" : "left")
+      onSwipe(velocity > 0 ? "left" : "right")
     } else if (Math.abs(offset) >= 100) {
-      onSwipe(offset > 0 ? "right" : "left")
+      onSwipe(offset > 0 ? "left" : "right")
     }
   }
 
@@ -968,13 +990,22 @@ export default function SwipeCard({
     <motion.div
       ref={cardRef}
       className="w-full max-w-2xl mx-auto cursor-grab active:cursor-grabbing"
-      style={{ x, rotate, opacity }}
-      drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleDragEnd}
-      whileDrag={{ scale: 1.05 }}
-    >
-      <Card className="border-4 border-cyan-400/50 bg-gradient-to-br from-black/80 to-purple-900/80 backdrop-blur-xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 overflow-hidden relative">
+      // set an explicit height (animated via CSS) based on inner content to avoid visual jumps
+      style={{
+        x,
+        rotate,
+        opacity,
+        height: containerHeight ? `${containerHeight}px` : undefined,
+        minHeight: 560,
+        transition: 'height 200ms ease',
+        overflow: 'hidden',
+      }}
+       drag="x"
+       dragConstraints={{ left: 0, right: 0 }}
+       onDragEnd={handleDragEnd}
+       whileDrag={{ scale: 1.05 }}
+     >
+      <Card ref={contentRef} className="border-4 border-cyan-400/50 bg-gradient-to-br from-black/80 to-purple-900/80 backdrop-blur-xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 overflow-hidden relative">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse"></div>
 
         <CardHeader className="relative z-10">

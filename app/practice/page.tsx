@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useStore } from "@/lib/store"
 import SwipeCard from "@/components/SwipeCard"
 import ProgressBar from "@/components/ProgressBar"
@@ -38,9 +38,7 @@ export default function PracticePage() {
   const {
     questions,
     stateQuestions,
-    setQuestions,
     setStateQuestions,
-    currentQuestionIndex,
     setSelectedState,
     selectedState,
     selectedCategory,
@@ -62,12 +60,14 @@ export default function PracticePage() {
     selectedIndex: number
   } | null>(null)
   const [loading, setLoading] = useState(true)
-  const [showCorrect, setShowCorrect] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(0)
   const [showTranslation, setShowTranslation] = useState(false)
-  const [translatedQuestion, setTranslatedQuestion] = useState("")
   const [isAutoMode, setIsAutoMode] = useState(true)
   const [autoDelay, setAutoDelay] = useState(3000)
+  // local UI state
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [showCorrect, setShowCorrect] = useState(false)
+  const [overviewCollapsed, setOverviewCollapsed] = useState(false)
+  const overviewRef = useRef<HTMLDivElement | null>(null)
 
   const t = getTranslation(language)
 
@@ -140,6 +140,14 @@ export default function PracticePage() {
     setCurrentIndex(0)
   }, [selectedState, setSelectedCategory])
 
+  useEffect(() => {
+    if (!overviewRef.current) return
+    const el = overviewRef.current.querySelector(`[data-index="${currentIndex}"]`) as HTMLElement | null
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+    }
+  }, [currentIndex])
+
   const handleFlag = () => {
     if (!currentQuestion) return
     if (userProgress.flaggedQuestions.includes(currentQuestion.id)) {
@@ -157,6 +165,7 @@ export default function PracticePage() {
     if (currentIndex < filteredQuestions.length - 1) {
       setCurrentIndex(currentIndex + 1)
     } else {
+      // wrap or reset to start
       alert("You've reached the end of the questions!")
       setCurrentIndex(0)
     }
@@ -180,12 +189,13 @@ export default function PracticePage() {
     setShowCorrect(false)
     setShowTranslation(false)
   }
-
+  // Invert swipe-to-navigation mapping: swipe LEFT should move to previous question (like tapping left arrow),
+  // swipe RIGHT should move to next question. This matches keyboard ArrowLeft/ArrowRight expectations.
   const handleSwipe = (direction: "left" | "right") => {
     if (direction === "left") {
-      nextQuestion()
-    } else {
       previousQuestion()
+    } else {
+      nextQuestion()
     }
   }
 
