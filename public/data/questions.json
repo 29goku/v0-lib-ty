@@ -13558,8 +13558,8 @@
       "3",
       "4"
     ],
-    "answerIndex": 1,
-    "explanation": "Stimmzettel 2 ist gültig, weil er in jeder Spalte nur ein Kreuz hat.",
+    "answerIndex": 0,
+    "explanation": "Stimmzettel 1 ist gültig, weil er in jeder Spalte nur ein Kreuz hat.",
     "translations": {
       "en": {
         "question": "Which ballot paper would be valid in a federal election?",
@@ -13569,7 +13569,7 @@
           "3",
           "4"
         ],
-        "explanation": "Ballot paper 2 is valid because it has only one cross in each column."
+        "explanation": "Ballot paper 1 is valid because it has only one cross in each column."
       },
       "es": {
         "question": "¿Qué boleta electoral sería válida en una elección federal?",
@@ -13579,7 +13579,7 @@
           "3",
           "4"
         ],
-        "explanation": "La boleta electoral 2 es válida porque solo tiene una cruz en cada columna."
+        "explanation": "La boleta electoral 1 es válida porque solo tiene una cruz en cada columna."
       },
       "fr": {
         "question": "Quel bulletin de vote serait valide lors d'une élection fédérale ?",
@@ -13589,7 +13589,7 @@
           "3",
           "4"
         ],
-        "explanation": "Le bulletin de vote 2 est valide car il n'a qu'une seule croix dans chaque colonne."
+        "explanation": "Le bulletin de vote 1 est valide car il n'a qu'une seule croix dans chaque colonne."
       },
       "it": {
         "question": "Quale scheda elettorale sarebbe valida in un'elezione federale?",
@@ -13599,7 +13599,7 @@
           "3",
           "4"
         ],
-        "explanation": "La scheda elettorale 2 è valida perché ha solo una croce in ogni colonna."
+        "explanation": "La scheda elettorale 1 è valida perché ha solo una croce in ogni colonna."
       },
       "tr": {
         "question": "Federal bir seçimde hangi oy pusulası geçerli olurdu?",
@@ -13609,7 +13609,7 @@
           "3",
           "4"
         ],
-        "explanation": "Oy pusulası 2 geçerlidir, çünkü her sütunda sadece bir çarpı işareti vardır."
+        "explanation": "Oy pusulası 1 geçerlidir, çünkü her sütunda sadece bir çarpı işareti vardır."
       },
       "ar": {
         "question": "أي ورقة اقتراع ستكون صالحة في الانتخابات الاتحادية؟",
@@ -13619,7 +13619,7 @@
           "3",
           "4"
         ],
-        "explanation": "ورقة الاقتراع 2 صالحة لأنها تحتوي على علامة واحدة فقط في كل عمود."
+        "explanation": "ورقة الاقتراع 1 صالحة لأنها تحتوي على علامة واحدة فقط في كل عمود."
       },
       "ru": {
         "question": "Какой избирательный бюллетень был бы действительным на федеральных выборах?",
@@ -13629,7 +13629,7 @@
           "3",
           "4"
         ],
-        "explanation": "Избирательный бюллетень 2 действителен, потому что в каждом столбце есть только один крестик."
+        "explanation": "Избирательный бюллетень 1 действителен, потому что в каждом столбце есть только один крестик."
       },
       "zh": {
         "question": "在联邦选举中，哪张选票是有效的？",
@@ -13639,7 +13639,7 @@
           "3",
           "4"
         ],
-        "explanation": "选票2是有效的，因为它在每列中只有一个叉。"
+        "explanation": "选票1是有效的，因为它在每列中只有一个叉。"
       },
       "hi": {
         "question": "संघीय चुनाव में कौन सा मतपत्र वैध होगा?",
@@ -13649,7 +13649,7 @@
           "3",
           "4"
         ],
-        "explanation": "मतपत्र 2 वैध है क्योंकि इसमें प्रत्येक कॉलम में केवल एक क्रॉस है।"
+        "explanation": "मतपत्र 1 वैध है क्योंकि इसमें प्रत्येक कॉलम में केवल एक क्रॉस है।"
       }
     }
   },
