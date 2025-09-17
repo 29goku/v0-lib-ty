@@ -23644,8 +23644,8 @@
       "Bild 3",
       "Bild 4"
     ],
-    "answerIndex": 2,
-    "explanation": "Die Flagge der Europäischen Union (Bild 3) ist blau mit 12 goldenen Sternen.",
+    "answerIndex": 1,
+    "explanation": "Die Flagge der Europäischen Union (Bild 2) ist blau mit 12 goldenen Sternen.",
     "translations": {
       "en": {
         "question": "Which is the flag of the European Union?",
@@ -23655,7 +23655,7 @@
           "Image 3",
           "Image 4"
         ],
-        "explanation": "The flag of the European Union (Image 3) is blue with 12 golden stars."
+        "explanation": "The flag of the European Union (Image 2) is blue with 12 golden stars."
       },
       "es": {
         "question": "¿Cuál es la bandera de la Unión Europea?",
@@ -23665,7 +23665,7 @@
           "Imagen 3",
           "Imagen 4"
         ],
-        "explanation": "La bandera de la Unión Europea (Imagen 3) es azul con 12 estrellas doradas."
+        "explanation": "La bandera de la Unión Europea (Imagen 2) es azul con 12 estrellas doradas."
       },
       "fr": {
         "question": "Quel est le drapeau de l'Union européenne ?",
@@ -23675,7 +23675,7 @@
           "Image 3",
           "Image 4"
         ],
-        "explanation": "Le drapeau de l'Union européenne (Image 3) est bleu avec 12 étoiles dorées."
+        "explanation": "Le drapeau de l'Union européenne (Image 2) est bleu avec 12 étoiles dorées."
       },
       "it": {
         "question": "Qual è la bandiera dell'Unione Europea?",
@@ -23685,7 +23685,7 @@
           "Immagine 3",
           "Immagine 4"
         ],
-        "explanation": "La bandiera dell'Unione Europea (Immagine 3) è blu con 12 stelle dorate."
+        "explanation": "La bandiera dell'Unione Europea (Immagine 2) è blu con 12 stelle dorate."
       },
       "tr": {
         "question": "Avrupa Birliği'nin bayrağı hangisidir?",
@@ -23695,7 +23695,7 @@
           "Resim 3",
           "Resim 4"
         ],
-        "explanation": "Avrupa Birliği'nin bayrağı (Resim 3), 12 altın yıldızlı mavidir."
+        "explanation": "Avrupa Birliği'nin bayrağı (Resim 2), 12 altın yıldızlı mavidir."
       },
       "ar": {
         "question": "أي من الأعلام التالية هو علم الاتحاد الأوروبي؟",
@@ -23705,7 +23705,7 @@
           "صورة 3",
           "صورة 4"
         ],
-        "explanation": "علم الاتحاد الأوروبي (صورة 3) هو أزرق مع 12 نجمة ذهبية."
+        "explanation": "علم الاتحاد الأوروبي (صورة 2) هو أزرق مع 12 نجمة ذهبية."
       },
       "ru": {
         "question": "Какой из флагов является флагом Европейского союза?",
@@ -23715,7 +23715,7 @@
           "Изображение 3",
           "Изображение 4"
         ],
-        "explanation": "Флаг Европейского союза (Изображение 3) синий с 12 золотыми звездами."
+        "explanation": "Флаг Европейского союза (Изображение 2) синий с 12 золотыми звездами."
       },
       "zh": {
         "question": "哪一面是欧盟的旗帜？",
@@ -23725,7 +23725,7 @@
           "图3",
           "图4"
         ],
-        "explanation": "欧盟旗帜（图3）是蓝色背景，上面有12颗金色星星。"
+        "explanation": "欧盟旗帜（图2）是蓝色背景，上面有12颗金色星星。"
       },
       "hi": {
         "question": "यूरोपीय संघ का ध्वज कौन सा है?",
@@ -23735,7 +23735,7 @@
           "छवि 3",
           "छवि 4"
         ],
-        "explanation": "यूरोपीय संघ का ध्वज (छवि 3) 12 सुनहरे सितारों के साथ नीला है।"
+        "explanation": "यूरोपीय संघ का ध्वज (छवि 2) 12 सुनहरे सितारों के साथ नीला है।"
       }
     }
   },
