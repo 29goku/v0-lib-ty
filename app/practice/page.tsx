@@ -61,7 +61,7 @@ export default function PracticePage() {
   } | null>(null)
   const [loading, setLoading] = useState(true)
   const [showTranslation, setShowTranslation] = useState(false)
-  const [isAutoMode, setIsAutoMode] = useState(true)
+  const [isAutoMode, setIsAutoMode] = useState(false)
   const [autoDelay, setAutoDelay] = useState(3000)
   // local UI state
   const [currentIndex, setCurrentIndex] = useState(0)
