@@ -166,7 +166,6 @@ export default function PracticePage() {
       setCurrentIndex(currentIndex + 1)
     } else {
       // wrap or reset to start
-      alert("You've reached the end of the questions!")
       setCurrentIndex(0)
     }
   }
