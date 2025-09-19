@@ -25,7 +25,7 @@ const germanStates = [
   { id: "hessen", name: "Hessen", emoji: "🏛️" },
   { id: "mecklenburg-vorpommern", name: "Mecklenburg-Vorpommern", emoji: "🏖️" },
   { id: "niedersachsen", name: "Niedersachsen", emoji: "🐴" },
-  { id: "nordrhein-westfalen", name: "Nordrhein-Westfalen", emoji: "��️" },
+  { id: "nordrhein-westfalen", name: "Nordrhein-Westfalen", emoji: "🏴󠁤󠁥󠁮󠁷󠁿" },
   { id: "rheinland-pfalz", name: "Rheinland-Pfalz", emoji: "🍷" },
   { id: "saarland", name: "Saarland", emoji: "⚒️" },
   { id: "sachsen", name: "Sachsen", emoji: "🎭" },
@@ -591,7 +591,7 @@ export default function PracticePage() {
                 <div className="w-full">
                   <Card className="h-full border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 backdrop-blur-sm">
                     <CardContent>
-                      <div ref={overviewRef} className="hidden lg:grid grid-cols-[repeat(15,minmax(0,1fr))] gap-0.5 mb-4">
+                      <div ref={overviewRef} className="hidden lg:grid grid-cols-[repeat(15,minmax(0,1fr))] gap-0.5 mb-0">
                         {filteredQuestions.map((q, index) => {
                           const qId = q?.id
                           const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
@@ -690,7 +690,7 @@ export default function PracticePage() {
                                 onClick={() => handleQuestionJump(idx)}
                                 aria-current={isCurrent ? 'true' : undefined}
                                 aria-label={`Go to question ${pageNum}`}
-                                className={`relative w-10 h-10 rounded-lg font-bold flex items-center justify-center transition-all border-2 ${
+                                className={`relative w-10 h-10 rounded-lg font-bold flex items-center justify-center transition-all border-1 ${
                                   isCurrent
                                     ? 'bg-black text-white border-black shadow-lg'
                                     : isIncorrect
@@ -760,6 +760,10 @@ export default function PracticePage() {
             </div>
             <div className="space-y-3 text-lg max-w-2xl mx-auto">
               <p className="text-cyan-300 font-bold">💡 {t.swipeInstructions}</p>
+              <div className="flex justify-center space-x-8 text-sm md:text-base">
+                <div className="text-green-400 font-bold">← {t.swipeLeft}</div>
+                <div className="text-red-400 font-bold">{t.swipeRight} →</div>
+              </div>
               <p className="text-green-300 font-bold">⌨️ {t.keyboardShortcuts}</p>
               <p className="text-yellow-300 font-bold">🔄 Toggle between Auto and Manual mode above</p>
               <p className="text-pink-300 font-bold">🏛️ Select a state to practice state-specific questions</p>
