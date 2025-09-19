@@ -5267,113 +5267,115 @@
           "explanation": "ब्रेमेन में विदेश संबंधों के लिए कोई सीनेटर नहीं होता है, क्योंकि यह संघीय सरकार का कार्य है।"
         }
       }
-    },
+    }
+  ],
+  "hamburg": [
     {
-      "id": "hh001",
-      "category": "State",
-      "question": "Welches Wappen gehört zur Freien und Hansestadt Hamburg?",
-      "image": "/images/hamburg.jpg",
-      "options": [
-        "Bild 1",
-        "Bild 2",
-        "Bild 3",
-        "Bild 4"
-      ],
-      "answerIndex": 1,
-      "explanation": "Das Wappen der Freien und Hansestadt Hamburg (Bild 2) zeigt eine Burg mit drei Türmen.",
-      "translations": {
-        "en": {
-          "question": "Which coat of arms belongs to the Free and Hanseatic City of Hamburg?",
-          "options": [
-            "Image 1",
-            "Image 2",
-            "Image 3",
-            "Image 4"
-          ],
-          "explanation": "The coat of arms of the Free and Hanseatic City of Hamburg (Image 2) shows a castle with three towers."
-        },
-        "es": {
-          "question": "¿Qué escudo de armas pertenece a la Ciudad Libre y Hanseática de Hamburgo?",
-          "options": [
-            "Imagen 1",
-            "Imagen 2",
-            "Imagen 3",
-            "Imagen 4"
-          ],
-          "explanation": "El escudo de armas de la Ciudad Libre y Hanseática de Hamburgo (Imagen 2) muestra un castillo con tres torres."
-        },
-        "fr": {
-          "question": "Quel blason appartient à la Ville Libre et Hanséatique de Hambourg ?",
-          "options": [
-            "Image 1",
-            "Image 2",
-            "Image 3",
-            "Image 4"
-          ],
-          "explanation": "Le blason de la Ville Libre et Hanséatique de Hambourg (Image 2) montre un château avec trois tours."
-        },
-        "it": {
-          "question": "Quale stemma appartiene alla Città Libera e Anseatica di Amburgo?",
-          "options": [
-            "Immagine 1",
-            "Immagine 2",
-            "Immagine 3",
-            "Immagine 4"
-          ],
-          "explanation": "Lo stemma della Città Libera e Anseatica di Amburgo (Immagine 2) mostra un castello con tre torri."
-        },
-        "tr": {
-          "question": "Özgür ve Hansa Şehri Hamburg'a hangi arma aittir?",
-          "options": [
-            "Resim 1",
-            "Resim 2",
-            "Resim 3",
-            "Resim 4"
-          ],
-          "explanation": "Özgür ve Hansa Şehri Hamburg'un arması (Resim 2), üç kuleli bir kale gösterir."
-        },
-        "ar": {
-          "question": "أي شعار نبالة ينتمي إلى مدينة هامبورغ الحرة والهانزية؟",
-          "options": [
-            "الصورة 1",
-            "الصورة 2",
-            "الصورة 3",
-            "الصورة 4"
-          ],
-          "explanation": "شعار نبالة مدينة هامبورغ الحرة والهانزية (الصورة 2) يظهر قلعة بثلاثة أبراج."
-        },
-        "ru": {
-          "question": "Какой герб принадлежит Вольному и ганзейскому городу Гамбургу?",
-          "options": [
-            "Изображение 1",
-            "Изображение 2",
-            "Изображение 3",
-            "Изображение 4"
-          ],
-          "explanation": "Герб Вольного и ганзейского города Гамбурга (Изображение 2) показывает замок с тремя башнями."
-        },
-        "zh": {
-          "question": "哪个纹章属于汉堡自由汉萨城？",
-          "options": [
-            "图1",
-            "图2",
-            "图3",
-            "图4"
-          ],
-          "explanation": "汉堡自由汉萨城（图 2）的纹章展示了一座带有三座塔楼的城堡。"
-        },
-        "hi": {
-          "question": "कौन सा प्रतीक चिन्ह हैम्बर्ग के स्वतंत्र और हैन्सेटिक शहर का है?",
-          "options": [
-            "छवि 1",
-            "छवि 2",
-            "छवि 3",
-            "छवि 4"
-          ],
-          "explanation": "हैम्बर्ग के स्वतंत्र और हैन्सेटिक शहर का प्रतीक चिन्ह (छवि 2) तीन टावरों वाला एक महल दिखाता है।"
-        }
+    "id": "hh001",
+    "category": "State",
+    "question": "Welches Wappen gehört zur Freien und Hansestadt Hamburg?",
+    "image": "/images/hamburg.jpg",
+    "options": [
+      "Bild 1",
+      "Bild 2",
+      "Bild 3",
+      "Bild 4"
+    ],
+    "answerIndex": 1,
+    "explanation": "Das Wappen der Freien und Hansestadt Hamburg (Bild 2) zeigt eine Burg mit drei Türmen.",
+    "translations": {
+      "en": {
+        "question": "Which coat of arms belongs to the Free and Hanseatic City of Hamburg?",
+        "options": [
+          "Image 1",
+          "Image 2",
+          "Image 3",
+          "Image 4"
+        ],
+        "explanation": "The coat of arms of the Free and Hanseatic City of Hamburg (Image 2) shows a castle with three towers."
+      },
+      "es": {
+        "question": "¿Qué escudo de armas pertenece a la Ciudad Libre y Hanseática de Hamburgo?",
+        "options": [
+          "Imagen 1",
+          "Imagen 2",
+          "Imagen 3",
+          "Imagen 4"
+        ],
+        "explanation": "El escudo de armas de la Ciudad Libre y Hanseática de Hamburgo (Imagen 2) muestra un castillo con tres torres."
+      },
+      "fr": {
+        "question": "Quel blason appartient à la Ville Libre et Hanséatique de Hambourg ?",
+        "options": [
+          "Image 1",
+          "Image 2",
+          "Image 3",
+          "Image 4"
+        ],
+        "explanation": "Le blason de la Ville Libre et Hanséatique de Hambourg (Image 2) montre un château avec trois tours."
+      },
+      "it": {
+        "question": "Quale stemma appartiene alla Città Libera e Anseatica di Amburgo?",
+        "options": [
+          "Immagine 1",
+          "Immagine 2",
+          "Immagine 3",
+          "Immagine 4"
+        ],
+        "explanation": "Lo stemma della Città Libera e Anseatica di Amburgo (Immagine 2) mostra un castello con tre torri."
+      },
+      "tr": {
+        "question": "Özgür ve Hansa Şehri Hamburg'a hangi arma aittir?",
+        "options": [
+          "Resim 1",
+          "Resim 2",
+          "Resim 3",
+          "Resim 4"
+        ],
+        "explanation": "Özgür ve Hansa Şehri Hamburg'un arması (Resim 2), üç kuleli bir kale gösterir."
+      },
+      "ar": {
+        "question": "أي شعار نبالة ينتمي إلى مدينة هامبورغ الحرة والهانزية؟",
+        "options": [
+          "الصورة 1",
+          "الصورة 2",
+          "الصورة 3",
+          "الصورة 4"
+        ],
+        "explanation": "شعار نبالة مدينة هامبورغ الحرة والهانزية (الصورة 2) يظهر قلعة بثلاثة أبراج."
+      },
+      "ru": {
+        "question": "Какой герб принадлежит Вольному и ганзейскому городу Гамбургу?",
+        "options": [
+          "Изображение 1",
+          "Изображение 2",
+          "Изображение 3",
+          "Изображение 4"
+        ],
+        "explanation": "Герб Вольного и ганзейского города Гамбурга (Изображение 2) показывает замок с тремя башнями."
+      },
+      "zh": {
+        "question": "哪个纹章属于汉堡自由汉萨城？",
+        "options": [
+          "图1",
+          "图2",
+          "图3",
+          "图4"
+        ],
+        "explanation": "汉堡自由汉萨城（图 2）的纹章展示了一座带有三座塔楼的城堡。"
+      },
+      "hi": {
+        "question": "कौन सा प्रतीक चिन्ह हैम्बर्ग के स्वतंत्र और हैन्सेटिक शहर का है?",
+        "options": [
+          "छवि 1",
+          "छवि 2",
+          "छवि 3",
+          "छवि 4"
+        ],
+        "explanation": "हैम्बर्ग के स्वतंत्र और हैन्सेटिक शहर का प्रतीक चिन्ह (छवि 2) तीन टावरों वाला एक महल दिखाता है।"
       }
-    },
+    }
+  },
     {
       "id": "hh002",
       "category": "State",
