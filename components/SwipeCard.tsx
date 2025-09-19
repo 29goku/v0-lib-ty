@@ -273,7 +273,6 @@ export default function SwipeCard({
       >
         <div className="bg-green-500/90 text-white px-4 py-2 rounded-xl font-bold text-lg shadow-xl border-2 border-green-300/50 backdrop-blur-sm">
           <div className="flex items-center space-x-2">
-            <span>NEXT</span>
             <span>→</span>
           </div>
         </div>
@@ -289,7 +288,6 @@ export default function SwipeCard({
         <div className="bg-blue-500/90 text-white px-4 py-2 rounded-xl font-bold text-lg shadow-xl border-2 border-blue-300/50 backdrop-blur-sm">
           <div className="flex items-center space-x-2">
             <span>←</span>
-            <span>PREV</span>
           </div>
         </div>
       </motion.div>
