@@ -824,6 +824,101 @@ export default function PracticePage() {
                           )
                         })}
                       </div>
+
+                      {/* Mobile: compact pagination-style navigation */}
+                      <div className="flex items-center justify-center space-x-0.5 mb-4 lg:hidden">
+                        <button
+                            aria-label="Previous"
+                            onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
+                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border-2 border-gray-600"
+                        >
+                          ‹
+                        </button>
+
+                        {(() => {
+                          const pages = getPaginationNumbers(currentIndex + 1, pageCount)
+
+                          return pages.map((p, i) => {
+                            if (p === '...') {
+                              // compute median target between surrounding numeric pages
+                              let left: number | null = null
+                              for (let j = i - 1; j >= 0; j--) {
+                                if (typeof pages[j] === 'number') {
+                                  left = pages[j] as number
+                                  break
+                                }
+                              }
+                              let right: number | null = null
+                              for (let j = i + 1; j < pages.length; j++) {
+                                if (typeof pages[j] === 'number') {
+                                  right = pages[j] as number
+                                  break
+                                }
+                              }
+
+                              const target = left && right ? Math.floor((left + right) / 2) : left || right || 1
+                              const targetIdx = Math.max(0, Number(target) - 1)
+
+                              return (
+                                  <button
+                                      key={`dots-${i}`}
+                                      onClick={() => handleQuestionJump(targetIdx)}
+                                      aria-label={`Jump near ${target}`}
+                                      className="px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black border-2 border-gray-200"
+                                  >
+                                    …
+                                  </button>
+                              )
+                            }
+
+                            const pageNum = Number(p)
+                            const idx = pageNum - 1
+                            const q = filteredQuestions[idx]
+                            const qId = q?.id
+                            const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
+                            const isIncorrect = qId ? (userProgress.incorrectAnswers || []).includes(qId) : false
+                            const isCurrent = idx === currentIndex
+                            const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
+
+                            // Find the original question number from the full question set
+                            const originalQuestionNumber = questionsToUse.findIndex(originalQ => originalQ.id === qId) + 1
+
+                            return (
+                                <button
+                                    key={`p-${pageNum}-${i}`}
+                                    onClick={() => handleQuestionJump(idx)}
+                                    aria-current={isCurrent ? 'true' : undefined}
+                                    aria-label={`Go to question ${originalQuestionNumber}`}
+                                    className={`relative w-10 h-10 rounded-lg font-bold flex items-center justify-center transition-all border-1 ${
+                                        isCurrent
+                                            ? 'bg-black text-white border-black shadow-lg'
+                                            : isIncorrect
+                                                ? 'bg-red-500 text-white border-red-400 shadow-sm'
+                                                : isAnswered
+                                                    ? 'bg-green-500 text-white border-green-400 shadow-sm'
+                                                    : 'bg-white text-black border-gray-200 shadow-sm hover:scale-105'
+                                    }`}
+                                >
+                                  {selectedState && (
+                                      <span className="absolute -top-2 text-xs leading-none pointer-events-none">{stateEmoji}</span>
+                                  )}
+                                  <span className="text-sm z-10">{originalQuestionNumber}</span>
+                                  {isFlagged && (
+                                      <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-500 rounded-full border border-white"></span>
+                                  )}
+                                </button>
+                            )
+                          })
+                        })()}
+
+                        <button
+                            aria-label="Next"
+                            onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
+                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border-2 border-gray-600"
+                        >
+                          ›
+                        </button>
+                      </div>
                     </CardContent>
                   </Card>
                 </div>
