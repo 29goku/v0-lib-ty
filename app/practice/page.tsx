@@ -291,7 +291,10 @@ export default function PracticePage() {
     setCurrentIndex(0)
   }
 
-  if (loading || !currentQuestion) {
+  // Add check for empty filtered questions and show appropriate message
+  const hasNoQuestionsInFilter = filteredQuestions.length === 0
+
+  if (loading) {
     return (
         <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-pink-900 text-white flex items-center justify-center relative overflow-hidden">
           <div className="absolute inset-0">
@@ -308,6 +311,257 @@ export default function PracticePage() {
               <p className="text-pink-400 text-lg font-bold mt-4 animate-bounce">{t.getReady}</p>
             </CardContent>
           </Card>
+        </div>
+    )
+  }
+
+  // Show empty state when no questions match the current filters
+  if (hasNoQuestionsInFilter) {
+    const getEmptyStateMessage = () => {
+      if (selectedFlagFilter === "flagged") {
+        return "No flagged questions found. Flag some questions during practice to see them here!"
+      } else if (selectedFlagFilter === "incorrect") {
+        return "No incorrect answers yet. Questions you answer wrong will appear here."
+      } else if (selectedFlagFilter === "correct") {
+        return "No correct answers yet. Questions you answer correctly will appear here."
+      } else if (selectedCategory) {
+        return `No questions found in "${selectedCategory}" category${selectedState ? ` for ${germanStates.find((s) => s.id === selectedState)?.name}` : ""}.`
+      } else if (selectedState) {
+        return `No questions found for ${germanStates.find((s) => s.id === selectedState)?.name}.`
+      }
+      return "No questions available."
+    }
+
+    const getEmptyStateEmoji = () => {
+      if (selectedFlagFilter === "flagged") return "🚩"
+      if (selectedFlagFilter === "incorrect") return "❌"
+      if (selectedFlagFilter === "correct") return "✅"
+      return "📝"
+    }
+
+    return (
+        <div className="min-h-screen bg-black text-white overflow-hidden relative">
+          <div className="fixed inset-0 z-0">
+            <div
+                className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"
+                style={{ animationDuration: "4s" }}
+            ></div>
+            <div
+                className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"
+                style={{ animationDelay: "2s", animationDuration: "6s" }}
+            ></div>
+            <div
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"
+                style={{ animationDelay: "4s", animationDuration: "8s" }}
+            ></div>
+          </div>
+
+          <div className="relative z-10 container mx-auto px-4 py-8">
+            <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
+              <Link href="/">
+                <Button className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white border-2 border-red-400/50 px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all transform hover:scale-110 backdrop-blur-sm font-black text-sm md:text-base touch-manipulation">
+                  <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                  {t.back.toUpperCase()}
+                </Button>
+              </Link>
+
+              <div className="text-center">
+                <h1 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">
+                <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
+                  {t.practiceMode.toUpperCase()}
+                </span>
+                </h1>
+                <div className="text-sm md:text-lg text-pink-300 font-bold">
+                  {selectedState
+                      ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
+                      : `${t.practiceSubtitle} 🚀`}
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 md:gap-4">
+                <LanguageSelector />
+                <Button
+                    onClick={resetProgress}
+                    className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-0 text-sm md:text-base touch-manipulation"
+                >
+                  <RotateCcw className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                  {t.reset.toUpperCase()}
+                </Button>
+              </div>
+            </div>
+
+            {/* Show filter sections even when no questions */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+              <Card className="border-2 border-pink-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-pink-500/25">
+                <CardContent className="p-4 md:p-6">
+                  <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                    <MapPin className="w-5 h-5 md:w-6 md:h-6 text-pink-400 animate-bounce" />
+                    <h3 className="text-lg md:text-xl font-black text-pink-300 uppercase tracking-wider">
+                      {t.selectState}
+                    </h3>
+                  </div>
+                  <div className="state-filter-container">
+                    <div className="state-filter-grid state-filter-scroll">
+                      <button
+                          onClick={() => handleStateSelection(null)}
+                          className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
+                              !selectedState
+                                  ? "bg-gradient-to-r from-pink-500 to-red-500 text-white shadow-lg shadow-pink-500/50 border-2 border-pink-400"
+                                  : "bg-black/50 text-pink-300 hover:bg-black/80 hover:text-white border-2 border-pink-400/30"
+                          }`}
+                      >
+                        🇩🇪 {t.allGermany}
+                      </button>
+                      {germanStates.map((state) => (
+                          <button
+                              key={state.id}
+                              onClick={() => handleStateSelection(state.id)}
+                              className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
+                                  selectedState === state.id
+                                      ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-lg shadow-yellow-500/50 border-2 border-yellow-400"
+                                      : "bg-black/50 text-yellow-300 hover:bg-black/80 hover:text-white border-2 border-yellow-400/30"
+                              }`}
+                          >
+                            {state.emoji} {state.name}
+                          </button>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
+                <CardContent className="p-4 md:p-6">
+                  <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                    <Filter className="w-5 h-5 md:w-6 md:h-6 text-purple-400 animate-pulse" />
+                    <h3 className="text-lg md:text-xl font-black text-purple-300 uppercase tracking-wider">
+                      {selectedState
+                          ? `${germanStates.find((s) => s.id === selectedState)?.name} Categories`
+                          : t.filterByCategory}
+                    </h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                        onClick={() => handleCategorySelection(null)}
+                        className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                            !selectedCategory
+                                ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
+                                : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
+                        }`}
+                    >
+                      🌟 {selectedState ? "All State Categories" : t.allCategories}
+                    </button>
+                    {categories.map((category) => (
+                        <button
+                            key={category}
+                            onClick={() => handleCategorySelection(category)}
+                            className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                                selectedCategory === category
+                                    ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50 border-2 border-purple-400"
+                                    : "bg-black/50 text-purple-300 hover:bg-black/80 hover:text-white border-2 border-purple-400/30"
+                            }`}
+                        >
+                          {getCategoryEmoji(category)} {category}
+                        </button>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Flag Filter Section */}
+            <div className="flex justify-center mb-6 md:mb-8">
+              <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-orange-500/25 w-full max-w-4xl">
+                <CardContent className="p-4 md:p-6">
+                  <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                    <div className="w-5 h-5 md:w-6 md:h-6 text-orange-400 animate-pulse">🚩</div>
+                    <h3 className="text-lg md:text-xl font-black text-orange-300 uppercase tracking-wider">
+                      Filter by Status
+                    </h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    <button
+                        onClick={() => handleFlagFilterSelection(null)}
+                        className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                            !selectedFlagFilter
+                                ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
+                                : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
+                        }`}
+                    >
+                      🌟 All Questions
+                    </button>
+                    <button
+                        onClick={() => handleFlagFilterSelection("flagged")}
+                        className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                            selectedFlagFilter === "flagged"
+                                ? "bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
+                                : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
+                        }`}
+                    >
+                      🚩 Flagged Questions ({userProgress.flaggedQuestions.length})
+                    </button>
+                    <button
+                        onClick={() => handleFlagFilterSelection("incorrect")}
+                        className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                            selectedFlagFilter === "incorrect"
+                                ? "bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
+                                : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
+                        }`}
+                    >
+                      ❌ Incorrect Answers ({(userProgress.incorrectAnswers || []).length})
+                    </button>
+                    <button
+                        onClick={() => handleFlagFilterSelection("correct")}
+                        className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                            selectedFlagFilter === "correct"
+                                ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/50 border-2 border-green-400"
+                                : "bg-black/50 text-green-300 hover:bg-black/80 hover:text-white border-2 border-green-400/30"
+                        }`}
+                    >
+                      ✅ Correct Answers ({userProgress.completedQuestions.length - (userProgress.incorrectAnswers || []).length})
+                    </button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Empty State Message */}
+            <div className="flex justify-center">
+              <Card className="w-full max-w-2xl border-2 border-gray-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-gray-500/25">
+                <CardContent className="p-8 text-center">
+                  <div className="text-8xl mb-6 animate-bounce">{getEmptyStateEmoji()}</div>
+                  <h2 className="text-3xl font-black text-white mb-4">No Questions Found</h2>
+                  <p className="text-xl text-gray-300 mb-6">{getEmptyStateMessage()}</p>
+                  <div className="flex flex-wrap gap-3 justify-center">
+                    {(selectedFlagFilter || selectedCategory || selectedState) && (
+                      <Button
+                          onClick={() => {
+                            setSelectedFlagFilter(null)
+                            setSelectedCategory(null)
+                            setSelectedState(null)
+                            setCurrentIndex(0)
+                          }}
+                          className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                      >
+                        🌟 Show All Questions
+                      </Button>
+                    )}
+                    {selectedFlagFilter && (
+                      <Button
+                          onClick={() => {
+                            setSelectedFlagFilter(null)
+                            setCurrentIndex(0)
+                          }}
+                          className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                      >
+                        Clear Status Filter
+                      </Button>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
     )
   }
@@ -549,7 +803,7 @@ export default function PracticePage() {
             </Card>
           </div>
 
-          {/* New Flag Filter Section */}
+          {/* Flag Filter Section */}
           <div className="flex justify-center mb-6 md:mb-8">
             <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-orange-500/25 w-full max-w-4xl">
               <CardContent className="p-4 md:p-6">
@@ -675,12 +929,15 @@ export default function PracticePage() {
                           const isCurrent = index === currentIndex
                           const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
 
+                          // Find the original question number from the full question set
+                          const originalQuestionNumber = questionsToUse.findIndex(originalQ => originalQ.id === qId) + 1
+
                           return (
                             <button
                               key={qId ?? index}
                               data-index={index}
                               aria-current={isCurrent ? "true" : undefined}
-                              aria-label={`Question ${index + 1}${isFlagged ? ", flagged" : ""}${isAnswered ? ", answered" : ""}${isIncorrect ? ", incorrect" : ""}`}
+                              aria-label={`Question ${originalQuestionNumber}${isFlagged ? ", flagged" : ""}${isAnswered ? ", answered" : ""}${isIncorrect ? ", incorrect" : ""}`}
                               onClick={() => handleQuestionJump(index)}
                               className={`relative aspect-square rounded-lg font-bold text-sm transition-all transform hover:scale-110 border-4 ${
                                 isCurrent
@@ -696,7 +953,7 @@ export default function PracticePage() {
                               {selectedState && (
                                 <span className="absolute -top-1 -left-1 text-xs">{stateEmoji}</span>
                               )}
-                               {index + 1}
+                               {originalQuestionNumber}
                                {isFlagged && (
                                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
                                )}
@@ -760,12 +1017,15 @@ export default function PracticePage() {
                             const isCurrent = idx === currentIndex
                             const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
 
+                            // Find the original question number from the full question set
+                            const originalQuestionNumber = questionsToUse.findIndex(originalQ => originalQ.id === qId) + 1
+
                             return (
                               <button
                                 key={`p-${pageNum}-${i}`}
                                 onClick={() => handleQuestionJump(idx)}
                                 aria-current={isCurrent ? 'true' : undefined}
-                                aria-label={`Go to question ${pageNum}`}
+                                aria-label={`Go to question ${originalQuestionNumber}`}
                                 className={`relative w-10 h-10 rounded-lg font-bold flex items-center justify-center transition-all border-1 ${
                                   isCurrent
                                     ? 'bg-black text-white border-black shadow-lg'
@@ -779,7 +1039,7 @@ export default function PracticePage() {
                                 {selectedState && (
                                   <span className="absolute -top-2 text-xs leading-none pointer-events-none">{stateEmoji}</span>
                                 )}
-                                <span className="text-sm z-10">{pageNum}</span>
+                                <span className="text-sm z-10">{originalQuestionNumber}</span>
                                 {isFlagged && (
                                   <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-500 rounded-full border border-white"></span>
                                 )}
