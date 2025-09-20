@@ -25,7 +25,7 @@ const germanStates = [
   { id: "hessen", name: "Hessen", emoji: "🏛️" },
   { id: "mecklenburg-vorpommern", name: "Mecklenburg-Vorpommern", emoji: "🏖️" },
   { id: "niedersachsen", name: "Niedersachsen", emoji: "🐴" },
-  { id: "nordrhein-westfalen", name: "Nordrhein-Westfalen", emoji: "🏴󠁤󠁥󠁮󠁷󠁿" },
+  { id: "nordrhein-westfalen", name: "Nordrhein-Westfalen", emoji: "🏴" },
   { id: "rheinland-pfalz", name: "Rheinland-Pfalz", emoji: "🍷" },
   { id: "saarland", name: "Saarland", emoji: "⚒️" },
   { id: "sachsen", name: "Sachsen", emoji: "🎭" },
@@ -66,6 +66,9 @@ export default function PracticePage() {
   // local UI state
   const [currentIndex, setCurrentIndex] = useState(0)
   const overviewRef = useRef<HTMLDivElement | null>(null)
+
+  // Add new state for flagged question filter
+  const [selectedFlagFilter, setSelectedFlagFilter] = useState<string | null>(null)
 
   // emoji for the currently selected state (used in compact pagination)
   const stateEmoji = selectedState ? germanStates.find((s) => s.id === selectedState)?.emoji : undefined
@@ -125,10 +128,22 @@ export default function PracticePage() {
 
   const categories = getCategories()
 
-  // Filter questions based on category
-  const filteredQuestions = selectedCategory
+  // Filter questions based on category and flag status
+  let filteredQuestions = selectedCategory
       ? questionsToUse.filter((q) => q.category === selectedCategory)
       : questionsToUse
+
+  // Apply flag filter
+  if (selectedFlagFilter === "flagged") {
+    filteredQuestions = filteredQuestions.filter((q) => userProgress.flaggedQuestions.includes(q.id))
+  } else if (selectedFlagFilter === "incorrect") {
+    filteredQuestions = filteredQuestions.filter((q) => (userProgress.incorrectAnswers || []).includes(q.id))
+  } else if (selectedFlagFilter === "correct") {
+    filteredQuestions = filteredQuestions.filter((q) =>
+      userProgress.completedQuestions.includes(q.id) &&
+      !(userProgress.incorrectAnswers || []).includes(q.id)
+    )
+  }
 
   const currentQuestion = filteredQuestions[currentIndex]
 
@@ -268,6 +283,11 @@ export default function PracticePage() {
 
   const handleCategorySelection = (category: string | null) => {
     setSelectedCategory(category)
+    setCurrentIndex(0)
+  }
+
+  const handleFlagFilterSelection = (filter: string | null) => {
+    setSelectedFlagFilter(filter)
     setCurrentIndex(0)
   }
 
@@ -524,6 +544,62 @@ export default function PracticePage() {
                         {getCategoryEmoji(category)} {category}
                       </button>
                   ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* New Flag Filter Section */}
+          <div className="flex justify-center mb-6 md:mb-8">
+            <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-orange-500/25 w-full max-w-4xl">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                  <div className="w-5 h-5 md:w-6 md:h-6 text-orange-400 animate-pulse">🚩</div>
+                  <h3 className="text-lg md:text-xl font-black text-orange-300 uppercase tracking-wider">
+                    Filter by Status
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <button
+                      onClick={() => handleFlagFilterSelection(null)}
+                      className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                          !selectedFlagFilter
+                              ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
+                              : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
+                      }`}
+                  >
+                    🌟 All Questions
+                  </button>
+                  <button
+                      onClick={() => handleFlagFilterSelection("flagged")}
+                      className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                          selectedFlagFilter === "flagged"
+                              ? "bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
+                              : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
+                      }`}
+                  >
+                    🚩 Flagged Questions ({userProgress.flaggedQuestions.length})
+                  </button>
+                  <button
+                      onClick={() => handleFlagFilterSelection("incorrect")}
+                      className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                          selectedFlagFilter === "incorrect"
+                              ? "bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
+                              : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
+                      }`}
+                  >
+                    ❌ Incorrect Answers ({(userProgress.incorrectAnswers || []).length})
+                  </button>
+                  <button
+                      onClick={() => handleFlagFilterSelection("correct")}
+                      className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                          selectedFlagFilter === "correct"
+                              ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/50 border-2 border-green-400"
+                              : "bg-black/50 text-green-300 hover:bg-black/80 hover:text-white border-2 border-green-400/30"
+                      }`}
+                  >
+                    ✅ Correct Answers ({userProgress.completedQuestions.length - (userProgress.incorrectAnswers || []).length})
+                  </button>
                 </div>
               </CardContent>
             </Card>
