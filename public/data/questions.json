@@ -21857,8 +21857,8 @@
       "Bild 3",
       "Bild 4"
     ],
-    "answerIndex": 1,
-    "explanation": "Das Wappen der DDR (Bild 2) zeigt einen Hammer, einen Zirkel und einen Ährenkranz.",
+    "answerIndex": 3,
+    "explanation": "Das Wappen der DDR (Bild 4) zeigt einen Hammer, einen Zirkel und einen Ährenkranz.",
     "translations": {
       "en": {
         "question": "What was the coat of arms of the German Democratic Republic?",
@@ -21868,7 +21868,7 @@
           "Image 3",
           "Image 4"
         ],
-        "explanation": "The coat of arms of the GDR (Image 2) shows a hammer, a compass, and a wreath of wheat."
+        "explanation": "The coat of arms of the GDR (Image 4) shows a hammer, a compass, and a wreath of wheat."
       },
       "es": {
         "question": "¿Cuál era el escudo de armas de la República Democrática Alemana?",
@@ -21878,7 +21878,7 @@
           "Imagen 3",
           "Imagen 4"
         ],
-        "explanation": "El escudo de armas de la RDA (Imagen 2) muestra un martillo, un compás y una corona de espigas."
+        "explanation": "El escudo de armas de la RDA (Imagen 4) muestra un martillo, un compás y una corona de espigas."
       },
       "fr": {
         "question": "Quelles étaient les armoiries de la République démocratique allemande ?",
@@ -21888,7 +21888,7 @@
           "Image 3",
           "Image 4"
         ],
-        "explanation": "Les armoiries de la RDA (Image 2) montrent un marteau, un compas et une couronne d'épis de blé."
+        "explanation": "Les armoiries de la RDA (Image 4) montrent un marteau, un compas et une couronne d'épis de blé."
       },
       "it": {
         "question": "Qual era lo stemma della Repubblica Democratica Tedesca?",
@@ -21898,7 +21898,7 @@
           "Immagine 3",
           "Immagine 4"
         ],
-        "explanation": "Lo stemma della DDR (Immagine 2) mostra un martello, un compasso e una corona di spighe."
+        "explanation": "Lo stemma della DDR (Immagine 4) mostra un martello, un compasso e una corona di spighe."
       },
       "tr": {
         "question": "Alman Demokratik Cumhuriyeti'nin (DDR) arması neydi?",
@@ -21908,7 +21908,7 @@
           "Resim 3",
           "Resim 4"
         ],
-        "explanation": "DDR'nin arması (Resim 2) bir çekiç, bir pergel ve bir buğday çelengi gösterir."
+        "explanation": "DDR'nin arması (Resim 4) bir çekiç, bir pergel ve bir buğday çelengi gösterir."
       },
       "ar": {
         "question": "ماذا كان شعار جمهورية ألمانيا الديمقراطية؟",
@@ -21918,7 +21918,7 @@
           "الصورة 3",
           "الصورة 4"
         ],
-        "explanation": "شعار ألمانيا الشرقية (الصورة 2) يظهر مطرقة، بوصلة، وإكليل من سنابل القمح."
+        "explanation": "شعار ألمانيا الشرقية (الصورة 4) يظهر مطرقة، بوصلة، وإكليل من سنابل القمح."
       },
       "ru": {
         "question": "Каким был герб Германской Демократической Республики?",
@@ -21928,7 +21928,7 @@
           "Изображение 3",
           "Изображение 4"
         ],
-        "explanation": "Герб ГДР (Изображение 2) показывает молот, циркуль и венок из колосьев."
+        "explanation": "Герб ГДР (Изображение 4) показывает молот, циркуль и венок из колосьев."
       },
       "zh": {
         "question": "德意志民主共和国的国徽是什么？",
@@ -21938,7 +21938,7 @@
           "图片 3",
           "图片 4"
         ],
-        "explanation": "东德的国徽（图片 2）展示了锤子、圆规和谷穗花环。"
+        "explanation": "东德的国徽（图片 4）展示了锤子、圆规和谷穗花环。"
       },
       "hi": {
         "question": "जर्मन लोकतांत्रिक गणराज्य का प्रतीक चिन्ह क्या था?",
@@ -21948,7 +21948,7 @@
           "छवि 3",
           "छवि 4"
         ],
-        "explanation": "जीडीआर का प्रतीक चिन्ह (छवि 2) एक हथौड़ा, एक कम्पास और गेहूं की एक माला दिखाता है।"
+        "explanation": "जीडीआर का प्रतीक चिन्ह (छवि 4) एक हथौड़ा, एक कम्पास और गेहूं की एक माला दिखाता है।"
       }
     }
   },
