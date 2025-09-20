@@ -67,8 +67,13 @@ export default function PracticePage() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const overviewRef = useRef<HTMLDivElement | null>(null)
 
-  // Add new state for flagged question filter
-  const [selectedFlagFilter, setSelectedFlagFilter] = useState<string | null>(null)
+  // Add new state for multi-select filters
+  const [selectedFlagFilters, setSelectedFlagFilters] = useState<string[]>([])
+  const [selectedStates, setSelectedStates] = useState<string[]>([])
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+
+  // Add new state for collapsible filters
+  const [showFilters, setShowFilters] = useState(false)
 
   // emoji for the currently selected state (used in compact pagination)
   const stateEmoji = selectedState ? germanStates.find((s) => s.id === selectedState)?.emoji : undefined
@@ -108,10 +113,19 @@ export default function PracticePage() {
     initializePractice()
   }, [questions.length, loadQuestions, setStateQuestions, selectedState])
 
-  // Get the appropriate questions based on state selection
+  // Get the appropriate questions based on state selection - updated for multi-select
   const getQuestionsToUse = () => {
-    if (selectedState && stateQuestions.length > 0) {
-      return stateQuestions
+    if (selectedStates.length > 0) {
+      // Combine questions from all selected states
+      let combinedQuestions: any[] = []
+      selectedStates.forEach(stateId => {
+        // You'll need to load state questions for each selected state
+        // For now, we'll use the existing stateQuestions if only one state is selected
+        if (selectedStates.length === 1 && stateId === selectedState && stateQuestions.length > 0) {
+          combinedQuestions = [...combinedQuestions, ...stateQuestions]
+        }
+      })
+      return combinedQuestions.length > 0 ? combinedQuestions : questions
     }
     return questions
   }
@@ -120,30 +134,53 @@ export default function PracticePage() {
 
   // Get categories from the appropriate question set
   const getCategories = () => {
-    if (selectedState && stateQuestions.length > 0) {
-      return [...new Set(stateQuestions.map((q) => q.category))]
+    if (selectedStates.length > 0 && questionsToUse !== questions) {
+      return [...new Set(questionsToUse.map((q) => q.category))]
     }
     return [...new Set(questions.map((q) => q.category))]
   }
 
   const categories = getCategories()
 
-  // Filter questions based on category and flag status
-  let filteredQuestions = selectedCategory
-      ? questionsToUse.filter((q) => q.category === selectedCategory)
-      : questionsToUse
+  // Filter questions based on category and flag status - updated for multi-select
+  let filteredQuestions = questionsToUse
 
-  // Apply flag filter
-  if (selectedFlagFilter === "flagged") {
-    filteredQuestions = filteredQuestions.filter((q) => userProgress.flaggedQuestions.includes(q.id))
-  } else if (selectedFlagFilter === "incorrect") {
-    filteredQuestions = filteredQuestions.filter((q) => (userProgress.incorrectAnswers || []).includes(q.id))
-  } else if (selectedFlagFilter === "correct") {
-    filteredQuestions = filteredQuestions.filter((q) =>
+  // Apply state filter
+  if (selectedStates.length > 0) {
+    // This will be handled in getQuestionsToUse for now
+  }
+
+  // Apply category filter - updated for multi-select
+  if (selectedCategories.length > 0) {
+    filteredQuestions = filteredQuestions.filter((q) => selectedCategories.includes(q.category))
+  }
+
+  // Calculate dynamic counts for status filters based on questions BEFORE flag filtering
+  const questionsBeforeFlagFilter = filteredQuestions;
+  const flaggedCount = questionsBeforeFlagFilter.filter(q => userProgress.flaggedQuestions.includes(q.id)).length;
+  const incorrectCount = questionsBeforeFlagFilter.filter(q => (userProgress.incorrectAnswers || []).includes(q.id)).length;
+  const correctCount = questionsBeforeFlagFilter.filter(q =>
       userProgress.completedQuestions.includes(q.id) &&
       !(userProgress.incorrectAnswers || []).includes(q.id)
-    )
+  ).length;
+
+  // Apply flag filter - updated for multi-select
+  if (selectedFlagFilters.length > 0) {
+    filteredQuestions = filteredQuestions.filter((q) => {
+      return selectedFlagFilters.some(filter => {
+        if (filter === "flagged") {
+          return userProgress.flaggedQuestions.includes(q.id)
+        } else if (filter === "incorrect") {
+          return (userProgress.incorrectAnswers || []).includes(q.id)
+        } else if (filter === "correct") {
+          return userProgress.completedQuestions.includes(q.id) &&
+              !(userProgress.incorrectAnswers || []).includes(q.id)
+        }
+        return false
+      })
+    })
   }
+
 
   const currentQuestion = filteredQuestions[currentIndex]
 
@@ -275,19 +312,75 @@ export default function PracticePage() {
     setShowTranslation(false)
   }
 
-  const handleStateSelection = (stateId: string | null) => {
-    setSelectedState(stateId)
-    setSelectedCategory(null) // Reset category when state changes
+  const handleStateSelection = (stateId: string) => {
+    setSelectedStates(prev => {
+      if (prev.includes(stateId)) {
+        // Remove state if already selected
+        const newStates = prev.filter(s => s !== stateId)
+        // Update legacy selectedState for compatibility
+        setSelectedState(newStates.length === 1 ? newStates[0] : null)
+        return newStates
+      } else {
+        // Add state if not selected
+        const newStates = [...prev, stateId]
+        // Update legacy selectedState for compatibility
+        setSelectedState(newStates.length === 1 ? newStates[0] : null)
+        return newStates
+      }
+    })
     setCurrentIndex(0)
   }
 
-  const handleCategorySelection = (category: string | null) => {
-    setSelectedCategory(category)
+  const handleCategorySelection = (category: string) => {
+    setSelectedCategories(prev => {
+      if (prev.includes(category)) {
+        // Remove category if already selected
+        const newCategories = prev.filter(c => c !== category)
+        // Update legacy selectedCategory for compatibility
+        setSelectedCategory(newCategories.length === 1 ? newCategories[0] : null)
+        return newCategories
+      } else {
+        // Add category if not selected
+        const newCategories = [...prev, category]
+        // Update legacy selectedCategory for compatibility
+        setSelectedCategory(newCategories.length === 1 ? newCategories[0] : null)
+        return newCategories
+      }
+    })
     setCurrentIndex(0)
   }
 
-  const handleFlagFilterSelection = (filter: string | null) => {
-    setSelectedFlagFilter(filter)
+  const handleFlagFilterSelection = (filter: string) => {
+    setSelectedFlagFilters(prev => {
+      if (prev.includes(filter)) {
+        // Remove filter if already selected
+        return prev.filter(f => f !== filter)
+      } else {
+        // Add filter if not selected
+        return [...prev, filter]
+      }
+    })
+    setCurrentIndex(0)
+  }
+
+  const clearAllStateFilters = () => {
+    setSelectedStates([])
+    setSelectedState(null)
+    setCurrentIndex(0)
+  }
+
+  const clearAllCategoryFilters = () => {
+    setSelectedCategories([])
+    setSelectedCategory(null)
+    setCurrentIndex(0)
+  }
+
+  const clearAllFilters = () => {
+    setSelectedFlagFilters([])
+    setSelectedCategories([])
+    setSelectedStates([])
+    setSelectedCategory(null)
+    setSelectedState(null)
     setCurrentIndex(0)
   }
 
@@ -318,24 +411,29 @@ export default function PracticePage() {
   // Show empty state when no questions match the current filters
   if (hasNoQuestionsInFilter) {
     const getEmptyStateMessage = () => {
-      if (selectedFlagFilter === "flagged") {
-        return "No flagged questions found. Flag some questions during practice to see them here!"
-      } else if (selectedFlagFilter === "incorrect") {
-        return "No incorrect answers yet. Questions you answer wrong will appear here."
-      } else if (selectedFlagFilter === "correct") {
-        return "No correct answers yet. Questions you answer correctly will appear here."
-      } else if (selectedCategory) {
-        return `No questions found in "${selectedCategory}" category${selectedState ? ` for ${germanStates.find((s) => s.id === selectedState)?.name}` : ""}.`
-      } else if (selectedState) {
-        return `No questions found for ${germanStates.find((s) => s.id === selectedState)?.name}.`
+      if (selectedFlagFilters.length > 0) {
+        const filterNames = selectedFlagFilters.map(filter => {
+          if (filter === "flagged") return "flagged"
+          if (filter === "incorrect") return "incorrect"
+          if (filter === "correct") return "correct"
+          return filter
+        }).join(", ")
+        return `No questions found matching the selected filters: ${filterNames}.`
+      } else if (selectedCategories.length > 0) {
+        return `No questions found in categories: ${selectedCategories.join(", ")}${selectedStates.length > 0 ? ` for selected states` : ""}.`
+      } else if (selectedStates.length > 0) {
+        const stateNames = selectedStates.map(stateId =>
+            germanStates.find((s) => s.id === stateId)?.name || stateId
+        ).join(", ")
+        return `No questions found for: ${stateNames}.`
       }
       return "No questions available."
     }
 
     const getEmptyStateEmoji = () => {
-      if (selectedFlagFilter === "flagged") return "🚩"
-      if (selectedFlagFilter === "incorrect") return "❌"
-      if (selectedFlagFilter === "correct") return "✅"
+      if (selectedFlagFilters.includes("flagged")) return "🚩"
+      if (selectedFlagFilters.includes("incorrect")) return "❌"
+      if (selectedFlagFilters.includes("correct")) return "✅"
       return "📝"
     }
 
@@ -397,35 +495,32 @@ export default function PracticePage() {
                   <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                     <MapPin className="w-5 h-5 md:w-6 md:h-6 text-pink-400 animate-bounce" />
                     <h3 className="text-lg md:text-xl font-black text-pink-300 uppercase tracking-wider">
-                      {t.selectState}
+                      {t.selectState} {selectedStates.length > 0 && `(${selectedStates.length} selected)`}
                     </h3>
                   </div>
-                  <div className="state-filter-container">
-                    <div className="state-filter-grid state-filter-scroll">
-                      <button
-                          onClick={() => handleStateSelection(null)}
-                          className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
-                              !selectedState
-                                  ? "bg-gradient-to-r from-pink-500 to-red-500 text-white shadow-lg shadow-pink-500/50 border-2 border-pink-400"
-                                  : "bg-black/50 text-pink-300 hover:bg-black/80 hover:text-white border-2 border-pink-400/30"
-                          }`}
-                      >
-                        🇩🇪 {t.allGermany}
-                      </button>
-                      {germanStates.map((state) => (
-                          <button
-                              key={state.id}
-                              onClick={() => handleStateSelection(state.id)}
-                              className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
-                                  selectedState === state.id
-                                      ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-lg shadow-yellow-500/50 border-2 border-yellow-400"
-                                      : "bg-black/50 text-yellow-300 hover:bg-black/80 hover:text-white border-2 border-yellow-400/30"
-                              }`}
-                          >
-                            {state.emoji} {state.name}
-                          </button>
-                      ))}
-                    </div>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedStates.length > 0 && (
+                        <button
+                            onClick={clearAllStateFilters}
+                            className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg shadow-gray-500/50 border-2 border-gray-400"
+                        >
+                          🌟 Clear All ({selectedStates.length})
+                        </button>
+                    )}
+                    {germanStates.map((state) => (
+                        <button
+                            key={state.id}
+                            onClick={() => handleStateSelection(state.id)}
+                            className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                                selectedStates.includes(state.id)
+                                    ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-lg shadow-yellow-500/50 border-2 border-yellow-400"
+                                    : "bg-black/50 text-yellow-300 hover:bg-black/80 hover:text-white border-2 border-yellow-400/30"
+                            }`}
+                        >
+                          {state.emoji} {state.name}
+                          {selectedStates.includes(state.id) && <span className="ml-1">✓</span>}
+                        </button>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
@@ -435,33 +530,32 @@ export default function PracticePage() {
                   <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                     <Filter className="w-5 h-5 md:w-6 md:h-6 text-purple-400 animate-pulse" />
                     <h3 className="text-lg md:text-xl font-black text-purple-300 uppercase tracking-wider">
-                      {selectedState
-                          ? `${germanStates.find((s) => s.id === selectedState)?.name} Categories`
-                          : t.filterByCategory}
+                      {selectedStates.length > 0
+                          ? `Categories ${selectedCategories.length > 0 ? `(${selectedCategories.length} selected)` : ''}`
+                          : `${t.filterByCategory} ${selectedCategories.length > 0 ? `(${selectedCategories.length} selected)` : ''}`}
                     </h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <button
-                        onClick={() => handleCategorySelection(null)}
-                        className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                            !selectedCategory
-                                ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
-                                : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
-                        }`}
-                    >
-                      🌟 {selectedState ? "All State Categories" : t.allCategories}
-                    </button>
+                    {selectedCategories.length > 0 && (
+                        <button
+                            onClick={clearAllCategoryFilters}
+                            className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg shadow-gray-500/50 border-2 border-gray-400"
+                        >
+                          🌟 Clear All ({selectedCategories.length})
+                        </button>
+                    )}
                     {categories.map((category) => (
                         <button
                             key={category}
                             onClick={() => handleCategorySelection(category)}
                             className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                                selectedCategory === category
+                                selectedCategories.includes(category)
                                     ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50 border-2 border-purple-400"
                                     : "bg-black/50 text-purple-300 hover:bg-black/80 hover:text-white border-2 border-purple-400/30"
                             }`}
                         >
                           {getCategoryEmoji(category)} {category}
+                          {selectedCategories.includes(category) && <span className="ml-1">✓</span>}
                         </button>
                     ))}
                   </div>
@@ -471,61 +565,67 @@ export default function PracticePage() {
 
             {/* Flag Filter Section */}
             <div className="flex justify-center mb-6 md:mb-8">
-              <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-orange-500/25 w-full max-w-4xl">
+              <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-orange-500/25 w-full max-w-5xl">
                 <CardContent className="p-4 md:p-6">
                   <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                     <div className="w-5 h-5 md:w-6 md:h-6 text-orange-400 animate-pulse">🚩</div>
                     <h3 className="text-lg md:text-xl font-black text-orange-300 uppercase tracking-wider">
-                      Filter by Status
+                      Filter by Status {selectedFlagFilters.length > 0 && `(${selectedFlagFilters.length} selected)`}
                     </h3>
                   </div>
                   <div className="flex flex-wrap gap-2 justify-center">
-                    <button
-                        onClick={() => handleFlagFilterSelection(null)}
-                        className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                            !selectedFlagFilter
-                                ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
-                                : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
-                        }`}
-                    >
-                      🌟 All Questions
-                    </button>
-                    <button
-                        onClick={() => handleFlagFilterSelection("flagged")}
-                        className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                            selectedFlagFilter === "flagged"
-                                ? "bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
-                                : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
-                        }`}
-                    >
-                      🚩 Flagged Questions ({userProgress.flaggedQuestions.length})
-                    </button>
-                    <button
-                        onClick={() => handleFlagFilterSelection("incorrect")}
-                        className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                            selectedFlagFilter === "incorrect"
-                                ? "bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
-                                : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
-                        }`}
-                    >
-                      ❌ Incorrect Answers ({(userProgress.incorrectAnswers || []).length})
-                    </button>
-                    <button
-                        onClick={() => handleFlagFilterSelection("correct")}
-                        className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                            selectedFlagFilter === "correct"
-                                ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/50 border-2 border-green-400"
-                                : "bg-black/50 text-green-300 hover:bg-black/80 hover:text-white border-2 border-green-400/30"
-                        }`}
-                    >
-                      ✅ Correct Answers ({userProgress.completedQuestions.length - (userProgress.incorrectAnswers || []).length})
-                    </button>
+                    {selectedFlagFilters.length > 0 && (
+                        <button
+                            onClick={clearAllFilters}
+                            className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg shadow-gray-500/50 border-2 border-gray-400"
+                        >
+                          🌟 Clear All ({selectedFlagFilters.length})
+                        </button>
+                    )}
+                    {flaggedCount > 0 && (
+                        <button
+                            onClick={() => handleFlagFilterSelection("flagged")}
+                            className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                                selectedFlagFilters.includes("flagged")
+                                    ? "bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
+                                    : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
+                            }`}
+                        >
+                          🚩 Flagged Questions ({flaggedCount})
+                          {selectedFlagFilters.includes("flagged") && <span className="ml-1">✓</span>}
+                        </button>
+                    )}
+                    {incorrectCount > 0 && (
+                        <button
+                            onClick={() => handleFlagFilterSelection("incorrect")}
+                            className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                                selectedFlagFilters.includes("incorrect")
+                                    ? "bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
+                                    : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
+                            }`}
+                        >
+                          ❌ Incorrect Answers ({incorrectCount})
+                          {selectedFlagFilters.includes("incorrect") && <span className="ml-1">✓</span>}
+                        </button>
+                    )}
+                    {correctCount > 0 && (
+                        <button
+                            onClick={() => handleFlagFilterSelection("correct")}
+                            className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                                selectedFlagFilters.includes("correct")
+                                    ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/50 border-2 border-green-400"
+                                    : "bg-black/50 text-green-300 hover:bg-black/80 hover:text-white border-2 border-green-400/30"
+                            }`}
+                        >
+                          ✅ Correct Answers ({correctCount})
+                          {selectedFlagFilters.includes("correct") && <span className="ml-1">✓</span>}
+                        </button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
             </div>
 
-            {/* Empty State Message */}
             <div className="flex justify-center">
               <Card className="w-full max-w-2xl border-2 border-gray-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-gray-500/25">
                 <CardContent className="p-8 text-center">
@@ -533,29 +633,28 @@ export default function PracticePage() {
                   <h2 className="text-3xl font-black text-white mb-4">No Questions Found</h2>
                   <p className="text-xl text-gray-300 mb-6">{getEmptyStateMessage()}</p>
                   <div className="flex flex-wrap gap-3 justify-center">
-                    {(selectedFlagFilter || selectedCategory || selectedState) && (
-                      <Button
-                          onClick={() => {
-                            setSelectedFlagFilter(null)
-                            setSelectedCategory(null)
-                            setSelectedState(null)
-                            setCurrentIndex(0)
-                          }}
-                          className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
-                      >
-                        🌟 Show All Questions
-                      </Button>
+                    {(selectedFlagFilters.length > 0 || selectedCategories.length > 0 || selectedStates.length > 0) && (
+                        <Button
+                            onClick={() => {
+                              setSelectedFlagFilters([])
+                              setSelectedCategories([])
+                              setSelectedStates([])
+                              setSelectedCategory(null)
+                              setSelectedState(null)
+                              setCurrentIndex(0)
+                            }}
+                            className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                        >
+                          🌟 Show All Questions
+                        </Button>
                     )}
-                    {selectedFlagFilter && (
-                      <Button
-                          onClick={() => {
-                            setSelectedFlagFilter(null)
-                            setCurrentIndex(0)
-                          }}
-                          className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
-                      >
-                        Clear Status Filter
-                      </Button>
+                    {selectedFlagFilters.length > 0 && (
+                        <Button
+                            onClick={clearAllFilters}
+                            className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                        >
+                          Clear Status Filters
+                        </Button>
                     )}
                   </div>
                 </CardContent>
@@ -621,7 +720,6 @@ export default function PracticePage() {
               </Button>
             </div>
           </div>
-
           <div className="flex justify-center mb-6">
             <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-cyan-500/25">
               <CardContent className="p-4">
@@ -731,35 +829,32 @@ export default function PracticePage() {
                 <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                   <MapPin className="w-5 h-5 md:w-6 md:h-6 text-pink-400 animate-bounce" />
                   <h3 className="text-lg md:text-xl font-black text-pink-300 uppercase tracking-wider">
-                    {t.selectState}
+                    {t.selectState} {selectedStates.length > 0 && `(${selectedStates.length} selected)`}
                   </h3>
                 </div>
-                <div className="state-filter-container">
-                  <div className="state-filter-grid state-filter-scroll">
-                    <button
-                        onClick={() => handleStateSelection(null)}
-                        className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
-                            !selectedState
-                                ? "bg-gradient-to-r from-pink-500 to-red-500 text-white shadow-lg shadow-pink-500/50 border-2 border-pink-400"
-                                : "bg-black/50 text-pink-300 hover:bg-black/80 hover:text-white border-2 border-pink-400/30"
-                        }`}
-                    >
-                      🇩🇪 {t.allGermany}
-                    </button>
-                    {germanStates.map((state) => (
-                        <button
-                            key={state.id}
-                            onClick={() => handleStateSelection(state.id)}
-                            className={`px-2 py-1 md:px-3 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-xs md:text-sm touch-manipulation ${
-                                selectedState === state.id
-                                    ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-lg shadow-yellow-500/50 border-2 border-yellow-400"
-                                    : "bg-black/50 text-yellow-300 hover:bg-black/80 hover:text-white border-2 border-yellow-400/30"
-                            }`}
-                        >
-                          {state.emoji} {state.name}
-                        </button>
-                    ))}
-                  </div>
+                <div className="flex flex-wrap gap-2">
+                  {selectedStates.length > 0 && (
+                      <button
+                          onClick={clearAllStateFilters}
+                          className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg shadow-gray-500/50 border-2 border-gray-400"
+                      >
+                        🌟 Clear All ({selectedStates.length})
+                      </button>
+                  )}
+                  {germanStates.map((state) => (
+                      <button
+                          key={state.id}
+                          onClick={() => handleStateSelection(state.id)}
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                              selectedStates.includes(state.id)
+                                  ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-lg shadow-yellow-500/50 border-2 border-yellow-400"
+                                  : "bg-black/50 text-yellow-300 hover:bg-black/80 hover:text-white border-2 border-yellow-400/30"
+                          }`}
+                      >
+                        {state.emoji} {state.name}
+                        {selectedStates.includes(state.id) && <span className="ml-1">✓</span>}
+                      </button>
+                  ))}
                 </div>
               </CardContent>
             </Card>
@@ -769,33 +864,32 @@ export default function PracticePage() {
                 <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                   <Filter className="w-5 h-5 md:w-6 md:h-6 text-purple-400 animate-pulse" />
                   <h3 className="text-lg md:text-xl font-black text-purple-300 uppercase tracking-wider">
-                    {selectedState
-                        ? `${germanStates.find((s) => s.id === selectedState)?.name} Categories`
-                        : t.filterByCategory}
+                    {selectedStates.length > 0
+                        ? `Categories ${selectedCategories.length > 0 ? `(${selectedCategories.length} selected)` : ''}`
+                        : `${t.filterByCategory} ${selectedCategories.length > 0 ? `(${selectedCategories.length} selected)` : ''}`}
                   </h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <button
-                      onClick={() => handleCategorySelection(null)}
-                      className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                          !selectedCategory
-                              ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
-                              : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
-                      }`}
-                  >
-                    🌟 {selectedState ? "All State Categories" : t.allCategories}
-                  </button>
+                  {selectedCategories.length > 0 && (
+                      <button
+                          onClick={clearAllCategoryFilters}
+                          className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg shadow-gray-500/50 border-2 border-gray-400"
+                      >
+                        🌟 Clear All ({selectedCategories.length})
+                      </button>
+                  )}
                   {categories.map((category) => (
                       <button
                           key={category}
                           onClick={() => handleCategorySelection(category)}
                           className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                              selectedCategory === category
+                              selectedCategories.includes(category)
                                   ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50 border-2 border-purple-400"
                                   : "bg-black/50 text-purple-300 hover:bg-black/80 hover:text-white border-2 border-purple-400/30"
                           }`}
                       >
                         {getCategoryEmoji(category)} {category}
+                        {selectedCategories.includes(category) && <span className="ml-1">✓</span>}
                       </button>
                   ))}
                 </div>
@@ -805,265 +899,273 @@ export default function PracticePage() {
 
           {/* Flag Filter Section */}
           <div className="flex justify-center mb-6 md:mb-8">
-            <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-orange-500/25 w-full max-w-4xl">
+            <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-orange-500/25 w-full max-w-5xl">
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                   <div className="w-5 h-5 md:w-6 md:h-6 text-orange-400 animate-pulse">🚩</div>
                   <h3 className="text-lg md:text-xl font-black text-orange-300 uppercase tracking-wider">
-                    Filter by Status
+                    Filter by Status {selectedFlagFilters.length > 0 && `(${selectedFlagFilters.length} selected)`}
                   </h3>
                 </div>
                 <div className="flex flex-wrap gap-2 justify-center">
-                  <button
-                      onClick={() => handleFlagFilterSelection(null)}
-                      className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                          !selectedFlagFilter
-                              ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 border-2 border-cyan-400"
-                              : "bg-black/50 text-cyan-300 hover:bg-black/80 hover:text-white border-2 border-cyan-400/30"
-                      }`}
-                  >
-                    🌟 All Questions
-                  </button>
-                  <button
-                      onClick={() => handleFlagFilterSelection("flagged")}
-                      className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                          selectedFlagFilter === "flagged"
-                              ? "bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
-                              : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
-                      }`}
-                  >
-                    🚩 Flagged Questions ({userProgress.flaggedQuestions.length})
-                  </button>
-                  <button
-                      onClick={() => handleFlagFilterSelection("incorrect")}
-                      className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                          selectedFlagFilter === "incorrect"
-                              ? "bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
-                              : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
-                      }`}
-                  >
-                    ❌ Incorrect Answers ({(userProgress.incorrectAnswers || []).length})
-                  </button>
-                  <button
-                      onClick={() => handleFlagFilterSelection("correct")}
-                      className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
-                          selectedFlagFilter === "correct"
-                              ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/50 border-2 border-green-400"
-                              : "bg-black/50 text-green-300 hover:bg-black/80 hover:text-white border-2 border-green-400/30"
-                      }`}
-                  >
-                    ✅ Correct Answers ({userProgress.completedQuestions.length - (userProgress.incorrectAnswers || []).length})
-                  </button>
+                  {selectedFlagFilters.length > 0 && (
+                      <button
+                          onClick={clearAllFilters}
+                          className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg shadow-gray-500/50 border-2 border-gray-400"
+                      >
+                        🌟 Clear All ({selectedFlagFilters.length})
+                      </button>
+                  )}
+                  {flaggedCount > 0 && (
+                      <button
+                          onClick={() => handleFlagFilterSelection("flagged")}
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                              selectedFlagFilters.includes("flagged")
+                                  ? "bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
+                                  : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
+                          }`}
+                      >
+                        🚩 Flagged Questions ({flaggedCount})
+                        {selectedFlagFilters.includes("flagged") && <span className="ml-1">✓</span>}
+                      </button>
+                  )}
+                  {incorrectCount > 0 && (
+                      <button
+                          onClick={() => handleFlagFilterSelection("incorrect")}
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                              selectedFlagFilters.includes("incorrect")
+                                  ? "bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
+                                  : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
+                          }`}
+                      >
+                        ❌ Incorrect Answers ({incorrectCount})
+                        {selectedFlagFilters.includes("incorrect") && <span className="ml-1">✓</span>}
+                      </button>
+                  )}
+                  {correctCount > 0 && (
+                      <button
+                          onClick={() => handleFlagFilterSelection("correct")}
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                              selectedFlagFilters.includes("correct")
+                                  ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/50 border-2 border-green-400"
+                                  : "bg-black/50 text-green-300 hover:bg-black/80 hover:text-white border-2 border-green-400/30"
+                          }`}
+                      >
+                        ✅ Correct Answers ({correctCount})
+                        {selectedFlagFilters.includes("correct") && <span className="ml-1">✓</span>}
+                      </button>
+                  )}
                 </div>
               </CardContent>
             </Card>
           </div>
+        </div>
+        <div className="flex justify-center mb-8">
+        <div className="w-full max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+            {/* Left: Swipe Card (takes 50%) */}
+            <div className="w-full">
+              <div className="w-full">
+                <SwipeCard
+                    question={currentQuestion}
+                    onSwipe={handleSwipe}
+                    onAnswerSelect={handleAnswerSelect}
+                    showAnswer={showAnswer}
+                    onFlag={handleFlag}
+                    isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
+                    isTranslated={showTranslation}
+                    onTranslate={() => setShowTranslation(!showTranslation)}
+                />
 
-          <div className="flex justify-center mb-8">
-            <div className="w-full max-w-6xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-                {/* Left: Swipe Card (takes 50%) */}
-                <div className="w-full">
-                  <div className="w-full">
-                    <SwipeCard
-                      question={currentQuestion}
-                      onSwipe={handleSwipe}
-                      onAnswerSelect={handleAnswerSelect}
-                      showAnswer={showAnswer}
-                      onFlag={handleFlag}
-                      isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
-                      isTranslated={showTranslation}
-                      onTranslate={() => setShowTranslation(!showTranslation)}
-                    />
-
-                    {!isAutoMode && showAnswer && (
-                      <div className="flex justify-start mt-4">
-                        <Button
+                {!isAutoMode && showAnswer && (
+                    <div className="flex justify-start mt-4">
+                      <Button
                           onClick={nextQuestion}
                           className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-black px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
-                        >
-                          Next Question →
-                        </Button>
-                      </div>
-                    )}
+                      >
+                        Next Question →
+                      </Button>
+                    </div>
+                )}
 
-                    {showAnswer && lastAnswer && (
-                      <motion.div
+                {showAnswer && lastAnswer && (
+                    <motion.div
                         initial={{ opacity: 0, scale: 0.8, y: 30 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
                         className="mt-6"
-                      >
-                        <Card
+                    >
+                      <Card
                           className={`w-full border-4 shadow-2xl backdrop-blur-xl relative overflow-hidden ${
-                            lastAnswer.correct
-                              ? "border-green-400 bg-gradient-to-br from-green-900/50 to-emerald-900/50 shadow-green-500/50"
-                              : "border-red-400 bg-gradient-to-br from-red-900/50 to-pink-900/50 shadow-red-500/50"
+                              lastAnswer.correct
+                                  ? "border-green-400 bg-gradient-to-br from-green-900/50 to-emerald-900/50 shadow-green-500/50"
+                                  : "border-red-400 bg-gradient-to-br from-red-900/50 to-pink-900/50 shadow-red-500/50"
                           }`}
-                        >
-                          <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-                          <CardContent className="p-8 text-center relative z-10">
-                            <div className="text-8xl mb-4 animate-bounce">{lastAnswer.correct ? "🎉" : "💪"}</div>
-                            <div
+                      >
+                        <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+                        <CardContent className="p-8 text-center relative z-10">
+                          <div className="text-8xl mb-4 animate-bounce">{lastAnswer.correct ? "🎉" : "💪"}</div>
+                          <div
                               className={`text-4xl font-black mb-4 animate-pulse ${lastAnswer.correct ? "text-green-400" : "text-red-400"}`}
-                            >
-                              {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
-                            </div>
-                            <p className="text-2xl text-white font-bold">{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
-                          </CardContent>
-                        </Card>
-                      </motion.div>
-                    )}
-                  </div>
-                </div>
+                          >
+                            {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
+                          </div>
+                          <p className="text-2xl text-white font-bold">{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                )}
+              </div>
+            </div>
 
-                {/* Right: Mini Answer Overview (takes 50%) */}
-                <div className="w-full">
-                  <Card className="h-full border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 backdrop-blur-sm">
-                    <CardContent>
-                      <div ref={overviewRef} className="hidden lg:grid grid-cols-[repeat(15,minmax(0,1fr))] gap-0.5 mb-0">
-                        {filteredQuestions.map((q, index) => {
-                          const qId = q?.id
-                          const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
-                          const isIncorrect = qId ? (userProgress.incorrectAnswers || []).includes(qId) : false
-                          const isCurrent = index === currentIndex
-                          const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
+            {/* Right: Mini Answer Overview (takes 50%) */}
+            <div className="w-full">
+              <Card className="h-full border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 backdrop-blur-sm">
+                <CardContent>
+                  <div ref={overviewRef} className="hidden lg:grid grid-cols-[repeat(15,minmax(0,1fr))] gap-0.5 mb-0">
+                    {filteredQuestions.map((q, index) => {
+                      const qId = q?.id
+                      const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
+                      const isIncorrect = qId ? (userProgress.incorrectAnswers || []).includes(qId) : false
+                      const isCurrent = index === currentIndex
+                      const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
 
-                          // Find the original question number from the full question set
-                          const originalQuestionNumber = questionsToUse.findIndex(originalQ => originalQ.id === qId) + 1
+                      // Find the original question number from the full question set
+                      const originalQuestionNumber = questionsToUse.findIndex(originalQ => originalQ.id === qId) + 1
 
-                          return (
-                            <button
+                      return (
+                          <button
                               key={qId ?? index}
                               data-index={index}
                               aria-current={isCurrent ? "true" : undefined}
                               aria-label={`Question ${originalQuestionNumber}${isFlagged ? ", flagged" : ""}${isAnswered ? ", answered" : ""}${isIncorrect ? ", incorrect" : ""}`}
                               onClick={() => handleQuestionJump(index)}
                               className={`relative aspect-square rounded-lg font-bold text-sm transition-all transform hover:scale-110 border-4 ${
-                                isCurrent
-                                  ? "bg-cyan-400 text-black border-cyan-300 shadow-lg shadow-cyan-500/50"
-                                  : isIncorrect
-                                  ? "bg-red-500 text-white border-red-400 hover:bg-red-600"
-                                  : isAnswered
-                                  ? "bg-green-500 text-white border-green-400 hover:bg-green-600"
-                                  : "bg-gray-600 text-gray-300 border-gray-500 hover:bg-gray-500"
+                                  isCurrent
+                                      ? "bg-cyan-400 text-black border-cyan-300 shadow-lg shadow-cyan-500/50"
+                                      : isIncorrect
+                                          ? "bg-red-500 text-white border-red-400 hover:bg-red-600"
+                                          : isAnswered
+                                              ? "bg-green-500 text-white border-green-400 hover:bg-green-600"
+                                              : "bg-gray-600 text-gray-300 border-gray-500 hover:bg-gray-500"
                               }`}
-                            >
-                              {/* put state emoji inside the button (top-left) when a state is selected */}
-                              {selectedState && (
+                          >
+                            {/* put state emoji inside the button (top-left) when a state is selected */}
+                            {selectedState && (
                                 <span className="absolute -top-1 -left-1 text-xs">{stateEmoji}</span>
-                              )}
-                               {originalQuestionNumber}
-                               {isFlagged && (
-                                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
-                               )}
-                            </button>
-                          )
-                        })}
-                      </div>
+                            )}
+                            {originalQuestionNumber}
+                            {isFlagged && (
+                                <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
+                            )}
+                          </button>
+                      )
+                    })}
+                  </div>
 
-                       {/* Mobile: compact pagination-style navigation */}
-                       <div className="flex items-center justify-center space-x-0.5 mb-4 lg:hidden">
-                        <button
-                          aria-label="Previous"
-                          onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
-                          className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border-2 border-gray-600"
-                        >
-                          ‹
-                        </button>
+                  {/* Mobile: compact pagination-style navigation */}
+                  <div className="flex items-center justify-center space-x-0.5 mb-4 lg:hidden">
+                    <button
+                        aria-label="Previous"
+                        onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
+                        className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border-2 border-gray-600"
+                    >
+                      ‹
+                    </button>
 
-                        {(() => {
-                          const pages = getPaginationNumbers(currentIndex + 1, pageCount)
+                    {(() => {
+                      const pages = getPaginationNumbers(currentIndex + 1, pageCount)
 
-                          return pages.map((p, i) => {
-                            if (p === '...') {
-                              // compute median target between surrounding numeric pages
-                              let left: number | null = null
-                              for (let j = i - 1; j >= 0; j--) {
-                                if (typeof pages[j] === 'number') {
-                                  left = pages[j] as number
-                                  break
-                                }
-                              }
-                              let right: number | null = null
-                              for (let j = i + 1; j < pages.length; j++) {
-                                if (typeof pages[j] === 'number') {
-                                  right = pages[j] as number
-                                  break
-                                }
-                              }
+                      return pages.map((p, i) => {
+                        if (p === '...') {
+                          // compute median target between surrounding numeric pages
+                          let left: number | null = null
+                          for (let j = i - 1; j >= 0; j--) {
+                            if (typeof pages[j] === 'number') {
+                              left = pages[j] as number
+                              break
+                            }
+                          }
+                          let right: number | null = null
+                          for (let j = i + 1; j < pages.length; j++) {
+                            if (typeof pages[j] === 'number') {
+                              right = pages[j] as number
+                              break
+                            }
+                          }
 
-                              const target = left && right ? Math.floor((left + right) / 2) : left || right || 1
-                              const targetIdx = Math.max(0, Number(target) - 1)
+                          const target = left && right ? Math.floor((left + right) / 2) : left || right || 1
+                          const targetIdx = Math.max(0, Number(target) - 1)
 
-                              return (
-                                <button
+                          return (
+                              <button
                                   key={`dots-${i}`}
                                   onClick={() => handleQuestionJump(targetIdx)}
                                   aria-label={`Jump near ${target}`}
                                   className="px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black border-2 border-gray-200"
-                                >
-                                  …
-                                </button>
-                              )
-                            }
+                              >
+                                …
+                              </button>
+                          )
+                        }
 
-                            const pageNum = Number(p)
-                            const idx = pageNum - 1
-                            const q = filteredQuestions[idx]
-                            const qId = q?.id
-                            const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
-                            const isIncorrect = qId ? (userProgress.incorrectAnswers || []).includes(qId) : false
-                            const isCurrent = idx === currentIndex
-                            const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
+                        const pageNum = Number(p)
+                        const idx = pageNum - 1
+                        const q = filteredQuestions[idx]
+                        const qId = q?.id
+                        const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
+                        const isIncorrect = qId ? (userProgress.incorrectAnswers || []).includes(qId) : false
+                        const isCurrent = idx === currentIndex
+                        const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
 
-                            // Find the original question number from the full question set
-                            const originalQuestionNumber = questionsToUse.findIndex(originalQ => originalQ.id === qId) + 1
+                        // Find the original question number from the full question set
+                        const originalQuestionNumber = questionsToUse.findIndex(originalQ => originalQ.id === qId) + 1
 
-                            return (
-                              <button
+                        return (
+                            <button
                                 key={`p-${pageNum}-${i}`}
                                 onClick={() => handleQuestionJump(idx)}
                                 aria-current={isCurrent ? 'true' : undefined}
                                 aria-label={`Go to question ${originalQuestionNumber}`}
                                 className={`relative w-10 h-10 rounded-lg font-bold flex items-center justify-center transition-all border-1 ${
-                                  isCurrent
-                                    ? 'bg-black text-white border-black shadow-lg'
-                                    : isIncorrect
-                                    ? 'bg-red-500 text-white border-red-400 shadow-sm'
-                                    : isAnswered
-                                    ? 'bg-green-500 text-white border-green-400 shadow-sm'
-                                    : 'bg-white text-black border-gray-200 shadow-sm hover:scale-105'
+                                    isCurrent
+                                        ? 'bg-black text-white border-black shadow-lg'
+                                        : isIncorrect
+                                            ? 'bg-red-500 text-white border-red-400 shadow-sm'
+                                            : isAnswered
+                                                ? 'bg-green-500 text-white border-green-400 shadow-sm'
+                                                : 'bg-white text-black border-gray-200 shadow-sm hover:scale-105'
                                 }`}
-                              >
-                                {selectedState && (
+                            >
+                              {selectedState && (
                                   <span className="absolute -top-2 text-xs leading-none pointer-events-none">{stateEmoji}</span>
-                                )}
-                                <span className="text-sm z-10">{originalQuestionNumber}</span>
-                                {isFlagged && (
+                              )}
+                              <span className="text-sm z-10">{originalQuestionNumber}</span>
+                              {isFlagged && (
                                   <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-500 rounded-full border border-white"></span>
-                                )}
-                              </button>
-                            )
-                          })
-                        })()}
+                              )}
+                            </button>
+                        )
+                      })
+                    })()}
 
-                        <button
-                          aria-label="Next"
-                          onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
-                          className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border-2 border-gray-600"
-                        >
-                          ›
-                        </button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
+                    <button
+                        aria-label="Next"
+                        onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
+                        className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border-2 border-gray-600"
+                    >
+                      ›
+                    </button>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
+        </div>
+        </div>
 
-          {userProgress.badges.length > 0 && (
+
+        {userProgress.badges.length > 0 && (
             <div className="flex justify-center">
               <Card className="w-full max-w-md border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/30 to-orange-900/30 backdrop-blur-xl shadow-lg shadow-yellow-500/25">
                 <CardHeader>
@@ -1074,43 +1176,43 @@ export default function PracticePage() {
                 <CardContent>
                   <div className="flex justify-center space-x-4">
                     {userProgress.badges.slice(-3).map((badge, index) => (
-                      <div
-                        key={badge}
-                        className="hover:scale-125 transition-transform cursor-pointer animate-bounce"
-                        style={{ animationDelay: `${index * 0.2}s` }}
-                      >
-                        <Badge type={badge} earned size="sm" />
-                      </div>
+                        <div
+                            key={badge}
+                            className="hover:scale-125 transition-transform cursor-pointer animate-bounce"
+                            style={{ animationDelay: `${index * 0.2}s` }}
+                        >
+                          <Badge type={badge} earned size="sm" />
+                        </div>
                     ))}
                   </div>
                 </CardContent>
               </Card>
             </div>
-          )}
+        )}
 
-          <div className="text-center mt-12 space-y-6">
-            <div className="text-3xl font-black animate-pulse">
+
+        <div className="text-center mt-12 space-y-6">
+          <div className="text-3xl font-black animate-pulse">
             <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
               {t.howToPractice.toUpperCase()}
             </span>
-            </div>
-            <div className="space-y-3 text-lg max-w-2xl mx-auto">
-              <p className="text-cyan-300 font-bold">💡 {t.swipeInstructions}</p>
-              <div className="flex justify-center space-x-8 text-sm md:text-base">
-                <div className="text-green-400 font-bold">← {t.swipeLeft}</div>
-                <div className="text-red-400 font-bold">{t.swipeRight} →</div>
-              </div>
-              <p className="text-green-300 font-bold">⌨️ {t.keyboardShortcuts}</p>
-              <p className="text-yellow-300 font-bold">🔄 Toggle between Auto and Manual mode above</p>
-              <p className="text-pink-300 font-bold">🏛️ Select a state to practice state-specific questions</p>
-              <div>
-                <p className="text-sm text-gray-300 font-semibold">
-                  Press <span className="font-black">1 / 2 / 3 / 4</span> — the matching option <span className="font-black">A / B / C / D</span> will be selected and will trigger the same behavior as clicking the option.
-                </p>
-              </div>
-            </div>
-            <div className="text-2xl font-black text-white animate-bounce mt-8">{t.letsDominate} 🚀</div>
           </div>
+          <div className="space-y-3 text-lg max-w-2xl mx-auto">
+            <p className="text-cyan-300 font-bold">💡 {t.swipeInstructions}</p>
+            <div className="flex justify-center space-x-8 text-sm md:text-base">
+              <div className="text-green-400 font-bold">← {t.swipeLeft}</div>
+              <div className="text-red-400 font-bold">{t.swipeRight} →</div>
+            </div>
+            <p className="text-green-300 font-bold">⌨️ {t.keyboardShortcuts}</p>
+            <p className="text-yellow-300 font-bold">🔄 Toggle between Auto and Manual mode above</p>
+            <p className="text-pink-300 font-bold">🏛️ Select a state to practice state-specific questions</p>
+            <div>
+              <p className="text-sm text-gray-300 font-semibold">
+                Press <span className="font-black">1 / 2 / 3 / 4</span> — the matching option <span className="font-black">A / B / C / D</span> will be selected and will trigger the same behavior as clicking the option.
+              </p>
+            </div>
+          </div>
+          <div className="text-2xl font-black text-white animate-bounce mt-8">{t.letsDominate} 🚀</div>
         </div>
       </div>
   )
