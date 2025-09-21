@@ -15,6 +15,7 @@ import { getTranslation } from "@/lib/i18n"
 import LanguageSelector from "@/components/LanguageSelector"
 import { getCategoryEmoji } from "@/lib/category-emojis"
 import { MultiSelect } from "@/components/MultiSelect"
+import ViewportToggle from "@/components/ViewportToggle"
 
 const germanStates = [
   { id: "baden-wuerttemberg", name: "Baden-Württemberg", emoji: "🏰" },
@@ -311,6 +312,7 @@ export default function PracticePage() {
 
   if (loading) {
     return (
+      <ViewportToggle>
         <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-pink-900 text-white flex items-center justify-center relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -327,6 +329,7 @@ export default function PracticePage() {
             </CardContent>
           </Card>
         </div>
+      </ViewportToggle>
     )
   }
 
@@ -359,6 +362,7 @@ export default function PracticePage() {
     }
 
     return (
+      <ViewportToggle>
         <div className="min-h-screen bg-black text-white overflow-hidden relative">
           <div className="fixed inset-0 z-0">
             <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: "4s" }}></div>
@@ -468,23 +472,15 @@ export default function PracticePage() {
             </div>
           </div>
         </div>
+      </ViewportToggle>
     )
   }
 
   return (
-      <div className="min-h-screen bg-black text-white overflow-hidden relative">
-        <div className="fixed inset-0 z-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: "4s" }}></div>
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s", animationDuration: "6s" }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "4s", animationDuration: "8s" }}></div>
-          <div className="absolute top-20 left-20 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
-          <div className="absolute top-40 right-32 w-6 h-6 bg-pink-500 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-32 left-32 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-20 right-20 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
-        </div>
-
-        <div className="relative z-10 container mx-auto px-4 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
+    <ViewportToggle>
+      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex items-center justify-between mb-6 md:mb-8 gap-4">
             <Link href="/">
               <Button className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white border-2 border-red-400/50 px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all transform hover:scale-110 backdrop-blur-sm font-black text-sm md:text-base touch-manipulation">
                 <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
@@ -494,9 +490,9 @@ export default function PracticePage() {
 
             <div className="text-center">
               <h1 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">
-              <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
-                {t.practiceMode.toUpperCase()}
-              </span>
+                <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
+                  {t.practiceMode.toUpperCase()}
+                </span>
               </h1>
               <div className="text-sm md:text-lg text-pink-300 font-bold">
                 {selectedState
@@ -508,8 +504,8 @@ export default function PracticePage() {
             <div className="flex items-center gap-2 md:gap-4">
               <LanguageSelector />
               <Button
-                  onClick={resetProgress}
-                  className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-0 text-sm md:text-base touch-manipulation"
+                onClick={resetProgress}
+                className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-0 text-sm md:text-base touch-manipulation"
               >
                 <RotateCcw className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                 {t.reset.toUpperCase()}
@@ -976,5 +972,6 @@ export default function PracticePage() {
           </div>
         </div>
       </div>
+    </ViewportToggle>
   )
 }
