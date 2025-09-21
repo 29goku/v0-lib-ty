@@ -7164,7 +7164,7 @@
       "id": "ni001",
       "category": "State",
       "question": "Welches Wappen gehört zum Bundesland Niedersachsen?",
-      "image": "/images/niedersachsen-coat-of-arms.png",
+      "image": "/images/sachsen-anhalt-coat-of-arms.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -7340,7 +7340,7 @@
       "id": "ni008",
       "category": "State",
       "question": "Welches Bundesland ist Niedersachsen?",
-      "image": "/images/niedersachsen-map.png",
+      "image": "/images/sachsen-anhalt-map.png",
       "options": [
         "1",
         "2",
