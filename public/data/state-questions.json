@@ -1058,7 +1058,7 @@
       "id": "by001",
       "category": "State",
       "question": "Welches Wappen gehört zum Freistaat Bayern?",
-      "image": "/images/baden-wurttemberg-coat-of-arms.jpg",
+      "image": "/images/bayern-coat-of-arms.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -3909,8 +3909,8 @@
         "3",
         "4"
       ],
-      "answerIndex": 2,
-      "explanation": "Auf der Karte ist Brandenburg mit der Nummer 3 gekennzeichnet.",
+      "answerIndex": 3,
+      "explanation": "Auf der Karte ist Brandenburg mit der Nummer 4 gekennzeichnet.",
       "translations": {
         "en": {
           "question": "Which state is Brandenburg?",
@@ -3920,7 +3920,7 @@
             "3",
             "4"
           ],
-          "explanation": "On the map, Brandenburg is marked with the number 3."
+          "explanation": "On the map, Brandenburg is marked with the number 4."
         },
         "es": {
           "question": "¿Qué estado es Brandeburgo?",
@@ -3930,7 +3930,7 @@
             "3",
             "4"
           ],
-          "explanation": "En el mapa, Brandeburgo está marcado con el número 3."
+          "explanation": "En el mapa, Brandeburgo está marcado con el número 4."
         },
         "fr": {
           "question": "Quel Land est le Brandebourg ?",
@@ -3940,7 +3940,7 @@
             "3",
             "4"
           ],
-          "explanation": "Sur la carte, le Brandebourg est identifié par le numéro 3."
+          "explanation": "Sur la carte, le Brandebourg est identifié par le numéro 4."
         },
         "it": {
           "question": "Quale stato federato è il Brandeburgo?",
@@ -3950,7 +3950,7 @@
             "3",
             "4"
           ],
-          "explanation": "Sulla mappa, il Brandeburgo è indicato con il numero 3."
+          "explanation": "Sulla mappa, il Brandeburgo è indicato con il numero 4."
         },
         "tr": {
           "question": "Brandenburg hangi eyalettir?",
@@ -3960,7 +3960,7 @@
             "3",
             "4"
           ],
-          "explanation": "Haritada Brandenburg 3 numara ile işaretlenmiştir."
+          "explanation": "Haritada Brandenburg 4 numara ile işaretlenmiştir."
         },
         "ar": {
           "question": "ما هي ولاية براندنبورغ؟",
@@ -3970,7 +3970,7 @@
             "3",
             "4"
           ],
-          "explanation": "على الخريطة، تم تحديد براندنبورغ بالرقم 3."
+          "explanation": "على الخريطة، تم تحديد براندنبورغ بالرقم 4."
         },
         "ru": {
           "question": "Какая земля - это Бранденбург?",
@@ -3980,7 +3980,7 @@
             "3",
             "4"
           ],
-          "explanation": "На карте Бранденбург обозначен номером 3."
+          "explanation": "На карте Бранденбург обозначен номером 4."
         },
         "zh": {
           "question": "勃兰登堡州是哪个州？",
@@ -3990,7 +3990,7 @@
             "3",
             "4"
           ],
-          "explanation": "在地图上，勃兰登堡州标记为3号。"
+          "explanation": "在地图上，勃兰登堡州标记为4号。"
         },
         "hi": {
           "question": "कौन सा राज्य ब्रांडेनबर्ग है?",
@@ -4000,7 +4000,7 @@
             "3",
             "4"
           ],
-          "explanation": "नक्शे पर ब्रांडेनबर्ग को नंबर 3 से चिह्नित किया गया है।"
+          "explanation": "नक्शे पर ब्रांडेनबर्ग को नंबर 4 से चिह्नित किया गया है।"
         }
       }
     },
