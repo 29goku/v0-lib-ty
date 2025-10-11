@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-import { ArrowLeft, Flag, CheckCircle, RotateCcw } from "lucide-react"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { ArrowLeft, Flag, CheckCircle, RotateCcw, AlertTriangle } from "lucide-react"
 import Link from "next/link"
 import { getCategoryEmoji } from "@/lib/category-emojis"
 import SwipeCard from "@/components/SwipeCard"
@@ -15,6 +16,7 @@ export default function ReviewPage() {
   const { questions, setQuestions, userProgress, unflagQuestion, flagQuestion } = useStore()
   const [selectedQuestion, setSelectedQuestion] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [showResetDialog, setShowResetDialog] = useState(false)
 
   useEffect(() => {
     // Load questions for review with better error handling
@@ -75,9 +77,16 @@ export default function ReviewPage() {
   }
 
   const handleResetProgress = () => {
-    if (confirm("Are you sure you want to reset all progress? This cannot be undone.")) {
-      useStore.getState().resetProgress()
-    }
+    setShowResetDialog(true)
+  }
+
+  const confirmReset = () => {
+    useStore.getState().resetProgress()
+    setShowResetDialog(false)
+    // Force a page reload to ensure all state is cleared
+    setTimeout(() => {
+      window.location.reload()
+    }, 100)
   }
 
   const flaggedQuestions = questions.filter((q) => userProgress.flaggedQuestions?.includes(q.id) || false)
@@ -370,6 +379,43 @@ export default function ReviewPage() {
             )}
           </div>
         </div>
+
+        {/* Reset Confirmation Dialog */}
+        <Dialog open={showResetDialog} onOpenChange={setShowResetDialog}>
+          <DialogContent className="bg-gradient-to-br from-red-900/95 to-pink-900/95 border-2 border-red-400/50 text-white backdrop-blur-xl">
+            <DialogHeader>
+              <DialogTitle className="flex items-center gap-3 text-2xl font-black text-red-300">
+                <AlertTriangle className="w-8 h-8 text-yellow-400 animate-pulse" />
+                Reset All Progress?
+              </DialogTitle>
+              <DialogDescription className="text-gray-200 text-lg mt-4">
+                This will permanently delete:
+                <ul className="list-disc list-inside mt-3 space-y-2 text-left">
+                  <li>All your XP and achievements</li>
+                  <li>Your current streak and max streak</li>
+                  <li>All badges earned</li>
+                  <li>Flagged questions</li>
+                  <li>All answered questions history</li>
+                </ul>
+                <p className="mt-4 font-bold text-yellow-300">⚠️ This action cannot be undone!</p>
+              </DialogDescription>
+            </DialogHeader>
+            <DialogFooter className="gap-3 sm:gap-2 mt-6">
+              <Button
+                onClick={() => setShowResetDialog(false)}
+                className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all"
+              >
+                Cancel
+              </Button>
+              <Button
+                onClick={confirmReset}
+                className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all"
+              >
+                Yes, Reset Everything
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   )
