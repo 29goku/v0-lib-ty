@@ -8,7 +8,8 @@ import Badge from "@/components/Badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
-import { ArrowLeft, RotateCcw, Filter, MapPin } from "lucide-react"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { ArrowLeft, RotateCcw, Filter, MapPin, AlertTriangle } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { getTranslation } from "@/lib/i18n"
@@ -52,6 +53,7 @@ export default function PracticePage() {
     addBadge,
     language,
     loadQuestions,
+    resetProgress: resetUserProgress,
   } = useStore()
 
   const [showAnswer, setShowAnswer] = useState(false)
@@ -70,6 +72,12 @@ export default function PracticePage() {
   const [selectedFlagFilters, setSelectedFlagFilters] = useState<string[]>([])
   const [selectedStates, setSelectedStates] = useState<string[]>([])
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+  // Store all loaded state questions by state id
+  const [allStateQuestions, setAllStateQuestions] = useState<Record<string, any[]>>({})
+  // Reset confirmation dialog
+  const [showResetDialog, setShowResetDialog] = useState(false)
+  // Store current question to prevent UI update during transition
+  const [displayQuestion, setDisplayQuestion] = useState<any>(null)
 
   // emoji for the currently selected state (used in compact pagination)
   const stateEmoji = selectedState ? germanStates.find((s) => s.id === selectedState)?.emoji : undefined
@@ -185,12 +193,20 @@ export default function PracticePage() {
     }
   }, [currentIndex])
 
+  // Update display question when current question changes (but not during feedback)
+  useEffect(() => {
+    if (!showAnswer && currentQuestion) {
+      setDisplayQuestion(currentQuestion)
+    }
+  }, [currentQuestion, showAnswer])
+
   const handleFlag = () => {
-    if (!currentQuestion) return
-    if (userProgress.flaggedQuestions.includes(currentQuestion.id)) {
-      unflagQuestion(currentQuestion.id)
+    const questionToFlag = displayQuestion || currentQuestion
+    if (!questionToFlag) return
+    if (userProgress.flaggedQuestions.includes(questionToFlag.id)) {
+      unflagQuestion(questionToFlag.id)
     } else {
-      flagQuestion(currentQuestion.id)
+      flagQuestion(questionToFlag.id)
     }
   }
 
@@ -251,11 +267,25 @@ export default function PracticePage() {
   }
 
   const handleAnswerSelect = (selectedAnswerIndex: number) => {
-    if (showAnswer || !currentQuestion) return
+    if (showAnswer || !displayQuestion) return
 
-    const isCorrect = selectedAnswerIndex === currentQuestion.answerIndex
+    const isCorrect = selectedAnswerIndex === displayQuestion.answerIndex
+    const questionId = displayQuestion.id
 
-    answerQuestion(currentQuestion.id, selectedAnswerIndex, isCorrect)
+    // Check if this question will be removed from current filter after answering
+    const willBeRemovedFromFilter = (() => {
+      // If filtering by "incorrect" and we answer correctly
+      if (selectedFlagFilters.includes("incorrect") && isCorrect) {
+        return true
+      }
+      // If filtering by "correct" and we answer incorrectly
+      if (selectedFlagFilters.includes("correct") && !isCorrect) {
+        return true
+      }
+      return false
+    })()
+
+    answerQuestion(questionId, selectedAnswerIndex, isCorrect)
 
     if (isCorrect) {
       addXP(10)
@@ -273,7 +303,22 @@ export default function PracticePage() {
     setLastAnswer({ correct: isCorrect, selectedIndex: selectedAnswerIndex })
     setShowAnswer(true)
 
-    if (isAutoMode) {
+    // If the question will be removed from filter, move to next after showing feedback
+    if (willBeRemovedFromFilter) {
+      const currentFilterLength = filteredQuestions.length
+      setTimeout(() => {
+        // First clear the feedback states
+        setLastAnswer(null)
+        setShowTranslation(false)
+        // After removing this question, if we were at the last question, go to start
+        // Otherwise stay at same index (which will now show the next question)
+        if (currentIndex >= currentFilterLength - 1) {
+          setCurrentIndex(0)
+        }
+        // Clear showAnswer last - this will trigger the useEffect to update displayQuestion
+        setShowAnswer(false)
+      }, isAutoMode ? autoDelay : 2000)
+    } else if (isAutoMode) {
       setTimeout(() => {
         nextQuestion()
       }, autoDelay)
@@ -281,10 +326,29 @@ export default function PracticePage() {
   }
 
   const resetProgress = () => {
+    setShowResetDialog(true)
+  }
+
+  const confirmReset = () => {
+    // Reset user progress data (XP, streak, badges, etc.)
+    resetUserProgress()
+    // Reset UI state
     setCurrentIndex(0)
     setShowAnswer(false)
     setLastAnswer(null)
     setShowTranslation(false)
+    // Clear all filters
+    setSelectedFlagFilters([])
+    setSelectedCategories([])
+    setSelectedStates([])
+    setSelectedCategory(null)
+    setSelectedState(null)
+    // Close dialog
+    setShowResetDialog(false)
+    // Force a page reload to ensure all state is cleared
+    setTimeout(() => {
+      window.location.reload()
+    }, 100)
   }
 
   const handleFlagFilterSelection = (filter: string) => {
@@ -295,6 +359,11 @@ export default function PracticePage() {
         return [...prev, filter]
       }
     })
+    setCurrentIndex(0)
+  }
+
+  const clearStatusFilters = () => {
+    setSelectedFlagFilters([])
     setCurrentIndex(0)
   }
 
@@ -677,10 +746,10 @@ export default function PracticePage() {
                 <div className="flex flex-wrap gap-2 justify-center">
                   {selectedFlagFilters.length > 0 && (
                       <button
-                          onClick={clearAllFilters}
+                          onClick={clearStatusFilters}
                           className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg shadow-gray-500/50 border-2 border-gray-400"
                       >
-                        🌟 Clear All ({selectedFlagFilters.length})
+                        🌟 Clear Status Filters ({selectedFlagFilters.length})
                       </button>
                   )}
                   {flaggedCount > 0 && (
@@ -733,12 +802,13 @@ export default function PracticePage() {
                 {/* Left: Swipe Card */}
                 <div className="w-full">
                   <SwipeCard
-                      question={currentQuestion}
+                      key={displayQuestion?.id || currentQuestion?.id}
+                      question={displayQuestion || currentQuestion}
                       onSwipe={handleSwipe}
                       onAnswerSelect={handleAnswerSelect}
                       showAnswer={showAnswer}
                       onFlag={handleFlag}
-                      isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
+                      isFlagged={displayQuestion ? userProgress.flaggedQuestions.includes(displayQuestion.id) : false}
                       isTranslated={showTranslation}
                       onTranslate={() => setShowTranslation(!showTranslation)}
                   />
@@ -975,6 +1045,43 @@ export default function PracticePage() {
             <div className="text-2xl font-black text-white animate-bounce mt-8">{t.letsDominate} 🚀</div>
           </div>
         </div>
+
+        {/* Reset Confirmation Dialog */}
+        <Dialog open={showResetDialog} onOpenChange={setShowResetDialog}>
+          <DialogContent className="bg-gradient-to-br from-red-900/95 to-pink-900/95 border-2 border-red-400/50 text-white backdrop-blur-xl">
+            <DialogHeader>
+              <DialogTitle className="flex items-center gap-3 text-2xl font-black text-red-300">
+                <AlertTriangle className="w-8 h-8 text-yellow-400 animate-pulse" />
+                Reset All Progress?
+              </DialogTitle>
+              <DialogDescription className="text-gray-200 text-lg mt-4">
+                This will permanently delete:
+                <ul className="list-disc list-inside mt-3 space-y-2 text-left">
+                  <li>All your XP and achievements</li>
+                  <li>Your current streak and max streak</li>
+                  <li>All badges earned</li>
+                  <li>Flagged questions</li>
+                  <li>All answered questions history</li>
+                </ul>
+                <p className="mt-4 font-bold text-yellow-300">⚠️ This action cannot be undone!</p>
+              </DialogDescription>
+            </DialogHeader>
+            <DialogFooter className="gap-3 sm:gap-2 mt-6">
+              <Button
+                onClick={() => setShowResetDialog(false)}
+                className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all"
+              >
+                Cancel
+              </Button>
+              <Button
+                onClick={confirmReset}
+                className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all"
+              >
+                Yes, Reset Everything
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
   )
 }
