@@ -115,7 +115,7 @@ const ChatWidget: React.FC = () => {
             ) : (
               <div className="text-center w-full">
                 <div className="text-blue-600 text-lg font-semibold mb-2">Message sent!</div>
-                <div className="text-gray-700 text-base">Our team will look into it. Thank you for your feedback.</div>
+                <div className="text-gray-700 text-base">Our team will look into it. Thank you for your feedback, you can also mail at testingamazonuser@gmail.com</div>
               </div>
             )}
           </div>
