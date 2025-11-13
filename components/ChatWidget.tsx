@@ -97,7 +97,7 @@ const ChatWidget: React.FC = () => {
                   ref={textareaRef}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Your feedback or message..."
+                  placeholder="Your feedback or message, you can also mail at testingamazonuser@gmail.com"
                   className="w-full border border-gray-200 rounded-lg px-4 py-3 text-base bg-gray-100 resize-none font-sans"
                   rows={4}
                   disabled={loading}
