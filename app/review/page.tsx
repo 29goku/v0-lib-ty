@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useStore } from "@/lib/store"
+import { useTheme, getTheme } from "@/lib/theme"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -14,6 +15,8 @@ import SwipeCard from "@/components/SwipeCard"
 
 export default function ReviewPage() {
   const { questions, setQuestions, userProgress, unflagQuestion, flagQuestion } = useStore()
+  const { isDark } = useTheme()
+  const theme = getTheme(isDark)
   const [selectedQuestion, setSelectedQuestion] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [showResetDialog, setShowResetDialog] = useState(false)
@@ -97,38 +100,38 @@ export default function ReviewPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className={`min-h-screen flex items-center justify-center ${theme.bg}`}>
         <div className="text-center">
-          <h2 className="text-4xl font-semibold text-white mb-4">Review Mode</h2>
-          <div className="w-64 h-1 bg-gray-800 rounded overflow-hidden mx-auto">
-            <div className="h-full bg-white rounded animate-pulse"></div>
+          <h2 className={`text-4xl font-semibold mb-4 ${theme.text}`}>Review Mode</h2>
+          <div className={`w-64 h-1 rounded overflow-hidden mx-auto ${isDark ? 'bg-gray-800' : 'bg-gray-300'}`}>
+            <div className="h-full rounded animate-pulse" style={{ background: isDark ? 'white' : '#000' }}></div>
           </div>
-          <div className="mt-6 text-lg text-gray-300">Loading your flagged & completed questions...</div>
+          <div className={`mt-6 text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Loading your flagged & completed questions...</div>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className={`min-h-screen ${theme.bg} ${theme.text}`}>
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
           <div className="flex items-center space-x-4">
             <Link href="/">
-              <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 py-2 rounded transition-all">
+              <Button className={`border font-semibold px-6 py-2 rounded transition-all ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back to Home
               </Button>
             </Link>
-            <h1 className="text-3xl md:text-4xl font-semibold text-white">
+            <h1 className={`text-3xl md:text-4xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Review Mode
             </h1>
-            <Badge variant="outline" className="ml-2 text-xs border-gray-700 text-gray-300">Review flagged & completed questions</Badge>
+            <Badge variant="outline" className={`ml-2 text-xs ${isDark ? 'border-gray-700 text-gray-300' : 'border-gray-300 text-gray-700'}`}>Review flagged & completed questions</Badge>
           </div>
           <Button
             onClick={handleResetProgress}
-            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 py-2 rounded transition-all"
+            className={`border font-semibold px-6 py-2 rounded transition-all ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
           >
             <RotateCcw className="w-5 h-5 mr-2" />
             Reset Progress
@@ -137,31 +140,31 @@ export default function ReviewPage() {
 
         {/* Stats Overview */}
         <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <Card className="border border-gray-700 bg-transparent">
+          <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-semibold text-white mb-1">{userProgress.xp}</div>
-              <div className="text-sm text-gray-300">Total XP</div>
+              <div className={`text-2xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.xp}</div>
+              <div className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Total XP</div>
             </CardContent>
           </Card>
 
-          <Card className="border border-gray-700 bg-transparent">
+          <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-semibold text-green-400 mb-1">{userProgress.correctAnswers}</div>
-              <div className="text-sm text-gray-300">Correct</div>
+              <div className={`text-2xl font-semibold mb-1 ${isDark ? 'text-green-400' : 'text-green-600'}`}>{userProgress.correctAnswers}</div>
+              <div className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Correct</div>
             </CardContent>
           </Card>
 
-          <Card className="border border-gray-700 bg-transparent">
+          <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-semibold text-white mb-1">{userProgress.maxStreak}</div>
-              <div className="text-sm text-gray-300">Best Streak</div>
+              <div className={`text-2xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.maxStreak}</div>
+              <div className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Best Streak</div>
             </CardContent>
           </Card>
 
-          <Card className="border border-gray-700 bg-transparent">
+          <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-semibold text-white mb-1">{userProgress.badges.length}</div>
-              <div className="text-sm text-gray-300">Badges</div>
+              <div className={`text-2xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.badges.length}</div>
+              <div className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Badges</div>
             </CardContent>
           </Card>
         </div>
@@ -171,22 +174,22 @@ export default function ReviewPage() {
           {/* Question Lists */}
           <div className="lg:col-span-3">
             <Tabs defaultValue="flagged" className="w-full ">
-              <TabsList className="grid w-full grid-cols-3 bg-transparent border border-gray-700 p-2">
+              <TabsList className={`grid w-full grid-cols-3 bg-transparent border p-2 ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
                 <TabsTrigger
                   value="flagged"
-                  className="data-[state=active]:bg-gray-900/20 data-[state=active]:text-white font-semibold py-2 transition-colors"
+                  className={`font-semibold py-2 transition-colors text-center data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
                 >
                   FLAGGED ({flaggedQuestions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="completed"
-                  className="data-[state=active]:bg-gray-900/20 data-[state=active]:text-white font-semibold py-2 transition-colors"
+                  className={`font-semibold py-2 transition-colors text-center data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
                 >
                   COMPLETED ({completedQuestions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="incorrect"
-                  className="data-[state=active]:bg-gray-900/20 data-[state=active]:text-white font-semibold py-2 transition-colors"
+                  className={`font-semibold py-2 transition-colors text-center data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
                 >
                   INCORRECT ({incorrectQuestions.length})
                 </TabsTrigger>
@@ -195,8 +198,8 @@ export default function ReviewPage() {
               <TabsContent value="flagged" className="mt-6">
                 <div className="space-y-4 max-h-96 overflow-y-auto">
                   {flaggedQuestions.length === 0 ? (
-                    <Card className="border border-gray-700 bg-transparent">
-                      <CardContent className="p-8 text-center text-gray-400">
+                    <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
+                      <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                         <p className="text-xl font-semibold">No flagged questions yet!</p>
                         <p className="text-sm mt-2">Flag questions during practice to review them here.</p>
                       </CardContent>
@@ -207,22 +210,22 @@ export default function ReviewPage() {
                         key={question.id}
                         className={`border cursor-pointer transition-colors ${
                           selectedQuestion === question.id
-                            ? "border-red-400 bg-gray-900/20"
-                            : "border-gray-700 bg-transparent hover:bg-gray-900/20"
+                            ? isDark ? "border-red-400 bg-gray-900/20" : "border-red-500 bg-red-50"
+                            : isDark ? "border-gray-700 bg-transparent hover:bg-gray-900/20" : "border-gray-200 bg-gray-50 hover:bg-gray-100"
                         }`}
                         onClick={() => setSelectedQuestion(question.id)}
                       >
                         <CardContent className="p-4">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-3">
-                              <Badge className="border border-gray-700 bg-transparent text-gray-300 px-3 py-1 text-sm">
+                              <Badge className={`border px-3 py-1 text-sm ${isDark ? 'border-gray-700 bg-transparent text-gray-300' : 'border-gray-300 bg-gray-100 text-gray-700'}`}>
                                 {question.category.toUpperCase()}
                               </Badge>
-                              <span className="font-semibold text-white">Question {question.id}</span>
+                              <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Question {question.id}</span>
                             </div>
                             <Flag className="w-5 h-5 text-red-400" />
                           </div>
-                          <p className="text-gray-300 mt-2 text-sm line-clamp-2">{question.question}</p>
+                          <p className={`mt-2 text-sm line-clamp-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{question.question}</p>
                         </CardContent>
                       </Card>
                     ))
@@ -233,8 +236,8 @@ export default function ReviewPage() {
               <TabsContent value="completed" className="mt-6">
                 <div className="space-y-4 max-h-96 overflow-y-auto">
                   {completedQuestions.length === 0 ? (
-                    <Card className="border border-gray-700 bg-transparent">
-                      <CardContent className="p-8 text-center text-gray-400">
+                    <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
+                      <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                         <p className="text-xl font-semibold">No completed questions yet!</p>
                         <p className="text-sm mt-2">Complete questions during practice to see them here.</p>
                       </CardContent>
@@ -245,22 +248,22 @@ export default function ReviewPage() {
                         key={question.id}
                         className={`border cursor-pointer transition-colors ${
                           selectedQuestion === question.id
-                            ? "border-green-400 bg-gray-900/20"
-                            : "border-gray-700 bg-transparent hover:bg-gray-900/20"
+                            ? isDark ? "border-green-400 bg-gray-900/20" : "border-green-500 bg-green-50"
+                            : isDark ? "border-gray-700 bg-transparent hover:bg-gray-900/20" : "border-gray-200 bg-gray-50 hover:bg-gray-100"
                         }`}
                         onClick={() => setSelectedQuestion(question.id)}
                       >
                         <CardContent className="p-4">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-3">
-                              <Badge className="border border-gray-700 bg-transparent text-gray-300 px-3 py-1 text-sm">
+                              <Badge className={`border px-3 py-1 text-sm ${isDark ? 'border-gray-700 bg-transparent text-gray-300' : 'border-gray-300 bg-gray-100 text-gray-700'}`}>
                                 {question.category.toUpperCase()}
                               </Badge>
-                              <span className="font-semibold text-white">Question {question.id}</span>
+                              <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Question {question.id}</span>
                             </div>
                             <CheckCircle className="w-5 h-5 text-green-400" />
                           </div>
-                          <p className="text-gray-300 mt-2 text-sm line-clamp-2">{question.question}</p>
+                          <p className={`mt-2 text-sm line-clamp-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{question.question}</p>
                         </CardContent>
                       </Card>
                     ))
@@ -271,8 +274,8 @@ export default function ReviewPage() {
               <TabsContent value="incorrect" className="mt-6">
                 <div className="space-y-4 max-h-96 overflow-y-auto">
                   {incorrectQuestions.length === 0 ? (
-                    <Card className="border border-gray-700 bg-transparent">
-                      <CardContent className="p-8 text-center text-gray-400">
+                    <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
+                      <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                         <p className="text-xl font-semibold">No incorrect answers yet!</p>
                         <p className="text-sm mt-2">Questions you answer incorrectly will appear here.</p>
                       </CardContent>
@@ -283,22 +286,22 @@ export default function ReviewPage() {
                         key={question.id}
                         className={`border cursor-pointer transition-colors ${
                           selectedQuestion === question.id
-                            ? "border-red-400 bg-gray-900/20"
-                            : "border-gray-700 bg-transparent hover:bg-gray-900/20"
+                            ? isDark ? "border-red-400 bg-gray-900/20" : "border-red-500 bg-red-50"
+                            : isDark ? "border-gray-700 bg-transparent hover:bg-gray-900/20" : "border-gray-200 bg-gray-50 hover:bg-gray-100"
                         }`}
                         onClick={() => setSelectedQuestion(question.id)}
                       >
                         <CardContent className="p-4">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-3">
-                              <Badge className="border border-gray-700 bg-transparent text-gray-300 px-3 py-1 text-sm">
+                              <Badge className={`border px-3 py-1 text-sm ${isDark ? 'border-gray-700 bg-transparent text-gray-300' : 'border-gray-300 bg-gray-100 text-gray-700'}`}>
                                 {question.category.toUpperCase()}
                               </Badge>
-                              <span className="font-semibold text-white">Question {question.id}</span>
+                              <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Question {question.id}</span>
                             </div>
                             <AlertTriangle className="w-5 h-5 text-red-400" />
                           </div>
-                          <p className="text-gray-300 mt-2 text-sm line-clamp-2">{question.question}</p>
+                          <p className={`mt-2 text-sm line-clamp-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{question.question}</p>
                         </CardContent>
                       </Card>
                     ))
