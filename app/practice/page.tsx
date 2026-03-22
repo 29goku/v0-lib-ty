@@ -743,32 +743,6 @@ export default function PracticePage() {
                       </div>
                   )}
 
-                  {showAnswer && lastAnswer && (
-                      <motion.div
-                          initial={{ opacity: 0, scale: 0.8, y: 30 }}
-                          animate={{ opacity: 1, scale: 1, y: 0 }}
-                          transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
-                          className="mt-6"
-                      >
-                        <Card
-                            className={`w-full relative overflow-hidden ${
-                                lastAnswer.correct
-                                    ? "bg-white/5"
-                                    : "bg-white/5"
-                            }`}
-                        >
-                          <CardContent className="p-8 text-center relative z-10">
-                            <div className="text-8xl mb-4">{lastAnswer.correct ? "✓" : "✗"}</div>
-                            <div
-                                className={`text-4xl font-semibold mb-4 ${lastAnswer.correct ? "text-green-500" : "text-red-500"}`}
-                            >
-                              {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
-                            </div>
-                            <p className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
-                          </CardContent>
-                        </Card>
-                      </motion.div>
-                  )}
                 </div>
 
                 {/* Right: Question Overview */}
