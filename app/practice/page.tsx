@@ -666,7 +666,7 @@ export default function PracticePage() {
                 <div className="flex flex-wrap gap-2 justify-center">
                   {selectedFlagFilters.length > 0 && (
                       <button
-                          onClick={clearStatusFilters}
+                          onClick={clearAllFilters}
                           className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base bg-transparent ${isDark ? 'text-gray-300 hover:bg-gray-900/20' : 'text-gray-700 hover:bg-gray-100'}`}
                       >
                         🌟 Clear Status Filters ({selectedFlagFilters.length})
