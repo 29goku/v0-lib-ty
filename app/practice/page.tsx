@@ -932,11 +932,11 @@ export default function PracticePage() {
 
         {/* Sticky Bottom Navigation - Median Navigation on Mobile */}
         <div className={`lg:hidden fixed bottom-0 left-0 right-0 z-40 border-t ${isDark ? 'bg-black/80 border-gray-800 backdrop-blur-sm' : 'bg-white/80 border-gray-200 backdrop-blur-sm'}`}>
-          <div className="flex items-center justify-center gap-2 px-3 py-3 overflow-x-auto">
+          <div className="flex items-center justify-center gap-1 px-2 py-2 sm:gap-2 sm:px-3 sm:py-3 overflow-x-auto">
             <button
                 aria-label="Previous"
                 onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
-                className="w-12 h-12 rounded-lg bg-blue-600 text-white font-bold text-lg flex items-center justify-center border border-blue-500 hover:bg-blue-700 transition-colors flex-shrink-0 shadow-lg"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-blue-600 text-white font-bold text-base sm:text-lg flex items-center justify-center border border-blue-500 hover:bg-blue-700 transition-colors flex-shrink-0 shadow-lg"
             >
               ‹
             </button>
@@ -970,7 +970,7 @@ export default function PracticePage() {
                           key={`dots-${i}`}
                           onClick={() => handleQuestionJump(targetIdx)}
                           aria-label={`Jump near ${target}`}
-                          className="px-2 h-9 flex items-center justify-center rounded-lg bg-white text-black border border-gray-300 hover:opacity-80 transition-all flex-shrink-0"
+                          className="px-1 sm:px-2 h-9 flex items-center justify-center rounded-lg bg-white text-black border border-gray-300 hover:opacity-80 transition-all flex-shrink-0 text-xs"
                       >
                         …
                       </button>
@@ -995,7 +995,7 @@ export default function PracticePage() {
                         onClick={() => handleQuestionJump(idx)}
                         aria-current={isCurrent ? 'true' : undefined}
                         aria-label={`Go to question ${originalQuestionNumber}`}
-                        className={`relative w-9 h-9 rounded-lg font-semibold flex items-center justify-center transition-all border flex-shrink-0 text-xs ${
+                        className={`relative w-8 h-8 sm:w-9 sm:h-9 rounded-lg font-semibold flex items-center justify-center transition-all border flex-shrink-0 text-xs ${
                             isCurrent
                                 ? 'bg-white text-black border-white'
                                 : isIncorrect
@@ -1017,13 +1017,15 @@ export default function PracticePage() {
             <button
                 aria-label="Next"
                 onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
-                className="w-12 h-12 rounded-lg bg-blue-600 text-white font-bold text-lg flex items-center justify-center border border-blue-500 hover:bg-blue-700 transition-colors flex-shrink-0 shadow-lg"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-blue-600 text-white font-bold text-base sm:text-lg flex items-center justify-center border border-blue-500 hover:bg-blue-700 transition-colors flex-shrink-0 shadow-lg"
             >
               ›
             </button>
           </div>
         </div>
 
+        {/* Add padding to account for sticky bottom nav */}
+        <div className="lg:hidden h-20"></div>
       </div>
   )
 }
