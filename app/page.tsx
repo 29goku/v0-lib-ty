@@ -175,7 +175,7 @@ export default function HomePage() {
                 LEBEN
               </h1>
 
-              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-3 md:mb-4 leading-none text-white">
+              <h1 className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-3 md:mb-4 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 IN DEUTSCHLAND
               </h1>
 
@@ -193,11 +193,11 @@ export default function HomePage() {
               </div>
               <div className="text-center">
                 <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>33</div>
-                <div className="text-xs md:text-sm text-gray-300">Test Length</div>
+                <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Test Length</div>
               </div>
               <div className="text-center">
                 <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>60</div>
-                <div className="text-xs md:text-sm text-gray-300">Minutes</div>
+                <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Minutes</div>
               </div>
             </div>
 
