@@ -145,6 +145,71 @@ export default function FAQPage() {
       answer:
         "Yes! This is a completely free app to help you prepare for the Leben in Deutschland citizenship test. No subscriptions or hidden costs.",
     },
+    {
+      category: "features",
+      question: "What states are supported?",
+      answer: (
+        <div className="space-y-2">
+          <p>This app covers all <strong>16 German states (Bundesländer)</strong>:</p>
+          <p className="text-sm grid grid-cols-2 gap-2 mt-2">
+            <span>🔴 Baden-Württemberg</span>
+            <span>🔴 Bavaria</span>
+            <span>🔴 Berlin</span>
+            <span>🔴 Brandenburg</span>
+            <span>🔴 Bremen</span>
+            <span>🔴 Hamburg</span>
+            <span>🔴 Hesse</span>
+            <span>🔴 Lower Saxony</span>
+            <span>🔴 Mecklenburg-Western Pomerania</span>
+            <span>🔴 North Rhine-Westphalia</span>
+            <span>🔴 Rhineland-Palatinate</span>
+            <span>🔴 Saarland</span>
+            <span>🔴 Saxony</span>
+            <span>🔴 Saxony-Anhalt</span>
+            <span>🔴 Schleswig-Holstein</span>
+            <span>🔴 Thuringia</span>
+          </p>
+          <p className="mt-3">Each state has 3 unique state-specific questions that you can practice. Choose your state to focus on local questions!</p>
+        </div>
+      ),
+    },
+    {
+      category: "features",
+      question: "What test modes are available?",
+      answer: (
+        <div className="space-y-3">
+          <p><strong>Practice Mode:</strong> Answer unlimited questions at your own pace. See instant feedback with explanations. Flag difficult questions for later review.</p>
+          <p><strong>Test Mode:</strong> Simulate the official test with timed challenges:</p>
+          <ul className="list-disc list-inside ml-2 space-y-1">
+            <li><strong>Short (10 questions):</strong> Quick practice session (~5 min)</li>
+            <li><strong>Standard (33 questions):</strong> Official test format (60 min)</li>
+            <li><strong>Full (60 questions):</strong> Comprehensive practice (60 min)</li>
+            <li><strong>Custom:</strong> Choose any number of questions from 10-310</li>
+          </ul>
+          <p className="mt-2">All tests have a 60-minute timer and require 50% correct to pass.</p>
+        </div>
+      ),
+    },
+    {
+      category: "features",
+      question: "What statistics does the app track?",
+      answer: (
+        <div className="space-y-3">
+          <p>Visit the <strong>Settings page</strong> to view comprehensive statistics:</p>
+          <ul className="list-disc list-inside ml-2 space-y-1">
+            <li><strong>Total XP:</strong> Experience points earned from correct answers</li>
+            <li><strong>Current Streak:</strong> Consecutive correct answers</li>
+            <li><strong>Questions Answered:</strong> Total questions you've attempted</li>
+            <li><strong>Correct Answers:</strong> Number of questions answered correctly</li>
+            <li><strong>Accuracy %:</strong> Your overall correct answer percentage</li>
+            <li><strong>Badges:</strong> Achievements earned as you progress</li>
+            <li><strong>Test Attempts:</strong> History of all your test runs with scores</li>
+            <li><strong>Time Spent:</strong> Total time invested in preparation</li>
+          </ul>
+          <p className="mt-2">All statistics are saved locally on your device and synced automatically as you practice.</p>
+        </div>
+      ),
+    },
   ]
 
   const categories = [
@@ -177,6 +242,72 @@ export default function FAQPage() {
 
       {/* Content */}
       <div className="w-full px-4 md:px-8 py-8 max-w-4xl mx-auto">
+        {/* What We Offer Section */}
+        <div className={`mb-12 p-6 md:p-8 rounded-lg border ${isDark ? "border-green-700/30 bg-gradient-to-r from-green-900/20 to-emerald-900/20" : "border-green-200 bg-green-50"}`}>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">🎯 What We Offer</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Feature 1 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+                <span className="text-2xl">🗺️</span> 16 States
+              </h3>
+              <p className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+                All German Bundesländer with 3 state-specific questions each for localized practice
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+                <span className="text-2xl">📋</span> Multiple Modes
+              </h3>
+              <p className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+                Practice mode for learning, Test mode for simulation (Short/Standard/Full/Custom)
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+                <span className="text-2xl">📊</span> Detailed Stats
+              </h3>
+              <p className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+                Track XP, streaks, accuracy, badges, and test history to monitor progress
+              </p>
+            </div>
+
+            {/* Feature 4 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+                <span className="text-2xl">310</span> Questions
+              </h3>
+              <p className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+                All official BAMF citizenship test questions from the complete question pool
+              </p>
+            </div>
+
+            {/* Feature 5 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+                <span className="text-2xl">🌙</span> Dark Mode
+              </h3>
+              <p className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+                Comfortable studying anytime with light and dark theme options
+              </p>
+            </div>
+
+            {/* Feature 6 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+                <span className="text-2xl">🎁</span> 100% Free
+              </h3>
+              <p className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+                No ads, no subscriptions, no hidden costs - completely free forever
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Category Filter */}
         <div className="mb-8 flex flex-wrap gap-2">
           {categories.map((cat) => (
