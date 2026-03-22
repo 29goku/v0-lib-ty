@@ -180,6 +180,7 @@ export default function ReviewPage() {
           </div>
           <div className="flex items-center gap-3">
             <ThemeToggle />
+            <LanguageSelector />
             <Button
               onClick={handleResetProgress}
               className={`border font-semibold px-6 py-2 rounded transition-all ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}

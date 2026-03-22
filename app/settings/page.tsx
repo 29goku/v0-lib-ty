@@ -72,7 +72,10 @@ export default function SettingsPage() {
             <div className={`text-base ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Customize Your Experience</div>
           </div>
 
-          <ThemeToggle />
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <LanguageSelector />
+          </div>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-6">
