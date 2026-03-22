@@ -171,16 +171,16 @@ export default function HomePage() {
 
             {/* Main title */}
             <div className="mb-4 sm:mb-6 md:mb-8 relative">
-              <h1 className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold mb-1 sm:mb-2 md:mb-3 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h1 className={`text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-semibold mb-1 sm:mb-2 md:mb-3 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 LEBEN
               </h1>
 
-              <h1 className={`text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold mb-2 sm:mb-3 md:mb-4 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h1 className={`text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold mb-2 sm:mb-3 md:mb-4 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 IN DEUTSCHLAND
               </h1>
 
               {/* Subtitle */}
-              <div className={`text-lg sm:text-xl md:text-2xl font-normal mb-4 md:mb-6 leading-relaxed px-4 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
+              <div className={`text-xl sm:text-2xl md:text-3xl font-normal mb-4 md:mb-6 leading-relaxed px-4 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
                 {t.heroSubtitle}
               </div>
             </div>
@@ -188,15 +188,15 @@ export default function HomePage() {
             {/* Stats */}
             <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-6 mb-8 md:mb-10 px-4">
               <div className="text-center">
-                <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.totalQuestions}</div>
-                <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.totalQuestions}</div>
+                <div className={`text-3xl md:text-4xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.totalQuestions}</div>
+                <div className={`text-sm md:text-base ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.totalQuestions}</div>
               </div>
               <div className="text-center">
-                <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>33</div>
-                <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Test Length</div>
+                <div className={`text-3xl md:text-4xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>33</div>
+                <div className={`text-sm md:text-base ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Test Length</div>
               </div>
               <div className="text-center">
-                <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>60</div>
+                <div className={`text-3xl md:text-4xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>60</div>
                 <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Minutes</div>
               </div>
             </div>
@@ -228,10 +228,10 @@ export default function HomePage() {
         <div className="py-6 md:py-8 px-4 relative">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-12 relative">
-              <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-2 md:mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-4xl sm:text-5xl md:text-6xl font-semibold mb-2 md:mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Learn & Track Progress
               </h2>
-              <p className={`text-base md:text-lg px-4 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
+              <p className={`text-lg md:text-xl px-4 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
                 Five ways to prepare for the citizenship test
               </p>
             </div>
@@ -241,10 +241,10 @@ export default function HomePage() {
               <Link href="/practice" className="group">
                 <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
                   <CardContent className="p-4 h-full flex flex-col">
-                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className={`text-xl md:text-2xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {t.practice}
                     </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Learn by swiping. {stats.totalQuestions} questions with instant feedback
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
@@ -258,10 +258,10 @@ export default function HomePage() {
               <Link href="/test" className="group">
                 <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
                   <CardContent className="p-4 h-full flex flex-col">
-                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className={`text-xl md:text-2xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {t.testMode}
                     </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Simulated test conditions. 33 questions, 60 minutes
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
@@ -275,10 +275,10 @@ export default function HomePage() {
               <Link href="/review" className="group">
                 <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
                   <CardContent className="p-4 h-full flex flex-col">
-                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className={`text-xl md:text-2xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {t.review}
                     </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Study mistakes, track progress, improve
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
@@ -293,10 +293,10 @@ export default function HomePage() {
                 <Link href="/stats" className="group">
                   <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
                     <CardContent className="p-4 h-full flex flex-col">
-                      <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                      <h3 className={`text-xl md:text-2xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         📊 Statistics
                       </h3>
-                      <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         Analytics, charts, performance trends
                       </p>
                       <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
@@ -311,10 +311,10 @@ export default function HomePage() {
               <Link href="/settings" className="group">
                 <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
                   <CardContent className="p-4 h-full flex flex-col">
-                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className={`text-xl md:text-2xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {t.settings}
                     </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Dark mode, language, stats
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
@@ -366,13 +366,13 @@ export default function HomePage() {
         {/* Final CTA */}
         <div className={`py-10 md:py-12 px-4 ${isDark ? 'border-t border-gray-700 bg-white/5' : 'border-t border-gray-200 bg-gray-50'}`}>
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 md:mb-6 leading-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
+            <h2 className={`text-4xl sm:text-5xl md:text-6xl font-semibold mb-4 md:mb-6 leading-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Ready to Become
               <br />
               A German Citizen?
             </h2>
 
-            <p className={`text-base sm:text-lg md:text-xl mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto px-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+            <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto px-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               Join members who are preparing for the citizenship test with our swipe-based learning.
               <br />
               No boring textbooks. No endless lectures. Just effective practice.
