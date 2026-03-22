@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { useStore } from "@/lib/store"
 import { useTheme, getTheme } from "@/lib/theme"
+import ThemeToggle from "@/components/ThemeToggle"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -129,13 +130,16 @@ export default function ReviewPage() {
             </h1>
             <Badge variant="outline" className={`ml-2 text-xs ${isDark ? 'border-gray-700 text-gray-300' : 'border-gray-300 text-gray-700'}`}>Review flagged & completed questions</Badge>
           </div>
-          <Button
-            onClick={handleResetProgress}
-            className={`border font-semibold px-6 py-2 rounded transition-all ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
-          >
-            <RotateCcw className="w-5 h-5 mr-2" />
-            Reset Progress
-          </Button>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Button
+              onClick={handleResetProgress}
+              className={`border font-semibold px-6 py-2 rounded transition-all ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
+            >
+              <RotateCcw className="w-5 h-5 mr-2" />
+              Reset Progress
+            </Button>
+          </div>
         </div>
 
         {/* Stats Overview */}
@@ -177,26 +181,26 @@ export default function ReviewPage() {
               <TabsList className={`flex w-full bg-transparent border p-2 ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
                 <TabsTrigger
                   value="flagged"
-                  className={`flex-1 font-semibold py-2 transition-colors data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
+                  className={`flex-1 font-semibold py-2 transition-colors justify-center data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
                 >
                   FLAGGED ({flaggedQuestions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="completed"
-                  className={`flex-1 font-semibold py-2 transition-colors data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
+                  className={`flex-1 font-semibold py-2 transition-colors justify-center data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
                 >
                   COMPLETED ({completedQuestions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="incorrect"
-                  className={`flex-1 font-semibold py-2 transition-colors data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
+                  className={`flex-1 font-semibold py-2 transition-colors justify-center data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
                 >
                   INCORRECT ({incorrectQuestions.length})
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="flagged" className="mt-6">
-                <div className="space-y-4 max-h-96 overflow-y-auto">
+                <div className="space-y-4">
                   {flaggedQuestions.length === 0 ? (
                     <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
                       <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -234,7 +238,7 @@ export default function ReviewPage() {
               </TabsContent>
 
               <TabsContent value="completed" className="mt-6">
-                <div className="space-y-4 max-h-96 overflow-y-auto">
+                <div className="space-y-4">
                   {completedQuestions.length === 0 ? (
                     <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
                       <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -272,7 +276,7 @@ export default function ReviewPage() {
               </TabsContent>
 
               <TabsContent value="incorrect" className="mt-6">
-                <div className="space-y-4 max-h-96 overflow-y-auto">
+                <div className="space-y-4">
                   {incorrectQuestions.length === 0 ? (
                     <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
                       <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
