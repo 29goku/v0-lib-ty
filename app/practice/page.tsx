@@ -761,7 +761,95 @@ export default function PracticePage() {
             </Card>
           </div>
 
-          <div className="flex justify-center mb-8">
+          {/* Mobile: Sticky Navigation Bar at Top */}
+          <div className="lg:hidden fixed top-0 left-0 right-0 z-40 bg-gradient-to-b from-black/80 to-black/50 backdrop-blur-sm border-b border-gray-700">
+            <div className="flex items-center justify-center gap-1 p-3 overflow-x-auto">
+              <button
+                aria-label="Previous"
+                onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
+                className="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors"
+              >
+                ‹
+              </button>
+
+              {(() => {
+                const pages = getPaginationNumbers(currentIndex + 1, pageCount)
+                return pages.map((p, i) => {
+                  if (p === '...') {
+                    let left: number | null = null
+                    for (let j = i - 1; j >= 0; j--) {
+                      if (typeof pages[j] === 'number') {
+                        left = pages[j] as number
+                        break
+                      }
+                    }
+                    let right: number | null = null
+                    for (let j = i + 1; j < pages.length; j++) {
+                      if (typeof pages[j] === 'number') {
+                        right = pages[j] as number
+                        break
+                      }
+                    }
+                    const target = left && right ? Math.floor((left + right) / 2) : left || right || 1
+                    const targetIdx = Math.max(0, Number(target) - 1)
+                    return (
+                      <button
+                        key={`dots-${i}`}
+                        onClick={() => handleQuestionJump(targetIdx)}
+                        aria-label={`Jump near ${target}`}
+                        className="flex-shrink-0 px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black border border-gray-300 hover:opacity-80 transition-all"
+                      >
+                        …
+                      </button>
+                    )
+                  }
+
+                  const pageNum = Number(p)
+                  const idx = pageNum - 1
+                  const q = filteredQuestions[idx]
+                  const qId = q?.id
+                  const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
+                  const isIncorrect = qId ? (userProgress.incorrectAnswers || []).includes(qId) : false
+                  const isCurrent = idx === currentIndex
+                  const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
+                  const originalQuestionNumber = questionsToUse.findIndex(originalQ => originalQ.id === qId) + 1
+
+                  return (
+                    <button
+                      key={`p-${pageNum}-${i}`}
+                      onClick={() => handleQuestionJump(idx)}
+                      aria-current={isCurrent ? 'true' : undefined}
+                      aria-label={`Go to question ${originalQuestionNumber}`}
+                      className={`flex-shrink-0 relative w-10 h-10 rounded-lg font-semibold flex items-center justify-center transition-all border text-xs ${
+                        isCurrent
+                          ? 'bg-white text-black border-white'
+                          : isIncorrect
+                            ? 'bg-red-500 text-white border-red-400'
+                            : isAnswered
+                              ? 'bg-green-500 text-white border-green-400'
+                              : 'border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20'
+                      }`}
+                    >
+                      <span className="text-xs z-10">{originalQuestionNumber}</span>
+                      {isFlagged && (
+                        <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-500 rounded-full border border-white"></span>
+                      )}
+                    </button>
+                  )
+                })
+              })()}
+
+              <button
+                aria-label="Next"
+                onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
+                className="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors"
+              >
+                ›
+              </button>
+            </div>
+          </div>
+
+          <div className="flex justify-center mb-8 pt-20 lg:pt-0">
             <div className="w-full max-w-6xl">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
                 {/* Left: Swipe Card */}
@@ -855,97 +943,6 @@ export default function PracticePage() {
                         })}
                       </div>
 
-                      {/* Mobile: compact pagination-style navigation */}
-                      <div className="flex items-center justify-center gap-1 mb-4 lg:hidden">
-                        <button
-                            aria-label="Previous"
-                            onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
-                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors"
-                        >
-                          ‹
-                        </button>
-
-                        {(() => {
-                          const pages = getPaginationNumbers(currentIndex + 1, pageCount)
-
-                          return pages.map((p, i) => {
-                            if (p === '...') {
-                              // compute median target between surrounding numeric pages
-                              let left: number | null = null
-                              for (let j = i - 1; j >= 0; j--) {
-                                if (typeof pages[j] === 'number') {
-                                  left = pages[j] as number
-                                  break
-                                }
-                              }
-                              let right: number | null = null
-                              for (let j = i + 1; j < pages.length; j++) {
-                                if (typeof pages[j] === 'number') {
-                                  right = pages[j] as number
-                                  break
-                                }
-                              }
-
-                              const target = left && right ? Math.floor((left + right) / 2) : left || right || 1
-                              const targetIdx = Math.max(0, Number(target) - 1)
-
-                              return (
-                                  <button
-                                      key={`dots-${i}`}
-                                      onClick={() => handleQuestionJump(targetIdx)}
-                                      aria-label={`Jump near ${target}`}
-                                      className="px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black border border-gray-300 hover:opacity-80 transition-all"
-                                  >
-                                    …
-                                  </button>
-                              )
-                            }
-
-                            const pageNum = Number(p)
-                            const idx = pageNum - 1
-                            const q = filteredQuestions[idx]
-                            const qId = q?.id
-                            const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
-                            const isIncorrect = qId ? (userProgress.incorrectAnswers || []).includes(qId) : false
-                            const isCurrent = idx === currentIndex
-                            const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
-
-                            // Find the original question number from the full question set
-                            const originalQuestionNumber = questionsToUse.findIndex(originalQ => originalQ.id === qId) + 1
-
-                            return (
-                                <button
-                                    key={`p-${pageNum}-${i}`}
-                                    onClick={() => handleQuestionJump(idx)}
-                                    aria-current={isCurrent ? 'true' : undefined}
-                                    aria-label={`Go to question ${originalQuestionNumber}`}
-                                    className={`relative w-10 h-10 rounded-lg font-semibold flex items-center justify-center transition-all border ${
-                                        isCurrent
-                                            ? 'bg-white text-black border-white'
-                                            : isIncorrect
-                                                ? 'bg-red-500 text-white border-red-400'
-                                                : isAnswered
-                                                    ? 'bg-green-500 text-white border-green-400'
-                                                    : 'border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20'
-                                    }`}
-                                >
-                                  <span className="text-sm z-10">{originalQuestionNumber}</span>
-                                  {isFlagged && (
-                                      <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-500 rounded-full border border-white"></span>
-                                  )}
-                                </button>
-                            )
-                          })
-                        })()}
-
-                        <button
-                            aria-label="Next"
-                            onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
-                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors"
-                        >
-                          ›
-                        </button>
-                      </div>
                     </CardContent>
                   </Card>
                 </div>

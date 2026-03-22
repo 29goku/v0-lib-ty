@@ -289,23 +289,21 @@ export default function HomePage() {
               </Link>
 
               {/* Stats Card */}
-              {stats.questionsAnswered > 0 && (
-                <Link href="/stats" className="group">
-                  <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
-                    <CardContent className="p-4 h-full flex flex-col">
-                      <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                        📊 Statistics
-                      </h3>
-                      <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Analytics, charts, performance trends
-                      </p>
-                      <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
-                        View
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              )}
+              <Link href="/stats" className="group">
+                <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
+                  <CardContent className="p-4 h-full flex flex-col">
+                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                      📊 Statistics
+                    </h3>
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Analytics, charts, performance trends
+                    </p>
+                    <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
+                      View
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
 
               {/* Settings Card */}
               <Link href="/settings" className="group">
