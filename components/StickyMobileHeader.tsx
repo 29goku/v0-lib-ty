@@ -38,7 +38,7 @@ export default function StickyMobileHeader({
         <div className="flex justify-between items-center px-2 py-2 gap-2">
           {showBackButton ? (
             <Link href={backHref}>
-              <Button className={`border px-1.5 py-1 text-xs rounded transition-colors ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
+              <Button className={`border px-1.5 py-1 text-xs transition-colors ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
                 <ArrowLeft className="w-3 h-3" />
               </Button>
             </Link>
