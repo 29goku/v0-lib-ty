@@ -20,7 +20,8 @@
       "Bash(wc -l /Users/shosingh_1/v0-lib-ty/app/page.tsx*)",
       "Bash(git checkout:*)",
       "Bash(curl -s http://localhost:3001)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(find /Users/shosingh_1/v0-lib-ty -name *AdBanner* -o -name *ad*banner*)"
     ]
   }
 }

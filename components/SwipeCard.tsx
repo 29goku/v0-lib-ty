@@ -62,6 +62,9 @@ export default function SwipeCard({
   const { isDark } = useTheme()
   const t = getTranslation(language)
 
+  // Use externalSelectedAnswer if provided (for displaying feedback from parent)
+  const displaySelectedAnswer = externalSelectedAnswer !== undefined ? externalSelectedAnswer : selectedAnswer
+
   // Custom hooks for modular functionality
   const {
     x,
@@ -404,12 +407,12 @@ export default function SwipeCard({
                   className={`w-full p-3 text-left rounded border text-sm transition-all ${
                     showAnswer
                       ? index === question.answerIndex
-                        ? isDark ? "bg-green-500/20 border-green-500/50 text-green-200" : "bg-green-100 border-green-400 text-green-800"
-                        : selectedAnswer === index
-                          ? isDark ? "bg-red-500/20 border-red-500/50 text-red-200" : "bg-red-100 border-red-400 text-red-800"
+                        ? isDark ? "bg-green-500/30 border-green-500/80 text-green-100 font-semibold" : "bg-green-200 border-green-600 text-green-900 font-semibold"
+                        : displaySelectedAnswer === index
+                          ? isDark ? "bg-red-500/30 border-red-500/80 text-red-100 font-semibold" : "bg-red-200 border-red-600 text-red-900 font-semibold"
                           : isDark ? "bg-gray-900/20 border-gray-800 text-gray-500" : "bg-gray-100 border-gray-300 text-gray-600"
-                      : selectedAnswer === index
-                        ? isDark ? "bg-blue-500/20 border-blue-500/50 text-blue-100" : "bg-blue-100 border-blue-400 text-blue-800"
+                      : displaySelectedAnswer === index
+                        ? isDark ? "bg-blue-500/30 border-blue-500/80 text-blue-100 font-semibold" : "bg-blue-200 border-blue-600 text-blue-900 font-semibold"
                         : isDark ? "bg-transparent border-gray-700 text-gray-200 hover:bg-gray-900/20" : "bg-transparent border-gray-300 text-gray-700 hover:bg-gray-100"
                   }`}
                 >
