@@ -764,7 +764,7 @@ export default function PracticePage() {
                 <div className="w-full">
                   <Card className="h-full bg-white/5">
                     <CardContent>
-                      <div ref={overviewRef} className="hidden lg:grid grid-cols-[repeat(15,minmax(0,1fr))] gap-0.5 mb-0">
+                      <div ref={overviewRef} className="hidden lg:grid grid-cols-[repeat(15,minmax(0,1fr))] gap-1 mb-0">
                         {filteredQuestions.map((q, index) => {
                           const qId = q?.id
                           const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
@@ -780,13 +780,13 @@ export default function PracticePage() {
                                   aria-current={isCurrent ? "true" : undefined}
                                   aria-label={`Question ${originalQuestionNumber}${isFlagged ? ", flagged" : ""}${isAnswered ? ", answered" : ""}${isIncorrect ? ", incorrect" : ""}`}
                                   onClick={() => handleQuestionJump(index)}
-                                  className={`relative aspect-square rounded-lg font-semibold text-sm transition-all ${
+                                  className={`relative aspect-square rounded-lg font-semibold text-sm transition-all shadow-sm ${
                                       isCurrent
-                                          ? "bg-white text-black"
+                                          ? "bg-white text-black shadow-md"
                                           : isIncorrect
-                                              ? "bg-red-500 text-white hover:opacity-80"
+                                              ? "bg-red-500 text-white hover:opacity-80 shadow-md"
                                               : isAnswered
-                                                  ? "bg-green-500 text-white hover:opacity-80"
+                                                  ? "bg-green-500 text-white hover:opacity-80 shadow-md"
                                                   : "bg-transparent text-gray-300 hover:bg-gray-900/20"
                                   }`}
                               >
@@ -800,11 +800,11 @@ export default function PracticePage() {
                       </div>
 
                       {/* Mobile: compact pagination-style navigation */}
-                      <div className="flex items-center justify-center space-x-0.5 mb-4 lg:hidden">
+                      <div className="flex items-center justify-center gap-1 mb-4 lg:hidden">
                         <button
                             aria-label="Previous"
                             onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
-                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center hover:bg-gray-600 transition-colors"
+                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center hover:bg-gray-600 transition-all shadow-md hover:shadow-lg"
                         >
                           ‹
                         </button>
@@ -838,7 +838,7 @@ export default function PracticePage() {
                                       key={`dots-${i}`}
                                       onClick={() => handleQuestionJump(targetIdx)}
                                       aria-label={`Jump near ${target}`}
-                                      className="px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black hover:opacity-80 transition-opacity"
+                                      className="px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black hover:opacity-80 transition-all shadow-md hover:shadow-lg"
                                   >
                                     …
                                   </button>
@@ -863,13 +863,13 @@ export default function PracticePage() {
                                     onClick={() => handleQuestionJump(idx)}
                                     aria-current={isCurrent ? 'true' : undefined}
                                     aria-label={`Go to question ${originalQuestionNumber}`}
-                                    className={`relative w-10 h-10 rounded-lg font-semibold flex items-center justify-center transition-all ${
+                                    className={`relative w-10 h-10 rounded-lg font-semibold flex items-center justify-center transition-all shadow-sm ${
                                         isCurrent
-                                            ? 'bg-white text-black'
+                                            ? 'bg-white text-black shadow-md'
                                             : isIncorrect
-                                                ? 'bg-red-500 text-white'
+                                                ? 'bg-red-500 text-white shadow-md'
                                                 : isAnswered
-                                                    ? 'bg-green-500 text-white'
+                                                    ? 'bg-green-500 text-white shadow-md'
                                                     : 'bg-transparent text-gray-300 hover:bg-gray-900/20'
                                     }`}
                                 >
@@ -885,7 +885,7 @@ export default function PracticePage() {
                         <button
                             aria-label="Next"
                             onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
-                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center hover:bg-gray-600 transition-colors"
+                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center hover:bg-gray-600 transition-all shadow-md hover:shadow-lg"
                         >
                           ›
                         </button>
