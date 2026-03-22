@@ -489,7 +489,7 @@ export default function TestPage() {
           </div>
 
           {/* Question Grid */}
-          <div className="grid grid-cols-10 md:grid-cols-12 gap-1 mb-3">
+          <div className="grid grid-cols-[repeat(15,minmax(0,1fr))] gap-1 mb-3">
             {testQuestions.map((_, index) => {
               const answer = testAnswers.find((a) => a.questionId === testQuestions[index]?.id)
               const isAnswered = answer !== undefined
@@ -500,52 +500,41 @@ export default function TestPage() {
                 <button
                   key={index}
                   onClick={() => handleQuestionJump(index)}
-                  className={`
-                    relative aspect-square border rounded text-xs font-semibold transition-all
-                    ${
-                      isCurrent
-                        ? isDark
-                          ? "bg-blue-500/40 border-blue-500 text-white"
-                          : "bg-blue-400 border-blue-600 text-white"
-                        : isAnswered
-                          ? answer.correct
-                            ? isDark
-                              ? "bg-green-500/30 border-green-600 text-green-300"
-                              : "bg-green-200 border-green-500 text-green-700"
-                            : isDark
-                              ? "bg-orange-500/30 border-orange-600 text-orange-300"
-                              : "bg-orange-200 border-orange-500 text-orange-700"
-                          : isDark
-                            ? "bg-gray-800 border-gray-700 text-gray-500"
-                            : "bg-gray-200 border-gray-400 text-gray-600"
-                    }
-                  `}
+                  className={`relative aspect-square rounded-lg font-semibold text-sm transition-all border ${
+                    isCurrent
+                      ? "bg-white text-black border-white"
+                      : isAnswered
+                        ? answer.correct
+                          ? "bg-green-500 text-white border-green-400 hover:opacity-80"
+                          : "bg-red-500 text-white border-red-400 hover:opacity-80"
+                        : "border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20"
+                  }`}
                 >
                   {index + 1}
                   {isFlagged && (
-                    <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-red-500 rounded-full"></div>
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
                   )}
                 </button>
               )
             })}
           </div>
 
-          {/* Compact Legend */}
-          <div className={`flex flex-wrap gap-2 text-xs ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-            <div className="flex items-center gap-1">
-              <div className={`w-2 h-2 rounded ${isDark ? 'bg-green-500/30 border border-green-600' : 'bg-green-200 border border-green-500'}`}></div>
+          {/* Legend */}
+          <div className={`flex flex-wrap gap-3 text-xs pt-2 border-t ${isDark ? 'border-gray-700 text-gray-400' : 'border-gray-300 text-gray-600'}`}>
+            <div className="flex items-center gap-1.5">
+              <div className="w-3 h-3 bg-green-500 rounded-lg border border-green-400"></div>
               <span>Correct</span>
             </div>
-            <div className="flex items-center gap-1">
-              <div className={`w-2 h-2 rounded ${isDark ? 'bg-orange-500/30 border border-orange-600' : 'bg-orange-200 border border-orange-500'}`}></div>
+            <div className="flex items-center gap-1.5">
+              <div className="w-3 h-3 bg-red-500 rounded-lg border border-red-400"></div>
               <span>Wrong</span>
             </div>
-            <div className="flex items-center gap-1">
-              <div className={`w-2 h-2 rounded ${isDark ? 'bg-gray-800 border border-gray-700' : 'bg-gray-200 border border-gray-400'}`}></div>
+            <div className="flex items-center gap-1.5">
+              <div className={`w-3 h-3 rounded-lg border ${isDark ? 'border-gray-600 bg-transparent' : 'border-gray-400 bg-transparent'}`}></div>
               <span>Unanswered</span>
             </div>
-            <div className="flex items-center gap-1">
-              <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+            <div className="flex items-center gap-1.5">
+              <div className="w-3 h-3 bg-red-500 rounded-full border border-white"></div>
               <span>Flagged</span>
             </div>
           </div>
