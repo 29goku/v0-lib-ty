@@ -347,17 +347,31 @@ export const useStore = create<AppState>()(
       loadQuestions: async () => {
         console.log("🔥 Loading questions from JSON...")
         try {
-          const response = await fetch("/data/questions.json")
+          // Try multiple possible paths for questions.json
+          let response = await fetch("/data/questions.json")
+
+          // If not found, try alternate paths
+          if (!response.ok) {
+            console.warn("Primary path failed, trying alternate paths...")
+            response = await fetch("/public/data/questions.json")
+          }
+
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`)
           }
+
           // cast to Question[] so TypeScript knows the shape
           const questions = (await response.json()) as Question[]
           console.log("🚀 Successfully loaded", questions.length, "questions!")
+
+          if (questions.length === 0) {
+            throw new Error("Questions array is empty")
+          }
+
           set({ questions })
           return questions
         } catch (error) {
-          console.log("Failed to load questions:", error)
+          console.error("Failed to load questions from questions.json:", error)
           // Try loading state questions as fallback
           try {
             const stateResponse = await fetch("/data/state-questions.json")
@@ -367,13 +381,13 @@ export const useStore = create<AppState>()(
             const stateData = await stateResponse.json()
             // Flatten all state questions into a single array
             const allQuestions = (Object.values(stateData).flat() as Question[])
-            console.log("🚀 Successfully loaded", allQuestions.length, "state questions!")
+            console.warn("⚠️ Loaded", allQuestions.length, "state questions as fallback")
             set({ questions: allQuestions })
             return allQuestions
           } catch (stateError) {
-            console.log("Failed to load state questions:", stateError)
+            console.error("Failed to load state questions:", stateError)
             // Use fallback questions
-            console.log("💪 Using fallback questions")
+            console.warn("💪 Using built-in fallback questions")
             set({ questions: fallbackQuestions })
             return fallbackQuestions
           }
