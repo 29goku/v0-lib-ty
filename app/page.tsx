@@ -11,6 +11,7 @@ import { useEffect, useState } from "react"
 import { Icon } from "@/components/Icon"
 import ThemeToggle from "@/components/ThemeToggle"
 import { useTheme } from "@/lib/theme"
+import AdBanner from "@/components/AdBanner"
 
 export default function HomePage() {
   const { language, questions, userProgress, loadQuestions } = useStore()
@@ -224,6 +225,11 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Ad Banner - After Hero Section */}
+        <div className="py-4 px-4">
+          <AdBanner slot="1234567890" format="auto" responsive={true} />
+        </div>
+
         {/* Features Section */}
         <div className="md:py-16 px-4 relative">
           <div className="max-w-7xl mx-auto">
@@ -360,6 +366,11 @@ export default function HomePage() {
             </div>
           </div>
         )}
+
+        {/* Ad Banner - Before Final CTA */}
+        <div className="py-4 px-4">
+          <AdBanner slot="9876543210" format="auto" responsive={true} />
+        </div>
 
         {/* Final CTA */}
         <div className={`py-10 md:py-12 px-4 ${isDark ? 'border-t border-gray-700 bg-white/5' : 'border-t border-gray-200 bg-gray-50'}`}>
