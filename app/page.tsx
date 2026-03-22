@@ -202,7 +202,7 @@ export default function HomePage() {
             </div>
 
             {/* CTA Buttons - Main App Functionality */}
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-6 md:mb-8 px-4">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-4 md:mb-6 px-4">
               <Link href="/practice" className="group flex-1 sm:flex-none">
                 <button className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold px-8 md:px-12 py-4 md:py-5 text-lg md:text-xl rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-blue-500/50 hover:shadow-2xl relative overflow-hidden group">
                   <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></span>
@@ -224,13 +224,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Ad Banner - After Hero Section */}
-        <div className="py-2 px-4">
-          <AdBanner slot="1234567890" format="auto" responsive={true} />
-        </div>
-
         {/* Features Section */}
-        <div className="md:py-8 px-4 relative">
+        <div className="md:py-6 px-4 relative">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-12 relative">
               <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-2 md:mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
