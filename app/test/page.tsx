@@ -459,7 +459,7 @@ export default function TestPage() {
 
           {/* Right: Question Grid */}
           <div className="hidden lg:flex flex-col">
-            <Card className="h-full bg-transparent">
+            <Card className="h-full !bg-transparent !shadow-none">
               <CardContent className="p-4">
                 <div className="grid grid-cols-[repeat(5,minmax(0,1fr))] gap-1">
                   {testQuestions.map((_, index) => {
