@@ -459,7 +459,7 @@ export default function TestPage() {
 
           {/* Right: Question Grid */}
           <div className="hidden lg:flex flex-col">
-            <Card className={`h-full ${isDark ? 'bg-white/5' : 'bg-gray-100'}`}>
+            <Card className="h-full bg-transparent">
               <CardContent className="p-4">
                 <div className="grid grid-cols-[repeat(5,minmax(0,1fr))] gap-1">
                   {testQuestions.map((_, index) => {
@@ -479,7 +479,7 @@ export default function TestPage() {
                               ? answer.correct
                                 ? "bg-green-500 text-white border-green-400 hover:opacity-80"
                                 : "bg-red-500 text-white border-red-400 hover:opacity-80"
-                              : "border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20"
+                              : "border-gray-600 bg-transparent text-gray-300"
                         }`}
                       >
                         {index + 1}
@@ -523,7 +523,7 @@ export default function TestPage() {
 
         {/* Mobile Question Grid */}
         <div className="lg:hidden">
-          <div className={`border rounded-lg p-4 ${isDark ? 'border-gray-700 bg-gray-900/20' : 'border-gray-200 bg-gray-50'}`}>
+          <div className={`border rounded-lg p-4 ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-transparent'}`}>
             <h3 className={`text-sm font-semibold uppercase tracking-wider mb-3 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Progress: {testAnswers.length}/{selectedQuestionCount[0]}</h3>
             <div className="grid grid-cols-[repeat(10,minmax(0,1fr))] gap-1">
               {testQuestions.map((_, index) => {
@@ -543,7 +543,7 @@ export default function TestPage() {
                           ? answer.correct
                             ? "bg-green-500 text-white border-green-400 hover:opacity-80"
                             : "bg-red-500 text-white border-red-400 hover:opacity-80"
-                          : "border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20"
+                          : "border-gray-600 bg-transparent text-gray-300"
                     }`}
                   >
                     {index + 1}
