@@ -12,6 +12,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { ArrowLeft, Download, Upload, RotateCcw } from "lucide-react"
 import Link from "next/link"
 import Badge from "@/components/Badge"
+import StickyMobileHeader from "@/components/StickyMobileHeader"
+import LanguageSelector from "@/components/LanguageSelector"
 
 export default function SettingsPage() {
   const { userProgress, darkMode, toggleDarkMode, resetProgress, exportProgress, importProgress } = useStore()
@@ -52,6 +54,7 @@ export default function SettingsPage() {
 
   return (
     <div className={`min-h-screen ${theme.bg} ${theme.text}`}>
+      <StickyMobileHeader title="Settings" />
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">

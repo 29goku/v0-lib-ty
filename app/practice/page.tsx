@@ -17,6 +17,7 @@ import LanguageSelector from "@/components/LanguageSelector"
 import ThemeToggle from "@/components/ThemeToggle"
 import { getCategoryEmoji } from "@/lib/category-emojis"
 import { MultiSelect } from "@/components/MultiSelect"
+import StickyMobileHeader from "@/components/StickyMobileHeader"
 
 const germanStates = [
   { id: "baden-wuerttemberg", name: "Baden-Württemberg", emoji: "🏰" },
@@ -499,6 +500,7 @@ export default function PracticePage() {
 
   return (
       <div className={`min-h-screen overflow-hidden relative ${theme.bg} ${theme.text}`}>
+        <StickyMobileHeader title={t.practiceMode.toUpperCase()} />
         <div className="fixed inset-0 z-0">
         </div>
 

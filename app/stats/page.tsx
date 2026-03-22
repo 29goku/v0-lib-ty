@@ -9,6 +9,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft, TrendingUp, Flame, Target, Award, BarChart3 } from "lucide-react"
 import Link from "next/link"
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from "recharts"
+import StickyMobileHeader from "@/components/StickyMobileHeader"
+import LanguageSelector from "@/components/LanguageSelector"
 
 export default function StatsPage() {
   const { userProgress, questions } = useStore()
@@ -65,6 +67,7 @@ export default function StatsPage() {
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
+      <StickyMobileHeader title="Stats" />
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">

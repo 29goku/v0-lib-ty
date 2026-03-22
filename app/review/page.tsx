@@ -13,6 +13,8 @@ import { ArrowLeft, Flag, CheckCircle, RotateCcw, AlertTriangle } from "lucide-r
 import Link from "next/link"
 import { getCategoryEmoji } from "@/lib/category-emojis"
 import SwipeCard from "@/components/SwipeCard"
+import StickyMobileHeader from "@/components/StickyMobileHeader"
+import LanguageSelector from "@/components/LanguageSelector"
 
 export default function ReviewPage() {
   const { questions, setQuestions, userProgress, unflagQuestion, flagQuestion } = useStore()
@@ -141,6 +143,7 @@ export default function ReviewPage() {
 
   return (
     <div className={`min-h-screen ${theme.bg} ${theme.text}`}>
+      <StickyMobileHeader title="Review" />
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
