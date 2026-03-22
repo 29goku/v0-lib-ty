@@ -459,39 +459,35 @@ export default function TestPage() {
 
           {/* Right: Question Grid */}
           <div className="hidden lg:flex flex-col">
-            <Card className="h-full !bg-transparent !shadow-none">
-              <CardContent className="p-4">
-                <div className="grid grid-cols-[repeat(5,minmax(0,1fr))] gap-1">
-                  {testQuestions.map((_, index) => {
-                    const answer = testAnswers.find((a) => a.questionId === testQuestions[index]?.id)
-                    const isAnswered = answer !== undefined
-                    const isCurrent = index === currentQuestionIndex
-                    const isFlagged = userProgress.flaggedQuestions.includes(testQuestions[index]?.id)
+            <div className="grid grid-cols-[repeat(5,minmax(0,1fr))] gap-1">
+              {testQuestions.map((_, index) => {
+                const answer = testAnswers.find((a) => a.questionId === testQuestions[index]?.id)
+                const isAnswered = answer !== undefined
+                const isCurrent = index === currentQuestionIndex
+                const isFlagged = userProgress.flaggedQuestions.includes(testQuestions[index]?.id)
 
-                    return (
-                      <button
-                        key={index}
-                        onClick={() => handleQuestionJump(index)}
-                        className={`relative aspect-square rounded-lg font-semibold text-xs transition-all border ${
-                          isCurrent
-                            ? "bg-white text-black border-white"
-                            : isAnswered
-                              ? answer.correct
-                                ? "bg-green-500 text-white border-green-400 hover:opacity-80"
-                                : "bg-red-500 text-white border-red-400 hover:opacity-80"
-                              : "border-gray-600 bg-transparent text-gray-300"
-                        }`}
-                      >
-                        {index + 1}
-                        {isFlagged && (
-                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></div>
-                        )}
-                      </button>
-                    )
-                  })}
-                </div>
-              </CardContent>
-            </Card>
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleQuestionJump(index)}
+                    className={`relative aspect-square rounded-lg font-semibold text-xs transition-all border ${
+                      isCurrent
+                        ? "bg-white text-black border-white"
+                        : isAnswered
+                          ? answer.correct
+                            ? "bg-green-500 text-white border-green-400 hover:opacity-80"
+                            : "bg-red-500 text-white border-red-400 hover:opacity-80"
+                          : "border-gray-600 bg-transparent text-gray-300"
+                    }`}
+                  >
+                    {index + 1}
+                    {isFlagged && (
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></div>
+                    )}
+                  </button>
+                )
+              })}
+            </div>
           </div>
         </div>
 
