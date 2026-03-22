@@ -89,32 +89,24 @@ export default function ReviewPage() {
     activeTab === 'completed' ? completedQuestions :
     activeTab === 'incorrect' ? incorrectQuestions : []
 
-  // Auto-select first question only when tab changes, not on every render
+  // Auto-select first question when tab changes or when no question is selected
   useEffect(() => {
-    // Only auto-select if no question is currently selected
-    if (!selectedQuestion) {
-      if (activeTab === 'flagged' && flaggedQuestions.length > 0) {
+    if (activeTab === 'flagged') {
+      if (flaggedQuestions.length > 0 && !selectedQuestion) {
         setSelectedQuestion(flaggedQuestions[0].id)
-      } else if (activeTab === 'completed' && completedQuestions.length > 0) {
-        setSelectedQuestion(completedQuestions[0].id)
-      } else if (activeTab === 'incorrect' && incorrectQuestions.length > 0) {
-        setSelectedQuestion(incorrectQuestions[0].id)
-      } else {
-        setSelectedQuestion(null)
       }
+    } else if (activeTab === 'completed') {
+      if (completedQuestions.length > 0 && !selectedQuestion) {
+        setSelectedQuestion(completedQuestions[0].id)
+      }
+    } else if (activeTab === 'incorrect') {
+      if (incorrectQuestions.length > 0 && !selectedQuestion) {
+        setSelectedQuestion(incorrectQuestions[0].id)
+      }
+    } else {
+      setSelectedQuestion(null)
     }
   }, [activeTab])
-
-  // Ensure selected question is in the current filtered list, otherwise reset
-  useEffect(() => {
-    if (selectedQuestion && !filteredQuestions.find(q => q.id === selectedQuestion)) {
-      if (filteredQuestions.length > 0) {
-        setSelectedQuestion(filteredQuestions[0].id)
-      } else {
-        setSelectedQuestion(null)
-      }
-    }
-  }, [activeTab, filteredQuestions, selectedQuestion])
 
   const handleReadAloud = (text: string) => {
     if ("speechSynthesis" in window) {
