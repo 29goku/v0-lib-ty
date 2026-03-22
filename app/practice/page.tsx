@@ -311,6 +311,7 @@ export default function PracticePage() {
         // Clear showAnswer last - this will trigger the useEffect to update displayQuestion
         setShowAnswer(false)
       }, 2000)
+    }
   }
 
   const resetProgress = () => {
@@ -945,7 +946,6 @@ export default function PracticePage() {
                 <div className="text-red-500 font-semibold">{t.swipeRight} →</div>
               </div>
               <p className="text-gray-300 font-semibold">{t.keyboardShortcuts}</p>
-              <p className="text-gray-300 font-semibold">Toggle between Auto and Manual mode above</p>
               <p className="text-gray-300 font-semibold">Select a state to practice state-specific questions</p>
               <div>
                 <p className="text-sm text-gray-300 font-semibold">
