@@ -777,7 +777,7 @@ export default function PracticePage() {
                                   onClick={() => handleQuestionJump(index)}
                                   className={`relative aspect-square rounded-lg font-semibold text-sm transition-all border ${
                                       isCurrent
-                                          ? "bg-white text-black border-white"
+                                          ? "bg-white text-black border-white shadow-lg shadow-white/50"
                                           : isIncorrect
                                               ? "bg-red-500 text-white border-red-400 hover:opacity-80"
                                               : isAnswered

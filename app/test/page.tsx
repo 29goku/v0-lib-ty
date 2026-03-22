@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { useStore } from "@/lib/store"
 import { useTheme, getTheme } from "@/lib/theme"
 import ThemeToggle from "@/components/ThemeToggle"
+import LanguageSelector from "@/components/LanguageSelector"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -191,7 +192,10 @@ export default function TestPage() {
               </Button>
             </Link>
             <h1 className={`text-2xl md:text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>⚡ Test</h1>
-            <ThemeToggle />
+            <div className="flex items-center gap-2">
+              <LanguageSelector />
+              <ThemeToggle />
+            </div>
           </div>
 
           <div className="max-w-2xl mx-auto">
@@ -472,7 +476,7 @@ export default function TestPage() {
                     onClick={() => handleQuestionJump(index)}
                     className={`relative aspect-square rounded-lg font-semibold text-xs transition-all border ${
                       isCurrent
-                        ? "bg-white text-black border-white"
+                        ? "bg-white text-black border-white shadow-lg shadow-white/50"
                         : isAnswered
                           ? answer.correct
                             ? "bg-green-500 text-white border-green-400 hover:opacity-80"
@@ -534,7 +538,7 @@ export default function TestPage() {
                     onClick={() => handleQuestionJump(index)}
                     className={`relative aspect-square rounded-lg font-semibold text-xs transition-all border ${
                       isCurrent
-                        ? "bg-white text-black border-white"
+                        ? "bg-white text-black border-white shadow-lg shadow-white/50"
                         : isAnswered
                           ? answer.correct
                             ? "bg-green-500 text-white border-green-400 hover:opacity-80"
