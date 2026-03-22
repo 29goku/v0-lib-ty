@@ -105,14 +105,14 @@ export default function SettingsPage() {
                     Best Streak
                   </div>
                 </div>
-                <div className="text-center p-4 border border-gray-700 bg-white/5">
-                  <div className="text-3xl font-semibold text-white mb-2">
+                <div className={`text-center p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
+                  <div className={`text-3xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     {userProgress.questionsAnswered > 0
                       ? Math.round((userProgress.correctAnswers / userProgress.questionsAnswered) * 100)
                       : 0}
                     %
                   </div>
-                  <div className="text-sm font-normal text-gray-300">Accuracy</div>
+                  <div className={`text-sm font-normal ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Accuracy</div>
                 </div>
               </div>
 
