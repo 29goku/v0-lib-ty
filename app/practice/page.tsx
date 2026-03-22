@@ -850,7 +850,7 @@ export default function PracticePage() {
             </div>
           </div>
 
-          <div className="flex justify-center mb-8 pb-32 lg:pb-0 lg:mb-8">
+          <div className="flex justify-center mb-8 pb-48 sm:pb-32 md:pb-8 lg:pb-0 lg:mb-8">
             <div className="w-full max-w-6xl">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
                 {/* Left: Swipe Card */}
@@ -882,7 +882,7 @@ export default function PracticePage() {
                           initial={{ opacity: 0, scale: 0.8, y: 30 }}
                           animate={{ opacity: 1, scale: 1, y: 0 }}
                           transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
-                          className="mt-2 sm:mt-4 md:mt-6 mb-24 sm:mb-0"
+                          className="mt-2 sm:mt-4 md:mt-6"
                       >
                         <Card
                             className={`w-full relative overflow-hidden ${
