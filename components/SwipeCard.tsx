@@ -125,8 +125,10 @@ export default function SwipeCard({
 
   // Sync external selected answer
   useEffect(() => {
-    if (externalSelectedAnswer !== undefined) {
+    if (externalSelectedAnswer !== undefined && externalSelectedAnswer !== null) {
       setSelectedAnswer(externalSelectedAnswer)
+    } else if (externalSelectedAnswer === null) {
+      setSelectedAnswer(null)
     }
   }, [externalSelectedAnswer])
 

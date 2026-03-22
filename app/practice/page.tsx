@@ -263,7 +263,7 @@ export default function PracticePage() {
   }
 
   const handleAnswerSelect = (selectedAnswerIndex: number) => {
-    if (showAnswer || !currentQuestion) return
+    if (showAnswer || !currentQuestion || currentQuestion.answerIndex === undefined) return
 
     const isCorrect = selectedAnswerIndex === currentQuestion.answerIndex
 
