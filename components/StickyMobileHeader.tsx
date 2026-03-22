@@ -35,10 +35,10 @@ export default function StickyMobileHeader({
     <>
       {/* Sticky Header on Mobile */}
       <div className={`fixed top-0 left-0 right-0 sm:hidden z-50 ${isDark ? 'bg-black/80 backdrop-blur-sm border-b border-gray-800' : 'bg-white/80 backdrop-blur-sm border-b border-gray-200'}`}>
-        <div className="flex justify-between items-center px-3 py-3 gap-2">
+        <div className="flex justify-between items-center px-2 py-2 gap-2">
           {showBackButton ? (
             <Link href={backHref}>
-              <Button className={`border px-2 py-1.5 text-xs rounded transition-colors ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
+              <Button className={`border px-1.5 py-1 text-xs rounded transition-colors ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
                 <ArrowLeft className="w-3 h-3" />
               </Button>
             </Link>
@@ -48,12 +48,12 @@ export default function StickyMobileHeader({
 
           <div className="flex-1">
             {title ? (
-              <div>
-                <h1 className={`text-sm font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <div className="min-w-0">
+                <h1 className={`text-xs font-bold truncate ${isDark ? 'text-white' : 'text-gray-900'}`}>
                   {title}
                 </h1>
                 {subtitle && (
-                  <p className={`text-xs ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <p className={`text-xs truncate ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                     {subtitle}
                   </p>
                 )}
@@ -63,7 +63,7 @@ export default function StickyMobileHeader({
             )}
           </div>
 
-          <div className="flex gap-1 items-center">
+          <div className="flex gap-0.5 items-center">
             {rightContent}
             {children}
             <ThemeToggle />
