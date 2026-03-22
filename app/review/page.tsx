@@ -65,6 +65,19 @@ export default function ReviewPage() {
     loadQuestions()
   }, [setQuestions])
 
+  // Auto-select first question when tab changes
+  useEffect(() => {
+    if (activeTab === 'flagged' && flaggedQuestions.length > 0) {
+      setSelectedQuestion(flaggedQuestions[0].id)
+    } else if (activeTab === 'completed' && completedQuestions.length > 0) {
+      setSelectedQuestion(completedQuestions[0].id)
+    } else if (activeTab === 'incorrect' && incorrectQuestions.length > 0) {
+      setSelectedQuestion(incorrectQuestions[0].id)
+    } else {
+      setSelectedQuestion(null)
+    }
+  }, [activeTab, flaggedQuestions, completedQuestions, incorrectQuestions])
+
   const handleReadAloud = (text: string) => {
     if ("speechSynthesis" in window) {
       const utterance = new SpeechSynthesisUtterance(text)
