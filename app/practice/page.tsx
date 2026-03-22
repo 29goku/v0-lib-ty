@@ -882,7 +882,7 @@ export default function PracticePage() {
                           initial={{ opacity: 0, scale: 0.8, y: 30 }}
                           animate={{ opacity: 1, scale: 1, y: 0 }}
                           transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
-                          className="mt-2 sm:mt-4 md:mt-6"
+                          className="mt-2 sm:mt-4 md:mt-6 mb-24 sm:mb-0"
                       >
                         <Card
                             className={`w-full relative overflow-hidden ${
