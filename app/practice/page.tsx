@@ -345,10 +345,7 @@ export default function PracticePage() {
     }
 
     const getEmptyStateEmoji = () => {
-      if (selectedFlagFilters.includes("flagged")) return "🚩"
-      if (selectedFlagFilters.includes("incorrect")) return "❌"
-      if (selectedFlagFilters.includes("correct")) return "✅"
-      return "📝"
+      return ""
     }
 
     return (
@@ -650,7 +647,7 @@ export default function PracticePage() {
             <Card className="border border-gray-700 bg-white/5 w-full max-w-5xl">
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                  <div className="w-5 h-5 md:w-6 md:h-6 text-orange-400 animate-pulse">🚩</div>
+                  <div className="w-5 h-5 md:w-6 md:h-6 text-gray-300"></div>
                   <h3 className="text-lg md:text-xl font-black text-orange-300 uppercase tracking-wider">
                     Filter by Status {selectedFlagFilters.length > 0 && `(${selectedFlagFilters.length} selected)`}
                   </h3>
@@ -673,7 +670,7 @@ export default function PracticePage() {
                                   : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
                           }`}
                       >
-                        🚩 Flagged Questions ({flaggedCount})
+                        Flagged Questions ({flaggedCount})
                         {selectedFlagFilters.includes("flagged") && <span className="ml-1">✓</span>}
                       </button>
                   )}
@@ -686,7 +683,7 @@ export default function PracticePage() {
                                   : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
                           }`}
                       >
-                        ❌ Incorrect Answers ({incorrectCount})
+                        Incorrect Answers ({incorrectCount})
                         {selectedFlagFilters.includes("incorrect") && <span className="ml-1">✓</span>}
                       </button>
                   )}
@@ -699,7 +696,7 @@ export default function PracticePage() {
                                   : "bg-black/50 text-green-300 hover:bg-black/80 hover:text-white border-2 border-green-400/30"
                           }`}
                       >
-                        ✅ Correct Answers ({correctCount})
+                        Correct Answers ({correctCount})
                         {selectedFlagFilters.includes("correct") && <span className="ml-1">✓</span>}
                       </button>
                   )}
@@ -793,9 +790,6 @@ export default function PracticePage() {
                                                   : "bg-transparent text-gray-300 border-gray-700 hover:bg-gray-900/20"
                                   }`}
                               >
-                                {selectedState && (
-                                    <span className="absolute -top-1 -left-1 text-xs">{stateEmoji}</span>
-                                )}
                                 {originalQuestionNumber}
                                 {isFlagged && (
                                     <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
@@ -879,9 +873,6 @@ export default function PracticePage() {
                                                     : 'bg-transparent text-gray-300 border-gray-700 hover:bg-gray-900/20'
                                     }`}
                                 >
-                                  {selectedState && (
-                                      <span className="absolute -top-2 text-xs leading-none pointer-events-none">{stateEmoji}</span>
-                                  )}
                                   <span className="text-sm z-10">{originalQuestionNumber}</span>
                                   {isFlagged && (
                                       <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-500 rounded-full border border-white"></span>
@@ -910,7 +901,7 @@ export default function PracticePage() {
               <div className="flex justify-center mb-8">
                 <Card className="w-full max-w-md border border-gray-700 bg-white/5">
                   <CardHeader>
-                    <CardTitle className="text-center text-yellow-400 font-black text-2xl animate-pulse">
+                    <CardTitle className="text-center text-white font-semibold text-2xl">
                       {t.achievements}
                     </CardTitle>
                   </CardHeader>

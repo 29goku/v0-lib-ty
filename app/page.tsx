@@ -204,12 +204,12 @@ export default function HomePage() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-10 px-4">
               <Link href="/practice">
-                <Button className="w-full sm:w-auto border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded transition-all">
+                <Button className="w-full sm:w-auto border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold transition-colors">
                   {t.start} {t.practice}
                 </Button>
               </Link>
               <Link href="/test">
-                <Button className="w-full sm:w-auto border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded transition-all">
+                <Button className="w-full sm:w-auto border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold transition-colors">
                   {t.test}
                 </Button>
               </Link>
@@ -232,7 +232,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {/* Practice Card */}
               <Link href="/practice" className="group">
-                <Card className="border border-gray-700 bg-white/5 backdrop-blur-sm rounded h-full hover:bg-gray-900/20 transition-all">
+                <Card className="border border-gray-700 bg-white/5 h-full hover:bg-gray-900/20 transition-colors">
                   <CardContent className="p-4 h-full flex flex-col">
                     <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                       {t.practice}
@@ -240,7 +240,7 @@ export default function HomePage() {
                     <p className="text-gray-300 text-xs md:text-sm mb-3 leading-relaxed flex-grow">
                       {t.swipeLearn}: {stats.totalQuestions} questions with instant feedback
                     </p>
-                    <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 rounded font-semibold text-center transition-colors text-xs">
+                    <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 font-semibold text-center transition-colors text-xs">
                       {t.start}
                     </div>
                   </CardContent>
