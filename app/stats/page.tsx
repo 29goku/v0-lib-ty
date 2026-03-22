@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { useStore } from "@/lib/store"
+import { useTheme } from "@/lib/theme"
+import ThemeToggle from "@/components/ThemeToggle"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft, TrendingUp, Flame, Target, Award, BarChart3 } from "lucide-react"
@@ -10,6 +12,7 @@ import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, L
 
 export default function StatsPage() {
   const { userProgress, questions } = useStore()
+  const { isDark } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -61,104 +64,104 @@ export default function StatsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className={`min-h-screen ${isDark ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <Link href="/">
-            <Button className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white px-4 py-2 rounded transition-colors">
+            <Button className={`border px-4 py-2 rounded transition-colors ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back
             </Button>
           </Link>
 
-          <h1 className="text-3xl md:text-4xl font-semibold text-white">
+          <h1 className={`text-3xl md:text-4xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
             📊 Statistics
           </h1>
 
-          <div></div>
+          <ThemeToggle />
         </div>
 
         {/* KPI Cards */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mb-8">
-          <Card className="border border-gray-700 bg-black hover:bg-gray-900/20 transition-colors">
+          <Card className={`border transition-colors ${isDark ? 'border-gray-700 bg-black hover:bg-gray-900/20' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
                   <div className={`text-2xl md:text-3xl font-bold ${getAccuracyColor(accuracy)}`}>
                     {accuracy}%
                   </div>
-                  <div className="text-xs md:text-sm text-gray-400">Accuracy</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Accuracy</div>
                 </div>
-                <Target className="w-6 h-6 text-gray-600" />
+                <Target className={`w-6 h-6 ${isDark ? 'text-gray-600' : 'text-gray-500'}`} />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border border-gray-700 bg-black hover:bg-gray-900/20 transition-colors">
+          <Card className={`border transition-colors ${isDark ? 'border-gray-700 bg-black hover:bg-gray-900/20' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-2xl md:text-3xl font-bold text-orange-400">
                     {userProgress.streak}
                   </div>
-                  <div className="text-xs md:text-sm text-gray-400">Streak</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Streak</div>
                 </div>
                 <Flame className="w-6 h-6 text-orange-500" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border border-gray-700 bg-black hover:bg-gray-900/20 transition-colors">
+          <Card className={`border transition-colors ${isDark ? 'border-gray-700 bg-black hover:bg-gray-900/20' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-2xl md:text-3xl font-bold text-white">
+                  <div className={`text-2xl md:text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     {userProgress.xp}
                   </div>
-                  <div className="text-xs md:text-sm text-gray-400">XP</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>XP</div>
                 </div>
                 <TrendingUp className="w-6 h-6 text-gray-600" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border border-gray-700 bg-black hover:bg-gray-900/20 transition-colors">
+          <Card className={`border transition-colors ${isDark ? 'border-gray-700 bg-black hover:bg-gray-900/20' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-2xl md:text-3xl font-bold text-green-400">
                     {userProgress.questionsAnswered}
                   </div>
-                  <div className="text-xs md:text-sm text-gray-400">Answered</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Answered</div>
                 </div>
-                <BarChart3 className="w-6 h-6 text-gray-600" />
+                <BarChart3 className={`w-6 h-6 ${isDark ? 'text-gray-600' : 'text-gray-500'}`} />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border border-gray-700 bg-black hover:bg-gray-900/20 transition-colors">
+          <Card className={`border transition-colors ${isDark ? 'border-gray-700 bg-black hover:bg-gray-900/20' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-2xl md:text-3xl font-bold text-white">
+                  <div className={`text-2xl md:text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     {userProgress.maxStreak}
                   </div>
-                  <div className="text-xs md:text-sm text-gray-400">Best Streak</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Best Streak</div>
                 </div>
                 <Award className="w-6 h-6 text-gray-600" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border border-gray-700 bg-black hover:bg-gray-900/20 transition-colors">
+          <Card className={`border transition-colors ${isDark ? 'border-gray-700 bg-black hover:bg-gray-900/20' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-2xl md:text-3xl font-bold text-purple-400">
                     {userProgress.badges?.length || 0}
                   </div>
-                  <div className="text-xs md:text-sm text-gray-400">Badges</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Badges</div>
                 </div>
                 <Award className="w-6 h-6 text-purple-600" />
               </div>
@@ -172,17 +175,17 @@ export default function StatsPage() {
           {dailyData.length > 0 && (
             <Card className="border border-gray-700 bg-black">
               <CardHeader>
-                <CardTitle className="text-lg font-semibold text-white">
+                <CardTitle className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                   📈 Accuracy Trend (Last 10 Days)
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-4">
                 <ResponsiveContainer width="100%" height={250}>
                   <LineChart data={dailyData}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                    <XAxis dataKey="date" stroke="#9CA3AF" />
-                    <YAxis stroke="#9CA3AF" />
-                    <Tooltip contentStyle={{ backgroundColor: "#1F2937", border: "1px solid #4B5563" }} />
+                    <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#374151" : "#E5E7EB"} />
+                    <XAxis dataKey="date" stroke={isDark ? "#9CA3AF" : "#6B7280"} />
+                    <YAxis stroke={isDark ? "#9CA3AF" : "#6B7280"} />
+                    <Tooltip contentStyle={{ backgroundColor: isDark ? "#1F2937" : "#F9FAFB", border: `1px solid ${isDark ? "#4B5563" : "#E5E7EB"}`, color: isDark ? "white" : "black" }} />
                     <Line type="monotone" dataKey="accuracy" stroke="#10B981" dot={{ fill: "#10B981" }} />
                   </LineChart>
                 </ResponsiveContainer>
@@ -194,17 +197,17 @@ export default function StatsPage() {
           {categoryData.length > 0 && (
             <Card className="border border-gray-700 bg-black">
               <CardHeader>
-                <CardTitle className="text-lg font-semibold text-white">
+                <CardTitle className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                   🎯 Category Performance
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-4">
                 <ResponsiveContainer width="100%" height={250}>
                   <BarChart data={categoryData.slice(0, 8)}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                    <XAxis dataKey="category" stroke="#9CA3AF" angle={-45} textAnchor="end" height={80} />
-                    <YAxis stroke="#9CA3AF" />
-                    <Tooltip contentStyle={{ backgroundColor: "#1F2937", border: "1px solid #4B5563" }} />
+                    <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#374151" : "#E5E7EB"} />
+                    <XAxis dataKey="category" stroke={isDark ? "#9CA3AF" : "#6B7280"} angle={-45} textAnchor="end" height={80} />
+                    <YAxis stroke={isDark ? "#9CA3AF" : "#6B7280"} />
+                    <Tooltip contentStyle={{ backgroundColor: isDark ? "#1F2937" : "#F9FAFB", border: `1px solid ${isDark ? "#4B5563" : "#E5E7EB"}`, color: isDark ? "white" : "black" }} />
                     <Bar dataKey="accuracy" fill="#3B82F6" />
                   </BarChart>
                 </ResponsiveContainer>
@@ -225,8 +228,8 @@ export default function StatsPage() {
               </CardHeader>
               <CardContent className="p-4 space-y-3">
                 {strongestCategories.map((cat) => (
-                  <div key={cat.category} className="flex justify-between items-center p-3 border border-gray-800 rounded bg-green-500/5">
-                    <span className="font-medium text-white">{cat.category}</span>
+                  <div key={cat.category} className={`flex justify-between items-center p-3 border rounded ${isDark ? 'border-gray-800 bg-green-500/5' : 'border-green-200 bg-green-50'}`}>
+                    <span className={`font-medium ${isDark ? 'text-white' : 'text-gray-900'}`}>{cat.category}</span>
                     <span className="text-green-400 font-bold">{cat.accuracy}%</span>
                   </div>
                 ))}
@@ -244,8 +247,8 @@ export default function StatsPage() {
               </CardHeader>
               <CardContent className="p-4 space-y-3">
                 {weakestCategories.map((cat) => (
-                  <div key={cat.category} className="flex justify-between items-center p-3 border border-gray-800 rounded bg-red-500/5">
-                    <span className="font-medium text-white">{cat.category}</span>
+                  <div key={cat.category} className={`flex justify-between items-center p-3 border rounded ${isDark ? 'border-gray-800 bg-red-500/5' : 'border-red-200 bg-red-50'}`}>
+                    <span className={`font-medium ${isDark ? 'text-white' : 'text-gray-900'}`}>{cat.category}</span>
                     <span className="text-red-400 font-bold">{cat.accuracy}%</span>
                   </div>
                 ))}
@@ -267,12 +270,12 @@ export default function StatsPage() {
                 {recentTests.map((test, idx) => {
                   const score = Math.round((test.score / test.totalQuestions) * 100)
                   return (
-                    <div key={idx} className={`p-3 border border-gray-800 rounded flex justify-between items-center ${getAccuracyBg(score)}`}>
+                    <div key={idx} className={`p-3 border rounded flex justify-between items-center ${isDark ? `border-gray-800 ${getAccuracyBg(score)}` : `border-gray-300 ${score >= 70 ? 'bg-green-100' : score >= 50 ? 'bg-yellow-100' : 'bg-red-100'}`}`}>
                       <div>
-                        <div className="font-medium text-white">
+                        <div className={`font-medium ${isDark ? 'text-white' : 'text-gray-900'}`}>
                           {test.score}/{test.totalQuestions} {test.state && `(${test.state})`}
                         </div>
-                        <div className="text-xs text-gray-400">
+                        <div className={`text-xs ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                           {new Date(test.date).toLocaleDateString()} • {Math.round(test.timeSpent / 60)}m
                         </div>
                       </div>
@@ -292,8 +295,8 @@ export default function StatsPage() {
           <Card className="border border-gray-700 bg-black">
             <CardContent className="p-12 text-center">
               <div className="text-4xl mb-4">📚</div>
-              <h3 className="text-xl font-semibold text-white mb-2">No Stats Yet</h3>
-              <p className="text-gray-400 mb-6">Start practicing to see your statistics here.</p>
+              <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>No Stats Yet</h3>
+              <p className={`mb-6 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Start practicing to see your statistics here.</p>
               <Link href="/practice">
                 <Button className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white px-6 py-2 rounded transition-colors">
                   Start Practicing
