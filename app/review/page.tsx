@@ -79,7 +79,9 @@ export default function ReviewPage() {
   const flaggedQuestions = questions.filter((q) => userProgress.flaggedQuestions?.includes(q.id) || false)
   const completedQuestions = questions.filter((q) => userProgress.completedQuestions?.includes(q.id) || false)
   const incorrectQuestions = questions.filter((q) => userProgress.incorrectAnswers?.includes(q.id) || false)
-  const selectedQuestionData = questions.find((q) => q.id === selectedQuestion)
+
+  // Find selected question data - ensure it updates when selectedQuestion changes
+  const selectedQuestionData = selectedQuestion ? questions.find((q) => q.id === selectedQuestion) : null
 
   // Get filtered questions based on active tab for jump navigation
   const filteredQuestions =
@@ -99,6 +101,17 @@ export default function ReviewPage() {
       setSelectedQuestion(null)
     }
   }, [activeTab, flaggedQuestions, completedQuestions, incorrectQuestions])
+
+  // Ensure selected question is in the current filtered list, otherwise reset
+  useEffect(() => {
+    if (selectedQuestion && !filteredQuestions.find(q => q.id === selectedQuestion)) {
+      if (filteredQuestions.length > 0) {
+        setSelectedQuestion(filteredQuestions[0].id)
+      } else {
+        setSelectedQuestion(null)
+      }
+    }
+  }, [activeTab, filteredQuestions, selectedQuestion])
 
   const handleReadAloud = (text: string) => {
     if ("speechSynthesis" in window) {
