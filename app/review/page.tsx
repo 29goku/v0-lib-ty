@@ -174,19 +174,19 @@ export default function ReviewPage() {
               <TabsList className="grid w-full grid-cols-3 bg-transparent border border-gray-700 p-2">
                 <TabsTrigger
                   value="flagged"
-                  className="data-[state=active]:bg-gray-900/20 data-[state=active]:text-white font-semibold py-3 transition-colors"
+                  className="data-[state=active]:bg-gray-900/20 data-[state=active]:text-white font-semibold py-2 transition-colors"
                 >
                   FLAGGED ({flaggedQuestions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="completed"
-                  className="data-[state=active]:bg-gray-900/20 data-[state=active]:text-white font-semibold py-3 transition-colors"
+                  className="data-[state=active]:bg-gray-900/20 data-[state=active]:text-white font-semibold py-2 transition-colors"
                 >
                   COMPLETED ({completedQuestions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="incorrect"
-                  className="data-[state=active]:bg-gray-900/20 data-[state=active]:text-white font-semibold py-3 transition-colors"
+                  className="data-[state=active]:bg-gray-900/20 data-[state=active]:text-white font-semibold py-2 transition-colors"
                 >
                   INCORRECT ({incorrectQuestions.length})
                 </TabsTrigger>

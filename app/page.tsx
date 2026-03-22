@@ -202,12 +202,12 @@ export default function HomePage() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-10 px-4">
               <Link href="/practice">
-                <Button className="w-full sm:w-auto border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold transition-colors">
+                <Button className="w-full sm:w-auto border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-semibold transition-colors">
                   {t.start} {t.practice}
                 </Button>
               </Link>
               <Link href="/test">
-                <Button className="w-full sm:w-auto border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold transition-colors">
+                <Button className="w-full sm:w-auto border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-semibold transition-colors">
                   {t.test}
                 </Button>
               </Link>
@@ -220,14 +220,14 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-12 relative">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-2 md:mb-4 text-white">
-                Practice Options
+                Learn & Track Progress
               </h2>
               <p className="text-base md:text-lg text-gray-300 px-4">
-                Four ways to prepare for the citizenship test
+                Five ways to prepare for the citizenship test
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
               {/* Practice Card */}
               <Link href="/practice" className="group">
                 <Card className="bg-white/5 h-full hover:bg-gray-900/20 transition-colors">
@@ -351,7 +351,7 @@ export default function HomePage() {
             </p>
 
             <Link href="/practice">
-              <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-10 py-3 md:py-4 text-lg md:text-xl font-semibold transition-colors">
+              <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-10 py-2 md:py-3 text-lg md:text-xl font-semibold transition-colors">
                 {t.start} Now - It's Free
               </Button>
             </Link>
