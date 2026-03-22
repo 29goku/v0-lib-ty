@@ -318,7 +318,7 @@ export default function PracticePage() {
   if (loading) {
     return (
         <div className={`min-h-screen flex items-center justify-center ${theme.bg} ${theme.text}`}>
-          <Card className={`w-full max-w-md ${isDark ? 'border border-gray-700 bg-white/5 backdrop-blur-sm' : 'border border-gray-200 bg-gray-50'}`}>
+          <Card className={`w-full max-w-md ${isDark ? 'bg-white/5 backdrop-blur-sm' : 'bg-gray-50'}`}>
             <CardContent className="p-8 text-center">
               <div className={`animate-spin rounded-full h-16 w-16 border-2 mx-auto mb-8 ${isDark ? 'border-white border-t-transparent' : 'border-gray-700 border-t-transparent'}`}></div>
               <p className={`text-xl font-semibold ${theme.text}`}>{t.loadingQuestions}</p>
@@ -390,7 +390,7 @@ export default function PracticePage() {
 
             {/* MultiSelect Dropdown Filters */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-              <Card className={`${isDark ? 'border border-gray-700 bg-white/5 backdrop-blur-sm' : 'border border-gray-200 bg-gray-50'}`}>
+              <Card className={`${isDark ? 'bg-white/5 backdrop-blur-sm' : 'bg-gray-50'}`}>
                 <CardContent className="p-4 md:p-6">
                   <MultiSelect
                       options={germanStates.map(state => ({
@@ -412,7 +412,7 @@ export default function PracticePage() {
                 </CardContent>
               </Card>
 
-              <Card className={`${isDark ? 'border border-gray-700 bg-white/5 backdrop-blur-sm' : 'border border-gray-200 bg-gray-50'}`}>
+              <Card className={`${isDark ? 'bg-white/5 backdrop-blur-sm' : 'bg-gray-50'}`}>
                 <CardContent className="p-4 md:p-6">
                   <MultiSelect
                       options={categories.map(category => ({
@@ -498,7 +498,7 @@ export default function PracticePage() {
           </div>
 
           <div className="flex justify-center mb-6">
-            <Card className="border border-gray-700 bg-white/5">
+            <Card className="bg-white/5">
               <CardContent className="p-4">
                 <div className="flex items-center justify-center space-x-4">
                   <span className="text-gray-300 font-semibold">Manual Mode</span>
@@ -597,7 +597,7 @@ export default function PracticePage() {
 
           {/* MultiSelect Dropdown Filters */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-            <Card className="border border-gray-700 bg-white/5">
+            <Card className="bg-white/5">
               <CardContent className="p-4 md:p-6">
                 <MultiSelect
                     options={germanStates.map(state => ({
@@ -619,7 +619,7 @@ export default function PracticePage() {
               </CardContent>
             </Card>
 
-            <Card className="border border-gray-700 bg-white/5">
+            <Card className="bg-white/5">
               <CardContent className="p-4 md:p-6">
                 <MultiSelect
                     options={categories.map(category => ({
@@ -656,7 +656,7 @@ export default function PracticePage() {
                   {selectedFlagFilters.length > 0 && (
                       <button
                           onClick={clearAllFilters}
-                          className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20"
+                          className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base bg-transparent text-gray-300 hover:bg-gray-900/20"
                       >
                         🌟 Clear All ({selectedFlagFilters.length})
                       </button>
@@ -666,7 +666,7 @@ export default function PracticePage() {
                           onClick={() => handleFlagFilterSelection("flagged")}
                           className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base ${
                               selectedFlagFilters.includes("flagged")
-                                  ? "bg-red-500 text-white border border-red-500"
+                                  ? "bg-red-500 text-white"
                                   : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
                           }`}
                       >
@@ -679,7 +679,7 @@ export default function PracticePage() {
                           onClick={() => handleFlagFilterSelection("incorrect")}
                           className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base ${
                               selectedFlagFilters.includes("incorrect")
-                                  ? "bg-red-500 text-white border border-red-500"
+                                  ? "bg-red-500 text-white"
                                   : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
                           }`}
                       >
@@ -692,7 +692,7 @@ export default function PracticePage() {
                           onClick={() => handleFlagFilterSelection("correct")}
                           className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base ${
                               selectedFlagFilters.includes("correct")
-                                  ? "bg-green-500 text-white border border-green-500"
+                                  ? "bg-green-500 text-white"
                                   : "bg-black/50 text-green-300 hover:bg-black/80 hover:text-white border-2 border-green-400/30"
                           }`}
                       >
@@ -740,10 +740,10 @@ export default function PracticePage() {
                           className="mt-6"
                       >
                         <Card
-                            className={`w-full border relative overflow-hidden ${
+                            className={`w-full relative overflow-hidden ${
                                 lastAnswer.correct
-                                    ? "border-green-500 bg-white/5"
-                                    : "border-red-500 bg-white/5"
+                                    ? "bg-white/5"
+                                    : "bg-white/5"
                             }`}
                         >
                           <CardContent className="p-8 text-center relative z-10">
@@ -762,7 +762,7 @@ export default function PracticePage() {
 
                 {/* Right: Question Overview */}
                 <div className="w-full">
-                  <Card className="h-full border border-gray-700 bg-white/5">
+                  <Card className="h-full bg-white/5">
                     <CardContent>
                       <div ref={overviewRef} className="hidden lg:grid grid-cols-[repeat(15,minmax(0,1fr))] gap-0.5 mb-0">
                         {filteredQuestions.map((q, index) => {
@@ -780,14 +780,14 @@ export default function PracticePage() {
                                   aria-current={isCurrent ? "true" : undefined}
                                   aria-label={`Question ${originalQuestionNumber}${isFlagged ? ", flagged" : ""}${isAnswered ? ", answered" : ""}${isIncorrect ? ", incorrect" : ""}`}
                                   onClick={() => handleQuestionJump(index)}
-                                  className={`relative aspect-square rounded-lg font-semibold text-sm transition-all border ${
+                                  className={`relative aspect-square rounded-lg font-semibold text-sm transition-all ${
                                       isCurrent
-                                          ? "bg-white text-black border-white"
+                                          ? "bg-white text-black"
                                           : isIncorrect
-                                              ? "bg-red-500 text-white border-red-500 hover:opacity-80"
+                                              ? "bg-red-500 text-white hover:opacity-80"
                                               : isAnswered
-                                                  ? "bg-green-500 text-white border-green-500 hover:opacity-80"
-                                                  : "bg-transparent text-gray-300 border-gray-700 hover:bg-gray-900/20"
+                                                  ? "bg-green-500 text-white hover:opacity-80"
+                                                  : "bg-transparent text-gray-300 hover:bg-gray-900/20"
                                   }`}
                               >
                                 {originalQuestionNumber}
@@ -804,7 +804,7 @@ export default function PracticePage() {
                         <button
                             aria-label="Previous"
                             onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
-                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border-2 border-gray-600"
+                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center hover:bg-gray-600 transition-colors"
                         >
                           ‹
                         </button>
@@ -838,7 +838,7 @@ export default function PracticePage() {
                                       key={`dots-${i}`}
                                       onClick={() => handleQuestionJump(targetIdx)}
                                       aria-label={`Jump near ${target}`}
-                                      className="px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black border-2 border-gray-200"
+                                      className="px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black hover:opacity-80 transition-opacity"
                                   >
                                     …
                                   </button>
@@ -863,14 +863,14 @@ export default function PracticePage() {
                                     onClick={() => handleQuestionJump(idx)}
                                     aria-current={isCurrent ? 'true' : undefined}
                                     aria-label={`Go to question ${originalQuestionNumber}`}
-                                    className={`relative w-10 h-10 rounded-lg font-semibold flex items-center justify-center transition-all border ${
+                                    className={`relative w-10 h-10 rounded-lg font-semibold flex items-center justify-center transition-all ${
                                         isCurrent
-                                            ? 'bg-white text-black border-white'
+                                            ? 'bg-white text-black'
                                             : isIncorrect
-                                                ? 'bg-red-500 text-white border-red-500'
+                                                ? 'bg-red-500 text-white'
                                                 : isAnswered
-                                                    ? 'bg-green-500 text-white border-green-500'
-                                                    : 'bg-transparent text-gray-300 border-gray-700 hover:bg-gray-900/20'
+                                                    ? 'bg-green-500 text-white'
+                                                    : 'bg-transparent text-gray-300 hover:bg-gray-900/20'
                                     }`}
                                 >
                                   <span className="text-sm z-10">{originalQuestionNumber}</span>
@@ -885,7 +885,7 @@ export default function PracticePage() {
                         <button
                             aria-label="Next"
                             onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
-                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border-2 border-gray-600"
+                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center hover:bg-gray-600 transition-colors"
                         >
                           ›
                         </button>
