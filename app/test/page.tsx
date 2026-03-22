@@ -185,7 +185,7 @@ export default function TestPage() {
         )}
 
         <div className="relative z-10 container mx-auto px-4 py-5 md:py-6">
-          <div className="flex items-center justify-between mb-5 md:mb-6">
+          <div className="hidden sm:flex items-center justify-between mb-5 md:mb-6">
             <Link href="/">
               <Button className={`border px-3 py-1.5 text-sm rounded transition-colors font-semibold ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
                 <ArrowLeft className="w-4 h-4 mr-1" />
@@ -198,6 +198,7 @@ export default function TestPage() {
               <ThemeToggle />
             </div>
           </div>
+          <h1 className={`sm:hidden text-2xl font-bold mb-5 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>⚡ Test</h1>
 
           <div className="max-w-2xl mx-auto">
             {/* Main Configuration Card */}

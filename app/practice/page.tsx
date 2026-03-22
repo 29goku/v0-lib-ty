@@ -506,7 +506,7 @@ export default function PracticePage() {
         </div>
 
         <div className="relative z-10 container mx-auto px-4 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
+          <div className="hidden sm:flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
             <Link href="/">
               <Button className={`border transition-all font-semibold text-sm md:text-base px-4 py-2 md:px-6 md:py-3 rounded-xl ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700'}` }>
                 <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
@@ -537,6 +537,16 @@ export default function PracticePage() {
                 <RotateCcw className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                 {t.reset.toUpperCase()}
               </Button>
+            </div>
+          </div>
+
+          {/* Mobile Title */}
+          <div className="sm:hidden text-center mb-6">
+            <h1 className={`text-2xl font-bold ${theme.text}`}>{t.practiceMode.toUpperCase()}</h1>
+            <div className={`text-sm font-semibold ${theme.textSecondary}`}>
+              {selectedStates.length === 1 && selectedState
+                  ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
+                  : `${t.practiceSubtitle} 🚀`}
             </div>
           </div>
 
