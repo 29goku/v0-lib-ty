@@ -311,19 +311,12 @@ export default function PracticePage() {
 
   if (loading) {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-pink-900 text-white flex items-center justify-center relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
-          </div>
-
-          <Card className="w-full max-w-md border-2 border-cyan-400/50 bg-black/80 backdrop-blur-xl relative overflow-hidden shadow-2xl shadow-cyan-500/25">
-            <CardContent className="p-8 text-center relative z-10">
-              <div className="text-8xl mb-6 animate-bounce">🚀</div>
-              <div className="animate-spin rounded-full h-16 w-16 bg-gradient-to-r from-cyan-400 border-4 border-cyan-400 border-t-transparent mx-auto mb-8"></div>
-              <p className="text-cyan-300 text-2xl font-black animate-pulse">{t.loadingQuestions}</p>
-              <p className="text-pink-400 text-lg font-bold mt-4 animate-bounce">{t.getReady}</p>
+        <div className="min-h-screen bg-black text-white flex items-center justify-center">
+          <Card className="w-full max-w-md border border-gray-700 bg-white/5 backdrop-blur-sm">
+            <CardContent className="p-8 text-center">
+              <div className="animate-spin rounded-full h-16 w-16 border-2 border-white border-t-transparent mx-auto mb-8"></div>
+              <p className="text-white text-xl font-semibold">{t.loadingQuestions}</p>
+              <p className="text-gray-300 text-base mt-4">{t.getReady}</p>
             </CardContent>
           </Card>
         </div>
@@ -359,32 +352,24 @@ export default function PracticePage() {
     }
 
     return (
-        <div className="min-h-screen bg-black text-white overflow-hidden relative">
-          <div className="fixed inset-0 z-0">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: "4s" }}></div>
-            <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s", animationDuration: "6s" }}></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "4s", animationDuration: "8s" }}></div>
-          </div>
-
-          <div className="relative z-10 container mx-auto px-4 py-8">
+        <div className="min-h-screen bg-black text-white">
+          <div className="container mx-auto px-4 py-8">
             <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
               <Link href="/">
-                <Button className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white border-2 border-red-400/50 px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all transform hover:scale-110 backdrop-blur-sm font-black text-sm md:text-base touch-manipulation">
+                <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-4 py-2 md:px-6 md:py-3 rounded transition-all font-semibold text-sm md:text-base">
                   <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
-                  {t.back.toUpperCase()}
+                  {t.back}
                 </Button>
               </Link>
 
               <div className="text-center">
-                <h1 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">
-                <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
-                  {t.practiceMode.toUpperCase()}
-                </span>
+                <h1 className="text-2xl md:text-4xl font-semibold mb-1 md:mb-2 text-white">
+                  {t.practiceMode}
                 </h1>
-                <div className="text-sm md:text-lg text-pink-300 font-bold">
+                <div className="text-sm md:text-lg text-gray-300">
                   {selectedState
-                      ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
-                      : `${t.practiceSubtitle} 🚀`}
+                      ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions`
+                      : t.practiceSubtitle}
                 </div>
               </div>
 
@@ -392,17 +377,17 @@ export default function PracticePage() {
                 <LanguageSelector />
                 <Button
                     onClick={resetProgress}
-                    className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-0 text-sm md:text-base touch-manipulation"
+                    className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-4 py-2 md:px-6 md:py-3 rounded transition-all font-semibold text-sm md:text-base"
                 >
                   <RotateCcw className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
-                  {t.reset.toUpperCase()}
+                  {t.reset}
                 </Button>
               </div>
             </div>
 
             {/* MultiSelect Dropdown Filters */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-              <Card className="border-2 border-pink-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-pink-500/25">
+              <Card className="border border-gray-700 bg-white/5 backdrop-blur-sm">
                 <CardContent className="p-4 md:p-6">
                   <MultiSelect
                       options={germanStates.map(state => ({
@@ -418,13 +403,13 @@ export default function PracticePage() {
                       }}
                       placeholder="Select German states..."
                       label={t.selectState}
-                      icon={<MapPin className="w-5 h-5 text-pink-400" />}
+                      icon={<MapPin className="w-5 h-5 text-gray-300" />}
                       className="w-full"
                   />
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
+              <Card className="border border-gray-700 bg-white/5 backdrop-blur-sm">
                 <CardContent className="p-4 md:p-6">
                   <MultiSelect
                       options={categories.map(category => ({
@@ -440,7 +425,7 @@ export default function PracticePage() {
                       }}
                       placeholder="Select categories..."
                       label={selectedStates.length > 0 ? "Categories" : t.filterByCategory}
-                      icon={<Filter className="w-5 h-5 text-purple-400" />}
+                      icon={<Filter className="w-5 h-5 text-gray-300" />}
                       className="w-full"
                   />
                 </CardContent>
@@ -448,16 +433,15 @@ export default function PracticePage() {
             </div>
 
             <div className="flex justify-center">
-              <Card className="w-full max-w-2xl border-2 border-gray-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-gray-500/25">
+              <Card className="w-full max-w-2xl border border-gray-700 bg-white/5 backdrop-blur-sm">
                 <CardContent className="p-8 text-center">
-                  <div className="text-8xl mb-6 animate-bounce">{getEmptyStateEmoji()}</div>
-                  <h2 className="text-3xl font-black text-white mb-4">No Questions Found</h2>
-                  <p className="text-xl text-gray-300 mb-6">{getEmptyStateMessage()}</p>
+                  <h2 className="text-2xl font-semibold text-white mb-4">No Questions Found</h2>
+                  <p className="text-lg text-gray-300 mb-6">{getEmptyStateMessage()}</p>
                   <div className="flex flex-wrap gap-3 justify-center">
                     {(selectedFlagFilters.length > 0 || selectedCategories.length > 0 || selectedStates.length > 0) && (
                         <Button
                             onClick={clearAllFilters}
-                            className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 font-semibold px-6 py-3 rounded-xl transition-all"
                         >
                           🌟 Show All Questions
                         </Button>
@@ -474,9 +458,6 @@ export default function PracticePage() {
   return (
       <div className="min-h-screen bg-black text-white overflow-hidden relative">
         <div className="fixed inset-0 z-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: "4s" }}></div>
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s", animationDuration: "6s" }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "4s", animationDuration: "8s" }}></div>
           <div className="absolute top-20 left-20 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
           <div className="absolute top-40 right-32 w-6 h-6 bg-pink-500 rounded-full animate-pulse"></div>
           <div className="absolute bottom-32 left-32 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
@@ -486,7 +467,7 @@ export default function PracticePage() {
         <div className="relative z-10 container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
             <Link href="/">
-              <Button className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white border-2 border-red-400/50 px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all transform hover:scale-110 backdrop-blur-sm font-black text-sm md:text-base touch-manipulation">
+              <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 px-4 py-2 md:px-6 md:py-3 rounded-xl transition-all font-semibold text-sm md:text-base">
                 <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                 {t.back.toUpperCase()}
               </Button>
@@ -494,7 +475,7 @@ export default function PracticePage() {
 
             <div className="text-center">
               <h1 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">
-              <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
+              <span className="text-white">
                 {t.practiceMode.toUpperCase()}
               </span>
               </h1>
@@ -509,7 +490,7 @@ export default function PracticePage() {
               <LanguageSelector />
               <Button
                   onClick={resetProgress}
-                  className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-0 text-sm md:text-base touch-manipulation"
+                  className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-xl transition-all text-sm md:text-base"
               >
                 <RotateCcw className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                 {t.reset.toUpperCase()}
@@ -518,7 +499,7 @@ export default function PracticePage() {
           </div>
 
           <div className="flex justify-center mb-6">
-            <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-cyan-500/25">
+            <Card className="border border-gray-700 bg-white/5">
               <CardContent className="p-4">
                 <div className="flex items-center justify-center space-x-4">
                   <span className="text-cyan-300 font-bold">Manual Mode</span>
@@ -556,7 +537,7 @@ export default function PracticePage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
-            <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40">
+            <Card className="border border-gray-700 bg-white/5 hover:bg-white/10 transition-all duration-300 group">
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center justify-between">
                   <div>
@@ -573,7 +554,7 @@ export default function PracticePage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-yellow-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-yellow-500/25 hover:shadow-xl hover:shadow-yellow-500/40">
+            <Card className="border border-gray-700 bg-white/5 hover:bg-white/10 transition-all duration-300 group">
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center justify-between">
                   <div>
@@ -585,7 +566,7 @@ export default function PracticePage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40">
+            <Card className="border border-gray-700 bg-white/5 hover:bg-white/10 transition-all duration-300 group">
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center justify-between">
                   <div>
@@ -597,7 +578,7 @@ export default function PracticePage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-green-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40">
+            <Card className="border border-gray-700 bg-white/5 hover:bg-white/10 transition-all duration-300 group">
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center justify-between">
                   <div>
@@ -619,7 +600,7 @@ export default function PracticePage() {
 
           {/* MultiSelect Dropdown Filters */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-            <Card className="border-2 border-pink-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-pink-500/25">
+            <Card className="border border-gray-700 bg-white/5">
               <CardContent className="p-4 md:p-6">
                 <MultiSelect
                     options={germanStates.map(state => ({
@@ -641,7 +622,7 @@ export default function PracticePage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
+            <Card className="border border-gray-700 bg-white/5">
               <CardContent className="p-4 md:p-6">
                 <MultiSelect
                     options={categories.map(category => ({
@@ -666,7 +647,7 @@ export default function PracticePage() {
 
           {/* Flag Filter Section - keeping as buttons */}
           <div className="flex justify-center mb-6 md:mb-8">
-            <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-orange-500/25 w-full max-w-5xl">
+            <Card className="border border-gray-700 bg-white/5 w-full max-w-5xl">
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                   <div className="w-5 h-5 md:w-6 md:h-6 text-orange-400 animate-pulse">🚩</div>
@@ -678,7 +659,7 @@ export default function PracticePage() {
                   {selectedFlagFilters.length > 0 && (
                       <button
                           onClick={clearAllFilters}
-                          className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg shadow-gray-500/50 border-2 border-gray-400"
+                          className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20"
                       >
                         🌟 Clear All ({selectedFlagFilters.length})
                       </button>
@@ -688,7 +669,7 @@ export default function PracticePage() {
                           onClick={() => handleFlagFilterSelection("flagged")}
                           className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
                               selectedFlagFilters.includes("flagged")
-                                  ? "bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
+                                  ? "bg-red-500 text-white border border-red-500"
                                   : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
                           }`}
                       >
@@ -701,7 +682,7 @@ export default function PracticePage() {
                           onClick={() => handleFlagFilterSelection("incorrect")}
                           className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
                               selectedFlagFilters.includes("incorrect")
-                                  ? "bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
+                                  ? "bg-red-500 text-white border border-red-500"
                                   : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
                           }`}
                       >
@@ -714,7 +695,7 @@ export default function PracticePage() {
                           onClick={() => handleFlagFilterSelection("correct")}
                           className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
                               selectedFlagFilters.includes("correct")
-                                  ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/50 border-2 border-green-400"
+                                  ? "bg-green-500 text-white border border-green-500"
                                   : "bg-black/50 text-green-300 hover:bg-black/80 hover:text-white border-2 border-green-400/30"
                           }`}
                       >
@@ -747,7 +728,7 @@ export default function PracticePage() {
                       <div className="flex justify-start mt-4">
                         <Button
                             onClick={nextQuestion}
-                            className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-black px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 font-semibold px-6 py-3 rounded-xl transition-all"
                         >
                           Next Question →
                         </Button>
@@ -762,15 +743,14 @@ export default function PracticePage() {
                           className="mt-6"
                       >
                         <Card
-                            className={`w-full border-4 shadow-2xl backdrop-blur-xl relative overflow-hidden ${
+                            className={`w-full border relative overflow-hidden ${
                                 lastAnswer.correct
-                                    ? "border-green-400 bg-gradient-to-br from-green-900/50 to-emerald-900/50 shadow-green-500/50"
-                                    : "border-red-400 bg-gradient-to-br from-red-900/50 to-pink-900/50 shadow-red-500/50"
+                                    ? "border-green-500 bg-white/5"
+                                    : "border-red-500 bg-white/5"
                             }`}
                         >
-                          <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
                           <CardContent className="p-8 text-center relative z-10">
-                            <div className="text-8xl mb-4 animate-bounce">{lastAnswer.correct ? "🎉" : "💪"}</div>
+                            <div className="text-8xl mb-4">{lastAnswer.correct ? "✓" : "✗"}</div>
                             <div
                                 className={`text-4xl font-black mb-4 animate-pulse ${lastAnswer.correct ? "text-green-400" : "text-red-400"}`}
                             >
@@ -785,7 +765,7 @@ export default function PracticePage() {
 
                 {/* Right: Question Overview */}
                 <div className="w-full">
-                  <Card className="h-full border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 backdrop-blur-sm">
+                  <Card className="h-full border border-gray-700 bg-white/5">
                     <CardContent>
                       <div ref={overviewRef} className="hidden lg:grid grid-cols-[repeat(15,minmax(0,1fr))] gap-0.5 mb-0">
                         {filteredQuestions.map((q, index) => {
@@ -803,14 +783,14 @@ export default function PracticePage() {
                                   aria-current={isCurrent ? "true" : undefined}
                                   aria-label={`Question ${originalQuestionNumber}${isFlagged ? ", flagged" : ""}${isAnswered ? ", answered" : ""}${isIncorrect ? ", incorrect" : ""}`}
                                   onClick={() => handleQuestionJump(index)}
-                                  className={`relative aspect-square rounded-lg font-bold text-sm transition-all transform hover:scale-110 border-4 ${
+                                  className={`relative aspect-square rounded-lg font-semibold text-sm transition-all border ${
                                       isCurrent
-                                          ? "bg-cyan-400 text-black border-cyan-300 shadow-lg shadow-cyan-500/50"
+                                          ? "bg-white text-black border-white"
                                           : isIncorrect
-                                              ? "bg-red-500 text-white border-red-400 hover:bg-red-600"
+                                              ? "bg-red-500 text-white border-red-500 hover:opacity-80"
                                               : isAnswered
-                                                  ? "bg-green-500 text-white border-green-400 hover:bg-green-600"
-                                                  : "bg-gray-600 text-gray-300 border-gray-500 hover:bg-gray-500"
+                                                  ? "bg-green-500 text-white border-green-500 hover:opacity-80"
+                                                  : "bg-transparent text-gray-300 border-gray-700 hover:bg-gray-900/20"
                                   }`}
                               >
                                 {selectedState && (
@@ -889,14 +869,14 @@ export default function PracticePage() {
                                     onClick={() => handleQuestionJump(idx)}
                                     aria-current={isCurrent ? 'true' : undefined}
                                     aria-label={`Go to question ${originalQuestionNumber}`}
-                                    className={`relative w-10 h-10 rounded-lg font-bold flex items-center justify-center transition-all border-1 ${
+                                    className={`relative w-10 h-10 rounded-lg font-semibold flex items-center justify-center transition-all border ${
                                         isCurrent
-                                            ? 'bg-black text-white border-black shadow-lg'
+                                            ? 'bg-white text-black border-white'
                                             : isIncorrect
-                                                ? 'bg-red-500 text-white border-red-400 shadow-sm'
+                                                ? 'bg-red-500 text-white border-red-500'
                                                 : isAnswered
-                                                    ? 'bg-green-500 text-white border-green-400 shadow-sm'
-                                                    : 'bg-white text-black border-gray-200 shadow-sm hover:scale-105'
+                                                    ? 'bg-green-500 text-white border-green-500'
+                                                    : 'bg-transparent text-gray-300 border-gray-700 hover:bg-gray-900/20'
                                     }`}
                                 >
                                   {selectedState && (
@@ -928,7 +908,7 @@ export default function PracticePage() {
 
           {userProgress.badges.length > 0 && (
               <div className="flex justify-center mb-8">
-                <Card className="w-full max-w-md border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/30 to-orange-900/30 backdrop-blur-xl shadow-lg shadow-yellow-500/25">
+                <Card className="w-full max-w-md border border-gray-700 bg-white/5">
                   <CardHeader>
                     <CardTitle className="text-center text-yellow-400 font-black text-2xl animate-pulse">
                       {t.achievements}
@@ -953,7 +933,7 @@ export default function PracticePage() {
 
           <div className="text-center mt-12 space-y-6">
             <div className="text-3xl font-black animate-pulse">
-              <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
+              <span className="text-white">
                 {t.howToPractice.toUpperCase()}
               </span>
             </div>

@@ -167,8 +167,8 @@ export default function StateTestPage() {
   // Invalid state
   if (!isLoading && !stateValid) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white p-4 flex items-center justify-center">
-        <Card className="w-full max-w-md bg-slate-800 border-red-500/20">
+      <div className="min-h-screen bg-black text-white p-4 flex items-center justify-center">
+        <Card className="w-full max-w-md border border-gray-700 bg-white/5">
           <CardHeader>
             <CardTitle className="text-red-400">Invalid State Code</CardTitle>
           </CardHeader>
@@ -178,13 +178,13 @@ export default function StateTestPage() {
             </p>
             <div className="grid grid-cols-4 gap-2 mb-4">
               {GERMAN_STATES.map((s) => (
-                <code key={s.code} className="text-xs bg-slate-700 p-1 rounded text-blue-400">
+                <code key={s.code} className="text-xs bg-gray-700 p-1 rounded text-blue-400">
                   {s.code}
                 </code>
               ))}
             </div>
             <Link href="/test">
-              <Button className="w-full">← Back to Test Selection</Button>
+              <Button className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white">← Back to Test Selection</Button>
             </Link>
           </CardContent>
         </Card>
@@ -195,9 +195,8 @@ export default function StateTestPage() {
   // Loading
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white flex items-center justify-center">
+      <div className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center">
-          <div className="text-4xl mb-4">⏳</div>
           <p className="text-xl">Loading {state?.nameDE} test...</p>
         </div>
       </div>
@@ -207,16 +206,16 @@ export default function StateTestPage() {
   // Configuration screen
   if (showConfig) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white p-4">
+      <div className="min-h-screen bg-black text-white p-4">
         <div className="max-w-2xl mx-auto">
           <Link href="/test" className="inline-flex items-center gap-2 mb-8 text-gray-400 hover:text-white">
             <ArrowLeft size={20} />
             Back
           </Link>
 
-          <Card className="bg-slate-800 border-slate-700">
+          <Card className="border border-gray-700 bg-white/5 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-3xl">
+              <CardTitle className="text-2xl font-semibold">
                 {state?.emoji} {state?.nameDE} Test
               </CardTitle>
               <p className="text-gray-400 mt-2">{state?.description}</p>
@@ -225,19 +224,19 @@ export default function StateTestPage() {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Test Details</h3>
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="bg-slate-700 p-3 rounded">
+                  <div className="border border-gray-700 bg-white/5 p-3 rounded">
                     <div className="text-gray-400 text-sm">Questions</div>
-                    <div className="text-2xl font-bold">33</div>
+                    <div className="text-xl font-semibold">33</div>
                     <div className="text-xs text-gray-500">30 general + 3 state</div>
                   </div>
-                  <div className="bg-slate-700 p-3 rounded">
+                  <div className="border border-gray-700 bg-white/5 p-3 rounded">
                     <div className="text-gray-400 text-sm">Duration</div>
-                    <div className="text-2xl font-bold">60</div>
+                    <div className="text-xl font-semibold">60</div>
                     <div className="text-xs text-gray-500">minutes</div>
                   </div>
-                  <div className="bg-slate-700 p-3 rounded">
+                  <div className="border border-gray-700 bg-white/5 p-3 rounded">
                     <div className="text-gray-400 text-sm">Pass Score</div>
-                    <div className="text-2xl font-bold">17</div>
+                    <div className="text-xl font-semibold">17</div>
                     <div className="text-xs text-gray-500">/33 correct</div>
                   </div>
                 </div>
@@ -245,7 +244,7 @@ export default function StateTestPage() {
 
               <div>
                 <h3 className="text-lg font-semibold mb-4">State Questions</h3>
-                <div className="bg-blue-900/20 border border-blue-500/20 p-4 rounded">
+                <div className="border border-gray-700 bg-white/5 p-4 rounded">
                   <p className="text-sm text-gray-300">
                     This test includes 3 questions specific to {state?.nameDE}. These cover important facts about this Bundesland.
                   </p>
@@ -262,9 +261,9 @@ export default function StateTestPage() {
               <Button
                 onClick={handleStartTest}
                 size="lg"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white"
               >
-                🚀 Start Test
+                Start Test
               </Button>
             </CardContent>
           </Card>
@@ -278,24 +277,24 @@ export default function StateTestPage() {
     const percentage = Math.round((correctCount / testQuestions.length) * 100)
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white p-4">
+      <div className="min-h-screen bg-black text-white p-4">
         <div className="max-w-2xl mx-auto">
-          <Card className={`bg-slate-800 border-2 ${passed ? "border-green-500/30" : "border-red-500/30"}`}>
+          <Card className={`border ${passed ? "border-green-500" : "border-red-500"} bg-white/5 backdrop-blur-sm`}>
             <CardHeader>
-              <CardTitle className="text-3xl text-center">
-                {passed ? "🎉 Test Passed!" : "❌ Test Failed"}
+              <CardTitle className="text-2xl font-semibold text-center">
+                {passed ? "Test Passed!" : "Test Failed"}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="text-center">
-                <div className="text-6xl font-bold mb-2">{correctCount}/33</div>
+                <div className="text-4xl font-semibold mb-2">{correctCount}/33</div>
                 <div className="text-gray-400">{percentage}% correct</div>
-                <div className={`mt-2 text-lg font-semibold ${passed ? "text-green-400" : "text-red-400"}`}>
-                  {passed ? `You need 17/33 to pass. Great job! ✨` : `You need 17/33 to pass. Try again!`}
+                <div className={`mt-2 text-base font-semibold ${passed ? "text-green-400" : "text-red-400"}`}>
+                  {passed ? `You need 17/33 to pass. Great job!` : `You need 17/33 to pass. Try again!`}
                 </div>
               </div>
 
-              <div className="bg-slate-700 p-4 rounded">
+              <div className="border border-gray-700 bg-white/5 p-4 rounded">
                 <h3 className="font-semibold mb-3">Results by Category</h3>
                 <div className="space-y-2 text-sm">
                   {Object.entries(
@@ -323,13 +322,13 @@ export default function StateTestPage() {
 
               <div className="flex gap-3">
                 <Link href="/test" className="flex-1">
-                  <Button variant="outline" className="w-full">
+                  <Button className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white">
                     Choose Another State
                   </Button>
                 </Link>
                 <Button
                   onClick={() => window.location.reload()}
-                  className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600"
+                  className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white"
                 >
                   Try Again
                 </Button>
@@ -358,12 +357,12 @@ export default function StateTestPage() {
   const progressPercent = ((currentQuestionIndex + 1) / testQuestions.length) * 100
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white p-4">
+    <div className="min-h-screen bg-black text-white p-4">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold">
+            <h1 className="text-xl font-semibold">
               {state?.emoji} {state?.nameDE} Test
             </h1>
             <p className="text-gray-400">
@@ -371,8 +370,8 @@ export default function StateTestPage() {
             </p>
           </div>
           <div className="text-right">
-            <div className="text-3xl font-bold text-orange-400">{formatTime(timeRemaining)}</div>
-            <Clock className="inline-block mt-1" size={16} />
+            <div className="text-2xl font-semibold text-white">{formatTime(timeRemaining)}</div>
+            <Clock className="inline-block mt-1 text-gray-400" size={16} />
           </div>
         </div>
 
@@ -402,22 +401,21 @@ export default function StateTestPage() {
           <Button
             onClick={handlePrevious}
             disabled={currentQuestionIndex === 0}
-            variant="outline"
-            className="flex-1"
+            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white disabled:opacity-50"
           >
             ← Previous
           </Button>
           {currentQuestionIndex === testQuestions.length - 1 ? (
             <Button
               onClick={handleSubmitTest}
-              className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600"
+              className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white"
             >
-              Submit Test 🎯
+              Submit Test
             </Button>
           ) : (
             <Button
               onClick={handleNext}
-              className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600"
+              className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white"
             >
               Next →
             </Button>

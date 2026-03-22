@@ -97,114 +97,71 @@ export default function ReviewPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-pink-900 via-purple-900 to-black flex items-center justify-center overflow-hidden relative">
-        {/* Animated background and floating emojis */}
-        <div className="fixed inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-pink-900 via-purple-900 to-black"></div>
-          <div className="absolute top-10 left-10 text-6xl animate-bounce" style={{ animationDelay: '0s' }}>🎯</div>
-          <div className="absolute top-32 right-20 text-5xl animate-bounce" style={{ animationDelay: '1s' }}>🔥</div>
-          <div className="absolute bottom-32 left-32 text-7xl animate-bounce" style={{ animationDelay: '2s' }}>🏆</div>
-          <div className="absolute bottom-20 right-20 text-5xl animate-bounce" style={{ animationDelay: '3s' }}>✨</div>
-        </div>
-        <div className="text-center z-10">
-          <div className="text-8xl mb-8 animate-bounce">🎯</div>
-          <h2 className="text-5xl font-black bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x mb-4">REVIEW MODE</h2>
-          <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden mx-auto">
-            <div className="h-full bg-gradient-to-r from-yellow-400 to-pink-500 rounded-full animate-pulse"></div>
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-4xl font-semibold text-white mb-4">Review Mode</h2>
+          <div className="w-64 h-1 bg-gray-800 rounded overflow-hidden mx-auto">
+            <div className="h-full bg-white rounded animate-pulse"></div>
           </div>
-          <div className="mt-6 text-xl text-pink-200 animate-pulse">Loading your flagged & completed questions...</div>
+          <div className="mt-6 text-lg text-gray-300">Loading your flagged & completed questions...</div>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-900 via-purple-900 to-black text-white overflow-hidden relative">
-      {/* Animated background and floating emojis */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-900 via-purple-900 to-black"></div>
-        <div className="absolute top-10 left-10 text-6xl animate-bounce" style={{ animationDelay: '0s' }}>🎯</div>
-        <div className="absolute top-32 right-20 text-5xl animate-bounce" style={{ animationDelay: '1s' }}>🔥</div>
-        <div className="absolute bottom-32 left-32 text-7xl animate-bounce" style={{ animationDelay: '2s' }}>🏆</div>
-        <div className="absolute bottom-20 right-20 text-5xl animate-bounce" style={{ animationDelay: '3s' }}>✨</div>
-      </div>
-      <div className="container mx-auto px-4 py-8 relative z-10">
-        {/* Header with MAXIMUM ENERGY & mobile friendly */}
+    <div className="min-h-screen bg-black text-white">
+      <div className="container mx-auto px-4 py-8">
+        {/* Header */}
         <div className="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
           <div className="flex items-center space-x-4">
             <Link href="/">
-              <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+              <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 py-2 rounded transition-all">
                 <ArrowLeft className="w-5 h-5 mr-2" />
-                BACK TO HOME
+                Back to Home
               </Button>
             </Link>
-            <h1 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">
-              🎯 REVIEW MODE
+            <h1 className="text-3xl md:text-4xl font-semibold text-white">
+              Review Mode
             </h1>
-            <Badge variant="outline" className="ml-2 text-xs bg-pink-700/30 border-pink-400 text-pink-200 shadow-lg animate-pulse">Review flagged & completed questions</Badge>
+            <Badge variant="outline" className="ml-2 text-xs border-gray-700 text-gray-300">Review flagged & completed questions</Badge>
           </div>
           <Button
             onClick={handleResetProgress}
-            className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white border-0 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 animate-bounce"
+            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 py-2 rounded transition-all"
           >
             <RotateCcw className="w-5 h-5 mr-2" />
-            RESET PROGRESS
+            Reset Progress
           </Button>
         </div>
-        {/* Mobile UI improvements */}
-        <style jsx global>{`
-          @media (max-width: 640px) {
-            .flex.flex-col.items-center.justify-between.mb-8.gap-4 {
-              flex-direction: column;
-              gap: 1rem;
-            }
-          }
-          .animate-gradient-x {
-            background-size: 200% 200%;
-            animation: gradient-x 3s ease infinite;
-          }
-          @keyframes gradient-x {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-        `}</style>
 
-        {/* Stats Overview with INSANE ENERGY */}
+        {/* Stats Overview */}
         <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <Card className="border-2 border-cyan-500/50 bg-gradient-to-br from-cyan-900/30 to-blue-900/30 backdrop-blur-sm hover:scale-105 transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity animate-pulse"></div>
-            <CardContent className="p-6 text-center relative z-10">
-              <div className="text-4xl mb-2 group-hover:animate-bounce">⚡</div>
-              <div className="text-3xl font-black text-cyan-400 mb-1">{userProgress.xp}</div>
-              <div className="text-sm text-gray-300 uppercase tracking-wider font-bold">TOTAL XP</div>
+          <Card className="border border-gray-700 bg-transparent">
+            <CardContent className="p-4 text-center">
+              <div className="text-2xl font-semibold text-white mb-1">{userProgress.xp}</div>
+              <div className="text-sm text-gray-300">Total XP</div>
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-green-500/50 bg-gradient-to-br from-green-900/30 to-emerald-900/30 backdrop-blur-sm hover:scale-105 transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity animate-pulse"></div>
-            <CardContent className="p-6 text-center relative z-10">
-              <div className="text-4xl mb-2 group-hover:animate-bounce">🎯</div>
-              <div className="text-3xl font-black text-green-400 mb-1">{userProgress.correctAnswers}</div>
-              <div className="text-sm text-gray-300 uppercase tracking-wider font-bold">CORRECT</div>
+          <Card className="border border-gray-700 bg-transparent">
+            <CardContent className="p-4 text-center">
+              <div className="text-2xl font-semibold text-green-400 mb-1">{userProgress.correctAnswers}</div>
+              <div className="text-sm text-gray-300">Correct</div>
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-orange-500/50 bg-gradient-to-br from-orange-900/30 to-red-900/30 backdrop-blur-sm hover:scale-105 transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity animate-pulse"></div>
-            <CardContent className="p-6 text-center relative z-10">
-              <div className="text-4xl mb-2 group-hover:animate-bounce">🔥</div>
-              <div className="text-3xl font-black text-orange-400 mb-1">{userProgress.maxStreak}</div>
-              <div className="text-sm text-gray-300 uppercase tracking-wider font-bold">BEST STREAK</div>
+          <Card className="border border-gray-700 bg-transparent">
+            <CardContent className="p-4 text-center">
+              <div className="text-2xl font-semibold text-white mb-1">{userProgress.maxStreak}</div>
+              <div className="text-sm text-gray-300">Best Streak</div>
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-purple-500/50 bg-gradient-to-br from-purple-900/30 to-pink-900/30 backdrop-blur-sm hover:scale-105 transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity animate-pulse"></div>
-            <CardContent className="p-6 text-center relative z-10">
-              <div className="text-4xl mb-2 group-hover:animate-bounce">🏆</div>
-              <div className="text-3xl font-black text-purple-400 mb-1">{userProgress.badges.length}</div>
-              <div className="text-sm text-gray-300 uppercase tracking-wider font-bold">BADGES</div>
+          <Card className="border border-gray-700 bg-transparent">
+            <CardContent className="p-4 text-center">
+              <div className="text-2xl font-semibold text-white mb-1">{userProgress.badges.length}</div>
+              <div className="text-sm text-gray-300">Badges</div>
             </CardContent>
           </Card>
         </div>
@@ -214,34 +171,33 @@ export default function ReviewPage() {
           {/* Question Lists */}
           <div className="lg:col-span-3">
             <Tabs defaultValue="flagged" className="w-full ">
-              <TabsList className="grid w-full h-full grid-cols-3 bg-black/50 border-2 border-purple-500/50 rounded-xl p-2">
+              <TabsList className="grid w-full grid-cols-3 bg-transparent border border-gray-700 p-2">
                 <TabsTrigger
                   value="flagged"
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-red-500 data-[state=active]:to-pink-500 data-[state=active]:text-white font-bold text-lg py-3 rounded-lg transition-all"
+                  className="data-[state=active]:bg-gray-900/20 data-[state=active]:text-white font-semibold py-3 transition-colors"
                 >
-                  🚩 FLAGGED ({flaggedQuestions.length})
+                  FLAGGED ({flaggedQuestions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="completed"
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-500 data-[state=active]:to-emerald-500 data-[state=active]:text-white font-bold text-lg py-3 rounded-lg transition-all"
+                  className="data-[state=active]:bg-gray-900/20 data-[state=active]:text-white font-semibold py-3 transition-colors"
                 >
-                  ✅ COMPLETED ({completedQuestions.length})
+                  COMPLETED ({completedQuestions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="incorrect"
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-500 data-[state=active]:to-red-500 data-[state=active]:text-white font-bold text-lg py-3 rounded-lg transition-all"
+                  className="data-[state=active]:bg-gray-900/20 data-[state=active]:text-white font-semibold py-3 transition-colors"
                 >
-                  ❌ INCORRECT ({incorrectQuestions.length})
+                  INCORRECT ({incorrectQuestions.length})
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="flagged" className="mt-6">
                 <div className="space-y-4 max-h-96 overflow-y-auto">
                   {flaggedQuestions.length === 0 ? (
-                    <Card className="border-2 border-gray-600 bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm">
+                    <Card className="border border-gray-700 bg-transparent">
                       <CardContent className="p-8 text-center text-gray-400">
-                        <div className="text-6xl mb-4">🎯</div>
-                        <p className="text-xl font-bold">No flagged questions yet!</p>
+                        <p className="text-xl font-semibold">No flagged questions yet!</p>
                         <p className="text-sm mt-2">Flag questions during practice to review them here.</p>
                       </CardContent>
                     </Card>
@@ -249,24 +205,24 @@ export default function ReviewPage() {
                     flaggedQuestions.map((question) => (
                       <Card
                         key={question.id}
-                        className={`border-2 cursor-pointer transition-all transform hover:scale-105 ${
+                        className={`border cursor-pointer transition-colors ${
                           selectedQuestion === question.id
-                            ? "border-red-400 bg-gradient-to-r from-red-900/50 to-pink-900/50 shadow-lg shadow-red-500/25"
-                            : "border-red-500/50 bg-gradient-to-r from-red-900/30 to-black/50 hover:border-red-400"
+                            ? "border-red-400 bg-gray-900/20"
+                            : "border-gray-700 bg-transparent hover:bg-gray-900/20"
                         }`}
                         onClick={() => setSelectedQuestion(question.id)}
                       >
                         <CardContent className="p-4">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-3">
-                              <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 px-3 py-1 text-sm font-bold">
-                                {getCategoryEmoji(question.category)} {question.category.toUpperCase()}
+                              <Badge className="border border-gray-700 bg-transparent text-gray-300 px-3 py-1 text-sm">
+                                {question.category.toUpperCase()}
                               </Badge>
-                              <span className="font-bold text-white">Question {question.id}</span>
+                              <span className="font-semibold text-white">Question {question.id}</span>
                             </div>
                             <Flag className="w-5 h-5 text-red-400" />
                           </div>
-                          <p className="text-white mt-2 text-sm line-clamp-2">{question.question}</p>
+                          <p className="text-gray-300 mt-2 text-sm line-clamp-2">{question.question}</p>
                         </CardContent>
                       </Card>
                     ))
@@ -277,10 +233,9 @@ export default function ReviewPage() {
               <TabsContent value="completed" className="mt-6">
                 <div className="space-y-4 max-h-96 overflow-y-auto">
                   {completedQuestions.length === 0 ? (
-                    <Card className="border-2 border-gray-600 bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm">
+                    <Card className="border border-gray-700 bg-transparent">
                       <CardContent className="p-8 text-center text-gray-400">
-                        <div className="text-6xl mb-4">🎯</div>
-                        <p className="text-xl font-bold">No completed questions yet!</p>
+                        <p className="text-xl font-semibold">No completed questions yet!</p>
                         <p className="text-sm mt-2">Complete questions during practice to see them here.</p>
                       </CardContent>
                     </Card>
@@ -288,24 +243,24 @@ export default function ReviewPage() {
                     completedQuestions.map((question) => (
                       <Card
                         key={question.id}
-                        className={`border-2 cursor-pointer transition-all transform hover:scale-105 ${
+                        className={`border cursor-pointer transition-colors ${
                           selectedQuestion === question.id
-                            ? "border-green-400 bg-gradient-to-r from-green-900/50 to-emerald-900/50 shadow-lg shadow-green-500/25"
-                            : "border-green-500/50 bg-gradient-to-r from-green-900/30 to-black/50 hover:border-green-400"
+                            ? "border-green-400 bg-gray-900/20"
+                            : "border-gray-700 bg-transparent hover:bg-gray-900/20"
                         }`}
                         onClick={() => setSelectedQuestion(question.id)}
                       >
                         <CardContent className="p-4">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-3">
-                              <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 px-3 py-1 text-sm font-bold">
-                                {getCategoryEmoji(question.category)} {question.category.toUpperCase()}
+                              <Badge className="border border-gray-700 bg-transparent text-gray-300 px-3 py-1 text-sm">
+                                {question.category.toUpperCase()}
                               </Badge>
-                              <span className="font-bold text-white">Question {question.id}</span>
+                              <span className="font-semibold text-white">Question {question.id}</span>
                             </div>
                             <CheckCircle className="w-5 h-5 text-green-400" />
                           </div>
-                          <p className="text-white mt-2 text-sm line-clamp-2">{question.question}</p>
+                          <p className="text-gray-300 mt-2 text-sm line-clamp-2">{question.question}</p>
                         </CardContent>
                       </Card>
                     ))
@@ -316,10 +271,9 @@ export default function ReviewPage() {
               <TabsContent value="incorrect" className="mt-6">
                 <div className="space-y-4 max-h-96 overflow-y-auto">
                   {incorrectQuestions.length === 0 ? (
-                    <Card className="border-2 border-gray-600 bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm">
+                    <Card className="border border-gray-700 bg-transparent">
                       <CardContent className="p-8 text-center text-gray-400">
-                        <div className="text-6xl mb-4">🎯</div>
-                        <p className="text-xl font-bold">No incorrect answers yet!</p>
+                        <p className="text-xl font-semibold">No incorrect answers yet!</p>
                         <p className="text-sm mt-2">Questions you answer incorrectly will appear here.</p>
                       </CardContent>
                     </Card>
@@ -327,24 +281,24 @@ export default function ReviewPage() {
                     incorrectQuestions.map((question) => (
                       <Card
                         key={question.id}
-                        className={`border-2 cursor-pointer transition-all transform hover:scale-105 ${
+                        className={`border cursor-pointer transition-colors ${
                           selectedQuestion === question.id
-                            ? "border-orange-400 bg-gradient-to-r from-orange-900/50 to-red-900/50 shadow-lg shadow-orange-500/25"
-                            : "border-orange-500/50 bg-gradient-to-r from-orange-900/30 to-black/50 hover:border-orange-400"
+                            ? "border-red-400 bg-gray-900/20"
+                            : "border-gray-700 bg-transparent hover:bg-gray-900/20"
                         }`}
                         onClick={() => setSelectedQuestion(question.id)}
                       >
                         <CardContent className="p-4">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-3">
-                              <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 px-3 py-1 text-sm font-bold">
-                                {getCategoryEmoji(question.category)} {question.category.toUpperCase()}
+                              <Badge className="border border-gray-700 bg-transparent text-gray-300 px-3 py-1 text-sm">
+                                {question.category.toUpperCase()}
                               </Badge>
-                              <span className="font-bold text-white">Question {question.id}</span>
+                              <span className="font-semibold text-white">Question {question.id}</span>
                             </div>
-                            <span className="text-2xl">❌</span>
+                            <AlertTriangle className="w-5 h-5 text-red-400" />
                           </div>
-                          <p className="text-white mt-2 text-sm line-clamp-2">{question.question}</p>
+                          <p className="text-gray-300 mt-2 text-sm line-clamp-2">{question.question}</p>
                         </CardContent>
                       </Card>
                     ))
@@ -367,12 +321,9 @@ export default function ReviewPage() {
                 />
               </div>
             ) : (
-              <Card className="border-2 border-gray-600 bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm">
+              <Card className="border border-gray-700 bg-transparent">
                 <CardContent className="p-12 text-center text-gray-400">
-                  <div className="text-center mb-8">
-                    <div className="text-8xl">🎯</div>
-                  </div>
-                  <h3 className="text-3xl font-black mb-4 text-white">SELECT A QUESTION</h3>
+                  <h3 className="text-3xl font-semibold mb-4 text-white">SELECT A QUESTION</h3>
                   <p className="text-xl">Choose a question from the lists to review it here with full explanations!</p>
                 </CardContent>
               </Card>
@@ -382,13 +333,13 @@ export default function ReviewPage() {
 
         {/* Reset Confirmation Dialog */}
         <Dialog open={showResetDialog} onOpenChange={setShowResetDialog}>
-          <DialogContent className="bg-gradient-to-br from-red-900/95 to-pink-900/95 border-2 border-red-400/50 text-white backdrop-blur-xl">
+          <DialogContent className="bg-black border border-gray-700 text-white">
             <DialogHeader>
-              <DialogTitle className="flex items-center gap-3 text-2xl font-black text-red-300">
-                <AlertTriangle className="w-8 h-8 text-yellow-400 animate-pulse" />
+              <DialogTitle className="flex items-center gap-3 text-2xl font-semibold text-white">
+                <AlertTriangle className="w-8 h-8 text-red-400" />
                 Reset All Progress?
               </DialogTitle>
-              <DialogDescription className="text-gray-200 text-lg mt-4">
+              <DialogDescription className="text-gray-300 text-lg mt-4">
                 This will permanently delete:
                 <ul className="list-disc list-inside mt-3 space-y-2 text-left">
                   <li>All your XP and achievements</li>
@@ -397,19 +348,19 @@ export default function ReviewPage() {
                   <li>Flagged questions</li>
                   <li>All answered questions history</li>
                 </ul>
-                <p className="mt-4 font-bold text-yellow-300">⚠️ This action cannot be undone!</p>
+                <p className="mt-4 font-semibold text-red-400">This action cannot be undone!</p>
               </DialogDescription>
             </DialogHeader>
             <DialogFooter className="gap-3 sm:gap-2 mt-6">
               <Button
                 onClick={() => setShowResetDialog(false)}
-                className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all"
+                className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 py-3 transition-colors"
               >
                 Cancel
               </Button>
               <Button
                 onClick={confirmReset}
-                className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all"
+                className="border border-red-400 bg-transparent hover:bg-red-400/20 text-red-400 hover:text-red-300 px-6 py-3 transition-colors"
               >
                 Yes, Reset Everything
               </Button>

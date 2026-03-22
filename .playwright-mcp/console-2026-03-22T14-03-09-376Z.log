@@ -1,0 +1,12 @@
+[     816ms] [WARNING] For security reasons, Hotjar only works over HTTPS. Learn more: https://help.hotjar.com/hc/en-us/articles/115011624047 @ https://static.hotjar.com/c/hotjar-6666003.js?sv=6:2
+[    4140ms] [ERROR] [okta-signin-widget] "afterRender" event handler error: TypeError: Cannot read properties of null (reading 'style')
+    at e.<anonymous> (https://partner-staging.identity.zalando.com/oauth2/aus48y9jsm0vpi4QT0x7/v1/authorize?client_id=0oa4cuuej749QBYbN0x7&response_mode=fragment&redirect_uri=http%3A%2F%2Flocalhost%3A3000&response_type=code&state=supplier&scope=openid%20offline_access&code_challenge=E4tXvKRfuFz5kJNf5UOaRQHtqocW5LX9sQYKEJCTNGI&code_challenge_method=S256:778:49)
+    at e.t (https://op2static2.oktacdn.com/assets/js/sdk/okta-signin-widget/6.9.0/js/okta-sign-in.min.js:92:691607)
+    at N (https://op2static2.oktacdn.com/assets/js/sdk/okta-signin-widget/6.9.0/js/okta-sign-in.min.js:17:3167)
+    at P (https://op2static2.oktacdn.com/assets/js/sdk/okta-signin-widget/6.9.0/js/okta-sign-in.min.js:17:2942)
+    at e (https://op2static2.oktacdn.com/assets/js/sdk/okta-signin-widget/6.9.0/js/okta-sign-in.min.js:17:753)
+    at k.trigger (https://op2static2.oktacdn.com/assets/js/sdk/okta-signin-widget/6.9.0/js/okta-sign-in.min.js:17:2818)
+    at e.value (https://op2static2.oktacdn.com/assets/js/sdk/okta-signin-widget/6.9.0/js/okta-sign-in.min.js:92:692274)
+    at N (https://op2static2.oktacdn.com/assets/js/sdk/okta-signin-widget/6.9.0/js/okta-sign-in.min.js:17:3225)
+    at P (https://op2static2.oktacdn.com/assets/js/sdk/okta-signin-widget/6.9.0/js/okta-sign-in.min.js:17:2952)
+    at e (https://op2static2.oktacdn.com/assets/js/sdk/okta-signin-widget/6.9.0/js/okta-sign-in.min.js:17:753) @ https://op2static2.oktacdn.com/assets/js/sdk/okta-signin-widget/6.9.0/js/okta-sign-in.min.js:91
