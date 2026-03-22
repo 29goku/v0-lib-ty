@@ -501,7 +501,7 @@ export default function PracticePage() {
 
   return (
       <div className={`min-h-screen overflow-hidden relative ${theme.bg} ${theme.text}`}>
-        <StickyMobileHeader title={t.practiceMode.toUpperCase()} />
+        <StickyMobileHeader title={t.practiceMode.toUpperCase()} showBackButton={true} backHref="/" />
         <div className="fixed inset-0 z-0">
         </div>
 

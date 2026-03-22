@@ -67,7 +67,7 @@ export default function StatsPage() {
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
-      <StickyMobileHeader title="Stats" />
+      <StickyMobileHeader title="Stats" showBackButton={true} backHref="/" />
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">

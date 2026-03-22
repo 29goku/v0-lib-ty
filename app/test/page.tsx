@@ -407,7 +407,7 @@ export default function TestPage() {
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-gradient-to-br from-black via-gray-950 to-black text-white' : 'bg-white text-gray-900'}`}>
-      <StickyMobileHeader title={`Q ${currentQuestionIndex + 1}/${selectedQuestionCount[0]}`} showLanguage={false} />
+      <StickyMobileHeader title={`Q ${currentQuestionIndex + 1}/${selectedQuestionCount[0]}`} showLanguage={true} showBackButton={true} backHref="/" />
       <div className="w-full px-4 md:px-8 py-4 md:py-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6 md:mb-8">

@@ -54,7 +54,7 @@ export default function SettingsPage() {
 
   return (
     <div className={`min-h-screen ${theme.bg} ${theme.text}`}>
-      <StickyMobileHeader title="Settings" />
+      <StickyMobileHeader title="Settings" showBackButton={true} backHref="/" />
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
