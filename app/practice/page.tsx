@@ -742,6 +742,8 @@ export default function PracticePage() {
                       isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
                       isTranslated={showTranslation}
                       onTranslate={() => setShowTranslation(!showTranslation)}
+                      totalQuestions={filteredQuestions.length}
+                      onJumpToQuestion={(index) => setCurrentIndex(index)}
                   />
 
                   {showAnswer && (

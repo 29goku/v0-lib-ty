@@ -41,6 +41,8 @@ interface SwipeCardProps {
   isTranslated?: boolean
   onTranslate?: () => void
   externalSelectedAnswer?: number | null
+  totalQuestions?: number
+  onJumpToQuestion?: (questionNumber: number) => void
 }
 
 export default function SwipeCard({
@@ -53,11 +55,14 @@ export default function SwipeCard({
   isTranslated,
   onTranslate,
   externalSelectedAnswer = undefined,
+  totalQuestions,
+  onJumpToQuestion,
 }: SwipeCardProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
   const [internalShowTranslation, setInternalShowTranslation] = useState(false)
   const [imageError, setImageError] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
+  const [jumpInput, setJumpInput] = useState("")
 
   const { language } = useStore()
   const { isDark } = useTheme()
@@ -260,6 +265,15 @@ export default function SwipeCard({
     setImageError(true)
   }
 
+  const handleJumpToQuestion = (e: React.FormEvent) => {
+    e.preventDefault()
+    const num = parseInt(jumpInput, 10)
+    if (totalQuestions && num > 0 && num <= totalQuestions && onJumpToQuestion) {
+      onJumpToQuestion(num - 1) // Convert to 0-indexed
+      setJumpInput("")
+    }
+  }
+
   return (
     <div className="relative w-full max-w-2xl mx-auto">
       {/* Minimalist swipe indicators */}
@@ -326,10 +340,32 @@ export default function SwipeCard({
           }`}
         >
           <CardHeader className="relative z-10 pb-4">
-            <div className="flex justify-between items-start">
-              <CardTitle className={`text-xl md:text-2xl font-semibold leading-tight flex-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                {t.question} {question.id}
-              </CardTitle>
+            <div className="flex justify-between items-start gap-3 flex-wrap">
+              <div className="flex-1 flex items-end gap-2">
+                <CardTitle className={`text-xl md:text-2xl font-semibold leading-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {t.question} {question.id}
+                </CardTitle>
+                {totalQuestions && (
+                  <form onSubmit={handleJumpToQuestion} className="flex gap-1 mb-1">
+                    <input
+                      type="number"
+                      min="1"
+                      max={totalQuestions}
+                      value={jumpInput}
+                      onChange={(e) => setJumpInput(e.target.value)}
+                      placeholder="Go to"
+                      className={`w-14 px-2 py-1 text-xs rounded border text-center ${isDark ? 'bg-gray-800 border-gray-700 text-white' : 'bg-white border-gray-300 text-gray-900'}`}
+                    />
+                    <Button
+                      type="submit"
+                      disabled={!jumpInput}
+                      className={`px-2 py-1 text-xs border rounded font-medium transition-colors ${isDark ? 'bg-transparent hover:bg-blue-500/20 text-blue-300 border-blue-700 hover:border-blue-500' : 'bg-transparent hover:bg-blue-100 text-blue-600 border-blue-300 hover:border-blue-500'}`}
+                    >
+                      Go
+                    </Button>
+                  </form>
+                )}
+              </div>
               <div className="flex gap-1 ml-4">
                 <Button
                   onClick={translateQuestion}

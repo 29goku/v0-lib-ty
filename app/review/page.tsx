@@ -81,6 +81,12 @@ export default function ReviewPage() {
   const incorrectQuestions = questions.filter((q) => userProgress.incorrectAnswers?.includes(q.id) || false)
   const selectedQuestionData = questions.find((q) => q.id === selectedQuestion)
 
+  // Get filtered questions based on active tab for jump navigation
+  const filteredQuestions =
+    activeTab === 'flagged' ? flaggedQuestions :
+    activeTab === 'completed' ? completedQuestions :
+    activeTab === 'incorrect' ? incorrectQuestions : []
+
   // Auto-select first question when tab changes
   useEffect(() => {
     if (activeTab === 'flagged' && flaggedQuestions.length > 0) {
@@ -353,6 +359,8 @@ export default function ReviewPage() {
                   onFlag={() => handleToggleFlag(selectedQuestionData.id)}
                   isFlagged={userProgress.flaggedQuestions?.includes(selectedQuestionData.id) || false}
                   showAnswer={true} // Always show answers in review mode
+                  totalQuestions={filteredQuestions.length}
+                  onJumpToQuestion={(index) => setSelectedQuestion(filteredQuestions[index]?.id)}
                 />
               </div>
             ) : (

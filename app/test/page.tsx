@@ -457,6 +457,8 @@ export default function TestPage() {
               onAnswerSelect={handleAnswerSelect}
               isTranslated={isTranslated}
               onTranslate={() => setIsTranslated(!isTranslated)}
+              totalQuestions={testQuestions.length}
+              onJumpToQuestion={setCurrentQuestionIndex}
             />
           </div>
 
