@@ -164,66 +164,144 @@ export default function TestPage() {
   }
 
   if (showConfig) {
+    const timePerQuestion = Math.round(3600 / selectedQuestionCount[0]);
+    const requiredCorrect = Math.ceil(selectedQuestionCount[0] * 0.5);
+
     return (
-      <div className="min-h-screen bg-black text-white">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between mb-6">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black text-white relative overflow-hidden">
+        {/* Animated background gradient */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: "2s" }}></div>
+        </div>
+
+        <div className="relative z-10 container mx-auto px-4 py-8">
+          <div className="flex items-center justify-between mb-12">
             <Link href="/">
-              <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white">
+              <Button className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white px-4 py-2 rounded transition-colors">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back
               </Button>
             </Link>
-            <h1 className="text-2xl font-semibold">Test Configuration</h1>
-            <div></div>
+            <h1 className="text-4xl md:text-5xl font-bold">⚡ Test Configuration</h1>
+            <div className="w-16"></div>
           </div>
 
-          <div className="max-w-2xl mx-auto">
-            <Card className="border border-gray-700 bg-white/5">
-              <CardHeader>
-                <CardTitle className="text-center text-xl font-semibold text-white">Configure Your Test</CardTitle>
-                <p className="text-center text-gray-300">Choose how many questions you want to answer in your test</p>
-              </CardHeader>
-              <CardContent className="space-y-8">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <label className="text-lg font-semibold text-white">Number of Questions:</label>
-                    <div className="text-2xl font-semibold text-white">{selectedQuestionCount[0]}</div>
-                  </div>
+          <div className="max-w-3xl mx-auto">
+            {/* Main Configuration Card */}
+            <div className="bg-gradient-to-br from-gray-900/50 to-black border border-gray-700 rounded-2xl p-8 md:p-10 mb-8 backdrop-blur-md">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Customize Your Test</h2>
+              <p className="text-gray-400 mb-8">Choose the difficulty level and question count</p>
 
-                  <Slider
-                    value={selectedQuestionCount}
-                    onValueChange={setSelectedQuestionCount}
-                    max={questions.length}
-                    min={10}
-                    step={1}
-                    className="w-full"
-                  />
-
-                  <div className="flex justify-between text-sm text-gray-400">
-                    <span>Min: 10</span>
-                    <span>Default: 33</span>
-                    <span>Max: {questions.length}</span>
-                  </div>
+              {/* Quick Preset Buttons */}
+              <div className="mb-8">
+                <p className="text-sm font-semibold text-gray-300 mb-3">Quick Presets:</p>
+                <div className="grid grid-cols-3 gap-3">
+                  {[
+                    { label: "Short", value: 10, emoji: "⚡" },
+                    { label: "Standard", value: 33, emoji: "🎯" },
+                    { label: "Full", value: 60, emoji: "💪" }
+                  ].map((preset) => (
+                    <button
+                      key={preset.value}
+                      onClick={() => setSelectedQuestionCount([preset.value])}
+                      className={`p-4 rounded-lg border-2 font-semibold transition-all ${
+                        selectedQuestionCount[0] === preset.value
+                          ? "border-blue-500 bg-blue-500/10 text-blue-400"
+                          : "border-gray-700 bg-gray-900/30 text-gray-300 hover:border-gray-600 hover:bg-gray-900/50"
+                      }`}
+                    >
+                      <div className="text-xl mb-1">{preset.emoji}</div>
+                      <div className="text-xs">{preset.label}</div>
+                      <div className="text-sm font-bold">{preset.value}Q</div>
+                    </button>
+                  ))}
                 </div>
+              </div>
 
-                <div className="border border-gray-700 bg-white/5 p-6">
-                  <h3 className="text-lg font-semibold text-white mb-3">Test Information</h3>
-                  <div className="space-y-2 text-gray-300">
-                    <p>Time Limit: 60 minutes</p>
-                    <p>Pass Rate: 50% ({Math.ceil(selectedQuestionCount[0] * 0.5)} correct answers needed)</p>
-                    <p>Questions: {selectedQuestionCount[0]} randomly selected</p>
-                  </div>
+              {/* Custom Slider */}
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-4">
+                  <label className="text-lg font-semibold text-white">Custom: {selectedQuestionCount[0]} Questions</label>
+                  <span className="text-2xl font-bold text-blue-400">{selectedQuestionCount[0]}</span>
                 </div>
+                <Slider
+                  value={selectedQuestionCount}
+                  onValueChange={setSelectedQuestionCount}
+                  max={questions.length}
+                  min={10}
+                  step={5}
+                  className="w-full"
+                />
+                <div className="flex justify-between text-xs text-gray-500 mt-2">
+                  <span>10 Questions</span>
+                  <span>{Math.round(questions.length / 2)}</span>
+                  <span>{questions.length} Questions</span>
+                </div>
+              </div>
+            </div>
 
-                <Button
-                  onClick={handleStartTest}
-                  className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-4 text-lg"
-                >
-                  Start Test with {selectedQuestionCount[0]} Questions
-                </Button>
-              </CardContent>
-            </Card>
+            {/* Test Info Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-4 backdrop-blur-md">
+                <div className="text-gray-400 text-xs font-semibold mb-1">Questions</div>
+                <div className="text-2xl font-bold text-blue-400">{selectedQuestionCount[0]}</div>
+                <div className="text-xs text-gray-500 mt-1">questions</div>
+              </div>
+
+              <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-4 backdrop-blur-md">
+                <div className="text-gray-400 text-xs font-semibold mb-1">Time Limit</div>
+                <div className="text-2xl font-bold text-orange-400">60m</div>
+                <div className="text-xs text-gray-500 mt-1">{timePerQuestion}s per Q</div>
+              </div>
+
+              <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-4 backdrop-blur-md">
+                <div className="text-gray-400 text-xs font-semibold mb-1">Pass Threshold</div>
+                <div className="text-2xl font-bold text-green-400">50%</div>
+                <div className="text-xs text-gray-500 mt-1">{requiredCorrect} correct</div>
+              </div>
+
+              <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-4 backdrop-blur-md">
+                <div className="text-gray-400 text-xs font-semibold mb-1">Difficulty</div>
+                <div className="text-2xl font-bold text-purple-400">📊</div>
+                <div className="text-xs text-gray-500 mt-1">adaptive</div>
+              </div>
+            </div>
+
+            {/* Test Details */}
+            <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-700/30 rounded-xl p-6 mb-8 backdrop-blur-md">
+              <h3 className="text-lg font-bold text-white mb-4">📋 Test Details</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">Total Questions:</span>
+                  <span className="text-white font-semibold">{selectedQuestionCount[0]} randomly selected</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">Time Allowed:</span>
+                  <span className="text-white font-semibold">60 minutes (~{timePerQuestion}s per question)</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">Pass Requirement:</span>
+                  <span className="text-white font-semibold">≥{requiredCorrect} correct ({Math.round((requiredCorrect / selectedQuestionCount[0]) * 100)}%)</span>
+                </div>
+                <div className="flex justify-between items-center pt-3 border-t border-gray-700">
+                  <span className="text-gray-300">Your Target:</span>
+                  <span className={`font-bold text-lg ${selectedQuestionCount[0] >= 33 ? 'text-green-400' : 'text-yellow-400'}`}>
+                    {selectedQuestionCount[0] >= 33 ? '✅ Official' : '⚡ Practice'}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Start Button */}
+            <button
+              onClick={handleStartTest}
+              className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-4 md:py-5 text-lg md:text-xl rounded-xl transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-blue-500/50 hover:shadow-2xl"
+            >
+              🚀 Start Test with {selectedQuestionCount[0]} Questions
+            </button>
+
+            <p className="text-center text-gray-400 text-sm mt-4">You can pause and resume your test anytime</p>
           </div>
         </div>
       </div>

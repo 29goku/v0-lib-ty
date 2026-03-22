@@ -180,7 +180,7 @@ export default function HomePage() {
               </h1>
 
               {/* Subtitle */}
-              <div className={`text-lg sm:text-xl md:text-2xl font-normal mb-4 md:mb-6 leading-relaxed px-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+              <div className={`text-lg sm:text-xl md:text-2xl font-normal mb-4 md:mb-6 leading-relaxed px-4 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
                 {t.heroSubtitle}
               </div>
             </div>
@@ -189,7 +189,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-6 mb-8 md:mb-10 px-4">
               <div className="text-center">
                 <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.totalQuestions}</div>
-                <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>{t.totalQuestions}</div>
+                <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.totalQuestions}</div>
               </div>
               <div className="text-center">
                 <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>33</div>
@@ -231,7 +231,7 @@ export default function HomePage() {
               <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-2 md:mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Learn & Track Progress
               </h2>
-              <p className={`text-base md:text-lg px-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+              <p className={`text-base md:text-lg px-4 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
                 Five ways to prepare for the citizenship test
               </p>
             </div>
@@ -338,7 +338,7 @@ export default function HomePage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-6">
                 <div className="text-center">
                   <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.xp}</div>
-                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>{t.xp}</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.xp}</div>
                 </div>
                 <div className="text-center">
                   <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.streak}</div>
