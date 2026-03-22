@@ -186,11 +186,41 @@ export default function PracticePage() {
 
   const currentQuestion = filteredQuestions[currentIndex]
 
-  // Reset category when state changes
+  // Load state questions when state is selected
   useEffect(() => {
-    setSelectedCategory(null)
-    setCurrentIndex(0)
-  }, [selectedState, setSelectedCategory])
+    const loadStateQuestionsForFilter = async () => {
+      if (selectedStates.length > 0) {
+        try {
+          const stateResponse = await fetch("/data/state-questions.json")
+          if (stateResponse.ok) {
+            const stateData = await stateResponse.json()
+            // If multiple states selected, combine them; if one, use that one
+            if (selectedStates.length === 1) {
+              setStateQuestions(stateData[selectedStates[0]] || [])
+            } else {
+              // Combine questions from multiple states
+              const combined: any[] = []
+              selectedStates.forEach(stateId => {
+                if (stateData[stateId]) {
+                  combined.push(...stateData[stateId])
+                }
+              })
+              setStateQuestions(combined)
+            }
+          }
+        } catch (error) {
+          console.error("Failed to load state questions:", error)
+          setStateQuestions([])
+        }
+      } else {
+        setStateQuestions([])
+      }
+      setSelectedCategory(null)
+      setCurrentIndex(0)
+    }
+
+    loadStateQuestionsForFilter()
+  }, [selectedStates, setSelectedCategory, setStateQuestions])
 
   useEffect(() => {
     if (!overviewRef.current) return
