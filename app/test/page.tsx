@@ -182,28 +182,28 @@ export default function TestPage() {
           </div>
         )}
 
-        <div className="relative z-10 container mx-auto px-4 py-8">
-          <div className="flex items-center justify-between mb-12">
+        <div className="relative z-10 container mx-auto px-3 sm:px-4 py-4 sm:py-6 md:py-8">
+          <div className="flex items-center justify-between mb-6 sm:mb-8 md:mb-12">
             <Link href="/">
-              <Button className={`border px-4 py-2 rounded transition-colors font-semibold ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
-                <ArrowLeft className="w-4 h-4 mr-2" />
+              <Button className={`border px-2 sm:px-4 py-1.5 sm:py-2 rounded transition-colors font-semibold text-xs sm:text-sm ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
+                <ArrowLeft className="w-3 sm:w-4 h-3 sm:h-4 mr-1 sm:mr-2" />
                 Back
               </Button>
             </Link>
-            <h1 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>⚡ Test Configuration</h1>
+            <h1 className={`text-xl sm:text-3xl md:text-5xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>⚡ Test</h1>
             <ThemeToggle />
           </div>
 
           <div className="max-w-3xl mx-auto">
             {/* Main Configuration Card */}
-            <div className={`border rounded-2xl p-8 md:p-10 mb-8 backdrop-blur-md ${isDark ? 'bg-gradient-to-br from-gray-900/50 to-black border-gray-700' : 'bg-gray-50 border-gray-200'}`}>
-              <h2 className={`text-2xl md:text-3xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Customize Your Test</h2>
-              <p className={`mb-8 ${isDark ? 'text-gray-400' : 'text-gray-700'}`}>Choose the difficulty level and question count</p>
+            <div className={`border rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 mb-4 sm:mb-6 md:mb-8 backdrop-blur-md ${isDark ? 'bg-gradient-to-br from-gray-900/50 to-black border-gray-700' : 'bg-gray-50 border-gray-200'}`}>
+              <h2 className={`text-lg sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Customize Your Test</h2>
+              <p className={`mb-4 sm:mb-6 md:mb-8 text-sm sm:text-base ${isDark ? 'text-gray-400' : 'text-gray-700'}`}>Choose the difficulty level and question count</p>
 
               {/* Quick Preset Buttons */}
-              <div className="mb-8">
-                <p className={`text-sm font-semibold mb-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Quick Presets:</p>
-                <div className="grid grid-cols-3 gap-3">
+              <div className="mb-4 sm:mb-6 md:mb-8">
+                <p className={`text-xs sm:text-sm font-semibold mb-2 sm:mb-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Quick Presets:</p>
+                <div className="grid grid-cols-3 gap-2 sm:gap-3">
                   {[
                     { label: "Short", value: 10, emoji: "⚡" },
                     { label: "Standard", value: 33, emoji: "🎯" },
@@ -212,25 +212,25 @@ export default function TestPage() {
                     <button
                       key={preset.value}
                       onClick={() => setSelectedQuestionCount([preset.value])}
-                      className={`p-4 rounded-lg border-2 font-semibold transition-all ${
+                      className={`p-2 sm:p-3 md:p-4 rounded-lg border-2 font-semibold transition-all text-xs sm:text-sm md:text-base ${
                         selectedQuestionCount[0] === preset.value
                           ? isDark ? "border-blue-500 bg-blue-500/10 text-blue-400" : "border-blue-600 bg-blue-50 text-blue-700"
                           : isDark ? "border-gray-700 bg-gray-900/30 text-gray-300 hover:border-gray-600 hover:bg-gray-900/50" : "border-gray-300 bg-gray-100 text-gray-700 hover:border-gray-400 hover:bg-gray-200"
                       }`}
                     >
-                      <div className="text-xl mb-1">{preset.emoji}</div>
+                      <div className="text-lg sm:text-xl mb-0.5 sm:mb-1">{preset.emoji}</div>
                       <div className="text-xs">{preset.label}</div>
-                      <div className="text-sm font-bold">{preset.value}Q</div>
+                      <div className="text-xs sm:text-sm font-bold">{preset.value}Q</div>
                     </button>
                   ))}
                 </div>
               </div>
 
               {/* Custom Slider */}
-              <div className="mb-8">
-                <div className="flex items-center justify-between mb-4">
-                  <label className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Custom: {selectedQuestionCount[0]} Questions</label>
-                  <span className={`text-2xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>{selectedQuestionCount[0]}</span>
+              <div className="mb-4 sm:mb-6 md:mb-8">
+                <div className="flex items-center justify-between mb-2 sm:mb-4">
+                  <label className={`text-sm sm:text-base md:text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Custom: {selectedQuestionCount[0]} Questions</label>
+                  <span className={`text-lg sm:text-2xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>{selectedQuestionCount[0]}</span>
                 </div>
                 <Slider
                   value={selectedQuestionCount}
@@ -241,59 +241,59 @@ export default function TestPage() {
                   className="w-full"
                 />
                 <div className={`flex justify-between text-xs mt-2 ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>
-                  <span>10 Questions</span>
+                  <span>10</span>
                   <span>{Math.round(questions.length / 2)}</span>
-                  <span>{questions.length} Questions</span>
+                  <span>{questions.length}</span>
                 </div>
               </div>
             </div>
 
             {/* Test Info Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className={`border rounded-xl p-4 backdrop-blur-md ${isDark ? 'bg-gray-900/50 border-gray-700' : 'bg-gray-100 border-gray-300'}`}>
-                <div className={`text-xs font-semibold mb-1 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Questions</div>
-                <div className={`text-2xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>{selectedQuestionCount[0]}</div>
-                <div className={`text-xs mt-1 ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>questions</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 md:mb-8">
+              <div className={`border rounded-xl p-2.5 sm:p-3 md:p-4 backdrop-blur-md ${isDark ? 'bg-gray-900/50 border-gray-700' : 'bg-gray-100 border-gray-300'}`}>
+                <div className={`text-xs font-semibold mb-0.5 sm:mb-1 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Questions</div>
+                <div className={`text-lg sm:text-2xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>{selectedQuestionCount[0]}</div>
+                <div className={`text-xs mt-0.5 sm:mt-1 ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>Q</div>
               </div>
 
-              <div className={`border rounded-xl p-4 backdrop-blur-md ${isDark ? 'bg-gray-900/50 border-gray-700' : 'bg-gray-100 border-gray-300'}`}>
-                <div className={`text-xs font-semibold mb-1 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Time Limit</div>
-                <div className={`text-2xl font-bold ${isDark ? 'text-orange-400' : 'text-orange-600'}`}>60m</div>
-                <div className={`text-xs mt-1 ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>{timePerQuestion}s per Q</div>
+              <div className={`border rounded-xl p-2.5 sm:p-3 md:p-4 backdrop-blur-md ${isDark ? 'bg-gray-900/50 border-gray-700' : 'bg-gray-100 border-gray-300'}`}>
+                <div className={`text-xs font-semibold mb-0.5 sm:mb-1 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Time</div>
+                <div className={`text-lg sm:text-2xl font-bold ${isDark ? 'text-orange-400' : 'text-orange-600'}`}>60m</div>
+                <div className={`text-xs mt-0.5 sm:mt-1 ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>{timePerQuestion}s</div>
               </div>
 
-              <div className={`border rounded-xl p-4 backdrop-blur-md ${isDark ? 'bg-gray-900/50 border-gray-700' : 'bg-gray-100 border-gray-300'}`}>
-                <div className={`text-xs font-semibold mb-1 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Pass Threshold</div>
-                <div className={`text-2xl font-bold ${isDark ? 'text-green-400' : 'text-green-600'}`}>50%</div>
-                <div className={`text-xs mt-1 ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>{requiredCorrect} correct</div>
+              <div className={`border rounded-xl p-2.5 sm:p-3 md:p-4 backdrop-blur-md ${isDark ? 'bg-gray-900/50 border-gray-700' : 'bg-gray-100 border-gray-300'}`}>
+                <div className={`text-xs font-semibold mb-0.5 sm:mb-1 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Pass</div>
+                <div className={`text-lg sm:text-2xl font-bold ${isDark ? 'text-green-400' : 'text-green-600'}`}>50%</div>
+                <div className={`text-xs mt-0.5 sm:mt-1 ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>{requiredCorrect}</div>
               </div>
 
-              <div className={`border rounded-xl p-4 backdrop-blur-md ${isDark ? 'bg-gray-900/50 border-gray-700' : 'bg-gray-100 border-gray-300'}`}>
-                <div className={`text-xs font-semibold mb-1 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Difficulty</div>
-                <div className={`text-2xl font-bold ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>📊</div>
-                <div className={`text-xs mt-1 ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>adaptive</div>
+              <div className={`border rounded-xl p-2.5 sm:p-3 md:p-4 backdrop-blur-md ${isDark ? 'bg-gray-900/50 border-gray-700' : 'bg-gray-100 border-gray-300'}`}>
+                <div className={`text-xs font-semibold mb-0.5 sm:mb-1 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Mode</div>
+                <div className={`text-lg sm:text-2xl font-bold ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>📊</div>
+                <div className={`text-xs mt-0.5 sm:mt-1 ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>Adapt</div>
               </div>
             </div>
 
             {/* Test Details */}
-            <div className={`border rounded-xl p-6 mb-8 backdrop-blur-md ${isDark ? 'bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-700/30' : 'bg-blue-50 border-blue-200'}`}>
-              <h3 className={`text-lg font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>📋 Test Details</h3>
-              <div className="space-y-3">
+            <div className={`border rounded-xl p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 md:mb-8 backdrop-blur-md ${isDark ? 'bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-700/30' : 'bg-blue-50 border-blue-200'}`}>
+              <h3 className={`text-sm sm:text-base md:text-lg font-bold mb-2 sm:mb-3 md:mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>📋 Details</h3>
+              <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
                 <div className="flex justify-between items-center">
-                  <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>Total Questions:</span>
-                  <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{selectedQuestionCount[0]} randomly selected</span>
+                  <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>Questions:</span>
+                  <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{selectedQuestionCount[0]} random</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>Time Allowed:</span>
-                  <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>60 minutes (~{timePerQuestion}s per question)</span>
+                  <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>Time:</span>
+                  <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>60 min (~{timePerQuestion}s each)</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>Pass Requirement:</span>
-                  <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>≥{requiredCorrect} correct ({Math.round((requiredCorrect / selectedQuestionCount[0]) * 100)}%)</span>
+                  <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>Pass:</span>
+                  <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>≥{requiredCorrect} ({Math.round((requiredCorrect / selectedQuestionCount[0]) * 100)}%)</span>
                 </div>
-                <div className={`flex justify-between items-center pt-3 border-t ${isDark ? 'border-gray-700' : 'border-blue-300'}`}>
-                  <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>Your Target:</span>
-                  <span className={`font-bold text-lg ${selectedQuestionCount[0] >= 33 ? (isDark ? 'text-green-400' : 'text-green-600') : (isDark ? 'text-yellow-400' : 'text-yellow-600')}`}>
+                <div className={`flex justify-between items-center pt-2 sm:pt-3 border-t ${isDark ? 'border-gray-700' : 'border-blue-300'}`}>
+                  <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>Target:</span>
+                  <span className={`font-bold ${selectedQuestionCount[0] >= 33 ? (isDark ? 'text-green-400' : 'text-green-600') : (isDark ? 'text-yellow-400' : 'text-yellow-600')}`}>
                     {selectedQuestionCount[0] >= 33 ? '✅ Official' : '⚡ Practice'}
                   </span>
                 </div>
@@ -303,12 +303,12 @@ export default function TestPage() {
             {/* Start Button */}
             <button
               onClick={handleStartTest}
-              className={`w-full font-bold py-4 md:py-5 text-lg md:text-xl rounded-xl transition-all transform hover:scale-105 active:scale-95 ${isDark ? 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-blue-500/50 hover:shadow-2xl' : 'bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg'}`}
+              className={`w-full font-bold py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-lg md:text-xl rounded-xl transition-all transform hover:scale-105 active:scale-95 ${isDark ? 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-blue-500/50 hover:shadow-2xl' : 'bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg'}`}
             >
               🚀 Start Test with {selectedQuestionCount[0]} Questions
             </button>
 
-            <p className="text-center text-gray-400 text-sm mt-4">You can pause and resume your test anytime</p>
+            <p className="text-center text-gray-400 text-xs sm:text-sm mt-2 sm:mt-3 md:mt-4">You can pause and resume anytime</p>
           </div>
         </div>
       </div>
