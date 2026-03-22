@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { useStore } from "@/lib/store"
 import { useTheme, getTheme } from "@/lib/theme"
 import ThemeToggle from "@/components/ThemeToggle"
+import LanguageSelector from "@/components/LanguageSelector"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -14,7 +15,6 @@ import SwipeCard from "@/components/SwipeCard"
 import Link from "next/link"
 import { getCategoryEmoji } from "@/lib/category-emojis"
 import StickyMobileHeader from "@/components/StickyMobileHeader"
-import LanguageSelector from "@/components/LanguageSelector"
 
 export default function TestPage() {
   const {
@@ -193,7 +193,10 @@ export default function TestPage() {
               </Button>
             </Link>
             <h1 className={`text-2xl md:text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>⚡ Test</h1>
-            <ThemeToggle />
+            <div className="flex items-center gap-2">
+              <LanguageSelector />
+              <ThemeToggle />
+            </div>
           </div>
 
           <div className="max-w-2xl mx-auto">
@@ -420,9 +423,13 @@ export default function TestPage() {
             <p className={`mt-1 text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Q {currentQuestionIndex + 1}/{selectedQuestionCount[0]}</p>
           </div>
 
-          <div className="flex items-center space-x-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-700/30 px-3 md:px-4 py-2 rounded-lg backdrop-blur-md">
-            <Clock className="w-5 h-5 text-blue-400" />
-            <span className="font-mono font-semibold text-blue-300 text-sm md:text-base">{formatTime(timeRemaining)}</span>
+          <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-700/30 px-3 md:px-4 py-2 rounded-lg backdrop-blur-md">
+              <Clock className="w-5 h-5 text-blue-400" />
+              <span className="font-mono font-semibold text-blue-300 text-sm md:text-base">{formatTime(timeRemaining)}</span>
+            </div>
+            <LanguageSelector />
+            <ThemeToggle />
           </div>
         </div>
 
@@ -539,7 +546,7 @@ export default function TestPage() {
                     onClick={() => handleQuestionJump(index)}
                     className={`relative aspect-square rounded font-semibold text-[0.65rem] sm:text-xs transition-all border flex items-center justify-center ${
                       isCurrent
-                        ? isDark ? "bg-white text-black border-white" : "bg-blue-500 text-white border-blue-600"
+                        ? isDark ? "bg-white text-black border-white shadow-lg shadow-white/50" : "bg-blue-500 text-white border-blue-600 shadow-lg shadow-blue-400/50"
                         : isAnswered
                           ? answer.correct
                             ? "bg-green-500 text-white border-green-400 hover:opacity-80"
