@@ -14,6 +14,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { getTranslation } from "@/lib/i18n"
 import LanguageSelector from "@/components/LanguageSelector"
+import ThemeToggle from "@/components/ThemeToggle"
 import { getCategoryEmoji } from "@/lib/category-emojis"
 import { MultiSelect } from "@/components/MultiSelect"
 
@@ -378,6 +379,7 @@ export default function PracticePage() {
               </div>
 
               <div className="flex items-center gap-2 md:gap-4">
+                <ThemeToggle />
                 <LanguageSelector />
                 <Button
                     onClick={resetProgress}
@@ -487,6 +489,7 @@ export default function PracticePage() {
             </div>
 
             <div className="flex items-center gap-2 md:gap-4">
+              <ThemeToggle />
               <LanguageSelector />
               <Button
                   onClick={resetProgress}

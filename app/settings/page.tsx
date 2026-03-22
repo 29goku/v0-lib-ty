@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useStore } from "@/lib/store"
 import { useTheme, getTheme } from "@/lib/theme"
+import ThemeToggle from "@/components/ThemeToggle"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
@@ -68,7 +69,7 @@ export default function SettingsPage() {
             <div className={`text-base ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Customize Your Experience</div>
           </div>
 
-          <div></div>
+          <ThemeToggle />
         </div>
 
         <div className="max-w-4xl mx-auto space-y-6">

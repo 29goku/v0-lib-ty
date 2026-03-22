@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { useStore } from "@/lib/store"
 import { useTheme, getTheme } from "@/lib/theme"
+import ThemeToggle from "@/components/ThemeToggle"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -190,7 +191,7 @@ export default function TestPage() {
               </Button>
             </Link>
             <h1 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>⚡ Test Configuration</h1>
-            <div className="w-16"></div>
+            <ThemeToggle />
           </div>
 
           <div className="max-w-3xl mx-auto">

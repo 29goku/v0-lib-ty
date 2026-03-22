@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { useStore } from "@/lib/store"
+import { useTheme } from "@/lib/theme"
+import ThemeToggle from "@/components/ThemeToggle"
 import { GERMAN_STATES, getStateByCode } from "@/lib/states"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -208,10 +210,13 @@ export default function StateTestPage() {
     return (
       <div className="min-h-screen bg-black text-white p-4">
         <div className="max-w-2xl mx-auto">
-          <Link href="/test" className="inline-flex items-center gap-2 mb-8 text-gray-400 hover:text-white">
-            <ArrowLeft size={20} />
-            Back
-          </Link>
+          <div className="flex items-center justify-between mb-8">
+            <Link href="/test" className="inline-flex items-center gap-2 text-gray-400 hover:text-white">
+              <ArrowLeft size={20} />
+              Back
+            </Link>
+            <ThemeToggle />
+          </div>
 
           <Card className="border border-gray-700 bg-white/5">
             <CardHeader>
@@ -369,9 +374,12 @@ export default function StateTestPage() {
               Question {currentQuestionIndex + 1} of {testQuestions.length}
             </p>
           </div>
-          <div className="text-right">
-            <div className="text-2xl font-semibold text-white">{formatTime(timeRemaining)}</div>
-            <Clock className="inline-block mt-1 text-gray-400" size={16} />
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            <div className="text-right">
+              <div className="text-2xl font-semibold text-white">{formatTime(timeRemaining)}</div>
+              <Clock className="inline-block mt-1 text-gray-400" size={16} />
+            </div>
           </div>
         </div>
 
