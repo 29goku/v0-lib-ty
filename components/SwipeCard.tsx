@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Flag, Languages, Volume2 } from "lucide-react"
 import { motion, type PanInfo } from "framer-motion"
 import { useStore } from "@/lib/store"
+import { useTheme } from "@/lib/theme"
 import { getTranslation } from "@/lib/i18n"
 import { getStateQuestionTranslation } from "@/lib/utils"
 import stateQuestionsData from "@/public/data/state-questions.json"
@@ -58,6 +59,7 @@ export default function SwipeCard({
   const [isDragging, setIsDragging] = useState(false)
 
   const { language } = useStore()
+  const { isDark } = useTheme()
   const t = getTranslation(language)
 
   // Custom hooks for modular functionality
@@ -263,7 +265,7 @@ export default function SwipeCard({
           scale: prevIndicatorScale
         }}
       >
-        <div className="text-gray-400 text-3xl font-light">→</div>
+        <div className={`text-3xl font-light ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>→</div>
       </motion.div>
 
       <motion.div
@@ -273,7 +275,7 @@ export default function SwipeCard({
           scale: nextIndicatorScale
         }}
       >
-        <div className="text-gray-400 text-3xl font-light">←</div>
+        <div className={`text-3xl font-light ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>←</div>
       </motion.div>
 
       <motion.div
@@ -312,20 +314,22 @@ export default function SwipeCard({
       >
         <Card
           ref={contentRef}
-          className={`border border-gray-700 bg-white/5 backdrop-blur-sm overflow-hidden relative transition-all duration-200 ${
-            isDragging ? 'border-gray-600' : ''
+          className={`border backdrop-blur-sm overflow-hidden relative transition-all duration-200 ${
+            isDark ? 'border-gray-700 bg-white/5' : 'border-gray-200 bg-gray-50'
+          } ${
+            isDragging ? (isDark ? 'border-gray-600' : 'border-gray-300') : ''
           }`}
         >
           <CardHeader className="relative z-10 pb-4">
             <div className="flex justify-between items-start">
-              <CardTitle className="text-xl md:text-2xl font-semibold text-white leading-tight flex-1">
+              <CardTitle className={`text-xl md:text-2xl font-semibold leading-tight flex-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 {t.question} {question.id}
               </CardTitle>
               <div className="flex gap-1 ml-4">
                 <Button
                   onClick={translateQuestion}
                   disabled={isTranslating}
-                  className="bg-transparent hover:bg-gray-800/50 text-gray-300 hover:text-white border border-gray-700 px-2 py-1.5 rounded text-xs font-medium transition-colors"
+                  className={`border px-2 py-1.5 rounded text-xs font-medium transition-colors ${isDark ? 'bg-transparent hover:bg-gray-800/50 text-gray-300 hover:text-white border-gray-700' : 'bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900 border-gray-300'}`}
                   title={showTranslation ? t.translated : t.translate}
                 >
                   <Languages className="w-4 h-4" />
@@ -336,7 +340,7 @@ export default function SwipeCard({
                     showTranslation,
                     language
                   )}
-                  className="bg-transparent hover:bg-gray-800/50 text-gray-300 hover:text-white border border-gray-700 px-2 py-1.5 rounded text-xs transition-colors"
+                  className={`border px-2 py-1.5 rounded text-xs transition-colors ${isDark ? 'bg-transparent hover:bg-gray-800/50 text-gray-300 hover:text-white border-gray-700' : 'bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900 border-gray-300'}`}
                   title={t.speak || "Read aloud"}
                 >
                   <Volume2 className="w-4 h-4" />
@@ -345,8 +349,8 @@ export default function SwipeCard({
                   onClick={onFlag}
                   className={`border px-2 py-1.5 rounded text-xs transition-colors ${
                     isFlagged
-                      ? "bg-red-500/20 border-red-500/50 text-red-300"
-                      : "bg-transparent border-gray-700 text-gray-300 hover:bg-gray-800/50 hover:text-white"
+                      ? isDark ? "bg-red-500/20 border-red-500/50 text-red-300" : "bg-red-100 border-red-400 text-red-700"
+                      : isDark ? "bg-transparent border-gray-700 text-gray-300 hover:bg-gray-800/50 hover:text-white" : "bg-transparent border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                   }`}
                   title={isFlagged ? "Unflag" : "Flag"}
                 >
@@ -356,7 +360,7 @@ export default function SwipeCard({
             </div>
 
             <div className="space-y-3">
-              <p className="text-base md:text-lg text-gray-100 leading-relaxed font-normal">
+              <p className={`text-base md:text-lg leading-relaxed font-normal ${isDark ? 'text-gray-100' : 'text-gray-900'}`}>
                 {question.question}
               </p>
               {showTranslation && translationBoxQuestion && (
@@ -364,9 +368,9 @@ export default function SwipeCard({
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="p-3 rounded border border-gray-700 bg-gray-900/30"
+                  className={`p-3 rounded border ${isDark ? 'border-gray-700 bg-gray-900/30' : 'border-gray-200 bg-gray-100'}`}
                 >
-                  <p className="text-sm text-gray-300">{translationBoxQuestion}</p>
+                  <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{translationBoxQuestion}</p>
                 </motion.div>
               )}
             </div>
@@ -398,21 +402,21 @@ export default function SwipeCard({
                   className={`w-full p-3 text-left rounded border text-sm transition-all ${
                     showAnswer
                       ? index === question.answerIndex
-                        ? "bg-green-500/20 border-green-500/50 text-green-200"
+                        ? isDark ? "bg-green-500/20 border-green-500/50 text-green-200" : "bg-green-100 border-green-400 text-green-800"
                         : selectedAnswer === index
-                          ? "bg-red-500/20 border-red-500/50 text-red-200"
-                          : "bg-gray-900/20 border-gray-800 text-gray-500"
+                          ? isDark ? "bg-red-500/20 border-red-500/50 text-red-200" : "bg-red-100 border-red-400 text-red-800"
+                          : isDark ? "bg-gray-900/20 border-gray-800 text-gray-500" : "bg-gray-100 border-gray-300 text-gray-600"
                       : selectedAnswer === index
-                        ? "bg-blue-500/20 border-blue-500/50 text-blue-100"
-                        : "bg-transparent border-gray-700 text-gray-200 hover:bg-gray-900/20"
+                        ? isDark ? "bg-blue-500/20 border-blue-500/50 text-blue-100" : "bg-blue-100 border-blue-400 text-blue-800"
+                        : isDark ? "bg-transparent border-gray-700 text-gray-200 hover:bg-gray-900/20" : "bg-transparent border-gray-300 text-gray-700 hover:bg-gray-100"
                   }`}
                 >
                   <div className="flex gap-3">
-                    <span className="font-semibold text-gray-400 flex-shrink-0">{String.fromCharCode(65 + index)}.</span>
+                    <span className={`font-semibold flex-shrink-0 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>{String.fromCharCode(65 + index)}.</span>
                     <div className="flex-1 text-left">
                       <div>{originalOption}</div>
                       {showTranslation && translatedOption && (
-                        <div className="mt-1 text-xs text-gray-400">{translatedOption}</div>
+                        <div className={`mt-1 text-xs ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{translatedOption}</div>
                       )}
                     </div>
                   </div>
@@ -434,16 +438,16 @@ export default function SwipeCard({
               <motion.div
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
-                className="pt-4 border-t border-gray-800 space-y-2"
+                className={`pt-4 border-t space-y-2 ${isDark ? 'border-gray-800' : 'border-gray-300'}`}
               >
-                <h4 className="text-sm font-semibold text-gray-300 flex items-center gap-2">
-                  <Icon name="Lightbulb" size="sm" color="text-gray-400" />
+                <h4 className={`text-sm font-semibold flex items-center gap-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <Icon name="Lightbulb" size="sm" color={isDark ? "text-gray-400" : "text-gray-500"} />
                   {t.explanation}
                 </h4>
-                <p className="text-gray-300 text-sm leading-relaxed">{question.explanation}</p>
+                <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{question.explanation}</p>
                 {showTranslation && translationBoxExplanation && (
-                  <div className="mt-3 p-3 rounded bg-gray-900/30 border border-gray-800">
-                    <p className="text-gray-400 text-xs">{translationBoxExplanation}</p>
+                  <div className={`mt-3 p-3 rounded border ${isDark ? 'bg-gray-900/30 border-gray-800' : 'bg-gray-100 border-gray-300'}`}>
+                    <p className={`text-xs ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{translationBoxExplanation}</p>
                   </div>
                 )}
               </motion.div>

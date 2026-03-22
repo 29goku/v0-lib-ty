@@ -346,7 +346,7 @@ export default function HomePage() {
                 </div>
                 <div className="text-center">
                   <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-green-400' : 'text-green-600'}`}>{stats.correctAnswers}</div>
-                  <div className="text-xs md:text-sm text-gray-300">{t.correct}</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.correct}</div>
                 </div>
                 <div className="text-center">
                   <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.completedQuestions}</div>
