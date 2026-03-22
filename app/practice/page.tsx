@@ -85,15 +85,25 @@ export default function PracticePage() {
 
   const t = getTranslation(language)
 
+  // Use ref to track if we've already attempted to load questions (prevent infinite loops)
+  const initRef = useRef(false)
+
   useEffect(() => {
     const initializePractice = async () => {
+      if (initRef.current) return
+      initRef.current = true
+
       setLoading(true)
 
       try {
+        // Only load if questions are empty
         if (questions.length === 0) {
+          console.log("📥 Starting question load...")
           await loadQuestions()
+          console.log("✅ Question load completed")
         }
 
+        // Load state questions if a state is selected
         if (selectedState) {
           try {
             const stateResponse = await fetch("/data/state-questions.json")
@@ -116,7 +126,7 @@ export default function PracticePage() {
     }
 
     initializePractice()
-  }, [questions.length, loadQuestions, setStateQuestions, selectedState])
+  }, [])
 
   // Get the appropriate questions based on state selection
   const getQuestionsToUse = () => {
