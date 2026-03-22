@@ -50,16 +50,16 @@ export default function LanguageSelector() {
       </button>
 
       {isOpen && (
-        <div className={`absolute top-full left-0 mt-2 w-48 border rounded-lg z-50 max-h-64 overflow-y-auto ${
+        <div className={`absolute top-full left-0 mt-2 border rounded-lg z-50 max-h-64 overflow-y-auto ${
           isDark
             ? "bg-black/95 backdrop-blur-xl border-gray-700"
             : "bg-white/95 backdrop-blur border-gray-200"
-        }`}>
+        } sm:w-48 w-fit`}>
           {Object.entries(languageNames).map(([code, name]) => (
             <button
               key={code}
               onClick={() => handleLanguageSelect(code as Language)}
-              className={`w-full flex items-center gap-3 px-4 py-2 text-left transition-colors duration-200 ${
+              className={`flex items-center gap-3 transition-colors duration-200 ${
                 language === code
                   ? isDark
                     ? "bg-gray-900/50 text-white"
@@ -67,10 +67,10 @@ export default function LanguageSelector() {
                   : isDark
                   ? "hover:bg-gray-900/30 text-gray-300"
                   : "hover:bg-gray-50 text-gray-700"
-              }`}
+              } sm:w-full sm:px-4 sm:py-2 sm:text-left px-3 py-2`}
             >
               <span className="text-lg">{languageFlags[code as Language]}</span>
-              <span className="font-medium text-sm">{name}</span>
+              <span className="hidden sm:inline font-medium text-sm">{name}</span>
             </button>
           ))}
         </div>
