@@ -154,8 +154,6 @@ export default function HomePage() {
           }) }} />
         </Head>
         <div className="min-h-screen bg-black text-white relative">
-      {/* Simplified background */}
-      <div className="fixed inset-0 z-0 bg-black"></div>
       <div className="absolute top-6 right-6 z-50 flex gap-3">
         <ThemeToggle />
         <LanguageSelector />
@@ -222,7 +220,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-12 relative">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-2 md:mb-4 text-white">
-                {t.chooseWeapon}
+                Practice Options
               </h2>
               <p className="text-base md:text-lg text-gray-300 px-4">
                 Four ways to prepare for the citizenship test
@@ -232,13 +230,13 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {/* Practice Card */}
               <Link href="/practice" className="group">
-                <Card className="border border-gray-700 bg-white/5 h-full hover:bg-gray-900/20 transition-colors">
+                <Card className="bg-white/5 h-full hover:bg-gray-900/20 transition-colors">
                   <CardContent className="p-4 h-full flex flex-col">
                     <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                       {t.practice}
                     </h3>
                     <p className="text-gray-300 text-xs md:text-sm mb-3 leading-relaxed flex-grow">
-                      {t.swipeLearn}: {stats.totalQuestions} questions with instant feedback
+                      Learn by swiping. {stats.totalQuestions} questions with instant feedback
                     </p>
                     <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 font-semibold text-center transition-colors text-xs">
                       {t.start}
@@ -249,15 +247,15 @@ export default function HomePage() {
 
               {/* Test Card */}
               <Link href="/test" className="group">
-                <Card className="border border-gray-700 bg-white/5 backdrop-blur-sm rounded h-full hover:bg-gray-900/20 transition-all">
+                <Card className="bg-white/5 h-full hover:bg-gray-900/20 transition-colors">
                   <CardContent className="p-4 h-full flex flex-col">
                     <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                       {t.testMode}
                     </h3>
                     <p className="text-gray-300 text-xs md:text-sm mb-3 leading-relaxed flex-grow">
-                      {t.testSubtitle}! 33 questions, 60 minutes
+                      Simulated test conditions. 33 questions, 60 minutes
                     </p>
-                    <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 rounded font-semibold text-center transition-colors text-xs">
+                    <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 font-semibold text-center transition-colors text-xs">
                       {t.start}
                     </div>
                   </CardContent>
@@ -266,7 +264,7 @@ export default function HomePage() {
 
               {/* Review Card */}
               <Link href="/review" className="group">
-                <Card className="border border-gray-700 bg-white/5 backdrop-blur-sm rounded h-full hover:bg-gray-900/20 transition-all">
+                <Card className="bg-white/5 h-full hover:bg-gray-900/20 transition-colors">
                   <CardContent className="p-4 h-full flex flex-col">
                     <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                       {t.review}
@@ -274,7 +272,7 @@ export default function HomePage() {
                     <p className="text-gray-300 text-xs md:text-sm mb-3 leading-relaxed flex-grow">
                       Study mistakes, track progress, improve
                     </p>
-                    <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 rounded font-semibold text-center transition-colors text-xs">
+                    <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 font-semibold text-center transition-colors text-xs">
                       Review
                     </div>
                   </CardContent>
@@ -283,7 +281,7 @@ export default function HomePage() {
 
               {/* Settings Card */}
               <Link href="/settings" className="group">
-                <Card className="border border-gray-700 bg-white/5 backdrop-blur-sm rounded h-full hover:bg-gray-900/20 transition-all">
+                <Card className="bg-white/5 h-full hover:bg-gray-900/20 transition-colors">
                   <CardContent className="p-4 h-full flex flex-col">
                     <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                       {t.settings}
@@ -291,7 +289,7 @@ export default function HomePage() {
                     <p className="text-gray-300 text-xs md:text-sm mb-3 leading-relaxed flex-grow">
                       Dark mode, language, stats
                     </p>
-                    <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 rounded font-semibold text-center transition-colors text-xs">
+                    <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 font-semibold text-center transition-colors text-xs">
                       Customize
                     </div>
                   </CardContent>
@@ -353,7 +351,7 @@ export default function HomePage() {
             </p>
 
             <Link href="/practice">
-              <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-10 py-3 md:py-4 text-lg md:text-xl font-semibold rounded transition-all">
+              <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-10 py-3 md:py-4 text-lg md:text-xl font-semibold transition-colors">
                 {t.start} Now - It's Free
               </Button>
             </Link>

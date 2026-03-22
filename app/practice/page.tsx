@@ -455,10 +455,6 @@ export default function PracticePage() {
   return (
       <div className="min-h-screen bg-black text-white overflow-hidden relative">
         <div className="fixed inset-0 z-0">
-          <div className="absolute top-20 left-20 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
-          <div className="absolute top-40 right-32 w-6 h-6 bg-pink-500 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-32 left-32 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-20 right-20 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 py-8">
@@ -476,7 +472,7 @@ export default function PracticePage() {
                 {t.practiceMode.toUpperCase()}
               </span>
               </h1>
-              <div className="text-sm md:text-lg text-pink-300 font-bold">
+              <div className="text-sm md:text-lg text-gray-300 font-semibold">
                 {selectedState
                     ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
                     : `${t.practiceSubtitle} 🚀`}
@@ -499,7 +495,7 @@ export default function PracticePage() {
             <Card className="border border-gray-700 bg-white/5">
               <CardContent className="p-4">
                 <div className="flex items-center justify-center space-x-4">
-                  <span className="text-cyan-300 font-bold">Manual Mode</span>
+                  <span className="text-gray-300 font-semibold">Manual Mode</span>
                   <Switch
                       checked={isAutoMode}
                       onCheckedChange={setIsAutoMode}
@@ -508,9 +504,9 @@ export default function PracticePage() {
                   <span className="text-green-300 font-bold">Auto Mode</span>
                   {isAutoMode && (
                       <div className="flex items-center space-x-2 ml-4">
-                        <span className="text-yellow-300 text-sm">Delay:</span>
+                        <span className="text-gray-300 text-sm">Delay:</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-yellow-300 text-xs">2s</span>
+                          <span className="text-gray-300 text-xs">2s</span>
                           <input
                               type="range"
                               min="2000"
@@ -523,8 +519,8 @@ export default function PracticePage() {
                                 background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${((autoDelay - 2000) / 3000) * 100}%, #374151 ${((autoDelay - 2000) / 3000) * 100}%, #374151 100%)`,
                               }}
                           />
-                          <span className="text-yellow-300 text-xs">5s</span>
-                          <span className="text-yellow-300 text-sm ml-2">{autoDelay / 1000}s</span>
+                          <span className="text-gray-300 text-xs">5s</span>
+                          <span className="text-gray-300 text-sm ml-2">{autoDelay / 1000}s</span>
                         </div>
                       </div>
                   )}
@@ -538,8 +534,8 @@ export default function PracticePage() {
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-cyan-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.progress}</p>
-                    <p className="text-xl md:text-3xl font-black text-white">
+                    <p className="text-gray-300 text-xs md:text-sm font-semibold uppercase tracking-wider">{t.progress}</p>
+                    <p className="text-xl md:text-3xl font-semibold text-white">
                       {currentIndex + 1}/{filteredQuestions.length}
                     </p>
                   </div>
@@ -555,10 +551,9 @@ export default function PracticePage() {
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-yellow-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.xp}</p>
-                    <p className="text-xl md:text-3xl font-black text-yellow-400">{userProgress.xp}</p>
+                    <p className="text-gray-300 text-xs md:text-sm font-semibold uppercase tracking-wider">{t.xp}</p>
+                    <p className="text-xl md:text-3xl font-semibold text-white">{userProgress.xp}</p>
                   </div>
-                  <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-bounce">⚡</div>
                 </div>
               </CardContent>
             </Card>
@@ -567,10 +562,9 @@ export default function PracticePage() {
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-orange-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.streak}</p>
-                    <p className="text-xl md:text-3xl font-black text-orange-400">{userProgress.streak}</p>
+                    <p className="text-gray-300 text-xs md:text-sm font-semibold uppercase tracking-wider">{t.streak}</p>
+                    <p className="text-xl md:text-3xl font-semibold text-white">{userProgress.streak}</p>
                   </div>
-                  <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-pulse">🔥</div>
                 </div>
               </CardContent>
             </Card>
@@ -580,7 +574,7 @@ export default function PracticePage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-green-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.accuracy}</p>
-                    <p className="text-xl md:text-3xl font-black text-green-400">
+                    <p className="text-xl md:text-3xl font-semibold text-white">
                       {userProgress.questionsAnswered > 0
                           ? Math.round((userProgress.correctAnswers / userProgress.questionsAnswered) * 100)
                           : 0}
@@ -613,7 +607,7 @@ export default function PracticePage() {
                     }}
                     placeholder="Select German states..."
                     label={t.selectState}
-                    icon={<MapPin className="w-5 h-5 text-pink-400" />}
+                    icon={<MapPin className="w-5 h-5 text-gray-300" />}
                     className="w-full"
                 />
               </CardContent>
@@ -635,7 +629,7 @@ export default function PracticePage() {
                     }}
                     placeholder="Select categories..."
                     label={selectedStates.length > 0 ? "Categories" : t.filterByCategory}
-                    icon={<Filter className="w-5 h-5 text-purple-400" />}
+                    icon={<Filter className="w-5 h-5 text-gray-300" />}
                     className="w-full"
                 />
               </CardContent>
@@ -648,7 +642,7 @@ export default function PracticePage() {
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                   <div className="w-5 h-5 md:w-6 md:h-6 text-gray-300"></div>
-                  <h3 className="text-lg md:text-xl font-black text-orange-300 uppercase tracking-wider">
+                  <h3 className="text-lg md:text-xl font-semibold text-white uppercase tracking-wider">
                     Filter by Status {selectedFlagFilters.length > 0 && `(${selectedFlagFilters.length} selected)`}
                   </h3>
                 </div>
@@ -664,7 +658,7 @@ export default function PracticePage() {
                   {flaggedCount > 0 && (
                       <button
                           onClick={() => handleFlagFilterSelection("flagged")}
-                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base ${
                               selectedFlagFilters.includes("flagged")
                                   ? "bg-red-500 text-white border border-red-500"
                                   : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
@@ -677,7 +671,7 @@ export default function PracticePage() {
                   {incorrectCount > 0 && (
                       <button
                           onClick={() => handleFlagFilterSelection("incorrect")}
-                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base ${
                               selectedFlagFilters.includes("incorrect")
                                   ? "bg-red-500 text-white border border-red-500"
                                   : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
@@ -690,7 +684,7 @@ export default function PracticePage() {
                   {correctCount > 0 && (
                       <button
                           onClick={() => handleFlagFilterSelection("correct")}
-                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base ${
                               selectedFlagFilters.includes("correct")
                                   ? "bg-green-500 text-white border border-green-500"
                                   : "bg-black/50 text-green-300 hover:bg-black/80 hover:text-white border-2 border-green-400/30"
@@ -749,7 +743,7 @@ export default function PracticePage() {
                           <CardContent className="p-8 text-center relative z-10">
                             <div className="text-8xl mb-4">{lastAnswer.correct ? "✓" : "✗"}</div>
                             <div
-                                className={`text-4xl font-black mb-4 animate-pulse ${lastAnswer.correct ? "text-green-400" : "text-red-400"}`}
+                                className={`text-4xl font-semibold mb-4 ${lastAnswer.correct ? "text-green-500" : "text-red-500"}`}
                             >
                               {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
                             </div>
@@ -910,7 +904,7 @@ export default function PracticePage() {
                       {userProgress.badges.slice(-3).map((badge, index) => (
                           <div
                               key={badge}
-                              className="hover:scale-125 transition-transform cursor-pointer animate-bounce"
+                              className="transition-opacity cursor-pointer hover:opacity-80"
                               style={{ animationDelay: `${index * 0.2}s` }}
                           >
                             <Badge type={badge} earned size="sm" />
@@ -923,27 +917,27 @@ export default function PracticePage() {
           )}
 
           <div className="text-center mt-12 space-y-6">
-            <div className="text-3xl font-black animate-pulse">
+            <div className="text-3xl font-semibold">
               <span className="text-white">
                 {t.howToPractice.toUpperCase()}
               </span>
             </div>
             <div className="space-y-3 text-lg max-w-2xl mx-auto">
-              <p className="text-cyan-300 font-bold">💡 {t.swipeInstructions}</p>
+              <p className="text-gray-300 font-semibold">{t.swipeInstructions}</p>
               <div className="flex justify-center space-x-8 text-sm md:text-base">
-                <div className="text-green-400 font-bold">← {t.swipeLeft}</div>
-                <div className="text-red-400 font-bold">{t.swipeRight} →</div>
+                <div className="text-green-500 font-semibold">← {t.swipeLeft}</div>
+                <div className="text-red-500 font-semibold">{t.swipeRight} →</div>
               </div>
-              <p className="text-green-300 font-bold">⌨️ {t.keyboardShortcuts}</p>
-              <p className="text-yellow-300 font-bold">🔄 Toggle between Auto and Manual mode above</p>
-              <p className="text-pink-300 font-bold">🏛️ Select a state to practice state-specific questions</p>
+              <p className="text-gray-300 font-semibold">{t.keyboardShortcuts}</p>
+              <p className="text-gray-300 font-semibold">Toggle between Auto and Manual mode above</p>
+              <p className="text-gray-300 font-semibold">Select a state to practice state-specific questions</p>
               <div>
                 <p className="text-sm text-gray-300 font-semibold">
-                  Press <span className="font-black">1 / 2 / 3 / 4</span> — the matching option <span className="font-black">A / B / C / D</span> will be selected and will trigger the same behavior as clicking the option.
+                  Press <span className="font-semibold">1 / 2 / 3 / 4</span> — the matching option <span className="font-semibold">A / B / C / D</span> will be selected and will trigger the same behavior as clicking the option.
                 </p>
               </div>
             </div>
-            <div className="text-2xl font-black text-white animate-bounce mt-8">{t.letsDominate} 🚀</div>
+            <div className="text-2xl font-semibold text-white mt-8">{t.letsDominate}</div>
           </div>
         </div>
       </div>

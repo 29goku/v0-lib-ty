@@ -178,7 +178,7 @@ export default function StateTestPage() {
             </p>
             <div className="grid grid-cols-4 gap-2 mb-4">
               {GERMAN_STATES.map((s) => (
-                <code key={s.code} className="text-xs bg-gray-700 p-1 rounded text-blue-400">
+                <code key={s.code} className="text-xs bg-gray-700 p-1 text-blue-400">
                   {s.code}
                 </code>
               ))}
@@ -213,10 +213,10 @@ export default function StateTestPage() {
             Back
           </Link>
 
-          <Card className="border border-gray-700 bg-white/5 backdrop-blur-sm">
+          <Card className="border border-gray-700 bg-white/5">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold">
-                {state?.emoji} {state?.nameDE} Test
+                {state?.nameDE} Test
               </CardTitle>
               <p className="text-gray-400 mt-2">{state?.description}</p>
             </CardHeader>
@@ -224,17 +224,17 @@ export default function StateTestPage() {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Test Details</h3>
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="border border-gray-700 bg-white/5 p-3 rounded">
+                  <div className="border border-gray-700 bg-white/5 p-3">
                     <div className="text-gray-400 text-sm">Questions</div>
                     <div className="text-xl font-semibold">33</div>
                     <div className="text-xs text-gray-500">30 general + 3 state</div>
                   </div>
-                  <div className="border border-gray-700 bg-white/5 p-3 rounded">
+                  <div className="border border-gray-700 bg-white/5 p-3">
                     <div className="text-gray-400 text-sm">Duration</div>
                     <div className="text-xl font-semibold">60</div>
                     <div className="text-xs text-gray-500">minutes</div>
                   </div>
-                  <div className="border border-gray-700 bg-white/5 p-3 rounded">
+                  <div className="border border-gray-700 bg-white/5 p-3">
                     <div className="text-gray-400 text-sm">Pass Score</div>
                     <div className="text-xl font-semibold">17</div>
                     <div className="text-xs text-gray-500">/33 correct</div>
@@ -244,7 +244,7 @@ export default function StateTestPage() {
 
               <div>
                 <h3 className="text-lg font-semibold mb-4">State Questions</h3>
-                <div className="border border-gray-700 bg-white/5 p-4 rounded">
+                <div className="border border-gray-700 bg-white/5 p-4">
                   <p className="text-sm text-gray-300">
                     This test includes 3 questions specific to {state?.nameDE}. These cover important facts about this Bundesland.
                   </p>
@@ -279,7 +279,7 @@ export default function StateTestPage() {
     return (
       <div className="min-h-screen bg-black text-white p-4">
         <div className="max-w-2xl mx-auto">
-          <Card className={`border ${passed ? "border-green-500" : "border-red-500"} bg-white/5 backdrop-blur-sm`}>
+          <Card className={`border ${passed ? "border-green-500" : "border-red-500"} bg-white/5`}>
             <CardHeader>
               <CardTitle className="text-2xl font-semibold text-center">
                 {passed ? "Test Passed!" : "Test Failed"}
@@ -294,7 +294,7 @@ export default function StateTestPage() {
                 </div>
               </div>
 
-              <div className="border border-gray-700 bg-white/5 p-4 rounded">
+              <div className="border border-gray-700 bg-white/5 p-4">
                 <h3 className="font-semibold mb-3">Results by Category</h3>
                 <div className="space-y-2 text-sm">
                   {Object.entries(
@@ -311,7 +311,7 @@ export default function StateTestPage() {
                     )
                   ).map(([cat, stats]: [string, any]) => (
                     <div key={cat} className="flex justify-between">
-                      <span>{getCategoryEmoji(cat)} {cat}</span>
+                      <span>{cat}</span>
                       <span className={stats.correct === stats.total ? "text-green-400" : "text-gray-400"}>
                         {stats.correct}/{stats.total}
                       </span>
@@ -343,11 +343,11 @@ export default function StateTestPage() {
   // Test in progress
   if (!currentQuestion) {
     return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+      <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-white text-center">
           <p className="text-xl">No questions loaded</p>
           <Link href="/test">
-            <Button className="mt-4">← Back</Button>
+            <Button className="mt-4 border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white">← Back</Button>
           </Link>
         </div>
       </div>
@@ -363,7 +363,7 @@ export default function StateTestPage() {
         <div className="mb-6 flex items-center justify-between">
           <div>
             <h1 className="text-xl font-semibold">
-              {state?.emoji} {state?.nameDE} Test
+              {state?.nameDE} Test
             </h1>
             <p className="text-gray-400">
               Question {currentQuestionIndex + 1} of {testQuestions.length}

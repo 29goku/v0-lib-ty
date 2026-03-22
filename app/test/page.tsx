@@ -148,8 +148,8 @@ export default function TestPage() {
       <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-4xl font-semibold text-white mb-4">Test Mode</h2>
-          <div className="w-64 h-1 bg-gray-800 rounded overflow-hidden mx-auto">
-            <div className="h-full bg-white rounded animate-pulse"></div>
+          <div className="w-64 h-1 bg-gray-800 mx-auto">
+            <div className="h-full bg-white animate-pulse"></div>
           </div>
           <div className="mt-6 text-lg text-gray-300">Loading your official simulation...</div>
         </div>
@@ -173,7 +173,7 @@ export default function TestPage() {
           </div>
 
           <div className="max-w-2xl mx-auto">
-            <Card className="border border-gray-700 bg-white/5 backdrop-blur-sm">
+            <Card className="border border-gray-700 bg-white/5">
               <CardHeader>
                 <CardTitle className="text-center text-xl font-semibold text-white">Configure Your Test</CardTitle>
                 <p className="text-center text-gray-300">Choose how many questions you want to answer in your test</p>
@@ -182,7 +182,7 @@ export default function TestPage() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <label className="text-lg font-semibold text-white">Number of Questions:</label>
-                    <div className="text-2xl font-bold text-cyan-400">{selectedQuestionCount[0]}</div>
+                    <div className="text-2xl font-semibold text-white">{selectedQuestionCount[0]}</div>
                   </div>
 
                   <Slider
@@ -201,7 +201,7 @@ export default function TestPage() {
                   </div>
                 </div>
 
-                <div className="border border-gray-700 bg-white/5 rounded p-6">
+                <div className="border border-gray-700 bg-white/5 p-6">
                   <h3 className="text-lg font-semibold text-white mb-3">Test Information</h3>
                   <div className="space-y-2 text-gray-300">
                     <p>Time Limit: 60 minutes</p>
@@ -212,7 +212,7 @@ export default function TestPage() {
 
                 <Button
                   onClick={handleStartTest}
-                  className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-4 text-lg rounded transition-all"
+                  className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-4 text-lg"
                 >
                   Start Test with {selectedQuestionCount[0]} Questions
                 </Button>
@@ -228,7 +228,7 @@ export default function TestPage() {
     return (
       <div className="min-h-screen bg-black text-white">
         <div className="flex items-center justify-center min-h-screen p-4">
-          <Card className="w-full max-w-2xl border border-gray-700 bg-white/5 backdrop-blur-sm">
+          <Card className="w-full max-w-2xl border border-gray-700 bg-white/5">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl font-semibold text-white">
                 {passed ? "Test Completed" : "Keep Practicing"}
@@ -276,19 +276,19 @@ export default function TestPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <Link href="/practice">
-                    <Button className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-3 text-base rounded transition-all">
+                    <Button className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-3 text-base">
                       Practice More
                     </Button>
                   </Link>
                   <Link href="/review">
-                    <Button className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-3 text-base rounded transition-all">
+                    <Button className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-3 text-base">
                       Review Answers
                     </Button>
                   </Link>
                 </div>
 
                 <Link href="/">
-                  <Button className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-3 text-base rounded transition-all">
+                  <Button className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-3 text-base">
                     ← Back to Home
                   </Button>
                 </Link>
@@ -304,8 +304,7 @@ export default function TestPage() {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center">
-          <div className="text-6xl mb-4">❌</div>
-          <h2 className="text-2xl font-bold">No questions available</h2>
+          <h2 className="text-2xl font-semibold">No questions available</h2>
           <Link href="/">
             <Button className="mt-4">Back to Home</Button>
           </Link>
@@ -333,7 +332,7 @@ export default function TestPage() {
           </div>
 
           <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 border border-gray-700 px-4 py-2 rounded">
+            <div className="flex items-center space-x-2 border border-gray-700 px-4 py-2">
               <Clock className="w-4 h-4 text-gray-300" />
               <span className="font-mono text-gray-300">{formatTime(timeRemaining)}</span>
             </div>
@@ -370,14 +369,14 @@ export default function TestPage() {
           <Button
             onClick={handlePrevious}
             disabled={currentQuestionIndex <= 0}
-            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-6 py-2 rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-6 py-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             ← Previous
           </Button>
 
           <Button
             onClick={handleSubmitTest}
-            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-6 py-2 rounded transition-all"
+            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-6 py-2"
           >
             Submit Test
           </Button>
@@ -385,13 +384,13 @@ export default function TestPage() {
           <Button
             onClick={handleNext}
             disabled={currentQuestionIndex >= selectedQuestionCount[0] - 1}
-            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-6 py-2 rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-6 py-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Next →
           </Button>
         </div>
 
-        <Card className="border border-gray-700 bg-white/5 backdrop-blur-sm">
+        <Card className="border border-gray-700 bg-white/5">
           <CardHeader>
             <CardTitle className="text-center text-lg font-semibold text-white">Answer Overview</CardTitle>
           </CardHeader>
@@ -408,19 +407,19 @@ export default function TestPage() {
                     key={index}
                     onClick={() => handleQuestionJump(index)}
                     className={`
-                      relative aspect-square rounded border font-semibold text-sm transition-all
+                      relative aspect-square border font-semibold text-sm
                       ${
                         isCurrent
                           ? "bg-white text-black border-white"
                           : isAnswered
-                            ? "bg-green-500 text-white border-green-400 hover:bg-green-600"
-                            : "bg-gray-600 text-gray-300 border-gray-500 hover:bg-gray-500"
+                            ? "bg-green-900/30 text-green-400 border-green-700 hover:bg-green-900/50"
+                            : "bg-white/5 text-gray-300 border-gray-700 hover:bg-white/10"
                       }
                     `}
                   >
                     {index + 1}
                     {isFlagged && (
-                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></div>
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-400 border border-red-700"></div>
                     )}
                   </button>
                 )
@@ -429,15 +428,15 @@ export default function TestPage() {
 
             <div className="flex justify-center items-center space-x-8 text-sm">
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded border border-green-400"></div>
+                <div className="w-3 h-3 bg-green-900/30 border border-green-700"></div>
                 <span className="text-green-400 font-semibold">Answered</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-gray-600 rounded border border-gray-500"></div>
+                <div className="w-3 h-3 bg-white/5 border border-gray-700"></div>
                 <span className="text-gray-400 font-semibold">Unanswered</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-red-900/30 border border-red-700"></div>
                 <span className="text-red-400 font-semibold">Flagged</span>
               </div>
               <div className="text-white font-semibold">
