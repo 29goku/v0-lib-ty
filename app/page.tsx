@@ -366,7 +366,7 @@ export default function HomePage() {
         {/* Final CTA */}
         <div className={`py-10 md:py-12 px-4 ${isDark ? 'border-t border-gray-700 bg-white/5' : 'border-t border-gray-200 bg-gray-50'}`}>
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 md:mb-6 text-white leading-tight">
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 md:mb-6 leading-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Ready to Become
               <br />
               A German Citizen?
