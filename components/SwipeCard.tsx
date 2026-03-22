@@ -513,11 +513,13 @@ export default function SwipeCard({
             )}
 
             {showAnswer && displaySelectedAnswer !== null && (
-              <GamificationFeedback
-                isCorrect={displaySelectedAnswer === question.answerIndex}
-                xpGained={displaySelectedAnswer === question.answerIndex ? 10 : 0}
-                accuracy={0}
-              />
+              <div className="hidden md:block">
+                <GamificationFeedback
+                  isCorrect={displaySelectedAnswer === question.answerIndex}
+                  xpGained={displaySelectedAnswer === question.answerIndex ? 10 : 0}
+                  accuracy={0}
+                />
+              </div>
             )}
           </CardContent>
         </Card>
