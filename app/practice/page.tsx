@@ -631,14 +631,15 @@ export default function PracticePage() {
           </div>
 
           {/* Filters Toggle Button */}
-          <div className="mb-4">
+          <div className="mb-2 sm:mb-4 px-4">
             <Button
               onClick={() => setShowFilters(!showFilters)}
-              className={`w-full sm:w-auto border bg-transparent font-semibold px-4 py-2 transition-colors flex items-center gap-2 ${isDark ? 'border-gray-700 hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
+              className={`w-full sm:w-auto border bg-transparent font-semibold px-3 sm:px-4 py-2 text-sm sm:text-base transition-colors flex items-center gap-2 justify-center sm:justify-start ${isDark ? 'border-gray-700 hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
             >
-              <Filter className="w-4 h-4" />
-              {showFilters ? "Hide Filters" : "Show Filters"}
-              <ChevronDown className={`w-4 h-4 transition-transform ${showFilters ? "rotate-180" : ""}`} />
+              <Filter className="w-3 sm:w-4 h-3 sm:h-4" />
+              <span className="hidden sm:inline">{showFilters ? "Hide Filters" : "Show Filters"}</span>
+              <span className="sm:hidden">{showFilters ? "Hide" : "Filters"}</span>
+              <ChevronDown className={`w-3 sm:w-4 h-3 sm:h-4 transition-transform ${showFilters ? "rotate-180" : ""}`} />
             </Button>
             {(selectedStates.length > 0 || selectedCategories.length > 0) && (
               <p className={`text-sm mt-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -820,7 +821,7 @@ export default function PracticePage() {
                       onClick={() => handleQuestionJump(idx)}
                       aria-current={isCurrent ? 'true' : undefined}
                       aria-label={`Go to question ${originalQuestionNumber}`}
-                      className={`flex-shrink-0 relative w-10 h-10 rounded-lg font-semibold flex items-center justify-center transition-all border text-xs ${
+                      className={`flex-shrink-0 relative w-8 h-8 sm:w-10 sm:h-10 rounded-lg font-semibold flex items-center justify-center transition-all border text-xs ${
                         isCurrent
                           ? 'bg-white text-black border-white'
                           : isIncorrect
@@ -830,9 +831,9 @@ export default function PracticePage() {
                               : 'border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20'
                       }`}
                     >
-                      <span className="text-xs z-10">{originalQuestionNumber}</span>
+                      <span className="text-xs sm:text-sm z-10">{originalQuestionNumber}</span>
                       {isFlagged && (
-                        <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-500 rounded-full border border-white"></span>
+                        <span className="absolute -top-0.5 -right-0.5 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-red-500 rounded-full border border-white"></span>
                       )}
                     </button>
                   )
@@ -842,7 +843,7 @@ export default function PracticePage() {
               <button
                 aria-label="Next"
                 onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
-                className="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors"
+                className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors text-sm sm:text-base"
               >
                 ›
               </button>
