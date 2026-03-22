@@ -810,7 +810,7 @@ export default function PracticePage() {
                       </div>
 
                       {/* Mobile: compact pagination-style navigation */}
-                      <div className="flex items-center justify-center gap-1 mb-4 lg:hidden">
+                      <div className="hidden lg:flex items-center justify-center gap-1 mb-4">
                         <button
                             aria-label="Previous"
                             onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
@@ -910,41 +910,102 @@ export default function PracticePage() {
 
         </div>
 
-        {/* Sticky Bottom Navigation - Mobile Only */}
-        <div className={`sm:hidden fixed bottom-0 left-0 right-0 z-40 border-t ${isDark ? 'bg-black/80 border-gray-800 backdrop-blur-sm' : 'bg-white/80 border-gray-200 backdrop-blur-sm'}`}>
-          <div className="flex justify-between items-center px-4 py-3 gap-2">
-            <Button
-              onClick={previousQuestion}
-              disabled={currentIndex === 0}
-              className={`flex-1 px-3 py-2 text-xs border rounded font-semibold transition-colors ${
-                currentIndex === 0
-                  ? isDark ? 'border-gray-700 bg-transparent text-gray-600 cursor-not-allowed' : 'border-gray-300 bg-transparent text-gray-400 cursor-not-allowed'
-                  : isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700'
-              }`}
+        {/* Sticky Bottom Navigation - Median Navigation on Mobile */}
+        <div className={`lg:hidden fixed bottom-0 left-0 right-0 z-40 border-t ${isDark ? 'bg-black/80 border-gray-800 backdrop-blur-sm' : 'bg-white/80 border-gray-200 backdrop-blur-sm'}`}>
+          <div className="flex items-center justify-center gap-1 px-2 py-2 overflow-x-auto">
+            <button
+                aria-label="Previous"
+                onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
+                className="w-9 h-9 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors flex-shrink-0"
             >
-              ← Prev
-            </Button>
+              ‹
+            </button>
 
-            <div className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-              {currentIndex + 1} / {filteredQuestions.length}
-            </div>
+            {(() => {
+              const pages = getPaginationNumbers(currentIndex + 1, pageCount)
 
-            <Button
-              onClick={nextQuestion}
-              disabled={currentIndex === filteredQuestions.length - 1}
-              className={`flex-1 px-3 py-2 text-xs border rounded font-semibold transition-colors ${
-                currentIndex === filteredQuestions.length - 1
-                  ? isDark ? 'border-gray-700 bg-transparent text-gray-600 cursor-not-allowed' : 'border-gray-300 bg-transparent text-gray-400 cursor-not-allowed'
-                  : isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700'
-              }`}
+              return pages.map((p, i) => {
+                if (p === '...') {
+                  // compute median target between surrounding numeric pages
+                  let left: number | null = null
+                  for (let j = i - 1; j >= 0; j--) {
+                    if (typeof pages[j] === 'number') {
+                      left = pages[j] as number
+                      break
+                    }
+                  }
+                  let right: number | null = null
+                  for (let j = i + 1; j < pages.length; j++) {
+                    if (typeof pages[j] === 'number') {
+                      right = pages[j] as number
+                      break
+                    }
+                  }
+
+                  const target = left && right ? Math.floor((left + right) / 2) : left || right || 1
+                  const targetIdx = Math.max(0, Number(target) - 1)
+
+                  return (
+                      <button
+                          key={`dots-${i}`}
+                          onClick={() => handleQuestionJump(targetIdx)}
+                          aria-label={`Jump near ${target}`}
+                          className="px-2 h-9 flex items-center justify-center rounded-lg bg-white text-black border border-gray-300 hover:opacity-80 transition-all flex-shrink-0"
+                      >
+                        …
+                      </button>
+                  )
+                }
+
+                const pageNum = Number(p)
+                const idx = pageNum - 1
+                const q = filteredQuestions[idx]
+                const qId = q?.id
+                const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
+                const isIncorrect = qId ? (userProgress.incorrectAnswers || []).includes(qId) : false
+                const isCurrent = idx === currentIndex
+                const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
+
+                // Find the original question number from the full question set
+                const originalQuestionNumber = questionsToUse.findIndex(originalQ => originalQ.id === qId) + 1
+
+                return (
+                    <button
+                        key={`p-${pageNum}-${i}`}
+                        onClick={() => handleQuestionJump(idx)}
+                        aria-current={isCurrent ? 'true' : undefined}
+                        aria-label={`Go to question ${originalQuestionNumber}`}
+                        className={`relative w-9 h-9 rounded-lg font-semibold flex items-center justify-center transition-all border flex-shrink-0 text-xs ${
+                            isCurrent
+                                ? 'bg-white text-black border-white'
+                                : isIncorrect
+                                    ? 'bg-red-500 text-white border-red-400'
+                                    : isAnswered
+                                        ? 'bg-green-500 text-white border-green-400'
+                                        : 'border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20'
+                        }`}
+                    >
+                      <span className="z-10">{originalQuestionNumber}</span>
+                      {isFlagged && (
+                          <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+                      )}
+                    </button>
+                )
+              })
+            })()}
+
+            <button
+                aria-label="Next"
+                onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
+                className="w-9 h-9 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors flex-shrink-0"
             >
-              Next →
-            </Button>
+              ›
+            </button>
           </div>
         </div>
 
         {/* Add padding to account for sticky bottom nav */}
-        <div className="sm:hidden h-20"></div>
+        <div className="lg:hidden h-16"></div>
       </div>
   )
 }
