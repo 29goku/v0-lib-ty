@@ -368,10 +368,10 @@ export default function PracticePage() {
               </Link>
 
               <div className="text-center">
-                <h1 className="text-2xl md:text-4xl font-semibold mb-1 md:mb-2 text-white">
+                <h1 className={`text-2xl md:text-4xl font-semibold mb-1 md:mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                   {t.practiceMode}
                 </h1>
-                <div className="text-sm md:text-lg text-gray-300">
+                <div className={`text-sm md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                   {selectedState
                       ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions`
                       : t.practiceSubtitle}
@@ -583,16 +583,13 @@ export default function PracticePage() {
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-green-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.accuracy}</p>
-                    <p className="text-xl md:text-3xl font-semibold text-white">
+                    <p className={`text-xs md:text-sm font-bold uppercase tracking-wider ${isDark ? 'text-green-300' : 'text-green-700'}`}>{t.accuracy}</p>
+                    <p className={`text-xl md:text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {userProgress.questionsAnswered > 0
                           ? Math.round((userProgress.correctAnswers / userProgress.questionsAnswered) * 100)
                           : 0}
                       %
                     </p>
-                  </div>
-                  <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-spin" style={{ animationDuration: "3s" }}>
-                    📊
                   </div>
                 </div>
               </CardContent>
@@ -778,7 +775,7 @@ export default function PracticePage() {
                             >
                               {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
                             </div>
-                            <p className="text-2xl text-white font-bold">{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
+                            <p className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
                           </CardContent>
                         </Card>
                       </motion.div>
@@ -787,7 +784,7 @@ export default function PracticePage() {
 
                 {/* Right: Question Overview */}
                 <div className="w-full">
-                  <Card className="h-full bg-white/5">
+                  <Card className={`h-full ${isDark ? 'bg-white/5' : 'bg-gray-100'}`}>
                     <CardContent>
                       <div ref={overviewRef} className="hidden lg:grid grid-cols-[repeat(15,minmax(0,1fr))] gap-1 mb-0">
                         {filteredQuestions.map((q, index) => {
