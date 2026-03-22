@@ -29,7 +29,14 @@ export default function HomePage() {
 
   // Don't render until mounted to prevent hydration issues
   if (!mounted) {
-    return null
+    return (
+      <div className={`min-h-screen flex items-center justify-center ${isDark ? 'bg-black' : 'bg-white'}`}>
+        <div className={`text-center ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+          <div className="text-4xl font-semibold mb-2">LEBEN</div>
+          <div className="text-2xl font-semibold">IN DEUTSCHLAND</div>
+        </div>
+      </div>
+    )
   }
 
   // Calculate stats from store data
