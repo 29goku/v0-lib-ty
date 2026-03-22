@@ -405,7 +405,7 @@ export default function SwipeCard({
                   whileHover={{ backgroundColor: showAnswer ? undefined : "rgba(0,0,0,0.4)" }}
                   whileTap={{ scale: 0.99 }}
                   className={`w-full p-3 text-left rounded border text-sm transition-all ${
-                    showAnswer
+                    showAnswer && displaySelectedAnswer !== null
                       ? index === question.answerIndex
                         ? isDark ? "bg-green-500/30 border-green-500/80 text-green-100 font-semibold" : "bg-green-200 border-green-600 text-green-900 font-semibold"
                         : displaySelectedAnswer === index
