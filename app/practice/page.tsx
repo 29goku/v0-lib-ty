@@ -831,8 +831,8 @@ export default function PracticePage() {
                         })}
                       </div>
 
-                      {/* Mobile: compact pagination-style navigation */}
-                      <div className="hidden lg:flex items-center justify-center gap-1 mb-4">
+                      {/* Desktop: pagination grid navigation */}
+                      <div className="flex lg:flex items-center justify-center gap-1 mb-4 md:hidden">
                         <button
                             aria-label="Previous"
                             onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
