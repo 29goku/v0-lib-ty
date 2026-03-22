@@ -163,10 +163,19 @@ export default function HomePage() {
           }) }} />
         </Head>
         <div className={`min-h-screen relative ${isDark ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 flex gap-2 sm:gap-3">
-        <ThemeToggle />
-        <LanguageSelector />
+      {/* Sticky Header on Mobile */}
+      <div className={`fixed top-0 left-0 right-0 sm:absolute z-50 sm:z-auto ${isDark ? '' : ''}`} style={{ top: 0 }}>
+        <div className={`sm:hidden flex justify-end gap-2 px-4 py-3 ${isDark ? 'bg-black/80 backdrop-blur-sm border-b border-gray-800' : 'bg-white/80 backdrop-blur-sm border-b border-gray-200'}`}>
+          <ThemeToggle />
+          <LanguageSelector />
+        </div>
+        <div className={`hidden sm:flex absolute top-4 right-4 sm:top-6 sm:right-6 gap-2 sm:gap-3`}>
+          <ThemeToggle />
+          <LanguageSelector />
+        </div>
       </div>
+      {/* Add padding to account for fixed mobile header */}
+      <div className="sm:hidden h-12"></div>
 
       <div className="relative z-10">
 
