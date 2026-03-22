@@ -13,22 +13,10 @@ import Link from "next/link"
 import { getCategoryEmoji } from "@/lib/category-emojis"
 
 export default function TestPage() {
-  // Start test with selected number of questions
-  const handleStartTest = () => {
-    // Shuffle and select questions
-    const shuffled = [...questions].sort(() => Math.random() - 0.5)
-    const selectedQuestions = shuffled.slice(0, selectedQuestionCount[0])
-    setQuestions(selectedQuestions)
-    setShowConfig(false)
-    startTest()
-    setCurrentQuestionIndex(0)
-    setSelectedAnswer(null)
-    setIsTranslated(false)
-    setTimeRemaining(60 * 60)
-  }
   const {
     questions,
-    setQuestions,
+    testQuestions,
+    setTestQuestions,
     currentQuestionIndex,
     setCurrentQuestionIndex,
     userProgress,
@@ -43,6 +31,20 @@ export default function TestPage() {
     recordTestAttempt,
     loadQuestions,
   } = useStore()
+
+  // Start test with selected number of questions
+  const handleStartTest = () => {
+    // Shuffle and select questions from main questions pool (never modify main pool)
+    const shuffled = [...questions].sort(() => Math.random() - 0.5)
+    const selectedQuestions = shuffled.slice(0, selectedQuestionCount[0])
+    setTestQuestions(selectedQuestions)
+    setShowConfig(false)
+    startTest()
+    setCurrentQuestionIndex(0)
+    setSelectedAnswer(null)
+    setIsTranslated(false)
+    setTimeRemaining(60 * 60)
+  }
 
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
   const [timeRemaining, setTimeRemaining] = useState(60 * 60) // 60 minutes in seconds
@@ -79,7 +81,7 @@ export default function TestPage() {
     return () => clearInterval(timer)
   }, [testMode, showResults, showConfig])
 
-  const currentQuestion = questions[currentQuestionIndex]
+  const currentQuestion = testQuestions[currentQuestionIndex]
   const currentAnswer = testAnswers.find((a) => a.questionId === currentQuestion?.id)
 
   const handleAnswerSelect = (answerIndex: number) => {
@@ -91,9 +93,9 @@ export default function TestPage() {
   }
 
   const handleNext = () => {
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < testQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1)
-      const nextQuestion = questions[currentQuestionIndex + 1]
+      const nextQuestion = testQuestions[currentQuestionIndex + 1]
       const existingAnswer = testAnswers.find((a) => a.questionId === nextQuestion?.id)
       setSelectedAnswer(existingAnswer?.selectedIndex ?? null)
       setIsTranslated(false)
@@ -103,7 +105,7 @@ export default function TestPage() {
   const handlePrevious = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1)
-      const prevQuestion = questions[currentQuestionIndex - 1]
+      const prevQuestion = testQuestions[currentQuestionIndex - 1]
       const existingAnswer = testAnswers.find((a) => a.questionId === prevQuestion?.id)
       setSelectedAnswer(existingAnswer?.selectedIndex ?? null)
       setIsTranslated(false)
@@ -112,7 +114,7 @@ export default function TestPage() {
 
   const handleQuestionJump = (questionIndex: number) => {
     setCurrentQuestionIndex(questionIndex)
-    const targetQuestion = questions[questionIndex]
+    const targetQuestion = testQuestions[questionIndex]
     const existingAnswer = testAnswers.find((a) => a.questionId === targetQuestion?.id)
     setSelectedAnswer(existingAnswer?.selectedIndex ?? null)
     setIsTranslated(false)
@@ -400,11 +402,11 @@ export default function TestPage() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-11 gap-2 mb-6">
-              {questions.map((_, index) => {
-                const answer = testAnswers.find((a) => a.questionId === questions[index]?.id)
+              {testQuestions.map((_, index) => {
+                const answer = testAnswers.find((a) => a.questionId === testQuestions[index]?.id)
                 const isAnswered = answer !== undefined
                 const isCurrent = index === currentQuestionIndex
-                const isFlagged = userProgress.flaggedQuestions.includes(questions[index]?.id)
+                const isFlagged = userProgress.flaggedQuestions.includes(testQuestions[index]?.id)
 
                 return (
                   <button

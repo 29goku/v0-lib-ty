@@ -40,6 +40,7 @@ export interface UserProgress {
 export interface AppState {
   questions: Question[]
   stateQuestions: Question[]
+  testQuestions: Question[] // Separate questions for test mode
   currentQuestionIndex: number
   userProgress: UserProgress
   darkMode: boolean
@@ -53,6 +54,7 @@ export interface AppState {
   // Actions
   setQuestions: (questions: Question[]) => void
   setStateQuestions: (questions: Question[]) => void
+  setTestQuestions: (questions: Question[]) => void
   nextQuestion: () => void
   previousQuestion: () => void
   setCurrentQuestionIndex: (index: number) => void
@@ -118,6 +120,7 @@ export const useStore = create<AppState>()(
     (set, get) => ({
       questions: [],
       stateQuestions: [],
+      testQuestions: [],
       currentQuestionIndex: 0,
       userProgress: initialProgress,
       darkMode: false,
@@ -130,6 +133,7 @@ export const useStore = create<AppState>()(
 
       setQuestions: (questions) => set({ questions }),
       setStateQuestions: (questions) => set({ stateQuestions: questions }),
+      setTestQuestions: (questions) => set({ testQuestions: questions }),
 
       nextQuestion: () =>
         set((state) => {
@@ -296,6 +300,8 @@ export const useStore = create<AppState>()(
         set({
           testMode: false,
           testStartTime: null,
+          testQuestions: [],
+          testAnswers: [],
         }),
 
       resetProgress: () => set({ userProgress: initialProgress }),
