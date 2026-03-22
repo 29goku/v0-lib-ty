@@ -21,6 +21,7 @@ export default function ReviewPage() {
   const [selectedQuestion, setSelectedQuestion] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [showResetDialog, setShowResetDialog] = useState(false)
+  const [activeTab, setActiveTab] = useState<'flagged' | 'completed' | 'incorrect'>('flagged')
 
   useEffect(() => {
     // Load questions for review with better error handling
@@ -177,29 +178,28 @@ export default function ReviewPage() {
         <div className="grid lg:grid-cols-5 gap-8">
           {/* Question Lists */}
           <div className="lg:col-span-3">
-            <Tabs defaultValue="flagged" className="w-full">
-              <TabsList className={`!grid !grid-cols-3 !w-full !bg-transparent border !p-0 !h-auto gap-0 ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
-                <TabsTrigger
-                  value="flagged"
-                  className={`!px-0 !py-3 !rounded-none font-semibold text-center transition-all data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
+            {/* Custom Tab Navigation */}
+            <div className={`grid grid-cols-3 w-full border rounded-lg overflow-hidden ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
+              {['flagged', 'completed', 'incorrect'].map((tab, idx) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab as any)}
+                  className={`py-3 px-4 font-semibold text-center transition-all ${
+                    activeTab === tab
+                      ? isDark ? 'bg-gray-900/20 text-white' : 'bg-gray-200 text-gray-900'
+                      : isDark ? 'text-gray-400 hover:text-gray-300' : 'text-gray-600 hover:text-gray-900'
+                  } ${idx < 2 ? isDark ? 'border-r border-gray-700' : 'border-r border-gray-300' : ''}`}
                 >
-                  FLAGGED ({flaggedQuestions.length})
-                </TabsTrigger>
-                <TabsTrigger
-                  value="completed"
-                  className={`!px-0 !py-3 !rounded-none font-semibold text-center transition-all border-l border-r ${isDark ? 'border-gray-700' : 'border-gray-200'} data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
-                >
-                  COMPLETED ({completedQuestions.length})
-                </TabsTrigger>
-                <TabsTrigger
-                  value="incorrect"
-                  className={`!px-0 !py-3 !rounded-none font-semibold text-center transition-all data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
-                >
-                  INCORRECT ({incorrectQuestions.length})
-                </TabsTrigger>
-              </TabsList>
+                  {tab === 'flagged' && `FLAGGED (${flaggedQuestions.length})`}
+                  {tab === 'completed' && `COMPLETED (${completedQuestions.length})`}
+                  {tab === 'incorrect' && `INCORRECT (${incorrectQuestions.length})`}
+                </button>
+              ))}
+            </div>
 
-              <TabsContent value="flagged" className="mt-6">
+            {/* Tab Content */}
+            <div className="mt-6">
+              {activeTab === 'flagged' && (
                 <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                   {flaggedQuestions.length === 0 ? (
                     <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
@@ -235,10 +235,10 @@ export default function ReviewPage() {
                     ))
                   )}
                 </div>
-              </TabsContent>
+              )}
 
-              <TabsContent value="completed" className="mt-6">
-                <div className="space-y-4">
+              {activeTab === 'completed' && (
+                <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                   {completedQuestions.length === 0 ? (
                     <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
                       <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -273,10 +273,10 @@ export default function ReviewPage() {
                     ))
                   )}
                 </div>
-              </TabsContent>
+              )}
 
-              <TabsContent value="incorrect" className="mt-6">
-                <div className="space-y-4">
+              {activeTab === 'incorrect' && (
+                <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                   {incorrectQuestions.length === 0 ? (
                     <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
                       <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -311,8 +311,8 @@ export default function ReviewPage() {
                     ))
                   )}
                 </div>
-              </TabsContent>
-            </Tabs>
+              )}
+            </div>
           </div>
 
           {/* Question Detail with SwipeCard */}
