@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Flag, Languages, Volume2 } from "lucide-react"
+import { Flag, Languages, Volume2, Zap } from "lucide-react"
 import { motion, type PanInfo } from "framer-motion"
 import { useStore } from "@/lib/store"
 import { useTheme } from "@/lib/theme"
@@ -63,6 +63,7 @@ export default function SwipeCard({
   const [imageError, setImageError] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
   const [jumpInput, setJumpInput] = useState("")
+  const [showJumpDialog, setShowJumpDialog] = useState(false)
 
   const { language } = useStore()
   const { isDark } = useTheme()
@@ -271,6 +272,7 @@ export default function SwipeCard({
     if (totalQuestions && num > 0 && num <= totalQuestions && onJumpToQuestion) {
       onJumpToQuestion(num - 1) // Convert to 0-indexed
       setJumpInput("")
+      setShowJumpDialog(false)
     }
   }
 
@@ -341,32 +343,10 @@ export default function SwipeCard({
         >
           <CardHeader className="relative z-10 pb-4">
             <div className="flex justify-between items-start gap-3 flex-wrap">
-              <div className="flex-1 flex items-end gap-2">
-                <CardTitle className={`text-xl md:text-2xl font-semibold leading-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                  {t.question} {question.id}
-                </CardTitle>
-                {totalQuestions && (
-                  <form onSubmit={handleJumpToQuestion} className="flex gap-1 mb-1">
-                    <input
-                      type="number"
-                      min="1"
-                      max={totalQuestions}
-                      value={jumpInput}
-                      onChange={(e) => setJumpInput(e.target.value)}
-                      placeholder="Go to"
-                      className={`w-14 px-2 py-1 text-xs rounded border text-center ${isDark ? 'bg-gray-800 border-gray-700 text-white' : 'bg-white border-gray-300 text-gray-900'}`}
-                    />
-                    <Button
-                      type="submit"
-                      disabled={!jumpInput}
-                      className={`px-2 py-1 text-xs border rounded font-medium transition-colors ${isDark ? 'bg-transparent hover:bg-blue-500/20 text-blue-300 border-blue-700 hover:border-blue-500' : 'bg-transparent hover:bg-blue-100 text-blue-600 border-blue-300 hover:border-blue-500'}`}
-                    >
-                      Go
-                    </Button>
-                  </form>
-                )}
-              </div>
-              <div className="flex gap-1 ml-4">
+              <CardTitle className={`text-xl md:text-2xl font-semibold leading-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                {t.question} {question.id}
+              </CardTitle>
+              <div className="flex gap-1 ml-4 flex-wrap justify-end">
                 <Button
                   onClick={translateQuestion}
                   disabled={isTranslating}
@@ -397,8 +377,47 @@ export default function SwipeCard({
                 >
                   <Flag className="w-4 h-4" />
                 </Button>
+                {totalQuestions && (
+                  <Button
+                    onClick={() => setShowJumpDialog(!showJumpDialog)}
+                    className={`border px-2 py-1.5 rounded text-xs transition-colors ${isDark ? 'bg-transparent hover:bg-blue-500/20 text-blue-300 border-blue-700 hover:border-blue-500' : 'bg-transparent hover:bg-blue-100 text-blue-600 border-blue-300 hover:border-blue-500'}`}
+                    title={`Jump to question (1-${totalQuestions})`}
+                  >
+                    <Zap className="w-4 h-4" />
+                  </Button>
+                )}
               </div>
             </div>
+
+            {/* Jump to Question Dialog */}
+            {showJumpDialog && totalQuestions && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className={`mt-3 p-3 rounded border ${isDark ? 'bg-gray-900/50 border-gray-700' : 'bg-gray-100 border-gray-300'}`}
+              >
+                <form onSubmit={handleJumpToQuestion} className="flex gap-2">
+                  <input
+                    type="number"
+                    min="1"
+                    max={totalQuestions}
+                    value={jumpInput}
+                    onChange={(e) => setJumpInput(e.target.value)}
+                    placeholder={`Enter 1-${totalQuestions}`}
+                    autoFocus
+                    className={`flex-1 px-3 py-2 text-sm rounded border ${isDark ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'}`}
+                  />
+                  <Button
+                    type="submit"
+                    disabled={!jumpInput}
+                    className={`px-4 py-2 text-sm border rounded font-medium transition-colors ${isDark ? 'bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 border-blue-700 hover:border-blue-500' : 'bg-blue-100 hover:bg-blue-200 text-blue-600 border-blue-300'}`}
+                  >
+                    Jump
+                  </Button>
+                </form>
+              </motion.div>
+            )}
 
             <div className="space-y-3">
               <p className={`text-base md:text-lg leading-relaxed font-normal ${isDark ? 'text-gray-100' : 'text-gray-900'}`}>
