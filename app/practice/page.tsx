@@ -777,12 +777,12 @@ export default function PracticePage() {
                                   onClick={() => handleQuestionJump(index)}
                                   className={`relative aspect-square rounded-lg font-semibold text-sm transition-all border ${
                                       isCurrent
-                                          ? "bg-white text-black border-white shadow-lg shadow-white/50"
+                                          ? isDark ? "bg-white text-black border-white shadow-lg shadow-white/50" : "bg-blue-500 text-white border-blue-600 shadow-lg shadow-blue-400/50"
                                           : isIncorrect
                                               ? "bg-red-500 text-white border-red-400 hover:opacity-80"
                                               : isAnswered
                                                   ? "bg-green-500 text-white border-green-400 hover:opacity-80"
-                                                  : "border-gray-600 bg-transparent text-gray-300"
+                                                  : isDark ? "border-gray-600 bg-transparent text-gray-300" : "border-gray-400 bg-transparent text-gray-600"
                                   }`}
                               >
                                 {originalQuestionNumber}
