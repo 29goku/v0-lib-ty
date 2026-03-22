@@ -255,42 +255,25 @@ export default function SwipeCard({
 
   return (
     <div className="relative w-full max-w-2xl mx-auto">
-      {/* Smoother background gradient */}
-      <div
-        className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-cyan-500/5 rounded-3xl blur-2xl"
-        style={{
-          animation: 'pulse 4s ease-in-out infinite',
-          animationDelay: '0s'
-        }}
-      />
-
-      {/* Swipe Indicators with smoother animations */}
+      {/* Minimalist swipe indicators */}
       <motion.div
-        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none"
+        className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none"
         style={{
           opacity: prevIndicatorOpacity,
           scale: prevIndicatorScale
         }}
       >
-        <div className="bg-green-500/90 text-white px-4 py-2 rounded-xl font-bold text-lg shadow-xl border-2 border-green-300/50 backdrop-blur-sm">
-          <div className="flex items-center space-x-2">
-            <span>→</span>
-          </div>
-        </div>
+        <div className="text-gray-400 text-3xl font-light">→</div>
       </motion.div>
 
       <motion.div
-        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none"
+        className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none"
         style={{
           opacity: nextIndicatorOpacity,
           scale: nextIndicatorScale
         }}
       >
-        <div className="bg-blue-500/90 text-white px-4 py-2 rounded-xl font-bold text-lg shadow-xl border-2 border-blue-300/50 backdrop-blur-sm">
-          <div className="flex items-center space-x-2">
-            <span>←</span>
-          </div>
-        </div>
+        <div className="text-gray-400 text-3xl font-light">←</div>
       </motion.div>
 
       <motion.div
@@ -329,38 +312,23 @@ export default function SwipeCard({
       >
         <Card
           ref={contentRef}
-          className={`border-4 border-cyan-400/50 bg-gradient-to-br from-black/80 to-purple-900/80 backdrop-blur-xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-500 ease-out overflow-hidden relative ${
-            isDragging ? 'shadow-2xl shadow-cyan-500/40' : ''
+          className={`border border-gray-700 bg-white/5 backdrop-blur-sm overflow-hidden relative transition-all duration-200 ${
+            isDragging ? 'border-gray-600' : ''
           }`}
         >
-          {/* Subtle drag effect overlay */}
-          {isDragging && (
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 via-purple-500/5 to-pink-500/5 pointer-events-none z-5"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            />
-          )}
-
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse"></div>
-
-          <CardHeader className="relative z-10">
-            <div className="flex justify-between items-start mb-4">
-              <CardTitle className="text-2xl md:text-3xl font-black text-white leading-tight">
-                <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
-                  {t.question} {question.id}
-                </span>
+          <CardHeader className="relative z-10 pb-4">
+            <div className="flex justify-between items-start">
+              <CardTitle className="text-xl md:text-2xl font-semibold text-white leading-tight flex-1">
+                {t.question} {question.id}
               </CardTitle>
-              <div className="flex gap-2">
+              <div className="flex gap-1 ml-4">
                 <Button
                   onClick={translateQuestion}
                   disabled={isTranslating}
-                  className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white border-0 px-3 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 text-sm font-bold"
+                  className="bg-transparent hover:bg-gray-800/50 text-gray-300 hover:text-white border border-gray-700 px-2 py-1.5 rounded text-xs font-medium transition-colors"
+                  title={showTranslation ? t.translated : t.translate}
                 >
-                  <Languages className="w-4 h-4 mr-1" />
-                  {isTranslating ? t.translating : showTranslation ? t.translated : t.translate}
+                  <Languages className="w-4 h-4" />
                 </Button>
                 <Button
                   onClick={() => speakText(
@@ -368,69 +336,56 @@ export default function SwipeCard({
                     showTranslation,
                     language
                   )}
-                  className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white border-0 px-3 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                  className="bg-transparent hover:bg-gray-800/50 text-gray-300 hover:text-white border border-gray-700 px-2 py-1.5 rounded text-xs transition-colors"
+                  title={t.speak || "Read aloud"}
                 >
                   <Volume2 className="w-4 h-4" />
                 </Button>
                 <Button
                   onClick={onFlag}
-                  className={`border-0 px-3 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 ${
+                  className={`border px-2 py-1.5 rounded text-xs transition-colors ${
                     isFlagged
-                      ? "bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white"
-                      : "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white"
+                      ? "bg-red-500/20 border-red-500/50 text-red-300"
+                      : "bg-transparent border-gray-700 text-gray-300 hover:bg-gray-800/50 hover:text-white"
                   }`}
+                  title={isFlagged ? "Unflag" : "Flag"}
                 >
                   <Flag className="w-4 h-4" />
                 </Button>
               </div>
             </div>
 
-            <div className="space-y-4">
-              <p className="text-lg md:text-xl text-white leading-relaxed font-medium">
+            <div className="space-y-3">
+              <p className="text-base md:text-lg text-gray-100 leading-relaxed font-normal">
                 {question.question}
               </p>
-              {showTranslation && (translationBoxQuestion || (Array.isArray(translationBoxOptions) && translationBoxOptions.length > 0)) && (
+              {showTranslation && translationBoxQuestion && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 p-4 rounded-lg border border-blue-400/30"
+                  className="p-3 rounded border border-gray-700 bg-gray-900/30"
                 >
-                  <div className="flex items-center mb-2">
-                    <Languages className="w-4 h-4 mr-2 text-blue-300" />
-                    <span className="text-blue-300 text-sm font-bold uppercase">
-                      {getLanguageDisplayName(language)} Translation
-                    </span>
-                  </div>
-                  <p className="text-blue-200 text-lg leading-relaxed font-medium">{translationBoxQuestion}</p>
+                  <p className="text-sm text-gray-300">{translationBoxQuestion}</p>
                 </motion.div>
               )}
             </div>
           </CardHeader>
 
-          <CardContent className="relative z-10 pb-8">
-            {question.image && !imageError ? (
-              <div className="mb-6 flex justify-center">
+          <CardContent className="relative z-10 pt-2 pb-6 px-6 space-y-4">
+            {question.image && !imageError && (
+              <div className="mb-4 flex justify-center">
                 <img
                   src={question.image}
                   alt="Question illustration"
-                  className="max-w-full h-auto rounded-lg shadow-lg border-2 border-cyan-400/30"
-                  style={{ maxHeight: CARD_STYLES.imageMaxHeight }}
+                  className="max-w-full h-auto rounded"
+                  style={{ maxHeight: "200px" }}
                   onError={handleImageError}
                 />
               </div>
-            ) : imageError || !question.image ? (
-              <div className="mb-6 flex justify-center items-center p-8 bg-gradient-to-r from-gray-800/50 to-gray-700/50 rounded-lg border-2 border-gray-600/30">
-                <div className="text-center">
-                  <div className="mb-3 inline-block">
-                    <Icon name="Image" size="3xl" color="text-gray-500" />
-                  </div>
-                  <p className="text-gray-400 text-sm">{t.imageNotAvailable || 'Bild nicht verfügbar'}</p>
-                </div>
-              </div>
-            ) : null}
+            )}
 
-            <div className="space-y-3">
+            <div className="space-y-2">
               {question.options.map((originalOption: string, index: number) => {
                 const translatedOption = Array.isArray(translationBoxOptions) ? translationBoxOptions[index] : undefined
                 return (
@@ -438,28 +393,28 @@ export default function SwipeCard({
                   key={index}
                   onClick={() => handleAnswerClick(index)}
                   disabled={showAnswer}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className={`w-full p-4 md:p-6 text-left rounded-xl font-bold text-lg md:text-xl transition-all duration-300 border-2 transform hover:scale-[1.02] ${
+                  whileHover={{ backgroundColor: showAnswer ? undefined : "rgba(0,0,0,0.4)" }}
+                  whileTap={{ scale: 0.99 }}
+                  className={`w-full p-3 text-left rounded border text-sm transition-all ${
                     showAnswer
                       ? index === question.answerIndex
-                        ? "bg-gradient-to-r from-green-600 to-emerald-600 border-green-400 text-white shadow-lg shadow-green-500/50"
+                        ? "bg-green-500/20 border-green-500/50 text-green-200"
                         : selectedAnswer === index
-                          ? "bg-gradient-to-r from-red-600 to-pink-600 border-red-400 text-white shadow-lg shadow-red-500/50"
-                          : "bg-black/40 border-gray-600 text-gray-400"
+                          ? "bg-red-500/20 border-red-500/50 text-red-200"
+                          : "bg-gray-900/20 border-gray-800 text-gray-500"
                       : selectedAnswer === index
-                        ? "bg-gradient-to-r from-cyan-500 to-blue-500 border-cyan-400 text-white shadow-lg shadow-cyan-500/50"
-                        : "bg-black/60 border-cyan-400/30 text-white hover:bg-black/80 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25"
+                        ? "bg-blue-500/20 border-blue-500/50 text-blue-100"
+                        : "bg-transparent border-gray-700 text-gray-200 hover:bg-gray-900/20"
                   }`}
                 >
-                  <div className="flex flex-col">
-                    <div className="flex items-start">
-                      <span className="mr-3 text-2xl font-black">{String.fromCharCode(65 + index)}.</span>
-                      <span>{originalOption}</span>
+                  <div className="flex gap-3">
+                    <span className="font-semibold text-gray-400 flex-shrink-0">{String.fromCharCode(65 + index)}.</span>
+                    <div className="flex-1 text-left">
+                      <div>{originalOption}</div>
+                      {showTranslation && translatedOption && (
+                        <div className="mt-1 text-xs text-gray-400">{translatedOption}</div>
+                      )}
                     </div>
-                    {showTranslation && translatedOption && (
-                      <div className="mt-2 ml-8 text-blue-200 text-base opacity-80 font-medium">{translatedOption}</div>
-                    )}
                   </div>
                 </motion.button>
                 )
@@ -467,9 +422,9 @@ export default function SwipeCard({
             </div>
 
             {!showAnswer && (
-              <div className="mt-8 text-center space-y-4">
-                <p className="text-cyan-300 text-lg font-bold animate-pulse flex items-center justify-center gap-2">
-                  <Icon name="Lightbulb" color="text-cyan-300" animate={false} />
+              <div className="text-center pt-2">
+                <p className="text-gray-500 text-sm flex items-center justify-center gap-2">
+                  <Icon name="Lightbulb" size="sm" color="text-gray-600" animate={false} />
                   {t.selectAnswer}
                 </p>
               </div>
@@ -477,24 +432,18 @@ export default function SwipeCard({
 
             {showAnswer && question.explanation && (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mt-6 p-4 md:p-6 bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-xl border border-purple-400/30"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                className="pt-4 border-t border-gray-800 space-y-2"
               >
-                <h4 className="text-xl font-black text-purple-300 mb-3 flex items-center gap-2">
-                  <Icon name="Lightbulb" size="lg" color="text-purple-300" />
+                <h4 className="text-sm font-semibold text-gray-300 flex items-center gap-2">
+                  <Icon name="Lightbulb" size="sm" color="text-gray-400" />
                   {t.explanation}
                 </h4>
-                <p className="text-white text-lg leading-relaxed mb-3">{question.explanation}</p>
+                <p className="text-gray-300 text-sm leading-relaxed">{question.explanation}</p>
                 {showTranslation && translationBoxExplanation && (
-                  <div className="bg-purple-800/30 p-3 rounded-lg border border-purple-400/20 mt-3">
-                    <div className="flex items-center mb-2">
-                      <Languages className="w-4 h-4 mr-2 text-purple-300" />
-                      <span className="text-purple-300 text-sm font-bold uppercase">
-                        {getLanguageDisplayName(language)} Translation
-                      </span>
-                    </div>
-                    <p className="text-purple-200 text-base leading-relaxed">{translationBoxExplanation}</p>
+                  <div className="mt-3 p-3 rounded bg-gray-900/30 border border-gray-800">
+                    <p className="text-gray-400 text-xs">{translationBoxExplanation}</p>
                   </div>
                 )}
               </motion.div>
