@@ -882,30 +882,6 @@ export default function PracticePage() {
             </div>
           </div>
 
-          {userProgress.badges.length > 0 && (
-              <div className="flex justify-center mb-8">
-                <Card className="w-full max-w-md border border-gray-700 bg-white/5">
-                  <CardHeader>
-                    <CardTitle className="text-center text-white font-semibold text-2xl">
-                      {t.achievements}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex justify-center space-x-4">
-                      {userProgress.badges.slice(-3).map((badge, index) => (
-                          <div
-                              key={badge}
-                              className="transition-opacity cursor-pointer hover:opacity-80"
-                              style={{ animationDelay: `${index * 0.2}s` }}
-                          >
-                            <Badge type={badge} earned size="sm" />
-                          </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-          )}
 
         </div>
       </div>
