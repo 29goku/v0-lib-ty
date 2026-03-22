@@ -421,9 +421,13 @@ export default function TestPage() {
             <p className={`mt-1 text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Q {currentQuestionIndex + 1}/{selectedQuestionCount[0]}</p>
           </div>
 
-          <div className="flex items-center space-x-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-700/30 px-3 md:px-4 py-2 rounded-lg backdrop-blur-md">
-            <Clock className="w-5 h-5 text-blue-400" />
-            <span className="font-mono font-semibold text-blue-300 text-sm md:text-base">{formatTime(timeRemaining)}</span>
+          <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-700/30 px-3 md:px-4 py-2 rounded-lg backdrop-blur-md">
+              <Clock className="w-5 h-5 text-blue-400" />
+              <span className="font-mono font-semibold text-blue-300 text-sm md:text-base">{formatTime(timeRemaining)}</span>
+            </div>
+            <LanguageSelector />
+            <ThemeToggle />
           </div>
         </div>
 
