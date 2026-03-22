@@ -149,10 +149,15 @@ export default function ReviewPage() {
 
   return (
     <div className={`min-h-screen ${theme.bg} ${theme.text}`}>
-      <StickyMobileHeader title="Review" showBackButton={true} backHref="/" />
+      <StickyMobileHeader
+        title="Review Mode"
+        subtitle={`${flaggedQuestions.length + completedQuestions.length + incorrectQuestions.length} questions`}
+        showBackButton={true}
+        backHref="/"
+      />
       <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
+        {/* Header - Desktop Only */}
+        <div className="hidden sm:flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
           <div className="flex items-center space-x-4">
             <Link href="/">
               <Button className={`border font-semibold px-6 py-2 rounded transition-all ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
