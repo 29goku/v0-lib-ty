@@ -132,13 +132,14 @@ export default function PracticePage() {
   // Get the appropriate questions based on state selection
   const getQuestionsToUse = () => {
     if (selectedStates.length > 0) {
-      let combinedQuestions: any[] = []
-      selectedStates.forEach(stateId => {
-        if (selectedStates.length === 1 && stateId === selectedState && stateQuestions.length > 0) {
-          combinedQuestions = [...combinedQuestions, ...stateQuestions]
-        }
-      })
-      return combinedQuestions.length > 0 ? combinedQuestions : questions
+      // Filter main questions to only those matching selected state categories
+      const stateFilteredQuestions = questions.filter(q =>
+        selectedStates.some(stateId =>
+          germanStates.find(s => s.id === stateId)?.name.toLowerCase().includes(q.category.toLowerCase()) ||
+          q.category.toLowerCase() === stateId.toLowerCase()
+        )
+      )
+      return stateFilteredQuestions.length > 0 ? stateFilteredQuestions : questions
     }
     return questions
   }
