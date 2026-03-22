@@ -89,18 +89,21 @@ export default function ReviewPage() {
     activeTab === 'completed' ? completedQuestions :
     activeTab === 'incorrect' ? incorrectQuestions : []
 
-  // Auto-select first question when tab changes
+  // Auto-select first question only when tab changes, not on every render
   useEffect(() => {
-    if (activeTab === 'flagged' && flaggedQuestions.length > 0) {
-      setSelectedQuestion(flaggedQuestions[0].id)
-    } else if (activeTab === 'completed' && completedQuestions.length > 0) {
-      setSelectedQuestion(completedQuestions[0].id)
-    } else if (activeTab === 'incorrect' && incorrectQuestions.length > 0) {
-      setSelectedQuestion(incorrectQuestions[0].id)
-    } else {
-      setSelectedQuestion(null)
+    // Only auto-select if no question is currently selected
+    if (!selectedQuestion) {
+      if (activeTab === 'flagged' && flaggedQuestions.length > 0) {
+        setSelectedQuestion(flaggedQuestions[0].id)
+      } else if (activeTab === 'completed' && completedQuestions.length > 0) {
+        setSelectedQuestion(completedQuestions[0].id)
+      } else if (activeTab === 'incorrect' && incorrectQuestions.length > 0) {
+        setSelectedQuestion(incorrectQuestions[0].id)
+      } else {
+        setSelectedQuestion(null)
+      }
     }
-  }, [activeTab, flaggedQuestions, completedQuestions, incorrectQuestions])
+  }, [activeTab])
 
   // Ensure selected question is in the current filtered list, otherwise reset
   useEffect(() => {
