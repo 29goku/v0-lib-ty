@@ -20,7 +20,15 @@
       "Bash(wc -l /Users/shosingh_1/v0-lib-ty/app/page.tsx*)",
       "Bash(git checkout:*)",
       "Bash(curl -s http://localhost:3001)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(gh auth:*)",
+      "Bash(git config:*)",
+      "Bash(git remote:*)",
+      "Bash(gh pr:*)",
+      "Bash(unset GITHUB_TOKEN)",
+      "Bash(echo:*)"
     ]
   }
 }

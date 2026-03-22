@@ -1,6 +1,6 @@
 import React from "react"
-import ChatWidgetClient from "../components/ChatWidgetClient";
 import HotjarScript from "../components/HotjarScript";
+import GoogleAdSense from "../components/GoogleAdSense";
 import dynamic from 'next/dynamic';
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
@@ -196,7 +196,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Suspense fallback={null}>{children}</Suspense>
         </ThemeProvider>
-        <ChatWidgetClient />
+        <GoogleAdSense />
         <HotjarScript />
         <SpeedInsights />
         <Analytics />
