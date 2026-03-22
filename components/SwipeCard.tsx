@@ -278,9 +278,9 @@ export default function SwipeCard({
 
   return (
     <div className="relative w-full max-w-2xl mx-auto">
-      {/* Minimalist swipe indicators */}
+      {/* Minimalist swipe indicators - hidden on mobile */}
       <motion.div
-        className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none"
+        className="hidden sm:block absolute right-8 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none"
         style={{
           opacity: prevIndicatorOpacity,
           scale: prevIndicatorScale
@@ -290,7 +290,7 @@ export default function SwipeCard({
       </motion.div>
 
       <motion.div
-        className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none"
+        className="hidden sm:block absolute left-8 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none"
         style={{
           opacity: nextIndicatorOpacity,
           scale: nextIndicatorScale
