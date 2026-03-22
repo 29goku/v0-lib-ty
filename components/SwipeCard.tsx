@@ -29,6 +29,7 @@ import { useTranslation } from "@/lib/hooks/useTranslation"
 import { useKeyboardHandler } from "@/lib/hooks/useKeyboardHandler"
 import { useCardLayout } from "@/lib/hooks/useCardLayout"
 import { Icon } from "@/components/Icon"
+import GamificationFeedback from "@/components/GamificationFeedback"
 
 interface SwipeCardProps {
   question: Question
@@ -61,6 +62,9 @@ export default function SwipeCard({
   const { language } = useStore()
   const { isDark } = useTheme()
   const t = getTranslation(language)
+
+  // Use externalSelectedAnswer if provided (for displaying feedback from parent)
+  const displaySelectedAnswer = externalSelectedAnswer !== undefined ? externalSelectedAnswer : selectedAnswer
 
   // Custom hooks for modular functionality
   const {
@@ -125,8 +129,10 @@ export default function SwipeCard({
 
   // Sync external selected answer
   useEffect(() => {
-    if (externalSelectedAnswer !== undefined) {
+    if (externalSelectedAnswer !== undefined && externalSelectedAnswer !== null) {
       setSelectedAnswer(externalSelectedAnswer)
+    } else if (externalSelectedAnswer === null) {
+      setSelectedAnswer(null)
     }
   }, [externalSelectedAnswer])
 
@@ -399,15 +405,15 @@ export default function SwipeCard({
                   disabled={showAnswer}
                   whileHover={{ backgroundColor: showAnswer ? undefined : "rgba(0,0,0,0.4)" }}
                   whileTap={{ scale: 0.99 }}
-                  className={`w-full p-3 text-left rounded border text-sm transition-all ${
-                    showAnswer
+                  className={`w-full p-3 text-left rounded border-2 text-sm transition-all font-semibold ${
+                    showAnswer && displaySelectedAnswer !== null
                       ? index === question.answerIndex
-                        ? isDark ? "bg-green-500/20 border-green-500/50 text-green-200" : "bg-green-100 border-green-400 text-green-800"
-                        : selectedAnswer === index
-                          ? isDark ? "bg-red-500/20 border-red-500/50 text-red-200" : "bg-red-100 border-red-400 text-red-800"
-                          : isDark ? "bg-gray-900/20 border-gray-800 text-gray-500" : "bg-gray-100 border-gray-300 text-gray-600"
-                      : selectedAnswer === index
-                        ? isDark ? "bg-blue-500/20 border-blue-500/50 text-blue-100" : "bg-blue-100 border-blue-400 text-blue-800"
+                        ? isDark ? "bg-green-500/50 border-green-400 text-green-100" : "bg-green-300 border-green-700 text-green-950"
+                        : displaySelectedAnswer === index
+                          ? isDark ? "bg-red-500/50 border-red-400 text-red-100" : "bg-red-300 border-red-700 text-red-950"
+                          : isDark ? "bg-gray-900/20 border-gray-700 text-gray-500" : "bg-gray-100 border-gray-400 text-gray-600"
+                      : displaySelectedAnswer === index
+                        ? isDark ? "bg-blue-500/40 border-blue-400 text-blue-100" : "bg-blue-200 border-blue-600 text-blue-900"
                         : isDark ? "bg-transparent border-gray-700 text-gray-200 hover:bg-gray-900/20" : "bg-transparent border-gray-300 text-gray-700 hover:bg-gray-100"
                   }`}
                 >
@@ -451,6 +457,14 @@ export default function SwipeCard({
                   </div>
                 )}
               </motion.div>
+            )}
+
+            {showAnswer && displaySelectedAnswer !== null && (
+              <GamificationFeedback
+                isCorrect={displaySelectedAnswer === question.answerIndex}
+                xpGained={displaySelectedAnswer === question.answerIndex ? 10 : 0}
+                accuracy={0}
+              />
             )}
           </CardContent>
         </Card>

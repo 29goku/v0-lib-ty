@@ -11,7 +11,6 @@ import { useEffect, useState } from "react"
 import { Icon } from "@/components/Icon"
 import ThemeToggle from "@/components/ThemeToggle"
 import { useTheme } from "@/lib/theme"
-import AdBanner from "@/components/AdBanner"
 
 export default function HomePage() {
   const { language, questions, userProgress, loadQuestions } = useStore()
@@ -172,16 +171,16 @@ export default function HomePage() {
 
             {/* Main title */}
             <div className="mb-4 sm:mb-6 md:mb-8 relative">
-              <h1 className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold mb-1 sm:mb-2 md:mb-3 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h1 className={`text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-semibold mb-1 sm:mb-2 md:mb-3 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 LEBEN
               </h1>
 
-              <h1 className={`text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold mb-2 sm:mb-3 md:mb-4 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h1 className={`text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold mb-2 sm:mb-3 md:mb-4 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 IN DEUTSCHLAND
               </h1>
 
               {/* Subtitle */}
-              <div className={`text-lg sm:text-xl md:text-2xl font-normal mb-4 md:mb-6 leading-relaxed px-4 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
+              <div className={`text-xl sm:text-2xl md:text-3xl font-normal mb-4 md:mb-6 leading-relaxed px-4 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
                 {t.heroSubtitle}
               </div>
             </div>
@@ -189,21 +188,21 @@ export default function HomePage() {
             {/* Stats */}
             <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-6 mb-8 md:mb-10 px-4">
               <div className="text-center">
-                <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.totalQuestions}</div>
-                <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.totalQuestions}</div>
+                <div className={`text-3xl md:text-4xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.totalQuestions}</div>
+                <div className={`text-sm md:text-base ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.totalQuestions}</div>
               </div>
               <div className="text-center">
-                <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>33</div>
-                <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Test Length</div>
+                <div className={`text-3xl md:text-4xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>33</div>
+                <div className={`text-sm md:text-base ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Test Length</div>
               </div>
               <div className="text-center">
-                <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>60</div>
+                <div className={`text-3xl md:text-4xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>60</div>
                 <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Minutes</div>
               </div>
             </div>
 
             {/* CTA Buttons - Main App Functionality */}
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-12 md:mb-16 px-4">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-4 md:mb-6 px-4">
               <Link href="/practice" className="group flex-1 sm:flex-none">
                 <button className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold px-8 md:px-12 py-4 md:py-5 text-lg md:text-xl rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-blue-500/50 hover:shadow-2xl relative overflow-hidden group">
                   <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></span>
@@ -225,19 +224,14 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Ad Banner - After Hero Section */}
-        <div className="py-4 px-4">
-          <AdBanner slot="1234567890" format="auto" responsive={true} />
-        </div>
-
         {/* Features Section */}
-        <div className="md:py-16 px-4 relative">
+        <div className="py-6 md:py-8 px-4 relative">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-12 relative">
-              <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-2 md:mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-4xl sm:text-5xl md:text-6xl font-semibold mb-2 md:mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Learn & Track Progress
               </h2>
-              <p className={`text-base md:text-lg px-4 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
+              <p className={`text-lg md:text-xl px-4 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
                 Five ways to prepare for the citizenship test
               </p>
             </div>
@@ -247,10 +241,10 @@ export default function HomePage() {
               <Link href="/practice" className="group">
                 <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
                   <CardContent className="p-4 h-full flex flex-col">
-                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className={`text-xl md:text-2xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {t.practice}
                     </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Learn by swiping. {stats.totalQuestions} questions with instant feedback
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
@@ -264,10 +258,10 @@ export default function HomePage() {
               <Link href="/test" className="group">
                 <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
                   <CardContent className="p-4 h-full flex flex-col">
-                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className={`text-xl md:text-2xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {t.testMode}
                     </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Simulated test conditions. 33 questions, 60 minutes
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
@@ -281,48 +275,67 @@ export default function HomePage() {
               <Link href="/review" className="group">
                 <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
                   <CardContent className="p-4 h-full flex flex-col">
-                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className={`text-xl md:text-2xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {t.review}
                     </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Study mistakes, track progress, improve
+                    <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {t.reviewDescribe}
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
-                      Review
+                      {t.reviewButton}
                     </div>
                   </CardContent>
                 </Card>
               </Link>
 
               {/* Stats Card */}
-              <Link href="/stats" className="group">
-                <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
-                  <CardContent className="p-4 h-full flex flex-col">
-                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                      📊 Statistics
-                    </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Analytics, charts, performance trends
-                    </p>
-                    <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
-                      View
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
+              {stats.questionsAnswered > 0 && (
+                <Link href="/stats" className="group">
+                  <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
+                    <CardContent className="p-4 h-full flex flex-col">
+                      <h3 className={`text-xl md:text-2xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                        📊 Statistics
+                      </h3>
+                      <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                        Analytics, charts, performance trends
+                      </p>
+                      <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
+                        View
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              )}
 
               {/* Settings Card */}
               <Link href="/settings" className="group">
                 <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
                   <CardContent className="p-4 h-full flex flex-col">
-                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className={`text-xl md:text-2xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {t.settings}
                     </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Dark mode, language, stats
+                    <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {t.settingsDescribe}
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
-                      Customize
+                      {t.settingsButton}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              {/* FAQ Card */}
+              <Link href="/faq" className="group">
+                <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
+                  <CardContent className="p-4 h-full flex flex-col">
+                    <h3 className={`text-xl md:text-2xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                      ❓ {t.faqTitle}
+                    </h3>
+                    <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {t.faqDescribe}
+                    </p>
+                    <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
+                      {t.faqButton}
                     </div>
                   </CardContent>
                 </Card>
@@ -367,21 +380,16 @@ export default function HomePage() {
           </div>
         )}
 
-        {/* Ad Banner - Before Final CTA */}
-        <div className="py-4 px-4">
-          <AdBanner slot="9876543210" format="auto" responsive={true} />
-        </div>
-
         {/* Final CTA */}
         <div className={`py-10 md:py-12 px-4 ${isDark ? 'border-t border-gray-700 bg-white/5' : 'border-t border-gray-200 bg-gray-50'}`}>
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 md:mb-6 leading-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
+            <h2 className={`text-4xl sm:text-5xl md:text-6xl font-semibold mb-4 md:mb-6 leading-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Ready to Become
               <br />
               A German Citizen?
             </h2>
 
-            <p className={`text-base sm:text-lg md:text-xl mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto px-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+            <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto px-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               Join members who are preparing for the citizenship test with our swipe-based learning.
               <br />
               No boring textbooks. No endless lectures. Just effective practice.

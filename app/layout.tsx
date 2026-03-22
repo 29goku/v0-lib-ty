@@ -1,7 +1,6 @@
 import React from "react"
-import ChatWidgetClient from "../components/ChatWidgetClient";
 import HotjarScript from "../components/HotjarScript";
-import ContentSquareScript from "../components/ContentSquareScript";
+import GoogleAdSense from "../components/GoogleAdSense";
 import dynamic from 'next/dynamic';
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
@@ -192,16 +191,13 @@ export default function RootLayout({
             })
           }}
         />
-
-        {/* Analytics and Tracking */}
-        <HotjarScript />
-        <ContentSquareScript />
       </head>
       <body className={GeistSans.className}>
         <ThemeProvider>
           <Suspense fallback={null}>{children}</Suspense>
         </ThemeProvider>
-        <ChatWidgetClient />
+        <GoogleAdSense />
+        <HotjarScript />
         <SpeedInsights />
         <Analytics />
       </body>

@@ -1,0 +1,85 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - link "Back" [ref=e9] [cursor=pointer]:
+        - /url: /
+        - button "Back" [ref=e10]:
+          - img
+          - text: Back
+      - heading "⚡ Test" [level=1] [ref=e11]
+      - button "Switch to light mode" [ref=e12] [cursor=pointer]:
+        - img [ref=e14]
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - heading "Customize Your Test" [level=2] [ref=e22]
+        - paragraph [ref=e23]: Choose question count
+        - generic [ref=e24]:
+          - paragraph [ref=e25]: "Quick Presets:"
+          - generic [ref=e26]:
+            - button "⚡ Short 10Q" [ref=e27] [cursor=pointer]:
+              - generic [ref=e28]: ⚡
+              - generic [ref=e29]: Short
+              - generic [ref=e30]: 10Q
+            - button "🎯 Standard 33Q" [active] [ref=e31] [cursor=pointer]:
+              - generic [ref=e32]: 🎯
+              - generic [ref=e33]: Standard
+              - generic [ref=e34]: 33Q
+            - button "💪 Full 60Q" [ref=e35] [cursor=pointer]:
+              - generic [ref=e36]: 💪
+              - generic [ref=e37]: Full
+              - generic [ref=e38]: 60Q
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]: "Custom: 33 Q"
+            - generic [ref=e42]: "33"
+          - slider [ref=e47]
+          - generic [ref=e48]:
+            - generic [ref=e49]: "10"
+            - generic [ref=e50]: "150"
+            - generic [ref=e51]: "300"
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - generic [ref=e54]: Q
+          - generic [ref=e55]: "33"
+        - generic [ref=e56]:
+          - generic [ref=e57]: Time
+          - generic [ref=e58]: 60m
+        - generic [ref=e59]:
+          - generic [ref=e60]: Pass
+          - generic [ref=e61]: "17"
+        - generic [ref=e62]:
+          - generic [ref=e63]: Mode
+          - generic [ref=e64]: 📊
+      - generic [ref=e65]:
+        - heading "📋 Details" [level=3] [ref=e66]
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - generic [ref=e69]: "Questions:"
+            - generic [ref=e70]: 33 random
+          - generic [ref=e71]:
+            - generic [ref=e72]: "Time:"
+            - generic [ref=e73]: 60 min (~109s)
+          - generic [ref=e74]:
+            - generic [ref=e75]: "Pass:"
+            - generic [ref=e76]: ≥17 (52%)
+          - generic [ref=e77]:
+            - generic [ref=e78]: "Target:"
+            - generic [ref=e79]: ✅ Official
+      - button "🚀 Start Test with 33 Q" [ref=e80] [cursor=pointer]
+      - paragraph [ref=e81]: You can pause and resume anytime
+  - generic [ref=e86] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e87]:
+      - img [ref=e88]
+    - generic [ref=e91]:
+      - button "Open issues overlay" [ref=e92]:
+        - generic [ref=e93]:
+          - generic [ref=e94]: "0"
+          - generic [ref=e95]: "1"
+        - generic [ref=e96]: Issue
+      - button "Collapse issues badge" [ref=e97]:
+        - img [ref=e98]
+  - alert [ref=e100]
+```

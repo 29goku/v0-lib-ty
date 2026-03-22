@@ -130,6 +130,15 @@ export interface Translation {
 
   // Media
   imageNotAvailable: string
+
+  // Home page features
+  reviewDescribe: string
+  reviewButton: string
+  settingsDescribe: string
+  settingsButton: string
+  faqTitle: string
+  faqDescribe: string
+  faqButton: string
 }
 
 export const translations: Record<Language, Translation> = {
@@ -263,6 +272,15 @@ export const translations: Record<Language, Translation> = {
 
     // Media
     imageNotAvailable: "Image not available",
+
+    // Home page features
+    reviewDescribe: "Review all questions with explanations",
+    reviewButton: "Review",
+    settingsDescribe: "Dark mode, language, stats",
+    settingsButton: "Customize",
+    faqTitle: "FAQ",
+    faqDescribe: "How to use this app, tips & tricks",
+    faqButton: "Learn More",
   },
 
   de: {
@@ -395,6 +413,15 @@ export const translations: Record<Language, Translation> = {
 
     // Media
     imageNotAvailable: "Bild nicht verfügbar",
+
+    // Home page features
+    reviewDescribe: "Alle Fragen mit Erklärungen überprüfen",
+    reviewButton: "Überprüfen",
+    settingsDescribe: "Dunkelmodus, Sprache, Statistiken",
+    settingsButton: "Anpassen",
+    faqTitle: "Häufig gestellte Fragen",
+    faqDescribe: "Wie man diese App nutzt, Tipps & Tricks",
+    faqButton: "Mehr erfahren",
   },
 
   es: {
@@ -527,6 +554,15 @@ export const translations: Record<Language, Translation> = {
 
     // Media
     imageNotAvailable: "Imagen no disponible",
+
+    // Home page features
+    reviewDescribe: "Revisar todas las preguntas con explicaciones",
+    reviewButton: "Revisar",
+    settingsDescribe: "Modo oscuro, idioma, estadísticas",
+    settingsButton: "Personalizar",
+    faqTitle: "Preguntas frecuentes",
+    faqDescribe: "Cómo usar esta aplicación, consejos y trucos",
+    faqButton: "Más información",
   },
 
   fr: {
@@ -659,6 +695,15 @@ export const translations: Record<Language, Translation> = {
 
     // Media
     imageNotAvailable: "Image non disponible",
+
+    // Home page features
+    reviewDescribe: "Passez en revue toutes les questions avec des explications",
+    reviewButton: "Examiner",
+    settingsDescribe: "Mode sombre, langue, statistiques",
+    settingsButton: "Personnaliser",
+    faqTitle: "FAQ",
+    faqDescribe: "Comment utiliser cette application, conseils et astuces",
+    faqButton: "En savoir plus",
   },
 
   it: {
@@ -791,6 +836,15 @@ export const translations: Record<Language, Translation> = {
 
     // Media
     imageNotAvailable: "Immagine non disponibile",
+
+    // Home page features
+    reviewDescribe: "Rivedi tutte le domande con spiegazioni",
+    reviewButton: "Rivedi",
+    settingsDescribe: "Modalità scura, lingua, statistiche",
+    settingsButton: "Personalizza",
+    faqTitle: "Domande frequenti",
+    faqDescribe: "Come usare questa app, suggerimenti e trucchi",
+    faqButton: "Scopri di più",
   },
 
   tr: {
@@ -923,6 +977,15 @@ export const translations: Record<Language, Translation> = {
 
     // Media
     imageNotAvailable: "Görüntü mevcut değil",
+
+    // Home page features
+    reviewDescribe: "Tüm soruları açıklamalarla gözden geçirin",
+    reviewButton: "Gözden Geçir",
+    settingsDescribe: "Koyu mod, dil, istatistikler",
+    settingsButton: "Özelleştir",
+    faqTitle: "SSS",
+    faqDescribe: "Bu uygulamayı nasıl kullanacağınız, ipuçları ve püf noktaları",
+    faqButton: "Daha Fazla Bilgi",
   },
 
   ar: {
@@ -1055,6 +1118,15 @@ export const translations: Record<Language, Translation> = {
 
     // Media
     imageNotAvailable: "الصورة غير متاحة",
+
+    // Home page features
+    reviewDescribe: "راجع جميع الأسئلة مع الشروحات",
+    reviewButton: "مراجعة",
+    settingsDescribe: "الوضع المظلم، اللغة، الإحصائيات",
+    settingsButton: "تخصيص",
+    faqTitle: "الأسئلة الشائعة",
+    faqDescribe: "كيفية استخدام هذا التطبيق، نصائح وحيل",
+    faqButton: "اعرف أكثر",
   },
 
   ru: {
@@ -1187,6 +1259,15 @@ export const translations: Record<Language, Translation> = {
 
     // Media
     imageNotAvailable: "Изображение недоступно",
+
+    // Home page features
+    reviewDescribe: "Проверьте все вопросы с объяснениями",
+    reviewButton: "Проверить",
+    settingsDescribe: "Темный режим, язык, статистика",
+    settingsButton: "Настроить",
+    faqTitle: "Часто задаваемые вопросы",
+    faqDescribe: "Как использовать это приложение, советы и хитрости",
+    faqButton: "Узнать больше",
   },
 
   zh: {
@@ -1319,6 +1400,15 @@ export const translations: Record<Language, Translation> = {
 
     // Media
     imageNotAvailable: "图像不可用",
+
+    // Home page features
+    reviewDescribe: "使用解释复习所有问题",
+    reviewButton: "复习",
+    settingsDescribe: "深色模式、语言、统计数据",
+    settingsButton: "自定义",
+    faqTitle: "常见问题",
+    faqDescribe: "如何使用此应用、提示和技巧",
+    faqButton: "了解更多",
   },
 
   hi: {
@@ -1451,6 +1541,15 @@ export const translations: Record<Language, Translation> = {
 
     // Media
     imageNotAvailable: "छवि उपलब्ध नहीं",
+
+    // Home page features
+    reviewDescribe: "व्याख्या के साथ सभी प्रश्नों की समीक्षा करें",
+    reviewButton: "समीक्षा करें",
+    settingsDescribe: "डार्क मोड, भाषा, आंकड़े",
+    settingsButton: "कस्टमाइज़ करें",
+    faqTitle: "अक्सर पूछे जाने वाले प्रश्न",
+    faqDescribe: "इस ऐप को कैसे उपयोग करें, सुझाव और तरकीबें",
+    faqButton: "और जानें",
   },
 }
 
