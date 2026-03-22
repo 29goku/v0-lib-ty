@@ -534,25 +534,6 @@ export default function PracticePage() {
         <div className="fixed inset-0 z-0">
         </div>
 
-        {/* Fixed Navigation Buttons - Mobile Only */}
-        <div className="sm:hidden fixed left-0 right-0 top-1/2 transform -translate-y-1/2 z-30 pointer-events-none">
-          <div className="flex justify-between items-center px-2">
-            <button
-                aria-label="Previous question"
-                onClick={() => currentIndex > 0 && setCurrentIndex(currentIndex - 1)}
-                className="w-10 h-10 rounded-lg bg-blue-600 text-white font-bold text-base flex items-center justify-center border border-blue-500 hover:bg-blue-700 transition-colors shadow-lg pointer-events-auto"
-            >
-              ‹
-            </button>
-            <button
-                aria-label="Next question"
-                onClick={() => currentIndex < filteredQuestions.length - 1 && setCurrentIndex(currentIndex + 1)}
-                className="w-10 h-10 rounded-lg bg-blue-600 text-white font-bold text-base flex items-center justify-center border border-blue-500 hover:bg-blue-700 transition-colors shadow-lg pointer-events-auto"
-            >
-              ›
-            </button>
-          </div>
-        </div>
 
         <div className="relative z-10 container mx-auto px-4 py-8 sm:py-8">
           <div className="hidden sm:flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
