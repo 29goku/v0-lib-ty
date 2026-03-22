@@ -762,12 +762,12 @@ export default function PracticePage() {
           </div>
 
           {/* Mobile: Sticky Navigation Bar at Bottom */}
-          <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-t from-black via-black/90 to-transparent backdrop-blur-sm border-t border-gray-700">
-            <div className="flex items-center justify-center gap-1 p-3 overflow-x-auto">
+          <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-t from-black via-black/90 to-transparent backdrop-blur-sm border-t border-gray-700 px-2 py-2 sm:px-3 sm:py-3">
+            <div className="flex items-center justify-between gap-0.5 sm:gap-1 overflow-x-auto">
               <button
                 aria-label="Previous"
                 onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
-                className="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors"
+                className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors text-sm sm:text-base"
               >
                 ‹
               </button>
@@ -797,7 +797,7 @@ export default function PracticePage() {
                         key={`dots-${i}`}
                         onClick={() => handleQuestionJump(targetIdx)}
                         aria-label={`Jump near ${target}`}
-                        className="flex-shrink-0 px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black border border-gray-300 hover:opacity-80 transition-all"
+                        className="flex-shrink-0 px-1 sm:px-2 h-8 sm:h-10 flex items-center justify-center rounded-lg bg-white text-black border border-gray-300 hover:opacity-80 transition-all text-xs sm:text-base"
                       >
                         …
                       </button>
