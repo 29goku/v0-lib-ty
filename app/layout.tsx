@@ -1,6 +1,5 @@
 import React from "react"
 import HotjarScript from "../components/HotjarScript";
-import ContentSquareScript from "../components/ContentSquareScript";
 import GoogleAdSense from "../components/GoogleAdSense";
 import dynamic from 'next/dynamic';
 import type { Metadata } from "next"
@@ -199,7 +198,6 @@ export default function RootLayout({
         </ThemeProvider>
         <GoogleAdSense />
         <HotjarScript />
-        <ContentSquareScript />
         <SpeedInsights />
         <Analytics />
       </body>
