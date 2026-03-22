@@ -408,10 +408,21 @@ export default function TestPage() {
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-gradient-to-br from-black via-gray-950 to-black text-white' : 'bg-white text-gray-900'}`}>
-      <StickyMobileHeader title={`Q ${currentQuestionIndex + 1}/${selectedQuestionCount[0]}`} showLanguage={true} showBackButton={true} backHref="/" />
+      <StickyMobileHeader
+        title="Official Test"
+        subtitle={`Q ${currentQuestionIndex + 1}/${selectedQuestionCount[0]}`}
+        showLanguage={true}
+        showBackButton={true}
+        backHref="/"
+        rightContent={
+          <div className="text-xs font-mono font-semibold text-blue-300">
+            {formatTime(timeRemaining)}
+          </div>
+        }
+      />
       <div className="w-full px-4 md:px-8 py-4 md:py-6">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-6 md:mb-8">
+        {/* Header - Desktop Only */}
+        <div className="hidden sm:flex items-center justify-between mb-6 md:mb-8">
           <Link href="/">
             <Button className={`border px-3 py-1.5 text-xs md:text-sm rounded transition-colors ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
               <ArrowLeft className="w-3 h-3 mr-1" />

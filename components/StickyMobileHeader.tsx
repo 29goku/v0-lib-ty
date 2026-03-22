@@ -14,6 +14,7 @@ interface StickyMobileHeaderProps {
   showLanguage?: boolean
   showBackButton?: boolean
   backHref?: string
+  rightContent?: React.ReactNode
   children?: React.ReactNode
   className?: string
 }
@@ -24,6 +25,7 @@ export default function StickyMobileHeader({
   showLanguage = true,
   showBackButton = true,
   backHref = "/",
+  rightContent,
   children,
   className = "",
 }: StickyMobileHeaderProps) {
@@ -61,7 +63,8 @@ export default function StickyMobileHeader({
             )}
           </div>
 
-          <div className="flex gap-1">
+          <div className="flex gap-1 items-center">
+            {rightContent}
             {children}
             <ThemeToggle />
             {showLanguage && <LanguageSelector />}
