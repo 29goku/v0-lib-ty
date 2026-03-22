@@ -449,15 +449,7 @@ export default function TestPage() {
         <div className="mb-6">
           <div className="flex justify-between items-center mb-2">
             <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Progress</span>
-            <div className="flex items-center gap-2">
-              <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{Math.round(((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100)}%</span>
-              <Button
-                onClick={handleSubmitTest}
-                className="sm:hidden bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-1 px-2 text-xs rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-red-500/50"
-              >
-                🏁 Submit
-              </Button>
-            </div>
+            <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{Math.round(((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100)}%</span>
           </div>
           <Progress value={((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100} className={`h-2 rounded-full ${isDark ? 'bg-gray-800' : 'bg-gray-300'}`} />
         </div>
@@ -584,25 +576,36 @@ export default function TestPage() {
             </div>
           </div>
 
-          {/* Mobile Navigation - Only on Small Screens */}
-          <div className="sm:hidden grid grid-cols-2 gap-2 mt-3">
-            <Button
-              onClick={handlePrevious}
-              disabled={currentQuestionIndex <= 0}
-              className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-2 py-2 text-xs disabled:opacity-50 disabled:cursor-not-allowed transition-all truncate"
-            >
-              ← Previous
-            </Button>
-
-            <Button
-              onClick={handleNext}
-              disabled={currentQuestionIndex >= selectedQuestionCount[0] - 1}
-              className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-2 py-2 text-xs disabled:opacity-50 disabled:cursor-not-allowed transition-all truncate"
-            >
-              Next →
-            </Button>
-          </div>
         </div>
+
+        {/* Sticky Bottom Navigation - Mobile Only */}
+        <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 grid grid-cols-3 gap-2 p-3 bg-black/80 backdrop-blur-sm border-t border-gray-800">
+          <Button
+            onClick={handlePrevious}
+            disabled={currentQuestionIndex <= 0}
+            className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-2 py-2 text-xs disabled:opacity-50 disabled:cursor-not-allowed transition-all truncate"
+          >
+            ← Previous
+          </Button>
+
+          <Button
+            onClick={handleSubmitTest}
+            className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-2 px-2 text-xs rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-red-500/50 truncate"
+          >
+            🏁 Submit
+          </Button>
+
+          <Button
+            onClick={handleNext}
+            disabled={currentQuestionIndex >= selectedQuestionCount[0] - 1}
+            className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-2 py-2 text-xs disabled:opacity-50 disabled:cursor-not-allowed transition-all truncate"
+          >
+            Next →
+          </Button>
+        </div>
+
+        {/* Add bottom padding for sticky nav on mobile */}
+        <div className="sm:hidden h-20"></div>
       </div>
     </div>
   )
