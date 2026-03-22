@@ -519,9 +519,9 @@ export default function TestPage() {
 
         {/* Mobile Question Grid */}
         <div className="lg:hidden">
-          <div className={`border rounded-lg p-4 ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-transparent'}`}>
-            <h3 className={`text-sm font-semibold uppercase tracking-wider mb-3 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Progress: {testAnswers.length}/{selectedQuestionCount[0]}</h3>
-            <div className="grid grid-cols-[repeat(10,minmax(0,1fr))] gap-1">
+          <div className={`border rounded-lg p-3 ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-transparent'}`}>
+            <h3 className={`text-xs font-semibold uppercase tracking-wider mb-2 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Progress: {testAnswers.length}/{selectedQuestionCount[0]}</h3>
+            <div className="grid grid-cols-6 sm:grid-cols-8 gap-1">
               {testQuestions.map((_, index) => {
                 const answer = testAnswers.find((a) => a.questionId === testQuestions[index]?.id)
                 const isAnswered = answer !== undefined
@@ -532,9 +532,9 @@ export default function TestPage() {
                   <button
                     key={index}
                     onClick={() => handleQuestionJump(index)}
-                    className={`relative aspect-square rounded-lg font-semibold text-xs transition-all border ${
+                    className={`relative aspect-square rounded font-semibold text-[0.65rem] sm:text-xs transition-all border flex items-center justify-center ${
                       isCurrent
-                        ? isDark ? "bg-white text-black border-white shadow-lg shadow-white/50" : "bg-blue-500 text-white border-blue-600 shadow-lg shadow-blue-400/50"
+                        ? isDark ? "bg-white text-black border-white" : "bg-blue-500 text-white border-blue-600"
                         : isAnswered
                           ? answer.correct
                             ? "bg-green-500 text-white border-green-400 hover:opacity-80"
@@ -544,7 +544,7 @@ export default function TestPage() {
                   >
                     {index + 1}
                     {isFlagged && (
-                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></div>
+                      <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-red-500 rounded-full border border-white"></div>
                     )}
                   </button>
                 )

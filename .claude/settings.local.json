@@ -23,7 +23,9 @@
       "Bash(ls:*)",
       "Bash(find /Users/shosingh_1/v0-lib-ty -name *AdBanner* -o -name *ad*banner*)",
       "Bash(done)",
-      "Bash(find /Users/shosingh_1/v0-lib-ty -name *.spec.ts -o -name *.spec.js -o -name *.e2e.ts -o -name playwright.config.ts -o -name cypress.config.ts)"
+      "Bash(find /Users/shosingh_1/v0-lib-ty -name *.spec.ts -o -name *.spec.js -o -name *.e2e.ts -o -name playwright.config.ts -o -name cypress.config.ts)",
+      "Bash(unset GITHUB_TOKEN gh auth logout --hostname github.com --user shobhitsingh29 2)",
+      "Bash(1 sleep:*)"
     ]
   }
 }
