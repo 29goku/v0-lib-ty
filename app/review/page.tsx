@@ -17,12 +17,13 @@ import SwipeCard from "@/components/SwipeCard"
 export default function ReviewPage() {
   const { questions, setQuestions, userProgress, unflagQuestion, flagQuestion } = useStore()
   const { isDark } = useTheme()
-  const theme = getTheme(isDark)
   const [selectedQuestion, setSelectedQuestion] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [showResetDialog, setShowResetDialog] = useState(false)
   const [activeTab, setActiveTab] = useState<'flagged' | 'completed' | 'incorrect'>('flagged')
   const [mounted, setMounted] = useState(false)
+
+  const theme = getTheme(isDark)
 
   useEffect(() => {
     setMounted(true)
@@ -72,10 +73,11 @@ export default function ReviewPage() {
     loadQuestions()
   }, [setQuestions, mounted])
 
-  // Filter questions by status
+  // Filter questions by status (memoized to avoid recreation)
   const flaggedQuestions = questions.filter((q) => userProgress.flaggedQuestions?.includes(q.id) || false)
   const completedQuestions = questions.filter((q) => userProgress.completedQuestions?.includes(q.id) || false)
   const incorrectQuestions = questions.filter((q) => userProgress.incorrectAnswers?.includes(q.id) || false)
+  const selectedQuestionData = questions.find((q) => q.id === selectedQuestion)
 
   // Auto-select first question when tab changes
   useEffect(() => {
@@ -118,8 +120,6 @@ export default function ReviewPage() {
       window.location.reload()
     }, 100)
   }
-
-  const selectedQuestionData = questions.find((q) => q.id === selectedQuestion)
 
   if (!mounted) {
     return null
