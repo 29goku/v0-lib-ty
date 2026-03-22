@@ -40,6 +40,7 @@ export default function TestPage() {
     testAnswers,
     startTest,
     endTest,
+    recordTestAttempt,
     loadQuestions,
   } = useStore()
 
@@ -118,6 +119,9 @@ export default function TestPage() {
   }
 
   const handleSubmitTest = () => {
+    const timeSpent = testStartTime ? Date.now() - testStartTime : 0
+    const correctCount = testAnswers.filter((a) => a.correct).length
+    recordTestAttempt(correctCount, testAnswers.length, timeSpent)
     endTest()
     setShowResults(true)
   }

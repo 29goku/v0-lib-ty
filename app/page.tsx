@@ -279,6 +279,25 @@ export default function HomePage() {
                 </Card>
               </Link>
 
+              {/* Stats Card */}
+              {stats.questionsAnswered > 0 && (
+                <Link href="/stats" className="group">
+                  <Card className="bg-white/5 h-full hover:bg-gray-900/20 transition-colors">
+                    <CardContent className="p-4 h-full flex flex-col">
+                      <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
+                        📊 Statistics
+                      </h3>
+                      <p className="text-gray-300 text-xs md:text-sm mb-3 leading-relaxed flex-grow">
+                        Analytics, charts, performance trends
+                      </p>
+                      <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 font-semibold text-center transition-colors text-xs">
+                        View
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              )}
+
               {/* Settings Card */}
               <Link href="/settings" className="group">
                 <Card className="bg-white/5 h-full hover:bg-gray-900/20 transition-colors">

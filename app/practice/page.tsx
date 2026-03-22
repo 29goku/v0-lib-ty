@@ -46,6 +46,7 @@ export default function PracticePage() {
     setSelectedCategory,
     userProgress,
     answerQuestion,
+    answerQuestionWithCategory,
     flagQuestion,
     unflagQuestion,
     addXP,
@@ -259,7 +260,8 @@ export default function PracticePage() {
 
     const isCorrect = selectedAnswerIndex === currentQuestion.answerIndex
 
-    answerQuestion(currentQuestion.id, selectedAnswerIndex, isCorrect)
+    // Use new function that tracks category stats
+    answerQuestionWithCategory(currentQuestion.id, selectedAnswerIndex, isCorrect, currentQuestion.category)
 
     if (isCorrect) {
       addXP(10)
