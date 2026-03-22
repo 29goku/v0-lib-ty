@@ -192,14 +192,16 @@ export default function RootLayout({
             })
           }}
         />
+
+        {/* Analytics and Tracking */}
+        <HotjarScript />
+        <ContentSquareScript />
       </head>
       <body className={GeistSans.className}>
         <ThemeProvider>
           <Suspense fallback={null}>{children}</Suspense>
         </ThemeProvider>
         <ChatWidgetClient />
-        <HotjarScript />
-        <ContentSquareScript />
         <SpeedInsights />
         <Analytics />
       </body>
