@@ -204,7 +204,6 @@ export default function SwipeCard({
   }
 
   const handleAnswerClick = (index: number) => {
-    if (showAnswer) return
     setSelectedAnswer(index)
     onAnswerSelect?.(index)
   }
@@ -402,8 +401,7 @@ export default function SwipeCard({
                 <motion.button
                   key={index}
                   onClick={() => handleAnswerClick(index)}
-                  disabled={showAnswer}
-                  whileHover={{ backgroundColor: showAnswer ? undefined : "rgba(0,0,0,0.4)" }}
+                  whileHover={{ backgroundColor: "rgba(0,0,0,0.4)" }}
                   whileTap={{ scale: 0.99 }}
                   className={`w-full p-3 text-left rounded border-2 text-sm transition-all font-semibold ${
                     showAnswer && displaySelectedAnswer !== null
