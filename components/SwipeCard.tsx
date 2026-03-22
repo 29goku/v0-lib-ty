@@ -407,12 +407,12 @@ export default function SwipeCard({
                   className={`w-full p-3 text-left rounded border-2 text-sm transition-all font-semibold ${
                     showAnswer && displaySelectedAnswer !== null
                       ? index === question.answerIndex
-                        ? isDark ? "bg-green-500/50 border-green-400 text-green-100 shadow-lg shadow-green-500/30" : "bg-green-300 border-green-700 text-green-950 shadow-lg shadow-green-400/50"
+                        ? isDark ? "bg-green-500/50 border-green-400 text-green-100" : "bg-green-300 border-green-700 text-green-950"
                         : displaySelectedAnswer === index
-                          ? isDark ? "bg-red-500/50 border-red-400 text-red-100 shadow-lg shadow-red-500/30" : "bg-red-300 border-red-700 text-red-950 shadow-lg shadow-red-400/50"
+                          ? isDark ? "bg-red-500/50 border-red-400 text-red-100" : "bg-red-300 border-red-700 text-red-950"
                           : isDark ? "bg-gray-900/20 border-gray-700 text-gray-500" : "bg-gray-100 border-gray-400 text-gray-600"
                       : displaySelectedAnswer === index
-                        ? isDark ? "bg-blue-500/40 border-blue-400 text-blue-100 shadow-md shadow-blue-500/30" : "bg-blue-200 border-blue-600 text-blue-900"
+                        ? isDark ? "bg-blue-500/40 border-blue-400 text-blue-100" : "bg-blue-200 border-blue-600 text-blue-900"
                         : isDark ? "bg-transparent border-gray-700 text-gray-200 hover:bg-gray-900/20" : "bg-transparent border-gray-300 text-gray-700 hover:bg-gray-100"
                   }`}
                 >

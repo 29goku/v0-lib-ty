@@ -68,8 +68,6 @@ export default function PracticePage() {
   } | null>(null)
   const [loading, setLoading] = useState(true)
   const [showTranslation, setShowTranslation] = useState(false)
-  const [isAutoMode, setIsAutoMode] = useState(false)
-  const [autoDelay, setAutoDelay] = useState(3000)
   const [currentIndex, setCurrentIndex] = useState(0)
   const overviewRef = useRef<HTMLDivElement | null>(null)
 
