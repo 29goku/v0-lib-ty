@@ -91,34 +91,34 @@ export function MultiSelect({
         <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
-            className="w-full justify-between bg-black/60 border-2 border-purple-400/50 text-white hover:bg-black/80 backdrop-blur-xl"
+            className="w-full justify-between bg-transparent border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white transition-colors"
           >
             <div className="flex items-center gap-2">
               {icon}
               <span className="truncate">{getDisplayText()}</span>
             </div>
-            <ChevronDown className="h-4 w-4 opacity-50" />
+            <ChevronDown className="h-4 w-4 opacity-70" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="w-80 max-h-96 overflow-y-auto bg-black/90 border-2 border-purple-400/50 backdrop-blur-xl"
+          className="w-80 max-h-96 overflow-y-auto bg-black border border-gray-700"
           align="start"
           onCloseAutoFocus={(e) => e.preventDefault()}
         >
-          <DropdownMenuLabel className="text-purple-300 font-bold flex items-center justify-between">
+          <DropdownMenuLabel className="text-gray-300 font-semibold flex items-center justify-between">
             {label}
             {selectedValues.length > 0 && (
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={(e) => handleClearAll(e)}
-                className="h-6 px-2 text-xs text-gray-400 hover:text-white"
+                className="h-6 px-2 text-xs text-gray-500 hover:text-gray-300"
               >
                 Clear All
               </Button>
             )}
           </DropdownMenuLabel>
-          <DropdownMenuSeparator className="bg-purple-400/30" />
+          <DropdownMenuSeparator className="bg-gray-800" />
 
           {options.map((option) => (
             <DropdownMenuCheckboxItem
@@ -129,7 +129,7 @@ export function MultiSelect({
                 e.preventDefault()
                 handleToggleOption(option.id)
               }}
-              className="text-white hover:bg-purple-500/20 focus:bg-purple-500/30"
+              className="text-gray-300 hover:bg-gray-900/20 focus:bg-gray-900/30"
             >
               <div className="flex items-center gap-2">
                 {option.emoji && <span>{option.emoji}</span>}
@@ -146,13 +146,13 @@ export function MultiSelect({
           {getSelectedOptions().map((option) => (
             <div
               key={option.id}
-              className="inline-flex items-center gap-1 px-2 py-1 bg-purple-500/20 border border-purple-400/50 rounded-md text-sm text-purple-200"
+              className="inline-flex items-center gap-1 px-2 py-1 bg-gray-900/30 border border-gray-700 rounded text-sm text-gray-300"
             >
               {option.emoji && <span>{option.emoji}</span>}
               <span>{option.label}</span>
               <button
                 onClick={() => handleToggleOption(option.id)}
-                className="ml-1 hover:bg-purple-500/30 rounded-full p-0.5"
+                className="ml-1 hover:bg-gray-700/50 rounded-full p-0.5 transition-colors"
               >
                 <X className="h-3 w-3" />
               </button>

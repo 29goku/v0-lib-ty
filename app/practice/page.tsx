@@ -9,7 +9,7 @@ import Badge from "@/components/Badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
-import { ArrowLeft, RotateCcw, Filter, MapPin } from "lucide-react"
+import { ArrowLeft, RotateCcw, Filter, MapPin, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { getTranslation } from "@/lib/i18n"
@@ -75,6 +75,7 @@ export default function PracticePage() {
   const [selectedFlagFilters, setSelectedFlagFilters] = useState<string[]>([])
   const [selectedStates, setSelectedStates] = useState<string[]>([])
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+  const [showFilters, setShowFilters] = useState(false)
 
   // emoji for the currently selected state (used in compact pagination)
   const stateEmoji = selectedState ? germanStates.find((s) => s.id === selectedState)?.emoji : undefined
@@ -595,52 +596,73 @@ export default function PracticePage() {
             </Card>
           </div>
 
-          {/* MultiSelect Dropdown Filters */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-            <Card className="bg-white/5">
-              <CardContent className="p-4 md:p-6">
-                <MultiSelect
-                    options={germanStates.map(state => ({
-                      id: state.id,
-                      label: state.name,
-                      emoji: state.emoji
-                    }))}
-                    selectedValues={selectedStates}
-                    onSelectionChange={(values) => {
-                      setSelectedStates(values)
-                      setSelectedState(values.length === 1 ? values[0] : null)
-                      setCurrentIndex(0)
-                    }}
-                    placeholder="Select German states..."
-                    label={t.selectState}
-                    icon={<MapPin className="w-5 h-5 text-gray-300" />}
-                    className="w-full"
-                />
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/5">
-              <CardContent className="p-4 md:p-6">
-                <MultiSelect
-                    options={categories.map(category => ({
-                      id: category,
-                      label: category,
-                      emoji: getCategoryEmoji(category)
-                    }))}
-                    selectedValues={selectedCategories}
-                    onSelectionChange={(values) => {
-                      setSelectedCategories(values)
-                      setSelectedCategory(values.length === 1 ? values[0] : null)
-                      setCurrentIndex(0)
-                    }}
-                    placeholder="Select categories..."
-                    label={selectedStates.length > 0 ? "Categories" : t.filterByCategory}
-                    icon={<Filter className="w-5 h-5 text-gray-300" />}
-                    className="w-full"
-                />
-              </CardContent>
-            </Card>
+          {/* Filters Toggle Button */}
+          <div className="mb-4">
+            <Button
+              onClick={() => setShowFilters(!showFilters)}
+              className="w-full sm:w-auto border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-4 py-2 transition-colors flex items-center gap-2"
+            >
+              <Filter className="w-4 h-4" />
+              {showFilters ? "Hide Filters" : "Show Filters"}
+              <ChevronDown className={`w-4 h-4 transition-transform ${showFilters ? "rotate-180" : ""}`} />
+            </Button>
+            {(selectedStates.length > 0 || selectedCategories.length > 0) && (
+              <p className="text-sm text-gray-400 mt-2">
+                {selectedStates.length > 0 && `${selectedStates.length} state${selectedStates.length > 1 ? 's' : ''}`}
+                {selectedStates.length > 0 && selectedCategories.length > 0 && " • "}
+                {selectedCategories.length > 0 && `${selectedCategories.length} categor${selectedCategories.length > 1 ? 'ies' : 'y'}`}
+              </p>
+            )}
           </div>
+
+          {/* MultiSelect Dropdown Filters */}
+          {showFilters && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+              <Card className="bg-white/5">
+                <CardContent className="p-4 md:p-6">
+                  <MultiSelect
+                      options={germanStates.map(state => ({
+                        id: state.id,
+                        label: state.name,
+                        emoji: state.emoji
+                      }))}
+                      selectedValues={selectedStates}
+                      onSelectionChange={(values) => {
+                        setSelectedStates(values)
+                        setSelectedState(values.length === 1 ? values[0] : null)
+                        setCurrentIndex(0)
+                      }}
+                      placeholder="Select German states..."
+                      label={t.selectState}
+                      icon={<MapPin className="w-5 h-5 text-gray-300" />}
+                      className="w-full"
+                  />
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/5">
+                <CardContent className="p-4 md:p-6">
+                  <MultiSelect
+                      options={categories.map(category => ({
+                        id: category,
+                        label: category,
+                        emoji: getCategoryEmoji(category)
+                      }))}
+                      selectedValues={selectedCategories}
+                      onSelectionChange={(values) => {
+                        setSelectedCategories(values)
+                        setSelectedCategory(values.length === 1 ? values[0] : null)
+                        setCurrentIndex(0)
+                      }}
+                      placeholder="Select categories..."
+                      label={selectedStates.length > 0 ? "Categories" : t.filterByCategory}
+                      icon={<Filter className="w-5 h-5 text-gray-300" />}
+                      className="w-full"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          )}
 
           {/* Flag Filter Section - keeping as buttons */}
           <div className="flex justify-center mb-6 md:mb-8">
@@ -664,39 +686,39 @@ export default function PracticePage() {
                   {flaggedCount > 0 && (
                       <button
                           onClick={() => handleFlagFilterSelection("flagged")}
-                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base ${
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded font-semibold transition-all text-sm md:text-base border ${
                               selectedFlagFilters.includes("flagged")
-                                  ? "bg-red-500 text-white"
-                                  : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
+                                  ? "bg-red-500/20 border-red-500/50 text-red-300"
+                                  : "border-gray-700 text-gray-300 hover:bg-gray-900/20"
                           }`}
                       >
-                        Flagged Questions ({flaggedCount})
+                        Flagged ({flaggedCount})
                         {selectedFlagFilters.includes("flagged") && <span className="ml-1">✓</span>}
                       </button>
                   )}
                   {incorrectCount > 0 && (
                       <button
                           onClick={() => handleFlagFilterSelection("incorrect")}
-                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base ${
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded font-semibold transition-all text-sm md:text-base border ${
                               selectedFlagFilters.includes("incorrect")
-                                  ? "bg-red-500 text-white"
-                                  : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
+                                  ? "bg-red-500/20 border-red-500/50 text-red-300"
+                                  : "border-gray-700 text-gray-300 hover:bg-gray-900/20"
                           }`}
                       >
-                        Incorrect Answers ({incorrectCount})
+                        Incorrect ({incorrectCount})
                         {selectedFlagFilters.includes("incorrect") && <span className="ml-1">✓</span>}
                       </button>
                   )}
                   {correctCount > 0 && (
                       <button
                           onClick={() => handleFlagFilterSelection("correct")}
-                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base ${
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded font-semibold transition-all text-sm md:text-base border ${
                               selectedFlagFilters.includes("correct")
-                                  ? "bg-green-500 text-white"
-                                  : "bg-black/50 text-green-300 hover:bg-black/80 hover:text-white border-2 border-green-400/30"
+                                  ? "bg-green-500/20 border-green-500/50 text-green-300"
+                                  : "border-gray-700 text-gray-300 hover:bg-gray-900/20"
                           }`}
                       >
-                        Correct Answers ({correctCount})
+                        Correct ({correctCount})
                         {selectedFlagFilters.includes("correct") && <span className="ml-1">✓</span>}
                       </button>
                   )}

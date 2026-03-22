@@ -201,17 +201,24 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-10 px-4">
-              <Link href="/practice">
-                <Button className={`w-full sm:w-auto font-semibold px-6 md:px-8 py-2 md:py-3 text-base md:text-lg transition-colors ${isDark ? 'border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
-                  {t.start} {t.practice}
-                </Button>
+            {/* CTA Buttons - Main App Functionality */}
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-12 md:mb-16 px-4">
+              <Link href="/practice" className="group flex-1 sm:flex-none">
+                <button className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold px-8 md:px-12 py-4 md:py-5 text-lg md:text-xl rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-blue-500/50 hover:shadow-2xl relative overflow-hidden group">
+                  <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></span>
+                  <span className="relative flex items-center justify-center gap-2">
+                    🎯 {t.start} {t.practice}
+                  </span>
+                </button>
               </Link>
-              <Link href="/test">
-                <Button className={`w-full sm:w-auto font-semibold px-6 md:px-8 py-2 md:py-3 text-base md:text-lg transition-colors ${isDark ? 'border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
-                  {t.test}
-                </Button>
+
+              <Link href="/test" className="group flex-1 sm:flex-none">
+                <button className="w-full sm:w-auto bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-8 md:px-12 py-4 md:py-5 text-lg md:text-xl rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-orange-500/50 hover:shadow-2xl relative overflow-hidden group">
+                  <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></span>
+                  <span className="relative flex items-center justify-center gap-2">
+                    ⚡ {t.test}
+                  </span>
+                </button>
               </Link>
             </div>
           </div>
