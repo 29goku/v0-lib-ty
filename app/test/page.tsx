@@ -404,9 +404,9 @@ export default function TestPage() {
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-gradient-to-br from-black via-gray-950 to-black text-white' : 'bg-white text-gray-900'}`}>
-      <div className="w-full px-4 md:px-8 py-3 md:py-4 max-h-screen overflow-y-auto">
+      <div className="w-full px-4 md:px-8 py-4 md:py-6">
         {/* Header */}
-        <div className="flex items-center justify-between mb-3 md:mb-4">
+        <div className="flex items-center justify-between mb-6 md:mb-8">
           <Link href="/">
             <Button className={`border px-3 py-1.5 text-xs md:text-sm rounded transition-colors ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
               <ArrowLeft className="w-3 h-3 mr-1" />
@@ -415,127 +415,146 @@ export default function TestPage() {
           </Link>
 
           <div className="text-center">
-            <h1 className={`text-lg md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Official Test</h1>
-            <p className={`mt-0.5 text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Q {currentQuestionIndex + 1}/{selectedQuestionCount[0]}</p>
+            <h1 className={`text-2xl md:text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Official Test</h1>
+            <p className={`mt-1 text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Q {currentQuestionIndex + 1}/{selectedQuestionCount[0]}</p>
           </div>
 
-          <div className="flex items-center space-x-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-700/30 px-2.5 md:px-3 py-1.5 rounded-lg backdrop-blur-md">
-            <Clock className="w-4 h-4 text-blue-400" />
-            <span className="font-mono font-semibold text-blue-300 text-xs md:text-sm">{formatTime(timeRemaining)}</span>
+          <div className="flex items-center space-x-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-700/30 px-3 md:px-4 py-2 rounded-lg backdrop-blur-md">
+            <Clock className="w-5 h-5 text-blue-400" />
+            <span className="font-mono font-semibold text-blue-300 text-sm md:text-base">{formatTime(timeRemaining)}</span>
           </div>
         </div>
 
-        {/* Progress Bar */}
-        <div className="mb-3 md:mb-4">
-          <div className="flex justify-between items-center mb-1">
-            <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Progress</span>
-            <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{Math.round(((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100)}%</span>
-          </div>
-          <Progress value={((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100} className={`h-2 rounded-full ${isDark ? 'bg-gray-800' : 'bg-gray-300'}`} />
-        </div>
+        {/* Main Content - 2 Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-6 mb-6">
+          {/* Left: Question Card */}
+          <div>
+            {/* Progress Bar */}
+            <div className="mb-4">
+              <div className="flex justify-between items-center mb-2">
+                <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Progress</span>
+                <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{Math.round(((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100)}%</span>
+              </div>
+              <Progress value={((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100} className={`h-2 rounded-full ${isDark ? 'bg-gray-800' : 'bg-gray-300'}`} />
+            </div>
 
-        <div className="mb-3 md:mb-4">
-          <SwipeCard
-            question={currentQuestion}
-            onSwipe={(dir) => {
-              if (dir === "right") handleNext()
-              else handlePrevious()
-            }}
-            onFlag={() => {
-              if (userProgress.flaggedQuestions.includes(currentQuestion.id)) {
-                unflagQuestion(currentQuestion.id)
-              } else {
-                flagQuestion(currentQuestion.id)
-              }
-            }}
-            isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
-            showAnswer={Boolean(currentAnswer)}
-            onAnswerSelect={handleAnswerSelect}
-            isTranslated={isTranslated}
-            onTranslate={() => setIsTranslated(!isTranslated)}
-          />
+            <SwipeCard
+              question={currentQuestion}
+              onSwipe={(dir) => {
+                if (dir === "right") handleNext()
+                else handlePrevious()
+              }}
+              onFlag={() => {
+                if (userProgress.flaggedQuestions.includes(currentQuestion.id)) {
+                  unflagQuestion(currentQuestion.id)
+                } else {
+                  flagQuestion(currentQuestion.id)
+                }
+              }}
+              isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
+              showAnswer={Boolean(currentAnswer)}
+              onAnswerSelect={handleAnswerSelect}
+              isTranslated={isTranslated}
+              onTranslate={() => setIsTranslated(!isTranslated)}
+            />
+          </div>
+
+          {/* Right: Question Grid */}
+          <div className="hidden lg:flex flex-col">
+            <Card className={`h-full ${isDark ? 'bg-white/5' : 'bg-gray-100'}`}>
+              <CardContent className="p-4">
+                <div className="grid grid-cols-[repeat(5,minmax(0,1fr))] gap-1">
+                  {testQuestions.map((_, index) => {
+                    const answer = testAnswers.find((a) => a.questionId === testQuestions[index]?.id)
+                    const isAnswered = answer !== undefined
+                    const isCurrent = index === currentQuestionIndex
+                    const isFlagged = userProgress.flaggedQuestions.includes(testQuestions[index]?.id)
+
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => handleQuestionJump(index)}
+                        className={`relative aspect-square rounded-lg font-semibold text-xs transition-all border ${
+                          isCurrent
+                            ? "bg-white text-black border-white"
+                            : isAnswered
+                              ? answer.correct
+                                ? "bg-green-500 text-white border-green-400 hover:opacity-80"
+                                : "bg-red-500 text-white border-red-400 hover:opacity-80"
+                              : "border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20"
+                        }`}
+                      >
+                        {index + 1}
+                        {isFlagged && (
+                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></div>
+                        )}
+                      </button>
+                    )
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-between items-center gap-2 md:gap-3 mb-3 md:mb-4">
+        <div className="flex justify-between items-center gap-2 md:gap-4 mb-6">
           <Button
             onClick={handlePrevious}
             disabled={currentQuestionIndex <= 0}
-            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-3 py-2 text-xs md:text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-4 py-3 text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
-            ← Prev
+            ← Previous
           </Button>
 
           <Button
             onClick={handleSubmitTest}
-            className="flex-1 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-2 px-3 text-xs md:text-sm rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-red-500/50"
+            className="flex-1 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-4 text-sm rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-red-500/50"
           >
-            🏁 Submit
+            🏁 Submit Test
           </Button>
 
           <Button
             onClick={handleNext}
             disabled={currentQuestionIndex >= selectedQuestionCount[0] - 1}
-            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-3 py-2 text-xs md:text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-4 py-3 text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
             Next →
           </Button>
         </div>
 
-        <div className={`border rounded-lg p-3 md:p-4 ${isDark ? 'border-gray-700 bg-gray-900/20' : 'border-gray-200 bg-gray-50'}`}>
-          <div className="flex items-center justify-between mb-3">
-            <h3 className={`text-xs md:text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Progress</h3>
-            <span className={`text-xs font-bold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{testAnswers.length}/{selectedQuestionCount[0]}</span>
-          </div>
+        {/* Mobile Question Grid */}
+        <div className="lg:hidden">
+          <div className={`border rounded-lg p-4 ${isDark ? 'border-gray-700 bg-gray-900/20' : 'border-gray-200 bg-gray-50'}`}>
+            <h3 className={`text-sm font-semibold uppercase tracking-wider mb-3 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Progress: {testAnswers.length}/{selectedQuestionCount[0]}</h3>
+            <div className="grid grid-cols-[repeat(10,minmax(0,1fr))] gap-1">
+              {testQuestions.map((_, index) => {
+                const answer = testAnswers.find((a) => a.questionId === testQuestions[index]?.id)
+                const isAnswered = answer !== undefined
+                const isCurrent = index === currentQuestionIndex
+                const isFlagged = userProgress.flaggedQuestions.includes(testQuestions[index]?.id)
 
-          {/* Question Grid */}
-          <div className="grid grid-cols-[repeat(15,minmax(0,1fr))] gap-1 mb-3">
-            {testQuestions.map((_, index) => {
-              const answer = testAnswers.find((a) => a.questionId === testQuestions[index]?.id)
-              const isAnswered = answer !== undefined
-              const isCurrent = index === currentQuestionIndex
-              const isFlagged = userProgress.flaggedQuestions.includes(testQuestions[index]?.id)
-
-              return (
-                <button
-                  key={index}
-                  onClick={() => handleQuestionJump(index)}
-                  className={`relative aspect-square rounded-lg font-semibold text-sm transition-all border ${
-                    isCurrent
-                      ? "bg-white text-black border-white"
-                      : isAnswered
-                        ? answer.correct
-                          ? "bg-green-500 text-white border-green-400 hover:opacity-80"
-                          : "bg-red-500 text-white border-red-400 hover:opacity-80"
-                        : "border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20"
-                  }`}
-                >
-                  {index + 1}
-                  {isFlagged && (
-                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
-                  )}
-                </button>
-              )
-            })}
-          </div>
-
-          {/* Legend */}
-          <div className={`flex flex-wrap gap-3 text-xs pt-2 border-t ${isDark ? 'border-gray-700 text-gray-400' : 'border-gray-300 text-gray-600'}`}>
-            <div className="flex items-center gap-1.5">
-              <div className="w-3 h-3 bg-green-500 rounded-lg border border-green-400"></div>
-              <span>Correct</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-3 h-3 bg-red-500 rounded-lg border border-red-400"></div>
-              <span>Wrong</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <div className={`w-3 h-3 rounded-lg border ${isDark ? 'border-gray-600 bg-transparent' : 'border-gray-400 bg-transparent'}`}></div>
-              <span>Unanswered</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-3 h-3 bg-red-500 rounded-full border border-white"></div>
-              <span>Flagged</span>
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleQuestionJump(index)}
+                    className={`relative aspect-square rounded-lg font-semibold text-xs transition-all border ${
+                      isCurrent
+                        ? "bg-white text-black border-white"
+                        : isAnswered
+                          ? answer.correct
+                            ? "bg-green-500 text-white border-green-400 hover:opacity-80"
+                            : "bg-red-500 text-white border-red-400 hover:opacity-80"
+                          : "border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20"
+                    }`}
+                  >
+                    {index + 1}
+                    {isFlagged && (
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></div>
+                    )}
+                  </button>
+                )
+              })}
             </div>
           </div>
         </div>

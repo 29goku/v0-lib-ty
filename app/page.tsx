@@ -279,10 +279,10 @@ export default function HomePage() {
                       {t.review}
                     </h3>
                     <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Study mistakes, track progress, improve
+                      {t.reviewDescribe}
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
-                      Review
+                      {t.reviewButton}
                     </div>
                   </CardContent>
                 </Card>
