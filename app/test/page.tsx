@@ -405,20 +405,20 @@ export default function TestPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black text-white">
+    <div className={`min-h-screen ${isDark ? 'bg-gradient-to-br from-black via-gray-950 to-black text-white' : 'bg-white text-gray-900'}`}>
       <div className="container mx-auto px-4 py-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <Link href="/">
-            <Button className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white px-4 py-2 rounded transition-colors">
+            <Button className={`border px-4 py-2 rounded transition-colors ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back
             </Button>
           </Link>
 
           <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-white">Official Test</h1>
-            <p className="text-gray-400 mt-1">Question {currentQuestionIndex + 1} of {selectedQuestionCount[0]}</p>
+            <h1 className={`text-3xl md:text-4xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Official Test</h1>
+            <p className={`mt-1 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Question {currentQuestionIndex + 1} of {selectedQuestionCount[0]}</p>
           </div>
 
           <div className="flex items-center space-x-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-700/30 px-4 py-3 rounded-lg backdrop-blur-md">
@@ -430,10 +430,10 @@ export default function TestPage() {
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-xs font-semibold text-gray-400">Progress</span>
-            <span className="text-xs font-semibold text-gray-400">{Math.round(((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100)}%</span>
+            <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Progress</span>
+            <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{Math.round(((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100)}%</span>
           </div>
-          <Progress value={((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100} className="h-3 bg-gray-800 rounded-full" />
+          <Progress value={((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100} className={`h-3 rounded-full ${isDark ? 'bg-gray-800' : 'bg-gray-300'}`} />
         </div>
 
         <div className="mb-8">
@@ -484,10 +484,10 @@ export default function TestPage() {
           </Button>
         </div>
 
-        <Card className="border border-gray-700 bg-gradient-to-br from-gray-900/40 to-black backdrop-blur-md">
+        <Card className={`border backdrop-blur-md ${isDark ? 'border-gray-700 bg-gradient-to-br from-gray-900/40 to-black' : 'border-gray-300 bg-gradient-to-br from-gray-50 to-white'}`}>
           <CardHeader className="pb-4">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-xl md:text-2xl font-bold text-white">📋 Answer Overview</CardTitle>
+              <CardTitle className={`text-xl md:text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>📋 Answer Overview</CardTitle>
               <div className="text-sm font-semibold text-gray-300 bg-blue-500/10 border border-blue-700/30 px-3 py-1 rounded-full">
                 {testAnswers.length} / {selectedQuestionCount[0]} Completed
               </div>
@@ -510,12 +510,20 @@ export default function TestPage() {
                       relative aspect-square border rounded-md font-bold text-xs transition-all transform
                       ${
                         isCurrent
-                          ? "bg-gradient-to-br from-blue-500 to-blue-600 text-white border-blue-400 scale-110 shadow-lg shadow-blue-500/50"
+                          ? isDark
+                            ? "bg-gradient-to-br from-blue-500 to-blue-600 text-white border-blue-400 scale-110 shadow-lg shadow-blue-500/50"
+                            : "bg-gradient-to-br from-blue-600 to-blue-700 text-white border-blue-500 scale-110 shadow-lg shadow-blue-600/50"
                           : isAnswered
                             ? answer.correct
-                              ? "bg-gradient-to-br from-green-900/50 to-green-900/30 text-green-300 border-green-600 hover:from-green-800/60 hover:to-green-800/40"
-                              : "bg-gradient-to-br from-orange-900/50 to-orange-900/30 text-orange-300 border-orange-600 hover:from-orange-800/60 hover:to-orange-800/40"
-                            : "bg-gray-800/50 text-gray-400 border-gray-700 hover:bg-gray-700/50"
+                              ? isDark
+                                ? "bg-gradient-to-br from-green-900/50 to-green-900/30 text-green-300 border-green-600 hover:from-green-800/60 hover:to-green-800/40"
+                                : "bg-gradient-to-br from-green-100 to-green-50 text-green-700 border-green-400 hover:from-green-200 hover:to-green-100"
+                              : isDark
+                                ? "bg-gradient-to-br from-orange-900/50 to-orange-900/30 text-orange-300 border-orange-600 hover:from-orange-800/60 hover:to-orange-800/40"
+                                : "bg-gradient-to-br from-orange-100 to-orange-50 text-orange-700 border-orange-400 hover:from-orange-200 hover:to-orange-100"
+                            : isDark
+                              ? "bg-gray-800/50 text-gray-400 border-gray-700 hover:bg-gray-700/50"
+                              : "bg-gray-100 text-gray-600 border-gray-300 hover:bg-gray-200"
                       }
                     `}
                   >
@@ -529,7 +537,7 @@ export default function TestPage() {
             </div>
 
             {/* Legend */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-gray-700">
+            <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
               <div className="flex items-center space-x-2">
                 <div className="w-4 h-4 bg-gradient-to-br from-green-900/50 to-green-900/30 border border-green-600 rounded"></div>
                 <span className="text-xs text-green-400 font-semibold">Correct</span>
