@@ -535,13 +535,13 @@ export default function PracticePage() {
                   <div>
                     <p className={`text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.progress}</p>
                     <p className={`text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                      {currentIndex + 1}/{filteredQuestions.length}
+                      {userProgress.questionsAnswered}/310
                     </p>
                   </div>
                   <div className="text-4xl group-hover:scale-125 transition-transform animate-pulse">🎯</div>
                 </div>
                 <div className="mt-4">
-                  <ProgressBar current={currentIndex + 1} total={filteredQuestions.length} label="" showNumbers={false} />
+                  <ProgressBar current={userProgress.questionsAnswered} total={310} label="" showNumbers={false} />
                 </div>
               </CardContent>
             </Card>
