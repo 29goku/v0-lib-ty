@@ -22,8 +22,15 @@ export default function ReviewPage() {
   const [isLoading, setIsLoading] = useState(true)
   const [showResetDialog, setShowResetDialog] = useState(false)
   const [activeTab, setActiveTab] = useState<'flagged' | 'completed' | 'incorrect'>('flagged')
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
+
     // Load questions for review with better error handling
     const loadQuestions = async () => {
       try {
@@ -63,7 +70,7 @@ export default function ReviewPage() {
     }
 
     loadQuestions()
-  }, [setQuestions])
+  }, [setQuestions, mounted])
 
   // Filter questions by status
   const flaggedQuestions = questions.filter((q) => userProgress.flaggedQuestions?.includes(q.id) || false)
@@ -113,6 +120,10 @@ export default function ReviewPage() {
   }
 
   const selectedQuestionData = questions.find((q) => q.id === selectedQuestion)
+
+  if (!mounted) {
+    return null
+  }
 
   if (isLoading) {
     return (
