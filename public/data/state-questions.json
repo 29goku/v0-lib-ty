@@ -4,7 +4,7 @@
       "id": "bw001",
       "category": "State",
       "question": "Welches Wappen gehört zum Bundesland Baden-Württemberg?",
-      "image": "/images/baden-wurttemberg-coat-of-arms.jpg",
+      "image": "/images/301.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -1058,7 +1058,7 @@
       "id": "by001",
       "category": "State",
       "question": "Welches Wappen gehört zum Freistaat Bayern?",
-      "image": "/images/bayern-coat-of-arms.png",
+      "image": "/images/311.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -2112,7 +2112,7 @@
       "id": "be001",
       "category": "State",
       "question": "Welches Wappen gehört zum Bundesland Berlin?",
-      "image": "/images/coat-of-arms.jpg",
+      "image": "/images/321.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -3166,7 +3166,7 @@
       "id": "bb001",
       "category": "State",
       "question": "Welches Wappen gehört zum Bundesland Brandenburg?",
-      "image": "/images/coatofarms.jpg",
+      "image": "/images/331.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -4220,7 +4220,7 @@
       "id": "hb001",
       "category": "State",
       "question": "Welches Wappen gehört zur Freien Hansestadt Bremen?",
-      "image": "/images/coatarms.jpg",
+      "image": "/images/341.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -5274,7 +5274,7 @@
     "id": "hh001",
     "category": "State",
     "question": "Welches Wappen gehört zur Freien und Hansestadt Hamburg?",
-    "image": "/images/hamburg.jpg",
+    "image": "/images/351.png",
     "options": [
       "Bild 1",
       "Bild 2",
@@ -6915,7 +6915,7 @@
       "id": "mv001",
       "category": "State",
       "question": "Welches Wappen gehört zum Bundesland Mecklenburg-Vorpommern?",
-      "image": "/images/mecklenburg-vorpommern-coat-of-arms.png",
+      "image": "/images/371.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -7164,7 +7164,7 @@
       "id": "ni001",
       "category": "State",
       "question": "Welches Wappen gehört zum Bundesland Niedersachsen?",
-      "image": "/images/sachsen-anhalt-coat-of-arms.png",
+      "image": "/images/381.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -7418,7 +7418,7 @@
       "id": "nw001",
       "category": "State",
       "question": "Welches Wappen gehört zum Bundesland Nordrhein-Westfalen?",
-      "image": "/images/nordrhein-westfalen-coat-of-arms.png",
+      "image": "/images/391.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -7672,7 +7672,7 @@
       "id": "rp001",
       "category": "State",
       "question": "Welches Wappen gehört zum Bundesland Rheinland-Pfalz?",
-      "image": "/images/rheinland-pfalz-coat-of-arms.png",
+      "image": "/images/401.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -7926,7 +7926,7 @@
       "id": "sl001",
       "category": "State",
       "question": "Welches Wappen gehört zum Bundesland Saarland?",
-      "image": "/images/saarland-coat-of-arms.png",
+      "image": "/images/411.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -8180,7 +8180,7 @@
       "id": "sn001",
       "category": "State",
       "question": "Welches Wappen gehört zum Freistaat Sachsen?",
-      "image": "/images/sachsen-coat-of-arms.png",
+      "image": "/images/421.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -8434,7 +8434,7 @@
       "id": "st001",
       "category": "State",
       "question": "Welches Wappen gehört zum Bundesland Sachsen-Anhalt?",
-      "image": "/images/sachsen-anhalt-coat-of-arms.png",
+      "image": "/images/431.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -8688,7 +8688,7 @@
       "id": "sh001",
       "category": "State",
       "question": "Welches Wappen gehört zum Bundesland Schleswig-Holstein?",
-      "image": "/images/schleswig-holstein-coat-of-arms.png",
+      "image": "/images/441.png",
       "options": [
         "Bild 1",
         "Bild 2",
@@ -8942,7 +8942,7 @@
       "id": "th001",
       "category": "State",
       "question": "Welches Wappen gehört zum Freistaat Thüringen?",
-      "image": "/images/thuringia-coat-of-arms.png",
+      "image": "/images/451.png",
       "options": [
         "Bild 1",
         "Bild 2",
