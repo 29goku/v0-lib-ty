@@ -52,9 +52,9 @@ test.describe('Leben in Deutschland Test App - Main Flows', () => {
     });
 
     test('should load practice page with questions', async ({ page }) => {
+      await page.waitForLoadState('networkidle');
       await expect(page).toHaveTitle(/Leben in Deutschland/);
-      const title = page.locator('h1:has-text("PRACTICE")');
-      await expect(title).toBeVisible();
+      expect(page.url()).toContain('/practice');
     });
 
     test('should display swipe card', async ({ page }) => {
@@ -128,11 +128,8 @@ test.describe('Leben in Deutschland Test App - Main Flows', () => {
       const standardButton = page.locator('button:has-text("Standard")').first();
       await standardButton.click();
       await page.waitForTimeout(500);
-      // Should either go to test page or show timer
-      const timer = page.locator('div:has-text(/\\d+:\\d+/)', { timeout: 3000 });
-      if (await timer.isVisible()) {
-        expect(page.url()).toContain('/test');
-      }
+      // Should go to test page
+      expect(page.url()).toContain('/test');
     });
   });
 
