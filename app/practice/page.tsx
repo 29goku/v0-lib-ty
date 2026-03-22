@@ -132,14 +132,8 @@ export default function PracticePage() {
   // Get the appropriate questions based on state selection
   const getQuestionsToUse = () => {
     if (selectedStates.length > 0) {
-      // Filter main questions to only those matching selected state categories
-      const stateFilteredQuestions = questions.filter(q =>
-        selectedStates.some(stateId =>
-          germanStates.find(s => s.id === stateId)?.name.toLowerCase().includes(q.category.toLowerCase()) ||
-          q.category.toLowerCase() === stateId.toLowerCase()
-        )
-      )
-      return stateFilteredQuestions.length > 0 ? stateFilteredQuestions : questions
+      // Use state-specific questions if available
+      return stateQuestions.length > 0 ? stateQuestions : questions
     }
     return questions
   }
@@ -501,7 +495,12 @@ export default function PracticePage() {
 
   return (
       <div className={`min-h-screen overflow-hidden relative ${theme.bg} ${theme.text}`}>
-        <StickyMobileHeader title={t.practiceMode.toUpperCase()} showBackButton={true} backHref="/" />
+        <StickyMobileHeader
+          title={t.practiceMode.toUpperCase()}
+          subtitle={`Q ${currentIndex + 1}/${filteredQuestions.length}`}
+          showBackButton={true}
+          backHref="/"
+        />
         <div className="fixed inset-0 z-0">
         </div>
 
@@ -995,8 +994,6 @@ export default function PracticePage() {
           </div>
         </div>
 
-        {/* Add padding to account for sticky bottom nav */}
-        <div className="lg:hidden h-20"></div>
       </div>
   )
 }

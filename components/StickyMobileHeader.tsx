@@ -10,6 +10,7 @@ import LanguageSelector from "@/components/LanguageSelector"
 
 interface StickyMobileHeaderProps {
   title?: string
+  subtitle?: string
   showLanguage?: boolean
   showBackButton?: boolean
   backHref?: string
@@ -19,6 +20,7 @@ interface StickyMobileHeaderProps {
 
 export default function StickyMobileHeader({
   title,
+  subtitle,
   showLanguage = true,
   showBackButton = true,
   backHref = "/",
@@ -42,13 +44,22 @@ export default function StickyMobileHeader({
             <div className="w-10"></div>
           )}
 
-          {title ? (
-            <h1 className={`text-sm font-bold flex-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-              {title}
-            </h1>
-          ) : (
-            <div className="flex-1"></div>
-          )}
+          <div className="flex-1">
+            {title ? (
+              <div>
+                <h1 className={`text-sm font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {title}
+                </h1>
+                {subtitle && (
+                  <p className={`text-xs ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                    {subtitle}
+                  </p>
+                )}
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
 
           <div className="flex gap-1">
             {children}
