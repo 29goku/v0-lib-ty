@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useStore } from "@/lib/store"
+import { useTheme, getTheme } from "@/lib/theme"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -398,36 +399,38 @@ export default function TestPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black text-white">
       <div className="container mx-auto px-4 py-6">
-        <div className="flex items-center justify-between mb-6">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-8">
           <Link href="/">
-            <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white">
+            <Button className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white px-4 py-2 rounded transition-colors">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back
             </Button>
           </Link>
 
           <div className="text-center">
-            <h1 className="text-2xl font-semibold">Official Test</h1>
-            <p className="text-gray-300">
-              Question {currentQuestionIndex + 1} of {selectedQuestionCount[0]}
-            </p>
+            <h1 className="text-3xl md:text-4xl font-bold text-white">Official Test</h1>
+            <p className="text-gray-400 mt-1">Question {currentQuestionIndex + 1} of {selectedQuestionCount[0]}</p>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 border border-gray-700 px-4 py-2">
-              <Clock className="w-4 h-4 text-gray-300" />
-              <span className="font-mono text-gray-300">{formatTime(timeRemaining)}</span>
-            </div>
+          <div className="flex items-center space-x-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-700/30 px-4 py-3 rounded-lg backdrop-blur-md">
+            <Clock className="w-5 h-5 text-blue-400" />
+            <span className="font-mono font-semibold text-blue-300 text-lg">{formatTime(timeRemaining)}</span>
           </div>
         </div>
 
-        <div className="mb-6">
-          <Progress value={((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100} className="h-2" />
+        {/* Progress Bar */}
+        <div className="mb-8">
+          <div className="flex justify-between items-center mb-2">
+            <span className="text-xs font-semibold text-gray-400">Progress</span>
+            <span className="text-xs font-semibold text-gray-400">{Math.round(((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100)}%</span>
+          </div>
+          <Progress value={((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100} className="h-3 bg-gray-800 rounded-full" />
         </div>
 
-        <div className="mb-6">
+        <div className="mb-8">
           <SwipeCard
             question={currentQuestion}
             onSwipe={(dir) => {
@@ -449,37 +452,44 @@ export default function TestPage() {
           />
         </div>
 
-        <div className="flex justify-between items-center mb-6">
+        {/* Navigation Buttons */}
+        <div className="flex justify-between items-center gap-4 mb-8">
           <Button
             onClick={handlePrevious}
             disabled={currentQuestionIndex <= 0}
-            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-6 py-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-6 py-3 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
             ← Previous
           </Button>
 
           <Button
             onClick={handleSubmitTest}
-            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-6 py-2"
+            className="flex-1 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-red-500/50"
           >
-            Submit Test
+            🏁 Submit Test
           </Button>
 
           <Button
             onClick={handleNext}
             disabled={currentQuestionIndex >= selectedQuestionCount[0] - 1}
-            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-6 py-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-6 py-3 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
             Next →
           </Button>
         </div>
 
-        <Card className="border border-gray-700 bg-white/5">
-          <CardHeader>
-            <CardTitle className="text-center text-lg font-semibold text-white">Answer Overview</CardTitle>
+        <Card className="border border-gray-700 bg-gradient-to-br from-gray-900/40 to-black backdrop-blur-md">
+          <CardHeader className="pb-4">
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-xl md:text-2xl font-bold text-white">📋 Answer Overview</CardTitle>
+              <div className="text-sm font-semibold text-gray-300 bg-blue-500/10 border border-blue-700/30 px-3 py-1 rounded-full">
+                {testAnswers.length} / {selectedQuestionCount[0]} Completed
+              </div>
+            </div>
           </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-11 gap-2 mb-6">
+          <CardContent className="space-y-6">
+            {/* Question Grid */}
+            <div className="grid grid-cols-8 md:grid-cols-12 lg:grid-cols-16 gap-1.5">
               {testQuestions.map((_, index) => {
                 const answer = testAnswers.find((a) => a.questionId === testQuestions[index]?.id)
                 const isAnswered = answer !== undefined
@@ -491,40 +501,44 @@ export default function TestPage() {
                     key={index}
                     onClick={() => handleQuestionJump(index)}
                     className={`
-                      relative aspect-square border font-semibold text-sm
+                      relative aspect-square border rounded-md font-bold text-xs transition-all transform
                       ${
                         isCurrent
-                          ? "bg-white text-black border-white"
+                          ? "bg-gradient-to-br from-blue-500 to-blue-600 text-white border-blue-400 scale-110 shadow-lg shadow-blue-500/50"
                           : isAnswered
-                            ? "bg-green-900/30 text-green-400 border-green-700 hover:bg-green-900/50"
-                            : "bg-white/5 text-gray-300 border-gray-700 hover:bg-white/10"
+                            ? answer.correct
+                              ? "bg-gradient-to-br from-green-900/50 to-green-900/30 text-green-300 border-green-600 hover:from-green-800/60 hover:to-green-800/40"
+                              : "bg-gradient-to-br from-orange-900/50 to-orange-900/30 text-orange-300 border-orange-600 hover:from-orange-800/60 hover:to-orange-800/40"
+                            : "bg-gray-800/50 text-gray-400 border-gray-700 hover:bg-gray-700/50"
                       }
                     `}
                   >
                     {index + 1}
                     {isFlagged && (
-                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-400 border border-red-700"></div>
+                      <div className="absolute -top-2 -right-2 w-2.5 h-2.5 bg-red-500 rounded-full border border-red-300 shadow-lg shadow-red-500/50"></div>
                     )}
                   </button>
                 )
               })}
             </div>
 
-            <div className="flex justify-center items-center space-x-8 text-sm">
+            {/* Legend */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-gray-700">
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-900/30 border border-green-700"></div>
-                <span className="text-green-400 font-semibold">Answered</span>
+                <div className="w-4 h-4 bg-gradient-to-br from-green-900/50 to-green-900/30 border border-green-600 rounded"></div>
+                <span className="text-xs text-green-400 font-semibold">Correct</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-white/5 border border-gray-700"></div>
-                <span className="text-gray-400 font-semibold">Unanswered</span>
+                <div className="w-4 h-4 bg-gradient-to-br from-orange-900/50 to-orange-900/30 border border-orange-600 rounded"></div>
+                <span className="text-xs text-orange-400 font-semibold">Incorrect</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-red-900/30 border border-red-700"></div>
-                <span className="text-red-400 font-semibold">Flagged</span>
+                <div className="w-4 h-4 bg-gray-800/50 border border-gray-700 rounded"></div>
+                <span className="text-xs text-gray-400 font-semibold">Unanswered</span>
               </div>
-              <div className="text-white font-semibold">
-                {testAnswers.length} / {selectedQuestionCount[0]} Completed
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-red-500 rounded-full border border-red-300"></div>
+                <span className="text-xs text-red-400 font-semibold">Flagged</span>
               </div>
             </div>
           </CardContent>
