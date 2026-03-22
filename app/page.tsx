@@ -156,26 +156,26 @@ export default function HomePage() {
           }) }} />
         </Head>
         <div className={`min-h-screen relative ${isDark ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
-      <div className="absolute top-6 right-6 z-50 flex gap-3">
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 flex gap-2 sm:gap-3">
         <ThemeToggle />
         <LanguageSelector />
       </div>
 
       <div className="relative z-10">
-        
+
 
         {/* Hero Section */}
-        <div className="md:py-20 flex items-center justify-center px-4 relative">
+        <div className="pt-20 sm:pt-12 md:py-20 flex items-center justify-center px-4 relative">
 
           <div className="text-center max-w-6xl mx-auto">
 
             {/* Main title */}
-            <div className="mb-6 md:mb-8 relative">
-              <h1 className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold mb-2 md:mb-3 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
+            <div className="mb-4 sm:mb-6 md:mb-8 relative">
+              <h1 className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold mb-1 sm:mb-2 md:mb-3 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 LEBEN
               </h1>
 
-              <h1 className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-3 md:mb-4 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h1 className={`text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold mb-2 sm:mb-3 md:mb-4 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 IN DEUTSCHLAND
               </h1>
 
