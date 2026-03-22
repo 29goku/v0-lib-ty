@@ -449,7 +449,15 @@ export default function TestPage() {
         <div className="mb-6">
           <div className="flex justify-between items-center mb-2">
             <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Progress</span>
-            <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{Math.round(((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100)}%</span>
+            <div className="flex items-center gap-2 sm:gap-0">
+              <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{Math.round(((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100)}%</span>
+              <Button
+                onClick={handleSubmitTest}
+                className="sm:hidden ml-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-1 px-2 text-xs rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-red-500/50"
+              >
+                🏁 Submit
+              </Button>
+            </div>
           </div>
           <Progress value={((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100} className={`h-2 rounded-full ${isDark ? 'bg-gray-800' : 'bg-gray-300'}`} />
         </div>
