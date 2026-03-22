@@ -225,7 +225,7 @@ export default function HomePage() {
         </div>
 
         {/* Features Section */}
-        <div className="md:py-6 px-4 relative">
+        <div className="py-6 md:py-8 px-4 relative">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-12 relative">
               <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-2 md:mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
