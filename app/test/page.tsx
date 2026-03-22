@@ -492,26 +492,26 @@ export default function TestPage() {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-between items-center gap-2 md:gap-4 mb-6">
+        <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6">
           <Button
             onClick={handlePrevious}
             disabled={currentQuestionIndex <= 0}
-            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-4 py-3 text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all truncate"
           >
             ← Previous
           </Button>
 
           <Button
             onClick={handleSubmitTest}
-            className="flex-1 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-4 text-sm rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-red-500/50"
+            className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-2 md:py-3 px-2 md:px-4 text-xs md:text-sm rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-red-500/50 truncate"
           >
-            🏁 Submit Test
+            🏁 Submit
           </Button>
 
           <Button
             onClick={handleNext}
             disabled={currentQuestionIndex >= selectedQuestionCount[0] - 1}
-            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-4 py-3 text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all truncate"
           >
             Next →
           </Button>
