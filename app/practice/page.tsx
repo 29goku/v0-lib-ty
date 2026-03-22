@@ -72,6 +72,7 @@ export default function PracticePage() {
   const [autoDelay, setAutoDelay] = useState(3000)
   const [currentIndex, setCurrentIndex] = useState(0)
   const overviewRef = useRef<HTMLDivElement | null>(null)
+  const feedbackRef = useRef<HTMLDivElement | null>(null)
 
   // Multi-select filter states
   const [selectedFlagFilters, setSelectedFlagFilters] = useState<string[]>([])
@@ -87,6 +88,15 @@ export default function PracticePage() {
   const stateEmoji = selectedState ? germanStates.find((s) => s.id === selectedState)?.emoji : undefined
 
   const t = getTranslation(language)
+
+  // Scroll feedback into view on mobile when it appears
+  useEffect(() => {
+    if (showAnswer && feedbackRef.current) {
+      setTimeout(() => {
+        feedbackRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
+      }, 100)
+    }
+  }, [showAnswer])
 
   useEffect(() => {
     const initializePractice = async () => {
@@ -879,6 +889,7 @@ export default function PracticePage() {
 
                   {showAnswer && lastAnswer && (
                       <motion.div
+                          ref={feedbackRef}
                           initial={{ opacity: 0, scale: 0.8, y: 30 }}
                           animate={{ opacity: 1, scale: 1, y: 0 }}
                           transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
