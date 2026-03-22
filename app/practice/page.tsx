@@ -882,7 +882,7 @@ export default function PracticePage() {
                           initial={{ opacity: 0, scale: 0.8, y: 30 }}
                           animate={{ opacity: 1, scale: 1, y: 0 }}
                           transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
-                          className="mt-6"
+                          className="mt-2 sm:mt-4 md:mt-6"
                       >
                         <Card
                             className={`w-full relative overflow-hidden ${
@@ -891,14 +891,14 @@ export default function PracticePage() {
                                     : "bg-white/5"
                             }`}
                         >
-                          <CardContent className="p-8 text-center relative z-10">
-                            <div className="text-8xl mb-4">{lastAnswer.correct ? "✓" : "✗"}</div>
+                          <CardContent className="p-4 sm:p-6 md:p-8 text-center relative z-10">
+                            <div className="text-5xl sm:text-7xl md:text-8xl mb-2 sm:mb-3 md:mb-4">{lastAnswer.correct ? "✓" : "✗"}</div>
                             <div
-                                className={`text-4xl font-semibold mb-4 ${lastAnswer.correct ? "text-green-500" : "text-red-500"}`}
+                                className={`text-2xl sm:text-3xl md:text-4xl font-semibold mb-2 sm:mb-3 md:mb-4 ${lastAnswer.correct ? "text-green-500" : "text-red-500"}`}
                             >
                               {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
                             </div>
-                            <p className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
+                            <p className={`text-lg sm:text-xl md:text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
                           </CardContent>
                         </Card>
                       </motion.div>
