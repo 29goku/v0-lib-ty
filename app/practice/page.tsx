@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react"
 import { useStore } from "@/lib/store"
+import { useTheme, getTheme } from "@/lib/theme"
 import SwipeCard from "@/components/SwipeCard"
 import ProgressBar from "@/components/ProgressBar"
 import Badge from "@/components/Badge"
@@ -53,6 +54,9 @@ export default function PracticePage() {
     language,
     loadQuestions,
   } = useStore()
+
+  const { isDark } = useTheme()
+  const theme = getTheme(isDark)
 
   const [showAnswer, setShowAnswer] = useState(false)
   const [lastAnswer, setLastAnswer] = useState<{
@@ -311,12 +315,12 @@ export default function PracticePage() {
 
   if (loading) {
     return (
-        <div className="min-h-screen bg-black text-white flex items-center justify-center">
-          <Card className="w-full max-w-md border border-gray-700 bg-white/5 backdrop-blur-sm">
+        <div className={`min-h-screen flex items-center justify-center ${theme.bg} ${theme.text}`}>
+          <Card className={`w-full max-w-md ${isDark ? 'border border-gray-700 bg-white/5 backdrop-blur-sm' : 'border border-gray-200 bg-gray-50'}`}>
             <CardContent className="p-8 text-center">
-              <div className="animate-spin rounded-full h-16 w-16 border-2 border-white border-t-transparent mx-auto mb-8"></div>
-              <p className="text-white text-xl font-semibold">{t.loadingQuestions}</p>
-              <p className="text-gray-300 text-base mt-4">{t.getReady}</p>
+              <div className={`animate-spin rounded-full h-16 w-16 border-2 mx-auto mb-8 ${isDark ? 'border-white border-t-transparent' : 'border-gray-700 border-t-transparent'}`}></div>
+              <p className={`text-xl font-semibold ${theme.text}`}>{t.loadingQuestions}</p>
+              <p className={`text-base mt-4 ${theme.textSecondary}`}>{t.getReady}</p>
             </CardContent>
           </Card>
         </div>
@@ -349,7 +353,7 @@ export default function PracticePage() {
     }
 
     return (
-        <div className="min-h-screen bg-black text-white">
+        <div className={`min-h-screen ${theme.bg} ${theme.text}`}>
           <div className="container mx-auto px-4 py-8">
             <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
               <Link href="/">
@@ -384,7 +388,7 @@ export default function PracticePage() {
 
             {/* MultiSelect Dropdown Filters */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-              <Card className="border border-gray-700 bg-white/5 backdrop-blur-sm">
+              <Card className={`${isDark ? 'border border-gray-700 bg-white/5 backdrop-blur-sm' : 'border border-gray-200 bg-gray-50'}`}>
                 <CardContent className="p-4 md:p-6">
                   <MultiSelect
                       options={germanStates.map(state => ({
@@ -406,7 +410,7 @@ export default function PracticePage() {
                 </CardContent>
               </Card>
 
-              <Card className="border border-gray-700 bg-white/5 backdrop-blur-sm">
+              <Card className={`${isDark ? 'border border-gray-700 bg-white/5 backdrop-blur-sm' : 'border border-gray-200 bg-gray-50'}`}>
                 <CardContent className="p-4 md:p-6">
                   <MultiSelect
                       options={categories.map(category => ({
@@ -430,17 +434,17 @@ export default function PracticePage() {
             </div>
 
             <div className="flex justify-center">
-              <Card className="w-full max-w-2xl border border-gray-700 bg-white/5 backdrop-blur-sm">
+              <Card className={`w-full max-w-2xl ${isDark ? 'border border-gray-700 bg-white/5 backdrop-blur-sm' : 'border border-gray-200 bg-gray-50'}`}>
                 <CardContent className="p-8 text-center">
-                  <h2 className="text-2xl font-semibold text-white mb-4">No Questions Found</h2>
-                  <p className="text-lg text-gray-300 mb-6">{getEmptyStateMessage()}</p>
+                  <h2 className={`text-2xl font-semibold mb-4 ${theme.text}`}>No Questions Found</h2>
+                  <p className={`text-lg mb-6 ${theme.textSecondary}`}>{getEmptyStateMessage()}</p>
                   <div className="flex flex-wrap gap-3 justify-center">
                     {(selectedFlagFilters.length > 0 || selectedCategories.length > 0 || selectedStates.length > 0) && (
                         <Button
                             onClick={clearAllFilters}
-                            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 font-semibold px-6 py-3 rounded-xl transition-all"
+                            className={`border font-semibold px-6 py-3 rounded-xl transition-all ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700'}`}
                         >
-                          🌟 Show All Questions
+                          Show All Questions
                         </Button>
                     )}
                   </div>
@@ -453,26 +457,26 @@ export default function PracticePage() {
   }
 
   return (
-      <div className="min-h-screen bg-black text-white overflow-hidden relative">
+      <div className={`min-h-screen overflow-hidden relative ${theme.bg} ${theme.text}`}>
         <div className="fixed inset-0 z-0">
         </div>
 
         <div className="relative z-10 container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
             <Link href="/">
-              <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 px-4 py-2 md:px-6 md:py-3 rounded-xl transition-all font-semibold text-sm md:text-base">
+              <Button className={`border transition-all font-semibold text-sm md:text-base px-4 py-2 md:px-6 md:py-3 rounded-xl ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700'}` }>
                 <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                 {t.back.toUpperCase()}
               </Button>
             </Link>
 
             <div className="text-center">
-              <h1 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">
-              <span className="text-white">
+              <h1 className={`text-2xl md:text-4xl font-bold mb-1 md:mb-2 ${theme.text}`}>
+              <span>
                 {t.practiceMode.toUpperCase()}
               </span>
               </h1>
-              <div className="text-sm md:text-lg text-gray-300 font-semibold">
+              <div className={`text-sm md:text-lg font-semibold ${theme.textSecondary}`}>
                 {selectedState
                     ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
                     : `${t.practiceSubtitle} 🚀`}
