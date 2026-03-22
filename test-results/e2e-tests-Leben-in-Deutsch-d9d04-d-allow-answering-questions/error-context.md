@@ -1,0 +1,88 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - button "Switch to light mode" [ref=e5] [cursor=pointer]:
+        - img [ref=e7]
+      - button "🇺🇸 English" [ref=e14] [cursor=pointer]:
+        - img [ref=e15]
+        - generic [ref=e18]: 🇺🇸
+        - generic [ref=e19]: English
+        - img [ref=e20]
+    - generic [ref=e22]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - heading "LEBEN" [level=1] [ref=e26]
+          - heading "IN DEUTSCHLAND" [level=1] [ref=e27]
+          - generic [ref=e28]: Swipe Your Way to CITIZENSHIP
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - generic [ref=e31]: "300"
+            - generic [ref=e32]: Total Questions
+          - generic [ref=e33]:
+            - generic [ref=e34]: "33"
+            - generic [ref=e35]: Test Length
+          - generic [ref=e36]:
+            - generic [ref=e37]: "60"
+            - generic [ref=e38]: Minutes
+        - generic [ref=e39]:
+          - link "🎯 Start Practice" [ref=e40] [cursor=pointer]:
+            - /url: /practice
+            - button "🎯 Start Practice" [ref=e41]:
+              - generic [ref=e43]: 🎯 Start Practice
+          - link "⚡ Test" [ref=e44] [cursor=pointer]:
+            - /url: /test
+            - button "⚡ Test" [ref=e45]:
+              - generic [ref=e47]: ⚡ Test
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - heading "Learn & Track Progress" [level=2] [ref=e51]
+          - paragraph [ref=e52]: Five ways to prepare for the citizenship test
+        - generic [ref=e53]:
+          - link "Practice Learn by swiping. 300 questions with instant feedback Start" [ref=e54] [cursor=pointer]:
+            - /url: /practice
+            - generic [ref=e56]:
+              - heading "Practice" [level=3] [ref=e57]
+              - paragraph [ref=e58]: Learn by swiping. 300 questions with instant feedback
+              - generic [ref=e59]: Start
+          - link "Test Mode Simulated test conditions. 33 questions, 60 minutes Start" [ref=e60] [cursor=pointer]:
+            - /url: /test
+            - generic [ref=e62]:
+              - heading "Test Mode" [level=3] [ref=e63]
+              - paragraph [ref=e64]: Simulated test conditions. 33 questions, 60 minutes
+              - generic [ref=e65]: Start
+          - link "Review Study mistakes, track progress, improve Review" [ref=e66] [cursor=pointer]:
+            - /url: /review
+            - generic [ref=e68]:
+              - heading "Review" [level=3] [ref=e69]
+              - paragraph [ref=e70]: Study mistakes, track progress, improve
+              - generic [ref=e71]: Review
+          - link "Settings Dark mode, language, stats Customize" [ref=e72] [cursor=pointer]:
+            - /url: /settings
+            - generic [ref=e74]:
+              - heading "Settings" [level=3] [ref=e75]
+              - paragraph [ref=e76]: Dark mode, language, stats
+              - generic [ref=e77]: Customize
+          - link "❓ FAQ How to use this app, tips & tricks Learn More" [ref=e78] [cursor=pointer]:
+            - /url: /faq
+            - generic [ref=e80]:
+              - heading "❓ FAQ" [level=3] [ref=e81]
+              - paragraph [ref=e82]: How to use this app, tips & tricks
+              - generic [ref=e83]: Learn More
+      - generic [ref=e85]:
+        - heading "Ready to Become A German Citizen?" [level=2] [ref=e86]:
+          - text: Ready to Become
+          - text: A German Citizen?
+        - paragraph [ref=e87]:
+          - text: Join members who are preparing for the citizenship test with our swipe-based learning.
+          - text: No boring textbooks. No endless lectures. Just effective practice.
+        - link "Start Now - It's Free" [ref=e88] [cursor=pointer]:
+          - /url: /practice
+          - button "Start Now - It's Free" [ref=e89]
+        - generic [ref=e90]: Join now and get instant access to 300 questions
+  - button "Open Next.js Dev Tools" [ref=e96] [cursor=pointer]:
+    - img [ref=e97]
+  - alert [ref=e100]
+```

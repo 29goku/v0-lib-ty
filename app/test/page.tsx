@@ -1,5 +1,7 @@
 "use client"
 
+export const dynamic = "force-dynamic"
+
 import { useEffect, useState } from "react"
 import { useStore } from "@/lib/store"
 import { useTheme, getTheme } from "@/lib/theme"
