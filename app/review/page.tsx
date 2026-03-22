@@ -173,23 +173,23 @@ export default function ReviewPage() {
         <div className="grid lg:grid-cols-5 gap-8">
           {/* Question Lists */}
           <div className="lg:col-span-3">
-            <Tabs defaultValue="flagged" className="w-full ">
-              <TabsList className={`grid w-full grid-cols-3 bg-transparent border p-2 ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
+            <Tabs defaultValue="flagged" className="w-full">
+              <TabsList className={`flex w-full bg-transparent border p-2 ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
                 <TabsTrigger
                   value="flagged"
-                  className={`font-semibold py-2 transition-colors text-center data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
+                  className={`flex-1 font-semibold py-2 transition-colors data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
                 >
                   FLAGGED ({flaggedQuestions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="completed"
-                  className={`font-semibold py-2 transition-colors text-center data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
+                  className={`flex-1 font-semibold py-2 transition-colors data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
                 >
                   COMPLETED ({completedQuestions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="incorrect"
-                  className={`font-semibold py-2 transition-colors text-center data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
+                  className={`flex-1 font-semibold py-2 transition-colors data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
                 >
                   INCORRECT ({incorrectQuestions.length})
                 </TabsTrigger>
