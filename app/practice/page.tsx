@@ -780,14 +780,14 @@ export default function PracticePage() {
                                   aria-current={isCurrent ? "true" : undefined}
                                   aria-label={`Question ${originalQuestionNumber}${isFlagged ? ", flagged" : ""}${isAnswered ? ", answered" : ""}${isIncorrect ? ", incorrect" : ""}`}
                                   onClick={() => handleQuestionJump(index)}
-                                  className={`relative aspect-square rounded-lg font-semibold text-sm transition-all shadow-sm ${
+                                  className={`relative aspect-square rounded-lg font-semibold text-sm transition-all border ${
                                       isCurrent
-                                          ? "bg-white text-black shadow-md"
+                                          ? "bg-white text-black border-white"
                                           : isIncorrect
-                                              ? "bg-red-500 text-white hover:opacity-80 shadow-md"
+                                              ? "bg-red-500 text-white border-red-400 hover:opacity-80"
                                               : isAnswered
-                                                  ? "bg-green-500 text-white hover:opacity-80 shadow-md"
-                                                  : "bg-transparent text-gray-300 hover:bg-gray-900/20"
+                                                  ? "bg-green-500 text-white border-green-400 hover:opacity-80"
+                                                  : "border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20"
                                   }`}
                               >
                                 {originalQuestionNumber}
@@ -804,7 +804,7 @@ export default function PracticePage() {
                         <button
                             aria-label="Previous"
                             onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
-                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center hover:bg-gray-600 transition-all shadow-md hover:shadow-lg"
+                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors"
                         >
                           ‹
                         </button>
@@ -838,7 +838,7 @@ export default function PracticePage() {
                                       key={`dots-${i}`}
                                       onClick={() => handleQuestionJump(targetIdx)}
                                       aria-label={`Jump near ${target}`}
-                                      className="px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black hover:opacity-80 transition-all shadow-md hover:shadow-lg"
+                                      className="px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black border border-gray-300 hover:opacity-80 transition-all"
                                   >
                                     …
                                   </button>
@@ -863,14 +863,14 @@ export default function PracticePage() {
                                     onClick={() => handleQuestionJump(idx)}
                                     aria-current={isCurrent ? 'true' : undefined}
                                     aria-label={`Go to question ${originalQuestionNumber}`}
-                                    className={`relative w-10 h-10 rounded-lg font-semibold flex items-center justify-center transition-all shadow-sm ${
+                                    className={`relative w-10 h-10 rounded-lg font-semibold flex items-center justify-center transition-all border ${
                                         isCurrent
-                                            ? 'bg-white text-black shadow-md'
+                                            ? 'bg-white text-black border-white'
                                             : isIncorrect
-                                                ? 'bg-red-500 text-white shadow-md'
+                                                ? 'bg-red-500 text-white border-red-400'
                                                 : isAnswered
-                                                    ? 'bg-green-500 text-white shadow-md'
-                                                    : 'bg-transparent text-gray-300 hover:bg-gray-900/20'
+                                                    ? 'bg-green-500 text-white border-green-400'
+                                                    : 'border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20'
                                     }`}
                                 >
                                   <span className="text-sm z-10">{originalQuestionNumber}</span>
@@ -885,7 +885,7 @@ export default function PracticePage() {
                         <button
                             aria-label="Next"
                             onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
-                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center hover:bg-gray-600 transition-all shadow-md hover:shadow-lg"
+                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors"
                         >
                           ›
                         </button>
