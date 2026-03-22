@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import { ChevronDown, X } from "lucide-react"
+import { useTheme } from "@/lib/theme"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -40,6 +41,7 @@ export function MultiSelect({
   className = "",
 }: MultiSelectProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const { isDark } = useTheme()
 
   const handleToggleOption = (optionId: string, event?: React.MouseEvent) => {
     // Prevent dropdown from closing
@@ -91,7 +93,7 @@ export function MultiSelect({
         <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
-            className="w-full justify-between bg-transparent border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white transition-colors"
+            className={`w-full justify-between bg-transparent border transition-colors ${isDark ? 'border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}
           >
             <div className="flex items-center gap-2">
               {icon}
@@ -101,24 +103,24 @@ export function MultiSelect({
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="w-80 max-h-96 overflow-y-auto bg-black border border-gray-700"
+          className={`w-80 max-h-96 overflow-y-auto border ${isDark ? 'bg-black border-gray-700' : 'bg-white border-gray-200'}`}
           align="start"
           onCloseAutoFocus={(e) => e.preventDefault()}
         >
-          <DropdownMenuLabel className="text-gray-300 font-semibold flex items-center justify-between">
+          <DropdownMenuLabel className={`font-semibold flex items-center justify-between ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
             {label}
             {selectedValues.length > 0 && (
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={(e) => handleClearAll(e)}
-                className="h-6 px-2 text-xs text-gray-500 hover:text-gray-300"
+                className={`h-6 px-2 text-xs ${isDark ? 'text-gray-500 hover:text-gray-300' : 'text-gray-600 hover:text-gray-900'}`}
               >
                 Clear All
               </Button>
             )}
           </DropdownMenuLabel>
-          <DropdownMenuSeparator className="bg-gray-800" />
+          <DropdownMenuSeparator className={isDark ? 'bg-gray-800' : 'bg-gray-200'} />
 
           {options.map((option) => (
             <DropdownMenuCheckboxItem
@@ -129,7 +131,7 @@ export function MultiSelect({
                 e.preventDefault()
                 handleToggleOption(option.id)
               }}
-              className="text-gray-300 hover:bg-gray-900/20 focus:bg-gray-900/30"
+              className={isDark ? 'text-gray-300 hover:bg-gray-900/20 focus:bg-gray-900/30' : 'text-gray-700 hover:bg-gray-100 focus:bg-gray-100'}
             >
               <div className="flex items-center gap-2">
                 {option.emoji && <span>{option.emoji}</span>}
@@ -146,13 +148,13 @@ export function MultiSelect({
           {getSelectedOptions().map((option) => (
             <div
               key={option.id}
-              className="inline-flex items-center gap-1 px-2 py-1 bg-gray-900/30 border border-gray-700 rounded text-sm text-gray-300"
+              className={`inline-flex items-center gap-1 px-2 py-1 border rounded text-sm ${isDark ? 'bg-gray-900/30 border-gray-700 text-gray-300' : 'bg-gray-100 border-gray-300 text-gray-700'}`}
             >
               {option.emoji && <span>{option.emoji}</span>}
               <span>{option.label}</span>
               <button
                 onClick={() => handleToggleOption(option.id)}
-                className="ml-1 hover:bg-gray-700/50 rounded-full p-0.5 transition-colors"
+                className={`ml-1 rounded-full p-0.5 transition-colors ${isDark ? 'hover:bg-gray-700/50' : 'hover:bg-gray-200/50'}`}
               >
                 <X className="h-3 w-3" />
               </button>

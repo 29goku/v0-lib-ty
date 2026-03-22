@@ -409,7 +409,7 @@ export default function PracticePage() {
                       }}
                       placeholder="Select German states..."
                       label={t.selectState}
-                      icon={<MapPin className="w-5 h-5 text-gray-300" />}
+                      icon={<MapPin className={`w-5 h-5 ${isDark ? 'text-gray-300' : 'text-gray-600'}`} />}
                       className="w-full"
                   />
                 </CardContent>
@@ -431,7 +431,7 @@ export default function PracticePage() {
                       }}
                       placeholder="Select categories..."
                       label={selectedStates.length > 0 ? "Categories" : t.filterByCategory}
-                      icon={<Filter className="w-5 h-5 text-gray-300" />}
+                      icon={<Filter className={`w-5 h-5 ${isDark ? 'text-gray-300' : 'text-gray-600'}`} />}
                       className="w-full"
                   />
                 </CardContent>
@@ -505,18 +505,18 @@ export default function PracticePage() {
             <Card className="bg-white/5">
               <CardContent className="p-4">
                 <div className="flex items-center justify-center space-x-4">
-                  <span className="text-gray-300 font-semibold">Manual Mode</span>
+                  <span className={`font-semibold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Manual Mode</span>
                   <Switch
                       checked={isAutoMode}
                       onCheckedChange={setIsAutoMode}
                       className="data-[state=checked]:bg-green-500"
                   />
-                  <span className="text-green-300 font-bold">Auto Mode</span>
+                  <span className={`font-bold ${isDark ? 'text-green-300' : 'text-green-600'}`}>Auto Mode</span>
                   {isAutoMode && (
                       <div className="flex items-center space-x-2 ml-4">
-                        <span className="text-gray-300 text-sm">Delay:</span>
+                        <span className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Delay:</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-gray-300 text-xs">2s</span>
+                          <span className={`text-xs ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>2s</span>
                           <input
                               type="range"
                               min="2000"
@@ -529,8 +529,8 @@ export default function PracticePage() {
                                 background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${((autoDelay - 2000) / 3000) * 100}%, #374151 ${((autoDelay - 2000) / 3000) * 100}%, #374151 100%)`,
                               }}
                           />
-                          <span className="text-gray-300 text-xs">5s</span>
-                          <span className="text-gray-300 text-sm ml-2">{autoDelay / 1000}s</span>
+                          <span className={`text-xs ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>5s</span>
+                          <span className={`text-sm ml-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{autoDelay / 1000}s</span>
                         </div>
                       </div>
                   )}
@@ -540,12 +540,12 @@ export default function PracticePage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
-            <Card className="border border-gray-700 bg-white/5 hover:bg-white/10 transition-all duration-300 group">
+            <Card className={`border transition-all duration-300 group hover:bg-white/10 ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-gray-300 text-xs md:text-sm font-semibold uppercase tracking-wider">{t.progress}</p>
-                    <p className="text-xl md:text-3xl font-semibold text-white">
+                    <p className={`text-xs md:text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.progress}</p>
+                    <p className={`text-xl md:text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {currentIndex + 1}/{filteredQuestions.length}
                     </p>
                   </div>
@@ -557,29 +557,29 @@ export default function PracticePage() {
               </CardContent>
             </Card>
 
-            <Card className="border border-gray-700 bg-white/5 hover:bg-white/10 transition-all duration-300 group">
+            <Card className={`border transition-all duration-300 group hover:bg-white/10 ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-gray-300 text-xs md:text-sm font-semibold uppercase tracking-wider">{t.xp}</p>
-                    <p className="text-xl md:text-3xl font-semibold text-white">{userProgress.xp}</p>
+                    <p className={`text-xs md:text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.xp}</p>
+                    <p className={`text-xl md:text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.xp}</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border border-gray-700 bg-white/5 hover:bg-white/10 transition-all duration-300 group">
+            <Card className={`border transition-all duration-300 group hover:bg-white/10 ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-gray-300 text-xs md:text-sm font-semibold uppercase tracking-wider">{t.streak}</p>
-                    <p className="text-xl md:text-3xl font-semibold text-white">{userProgress.streak}</p>
+                    <p className={`text-xs md:text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.streak}</p>
+                    <p className={`text-xl md:text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.streak}</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border border-gray-700 bg-white/5 hover:bg-white/10 transition-all duration-300 group">
+            <Card className={`border transition-all duration-300 group hover:bg-white/10 ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center justify-between">
                   <div>
@@ -603,14 +603,14 @@ export default function PracticePage() {
           <div className="mb-4">
             <Button
               onClick={() => setShowFilters(!showFilters)}
-              className="w-full sm:w-auto border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-4 py-2 transition-colors flex items-center gap-2"
+              className={`w-full sm:w-auto border bg-transparent font-semibold px-4 py-2 transition-colors flex items-center gap-2 ${isDark ? 'border-gray-700 hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
             >
               <Filter className="w-4 h-4" />
               {showFilters ? "Hide Filters" : "Show Filters"}
               <ChevronDown className={`w-4 h-4 transition-transform ${showFilters ? "rotate-180" : ""}`} />
             </Button>
             {(selectedStates.length > 0 || selectedCategories.length > 0) && (
-              <p className="text-sm text-gray-400 mt-2">
+              <p className={`text-sm mt-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                 {selectedStates.length > 0 && `${selectedStates.length} state${selectedStates.length > 1 ? 's' : ''}`}
                 {selectedStates.length > 0 && selectedCategories.length > 0 && " • "}
                 {selectedCategories.length > 0 && `${selectedCategories.length} categor${selectedCategories.length > 1 ? 'ies' : 'y'}`}
@@ -637,7 +637,7 @@ export default function PracticePage() {
                       }}
                       placeholder="Select German states..."
                       label={t.selectState}
-                      icon={<MapPin className="w-5 h-5 text-gray-300" />}
+                      icon={<MapPin className={`w-5 h-5 ${isDark ? 'text-gray-300' : 'text-gray-600'}`} />}
                       className="w-full"
                   />
                 </CardContent>
@@ -659,7 +659,7 @@ export default function PracticePage() {
                       }}
                       placeholder="Select categories..."
                       label={selectedStates.length > 0 ? "Categories" : t.filterByCategory}
-                      icon={<Filter className="w-5 h-5 text-gray-300" />}
+                      icon={<Filter className={`w-5 h-5 ${isDark ? 'text-gray-300' : 'text-gray-600'}`} />}
                       className="w-full"
                   />
                 </CardContent>
@@ -669,11 +669,11 @@ export default function PracticePage() {
 
           {/* Flag Filter Section - keeping as buttons */}
           <div className="flex justify-center mb-6 md:mb-8">
-            <Card className="border border-gray-700 bg-white/5 w-full max-w-5xl">
+            <Card className={`border w-full max-w-5xl ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-200 bg-gray-50'}`}>
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                  <div className="w-5 h-5 md:w-6 md:h-6 text-gray-300"></div>
-                  <h3 className="text-lg md:text-xl font-semibold text-white uppercase tracking-wider">
+                  <div className={`w-5 h-5 md:w-6 md:h-6 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}></div>
+                  <h3 className={`text-lg md:text-xl font-semibold uppercase tracking-wider ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     Filter by Status {selectedFlagFilters.length > 0 && `(${selectedFlagFilters.length} selected)`}
                   </h3>
                 </div>
@@ -681,7 +681,7 @@ export default function PracticePage() {
                   {selectedFlagFilters.length > 0 && (
                       <button
                           onClick={clearAllFilters}
-                          className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base bg-transparent text-gray-300 hover:bg-gray-900/20"
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base bg-transparent ${isDark ? 'text-gray-300 hover:bg-gray-900/20' : 'text-gray-700 hover:bg-gray-100'}`}
                       >
                         🌟 Clear All ({selectedFlagFilters.length})
                       </button>
@@ -691,8 +691,8 @@ export default function PracticePage() {
                           onClick={() => handleFlagFilterSelection("flagged")}
                           className={`px-3 py-2 md:px-4 md:py-2 rounded font-semibold transition-all text-sm md:text-base border ${
                               selectedFlagFilters.includes("flagged")
-                                  ? "bg-red-500/20 border-red-500/50 text-red-300"
-                                  : "border-gray-700 text-gray-300 hover:bg-gray-900/20"
+                                  ? isDark ? "bg-red-500/20 border-red-500/50 text-red-300" : "bg-red-100 border-red-400 text-red-800"
+                                  : isDark ? "border-gray-700 text-gray-300 hover:bg-gray-900/20" : "border-gray-300 text-gray-700 hover:bg-gray-100"
                           }`}
                       >
                         Flagged ({flaggedCount})
@@ -704,8 +704,8 @@ export default function PracticePage() {
                           onClick={() => handleFlagFilterSelection("incorrect")}
                           className={`px-3 py-2 md:px-4 md:py-2 rounded font-semibold transition-all text-sm md:text-base border ${
                               selectedFlagFilters.includes("incorrect")
-                                  ? "bg-red-500/20 border-red-500/50 text-red-300"
-                                  : "border-gray-700 text-gray-300 hover:bg-gray-900/20"
+                                  ? isDark ? "bg-red-500/20 border-red-500/50 text-red-300" : "bg-red-100 border-red-400 text-red-800"
+                                  : isDark ? "border-gray-700 text-gray-300 hover:bg-gray-900/20" : "border-gray-300 text-gray-700 hover:bg-gray-100"
                           }`}
                       >
                         Incorrect ({incorrectCount})
@@ -717,8 +717,8 @@ export default function PracticePage() {
                           onClick={() => handleFlagFilterSelection("correct")}
                           className={`px-3 py-2 md:px-4 md:py-2 rounded font-semibold transition-all text-sm md:text-base border ${
                               selectedFlagFilters.includes("correct")
-                                  ? "bg-green-500/20 border-green-500/50 text-green-300"
-                                  : "border-gray-700 text-gray-300 hover:bg-gray-900/20"
+                                  ? isDark ? "bg-green-500/20 border-green-500/50 text-green-300" : "bg-green-100 border-green-400 text-green-800"
+                                  : isDark ? "border-gray-700 text-gray-300 hover:bg-gray-900/20" : "border-gray-300 text-gray-700 hover:bg-gray-100"
                           }`}
                       >
                         Correct ({correctCount})
