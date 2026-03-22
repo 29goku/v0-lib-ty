@@ -932,7 +932,7 @@ export default function PracticePage() {
         </div>
 
         {/* Sticky Bottom Navigation - Median Navigation on Mobile */}
-        <div className={`lg:hidden fixed bottom-0 left-0 right-0 z-40 border-t ${isDark ? 'bg-black/80 border-gray-800 backdrop-blur-sm' : 'bg-white/80 border-gray-200 backdrop-blur-sm'}`}>
+        <div className={`md:hidden fixed bottom-0 left-0 right-0 z-40 border-t ${isDark ? 'bg-black/80 border-gray-800 backdrop-blur-sm' : 'bg-white/80 border-gray-200 backdrop-blur-sm'}`}>
           <div className="flex items-center justify-between gap-1 px-2 py-2 sm:gap-2 sm:px-3 sm:py-3 overflow-x-auto">
             <button
                 aria-label="Previous"
@@ -1028,7 +1028,7 @@ export default function PracticePage() {
         </div>
 
         {/* Add padding to account for sticky bottom nav */}
-        <div className="lg:hidden h-20"></div>
+        <div className="md:hidden h-20"></div>
       </div>
   )
 }
