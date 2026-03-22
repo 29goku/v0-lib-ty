@@ -472,12 +472,12 @@ export default function TestPage() {
                     onClick={() => handleQuestionJump(index)}
                     className={`relative aspect-square rounded-lg font-semibold text-xs transition-all border ${
                       isCurrent
-                        ? "bg-white text-black border-white"
+                        ? isDark ? "bg-white text-black border-white shadow-lg shadow-white/50" : "bg-blue-500 text-white border-blue-600 shadow-lg shadow-blue-400/50"
                         : isAnswered
                           ? answer.correct
                             ? "bg-green-500 text-white border-green-400 hover:opacity-80"
                             : "bg-red-500 text-white border-red-400 hover:opacity-80"
-                          : "border-gray-600 bg-transparent text-gray-300"
+                          : isDark ? "border-gray-600 bg-transparent text-gray-300" : "border-gray-400 bg-transparent text-gray-600"
                     }`}
                   >
                     {index + 1}
@@ -534,12 +534,12 @@ export default function TestPage() {
                     onClick={() => handleQuestionJump(index)}
                     className={`relative aspect-square rounded-lg font-semibold text-xs transition-all border ${
                       isCurrent
-                        ? "bg-white text-black border-white"
+                        ? isDark ? "bg-white text-black border-white shadow-lg shadow-white/50" : "bg-blue-500 text-white border-blue-600 shadow-lg shadow-blue-400/50"
                         : isAnswered
                           ? answer.correct
                             ? "bg-green-500 text-white border-green-400 hover:opacity-80"
                             : "bg-red-500 text-white border-red-400 hover:opacity-80"
-                          : "border-gray-600 bg-transparent text-gray-300"
+                          : isDark ? "border-gray-600 bg-transparent text-gray-300" : "border-gray-400 bg-transparent text-gray-600"
                     }`}
                   >
                     {index + 1}
