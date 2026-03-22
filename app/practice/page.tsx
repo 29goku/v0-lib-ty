@@ -631,14 +631,15 @@ export default function PracticePage() {
           </div>
 
           {/* Filters Toggle Button */}
-          <div className="mb-4">
+          <div className="mb-2 sm:mb-4 px-4">
             <Button
               onClick={() => setShowFilters(!showFilters)}
-              className={`w-full sm:w-auto border bg-transparent font-semibold px-4 py-2 transition-colors flex items-center gap-2 ${isDark ? 'border-gray-700 hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
+              className={`w-full sm:w-auto border bg-transparent font-semibold px-3 sm:px-4 py-2 text-sm sm:text-base transition-colors flex items-center gap-2 justify-center sm:justify-start ${isDark ? 'border-gray-700 hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
             >
-              <Filter className="w-4 h-4" />
-              {showFilters ? "Hide Filters" : "Show Filters"}
-              <ChevronDown className={`w-4 h-4 transition-transform ${showFilters ? "rotate-180" : ""}`} />
+              <Filter className="w-3 sm:w-4 h-3 sm:h-4" />
+              <span className="hidden sm:inline">{showFilters ? "Hide Filters" : "Show Filters"}</span>
+              <span className="sm:hidden">{showFilters ? "Hide" : "Filters"}</span>
+              <ChevronDown className={`w-3 sm:w-4 h-3 sm:h-4 transition-transform ${showFilters ? "rotate-180" : ""}`} />
             </Button>
             {(selectedStates.length > 0 || selectedCategories.length > 0) && (
               <p className={`text-sm mt-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -761,7 +762,95 @@ export default function PracticePage() {
             </Card>
           </div>
 
-          <div className="flex justify-center mb-8">
+          {/* Mobile: Sticky Navigation Bar at Bottom */}
+          <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-t from-black via-black/90 to-transparent backdrop-blur-sm border-t border-gray-700 px-2 py-2 sm:px-3 sm:py-3">
+            <div className="flex items-center justify-between gap-0.5 sm:gap-1 overflow-x-auto">
+              <button
+                aria-label="Previous"
+                onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
+                className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors text-sm sm:text-base"
+              >
+                ‹
+              </button>
+
+              {(() => {
+                const pages = getPaginationNumbers(currentIndex + 1, pageCount)
+                return pages.map((p, i) => {
+                  if (p === '...') {
+                    let left: number | null = null
+                    for (let j = i - 1; j >= 0; j--) {
+                      if (typeof pages[j] === 'number') {
+                        left = pages[j] as number
+                        break
+                      }
+                    }
+                    let right: number | null = null
+                    for (let j = i + 1; j < pages.length; j++) {
+                      if (typeof pages[j] === 'number') {
+                        right = pages[j] as number
+                        break
+                      }
+                    }
+                    const target = left && right ? Math.floor((left + right) / 2) : left || right || 1
+                    const targetIdx = Math.max(0, Number(target) - 1)
+                    return (
+                      <button
+                        key={`dots-${i}`}
+                        onClick={() => handleQuestionJump(targetIdx)}
+                        aria-label={`Jump near ${target}`}
+                        className="flex-shrink-0 px-1 sm:px-2 h-8 sm:h-10 flex items-center justify-center rounded-lg bg-white text-black border border-gray-300 hover:opacity-80 transition-all text-xs sm:text-base"
+                      >
+                        …
+                      </button>
+                    )
+                  }
+
+                  const pageNum = Number(p)
+                  const idx = pageNum - 1
+                  const q = filteredQuestions[idx]
+                  const qId = q?.id
+                  const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
+                  const isIncorrect = qId ? (userProgress.incorrectAnswers || []).includes(qId) : false
+                  const isCurrent = idx === currentIndex
+                  const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
+                  const originalQuestionNumber = questionsToUse.findIndex(originalQ => originalQ.id === qId) + 1
+
+                  return (
+                    <button
+                      key={`p-${pageNum}-${i}`}
+                      onClick={() => handleQuestionJump(idx)}
+                      aria-current={isCurrent ? 'true' : undefined}
+                      aria-label={`Go to question ${originalQuestionNumber}`}
+                      className={`flex-shrink-0 relative w-8 h-8 sm:w-10 sm:h-10 rounded-lg font-semibold flex items-center justify-center transition-all border text-xs ${
+                        isCurrent
+                          ? 'bg-white text-black border-white'
+                          : isIncorrect
+                            ? 'bg-red-500 text-white border-red-400'
+                            : isAnswered
+                              ? 'bg-green-500 text-white border-green-400'
+                              : 'border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20'
+                      }`}
+                    >
+                      <span className="text-xs sm:text-sm z-10">{originalQuestionNumber}</span>
+                      {isFlagged && (
+                        <span className="absolute -top-0.5 -right-0.5 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-red-500 rounded-full border border-white"></span>
+                      )}
+                    </button>
+                  )
+                })
+              })()}
+
+              <button
+                aria-label="Next"
+                onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
+                className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors text-sm sm:text-base"
+              >
+                ›
+              </button>
+            </div>
+          </div>
+
+          <div className="flex justify-center mb-8 pb-32 lg:pb-0 lg:mb-8">
             <div className="w-full max-w-6xl">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
                 {/* Left: Swipe Card */}
@@ -793,7 +882,7 @@ export default function PracticePage() {
                           initial={{ opacity: 0, scale: 0.8, y: 30 }}
                           animate={{ opacity: 1, scale: 1, y: 0 }}
                           transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
-                          className="mt-6"
+                          className="mt-2 sm:mt-4 md:mt-6"
                       >
                         <Card
                             className={`w-full relative overflow-hidden ${
@@ -802,14 +891,14 @@ export default function PracticePage() {
                                     : "bg-white/5"
                             }`}
                         >
-                          <CardContent className="p-8 text-center relative z-10">
-                            <div className="text-8xl mb-4">{lastAnswer.correct ? "✓" : "✗"}</div>
+                          <CardContent className="p-4 sm:p-6 md:p-8 text-center relative z-10">
+                            <div className="text-5xl sm:text-7xl md:text-8xl mb-2 sm:mb-3 md:mb-4">{lastAnswer.correct ? "✓" : "✗"}</div>
                             <div
-                                className={`text-4xl font-semibold mb-4 ${lastAnswer.correct ? "text-green-500" : "text-red-500"}`}
+                                className={`text-2xl sm:text-3xl md:text-4xl font-semibold mb-2 sm:mb-3 md:mb-4 ${lastAnswer.correct ? "text-green-500" : "text-red-500"}`}
                             >
                               {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
                             </div>
-                            <p className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
+                            <p className={`text-lg sm:text-xl md:text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
                           </CardContent>
                         </Card>
                       </motion.div>
@@ -855,97 +944,6 @@ export default function PracticePage() {
                         })}
                       </div>
 
-                      {/* Mobile: compact pagination-style navigation */}
-                      <div className="flex items-center justify-center gap-1 mb-4 lg:hidden">
-                        <button
-                            aria-label="Previous"
-                            onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
-                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors"
-                        >
-                          ‹
-                        </button>
-
-                        {(() => {
-                          const pages = getPaginationNumbers(currentIndex + 1, pageCount)
-
-                          return pages.map((p, i) => {
-                            if (p === '...') {
-                              // compute median target between surrounding numeric pages
-                              let left: number | null = null
-                              for (let j = i - 1; j >= 0; j--) {
-                                if (typeof pages[j] === 'number') {
-                                  left = pages[j] as number
-                                  break
-                                }
-                              }
-                              let right: number | null = null
-                              for (let j = i + 1; j < pages.length; j++) {
-                                if (typeof pages[j] === 'number') {
-                                  right = pages[j] as number
-                                  break
-                                }
-                              }
-
-                              const target = left && right ? Math.floor((left + right) / 2) : left || right || 1
-                              const targetIdx = Math.max(0, Number(target) - 1)
-
-                              return (
-                                  <button
-                                      key={`dots-${i}`}
-                                      onClick={() => handleQuestionJump(targetIdx)}
-                                      aria-label={`Jump near ${target}`}
-                                      className="px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black border border-gray-300 hover:opacity-80 transition-all"
-                                  >
-                                    …
-                                  </button>
-                              )
-                            }
-
-                            const pageNum = Number(p)
-                            const idx = pageNum - 1
-                            const q = filteredQuestions[idx]
-                            const qId = q?.id
-                            const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
-                            const isIncorrect = qId ? (userProgress.incorrectAnswers || []).includes(qId) : false
-                            const isCurrent = idx === currentIndex
-                            const isFlagged = qId ? userProgress.flaggedQuestions.includes(qId) : false
-
-                            // Find the original question number from the full question set
-                            const originalQuestionNumber = questionsToUse.findIndex(originalQ => originalQ.id === qId) + 1
-
-                            return (
-                                <button
-                                    key={`p-${pageNum}-${i}`}
-                                    onClick={() => handleQuestionJump(idx)}
-                                    aria-current={isCurrent ? 'true' : undefined}
-                                    aria-label={`Go to question ${originalQuestionNumber}`}
-                                    className={`relative w-10 h-10 rounded-lg font-semibold flex items-center justify-center transition-all border ${
-                                        isCurrent
-                                            ? 'bg-white text-black border-white'
-                                            : isIncorrect
-                                                ? 'bg-red-500 text-white border-red-400'
-                                                : isAnswered
-                                                    ? 'bg-green-500 text-white border-green-400'
-                                                    : 'border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20'
-                                    }`}
-                                >
-                                  <span className="text-sm z-10">{originalQuestionNumber}</span>
-                                  {isFlagged && (
-                                      <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-500 rounded-full border border-white"></span>
-                                  )}
-                                </button>
-                            )
-                          })
-                        })()}
-
-                        <button
-                            aria-label="Next"
-                            onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
-                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors"
-                        >
-                          ›
-                        </button>
-                      </div>
                     </CardContent>
                   </Card>
                 </div>
