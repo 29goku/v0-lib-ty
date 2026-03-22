@@ -850,11 +850,11 @@ export default function PracticePage() {
             </div>
           </div>
 
-          <div className="flex justify-center mb-8 pb-48 sm:pb-32 md:pb-8 lg:pb-0 lg:mb-8">
+          <div className="flex justify-center mb-8 lg:mb-8">
             <div className="w-full max-w-6xl">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
                 {/* Left: Swipe Card */}
-                <div className="w-full">
+                <div className="w-full pb-48 sm:pb-32 md:pb-0">
                   <SwipeCard
                       question={currentQuestion}
                       onSwipe={handleSwipe}
