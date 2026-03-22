@@ -18,6 +18,7 @@ import ThemeToggle from "@/components/ThemeToggle"
 import { getCategoryEmoji } from "@/lib/category-emojis"
 import { MultiSelect } from "@/components/MultiSelect"
 import StickyMobileHeader from "@/components/StickyMobileHeader"
+import DesktopHeader from "@/components/DesktopHeader"
 
 const germanStates = [
   { id: "baden-wuerttemberg", name: "Baden-Württemberg", emoji: "🏰" },
@@ -931,8 +932,8 @@ export default function PracticePage() {
 
         </div>
 
-        {/* Sticky Bottom Navigation - Median Navigation on Mobile */}
-        <div className={`md:hidden fixed bottom-0 left-0 right-0 z-40 border-t ${isDark ? 'bg-black/80 border-gray-800 backdrop-blur-sm' : 'bg-white/80 border-gray-200 backdrop-blur-sm'}`}>
+        {/* Sticky Bottom Navigation - Median Navigation on Mobile Only */}
+        <div className={`fixed bottom-0 left-0 right-0 z-40 border-t md:hidden ${isDark ? 'bg-black/80 border-gray-800 backdrop-blur-sm' : 'bg-white/80 border-gray-200 backdrop-blur-sm'}`}>
           <div className="flex items-center justify-between gap-1 px-2 py-2 sm:gap-2 sm:px-3 sm:py-3 overflow-x-auto">
             <button
                 aria-label="Previous"
