@@ -68,10 +68,9 @@ export default function PracticePage() {
   } | null>(null)
   const [loading, setLoading] = useState(true)
   const [showTranslation, setShowTranslation] = useState(false)
-  const [isAutoMode, setIsAutoMode] = useState(false)
-  const [autoDelay, setAutoDelay] = useState(3000)
   const [currentIndex, setCurrentIndex] = useState(0)
   const overviewRef = useRef<HTMLDivElement | null>(null)
+  const feedbackRef = useRef<HTMLDivElement | null>(null)
 
   // Multi-select filter states
   const [selectedFlagFilters, setSelectedFlagFilters] = useState<string[]>([])
@@ -87,6 +86,15 @@ export default function PracticePage() {
   const stateEmoji = selectedState ? germanStates.find((s) => s.id === selectedState)?.emoji : undefined
 
   const t = getTranslation(language)
+
+  // Scroll feedback into view on mobile when it appears
+  useEffect(() => {
+    if (showAnswer && feedbackRef.current) {
+      setTimeout(() => {
+        feedbackRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
+      }, 100)
+    }
+  }, [showAnswer])
 
   useEffect(() => {
     const initializePractice = async () => {
@@ -313,12 +321,7 @@ export default function PracticePage() {
         }
         // Clear showAnswer last - this will trigger the useEffect to update displayQuestion
         setShowAnswer(false)
-      }, isAutoMode ? autoDelay : 2000)
-    } else if (isAutoMode) {
-      setTimeout(() => {
-        nextQuestion()
-      }, autoDelay)
-    }
+      }, 2000)
   }
 
   const resetProgress = () => {
@@ -534,43 +537,6 @@ export default function PracticePage() {
             </div>
           </div>
 
-          <div className="flex justify-center mb-6">
-            <Card className="bg-white/5">
-              <CardContent className="p-4">
-                <div className="flex items-center justify-center space-x-4">
-                  <span className={`font-semibold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Manual Mode</span>
-                  <Switch
-                      checked={isAutoMode}
-                      onCheckedChange={setIsAutoMode}
-                      className="data-[state=checked]:bg-green-500"
-                  />
-                  <span className={`font-bold ${isDark ? 'text-green-300' : 'text-green-600'}`}>Auto Mode</span>
-                  {isAutoMode && (
-                      <div className="flex items-center space-x-2 ml-4">
-                        <span className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Delay:</span>
-                        <div className="flex items-center space-x-2">
-                          <span className={`text-xs ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>2s</span>
-                          <input
-                              type="range"
-                              min="2000"
-                              max="5000"
-                              step="500"
-                              value={autoDelay}
-                              onChange={(e) => setAutoDelay(Number(e.target.value))}
-                              className="w-20 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
-                              style={{
-                                background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${((autoDelay - 2000) / 3000) * 100}%, #374151 ${((autoDelay - 2000) / 3000) * 100}%, #374151 100%)`,
-                              }}
-                          />
-                          <span className={`text-xs ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>5s</span>
-                          <span className={`text-sm ml-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{autoDelay / 1000}s</span>
-                        </div>
-                      </div>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
 
           {/* Stats Cards - Hidden on mobile, shown on md+ screens */}
           <div className="hidden md:grid md:grid-cols-4 gap-4 mb-8">
@@ -850,11 +816,11 @@ export default function PracticePage() {
             </div>
           </div>
 
-          <div className="flex justify-center mb-8 pb-32 lg:pb-0 lg:mb-8">
+          <div className="flex justify-center mb-8 lg:mb-8">
             <div className="w-full max-w-6xl">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
                 {/* Left: Swipe Card */}
-                <div className="w-full">
+                <div className="w-full pb-48 sm:pb-32 md:pb-0">
                   <SwipeCard
                       question={currentQuestion}
                       onSwipe={handleSwipe}
@@ -864,9 +830,10 @@ export default function PracticePage() {
                       isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
                       isTranslated={showTranslation}
                       onTranslate={() => setShowTranslation(!showTranslation)}
+                      externalSelectedAnswer={lastAnswer?.selectedIndex ?? null}
                   />
 
-                  {!isAutoMode && showAnswer && (
+                  {showAnswer && (
                       <div className="flex justify-start mt-4">
                         <Button
                             onClick={nextQuestion}
@@ -879,6 +846,7 @@ export default function PracticePage() {
 
                   {showAnswer && lastAnswer && (
                       <motion.div
+                          ref={feedbackRef}
                           initial={{ opacity: 0, scale: 0.8, y: 30 }}
                           animate={{ opacity: 1, scale: 1, y: 0 }}
                           transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 25 }}
@@ -989,7 +957,6 @@ export default function PracticePage() {
                 <div className="text-red-500 font-semibold">{t.swipeRight} →</div>
               </div>
               <p className="text-gray-300 font-semibold">{t.keyboardShortcuts}</p>
-              <p className="text-gray-300 font-semibold">Toggle between Auto and Manual mode above</p>
               <p className="text-gray-300 font-semibold">Select a state to practice state-specific questions</p>
               <div>
                 <p className="text-sm text-gray-300 font-semibold">

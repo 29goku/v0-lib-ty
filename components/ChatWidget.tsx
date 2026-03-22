@@ -76,7 +76,7 @@ const ChatWidget: React.FC = () => {
         <button
           aria-label="Open feedback"
           onClick={() => setOpen(true)}
-          className="fixed bottom-8 right-8 z-50 bg-white border border-gray-200 shadow-lg rounded-full w-14 h-14 flex items-center justify-center hover:shadow-xl transition"
+          className="fixed top-20 sm:top-24 md:bottom-8 md:top-auto right-4 sm:right-6 md:right-8 z-50 bg-white border border-gray-200 shadow-lg rounded-full w-14 h-14 flex items-center justify-center hover:shadow-xl transition"
         >
           {chatIcon}
         </button>
@@ -84,7 +84,7 @@ const ChatWidget: React.FC = () => {
 
       {/* Feedback popup */}
       {open && (
-        <div className="fixed bottom-8 right-8 z-50 w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-[chatOpen_0.3s_cubic-bezier(.4,2,.6,1)] border border-gray-200 font-sans">
+        <div className="fixed top-20 sm:top-24 md:bottom-8 md:top-auto right-4 sm:right-6 md:right-8 z-50 w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-[chatOpen_0.3s_cubic-bezier(.4,2,.6,1)] border border-gray-200 font-sans">
           {/* Header */}
           <div className="bg-blue-600 text-white px-5 py-4 font-semibold text-lg flex items-center justify-between">
             <span></span>
