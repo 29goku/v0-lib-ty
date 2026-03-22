@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useStore } from "@/lib/store"
+import { useTheme, getTheme } from "@/lib/theme"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
@@ -13,6 +14,8 @@ import Badge from "@/components/Badge"
 
 export default function SettingsPage() {
   const { userProgress, darkMode, toggleDarkMode, resetProgress, exportProgress, importProgress } = useStore()
+  const { isDark } = useTheme()
+  const theme = getTheme(isDark)
 
   const [importData, setImportData] = useState("")
   const [showImportArea, setShowImportArea] = useState(false)
@@ -47,22 +50,22 @@ export default function SettingsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className={`min-h-screen ${theme.bg} ${theme.text}`}>
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <Link href="/">
-            <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 py-2 rounded transition-all">
+            <Button className={`border px-6 py-2 rounded transition-all font-semibold ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
               <ArrowLeft className="w-5 h-5 mr-2" />
               Back
             </Button>
           </Link>
 
           <div className="text-center">
-            <h1 className="text-4xl font-semibold mb-2 text-white">
+            <h1 className={`text-4xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Settings
             </h1>
-            <div className="text-base text-gray-300">Customize Your Experience</div>
+            <div className={`text-base ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Customize Your Experience</div>
           </div>
 
           <div></div>
@@ -70,31 +73,31 @@ export default function SettingsPage() {
 
         <div className="max-w-4xl mx-auto space-y-6">
           {/* Profile Stats */}
-          <Card className="border border-gray-700 bg-black">
+          <Card className={`border ${isDark ? 'border-gray-700 bg-black' : 'border-gray-200 bg-gray-50'}`}>
             <CardHeader>
-              <CardTitle className="text-center text-2xl font-semibold text-white">
+              <CardTitle className={`text-center text-2xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Your Progress
               </CardTitle>
             </CardHeader>
             <CardContent className="p-4">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="text-center p-4 border border-gray-700 bg-white/5">
-                  <div className="text-3xl font-semibold text-white mb-2">
+                <div className={`text-center p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
+                  <div className={`text-3xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     {userProgress.xp}
                   </div>
-                  <div className="text-sm font-normal text-gray-300">Total XP</div>
+                  <div className={`text-sm font-normal ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Total XP</div>
                 </div>
-                <div className="text-center p-4 border border-gray-700 bg-white/5">
-                  <div className="text-3xl font-semibold text-green-400 mb-2">
+                <div className={`text-center p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
+                  <div className={`text-3xl font-semibold mb-2 ${isDark ? 'text-green-400' : 'text-green-600'}`}>
                     {userProgress.correctAnswers}
                   </div>
-                  <div className="text-sm font-normal text-gray-300">Correct</div>
+                  <div className={`text-sm font-normal ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Correct</div>
                 </div>
-                <div className="text-center p-4 border border-gray-700 bg-white/5">
-                  <div className="text-3xl font-semibold text-white mb-2">
+                <div className={`text-center p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
+                  <div className={`text-3xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     {userProgress.maxStreak}
                   </div>
-                  <div className="text-sm font-normal text-gray-300">
+                  <div className={`text-sm font-normal ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     Best Streak
                   </div>
                 </div>
