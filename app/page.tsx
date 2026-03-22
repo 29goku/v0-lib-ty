@@ -244,7 +244,7 @@ export default function HomePage() {
                     <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {t.practice}
                     </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Learn by swiping. {stats.totalQuestions} questions with instant feedback
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
@@ -261,7 +261,7 @@ export default function HomePage() {
                     <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {t.testMode}
                     </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Simulated test conditions. 33 questions, 60 minutes
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
@@ -278,7 +278,7 @@ export default function HomePage() {
                     <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {t.review}
                     </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Study mistakes, track progress, improve
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
@@ -296,7 +296,7 @@ export default function HomePage() {
                       <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         📊 Statistics
                       </h3>
-                      <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                      <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         Analytics, charts, performance trends
                       </p>
                       <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
@@ -314,7 +314,7 @@ export default function HomePage() {
                     <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {t.settings}
                     </h3>
-                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Dark mode, language, stats
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
@@ -356,7 +356,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+              <div className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
                 You're {Math.round((stats.correctAnswers / stats.totalQuestions) * 100)}% ready for the test
               </div>
             </div>
@@ -384,7 +384,7 @@ export default function HomePage() {
               </Button>
             </Link>
 
-            <div className={`mt-4 md:mt-6 text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+            <div className={`mt-4 md:mt-6 text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
               Join now and get instant access to {stats.totalQuestions} questions
             </div>
           </div>
