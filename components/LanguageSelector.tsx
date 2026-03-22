@@ -43,10 +43,10 @@ export default function LanguageSelector() {
             : "border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900"
         }`}
       >
-        <Globe className="w-4 h-4" />
+        <Globe className="hidden sm:inline w-4 h-4" />
         <span className="text-lg">{languageFlags[language]}</span>
-        <span className="font-medium text-sm">{languageNames[language]}</span>
-        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+        <span className="hidden sm:inline font-medium text-sm">{languageNames[language]}</span>
+        <ChevronDown className={`hidden sm:inline w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
       {isOpen && (
