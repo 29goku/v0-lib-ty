@@ -9,7 +9,8 @@ import Badge from "@/components/Badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
-import { ArrowLeft, RotateCcw, Filter, MapPin, ChevronDown } from "lucide-react"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { ArrowLeft, RotateCcw, Filter, MapPin, AlertTriangle, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { getTranslation } from "@/lib/i18n"
@@ -77,6 +78,10 @@ export default function PracticePage() {
   const [selectedStates, setSelectedStates] = useState<string[]>([])
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [showFilters, setShowFilters] = useState(false)
+  // Reset confirmation dialog
+  const [showResetDialog, setShowResetDialog] = useState(false)
+  // Store current question to prevent UI update during transition
+  const [displayQuestion, setDisplayQuestion] = useState<any>(null)
 
   // emoji for the currently selected state (used in compact pagination)
   const stateEmoji = selectedState ? germanStates.find((s) => s.id === selectedState)?.emoji : undefined
@@ -262,8 +267,21 @@ export default function PracticePage() {
 
     const isCorrect = selectedAnswerIndex === currentQuestion.answerIndex
 
+    // Check if this question will be removed from current filter after answering
+    const willBeRemovedFromFilter = (() => {
+      // If filtering by "incorrect" and we answer correctly
+      if (selectedFlagFilters.includes("incorrect") && isCorrect) {
+        return true
+      }
+      // If filtering by "correct" and we answer incorrectly
+      if (selectedFlagFilters.includes("correct") && !isCorrect) {
+        return true
+      }
+      return false
+    })()
+
     // Use new function that tracks category stats
-    answerQuestionWithCategory(currentQuestion.id, selectedAnswerIndex, isCorrect, currentQuestion.category)
+    answerQuestionWithCategory(questionId, selectedAnswerIndex, isCorrect, displayQuestion.category)
 
     if (isCorrect) {
       addXP(10)
@@ -281,7 +299,22 @@ export default function PracticePage() {
     setLastAnswer({ correct: isCorrect, selectedIndex: selectedAnswerIndex })
     setShowAnswer(true)
 
-    if (isAutoMode) {
+    // If the question will be removed from filter, move to next after showing feedback
+    if (willBeRemovedFromFilter) {
+      const currentFilterLength = filteredQuestions.length
+      setTimeout(() => {
+        // First clear the feedback states
+        setLastAnswer(null)
+        setShowTranslation(false)
+        // After removing this question, if we were at the last question, go to start
+        // Otherwise stay at same index (which will now show the next question)
+        if (currentIndex >= currentFilterLength - 1) {
+          setCurrentIndex(0)
+        }
+        // Clear showAnswer last - this will trigger the useEffect to update displayQuestion
+        setShowAnswer(false)
+      }, isAutoMode ? autoDelay : 2000)
+    } else if (isAutoMode) {
       setTimeout(() => {
         nextQuestion()
       }, autoDelay)
@@ -677,10 +710,10 @@ export default function PracticePage() {
                 <div className="flex flex-wrap gap-2 justify-center">
                   {selectedFlagFilters.length > 0 && (
                       <button
-                          onClick={clearAllFilters}
+                          onClick={clearStatusFilters}
                           className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base bg-transparent ${isDark ? 'text-gray-300 hover:bg-gray-900/20' : 'text-gray-700 hover:bg-gray-100'}`}
                       >
-                        🌟 Clear All ({selectedFlagFilters.length})
+                        🌟 Clear Status Filters ({selectedFlagFilters.length})
                       </button>
                   )}
                   {flaggedCount > 0 && (
