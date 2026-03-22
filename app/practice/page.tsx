@@ -907,28 +907,6 @@ export default function PracticePage() {
               </div>
           )}
 
-          <div className="text-center mt-12 space-y-6">
-            <div className="text-3xl font-semibold">
-              <span className="text-white">
-                {t.howToPractice.toUpperCase()}
-              </span>
-            </div>
-            <div className="space-y-3 text-lg max-w-2xl mx-auto">
-              <p className="text-gray-300 font-semibold">{t.swipeInstructions}</p>
-              <div className="flex justify-center space-x-8 text-sm md:text-base">
-                <div className="text-green-500 font-semibold">← {t.swipeLeft}</div>
-                <div className="text-red-500 font-semibold">{t.swipeRight} →</div>
-              </div>
-              <p className="text-gray-300 font-semibold">{t.keyboardShortcuts}</p>
-              <p className="text-gray-300 font-semibold">Select a state to practice state-specific questions</p>
-              <div>
-                <p className="text-sm text-gray-300 font-semibold">
-                  Press <span className="font-semibold">1 / 2 / 3 / 4</span> — the matching option <span className="font-semibold">A / B / C / D</span> will be selected and will trigger the same behavior as clicking the option.
-                </p>
-              </div>
-            </div>
-            <div className="text-2xl font-semibold text-white mt-8">{t.letsDominate}</div>
-          </div>
         </div>
       </div>
   )
