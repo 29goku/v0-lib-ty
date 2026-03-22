@@ -315,10 +315,10 @@ export default function HomePage() {
                       {t.settings}
                     </h3>
                     <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Dark mode, language, stats
+                      {t.settingsDescribe}
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
-                      Customize
+                      {t.settingsButton}
                     </div>
                   </CardContent>
                 </Card>
@@ -329,13 +329,13 @@ export default function HomePage() {
                 <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
                   <CardContent className="p-4 h-full flex flex-col">
                     <h3 className={`text-xl md:text-2xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                      ❓ FAQ
+                      ❓ {t.faqTitle}
                     </h3>
                     <p className={`text-sm md:text-base mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      How to use this app, tips & tricks
+                      {t.faqDescribe}
                     </p>
                     <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
-                      Learn More
+                      {t.faqButton}
                     </div>
                   </CardContent>
                 </Card>
