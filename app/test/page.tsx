@@ -482,79 +482,74 @@ export default function TestPage() {
           </Button>
         </div>
 
-        <Card className={`border backdrop-blur-md ${isDark ? 'border-gray-700 bg-gradient-to-br from-gray-900/40 to-black' : 'border-gray-300 bg-gradient-to-br from-gray-50 to-white'}`}>
-          <CardHeader className="pb-2 md:pb-3">
-            <div className="flex items-center justify-between">
-              <CardTitle className={`text-sm md:text-base font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>📋 Overview</CardTitle>
-              <div className="text-xs font-semibold text-gray-300 bg-blue-500/10 border border-blue-700/30 px-2 py-0.5 rounded-full">
-                {testAnswers.length} / {selectedQuestionCount[0]}
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent className="space-y-3 md:space-y-4">
-            {/* Question Grid */}
-            <div className="grid grid-cols-10 md:grid-cols-14 gap-1">
-              {testQuestions.map((_, index) => {
-                const answer = testAnswers.find((a) => a.questionId === testQuestions[index]?.id)
-                const isAnswered = answer !== undefined
-                const isCurrent = index === currentQuestionIndex
-                const isFlagged = userProgress.flaggedQuestions.includes(testQuestions[index]?.id)
+        <div className={`border rounded-lg p-3 md:p-4 ${isDark ? 'border-gray-700 bg-gray-900/20' : 'border-gray-200 bg-gray-50'}`}>
+          <div className="flex items-center justify-between mb-3">
+            <h3 className={`text-xs md:text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Progress</h3>
+            <span className={`text-xs font-bold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{testAnswers.length}/{selectedQuestionCount[0]}</span>
+          </div>
 
-                return (
-                  <button
-                    key={index}
-                    onClick={() => handleQuestionJump(index)}
-                    className={`
-                      relative aspect-square border rounded text-xs font-bold transition-all transform
-                      ${
-                        isCurrent
-                          ? isDark
-                            ? "bg-gradient-to-br from-blue-500 to-blue-600 text-white border-blue-400 scale-110 shadow-lg shadow-blue-500/50"
-                            : "bg-gradient-to-br from-blue-600 to-blue-700 text-white border-blue-500 scale-110 shadow-lg shadow-blue-600/50"
-                          : isAnswered
-                            ? answer.correct
-                              ? isDark
-                                ? "bg-gradient-to-br from-green-900/50 to-green-900/30 text-green-300 border-green-600 hover:from-green-800/60 hover:to-green-800/40"
-                                : "bg-gradient-to-br from-green-100 to-green-50 text-green-700 border-green-400 hover:from-green-200 hover:to-green-100"
-                              : isDark
-                                ? "bg-gradient-to-br from-orange-900/50 to-orange-900/30 text-orange-300 border-orange-600 hover:from-orange-800/60 hover:to-orange-800/40"
-                                : "bg-gradient-to-br from-orange-100 to-orange-50 text-orange-700 border-orange-400 hover:from-orange-200 hover:to-orange-100"
+          {/* Question Grid */}
+          <div className="grid grid-cols-10 md:grid-cols-12 gap-1 mb-3">
+            {testQuestions.map((_, index) => {
+              const answer = testAnswers.find((a) => a.questionId === testQuestions[index]?.id)
+              const isAnswered = answer !== undefined
+              const isCurrent = index === currentQuestionIndex
+              const isFlagged = userProgress.flaggedQuestions.includes(testQuestions[index]?.id)
+
+              return (
+                <button
+                  key={index}
+                  onClick={() => handleQuestionJump(index)}
+                  className={`
+                    relative aspect-square border rounded text-xs font-semibold transition-all
+                    ${
+                      isCurrent
+                        ? isDark
+                          ? "bg-blue-500/40 border-blue-500 text-white"
+                          : "bg-blue-400 border-blue-600 text-white"
+                        : isAnswered
+                          ? answer.correct
+                            ? isDark
+                              ? "bg-green-500/30 border-green-600 text-green-300"
+                              : "bg-green-200 border-green-500 text-green-700"
                             : isDark
-                              ? "bg-gray-800/50 text-gray-400 border-gray-700 hover:bg-gray-700/50"
-                              : "bg-gray-100 text-gray-600 border-gray-300 hover:bg-gray-200"
-                      }
-                    `}
-                  >
-                    {index + 1}
-                    {isFlagged && (
-                      <div className="absolute -top-1.5 -right-1.5 w-2 h-2 bg-red-500 rounded-full border border-red-300 shadow-lg shadow-red-500/50"></div>
-                    )}
-                  </button>
-                )
-              })}
-            </div>
+                              ? "bg-orange-500/30 border-orange-600 text-orange-300"
+                              : "bg-orange-200 border-orange-500 text-orange-700"
+                          : isDark
+                            ? "bg-gray-800 border-gray-700 text-gray-500"
+                            : "bg-gray-200 border-gray-400 text-gray-600"
+                    }
+                  `}
+                >
+                  {index + 1}
+                  {isFlagged && (
+                    <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-red-500 rounded-full"></div>
+                  )}
+                </button>
+              )
+            })}
+          </div>
 
-            {/* Legend */}
-            <div className={`grid grid-cols-2 md:grid-cols-4 gap-2 pt-2 md:pt-3 border-t ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
-              <div className="flex items-center space-x-1">
-                <div className="w-3 h-3 bg-gradient-to-br from-green-900/50 to-green-900/30 border border-green-600 rounded"></div>
-                <span className="text-xs text-green-400 font-semibold">Correct</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <div className="w-3 h-3 bg-gradient-to-br from-orange-900/50 to-orange-900/30 border border-orange-600 rounded"></div>
-                <span className="text-xs text-orange-400 font-semibold">Incorrect</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <div className="w-3 h-3 bg-gray-800/50 border border-gray-700 rounded"></div>
-                <span className="text-xs text-gray-400 font-semibold">Unanswered</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-red-500 rounded-full border border-red-300"></div>
-                <span className="text-xs text-red-400 font-semibold">Flagged</span>
-              </div>
+          {/* Compact Legend */}
+          <div className={`flex flex-wrap gap-2 text-xs ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+            <div className="flex items-center gap-1">
+              <div className={`w-2 h-2 rounded ${isDark ? 'bg-green-500/30 border border-green-600' : 'bg-green-200 border border-green-500'}`}></div>
+              <span>Correct</span>
             </div>
-          </CardContent>
-        </Card>
+            <div className="flex items-center gap-1">
+              <div className={`w-2 h-2 rounded ${isDark ? 'bg-orange-500/30 border border-orange-600' : 'bg-orange-200 border border-orange-500'}`}></div>
+              <span>Wrong</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className={`w-2 h-2 rounded ${isDark ? 'bg-gray-800 border border-gray-700' : 'bg-gray-200 border border-gray-400'}`}></div>
+              <span>Unanswered</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+              <span>Flagged</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
