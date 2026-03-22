@@ -65,6 +65,11 @@ export default function ReviewPage() {
     loadQuestions()
   }, [setQuestions])
 
+  // Filter questions by status
+  const flaggedQuestions = questions.filter((q) => userProgress.flaggedQuestions?.includes(q.id) || false)
+  const completedQuestions = questions.filter((q) => userProgress.completedQuestions?.includes(q.id) || false)
+  const incorrectQuestions = questions.filter((q) => userProgress.incorrectAnswers?.includes(q.id) || false)
+
   // Auto-select first question when tab changes
   useEffect(() => {
     if (activeTab === 'flagged' && flaggedQuestions.length > 0) {
@@ -106,10 +111,6 @@ export default function ReviewPage() {
       window.location.reload()
     }, 100)
   }
-
-  const flaggedQuestions = questions.filter((q) => userProgress.flaggedQuestions?.includes(q.id) || false)
-  const completedQuestions = questions.filter((q) => userProgress.completedQuestions?.includes(q.id) || false)
-  const incorrectQuestions = questions.filter((q) => userProgress.incorrectAnswers?.includes(q.id) || false)
 
   const selectedQuestionData = questions.find((q) => q.id === selectedQuestion)
 
