@@ -27,6 +27,7 @@ import { useSwipeCardAnimation } from "@/lib/hooks/useSwipeCardAnimation"
 import { useTranslation } from "@/lib/hooks/useTranslation"
 import { useKeyboardHandler } from "@/lib/hooks/useKeyboardHandler"
 import { useCardLayout } from "@/lib/hooks/useCardLayout"
+import { Icon } from "@/components/Icon"
 
 interface SwipeCardProps {
   question: Question
@@ -408,17 +409,26 @@ export default function SwipeCard({
           </CardHeader>
 
           <CardContent className="relative z-10 pb-8">
-            {question.image && (
+            {question.image && !imageError ? (
               <div className="mb-6 flex justify-center">
                 <img
-                  src={getImageSrc(imageError, question.image)}
+                  src={question.image}
                   alt="Question illustration"
                   className="max-w-full h-auto rounded-lg shadow-lg border-2 border-cyan-400/30"
                   style={{ maxHeight: CARD_STYLES.imageMaxHeight }}
                   onError={handleImageError}
                 />
               </div>
-            )}
+            ) : imageError || !question.image ? (
+              <div className="mb-6 flex justify-center items-center p-8 bg-gradient-to-r from-gray-800/50 to-gray-700/50 rounded-lg border-2 border-gray-600/30">
+                <div className="text-center">
+                  <div className="mb-3 inline-block">
+                    <Icon name="Image" size="3xl" color="text-gray-500" />
+                  </div>
+                  <p className="text-gray-400 text-sm">{t.imageNotAvailable || 'Bild nicht verfügbar'}</p>
+                </div>
+              </div>
+            ) : null}
 
             <div className="space-y-3">
               {question.options.map((originalOption: string, index: number) => {
@@ -458,7 +468,10 @@ export default function SwipeCard({
 
             {!showAnswer && (
               <div className="mt-8 text-center space-y-4">
-                <p className="text-cyan-300 text-lg font-bold animate-pulse">💡 {t.selectAnswer}</p>
+                <p className="text-cyan-300 text-lg font-bold animate-pulse flex items-center justify-center gap-2">
+                  <Icon name="Lightbulb" color="text-cyan-300" animate={false} />
+                  {t.selectAnswer}
+                </p>
               </div>
             )}
 
@@ -468,8 +481,8 @@ export default function SwipeCard({
                 animate={{ opacity: 1, y: 0 }}
                 className="mt-6 p-4 md:p-6 bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-xl border border-purple-400/30"
               >
-                <h4 className="text-xl font-black text-purple-300 mb-3 flex items-center">
-                  <span className="mr-2">💡</span>
+                <h4 className="text-xl font-black text-purple-300 mb-3 flex items-center gap-2">
+                  <Icon name="Lightbulb" size="lg" color="text-purple-300" />
                   {t.explanation}
                 </h4>
                 <p className="text-white text-lg leading-relaxed mb-3">{question.explanation}</p>
