@@ -29,6 +29,7 @@ import { useTranslation } from "@/lib/hooks/useTranslation"
 import { useKeyboardHandler } from "@/lib/hooks/useKeyboardHandler"
 import { useCardLayout } from "@/lib/hooks/useCardLayout"
 import { Icon } from "@/components/Icon"
+import GamificationFeedback from "@/components/GamificationFeedback"
 
 interface SwipeCardProps {
   question: Question
@@ -456,6 +457,14 @@ export default function SwipeCard({
                   </div>
                 )}
               </motion.div>
+            )}
+
+            {showAnswer && displaySelectedAnswer !== null && (
+              <GamificationFeedback
+                isCorrect={displaySelectedAnswer === question.answerIndex}
+                xpGained={displaySelectedAnswer === question.answerIndex ? 10 : 0}
+                accuracy={0}
+              />
             )}
           </CardContent>
         </Card>

@@ -92,16 +92,7 @@
             - paragraph [ref=e95]: The real "Leben in Deutschland" test required for German citizenship contains 33 questions, has a 60-minute time limit, and requires 17+ correct answers to pass. It covers politics, history, law, culture, and geography.
             - paragraph [ref=e96]: This is a practice app. Always verify current requirements with official sources.
           - paragraph [ref=e98]: Version 2.0.0
-  - generic [ref=e103] [cursor=pointer]:
-    - button "Open Next.js Dev Tools" [ref=e104]:
-      - img [ref=e105]
-    - generic [ref=e108]:
-      - button "Open issues overlay" [ref=e109]:
-        - generic [ref=e110]:
-          - generic [ref=e111]: "0"
-          - generic [ref=e112]: "1"
-        - generic [ref=e113]: Issue
-      - button "Collapse issues badge" [ref=e114]:
-        - img [ref=e115]
-  - alert [ref=e117]
+  - button "Open Next.js Dev Tools" [ref=e104] [cursor=pointer]:
+    - img [ref=e105]
+  - alert [ref=e108]
 ```

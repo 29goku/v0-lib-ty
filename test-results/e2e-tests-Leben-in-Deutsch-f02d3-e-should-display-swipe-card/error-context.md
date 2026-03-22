@@ -1,0 +1,415 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - link "BACK" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - button "BACK" [ref=e8]:
+          - img
+          - text: BACK
+      - generic [ref=e9]:
+        - heading "PRACTICE MODE" [level=1] [ref=e10]
+        - generic [ref=e11]: Master the German citizenship test 🚀
+      - generic [ref=e12]:
+        - button "Switch to light mode" [ref=e13] [cursor=pointer]:
+          - img [ref=e15]
+        - button "🇺🇸 English" [ref=e22] [cursor=pointer]:
+          - img [ref=e23]
+          - generic [ref=e26]: 🇺🇸
+          - generic [ref=e27]: English
+          - img [ref=e28]
+        - button "RESET" [ref=e30] [cursor=pointer]:
+          - img
+          - text: RESET
+    - generic [ref=e31]:
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - paragraph [ref=e36]: Progress
+            - paragraph [ref=e37]: 0/310
+          - generic [ref=e38]: 🎯
+        - generic [ref=e40]:
+          - progressbar [ref=e41]
+          - generic [ref=e43]: 0.0%
+      - generic [ref=e47]:
+        - paragraph [ref=e48]: XP
+        - paragraph [ref=e49]: "0"
+      - generic [ref=e53]:
+        - paragraph [ref=e54]: Streak
+        - paragraph [ref=e55]: "0"
+      - generic [ref=e59]:
+        - paragraph [ref=e60]: Accuracy
+        - paragraph [ref=e61]: 0%
+    - button "Show Filters" [ref=e63] [cursor=pointer]:
+      - img
+      - text: Show Filters
+      - img
+    - heading "Filter by Status" [level=3] [ref=e69]
+    - generic [ref=e72]:
+      - generic [ref=e74]:
+        - generic:
+          - generic: →
+        - generic:
+          - generic: ←
+        - generic [ref=e76]:
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - generic [ref=e79]: Question q001
+              - generic [ref=e80]:
+                - button "Translate" [ref=e81] [cursor=pointer]:
+                  - img
+                - button "Read aloud" [ref=e82] [cursor=pointer]:
+                  - img
+                - button "Flag" [ref=e83] [cursor=pointer]:
+                  - img
+            - paragraph [ref=e85]: In Deutschland dürfen Menschen offen etwas gegen die Regierung sagen, weil …
+          - generic [ref=e86]:
+            - generic [ref=e87]:
+              - button "A. hier Religionsfreiheit gilt." [ref=e88] [cursor=pointer]:
+                - generic [ref=e89]:
+                  - generic [ref=e90]: A.
+                  - generic [ref=e92]: hier Religionsfreiheit gilt.
+              - button "B. die Menschen Steuern zahlen." [ref=e93] [cursor=pointer]:
+                - generic [ref=e94]:
+                  - generic [ref=e95]: B.
+                  - generic [ref=e97]: die Menschen Steuern zahlen.
+              - button "C. die Menschen das Wahlrecht haben." [ref=e98] [cursor=pointer]:
+                - generic [ref=e99]:
+                  - generic [ref=e100]: C.
+                  - generic [ref=e102]: die Menschen das Wahlrecht haben.
+              - button "D. hier Meinungsfreiheit gilt." [ref=e103] [cursor=pointer]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: D.
+                  - generic [ref=e107]: hier Meinungsfreiheit gilt.
+            - paragraph [ref=e109]:
+              - img [ref=e111]
+              - text: Select an answer
+      - generic [ref=e116]:
+        - button "Question 1" [ref=e117] [cursor=pointer]: "1"
+        - button "Question 2" [ref=e118] [cursor=pointer]: "2"
+        - button "Question 3" [ref=e119] [cursor=pointer]: "3"
+        - button "Question 4" [ref=e120] [cursor=pointer]: "4"
+        - button "Question 5" [ref=e121] [cursor=pointer]: "5"
+        - button "Question 6" [ref=e122] [cursor=pointer]: "6"
+        - button "Question 7" [ref=e123] [cursor=pointer]: "7"
+        - button "Question 8" [ref=e124] [cursor=pointer]: "8"
+        - button "Question 9" [ref=e125] [cursor=pointer]: "9"
+        - button "Question 10" [ref=e126] [cursor=pointer]: "10"
+        - button "Question 11" [ref=e127] [cursor=pointer]: "11"
+        - button "Question 12" [ref=e128] [cursor=pointer]: "12"
+        - button "Question 13" [ref=e129] [cursor=pointer]: "13"
+        - button "Question 14" [ref=e130] [cursor=pointer]: "14"
+        - button "Question 15" [ref=e131] [cursor=pointer]: "15"
+        - button "Question 16" [ref=e132] [cursor=pointer]: "16"
+        - button "Question 17" [ref=e133] [cursor=pointer]: "17"
+        - button "Question 18" [ref=e134] [cursor=pointer]: "18"
+        - button "Question 19" [ref=e135] [cursor=pointer]: "19"
+        - button "Question 20" [ref=e136] [cursor=pointer]: "20"
+        - button "Question 21" [ref=e137] [cursor=pointer]: "21"
+        - button "Question 22" [ref=e138] [cursor=pointer]: "22"
+        - button "Question 23" [ref=e139] [cursor=pointer]: "23"
+        - button "Question 24" [ref=e140] [cursor=pointer]: "24"
+        - button "Question 25" [ref=e141] [cursor=pointer]: "25"
+        - button "Question 26" [ref=e142] [cursor=pointer]: "26"
+        - button "Question 27" [ref=e143] [cursor=pointer]: "27"
+        - button "Question 28" [ref=e144] [cursor=pointer]: "28"
+        - button "Question 29" [ref=e145] [cursor=pointer]: "29"
+        - button "Question 30" [ref=e146] [cursor=pointer]: "30"
+        - button "Question 31" [ref=e147] [cursor=pointer]: "31"
+        - button "Question 32" [ref=e148] [cursor=pointer]: "32"
+        - button "Question 33" [ref=e149] [cursor=pointer]: "33"
+        - button "Question 34" [ref=e150] [cursor=pointer]: "34"
+        - button "Question 35" [ref=e151] [cursor=pointer]: "35"
+        - button "Question 36" [ref=e152] [cursor=pointer]: "36"
+        - button "Question 37" [ref=e153] [cursor=pointer]: "37"
+        - button "Question 38" [ref=e154] [cursor=pointer]: "38"
+        - button "Question 39" [ref=e155] [cursor=pointer]: "39"
+        - button "Question 40" [ref=e156] [cursor=pointer]: "40"
+        - button "Question 41" [ref=e157] [cursor=pointer]: "41"
+        - button "Question 42" [ref=e158] [cursor=pointer]: "42"
+        - button "Question 43" [ref=e159] [cursor=pointer]: "43"
+        - button "Question 44" [ref=e160] [cursor=pointer]: "44"
+        - button "Question 45" [ref=e161] [cursor=pointer]: "45"
+        - button "Question 46" [ref=e162] [cursor=pointer]: "46"
+        - button "Question 47" [ref=e163] [cursor=pointer]: "47"
+        - button "Question 48" [ref=e164] [cursor=pointer]: "48"
+        - button "Question 49" [ref=e165] [cursor=pointer]: "49"
+        - button "Question 50" [ref=e166] [cursor=pointer]: "50"
+        - button "Question 51" [ref=e167] [cursor=pointer]: "51"
+        - button "Question 52" [ref=e168] [cursor=pointer]: "52"
+        - button "Question 53" [ref=e169] [cursor=pointer]: "53"
+        - button "Question 54" [ref=e170] [cursor=pointer]: "54"
+        - button "Question 55" [ref=e171] [cursor=pointer]: "55"
+        - button "Question 56" [ref=e172] [cursor=pointer]: "56"
+        - button "Question 57" [ref=e173] [cursor=pointer]: "57"
+        - button "Question 58" [ref=e174] [cursor=pointer]: "58"
+        - button "Question 59" [ref=e175] [cursor=pointer]: "59"
+        - button "Question 60" [ref=e176] [cursor=pointer]: "60"
+        - button "Question 61" [ref=e177] [cursor=pointer]: "61"
+        - button "Question 62" [ref=e178] [cursor=pointer]: "62"
+        - button "Question 63" [ref=e179] [cursor=pointer]: "63"
+        - button "Question 64" [ref=e180] [cursor=pointer]: "64"
+        - button "Question 65" [ref=e181] [cursor=pointer]: "65"
+        - button "Question 66" [ref=e182] [cursor=pointer]: "66"
+        - button "Question 67" [ref=e183] [cursor=pointer]: "67"
+        - button "Question 68" [ref=e184] [cursor=pointer]: "68"
+        - button "Question 69" [ref=e185] [cursor=pointer]: "69"
+        - button "Question 70" [ref=e186] [cursor=pointer]: "70"
+        - button "Question 71" [ref=e187] [cursor=pointer]: "71"
+        - button "Question 72" [ref=e188] [cursor=pointer]: "72"
+        - button "Question 73" [ref=e189] [cursor=pointer]: "73"
+        - button "Question 74" [ref=e190] [cursor=pointer]: "74"
+        - button "Question 75" [ref=e191] [cursor=pointer]: "75"
+        - button "Question 76" [ref=e192] [cursor=pointer]: "76"
+        - button "Question 77" [ref=e193] [cursor=pointer]: "77"
+        - button "Question 78" [ref=e194] [cursor=pointer]: "78"
+        - button "Question 79" [ref=e195] [cursor=pointer]: "79"
+        - button "Question 80" [ref=e196] [cursor=pointer]: "80"
+        - button "Question 81" [ref=e197] [cursor=pointer]: "81"
+        - button "Question 82" [ref=e198] [cursor=pointer]: "82"
+        - button "Question 83" [ref=e199] [cursor=pointer]: "83"
+        - button "Question 84" [ref=e200] [cursor=pointer]: "84"
+        - button "Question 85" [ref=e201] [cursor=pointer]: "85"
+        - button "Question 86" [ref=e202] [cursor=pointer]: "86"
+        - button "Question 87" [ref=e203] [cursor=pointer]: "87"
+        - button "Question 88" [ref=e204] [cursor=pointer]: "88"
+        - button "Question 89" [ref=e205] [cursor=pointer]: "89"
+        - button "Question 90" [ref=e206] [cursor=pointer]: "90"
+        - button "Question 91" [ref=e207] [cursor=pointer]: "91"
+        - button "Question 92" [ref=e208] [cursor=pointer]: "92"
+        - button "Question 93" [ref=e209] [cursor=pointer]: "93"
+        - button "Question 94" [ref=e210] [cursor=pointer]: "94"
+        - button "Question 95" [ref=e211] [cursor=pointer]: "95"
+        - button "Question 96" [ref=e212] [cursor=pointer]: "96"
+        - button "Question 97" [ref=e213] [cursor=pointer]: "97"
+        - button "Question 98" [ref=e214] [cursor=pointer]: "98"
+        - button "Question 99" [ref=e215] [cursor=pointer]: "99"
+        - button "Question 100" [ref=e216] [cursor=pointer]: "100"
+        - button "Question 101" [ref=e217] [cursor=pointer]: "101"
+        - button "Question 102" [ref=e218] [cursor=pointer]: "102"
+        - button "Question 103" [ref=e219] [cursor=pointer]: "103"
+        - button "Question 104" [ref=e220] [cursor=pointer]: "104"
+        - button "Question 105" [ref=e221] [cursor=pointer]: "105"
+        - button "Question 106" [ref=e222] [cursor=pointer]: "106"
+        - button "Question 107" [ref=e223] [cursor=pointer]: "107"
+        - button "Question 108" [ref=e224] [cursor=pointer]: "108"
+        - button "Question 109" [ref=e225] [cursor=pointer]: "109"
+        - button "Question 110" [ref=e226] [cursor=pointer]: "110"
+        - button "Question 111" [ref=e227] [cursor=pointer]: "111"
+        - button "Question 112" [ref=e228] [cursor=pointer]: "112"
+        - button "Question 113" [ref=e229] [cursor=pointer]: "113"
+        - button "Question 114" [ref=e230] [cursor=pointer]: "114"
+        - button "Question 115" [ref=e231] [cursor=pointer]: "115"
+        - button "Question 116" [ref=e232] [cursor=pointer]: "116"
+        - button "Question 117" [ref=e233] [cursor=pointer]: "117"
+        - button "Question 118" [ref=e234] [cursor=pointer]: "118"
+        - button "Question 119" [ref=e235] [cursor=pointer]: "119"
+        - button "Question 120" [ref=e236] [cursor=pointer]: "120"
+        - button "Question 121" [ref=e237] [cursor=pointer]: "121"
+        - button "Question 122" [ref=e238] [cursor=pointer]: "122"
+        - button "Question 123" [ref=e239] [cursor=pointer]: "123"
+        - button "Question 124" [ref=e240] [cursor=pointer]: "124"
+        - button "Question 125" [ref=e241] [cursor=pointer]: "125"
+        - button "Question 126" [ref=e242] [cursor=pointer]: "126"
+        - button "Question 127" [ref=e243] [cursor=pointer]: "127"
+        - button "Question 128" [ref=e244] [cursor=pointer]: "128"
+        - button "Question 129" [ref=e245] [cursor=pointer]: "129"
+        - button "Question 130" [ref=e246] [cursor=pointer]: "130"
+        - button "Question 131" [ref=e247] [cursor=pointer]: "131"
+        - button "Question 132" [ref=e248] [cursor=pointer]: "132"
+        - button "Question 133" [ref=e249] [cursor=pointer]: "133"
+        - button "Question 134" [ref=e250] [cursor=pointer]: "134"
+        - button "Question 135" [ref=e251] [cursor=pointer]: "135"
+        - button "Question 136" [ref=e252] [cursor=pointer]: "136"
+        - button "Question 137" [ref=e253] [cursor=pointer]: "137"
+        - button "Question 138" [ref=e254] [cursor=pointer]: "138"
+        - button "Question 139" [ref=e255] [cursor=pointer]: "139"
+        - button "Question 140" [ref=e256] [cursor=pointer]: "140"
+        - button "Question 141" [ref=e257] [cursor=pointer]: "141"
+        - button "Question 142" [ref=e258] [cursor=pointer]: "142"
+        - button "Question 143" [ref=e259] [cursor=pointer]: "143"
+        - button "Question 144" [ref=e260] [cursor=pointer]: "144"
+        - button "Question 145" [ref=e261] [cursor=pointer]: "145"
+        - button "Question 146" [ref=e262] [cursor=pointer]: "146"
+        - button "Question 147" [ref=e263] [cursor=pointer]: "147"
+        - button "Question 148" [ref=e264] [cursor=pointer]: "148"
+        - button "Question 149" [ref=e265] [cursor=pointer]: "149"
+        - button "Question 150" [ref=e266] [cursor=pointer]: "150"
+        - button "Question 151" [ref=e267] [cursor=pointer]: "151"
+        - button "Question 152" [ref=e268] [cursor=pointer]: "152"
+        - button "Question 153" [ref=e269] [cursor=pointer]: "153"
+        - button "Question 154" [ref=e270] [cursor=pointer]: "154"
+        - button "Question 155" [ref=e271] [cursor=pointer]: "155"
+        - button "Question 156" [ref=e272] [cursor=pointer]: "156"
+        - button "Question 157" [ref=e273] [cursor=pointer]: "157"
+        - button "Question 158" [ref=e274] [cursor=pointer]: "158"
+        - button "Question 159" [ref=e275] [cursor=pointer]: "159"
+        - button "Question 160" [ref=e276] [cursor=pointer]: "160"
+        - button "Question 161" [ref=e277] [cursor=pointer]: "161"
+        - button "Question 162" [ref=e278] [cursor=pointer]: "162"
+        - button "Question 163" [ref=e279] [cursor=pointer]: "163"
+        - button "Question 164" [ref=e280] [cursor=pointer]: "164"
+        - button "Question 165" [ref=e281] [cursor=pointer]: "165"
+        - button "Question 166" [ref=e282] [cursor=pointer]: "166"
+        - button "Question 167" [ref=e283] [cursor=pointer]: "167"
+        - button "Question 168" [ref=e284] [cursor=pointer]: "168"
+        - button "Question 169" [ref=e285] [cursor=pointer]: "169"
+        - button "Question 170" [ref=e286] [cursor=pointer]: "170"
+        - button "Question 171" [ref=e287] [cursor=pointer]: "171"
+        - button "Question 172" [ref=e288] [cursor=pointer]: "172"
+        - button "Question 173" [ref=e289] [cursor=pointer]: "173"
+        - button "Question 174" [ref=e290] [cursor=pointer]: "174"
+        - button "Question 175" [ref=e291] [cursor=pointer]: "175"
+        - button "Question 176" [ref=e292] [cursor=pointer]: "176"
+        - button "Question 177" [ref=e293] [cursor=pointer]: "177"
+        - button "Question 178" [ref=e294] [cursor=pointer]: "178"
+        - button "Question 179" [ref=e295] [cursor=pointer]: "179"
+        - button "Question 180" [ref=e296] [cursor=pointer]: "180"
+        - button "Question 181" [ref=e297] [cursor=pointer]: "181"
+        - button "Question 182" [ref=e298] [cursor=pointer]: "182"
+        - button "Question 183" [ref=e299] [cursor=pointer]: "183"
+        - button "Question 184" [ref=e300] [cursor=pointer]: "184"
+        - button "Question 185" [ref=e301] [cursor=pointer]: "185"
+        - button "Question 186" [ref=e302] [cursor=pointer]: "186"
+        - button "Question 187" [ref=e303] [cursor=pointer]: "187"
+        - button "Question 188" [ref=e304] [cursor=pointer]: "188"
+        - button "Question 189" [ref=e305] [cursor=pointer]: "189"
+        - button "Question 190" [ref=e306] [cursor=pointer]: "190"
+        - button "Question 191" [ref=e307] [cursor=pointer]: "191"
+        - button "Question 192" [ref=e308] [cursor=pointer]: "192"
+        - button "Question 193" [ref=e309] [cursor=pointer]: "193"
+        - button "Question 194" [ref=e310] [cursor=pointer]: "194"
+        - button "Question 195" [ref=e311] [cursor=pointer]: "195"
+        - button "Question 196" [ref=e312] [cursor=pointer]: "196"
+        - button "Question 197" [ref=e313] [cursor=pointer]: "197"
+        - button "Question 198" [ref=e314] [cursor=pointer]: "198"
+        - button "Question 199" [ref=e315] [cursor=pointer]: "199"
+        - button "Question 200" [ref=e316] [cursor=pointer]: "200"
+        - button "Question 201" [ref=e317] [cursor=pointer]: "201"
+        - button "Question 202" [ref=e318] [cursor=pointer]: "202"
+        - button "Question 203" [ref=e319] [cursor=pointer]: "203"
+        - button "Question 204" [ref=e320] [cursor=pointer]: "204"
+        - button "Question 205" [ref=e321] [cursor=pointer]: "205"
+        - button "Question 206" [ref=e322] [cursor=pointer]: "206"
+        - button "Question 207" [ref=e323] [cursor=pointer]: "207"
+        - button "Question 208" [ref=e324] [cursor=pointer]: "208"
+        - button "Question 209" [ref=e325] [cursor=pointer]: "209"
+        - button "Question 210" [ref=e326] [cursor=pointer]: "210"
+        - button "Question 211" [ref=e327] [cursor=pointer]: "211"
+        - button "Question 212" [ref=e328] [cursor=pointer]: "212"
+        - button "Question 213" [ref=e329] [cursor=pointer]: "213"
+        - button "Question 214" [ref=e330] [cursor=pointer]: "214"
+        - button "Question 215" [ref=e331] [cursor=pointer]: "215"
+        - button "Question 216" [ref=e332] [cursor=pointer]: "216"
+        - button "Question 217" [ref=e333] [cursor=pointer]: "217"
+        - button "Question 218" [ref=e334] [cursor=pointer]: "218"
+        - button "Question 219" [ref=e335] [cursor=pointer]: "219"
+        - button "Question 220" [ref=e336] [cursor=pointer]: "220"
+        - button "Question 221" [ref=e337] [cursor=pointer]: "221"
+        - button "Question 222" [ref=e338] [cursor=pointer]: "222"
+        - button "Question 223" [ref=e339] [cursor=pointer]: "223"
+        - button "Question 224" [ref=e340] [cursor=pointer]: "224"
+        - button "Question 225" [ref=e341] [cursor=pointer]: "225"
+        - button "Question 226" [ref=e342] [cursor=pointer]: "226"
+        - button "Question 227" [ref=e343] [cursor=pointer]: "227"
+        - button "Question 228" [ref=e344] [cursor=pointer]: "228"
+        - button "Question 229" [ref=e345] [cursor=pointer]: "229"
+        - button "Question 230" [ref=e346] [cursor=pointer]: "230"
+        - button "Question 231" [ref=e347] [cursor=pointer]: "231"
+        - button "Question 232" [ref=e348] [cursor=pointer]: "232"
+        - button "Question 233" [ref=e349] [cursor=pointer]: "233"
+        - button "Question 234" [ref=e350] [cursor=pointer]: "234"
+        - button "Question 235" [ref=e351] [cursor=pointer]: "235"
+        - button "Question 236" [ref=e352] [cursor=pointer]: "236"
+        - button "Question 237" [ref=e353] [cursor=pointer]: "237"
+        - button "Question 238" [ref=e354] [cursor=pointer]: "238"
+        - button "Question 239" [ref=e355] [cursor=pointer]: "239"
+        - button "Question 240" [ref=e356] [cursor=pointer]: "240"
+        - button "Question 241" [ref=e357] [cursor=pointer]: "241"
+        - button "Question 242" [ref=e358] [cursor=pointer]: "242"
+        - button "Question 243" [ref=e359] [cursor=pointer]: "243"
+        - button "Question 244" [ref=e360] [cursor=pointer]: "244"
+        - button "Question 245" [ref=e361] [cursor=pointer]: "245"
+        - button "Question 246" [ref=e362] [cursor=pointer]: "246"
+        - button "Question 247" [ref=e363] [cursor=pointer]: "247"
+        - button "Question 248" [ref=e364] [cursor=pointer]: "248"
+        - button "Question 249" [ref=e365] [cursor=pointer]: "249"
+        - button "Question 250" [ref=e366] [cursor=pointer]: "250"
+        - button "Question 251" [ref=e367] [cursor=pointer]: "251"
+        - button "Question 252" [ref=e368] [cursor=pointer]: "252"
+        - button "Question 253" [ref=e369] [cursor=pointer]: "253"
+        - button "Question 254" [ref=e370] [cursor=pointer]: "254"
+        - button "Question 255" [ref=e371] [cursor=pointer]: "255"
+        - button "Question 256" [ref=e372] [cursor=pointer]: "256"
+        - button "Question 257" [ref=e373] [cursor=pointer]: "257"
+        - button "Question 258" [ref=e374] [cursor=pointer]: "258"
+        - button "Question 259" [ref=e375] [cursor=pointer]: "259"
+        - button "Question 260" [ref=e376] [cursor=pointer]: "260"
+        - button "Question 261" [ref=e377] [cursor=pointer]: "261"
+        - button "Question 262" [ref=e378] [cursor=pointer]: "262"
+        - button "Question 263" [ref=e379] [cursor=pointer]: "263"
+        - button "Question 264" [ref=e380] [cursor=pointer]: "264"
+        - button "Question 265" [ref=e381] [cursor=pointer]: "265"
+        - button "Question 266" [ref=e382] [cursor=pointer]: "266"
+        - button "Question 267" [ref=e383] [cursor=pointer]: "267"
+        - button "Question 268" [ref=e384] [cursor=pointer]: "268"
+        - button "Question 269" [ref=e385] [cursor=pointer]: "269"
+        - button "Question 270" [ref=e386] [cursor=pointer]: "270"
+        - button "Question 271" [ref=e387] [cursor=pointer]: "271"
+        - button "Question 272" [ref=e388] [cursor=pointer]: "272"
+        - button "Question 273" [ref=e389] [cursor=pointer]: "273"
+        - button "Question 274" [ref=e390] [cursor=pointer]: "274"
+        - button "Question 275" [ref=e391] [cursor=pointer]: "275"
+        - button "Question 276" [ref=e392] [cursor=pointer]: "276"
+        - button "Question 277" [ref=e393] [cursor=pointer]: "277"
+        - button "Question 278" [ref=e394] [cursor=pointer]: "278"
+        - button "Question 279" [ref=e395] [cursor=pointer]: "279"
+        - button "Question 280" [ref=e396] [cursor=pointer]: "280"
+        - button "Question 281" [ref=e397] [cursor=pointer]: "281"
+        - button "Question 282" [ref=e398] [cursor=pointer]: "282"
+        - button "Question 283" [ref=e399] [cursor=pointer]: "283"
+        - button "Question 284" [ref=e400] [cursor=pointer]: "284"
+        - button "Question 285" [ref=e401] [cursor=pointer]: "285"
+        - button "Question 286" [ref=e402] [cursor=pointer]: "286"
+        - button "Question 287" [ref=e403] [cursor=pointer]: "287"
+        - button "Question 288" [ref=e404] [cursor=pointer]: "288"
+        - button "Question 289" [ref=e405] [cursor=pointer]: "289"
+        - button "Question 290" [ref=e406] [cursor=pointer]: "290"
+        - button "Question 291" [ref=e407] [cursor=pointer]: "291"
+        - button "Question 292" [ref=e408] [cursor=pointer]: "292"
+        - button "Question 293" [ref=e409] [cursor=pointer]: "293"
+        - button "Question 294" [ref=e410] [cursor=pointer]: "294"
+        - button "Question 295" [ref=e411] [cursor=pointer]: "295"
+        - button "Question 296" [ref=e412] [cursor=pointer]: "296"
+        - button "Question 297" [ref=e413] [cursor=pointer]: "297"
+        - button "Question 298" [ref=e414] [cursor=pointer]: "298"
+        - button "Question 299" [ref=e415] [cursor=pointer]: "299"
+        - button "Question 300" [ref=e416] [cursor=pointer]: "300"
+    - generic [ref=e417]:
+      - generic [ref=e418]: HOW TO PRACTICE
+      - generic [ref=e419]:
+        - paragraph [ref=e420]: Select an answer, then swipe or drag the card
+        - generic [ref=e421]:
+          - generic [ref=e422]: ← Swipe LEFT for previous question
+          - generic [ref=e423]: Swipe RIGHT for next question →
+        - paragraph [ref=e424]: Use arrow keys or A/D for keyboard shortcuts
+        - paragraph [ref=e425]: Select a state to practice state-specific questions
+        - paragraph [ref=e427]: Press 1 / 2 / 3 / 4 — the matching option A / B / C / D will be selected and will trigger the same behavior as clicking the option.
+      - generic [ref=e428]: Let's Dominate!
+  - generic [ref=e433] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e434]:
+      - img [ref=e435]
+    - generic [ref=e438]:
+      - button "Open issues overlay" [ref=e439]:
+        - generic [ref=e440]:
+          - generic [ref=e441]: "2"
+          - generic [ref=e442]: "3"
+        - generic [ref=e443]:
+          - text: Issue
+          - generic [ref=e444]: s
+      - button "Collapse issues badge" [ref=e445]:
+        - img [ref=e446]
+  - alert [ref=e448]
+```

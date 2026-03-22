@@ -82,7 +82,18 @@
           - /url: /practice
           - button "Start Now - It's Free" [ref=e89]
         - generic [ref=e90]: Join now and get instant access to 300 questions
-  - button "Open Next.js Dev Tools" [ref=e96] [cursor=pointer]:
-    - img [ref=e97]
-  - alert [ref=e100]
+  - generic [ref=e95] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e96]:
+      - img [ref=e97]
+    - generic [ref=e100]:
+      - button "Open issues overlay" [ref=e101]:
+        - generic [ref=e102]:
+          - generic [ref=e103]: "2"
+          - generic [ref=e104]: "3"
+        - generic [ref=e105]:
+          - text: Issue
+          - generic [ref=e106]: s
+      - button "Collapse issues badge" [ref=e107]:
+        - img [ref=e108]
+  - alert [ref=e110]
 ```
