@@ -318,70 +318,85 @@ export default function TestPage() {
   }
 
   if (showResults) {
+    const passPercentage = Math.round((requiredToPass / selectedQuestionCount[0]) * 100)
+    const scorePercentageNum = Math.round((correctAnswers / selectedQuestionCount[0]) * 100)
+
     return (
-      <div className="min-h-screen bg-black text-white">
+      <div className={`min-h-screen ${isDark ? 'bg-gradient-to-br from-black via-gray-950 to-black' : 'bg-gradient-to-br from-white via-gray-50 to-white'}`}>
         <div className="flex items-center justify-center min-h-screen p-4">
-          <Card className="w-full max-w-2xl border border-gray-700 bg-white/5">
-            <CardHeader className="text-center">
-              <CardTitle className="text-3xl font-semibold text-white">
-                {passed ? "Test Completed" : "Keep Practicing"}
+          <Card className={`w-full max-w-2xl border backdrop-blur-sm ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-200 bg-white/80'}`}>
+            <CardHeader className="text-center pb-6 border-b border-gray-700">
+              <div className="mb-3">
+                {passed ? (
+                  <div className="text-5xl">🎉</div>
+                ) : (
+                  <div className="text-5xl">💪</div>
+                )}
+              </div>
+              <CardTitle className={`text-4xl font-bold ${passed ? 'bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent' : 'text-white'}`}>
+                {passed ? "Test Passed!" : "Keep Practicing"}
               </CardTitle>
-              <p className="text-lg text-gray-300 mt-2">Practice more to improve your results</p>
+              <p className={`text-lg mt-3 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                {passed ? "Excellent! You've mastered this test!" : "You're making progress! Keep going!"}
+              </p>
             </CardHeader>
 
-            <CardContent className="space-y-8">
-              <div className="grid grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-4xl font-semibold text-green-400">{correctAnswers}</div>
-                  <div className="text-sm text-gray-300">Correct</div>
+            <CardContent className="space-y-8 pt-8">
+              {/* Score Stats Grid */}
+              <div className="grid grid-cols-3 gap-4">
+                <div className={`p-4 rounded-lg text-center border ${isDark ? 'border-green-500/30 bg-green-500/10' : 'border-green-300 bg-green-50'}`}>
+                  <div className={`text-3xl sm:text-4xl font-bold ${isDark ? 'text-green-400' : 'text-green-600'}`}>{correctAnswers}</div>
+                  <div className={`text-xs sm:text-sm mt-1 font-semibold ${isDark ? 'text-green-300/70' : 'text-green-700'}`}>Correct</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-semibold text-red-400">{selectedQuestionCount[0] - correctAnswers}</div>
-                  <div className="text-sm text-gray-300">Missed</div>
+                <div className={`p-4 rounded-lg text-center border ${isDark ? 'border-red-500/30 bg-red-500/10' : 'border-red-300 bg-red-50'}`}>
+                  <div className={`text-3xl sm:text-4xl font-bold ${isDark ? 'text-red-400' : 'text-red-600'}`}>{selectedQuestionCount[0] - correctAnswers}</div>
+                  <div className={`text-xs sm:text-sm mt-1 font-semibold ${isDark ? 'text-red-300/70' : 'text-red-700'}`}>Missed</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-semibold text-white">{scorePercentage}%</div>
-                  <div className="text-sm text-gray-300">Score</div>
-                </div>
-              </div>
-
-              <div className="text-center space-y-2">
-                <div className="text-base">
-                  <span className="text-gray-300">
-                    Required to pass: {requiredToPass}/{selectedQuestionCount[0]} (
-                    {Math.round((requiredToPass / selectedQuestionCount[0]) * 100)}%)
-                  </span>
-                </div>
-                <div className="text-base">
-                  <span className="text-white font-semibold">
-                    Your score: {correctAnswers}/{selectedQuestionCount[0]} ({scorePercentage}%)
-                  </span>
+                <div className={`p-4 rounded-lg text-center border ${isDark ? 'border-blue-500/30 bg-blue-500/10' : 'border-blue-300 bg-blue-50'}`}>
+                  <div className={`text-3xl sm:text-4xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>{scorePercentage}%</div>
+                  <div className={`text-xs sm:text-sm mt-1 font-semibold ${isDark ? 'text-blue-300/70' : 'text-blue-700'}`}>Score</div>
                 </div>
               </div>
 
+              {/* Requirements Info */}
+              <div className={`p-4 rounded-lg border ${isDark ? 'border-gray-700 bg-gray-900/30' : 'border-gray-200 bg-gray-100'}`}>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center text-sm">
+                    <span className={isDark ? 'text-gray-400' : 'text-gray-600'}>Required to pass:</span>
+                    <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{requiredToPass}/{selectedQuestionCount[0]} ({passPercentage}%)</span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm">
+                    <span className={isDark ? 'text-gray-400' : 'text-gray-600'}>Your score:</span>
+                    <span className={`font-bold text-lg ${passed ? isDark ? 'text-green-400' : 'text-green-600' : isDark ? 'text-orange-400' : 'text-orange-600'}`}>{correctAnswers}/{selectedQuestionCount[0]} ({scorePercentage}%)</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Progress Bar */}
               <div className="space-y-2">
-                <Progress value={(correctAnswers / selectedQuestionCount[0]) * 100} className="h-2 bg-gray-700" />
-                <div className="text-center text-sm text-gray-400">
-                  {passed ? "Congratulations! You passed!" : "Keep practicing! You've got this!"}
+                <Progress value={scorePercentageNum} className={`h-3 rounded-full ${isDark ? 'bg-gray-800' : 'bg-gray-300'}`} />
+                <div className={`text-center text-sm font-semibold ${passed ? isDark ? 'text-green-400' : 'text-green-600' : isDark ? 'text-orange-400' : 'text-orange-600'}`}>
+                  {passed ? "🎊 Congratulations! You passed!" : "💡 Keep practicing! You've got this!"}
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+              {/* Action Buttons */}
+              <div className="space-y-3">
+                <div className="grid grid-cols-2 gap-3">
                   <Link href="/practice">
-                    <Button className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-3 text-base">
-                      Practice More
+                    <Button className={`w-full font-semibold py-3 text-base rounded-lg transition-all border ${isDark ? 'border-blue-600 bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 hover:text-blue-200' : 'border-blue-400 bg-blue-400/20 hover:bg-blue-400/30 text-blue-600 hover:text-blue-700'}`}>
+                      📚 Practice More
                     </Button>
                   </Link>
                   <Link href="/review">
-                    <Button className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-3 text-base">
-                      Review Answers
+                    <Button className={`w-full font-semibold py-3 text-base rounded-lg transition-all border ${isDark ? 'border-purple-600 bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 hover:text-purple-200' : 'border-purple-400 bg-purple-400/20 hover:bg-purple-400/30 text-purple-600 hover:text-purple-700'}`}>
+                      🔍 Review Answers
                     </Button>
                   </Link>
                 </div>
 
                 <Link href="/">
-                  <Button className="w-full border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-3 text-base">
+                  <Button className={`w-full font-semibold py-3 text-base rounded-lg transition-all border ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/50 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
                     ← Back to Home
                   </Button>
                 </Link>
