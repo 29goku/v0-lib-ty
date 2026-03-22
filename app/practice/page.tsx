@@ -540,15 +540,6 @@ export default function PracticePage() {
             </div>
           </div>
 
-          {/* Mobile Title */}
-          <div className="sm:hidden text-center mb-6">
-            <h1 className={`text-2xl font-bold ${theme.text}`}>{t.practiceMode.toUpperCase()}</h1>
-            <div className={`text-sm font-semibold ${theme.textSecondary}`}>
-              {selectedStates.length === 1 && selectedState
-                  ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
-                  : `${t.practiceSubtitle} 🚀`}
-            </div>
-          </div>
 
           {/* Stats Cards - Hidden on mobile, shown on md+ screens */}
           <div className="hidden md:grid md:grid-cols-4 gap-4 mb-8">
