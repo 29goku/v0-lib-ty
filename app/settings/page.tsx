@@ -57,7 +57,7 @@ export default function SettingsPage() {
       <StickyMobileHeader title="Settings" showBackButton={true} backHref="/" />
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="hidden sm:flex items-center justify-between mb-8">
           <Link href="/">
             <Button className={`border px-6 py-2 rounded transition-all font-semibold ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
               <ArrowLeft className="w-5 h-5 mr-2" />
