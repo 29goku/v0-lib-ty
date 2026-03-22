@@ -404,15 +404,15 @@ export default function SwipeCard({
                   disabled={showAnswer}
                   whileHover={{ backgroundColor: showAnswer ? undefined : "rgba(0,0,0,0.4)" }}
                   whileTap={{ scale: 0.99 }}
-                  className={`w-full p-3 text-left rounded border text-sm transition-all ${
+                  className={`w-full p-3 text-left rounded border-2 text-sm transition-all font-semibold ${
                     showAnswer && displaySelectedAnswer !== null
                       ? index === question.answerIndex
-                        ? isDark ? "bg-green-500/30 border-green-500/80 text-green-100 font-semibold" : "bg-green-200 border-green-600 text-green-900 font-semibold"
+                        ? isDark ? "bg-green-500/50 border-green-400 text-green-100 shadow-lg shadow-green-500/30" : "bg-green-300 border-green-700 text-green-950 shadow-lg shadow-green-400/50"
                         : displaySelectedAnswer === index
-                          ? isDark ? "bg-red-500/30 border-red-500/80 text-red-100 font-semibold" : "bg-red-200 border-red-600 text-red-900 font-semibold"
-                          : isDark ? "bg-gray-900/20 border-gray-800 text-gray-500" : "bg-gray-100 border-gray-300 text-gray-600"
+                          ? isDark ? "bg-red-500/50 border-red-400 text-red-100 shadow-lg shadow-red-500/30" : "bg-red-300 border-red-700 text-red-950 shadow-lg shadow-red-400/50"
+                          : isDark ? "bg-gray-900/20 border-gray-700 text-gray-500" : "bg-gray-100 border-gray-400 text-gray-600"
                       : displaySelectedAnswer === index
-                        ? isDark ? "bg-blue-500/30 border-blue-500/80 text-blue-100 font-semibold" : "bg-blue-200 border-blue-600 text-blue-900 font-semibold"
+                        ? isDark ? "bg-blue-500/40 border-blue-400 text-blue-100 shadow-md shadow-blue-500/30" : "bg-blue-200 border-blue-600 text-blue-900"
                         : isDark ? "bg-transparent border-gray-700 text-gray-200 hover:bg-gray-900/20" : "bg-transparent border-gray-300 text-gray-700 hover:bg-gray-100"
                   }`}
                 >
