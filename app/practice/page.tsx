@@ -508,7 +508,7 @@ export default function PracticePage() {
               </span>
               </h1>
               <div className={`text-sm md:text-lg font-semibold ${theme.textSecondary}`}>
-                {selectedState
+                {selectedStates.length === 1 && selectedState
                     ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
                     : `${t.practiceSubtitle} 🚀`}
               </div>
