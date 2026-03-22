@@ -10,9 +10,11 @@ import LanguageSelector from "@/components/LanguageSelector"
 import { useEffect, useState } from "react"
 import { Icon } from "@/components/Icon"
 import ThemeToggle from "@/components/ThemeToggle"
+import { useTheme } from "@/lib/theme"
 
 export default function HomePage() {
   const { language, questions, userProgress, loadQuestions } = useStore()
+  const { isDark } = useTheme()
   const t = getTranslation(language)
   const [mounted, setMounted] = useState(false)
   const [showTranslationDialog, setShowTranslationDialog] = useState(false)
@@ -153,7 +155,7 @@ export default function HomePage() {
             ]
           }) }} />
         </Head>
-        <div className="min-h-screen bg-black text-white relative">
+        <div className={`min-h-screen relative ${isDark ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
       <div className="absolute top-6 right-6 z-50 flex gap-3">
         <ThemeToggle />
         <LanguageSelector />
@@ -163,7 +165,7 @@ export default function HomePage() {
         
 
         {/* Hero Section */}
-        <div className="py-20 md:py-28 flex items-center justify-center px-4 relative">
+        <div className="md:py-20 flex items-center justify-center px-4 relative">
 
           <div className="text-center max-w-6xl mx-auto">
 
@@ -178,7 +180,7 @@ export default function HomePage() {
               </h1>
 
               {/* Subtitle */}
-              <div className="text-lg sm:text-xl md:text-2xl font-normal text-gray-300 mb-4 md:mb-6 leading-relaxed px-4">
+              <div className={`text-lg sm:text-xl md:text-2xl font-normal mb-4 md:mb-6 leading-relaxed px-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                 {t.heroSubtitle}
               </div>
             </div>
@@ -187,7 +189,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-6 mb-8 md:mb-10 px-4">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-semibold text-white mb-1">{stats.totalQuestions}</div>
-                <div className="text-xs md:text-sm text-gray-300">{t.totalQuestions}</div>
+                <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>{t.totalQuestions}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-semibold text-white mb-1">33</div>
@@ -202,12 +204,12 @@ export default function HomePage() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-10 px-4">
               <Link href="/practice">
-                <Button className="w-full sm:w-auto border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-semibold transition-colors">
+                <Button className={`w-full sm:w-auto font-semibold px-6 md:px-8 py-2 md:py-3 text-base md:text-lg transition-colors ${isDark ? 'border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
                   {t.start} {t.practice}
                 </Button>
               </Link>
               <Link href="/test">
-                <Button className="w-full sm:w-auto border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-semibold transition-colors">
+                <Button className={`w-full sm:w-auto font-semibold px-6 md:px-8 py-2 md:py-3 text-base md:text-lg transition-colors ${isDark ? 'border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
                   {t.test}
                 </Button>
               </Link>
@@ -216,13 +218,13 @@ export default function HomePage() {
         </div>
 
         {/* Features Section */}
-        <div className="py-12 md:py-16 px-4 relative">
+        <div className="md:py-16 px-4 relative">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-12 relative">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-2 md:mb-4 text-white">
                 Learn & Track Progress
               </h2>
-              <p className="text-base md:text-lg text-gray-300 px-4">
+              <p className={`text-base md:text-lg px-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                 Five ways to prepare for the citizenship test
               </p>
             </div>
@@ -235,10 +237,10 @@ export default function HomePage() {
                     <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                       {t.practice}
                     </h3>
-                    <p className="text-gray-300 text-xs md:text-sm mb-3 leading-relaxed flex-grow">
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                       Learn by swiping. {stats.totalQuestions} questions with instant feedback
                     </p>
-                    <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 font-semibold text-center transition-colors text-xs">
+                    <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
                       {t.start}
                     </div>
                   </CardContent>
@@ -252,10 +254,10 @@ export default function HomePage() {
                     <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                       {t.testMode}
                     </h3>
-                    <p className="text-gray-300 text-xs md:text-sm mb-3 leading-relaxed flex-grow">
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                       Simulated test conditions. 33 questions, 60 minutes
                     </p>
-                    <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 font-semibold text-center transition-colors text-xs">
+                    <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
                       {t.start}
                     </div>
                   </CardContent>
@@ -269,10 +271,10 @@ export default function HomePage() {
                     <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                       {t.review}
                     </h3>
-                    <p className="text-gray-300 text-xs md:text-sm mb-3 leading-relaxed flex-grow">
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                       Study mistakes, track progress, improve
                     </p>
-                    <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 font-semibold text-center transition-colors text-xs">
+                    <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
                       Review
                     </div>
                   </CardContent>
@@ -287,10 +289,10 @@ export default function HomePage() {
                       <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                         📊 Statistics
                       </h3>
-                      <p className="text-gray-300 text-xs md:text-sm mb-3 leading-relaxed flex-grow">
+                      <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                         Analytics, charts, performance trends
                       </p>
-                      <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 font-semibold text-center transition-colors text-xs">
+                      <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
                         View
                       </div>
                     </CardContent>
@@ -305,10 +307,10 @@ export default function HomePage() {
                     <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                       {t.settings}
                     </h3>
-                    <p className="text-gray-300 text-xs md:text-sm mb-3 leading-relaxed flex-grow">
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                       Dark mode, language, stats
                     </p>
-                    <div className="border border-gray-700 bg-transparent text-gray-300 hover:bg-gray-900/20 hover:text-white px-3 py-1 font-semibold text-center transition-colors text-xs">
+                    <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
                       Customize
                     </div>
                   </CardContent>
