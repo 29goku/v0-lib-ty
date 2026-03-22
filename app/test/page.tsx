@@ -489,6 +489,7 @@ export default function TestPage() {
               isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
               showAnswer={Boolean(currentAnswer)}
               onAnswerSelect={handleAnswerSelect}
+              externalSelectedAnswer={currentAnswer ? currentAnswer.selectedIndex : null}
               isTranslated={isTranslated}
               onTranslate={() => setIsTranslated(!isTranslated)}
               totalQuestions={testQuestions.length}
@@ -530,19 +531,19 @@ export default function TestPage() {
           </div>
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="hidden sm:grid grid-cols-3 gap-2 md:gap-4 mb-6">
+        {/* Navigation Buttons - Sticky Bottom Desktop */}
+        <div className={`hidden sm:grid fixed bottom-0 left-0 right-0 z-40 grid-cols-3 gap-2 md:gap-4 p-4 md:p-6 backdrop-blur-sm border-t transition-colors ${isDark ? 'bg-black/80 border-gray-800' : 'bg-white/80 border-gray-200'}`}>
           <Button
             onClick={handlePrevious}
             disabled={currentQuestionIndex <= 0}
-            className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all truncate"
+            className={`border font-semibold px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all truncate rounded ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
           >
             ← Previous
           </Button>
 
           <Button
             onClick={handleSubmitTest}
-            className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-2 md:py-3 px-2 md:px-4 text-xs md:text-sm rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-red-500/50 truncate"
+            className={`font-bold py-2 md:py-3 px-2 md:px-4 text-xs md:text-sm rounded-lg transition-all transform hover:scale-105 active:scale-95 truncate border ${isDark ? 'border-red-600 bg-red-600/20 hover:bg-red-600/30 text-red-400 hover:text-red-300 shadow-lg hover:shadow-red-500/30' : 'border-red-400 bg-red-400/20 hover:bg-red-400/30 text-red-600 hover:text-red-700 shadow-lg hover:shadow-red-500/20'}`}
           >
             🏁 Submit
           </Button>
@@ -550,11 +551,14 @@ export default function TestPage() {
           <Button
             onClick={handleNext}
             disabled={currentQuestionIndex >= selectedQuestionCount[0] - 1}
-            className="border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all truncate"
+            className={`border font-semibold px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all truncate rounded ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
           >
             Next →
           </Button>
         </div>
+
+        {/* Add bottom padding for sticky nav on desktop */}
+        <div className="hidden sm:block h-24"></div>
 
         {/* Mobile Question Grid */}
         <div className="lg:hidden">
