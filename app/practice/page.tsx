@@ -322,6 +322,7 @@ export default function PracticePage() {
         // Clear showAnswer last - this will trigger the useEffect to update displayQuestion
         setShowAnswer(false)
       }, 2000)
+    }
   }
 
   const resetProgress = () => {
