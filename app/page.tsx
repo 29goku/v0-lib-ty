@@ -8,9 +8,13 @@ import { useStore } from "@/lib/store"
 import { getTranslation } from "@/lib/i18n"
 import LanguageSelector from "@/components/LanguageSelector"
 import { useEffect, useState } from "react"
+import { Icon } from "@/components/Icon"
+import ThemeToggle from "@/components/ThemeToggle"
+import { useTheme } from "@/lib/theme"
 
 export default function HomePage() {
   const { language, questions, userProgress, loadQuestions } = useStore()
+  const { isDark } = useTheme()
   const t = getTranslation(language)
   const [mounted, setMounted] = useState(false)
   const [showTranslationDialog, setShowTranslationDialog] = useState(false)
@@ -151,152 +155,100 @@ export default function HomePage() {
             ]
           }) }} />
         </Head>
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden relative">
-      {/* Modern background */}
-      <div className="fixed inset-0 z-0">
-        <div
-          className="absolute top-0 left-0 w-48 h-48 md:w-96 md:h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse"
-          style={{ animationDuration: "8s" }}
-        ></div>
-        <div
-          className="absolute bottom-0 right-0 w-40 h-40 md:w-80 md:h-80 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "4s", animationDuration: "10s" }}
-        ></div>
-        <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 md:w-64 md:h-64 bg-gradient-to-r from-green-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "6s", animationDuration: "12s" }}
-        ></div>
-
-        {/* Static emojis with subtle hover effects */}
-        <div className="absolute top-10 left-10 md:top-20 md:left-20 text-xl md:text-3xl hover:scale-110 transition-transform cursor-pointer">
-          🚀
-        </div>
-        <div className="absolute top-20 right-16 md:top-40 md:right-32 text-lg md:text-2xl hover:scale-110 transition-transform cursor-pointer">
-          ⚡
-        </div>
-        <div className="absolute bottom-16 left-16 md:bottom-32 md:left-32 text-2xl md:text-4xl hover:scale-110 transition-transform cursor-pointer">
-          🔥
-        </div>
-        <div className="absolute bottom-10 right-10 md:bottom-20 md:right-20 text-lg md:text-2xl hover:scale-110 transition-transform cursor-pointer">
-          🎯
-        </div>
-      </div>
-      <div className="absolute top-6 right-6 z-50">
+        <div className={`min-h-screen relative ${isDark ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 flex gap-2 sm:gap-3">
+        <ThemeToggle />
         <LanguageSelector />
       </div>
 
       <div className="relative z-10">
-        
+
 
         {/* Hero Section */}
-        <div className="min-h-screen flex items-center justify-center px-4 relative">
+        <div className="pt-20 sm:pt-12 md:py-20 flex items-center justify-center px-4 relative">
 
           <div className="text-center max-w-6xl mx-auto">
 
-            {/* Main title with smooth effects */}
-            <div className="mb-8 md:mb-12 relative">
-              <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-2 md:mb-4 leading-none relative hover:scale-105 transition-transform duration-500">
-                <span className="bg-gradient-to-r from-yellow-300 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                  LEBEN
-                </span>
+            {/* Main title */}
+            <div className="mb-4 sm:mb-6 md:mb-8 relative">
+              <h1 className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold mb-1 sm:mb-2 md:mb-3 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                LEBEN
               </h1>
 
-              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-black mb-4 md:mb-8 leading-none relative hover:scale-105 transition-transform duration-500">
-                <span className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-white mr-2 md:mr-4">
-                  🇩🇪
-                </span>
-                <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  IN DEUTSCHLAND
-                </span>
-                <span className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-white ml-2 md:ml-4">
-                  🇩🇪
-                </span>
+              <h1 className={`text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold mb-2 sm:mb-3 md:mb-4 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                IN DEUTSCHLAND
               </h1>
 
               {/* Subtitle */}
-              <div className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-white mb-6 md:mb-8 leading-relaxed px-4">
-                <span className="hover:scale-110 transition-transform inline-block cursor-pointer">🚀</span>
-                <span className="mx-2">{t.heroSubtitle}</span>
-                <span className="hover:scale-110 transition-transform inline-block cursor-pointer ml-2">🎯</span>
+              <div className={`text-lg sm:text-xl md:text-2xl font-normal mb-4 md:mb-6 leading-relaxed px-4 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
+                {t.heroSubtitle}
               </div>
             </div>
 
-            {/* Stats with hover effects */}
-            <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-8 mb-12 md:mb-16 px-4">
-              <div className="text-center group cursor-pointer">
-                <div className="text-3xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">🔥</div>
-                <div className="text-2xl md:text-4xl font-black text-yellow-400 mb-1">{stats.totalQuestions}</div>
-                <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">{t.totalQuestions}</div>
+            {/* Stats */}
+            <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-6 mb-8 md:mb-10 px-4">
+              <div className="text-center">
+                <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.totalQuestions}</div>
+                <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.totalQuestions}</div>
               </div>
-              <div className="text-center group cursor-pointer">
-                <div className="text-3xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">⚡</div>
-                <div className="text-2xl md:text-4xl font-black text-green-400 mb-1">33</div>
-                <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">TEST LENGTH</div>
+              <div className="text-center">
+                <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>33</div>
+                <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Test Length</div>
               </div>
-              <div className="text-center group cursor-pointer">
-                <div className="text-3xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">⏰</div>
-                <div className="text-2xl md:text-4xl font-black text-pink-400 mb-1">60</div>
-                <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">MINUTES</div>
+              <div className="text-center">
+                <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>60</div>
+                <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Minutes</div>
               </div>
             </div>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Main App Functionality */}
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-12 md:mb-16 px-4">
-              <Link href="/practice">
-                <Button className="w-full sm:w-auto bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 hover:from-yellow-500 hover:via-orange-600 hover:to-red-600 text-black px-8 md:px-12 py-4 md:py-6 text-lg md:text-2xl font-black rounded-full shadow-2xl hover:shadow-3xl transition-all transform hover:scale-110 border-0 relative overflow-hidden group">
-                  <span className="relative z-10">
-                    🎮 {t.start.toUpperCase()} {t.practice.toUpperCase()}
+              <Link href="/practice" className="group flex-1 sm:flex-none">
+                <button className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold px-8 md:px-12 py-4 md:py-5 text-lg md:text-xl rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-blue-500/50 hover:shadow-2xl relative overflow-hidden group">
+                  <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></span>
+                  <span className="relative flex items-center justify-center gap-2">
+                    🎯 {t.start} {t.practice}
                   </span>
-                </Button>
+                </button>
               </Link>
-              <Link href="/test">
-                <Button className="w-full sm:w-auto bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 md:px-12 py-4 md:py-6 text-lg md:text-2xl font-black rounded-full shadow-2xl hover:shadow-3xl transition-all transform hover:scale-110 border-0 relative overflow-hidden group">
-                  <span className="relative z-10">🏆 {t.test.toUpperCase()}</span>
-                </Button>
-              </Link>
-            </div>
 
-            {/* Scroll indicator */}
-            <div className="hover:scale-110 transition-transform cursor-pointer">
-              <div className="text-2xl md:text-4xl">👇</div>
-              <div className="text-sm md:text-lg text-gray-400 mt-2">SCROLL FOR MORE</div>
+              <Link href="/test" className="group flex-1 sm:flex-none">
+                <button className="w-full sm:w-auto bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-8 md:px-12 py-4 md:py-5 text-lg md:text-xl rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-orange-500/50 hover:shadow-2xl relative overflow-hidden group">
+                  <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></span>
+                  <span className="relative flex items-center justify-center gap-2">
+                    ⚡ {t.test}
+                  </span>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Features Section */}
-        <div className="py-16 md:py-24 px-4 relative">
+        <div className="md:py-16 px-4 relative">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12 md:mb-20 relative">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-4 md:mb-6 relative hover:scale-105 transition-transform duration-500">
-                <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
-                  {t.chooseWeapon}
-                </span>
+            <div className="text-center mb-8 md:mb-12 relative">
+              <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-2 md:mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                Learn & Track Progress
               </h2>
-              <p className="text-lg md:text-2xl text-gray-300 px-4">
-                Four epic ways to dominate the citizenship test 💪
+              <p className={`text-base md:text-lg px-4 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
+                Five ways to prepare for the citizenship test
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
               {/* Practice Card */}
               <Link href="/practice" className="group">
-                <Card className="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 border-2 border-cyan-500/50 hover:border-cyan-400 transition-all duration-500 group-hover:scale-105 backdrop-blur-sm overflow-hidden relative transform hover:shadow-2xl hover:shadow-cyan-500/50 h-full">
-                  <div className="absolute top-0 right-0 text-3xl md:text-6xl opacity-20 transform rotate-12 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4">
-                    📚
-                  </div>
-                  <CardContent className="p-4 md:p-8 relative h-full flex flex-col">
-                    <div className="text-3xl md:text-6xl mb-3 md:mb-4 group-hover:scale-125 transition-transform">
-                      🎯
-                    </div>
-                    <h3 className="text-xl md:text-3xl font-black text-cyan-400 mb-3 md:mb-4">
-                      {t.practice.toUpperCase()}
+                <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
+                  <CardContent className="p-4 h-full flex flex-col">
+                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                      {t.practice}
                     </h3>
-                    <p className="text-gray-300 text-sm md:text-lg mb-4 md:mb-6 leading-relaxed group-hover:text-white transition-colors flex-grow">
-                      {t.swipeLearn}: {stats.totalQuestions} questions with instant feedback 🔥
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Learn by swiping. {stats.totalQuestions} questions with instant feedback
                     </p>
-                    <div className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-full font-bold text-center group-hover:scale-105 transition-transform text-sm md:text-base">
-                      {t.start.toUpperCase()}! 🚀
+                    <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
+                      {t.start}
                     </div>
                   </CardContent>
                 </Card>
@@ -304,22 +256,16 @@ export default function HomePage() {
 
               {/* Test Card */}
               <Link href="/test" className="group">
-                <Card className="bg-gradient-to-br from-red-600/20 to-orange-600/20 border-2 border-orange-500/50 hover:border-orange-400 transition-all duration-500 group-hover:scale-105 backdrop-blur-sm overflow-hidden relative transform hover:shadow-2xl hover:shadow-orange-500/50 h-full">
-                  <div className="absolute top-0 right-0 text-3xl md:text-6xl opacity-20 transform rotate-12 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4">
-                    ⏱️
-                  </div>
-                  <CardContent className="p-4 md:p-8 relative h-full flex flex-col">
-                    <div className="text-3xl md:text-6xl mb-3 md:mb-4 group-hover:scale-125 transition-transform">
-                      ⚡
-                    </div>
-                    <h3 className="text-xl md:text-3xl font-black text-orange-400 mb-3 md:mb-4">
-                      {t.testMode.toUpperCase()}
+                <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
+                  <CardContent className="p-4 h-full flex flex-col">
+                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                      {t.testMode}
                     </h3>
-                    <p className="text-gray-300 text-sm md:text-lg mb-4 md:mb-6 leading-relaxed group-hover:text-white transition-colors flex-grow">
-                      {t.testSubtitle}! 33 questions, 60 minutes. Test simulation! 😤
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Simulated test conditions. 33 questions, 60 minutes
                     </p>
-                    <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-full font-bold text-center group-hover:scale-105 transition-transform text-sm md:text-base">
-                      {t.start.toUpperCase()}! 💪
+                    <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
+                      {t.start}
                     </div>
                   </CardContent>
                 </Card>
@@ -327,45 +273,52 @@ export default function HomePage() {
 
               {/* Review Card */}
               <Link href="/review" className="group">
-                <Card className="bg-gradient-to-br from-yellow-600/20 to-amber-600/20 border-2 border-yellow-500/50 hover:border-yellow-400 transition-all duration-500 group-hover:scale-105 backdrop-blur-sm overflow-hidden relative transform hover:shadow-2xl hover:shadow-yellow-500/50 h-full">
-                  <div className="absolute top-0 right-0 text-3xl md:text-6xl opacity-20 transform rotate-12 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4">
-                    🏃
-                  </div>
-                  <CardContent className="p-4 md:p-8 relative h-full flex flex-col">
-                    <div className="text-3xl md:text-6xl mb-3 md:mb-4 group-hover:scale-125 transition-transform">
-                      🧠
-                    </div>
-                    <h3 className="text-xl md:text-3xl font-black text-yellow-400 mb-3 md:mb-4">
-                      {t.review.toUpperCase()}
+                <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
+                  <CardContent className="p-4 h-full flex flex-col">
+                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                      {t.review}
                     </h3>
-                    <p className="text-gray-300 text-sm md:text-lg mb-4 md:mb-6 leading-relaxed group-hover:text-white transition-colors flex-grow">
-                      Study your mistakes, track progress, become unstoppable! 📈
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Study mistakes, track progress, improve
                     </p>
-                    <div className="bg-gradient-to-r from-yellow-500 to-amber-500 text-black px-4 md:px-6 py-2 md:py-3 rounded-full font-bold text-center group-hover:scale-105 transition-transform text-sm md:text-base">
-                      LEVEL UP! ⬆️
+                    <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
+                      Review
                     </div>
                   </CardContent>
                 </Card>
               </Link>
 
+              {/* Stats Card */}
+              {stats.questionsAnswered > 0 && (
+                <Link href="/stats" className="group">
+                  <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
+                    <CardContent className="p-4 h-full flex flex-col">
+                      <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                        📊 Statistics
+                      </h3>
+                      <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                        Analytics, charts, performance trends
+                      </p>
+                      <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
+                        View
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              )}
+
               {/* Settings Card */}
               <Link href="/settings" className="group">
-                <Card className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border-2 border-purple-500/50 hover:border-purple-400 transition-all duration-500 group-hover:scale-105 backdrop-blur-sm overflow-hidden relative transform hover:shadow-2xl hover:shadow-purple-500/50 h-full">
-                  <div className="absolute top-0 right-0 text-3xl md:text-6xl opacity-20 transform rotate-12 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4">
-                    ⚙️
-                  </div>
-                  <CardContent className="p-4 md:p-8 relative h-full flex flex-col">
-                    <div className="text-3xl md:text-6xl mb-3 md:mb-4 group-hover:scale-125 transition-transform">
-                      🎮
-                    </div>
-                    <h3 className="text-xl md:text-3xl font-black text-purple-400 mb-3 md:mb-4">
-                      {t.settings.toUpperCase()}
+                <Card className={`h-full transition-colors ${isDark ? 'bg-white/5 hover:bg-gray-900/20' : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'}`}>
+                  <CardContent className="p-4 h-full flex flex-col">
+                    <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                      {t.settings}
                     </h3>
-                    <p className="text-gray-300 text-sm md:text-lg mb-4 md:mb-6 leading-relaxed group-hover:text-white transition-colors flex-grow">
-                      Customize everything! Dark mode, language, stats, and more! ✨
+                    <p className={`text-xs md:text-sm mb-3 leading-relaxed flex-grow ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Dark mode, language, stats
                     </p>
-                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-full font-bold text-center group-hover:scale-105 transition-transform text-sm md:text-base">
-                      CUSTOMIZE! 🎨
+                    <div className={`bg-transparent font-semibold text-center transition-colors text-xs px-3 py-1 ${isDark ? 'border border-gray-700 text-gray-300 hover:bg-gray-900/20 hover:text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>
+                      Customize
                     </div>
                   </CardContent>
                 </Card>
@@ -376,81 +329,63 @@ export default function HomePage() {
 
         {/* Progress Section - Only show if user has progress */}
         {stats.questionsAnswered > 0 && (
-          <div className="py-16 md:py-24 px-4 bg-gradient-to-r from-slate-800/50 to-purple-800/50 relative">
+          <div className={`py-10 md:py-12 px-4 ${isDark ? 'border-t border-gray-700 bg-white/5' : 'border-t border-gray-200 bg-gray-50'}`}>
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black mb-8 md:mb-12 relative hover:scale-105 transition-transform duration-500">
-                <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
-                  YOUR {t.progress.toUpperCase()}
-                </span>
+              <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 md:mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                Your {t.progress}
               </h2>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-8">
-                <div className="text-center group cursor-pointer">
-                  <div className="text-3xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">💎</div>
-                  <div className="text-2xl md:text-4xl font-black text-cyan-400 mb-1">{stats.xp}</div>
-                  <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">{t.xp}</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-6">
+                <div className="text-center">
+                  <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.xp}</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.xp}</div>
                 </div>
-                <div className="text-center group cursor-pointer">
-                  <div className="text-3xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">🔥</div>
-                  <div className="text-2xl md:text-4xl font-black text-orange-400 mb-1">{stats.streak}</div>
-                  <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">{t.streak}</div>
+                <div className="text-center">
+                  <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.streak}</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.streak}</div>
                 </div>
-                <div className="text-center group cursor-pointer">
-                  <div className="text-3xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">✅</div>
-                  <div className="text-2xl md:text-4xl font-black text-green-400 mb-1">{stats.correctAnswers}</div>
-                  <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">{t.correct}</div>
+                <div className="text-center">
+                  <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-green-400' : 'text-green-600'}`}>{stats.correctAnswers}</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.correct}</div>
                 </div>
-                <div className="text-center group cursor-pointer">
-                  <div className="text-3xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">📚</div>
-                  <div className="text-2xl md:text-4xl font-black text-purple-400 mb-1">{stats.completedQuestions}</div>
-                  <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">
+                <div className="text-center">
+                  <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.completedQuestions}</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     {t.completedQuestions}
                   </div>
                 </div>
               </div>
 
-              <div className="text-lg md:text-xl text-gray-300 mb-8">
-                You're {Math.round((stats.correctAnswers / stats.totalQuestions) * 100)}% ready for the test! 🎯
+              <div className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
+                You're {Math.round((stats.correctAnswers / stats.totalQuestions) * 100)}% ready for the test
               </div>
             </div>
           </div>
         )}
 
         {/* Final CTA */}
-        <div className="py-16 md:py-24 px-4 bg-gradient-to-r from-purple-900 via-pink-900 to-red-900 relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/40"></div>
-
-          <div className="relative max-w-6xl mx-auto text-center">
-            <div className="text-4xl md:text-8xl mb-6 md:mb-8 hover:scale-125 transition-transform cursor-pointer">
-              🇩🇪
-            </div>
-
-            <div className="relative mb-6 md:mb-8">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black mb-2 md:mb-4 leading-tight relative hover:scale-105 transition-transform duration-500">
-                <span className="bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500 bg-clip-text text-transparent">
-                  READY TO BECOME
-                </span>
-              </h2>
-
-              <span className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-500 inline-block">
-                A GERMAN CITIZEN?
-              </span>
-            </div>
-
-            <p className="text-lg sm:text-xl md:text-3xl text-white mb-8 md:mb-12 font-bold leading-relaxed max-w-4xl mx-auto px-4">
-              🎮 Join members who are CRUSHING the citizenship test with our addictive swipe-based learning!
+        <div className={`py-10 md:py-12 px-4 ${isDark ? 'border-t border-gray-700 bg-white/5' : 'border-t border-gray-200 bg-gray-50'}`}>
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 md:mb-6 leading-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              Ready to Become
               <br />
-              <span className="text-yellow-300">No boring textbooks. No endless lectures. Just pure FUN! 🔥</span>
+              A German Citizen?
+            </h2>
+
+            <p className={`text-base sm:text-lg md:text-xl mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto px-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+              Join members who are preparing for the citizenship test with our swipe-based learning.
+              <br />
+              No boring textbooks. No endless lectures. Just effective practice.
             </p>
 
             <Link href="/practice">
-              <Button className="w-full sm:w-auto bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 hover:from-yellow-500 hover:via-orange-600 hover:to-red-600 text-black px-8 md:px-16 py-4 md:py-8 text-xl md:text-3xl font-black rounded-full shadow-2xl hover:shadow-3xl transition-all transform hover:scale-110 border-0 relative overflow-hidden group">
-                <span className="relative z-10">🚀 {t.start.toUpperCase()} NOW - IT'S FREE! 🚀</span>
+              <Button className={`px-6 md:px-10 py-2 md:py-3 text-lg md:text-xl font-semibold transition-colors ${isDark ? 'border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
+                {t.start} Now - It's Free
               </Button>
             </Link>
 
-            <div className="mt-6 md:mt-8 text-lg md:text-xl text-gray-300">
-              ⏰ Join now and get instant access to {stats.totalQuestions} questions!
+            <div className={`mt-4 md:mt-6 text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
+              Join now and get instant access to {stats.totalQuestions} questions
             </div>
           </div>
         </div>

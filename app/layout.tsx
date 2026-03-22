@@ -8,6 +8,7 @@ import "./globals.css"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { ThemeProvider } from "@/components/ThemeProvider"
 
 export const metadata: Metadata = {
   title: {
@@ -121,11 +122,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
-        
+
         {/* DNS prefetch for performance */}
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        
+
         {/* Structured Data for Organization */}
         <script
           type="application/ld+json"
@@ -149,7 +150,7 @@ export default function RootLayout({
             })
           }}
         />
-        
+
         {/* Structured Data for WebSite */}
         <script
           type="application/ld+json"
@@ -168,7 +169,7 @@ export default function RootLayout({
             })
           }}
         />
-        
+
         {/* Structured Data for WebApplication */}
         <script
           type="application/ld+json"
@@ -191,7 +192,9 @@ export default function RootLayout({
         />
       </head>
       <body className={GeistSans.className}>
-        <Suspense fallback={null}>{children}</Suspense>
+        <ThemeProvider>
+          <Suspense fallback={null}>{children}</Suspense>
+        </ThemeProvider>
         <ChatWidgetClient />
         <SpeedInsights />
         <Analytics />

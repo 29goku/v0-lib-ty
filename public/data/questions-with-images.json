@@ -1,0 +1,507 @@
+[
+  {
+    "question_number": 21,
+    "question": "Welches ist das Wappen der Bundesrepublik Deutschland?",
+    "image": "/images/21.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "1"
+  },
+  {
+    "question_number": 55,
+    "question": "Was zeigt dieses Bild?",
+    "image": "/images/55.png",
+    "options": [
+      "den Bundestagssitz in Berlin",
+      "das Bundesverfassungsgericht in Karlsruhe",
+      "das Bundesratsgebäude in Berlin",
+      "das Bundeskanzleramt in Berlin"
+    ],
+    "answer": "den Bundestagssitz in Berlin"
+  },
+  {
+    "question_number": 70,
+    "question": "Der deutsche Bundespräsident Gustav Heinemann gibt Helmut Schmidt 1974 die Ernennungsurkunde zum deutschen Bundeskanzler. Was gehört zu den Aufgaben des deutschen Bundespräsidenten / der deutschen Bundespräsidentin?",
+    "image": "/images/70.png",
+    "options": [
+      "Er / Sie führt die Regierungsgeschäfte.",
+      "Er / Sie kontrolliert die Regierungspartei.",
+      "Er / Sie wählt die Minister / Ministerinnen aus.",
+      "Er / Sie schlägt den Kanzler / die Kanzlerin zur Wahl vor."
+    ],
+    "answer": "Er / Sie schlägt den Kanzler / die Kanzlerin zur Wahl vor."
+  },
+  {
+    "question_number": 130,
+    "question": "Welcher Stimmzettel wäre bei einer Bundestagswahl gültig?",
+    "image": "/images/130.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "1"
+  },
+  {
+    "question_number": 176,
+    "question": "Wie waren die Besatzungszonen Deutschlands nach 1945 verteilt?",
+    "image": "/images/176.png",
+    "options": [
+      "1=Großbritannien, 2=Sowjetunion, 3=Frankreich, 4=USA",
+      "1=Sowjetunion, 2=Großbritannien, 3=USA, 4=Frankreich",
+      "1=Großbritannien, 2=Sowjetunion, 3=USA, 4=Frankreich",
+      "1=Großbritannien, 2=USA, 3=Sowjetunion, 4=Frankreich"
+    ],
+    "answer": "1=Großbritannien, 2=Sowjetunion, 3=USA, 4=Frankreich"
+  },
+  {
+    "question_number": 181,
+    "question": "Was wollte Willy Brandt mit seinem Kniefall 1970 im ehemaligen jüdischen Ghetto in Warschau ausdrücken?",
+    "image": "/images/181.png",
+    "options": [
+      "Er hat sich den ehemaligen Alliierten unterworfen.",
+      "Er bat Polen und die polnischen Juden um Vergebung.",
+      "Er zeigte seine Demut vor dem Warschauer Pakt.",
+      "Er sprach ein Gebet am Grab des Unbekannten Soldaten."
+    ],
+    "answer": "Er bat Polen und die polnischen Juden um Vergebung."
+  },
+  {
+    "question_number": 187,
+    "question": "Welcher deutsche Staat hatte eine schwarz-rot-goldene Flagge mit Hammer, Zirkel und Ährenkranz?",
+    "image": "/images/187.png",
+    "options": [
+      "Preußen",
+      "Bundesrepublik Deutschland",
+      "DDR",
+      "„Drittes Reich“"
+    ],
+    "answer": "DDR"
+  },
+  {
+    "question_number": 209,
+    "question": "Welches war das Wappen der Deutschen Demokratischen Republik?",
+    "image": "/images/209.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "4"
+  },
+  {
+    "question_number": 216,
+    "question": "Welches Symbol ist im Plenarsaal des Deutschen Bundestages zu sehen?",
+    "image": "/images/216.png",
+    "options": [
+      "Eine Aufnahme im Plenarsaal des Deutschen Bundestages. Im Hintergrund sieht man das hier gefragte Symbol.",
+      "die Fahne der Stadt Berlin",
+      "der Bundesadler",
+      "der Reichsadler",
+      "die Reichskrone"
+    ],
+    "answer": "der Bundesadler"
+  },
+  {
+    "question_number": 226,
+    "question": "Welche ist die Flagge der Europäischen Union?",
+    "image": "/images/226.png",
+    "options": [
+      "2",
+      "1",
+      "4",
+      "3"
+    ],
+    "answer": "2"
+  },
+  {
+    "question_number": 301,
+    "question": "Welches Wappen gehört zum Bundesland Baden-Württemberg?",
+    "image": "/images/301.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "1"
+  },
+  {
+    "question_number": 308,
+    "question": "Welches Bundesland ist Baden-Württemberg?",
+    "image": "/images/308.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2"
+  },
+  {
+    "question_number": 311,
+    "question": "Welches Wappen gehört zum Freistaat Bayern?",
+    "image": "/images/311.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2"
+  },
+  {
+    "question_number": 318,
+    "question": "Welches Bundesland ist Bayern?",
+    "image": "/images/318.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "4"
+  },
+  {
+    "question_number": 321,
+    "question": "Welches Wappen gehört zum Bundesland Berlin?",
+    "image": "/images/321.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "4"
+  },
+  {
+    "question_number": 328,
+    "question": "Welches Bundesland ist Berlin?",
+    "image": "/images/328.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "4"
+  },
+  {
+    "question_number": 331,
+    "question": "Welches Wappen gehört zum Bundesland Brandenburg?",
+    "image": "/images/331.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "1"
+  },
+  {
+    "question_number": 338,
+    "question": "Welches Bundesland ist Brandenburg?",
+    "image": "/images/338.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "4"
+  },
+  {
+    "question_number": 341,
+    "question": "Welches Wappen gehört zur Freien Hansestadt Bremen?",
+    "image": "/images/341.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3"
+  },
+  {
+    "question_number": 348,
+    "question": "Welches Bundesland ist Bremen?",
+    "image": "/images/348.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "1"
+  },
+  {
+    "question_number": 351,
+    "question": "Welches Wappen gehört zur Freien und Hansestadt Hamburg?",
+    "image": "/images/351.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2"
+  },
+  {
+    "question_number": 358,
+    "question": "Welches Bundesland ist Hamburg?",
+    "image": "/images/358.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3"
+  },
+  {
+    "question_number": 361,
+    "question": "Welches Wappen gehört zum Bundesland Hessen?",
+    "image": "/images/361.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "1"
+  },
+  {
+    "question_number": 368,
+    "question": "Welches Bundesland ist Hessen?",
+    "image": "/images/368.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3"
+  },
+  {
+    "question_number": 371,
+    "question": "Welches Wappen gehört zum Bundesland Saarland?",
+    "image": "/images/371.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "4"
+  },
+  {
+    "question_number": 378,
+    "question": "Welches Bundesland ist das Saarland?",
+    "image": "/images/378.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2"
+  },
+  {
+    "question_number": 381,
+    "question": "Welches Wappen gehört zum Bundesland Mecklenburg-Vorpommern?",
+    "image": "/images/381.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3"
+  },
+  {
+    "question_number": 388,
+    "question": "Welches Bundesland ist Mecklenburg-Vorpommern?",
+    "image": "/images/388.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3"
+  },
+  {
+    "question_number": 391,
+    "question": "Welches Wappen gehört zum Bundesland Niedersachsen?",
+    "image": "/images/391.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3"
+  },
+  {
+    "question_number": 398,
+    "question": "Welches Bundesland ist Niedersachsen?",
+    "image": "/images/398.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "1"
+  },
+  {
+    "question_number": 401,
+    "question": "Welches Wappen gehört zum Bundesland Nordrhein-Westfalen?",
+    "image": "/images/401.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2"
+  },
+  {
+    "question_number": 408,
+    "question": "Welches Bundesland ist Nordrhein-Westfalen?",
+    "image": "/images/408.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3"
+  },
+  {
+    "question_number": 411,
+    "question": "Welches Wappen gehört zum Bundesland Rheinland-Pfalz?",
+    "image": "/images/411.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "1"
+  },
+  {
+    "question_number": 418,
+    "question": "Welches Bundesland ist Rheinland-Pfalz?",
+    "image": "/images/418.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "1"
+  },
+  {
+    "question_number": 421,
+    "question": "Welches Wappen gehört zum Freistaat Sachsen?",
+    "image": "/images/421.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "4"
+  },
+  {
+    "question_number": 428,
+    "question": "Welches Bundesland ist Sachsen?",
+    "image": "/images/428.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "4"
+  },
+  {
+    "question_number": 431,
+    "question": "Welches Wappen gehört zum Bundesland Sachsen-Anhalt?",
+    "image": "/images/431.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "4"
+  },
+  {
+    "question_number": 438,
+    "question": "Welches Bundesland ist Sachsen-Anhalt?",
+    "image": "/images/438.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3"
+  },
+  {
+    "question_number": 441,
+    "question": "Welches Wappen gehört zum Bundesland Schleswig-Holstein?",
+    "image": "/images/441.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3"
+  },
+  {
+    "question_number": 448,
+    "question": "Welches Bundesland ist Schleswig-Holstein?",
+    "image": "/images/448.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "1"
+  },
+  {
+    "question_number": 451,
+    "question": "Welches Wappen gehört zum Freistaat Thüringen?",
+    "image": "/images/451.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "4"
+  },
+  {
+    "question_number": 458,
+    "question": "Welches Bundesland ist Thüringen?",
+    "image": "/images/458.png",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2"
+  }
+]

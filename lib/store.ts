@@ -23,11 +23,24 @@ export interface UserProgress {
   badges: string[]
   lastStudyDate: string
   incorrectAnswers?: string[] // newly added optional list of incorrect question IDs
+
+  // Enhanced tracking for statistics dashboard
+  categoryStats?: { [category: string]: { correct: number; total: number } }
+  dailyStats?: { [date: string]: { correct: number; total: number; xp: number } }
+  testAttempts?: Array<{
+    date: string
+    score: number
+    totalQuestions: number
+    timeSpent: number
+    state?: string
+  }>
+  studySessionCount?: number
 }
 
 export interface AppState {
   questions: Question[]
   stateQuestions: Question[]
+  testQuestions: Question[] // Separate questions for test mode
   currentQuestionIndex: number
   userProgress: UserProgress
   darkMode: boolean
@@ -41,10 +54,13 @@ export interface AppState {
   // Actions
   setQuestions: (questions: Question[]) => void
   setStateQuestions: (questions: Question[]) => void
+  setTestQuestions: (questions: Question[]) => void
   nextQuestion: () => void
   previousQuestion: () => void
   setCurrentQuestionIndex: (index: number) => void
   answerQuestion: (questionId: string, selectedIndex: number, correct: boolean) => void
+  answerQuestionWithCategory: (questionId: string, selectedIndex: number, correct: boolean, category: string) => void
+  recordTestAttempt: (score: number, totalQuestions: number, timeSpent: number, state?: string) => void
   flagQuestion: (questionId: string) => void
   unflagQuestion: (questionId: string) => void
   addXP: (amount: number) => void
@@ -72,7 +88,11 @@ const initialProgress: UserProgress = {
   completedQuestions: [],
   badges: [],
   lastStudyDate: new Date().toISOString().split("T")[0],
-  incorrectAnswers: [], // initialize as empty array
+  incorrectAnswers: [],
+  categoryStats: {},
+  dailyStats: {},
+  testAttempts: [],
+  studySessionCount: 0,
 }
 
 // Fallback questions in case of loading errors
@@ -100,6 +120,7 @@ export const useStore = create<AppState>()(
     (set, get) => ({
       questions: [],
       stateQuestions: [],
+      testQuestions: [],
       currentQuestionIndex: 0,
       userProgress: initialProgress,
       darkMode: false,
@@ -112,6 +133,7 @@ export const useStore = create<AppState>()(
 
       setQuestions: (questions) => set({ questions }),
       setStateQuestions: (questions) => set({ stateQuestions: questions }),
+      setTestQuestions: (questions) => set({ testQuestions: questions }),
 
       nextQuestion: () =>
         set((state) => {
@@ -196,6 +218,69 @@ export const useStore = create<AppState>()(
           return { userProgress: newProgress }
         }),
 
+      answerQuestionWithCategory: (questionId, selectedIndex, correct, category) =>
+        set((state) => {
+          const newProgress = { ...state.userProgress }
+
+          // Track category stats
+          if (!newProgress.categoryStats) newProgress.categoryStats = {}
+          if (!newProgress.categoryStats[category]) {
+            newProgress.categoryStats[category] = { correct: 0, total: 0 }
+          }
+          newProgress.categoryStats[category].total += 1
+          if (correct) {
+            newProgress.categoryStats[category].correct += 1
+          }
+
+          // Track daily stats
+          const today = new Date().toISOString().split("T")[0]
+          if (!newProgress.dailyStats) newProgress.dailyStats = {}
+          if (!newProgress.dailyStats[today]) {
+            newProgress.dailyStats[today] = { correct: 0, total: 0, xp: 0 }
+          }
+          newProgress.dailyStats[today].total += 1
+          if (correct) {
+            newProgress.dailyStats[today].correct += 1
+          }
+
+          // Update regular tracking
+          newProgress.questionsAnswered += 1
+          if (correct) {
+            newProgress.correctAnswers += 1
+            newProgress.dailyStats[today].xp += 10
+            if (newProgress.incorrectAnswers) {
+              newProgress.incorrectAnswers = newProgress.incorrectAnswers.filter((id) => id !== questionId)
+            }
+          } else {
+            if (!newProgress.incorrectAnswers) newProgress.incorrectAnswers = []
+            if (!newProgress.incorrectAnswers.includes(questionId)) newProgress.incorrectAnswers.push(questionId)
+          }
+
+          if (!newProgress.completedQuestions.includes(questionId)) {
+            newProgress.completedQuestions.push(questionId)
+          }
+
+          newProgress.lastStudyDate = today
+
+          return { userProgress: newProgress }
+        }),
+
+      recordTestAttempt: (score, totalQuestions, timeSpent, state) =>
+        set((state_) => {
+          const newProgress = { ...state_.userProgress }
+          if (!newProgress.testAttempts) newProgress.testAttempts = []
+          newProgress.testAttempts.push({
+            date: new Date().toISOString(),
+            score,
+            totalQuestions,
+            timeSpent,
+            state,
+          })
+          if (!newProgress.studySessionCount) newProgress.studySessionCount = 0
+          newProgress.studySessionCount += 1
+          return { userProgress: newProgress }
+        }),
+
       toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
 
       setLanguage: (language) => set({ language }),
@@ -215,6 +300,8 @@ export const useStore = create<AppState>()(
         set({
           testMode: false,
           testStartTime: null,
+          testQuestions: [],
+          testAnswers: [],
         }),
 
       resetProgress: () => set({ userProgress: initialProgress }),
@@ -266,17 +353,31 @@ export const useStore = create<AppState>()(
       loadQuestions: async () => {
         console.log("🔥 Loading questions from JSON...")
         try {
-          const response = await fetch("/data/questions.json")
+          // Try multiple possible paths for questions.json
+          let response = await fetch("/data/questions.json")
+
+          // If not found, try alternate paths
+          if (!response.ok) {
+            console.warn("Primary path failed, trying alternate paths...")
+            response = await fetch("/public/data/questions.json")
+          }
+
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`)
           }
+
           // cast to Question[] so TypeScript knows the shape
           const questions = (await response.json()) as Question[]
           console.log("🚀 Successfully loaded", questions.length, "questions!")
+
+          if (questions.length === 0) {
+            throw new Error("Questions array is empty")
+          }
+
           set({ questions })
           return questions
         } catch (error) {
-          console.log("Failed to load questions:", error)
+          console.error("Failed to load questions from questions.json:", error)
           // Try loading state questions as fallback
           try {
             const stateResponse = await fetch("/data/state-questions.json")
@@ -286,13 +387,13 @@ export const useStore = create<AppState>()(
             const stateData = await stateResponse.json()
             // Flatten all state questions into a single array
             const allQuestions = (Object.values(stateData).flat() as Question[])
-            console.log("🚀 Successfully loaded", allQuestions.length, "state questions!")
+            console.warn("⚠️ Loaded", allQuestions.length, "state questions as fallback")
             set({ questions: allQuestions })
             return allQuestions
           } catch (stateError) {
-            console.log("Failed to load state questions:", stateError)
+            console.error("Failed to load state questions:", stateError)
             // Use fallback questions
-            console.log("💪 Using fallback questions")
+            console.warn("💪 Using built-in fallback questions")
             set({ questions: fallbackQuestions })
             return fallbackQuestions
           }

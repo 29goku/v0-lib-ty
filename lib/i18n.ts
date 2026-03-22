@@ -127,6 +127,9 @@ export interface Translation {
   translate: string
   translating: string
   translated: string
+
+  // Media
+  imageNotAvailable: string
 }
 
 export const translations: Record<Language, Translation> = {
@@ -257,6 +260,9 @@ export const translations: Record<Language, Translation> = {
     translate: "Translate",
     translating: "Translating...",
     translated: "Translated",
+
+    // Media
+    imageNotAvailable: "Image not available",
   },
 
   de: {
@@ -386,6 +392,9 @@ export const translations: Record<Language, Translation> = {
     translate: "Übersetzen",
     translating: "Übersetze...",
     translated: "Übersetzt",
+
+    // Media
+    imageNotAvailable: "Bild nicht verfügbar",
   },
 
   es: {
@@ -515,6 +524,9 @@ export const translations: Record<Language, Translation> = {
     translate: "Traducir",
     translating: "Traduciendo...",
     translated: "Traducido",
+
+    // Media
+    imageNotAvailable: "Imagen no disponible",
   },
 
   fr: {
@@ -644,6 +656,9 @@ export const translations: Record<Language, Translation> = {
     translate: "Traduire",
     translating: "Traduction...",
     translated: "Traduit",
+
+    // Media
+    imageNotAvailable: "Image non disponible",
   },
 
   it: {
@@ -773,6 +788,9 @@ export const translations: Record<Language, Translation> = {
     translate: "Traduci",
     translating: "Traducendo...",
     translated: "Tradotto",
+
+    // Media
+    imageNotAvailable: "Immagine non disponibile",
   },
 
   tr: {
@@ -902,6 +920,9 @@ export const translations: Record<Language, Translation> = {
     translate: "Çevir",
     translating: "Çevriliyor...",
     translated: "Çevrildi",
+
+    // Media
+    imageNotAvailable: "Görüntü mevcut değil",
   },
 
   ar: {
@@ -1031,6 +1052,9 @@ export const translations: Record<Language, Translation> = {
     translate: "ترجم",
     translating: "جاري الترجمة...",
     translated: "مترجم",
+
+    // Media
+    imageNotAvailable: "الصورة غير متاحة",
   },
 
   ru: {
@@ -1160,6 +1184,9 @@ export const translations: Record<Language, Translation> = {
     translate: "Перевести",
     translating: "Переводится...",
     translated: "Переведено",
+
+    // Media
+    imageNotAvailable: "Изображение недоступно",
   },
 
   zh: {
@@ -1289,6 +1316,9 @@ export const translations: Record<Language, Translation> = {
     translate: "翻译",
     translating: "翻译中...",
     translated: "已翻译",
+
+    // Media
+    imageNotAvailable: "图像不可用",
   },
 
   hi: {
@@ -1418,6 +1448,9 @@ export const translations: Record<Language, Translation> = {
     translate: "अनुवाद करें",
     translating: "अनुवाद हो रहा है...",
     translated: "अनुवादित",
+
+    // Media
+    imageNotAvailable: "छवि उपलब्ध नहीं",
   },
 }
 

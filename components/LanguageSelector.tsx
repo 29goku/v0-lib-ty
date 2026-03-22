@@ -3,11 +3,13 @@
 import { useState, useRef, useEffect } from "react"
 import { ChevronDown, Globe } from "lucide-react"
 import { useStore } from "@/lib/store"
+import { useTheme } from "@/lib/theme"
 import { languageNames, languageFlags, type Language } from "@/lib/i18n"
 
 export default function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false)
   const { language, setLanguage } = useStore()
+  const { isDark } = useTheme()
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -35,26 +37,40 @@ export default function LanguageSelector() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-400/30 rounded-lg text-white hover:from-purple-600/40 hover:to-pink-600/40 transition-all duration-200 backdrop-blur-sm"
+        className={`flex items-center gap-2 px-3 py-2 border rounded transition-all ${
+          isDark
+            ? "border-gray-700 bg-transparent hover:bg-gray-900/30 text-gray-300 hover:text-white"
+            : "border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900"
+        }`}
       >
         <Globe className="w-4 h-4" />
         <span className="text-lg">{languageFlags[language]}</span>
-        <span className="font-medium">{languageNames[language]}</span>
+        <span className="font-medium text-sm">{languageNames[language]}</span>
         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-48 bg-black/90 backdrop-blur-xl border border-purple-400/30 rounded-lg shadow-2xl shadow-purple-500/25 z-50 max-h-64 overflow-y-auto">
+        <div className={`absolute top-full left-0 mt-2 w-48 border rounded-lg z-50 max-h-64 overflow-y-auto ${
+          isDark
+            ? "bg-black/95 backdrop-blur-xl border-gray-700"
+            : "bg-white/95 backdrop-blur border-gray-200"
+        }`}>
           {Object.entries(languageNames).map(([code, name]) => (
             <button
               key={code}
               onClick={() => handleLanguageSelect(code as Language)}
-              className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-purple-600/20 transition-colors duration-200 ${
-                language === code ? "bg-purple-600/30 text-purple-300" : "text-white"
+              className={`w-full flex items-center gap-3 px-4 py-2 text-left transition-colors duration-200 ${
+                language === code
+                  ? isDark
+                    ? "bg-gray-900/50 text-white"
+                    : "bg-gray-100 text-gray-900"
+                  : isDark
+                  ? "hover:bg-gray-900/30 text-gray-300"
+                  : "hover:bg-gray-50 text-gray-700"
               }`}
             >
               <span className="text-lg">{languageFlags[code as Language]}</span>
-              <span className="font-medium">{name}</span>
+              <span className="font-medium text-sm">{name}</span>
             </button>
           ))}
         </div>

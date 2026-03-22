@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_navigate",
+      "Bash(grep -n \"states\\\\|States\\\\|STATES\" /Users/shosingh_1/v0-lib-ty/lib/*.ts)",
+      "mcp__playwright__browser_close",
+      "Bash(pkill:*)",
+      "Bash(npx tsc:*)",
+      "Bash(xargs ls:*)",
+      "Bash(grep -r \"selectedState\\\\|getStateByCode\\\\|GERMAN_STATES\\\\|state-questions\" /Users/shosingh_1/v0-lib-ty/app /Users/shosingh_1/v0-lib-ty/components --include=*.tsx --include=*.ts)",
+      "Bash(/Users/shosingh_1/v0-lib-ty/FILES_CREATED.txt:*)",
+      "Bash(/Users/shosingh_1/v0-lib-ty/MISSING_IMAGES_REPORT.md:*)",
+      "Bash(npm run:*)",
+      "Bash(grep -r export.*Image.*from.*lucide node_modules/lucide-react)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(xargs kill:*)",
+      "Bash(cat:*)",
+      "Bash(curl -s http://localhost:3002)",
+      "Bash(wc -l /Users/shosingh_1/v0-lib-ty/app/page.tsx*)",
+      "Bash(git checkout:*)",
+      "Bash(curl -s http://localhost:3001)",
+      "Bash(ls:*)"
+    ]
+  }
+}

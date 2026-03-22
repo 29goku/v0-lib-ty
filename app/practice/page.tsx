@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react"
 import { useStore } from "@/lib/store"
+import { useTheme, getTheme } from "@/lib/theme"
 import SwipeCard from "@/components/SwipeCard"
 import ProgressBar from "@/components/ProgressBar"
 import Badge from "@/components/Badge"
@@ -9,11 +10,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { ArrowLeft, RotateCcw, Filter, MapPin, AlertTriangle } from "lucide-react"
+import { ArrowLeft, RotateCcw, Filter, MapPin, AlertTriangle, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { getTranslation } from "@/lib/i18n"
 import LanguageSelector from "@/components/LanguageSelector"
+import ThemeToggle from "@/components/ThemeToggle"
 import { getCategoryEmoji } from "@/lib/category-emojis"
 import { MultiSelect } from "@/components/MultiSelect"
 
@@ -46,6 +48,7 @@ export default function PracticePage() {
     setSelectedCategory,
     userProgress,
     answerQuestion,
+    answerQuestionWithCategory,
     flagQuestion,
     unflagQuestion,
     addXP,
@@ -53,8 +56,10 @@ export default function PracticePage() {
     addBadge,
     language,
     loadQuestions,
-    resetProgress: resetUserProgress,
   } = useStore()
+
+  const { isDark } = useTheme()
+  const theme = getTheme(isDark)
 
   const [showAnswer, setShowAnswer] = useState(false)
   const [lastAnswer, setLastAnswer] = useState<{
@@ -72,8 +77,7 @@ export default function PracticePage() {
   const [selectedFlagFilters, setSelectedFlagFilters] = useState<string[]>([])
   const [selectedStates, setSelectedStates] = useState<string[]>([])
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
-  // Store all loaded state questions by state id
-  const [allStateQuestions, setAllStateQuestions] = useState<Record<string, any[]>>({})
+  const [showFilters, setShowFilters] = useState(false)
   // Reset confirmation dialog
   const [showResetDialog, setShowResetDialog] = useState(false)
   // Store current question to prevent UI update during transition
@@ -193,20 +197,12 @@ export default function PracticePage() {
     }
   }, [currentIndex])
 
-  // Update display question when current question changes (but not during feedback)
-  useEffect(() => {
-    if (!showAnswer && currentQuestion) {
-      setDisplayQuestion(currentQuestion)
-    }
-  }, [currentQuestion, showAnswer])
-
   const handleFlag = () => {
-    const questionToFlag = displayQuestion || currentQuestion
-    if (!questionToFlag) return
-    if (userProgress.flaggedQuestions.includes(questionToFlag.id)) {
-      unflagQuestion(questionToFlag.id)
+    if (!currentQuestion) return
+    if (userProgress.flaggedQuestions.includes(currentQuestion.id)) {
+      unflagQuestion(currentQuestion.id)
     } else {
-      flagQuestion(questionToFlag.id)
+      flagQuestion(currentQuestion.id)
     }
   }
 
@@ -267,10 +263,9 @@ export default function PracticePage() {
   }
 
   const handleAnswerSelect = (selectedAnswerIndex: number) => {
-    if (showAnswer || !displayQuestion) return
+    if (showAnswer || !currentQuestion) return
 
-    const isCorrect = selectedAnswerIndex === displayQuestion.answerIndex
-    const questionId = displayQuestion.id
+    const isCorrect = selectedAnswerIndex === currentQuestion.answerIndex
 
     // Check if this question will be removed from current filter after answering
     const willBeRemovedFromFilter = (() => {
@@ -285,7 +280,8 @@ export default function PracticePage() {
       return false
     })()
 
-    answerQuestion(questionId, selectedAnswerIndex, isCorrect)
+    // Use new function that tracks category stats
+    answerQuestionWithCategory(questionId, selectedAnswerIndex, isCorrect, displayQuestion.category)
 
     if (isCorrect) {
       addXP(10)
@@ -326,29 +322,10 @@ export default function PracticePage() {
   }
 
   const resetProgress = () => {
-    setShowResetDialog(true)
-  }
-
-  const confirmReset = () => {
-    // Reset user progress data (XP, streak, badges, etc.)
-    resetUserProgress()
-    // Reset UI state
     setCurrentIndex(0)
     setShowAnswer(false)
     setLastAnswer(null)
     setShowTranslation(false)
-    // Clear all filters
-    setSelectedFlagFilters([])
-    setSelectedCategories([])
-    setSelectedStates([])
-    setSelectedCategory(null)
-    setSelectedState(null)
-    // Close dialog
-    setShowResetDialog(false)
-    // Force a page reload to ensure all state is cleared
-    setTimeout(() => {
-      window.location.reload()
-    }, 100)
   }
 
   const handleFlagFilterSelection = (filter: string) => {
@@ -359,11 +336,6 @@ export default function PracticePage() {
         return [...prev, filter]
       }
     })
-    setCurrentIndex(0)
-  }
-
-  const clearStatusFilters = () => {
-    setSelectedFlagFilters([])
     setCurrentIndex(0)
   }
 
@@ -380,19 +352,12 @@ export default function PracticePage() {
 
   if (loading) {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-pink-900 text-white flex items-center justify-center relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
-          </div>
-
-          <Card className="w-full max-w-md border-2 border-cyan-400/50 bg-black/80 backdrop-blur-xl relative overflow-hidden shadow-2xl shadow-cyan-500/25">
-            <CardContent className="p-8 text-center relative z-10">
-              <div className="text-8xl mb-6 animate-bounce">🚀</div>
-              <div className="animate-spin rounded-full h-16 w-16 bg-gradient-to-r from-cyan-400 border-4 border-cyan-400 border-t-transparent mx-auto mb-8"></div>
-              <p className="text-cyan-300 text-2xl font-black animate-pulse">{t.loadingQuestions}</p>
-              <p className="text-pink-400 text-lg font-bold mt-4 animate-bounce">{t.getReady}</p>
+        <div className={`min-h-screen flex items-center justify-center ${theme.bg} ${theme.text}`}>
+          <Card className={`w-full max-w-md ${isDark ? 'bg-white/5 backdrop-blur-sm' : 'bg-gray-50'}`}>
+            <CardContent className="p-8 text-center">
+              <div className={`animate-spin rounded-full h-16 w-16 border-2 mx-auto mb-8 ${isDark ? 'border-white border-t-transparent' : 'border-gray-700 border-t-transparent'}`}></div>
+              <p className={`text-xl font-semibold ${theme.text}`}>{t.loadingQuestions}</p>
+              <p className={`text-base mt-4 ${theme.textSecondary}`}>{t.getReady}</p>
             </CardContent>
           </Card>
         </div>
@@ -421,57 +386,47 @@ export default function PracticePage() {
     }
 
     const getEmptyStateEmoji = () => {
-      if (selectedFlagFilters.includes("flagged")) return "🚩"
-      if (selectedFlagFilters.includes("incorrect")) return "❌"
-      if (selectedFlagFilters.includes("correct")) return "✅"
-      return "📝"
+      return ""
     }
 
     return (
-        <div className="min-h-screen bg-black text-white overflow-hidden relative">
-          <div className="fixed inset-0 z-0">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: "4s" }}></div>
-            <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s", animationDuration: "6s" }}></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "4s", animationDuration: "8s" }}></div>
-          </div>
-
-          <div className="relative z-10 container mx-auto px-4 py-8">
+        <div className={`min-h-screen ${theme.bg} ${theme.text}`}>
+          <div className="container mx-auto px-4 py-8">
             <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
               <Link href="/">
-                <Button className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white border-2 border-red-400/50 px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all transform hover:scale-110 backdrop-blur-sm font-black text-sm md:text-base touch-manipulation">
+                <Button className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-4 py-2 md:px-6 md:py-3 rounded transition-all font-semibold text-sm md:text-base">
                   <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
-                  {t.back.toUpperCase()}
+                  {t.back}
                 </Button>
               </Link>
 
               <div className="text-center">
-                <h1 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">
-                <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
-                  {t.practiceMode.toUpperCase()}
-                </span>
+                <h1 className={`text-2xl md:text-4xl font-semibold mb-1 md:mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {t.practiceMode}
                 </h1>
-                <div className="text-sm md:text-lg text-pink-300 font-bold">
+                <div className={`text-sm md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                   {selectedState
-                      ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
-                      : `${t.practiceSubtitle} 🚀`}
+                      ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions`
+                      : t.practiceSubtitle}
                 </div>
               </div>
 
               <div className="flex items-center gap-2 md:gap-4">
+                <ThemeToggle />
                 <LanguageSelector />
                 <Button
                     onClick={resetProgress}
-                    className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-0 text-sm md:text-base touch-manipulation"
+                    className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white px-4 py-2 md:px-6 md:py-3 rounded transition-all font-semibold text-sm md:text-base"
                 >
                   <RotateCcw className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
-                  {t.reset.toUpperCase()}
+                  {t.reset}
                 </Button>
               </div>
             </div>
 
             {/* MultiSelect Dropdown Filters */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-              <Card className="border-2 border-pink-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-pink-500/25">
+              <Card className={`${isDark ? 'bg-white/5 backdrop-blur-sm' : 'bg-gray-50'}`}>
                 <CardContent className="p-4 md:p-6">
                   <MultiSelect
                       options={germanStates.map(state => ({
@@ -487,13 +442,13 @@ export default function PracticePage() {
                       }}
                       placeholder="Select German states..."
                       label={t.selectState}
-                      icon={<MapPin className="w-5 h-5 text-pink-400" />}
+                      icon={<MapPin className={`w-5 h-5 ${isDark ? 'text-gray-300' : 'text-gray-600'}`} />}
                       className="w-full"
                   />
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
+              <Card className={`${isDark ? 'bg-white/5 backdrop-blur-sm' : 'bg-gray-50'}`}>
                 <CardContent className="p-4 md:p-6">
                   <MultiSelect
                       options={categories.map(category => ({
@@ -509,7 +464,7 @@ export default function PracticePage() {
                       }}
                       placeholder="Select categories..."
                       label={selectedStates.length > 0 ? "Categories" : t.filterByCategory}
-                      icon={<Filter className="w-5 h-5 text-purple-400" />}
+                      icon={<Filter className={`w-5 h-5 ${isDark ? 'text-gray-300' : 'text-gray-600'}`} />}
                       className="w-full"
                   />
                 </CardContent>
@@ -517,18 +472,17 @@ export default function PracticePage() {
             </div>
 
             <div className="flex justify-center">
-              <Card className="w-full max-w-2xl border-2 border-gray-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-gray-500/25">
+              <Card className={`w-full max-w-2xl ${isDark ? 'border border-gray-700 bg-white/5 backdrop-blur-sm' : 'border border-gray-200 bg-gray-50'}`}>
                 <CardContent className="p-8 text-center">
-                  <div className="text-8xl mb-6 animate-bounce">{getEmptyStateEmoji()}</div>
-                  <h2 className="text-3xl font-black text-white mb-4">No Questions Found</h2>
-                  <p className="text-xl text-gray-300 mb-6">{getEmptyStateMessage()}</p>
+                  <h2 className={`text-2xl font-semibold mb-4 ${theme.text}`}>No Questions Found</h2>
+                  <p className={`text-lg mb-6 ${theme.textSecondary}`}>{getEmptyStateMessage()}</p>
                   <div className="flex flex-wrap gap-3 justify-center">
                     {(selectedFlagFilters.length > 0 || selectedCategories.length > 0 || selectedStates.length > 0) && (
                         <Button
                             onClick={clearAllFilters}
-                            className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                            className={`border font-semibold px-6 py-3 rounded-xl transition-all ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700'}`}
                         >
-                          🌟 Show All Questions
+                          Show All Questions
                         </Button>
                     )}
                   </div>
@@ -541,33 +495,26 @@ export default function PracticePage() {
   }
 
   return (
-      <div className="min-h-screen bg-black text-white overflow-hidden relative">
+      <div className={`min-h-screen overflow-hidden relative ${theme.bg} ${theme.text}`}>
         <div className="fixed inset-0 z-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: "4s" }}></div>
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s", animationDuration: "6s" }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "4s", animationDuration: "8s" }}></div>
-          <div className="absolute top-20 left-20 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
-          <div className="absolute top-40 right-32 w-6 h-6 bg-pink-500 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-32 left-32 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-20 right-20 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
             <Link href="/">
-              <Button className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white border-2 border-red-400/50 px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all transform hover:scale-110 backdrop-blur-sm font-black text-sm md:text-base touch-manipulation">
+              <Button className={`border transition-all font-semibold text-sm md:text-base px-4 py-2 md:px-6 md:py-3 rounded-xl ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700'}` }>
                 <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                 {t.back.toUpperCase()}
               </Button>
             </Link>
 
             <div className="text-center">
-              <h1 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">
-              <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
+              <h1 className={`text-2xl md:text-4xl font-bold mb-1 md:mb-2 ${theme.text}`}>
+              <span>
                 {t.practiceMode.toUpperCase()}
               </span>
               </h1>
-              <div className="text-sm md:text-lg text-pink-300 font-bold">
+              <div className={`text-sm md:text-lg font-semibold ${theme.textSecondary}`}>
                 {selectedState
                     ? `${germanStates.find((s) => s.id === selectedState)?.name || selectedState} Questions 🏛️`
                     : `${t.practiceSubtitle} 🚀`}
@@ -575,10 +522,11 @@ export default function PracticePage() {
             </div>
 
             <div className="flex items-center gap-2 md:gap-4">
+              <ThemeToggle />
               <LanguageSelector />
               <Button
                   onClick={resetProgress}
-                  className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-0 text-sm md:text-base touch-manipulation"
+                  className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-xl transition-all text-sm md:text-base"
               >
                 <RotateCcw className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                 {t.reset.toUpperCase()}
@@ -587,21 +535,21 @@ export default function PracticePage() {
           </div>
 
           <div className="flex justify-center mb-6">
-            <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-cyan-500/25">
+            <Card className="bg-white/5">
               <CardContent className="p-4">
                 <div className="flex items-center justify-center space-x-4">
-                  <span className="text-cyan-300 font-bold">Manual Mode</span>
+                  <span className={`font-semibold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Manual Mode</span>
                   <Switch
                       checked={isAutoMode}
                       onCheckedChange={setIsAutoMode}
                       className="data-[state=checked]:bg-green-500"
                   />
-                  <span className="text-green-300 font-bold">Auto Mode</span>
+                  <span className={`font-bold ${isDark ? 'text-green-300' : 'text-green-600'}`}>Auto Mode</span>
                   {isAutoMode && (
                       <div className="flex items-center space-x-2 ml-4">
-                        <span className="text-yellow-300 text-sm">Delay:</span>
+                        <span className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Delay:</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-yellow-300 text-xs">2s</span>
+                          <span className={`text-xs ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>2s</span>
                           <input
                               type="range"
                               min="2000"
@@ -614,8 +562,8 @@ export default function PracticePage() {
                                 background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${((autoDelay - 2000) / 3000) * 100}%, #374151 ${((autoDelay - 2000) / 3000) * 100}%, #374151 100%)`,
                               }}
                           />
-                          <span className="text-yellow-300 text-xs">5s</span>
-                          <span className="text-yellow-300 text-sm ml-2">{autoDelay / 1000}s</span>
+                          <span className={`text-xs ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>5s</span>
+                          <span className={`text-sm ml-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{autoDelay / 1000}s</span>
                         </div>
                       </div>
                   )}
@@ -624,122 +572,139 @@ export default function PracticePage() {
             </Card>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
-            <Card className="border-2 border-cyan-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40">
-              <CardContent className="p-4 md:p-6">
+          {/* Stats Cards - Hidden on mobile, shown on md+ screens */}
+          <div className="hidden md:grid md:grid-cols-4 gap-4 mb-8">
+            <Card className={`border transition-all duration-300 group hover:bg-white/10 ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
+              <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-cyan-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.progress}</p>
-                    <p className="text-xl md:text-3xl font-black text-white">
+                    <p className={`text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.progress}</p>
+                    <p className={`text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {currentIndex + 1}/{filteredQuestions.length}
                     </p>
                   </div>
-                  <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-pulse">🎯</div>
+                  <div className="text-4xl group-hover:scale-125 transition-transform animate-pulse">🎯</div>
                 </div>
-                <div className="mt-2 md:mt-4">
+                <div className="mt-4">
                   <ProgressBar current={currentIndex + 1} total={filteredQuestions.length} label="" showNumbers={false} />
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-yellow-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-yellow-500/25 hover:shadow-xl hover:shadow-yellow-500/40">
-              <CardContent className="p-4 md:p-6">
+            <Card className={`border transition-all duration-300 group hover:bg-white/10 ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
+              <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-yellow-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.xp}</p>
-                    <p className="text-xl md:text-3xl font-black text-yellow-400">{userProgress.xp}</p>
+                    <p className={`text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.xp}</p>
+                    <p className={`text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.xp}</p>
                   </div>
-                  <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-bounce">⚡</div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40">
-              <CardContent className="p-4 md:p-6">
+            <Card className={`border transition-all duration-300 group hover:bg-white/10 ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
+              <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-orange-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.streak}</p>
-                    <p className="text-xl md:text-3xl font-black text-orange-400">{userProgress.streak}</p>
+                    <p className={`text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.streak}</p>
+                    <p className={`text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.streak}</p>
                   </div>
-                  <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-pulse">🔥</div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-green-400/50 bg-black/60 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 group shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40">
-              <CardContent className="p-4 md:p-6">
+            <Card className={`border transition-all duration-300 group hover:bg-white/10 ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
+              <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-green-300 text-xs md:text-sm font-bold uppercase tracking-wider">{t.accuracy}</p>
-                    <p className="text-xl md:text-3xl font-black text-green-400">
+                    <p className={`text-sm font-bold uppercase tracking-wider ${isDark ? 'text-green-300' : 'text-green-700'}`}>{t.accuracy}</p>
+                    <p className={`text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {userProgress.questionsAnswered > 0
                           ? Math.round((userProgress.correctAnswers / userProgress.questionsAnswered) * 100)
                           : 0}
                       %
                     </p>
                   </div>
-                  <div className="text-2xl md:text-4xl group-hover:scale-125 transition-transform animate-spin" style={{ animationDuration: "3s" }}>
-                    📊
-                  </div>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* MultiSelect Dropdown Filters */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-            <Card className="border-2 border-pink-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-pink-500/25">
-              <CardContent className="p-4 md:p-6">
-                <MultiSelect
-                    options={germanStates.map(state => ({
-                      id: state.id,
-                      label: state.name,
-                      emoji: state.emoji
-                    }))}
-                    selectedValues={selectedStates}
-                    onSelectionChange={(values) => {
-                      setSelectedStates(values)
-                      setSelectedState(values.length === 1 ? values[0] : null)
-                      setCurrentIndex(0)
-                    }}
-                    placeholder="Select German states..."
-                    label={t.selectState}
-                    icon={<MapPin className="w-5 h-5 text-pink-400" />}
-                    className="w-full"
-                />
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-purple-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-purple-500/25">
-              <CardContent className="p-4 md:p-6">
-                <MultiSelect
-                    options={categories.map(category => ({
-                      id: category,
-                      label: category,
-                      emoji: getCategoryEmoji(category)
-                    }))}
-                    selectedValues={selectedCategories}
-                    onSelectionChange={(values) => {
-                      setSelectedCategories(values)
-                      setSelectedCategory(values.length === 1 ? values[0] : null)
-                      setCurrentIndex(0)
-                    }}
-                    placeholder="Select categories..."
-                    label={selectedStates.length > 0 ? "Categories" : t.filterByCategory}
-                    icon={<Filter className="w-5 h-5 text-purple-400" />}
-                    className="w-full"
-                />
-              </CardContent>
-            </Card>
+          {/* Filters Toggle Button */}
+          <div className="mb-4">
+            <Button
+              onClick={() => setShowFilters(!showFilters)}
+              className={`w-full sm:w-auto border bg-transparent font-semibold px-4 py-2 transition-colors flex items-center gap-2 ${isDark ? 'border-gray-700 hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
+            >
+              <Filter className="w-4 h-4" />
+              {showFilters ? "Hide Filters" : "Show Filters"}
+              <ChevronDown className={`w-4 h-4 transition-transform ${showFilters ? "rotate-180" : ""}`} />
+            </Button>
+            {(selectedStates.length > 0 || selectedCategories.length > 0) && (
+              <p className={`text-sm mt-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                {selectedStates.length > 0 && `${selectedStates.length} state${selectedStates.length > 1 ? 's' : ''}`}
+                {selectedStates.length > 0 && selectedCategories.length > 0 && " • "}
+                {selectedCategories.length > 0 && `${selectedCategories.length} categor${selectedCategories.length > 1 ? 'ies' : 'y'}`}
+              </p>
+            )}
           </div>
+
+          {/* MultiSelect Dropdown Filters */}
+          {showFilters && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+              <Card className="bg-white/5">
+                <CardContent className="p-4 md:p-6">
+                  <MultiSelect
+                      options={germanStates.map(state => ({
+                        id: state.id,
+                        label: state.name,
+                        emoji: state.emoji
+                      }))}
+                      selectedValues={selectedStates}
+                      onSelectionChange={(values) => {
+                        setSelectedStates(values)
+                        setSelectedState(values.length === 1 ? values[0] : null)
+                        setCurrentIndex(0)
+                      }}
+                      placeholder="Select German states..."
+                      label={t.selectState}
+                      icon={<MapPin className={`w-5 h-5 ${isDark ? 'text-gray-300' : 'text-gray-600'}`} />}
+                      className="w-full"
+                  />
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/5">
+                <CardContent className="p-4 md:p-6">
+                  <MultiSelect
+                      options={categories.map(category => ({
+                        id: category,
+                        label: category,
+                        emoji: getCategoryEmoji(category)
+                      }))}
+                      selectedValues={selectedCategories}
+                      onSelectionChange={(values) => {
+                        setSelectedCategories(values)
+                        setSelectedCategory(values.length === 1 ? values[0] : null)
+                        setCurrentIndex(0)
+                      }}
+                      placeholder="Select categories..."
+                      label={selectedStates.length > 0 ? "Categories" : t.filterByCategory}
+                      icon={<Filter className={`w-5 h-5 ${isDark ? 'text-gray-300' : 'text-gray-600'}`} />}
+                      className="w-full"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          )}
 
           {/* Flag Filter Section - keeping as buttons */}
           <div className="flex justify-center mb-6 md:mb-8">
-            <Card className="border-2 border-orange-400/50 bg-black/60 backdrop-blur-xl shadow-lg shadow-orange-500/25 w-full max-w-5xl">
+            <Card className={`border w-full max-w-5xl ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-200 bg-gray-50'}`}>
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                  <div className="w-5 h-5 md:w-6 md:h-6 text-orange-400 animate-pulse">🚩</div>
-                  <h3 className="text-lg md:text-xl font-black text-orange-300 uppercase tracking-wider">
+                  <div className={`w-5 h-5 md:w-6 md:h-6 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}></div>
+                  <h3 className={`text-lg md:text-xl font-semibold uppercase tracking-wider ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     Filter by Status {selectedFlagFilters.length > 0 && `(${selectedFlagFilters.length} selected)`}
                   </h3>
                 </div>
@@ -747,7 +712,7 @@ export default function PracticePage() {
                   {selectedFlagFilters.length > 0 && (
                       <button
                           onClick={clearStatusFilters}
-                          className="px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg shadow-gray-500/50 border-2 border-gray-400"
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-semibold transition-all text-sm md:text-base bg-transparent ${isDark ? 'text-gray-300 hover:bg-gray-900/20' : 'text-gray-700 hover:bg-gray-100'}`}
                       >
                         🌟 Clear Status Filters ({selectedFlagFilters.length})
                       </button>
@@ -755,39 +720,39 @@ export default function PracticePage() {
                   {flaggedCount > 0 && (
                       <button
                           onClick={() => handleFlagFilterSelection("flagged")}
-                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded font-semibold transition-all text-sm md:text-base border ${
                               selectedFlagFilters.includes("flagged")
-                                  ? "bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
-                                  : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
+                                  ? isDark ? "bg-red-500/20 border-red-500/50 text-red-300" : "bg-red-100 border-red-400 text-red-800"
+                                  : isDark ? "border-gray-700 text-gray-300 hover:bg-gray-900/20" : "border-gray-300 text-gray-700 hover:bg-gray-100"
                           }`}
                       >
-                        🚩 Flagged Questions ({flaggedCount})
+                        Flagged ({flaggedCount})
                         {selectedFlagFilters.includes("flagged") && <span className="ml-1">✓</span>}
                       </button>
                   )}
                   {incorrectCount > 0 && (
                       <button
                           onClick={() => handleFlagFilterSelection("incorrect")}
-                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded font-semibold transition-all text-sm md:text-base border ${
                               selectedFlagFilters.includes("incorrect")
-                                  ? "bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-lg shadow-red-500/50 border-2 border-red-400"
-                                  : "bg-black/50 text-red-300 hover:bg-black/80 hover:text-white border-2 border-red-400/30"
+                                  ? isDark ? "bg-red-500/20 border-red-500/50 text-red-300" : "bg-red-100 border-red-400 text-red-800"
+                                  : isDark ? "border-gray-700 text-gray-300 hover:bg-gray-900/20" : "border-gray-300 text-gray-700 hover:bg-gray-100"
                           }`}
                       >
-                        ❌ Incorrect Answers ({incorrectCount})
+                        Incorrect ({incorrectCount})
                         {selectedFlagFilters.includes("incorrect") && <span className="ml-1">✓</span>}
                       </button>
                   )}
                   {correctCount > 0 && (
                       <button
                           onClick={() => handleFlagFilterSelection("correct")}
-                          className={`px-3 py-2 md:px-4 md:py-2 rounded-lg font-bold transition-all transform hover:scale-105 text-sm md:text-base touch-manipulation ${
+                          className={`px-3 py-2 md:px-4 md:py-2 rounded font-semibold transition-all text-sm md:text-base border ${
                               selectedFlagFilters.includes("correct")
-                                  ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/50 border-2 border-green-400"
-                                  : "bg-black/50 text-green-300 hover:bg-black/80 hover:text-white border-2 border-green-400/30"
+                                  ? isDark ? "bg-green-500/20 border-green-500/50 text-green-300" : "bg-green-100 border-green-400 text-green-800"
+                                  : isDark ? "border-gray-700 text-gray-300 hover:bg-gray-900/20" : "border-gray-300 text-gray-700 hover:bg-gray-100"
                           }`}
                       >
-                        ✅ Correct Answers ({correctCount})
+                        Correct ({correctCount})
                         {selectedFlagFilters.includes("correct") && <span className="ml-1">✓</span>}
                       </button>
                   )}
@@ -802,13 +767,12 @@ export default function PracticePage() {
                 {/* Left: Swipe Card */}
                 <div className="w-full">
                   <SwipeCard
-                      key={displayQuestion?.id || currentQuestion?.id}
-                      question={displayQuestion || currentQuestion}
+                      question={currentQuestion}
                       onSwipe={handleSwipe}
                       onAnswerSelect={handleAnswerSelect}
                       showAnswer={showAnswer}
                       onFlag={handleFlag}
-                      isFlagged={displayQuestion ? userProgress.flaggedQuestions.includes(displayQuestion.id) : false}
+                      isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
                       isTranslated={showTranslation}
                       onTranslate={() => setShowTranslation(!showTranslation)}
                   />
@@ -817,7 +781,7 @@ export default function PracticePage() {
                       <div className="flex justify-start mt-4">
                         <Button
                             onClick={nextQuestion}
-                            className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-black px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                            className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 font-semibold px-6 py-3 rounded-xl transition-all"
                         >
                           Next Question →
                         </Button>
@@ -832,21 +796,20 @@ export default function PracticePage() {
                           className="mt-6"
                       >
                         <Card
-                            className={`w-full border-4 shadow-2xl backdrop-blur-xl relative overflow-hidden ${
+                            className={`w-full relative overflow-hidden ${
                                 lastAnswer.correct
-                                    ? "border-green-400 bg-gradient-to-br from-green-900/50 to-emerald-900/50 shadow-green-500/50"
-                                    : "border-red-400 bg-gradient-to-br from-red-900/50 to-pink-900/50 shadow-red-500/50"
+                                    ? "bg-white/5"
+                                    : "bg-white/5"
                             }`}
                         >
-                          <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
                           <CardContent className="p-8 text-center relative z-10">
-                            <div className="text-8xl mb-4 animate-bounce">{lastAnswer.correct ? "🎉" : "💪"}</div>
+                            <div className="text-8xl mb-4">{lastAnswer.correct ? "✓" : "✗"}</div>
                             <div
-                                className={`text-4xl font-black mb-4 animate-pulse ${lastAnswer.correct ? "text-green-400" : "text-red-400"}`}
+                                className={`text-4xl font-semibold mb-4 ${lastAnswer.correct ? "text-green-500" : "text-red-500"}`}
                             >
                               {lastAnswer.correct ? t.crushingIt : t.keepGrinding}
                             </div>
-                            <p className="text-2xl text-white font-bold">{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
+                            <p className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{lastAnswer.correct ? t.xpEarned : t.learnFromMistakes}</p>
                           </CardContent>
                         </Card>
                       </motion.div>
@@ -855,9 +818,9 @@ export default function PracticePage() {
 
                 {/* Right: Question Overview */}
                 <div className="w-full">
-                  <Card className="h-full border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 backdrop-blur-sm">
+                  <Card className={`h-full ${isDark ? 'bg-white/5' : 'bg-gray-100'}`}>
                     <CardContent>
-                      <div ref={overviewRef} className="hidden lg:grid grid-cols-[repeat(15,minmax(0,1fr))] gap-0.5 mb-0">
+                      <div ref={overviewRef} className="hidden lg:grid grid-cols-[repeat(15,minmax(0,1fr))] gap-1 mb-0">
                         {filteredQuestions.map((q, index) => {
                           const qId = q?.id
                           const isAnswered = qId ? userProgress.completedQuestions.includes(qId) : false
@@ -873,19 +836,16 @@ export default function PracticePage() {
                                   aria-current={isCurrent ? "true" : undefined}
                                   aria-label={`Question ${originalQuestionNumber}${isFlagged ? ", flagged" : ""}${isAnswered ? ", answered" : ""}${isIncorrect ? ", incorrect" : ""}`}
                                   onClick={() => handleQuestionJump(index)}
-                                  className={`relative aspect-square rounded-lg font-bold text-sm transition-all transform hover:scale-110 border-4 ${
+                                  className={`relative aspect-square rounded-lg font-semibold text-sm transition-all border ${
                                       isCurrent
-                                          ? "bg-cyan-400 text-black border-cyan-300 shadow-lg shadow-cyan-500/50"
+                                          ? "bg-white text-black border-white"
                                           : isIncorrect
-                                              ? "bg-red-500 text-white border-red-400 hover:bg-red-600"
+                                              ? "bg-red-500 text-white border-red-400 hover:opacity-80"
                                               : isAnswered
-                                                  ? "bg-green-500 text-white border-green-400 hover:bg-green-600"
-                                                  : "bg-gray-600 text-gray-300 border-gray-500 hover:bg-gray-500"
+                                                  ? "bg-green-500 text-white border-green-400 hover:opacity-80"
+                                                  : "border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20"
                                   }`}
                               >
-                                {selectedState && (
-                                    <span className="absolute -top-1 -left-1 text-xs">{stateEmoji}</span>
-                                )}
                                 {originalQuestionNumber}
                                 {isFlagged && (
                                     <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
@@ -896,11 +856,11 @@ export default function PracticePage() {
                       </div>
 
                       {/* Mobile: compact pagination-style navigation */}
-                      <div className="flex items-center justify-center space-x-0.5 mb-4 lg:hidden">
+                      <div className="flex items-center justify-center gap-1 mb-4 lg:hidden">
                         <button
                             aria-label="Previous"
                             onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
-                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border-2 border-gray-600"
+                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors"
                         >
                           ‹
                         </button>
@@ -934,7 +894,7 @@ export default function PracticePage() {
                                       key={`dots-${i}`}
                                       onClick={() => handleQuestionJump(targetIdx)}
                                       aria-label={`Jump near ${target}`}
-                                      className="px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black border-2 border-gray-200"
+                                      className="px-2 h-10 flex items-center justify-center rounded-lg bg-white text-black border border-gray-300 hover:opacity-80 transition-all"
                                   >
                                     …
                                   </button>
@@ -959,19 +919,16 @@ export default function PracticePage() {
                                     onClick={() => handleQuestionJump(idx)}
                                     aria-current={isCurrent ? 'true' : undefined}
                                     aria-label={`Go to question ${originalQuestionNumber}`}
-                                    className={`relative w-10 h-10 rounded-lg font-bold flex items-center justify-center transition-all border-1 ${
+                                    className={`relative w-10 h-10 rounded-lg font-semibold flex items-center justify-center transition-all border ${
                                         isCurrent
-                                            ? 'bg-black text-white border-black shadow-lg'
+                                            ? 'bg-white text-black border-white'
                                             : isIncorrect
-                                                ? 'bg-red-500 text-white border-red-400 shadow-sm'
+                                                ? 'bg-red-500 text-white border-red-400'
                                                 : isAnswered
-                                                    ? 'bg-green-500 text-white border-green-400 shadow-sm'
-                                                    : 'bg-white text-black border-gray-200 shadow-sm hover:scale-105'
+                                                    ? 'bg-green-500 text-white border-green-400'
+                                                    : 'border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20'
                                     }`}
                                 >
-                                  {selectedState && (
-                                      <span className="absolute -top-2 text-xs leading-none pointer-events-none">{stateEmoji}</span>
-                                  )}
                                   <span className="text-sm z-10">{originalQuestionNumber}</span>
                                   {isFlagged && (
                                       <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-500 rounded-full border border-white"></span>
@@ -984,7 +941,7 @@ export default function PracticePage() {
                         <button
                             aria-label="Next"
                             onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
-                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border-2 border-gray-600"
+                            className="w-10 h-10 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors"
                         >
                           ›
                         </button>
@@ -998,9 +955,9 @@ export default function PracticePage() {
 
           {userProgress.badges.length > 0 && (
               <div className="flex justify-center mb-8">
-                <Card className="w-full max-w-md border-2 border-yellow-400/50 bg-gradient-to-br from-yellow-900/30 to-orange-900/30 backdrop-blur-xl shadow-lg shadow-yellow-500/25">
+                <Card className="w-full max-w-md border border-gray-700 bg-white/5">
                   <CardHeader>
-                    <CardTitle className="text-center text-yellow-400 font-black text-2xl animate-pulse">
+                    <CardTitle className="text-center text-white font-semibold text-2xl">
                       {t.achievements}
                     </CardTitle>
                   </CardHeader>
@@ -1009,7 +966,7 @@ export default function PracticePage() {
                       {userProgress.badges.slice(-3).map((badge, index) => (
                           <div
                               key={badge}
-                              className="hover:scale-125 transition-transform cursor-pointer animate-bounce"
+                              className="transition-opacity cursor-pointer hover:opacity-80"
                               style={{ animationDelay: `${index * 0.2}s` }}
                           >
                             <Badge type={badge} earned size="sm" />
@@ -1022,66 +979,29 @@ export default function PracticePage() {
           )}
 
           <div className="text-center mt-12 space-y-6">
-            <div className="text-3xl font-black animate-pulse">
-              <span className="bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
+            <div className="text-3xl font-semibold">
+              <span className="text-white">
                 {t.howToPractice.toUpperCase()}
               </span>
             </div>
             <div className="space-y-3 text-lg max-w-2xl mx-auto">
-              <p className="text-cyan-300 font-bold">💡 {t.swipeInstructions}</p>
+              <p className="text-gray-300 font-semibold">{t.swipeInstructions}</p>
               <div className="flex justify-center space-x-8 text-sm md:text-base">
-                <div className="text-green-400 font-bold">← {t.swipeLeft}</div>
-                <div className="text-red-400 font-bold">{t.swipeRight} →</div>
+                <div className="text-green-500 font-semibold">← {t.swipeLeft}</div>
+                <div className="text-red-500 font-semibold">{t.swipeRight} →</div>
               </div>
-              <p className="text-green-300 font-bold">⌨️ {t.keyboardShortcuts}</p>
-              <p className="text-yellow-300 font-bold">🔄 Toggle between Auto and Manual mode above</p>
-              <p className="text-pink-300 font-bold">🏛️ Select a state to practice state-specific questions</p>
+              <p className="text-gray-300 font-semibold">{t.keyboardShortcuts}</p>
+              <p className="text-gray-300 font-semibold">Toggle between Auto and Manual mode above</p>
+              <p className="text-gray-300 font-semibold">Select a state to practice state-specific questions</p>
               <div>
                 <p className="text-sm text-gray-300 font-semibold">
-                  Press <span className="font-black">1 / 2 / 3 / 4</span> — the matching option <span className="font-black">A / B / C / D</span> will be selected and will trigger the same behavior as clicking the option.
+                  Press <span className="font-semibold">1 / 2 / 3 / 4</span> — the matching option <span className="font-semibold">A / B / C / D</span> will be selected and will trigger the same behavior as clicking the option.
                 </p>
               </div>
             </div>
-            <div className="text-2xl font-black text-white animate-bounce mt-8">{t.letsDominate} 🚀</div>
+            <div className="text-2xl font-semibold text-white mt-8">{t.letsDominate}</div>
           </div>
         </div>
-
-        {/* Reset Confirmation Dialog */}
-        <Dialog open={showResetDialog} onOpenChange={setShowResetDialog}>
-          <DialogContent className="bg-gradient-to-br from-red-900/95 to-pink-900/95 border-2 border-red-400/50 text-white backdrop-blur-xl">
-            <DialogHeader>
-              <DialogTitle className="flex items-center gap-3 text-2xl font-black text-red-300">
-                <AlertTriangle className="w-8 h-8 text-yellow-400 animate-pulse" />
-                Reset All Progress?
-              </DialogTitle>
-              <DialogDescription className="text-gray-200 text-lg mt-4">
-                This will permanently delete:
-                <ul className="list-disc list-inside mt-3 space-y-2 text-left">
-                  <li>All your XP and achievements</li>
-                  <li>Your current streak and max streak</li>
-                  <li>All badges earned</li>
-                  <li>Flagged questions</li>
-                  <li>All answered questions history</li>
-                </ul>
-                <p className="mt-4 font-bold text-yellow-300">⚠️ This action cannot be undone!</p>
-              </DialogDescription>
-            </DialogHeader>
-            <DialogFooter className="gap-3 sm:gap-2 mt-6">
-              <Button
-                onClick={() => setShowResetDialog(false)}
-                className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all"
-              >
-                Cancel
-              </Button>
-              <Button
-                onClick={confirmReset}
-                className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all"
-              >
-                Yes, Reset Everything
-              </Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
       </div>
   )
 }

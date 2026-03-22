@@ -1,0 +1,4 @@
+[    1464ms] [WARNING] This page is using the deprecated ResourceLoader module "vuex".
+[1.42] Use Pinia instead. See migration guidelines: https://w.wiki/7pLU @ https://commons.wikimedia.org/w/load.php?lang=en&modules=startup&only=scripts&raw=1&skin=vector-2022:11
+[    1490ms] [WARNING] The stream mediawiki.web_ui_actions is out of sample. No event will be sent @ https://commons.wikimedia.org/w/load.php?lang=en&modules=ext.eventLogging.metricsPlatform&skin=vector-2022&version=1i3oh:4
+[    1490ms] [WARNING] The stream mediawiki.client.session_tick is out of sample. No event will be sent @ https://commons.wikimedia.org/w/load.php?lang=en&modules=ext.eventLogging.metricsPlatform&skin=vector-2022&version=1i3oh:4
