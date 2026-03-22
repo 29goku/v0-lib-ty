@@ -903,11 +903,11 @@ export default function PracticePage() {
 
         {/* Sticky Bottom Navigation - Median Navigation on Mobile */}
         <div className={`lg:hidden fixed bottom-0 left-0 right-0 z-40 border-t ${isDark ? 'bg-black/80 border-gray-800 backdrop-blur-sm' : 'bg-white/80 border-gray-200 backdrop-blur-sm'}`}>
-          <div className="flex items-center justify-center gap-1 px-2 py-2 overflow-x-auto">
+          <div className="flex items-center justify-center gap-2 px-3 py-3 overflow-x-auto">
             <button
                 aria-label="Previous"
                 onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
-                className="w-9 h-9 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors flex-shrink-0"
+                className="w-12 h-12 rounded-lg bg-blue-600 text-white font-bold text-lg flex items-center justify-center border border-blue-500 hover:bg-blue-700 transition-colors flex-shrink-0 shadow-lg"
             >
               ‹
             </button>
@@ -988,7 +988,7 @@ export default function PracticePage() {
             <button
                 aria-label="Next"
                 onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
-                className="w-9 h-9 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center border border-gray-600 hover:bg-gray-600 transition-colors flex-shrink-0"
+                className="w-12 h-12 rounded-lg bg-blue-600 text-white font-bold text-lg flex items-center justify-center border border-blue-500 hover:bg-blue-700 transition-colors flex-shrink-0 shadow-lg"
             >
               ›
             </button>
@@ -996,7 +996,7 @@ export default function PracticePage() {
         </div>
 
         {/* Add padding to account for sticky bottom nav */}
-        <div className="lg:hidden h-16"></div>
+        <div className="lg:hidden h-20"></div>
       </div>
   )
 }
