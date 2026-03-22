@@ -757,7 +757,7 @@ export default function PracticePage() {
 
                 {/* Right: Question Overview */}
                 <div className="w-full">
-                  <Card className={`h-full ${isDark ? 'bg-white/5' : 'bg-gray-100'}`}>
+                  <Card className={`h-full !bg-transparent !shadow-none`}>
                     <CardContent>
                       <div ref={overviewRef} className="hidden lg:grid grid-cols-[repeat(15,minmax(0,1fr))] gap-1 mb-0">
                         {filteredQuestions.map((q, index) => {
@@ -782,7 +782,7 @@ export default function PracticePage() {
                                               ? "bg-red-500 text-white border-red-400 hover:opacity-80"
                                               : isAnswered
                                                   ? "bg-green-500 text-white border-green-400 hover:opacity-80"
-                                                  : "border-gray-600 bg-transparent text-gray-300 hover:bg-gray-900/20"
+                                                  : "border-gray-600 bg-transparent text-gray-300"
                                   }`}
                               >
                                 {originalQuestionNumber}
