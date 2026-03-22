@@ -402,37 +402,37 @@ export default function TestPage() {
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-gradient-to-br from-black via-gray-950 to-black text-white' : 'bg-white text-gray-900'}`}>
-      <div className="container mx-auto px-4 py-6">
+      <div className="w-full px-4 md:px-8 py-3 md:py-4 max-h-screen overflow-y-auto">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-3 md:mb-4">
           <Link href="/">
-            <Button className={`border px-4 py-2 rounded transition-colors ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
-              <ArrowLeft className="w-4 h-4 mr-2" />
+            <Button className={`border px-3 py-1.5 text-xs md:text-sm rounded transition-colors ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
+              <ArrowLeft className="w-3 h-3 mr-1" />
               Back
             </Button>
           </Link>
 
           <div className="text-center">
-            <h1 className={`text-3xl md:text-4xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Official Test</h1>
-            <p className={`mt-1 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Question {currentQuestionIndex + 1} of {selectedQuestionCount[0]}</p>
+            <h1 className={`text-lg md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Official Test</h1>
+            <p className={`mt-0.5 text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Q {currentQuestionIndex + 1}/{selectedQuestionCount[0]}</p>
           </div>
 
-          <div className="flex items-center space-x-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-700/30 px-4 py-3 rounded-lg backdrop-blur-md">
-            <Clock className="w-5 h-5 text-blue-400" />
-            <span className="font-mono font-semibold text-blue-300 text-lg">{formatTime(timeRemaining)}</span>
+          <div className="flex items-center space-x-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-700/30 px-2.5 md:px-3 py-1.5 rounded-lg backdrop-blur-md">
+            <Clock className="w-4 h-4 text-blue-400" />
+            <span className="font-mono font-semibold text-blue-300 text-xs md:text-sm">{formatTime(timeRemaining)}</span>
           </div>
         </div>
 
         {/* Progress Bar */}
-        <div className="mb-8">
-          <div className="flex justify-between items-center mb-2">
+        <div className="mb-3 md:mb-4">
+          <div className="flex justify-between items-center mb-1">
             <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Progress</span>
             <span className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{Math.round(((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100)}%</span>
           </div>
-          <Progress value={((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100} className={`h-3 rounded-full ${isDark ? 'bg-gray-800' : 'bg-gray-300'}`} />
+          <Progress value={((currentQuestionIndex + 1) / selectedQuestionCount[0]) * 100} className={`h-2 rounded-full ${isDark ? 'bg-gray-800' : 'bg-gray-300'}`} />
         </div>
 
-        <div className="mb-8">
+        <div className="mb-3 md:mb-4">
           <SwipeCard
             question={currentQuestion}
             onSwipe={(dir) => {
@@ -455,43 +455,43 @@ export default function TestPage() {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-between items-center gap-4 mb-8">
+        <div className="flex justify-between items-center gap-2 md:gap-3 mb-3 md:mb-4">
           <Button
             onClick={handlePrevious}
             disabled={currentQuestionIndex <= 0}
-            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-6 py-3 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-3 py-2 text-xs md:text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
-            ← Previous
+            ← Prev
           </Button>
 
           <Button
             onClick={handleSubmitTest}
-            className="flex-1 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-red-500/50"
+            className="flex-1 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-2 px-3 text-xs md:text-sm rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-red-500/50"
           >
-            🏁 Submit Test
+            🏁 Submit
           </Button>
 
           <Button
             onClick={handleNext}
             disabled={currentQuestionIndex >= selectedQuestionCount[0] - 1}
-            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-6 py-3 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900 text-gray-300 hover:text-white font-semibold px-3 py-2 text-xs md:text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
             Next →
           </Button>
         </div>
 
         <Card className={`border backdrop-blur-md ${isDark ? 'border-gray-700 bg-gradient-to-br from-gray-900/40 to-black' : 'border-gray-300 bg-gradient-to-br from-gray-50 to-white'}`}>
-          <CardHeader className="pb-4">
+          <CardHeader className="pb-2 md:pb-3">
             <div className="flex items-center justify-between">
-              <CardTitle className={`text-xl md:text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>📋 Answer Overview</CardTitle>
-              <div className="text-sm font-semibold text-gray-300 bg-blue-500/10 border border-blue-700/30 px-3 py-1 rounded-full">
-                {testAnswers.length} / {selectedQuestionCount[0]} Completed
+              <CardTitle className={`text-sm md:text-base font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>📋 Overview</CardTitle>
+              <div className="text-xs font-semibold text-gray-300 bg-blue-500/10 border border-blue-700/30 px-2 py-0.5 rounded-full">
+                {testAnswers.length} / {selectedQuestionCount[0]}
               </div>
             </div>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-3 md:space-y-4">
             {/* Question Grid */}
-            <div className="grid grid-cols-8 md:grid-cols-12 lg:grid-cols-16 gap-1.5">
+            <div className="grid grid-cols-10 md:grid-cols-14 gap-1">
               {testQuestions.map((_, index) => {
                 const answer = testAnswers.find((a) => a.questionId === testQuestions[index]?.id)
                 const isAnswered = answer !== undefined
@@ -503,7 +503,7 @@ export default function TestPage() {
                     key={index}
                     onClick={() => handleQuestionJump(index)}
                     className={`
-                      relative aspect-square border rounded-md font-bold text-xs transition-all transform
+                      relative aspect-square border rounded text-xs font-bold transition-all transform
                       ${
                         isCurrent
                           ? isDark
@@ -525,7 +525,7 @@ export default function TestPage() {
                   >
                     {index + 1}
                     {isFlagged && (
-                      <div className="absolute -top-2 -right-2 w-2.5 h-2.5 bg-red-500 rounded-full border border-red-300 shadow-lg shadow-red-500/50"></div>
+                      <div className="absolute -top-1.5 -right-1.5 w-2 h-2 bg-red-500 rounded-full border border-red-300 shadow-lg shadow-red-500/50"></div>
                     )}
                   </button>
                 )
@@ -533,21 +533,21 @@ export default function TestPage() {
             </div>
 
             {/* Legend */}
-            <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
-              <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 bg-gradient-to-br from-green-900/50 to-green-900/30 border border-green-600 rounded"></div>
+            <div className={`grid grid-cols-2 md:grid-cols-4 gap-2 pt-2 md:pt-3 border-t ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
+              <div className="flex items-center space-x-1">
+                <div className="w-3 h-3 bg-gradient-to-br from-green-900/50 to-green-900/30 border border-green-600 rounded"></div>
                 <span className="text-xs text-green-400 font-semibold">Correct</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 bg-gradient-to-br from-orange-900/50 to-orange-900/30 border border-orange-600 rounded"></div>
+              <div className="flex items-center space-x-1">
+                <div className="w-3 h-3 bg-gradient-to-br from-orange-900/50 to-orange-900/30 border border-orange-600 rounded"></div>
                 <span className="text-xs text-orange-400 font-semibold">Incorrect</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 bg-gray-800/50 border border-gray-700 rounded"></div>
+              <div className="flex items-center space-x-1">
+                <div className="w-3 h-3 bg-gray-800/50 border border-gray-700 rounded"></div>
                 <span className="text-xs text-gray-400 font-semibold">Unanswered</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-red-500 rounded-full border border-red-300"></div>
+              <div className="flex items-center space-x-1">
+                <div className="w-2 h-2 bg-red-500 rounded-full border border-red-300"></div>
                 <span className="text-xs text-red-400 font-semibold">Flagged</span>
               </div>
             </div>
