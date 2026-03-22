@@ -909,6 +909,42 @@ export default function PracticePage() {
 
 
         </div>
+
+        {/* Sticky Bottom Navigation - Mobile Only */}
+        <div className={`sm:hidden fixed bottom-0 left-0 right-0 z-40 border-t ${isDark ? 'bg-black/80 border-gray-800 backdrop-blur-sm' : 'bg-white/80 border-gray-200 backdrop-blur-sm'}`}>
+          <div className="flex justify-between items-center px-4 py-3 gap-2">
+            <Button
+              onClick={previousQuestion}
+              disabled={currentIndex === 0}
+              className={`flex-1 px-3 py-2 text-xs border rounded font-semibold transition-colors ${
+                currentIndex === 0
+                  ? isDark ? 'border-gray-700 bg-transparent text-gray-600 cursor-not-allowed' : 'border-gray-300 bg-transparent text-gray-400 cursor-not-allowed'
+                  : isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700'
+              }`}
+            >
+              ← Prev
+            </Button>
+
+            <div className={`text-xs font-semibold ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+              {currentIndex + 1} / {filteredQuestions.length}
+            </div>
+
+            <Button
+              onClick={nextQuestion}
+              disabled={currentIndex === filteredQuestions.length - 1}
+              className={`flex-1 px-3 py-2 text-xs border rounded font-semibold transition-colors ${
+                currentIndex === filteredQuestions.length - 1
+                  ? isDark ? 'border-gray-700 bg-transparent text-gray-600 cursor-not-allowed' : 'border-gray-300 bg-transparent text-gray-400 cursor-not-allowed'
+                  : isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700'
+              }`}
+            >
+              Next →
+            </Button>
+          </div>
+        </div>
+
+        {/* Add padding to account for sticky bottom nav */}
+        <div className="sm:hidden h-20"></div>
       </div>
   )
 }
