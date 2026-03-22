@@ -178,29 +178,29 @@ export default function ReviewPage() {
           {/* Question Lists */}
           <div className="lg:col-span-3">
             <Tabs defaultValue="flagged" className="w-full">
-              <TabsList className={`w-full bg-transparent border !h-auto ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
+              <TabsList className={`!grid !grid-cols-3 !w-full !bg-transparent border !p-0 !h-auto gap-0 ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
                 <TabsTrigger
                   value="flagged"
-                  className={`flex-1 font-semibold py-3 transition-colors data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
+                  className={`!px-0 !py-3 !rounded-none font-semibold text-center transition-all data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
                 >
                   FLAGGED ({flaggedQuestions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="completed"
-                  className={`flex-1 font-semibold py-3 transition-colors data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
+                  className={`!px-0 !py-3 !rounded-none font-semibold text-center transition-all border-l border-r ${isDark ? 'border-gray-700' : 'border-gray-200'} data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
                 >
                   COMPLETED ({completedQuestions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="incorrect"
-                  className={`flex-1 font-semibold py-3 transition-colors data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
+                  className={`!px-0 !py-3 !rounded-none font-semibold text-center transition-all data-[state=active]:text-white ${isDark ? 'data-[state=active]:bg-gray-900/20' : 'data-[state=active]:bg-gray-100'}`}
                 >
                   INCORRECT ({incorrectQuestions.length})
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="flagged" className="mt-6">
-                <div className="space-y-4">
+                <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                   {flaggedQuestions.length === 0 ? (
                     <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
                       <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
