@@ -281,7 +281,7 @@ export default function PracticePage() {
     })()
 
     // Use new function that tracks category stats
-    answerQuestionWithCategory(questionId, selectedAnswerIndex, isCorrect, displayQuestion.category)
+    answerQuestionWithCategory(currentQuestion.id, selectedAnswerIndex, isCorrect, currentQuestion.category)
 
     if (isCorrect) {
       addXP(10)
