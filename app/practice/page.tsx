@@ -761,8 +761,8 @@ export default function PracticePage() {
             </Card>
           </div>
 
-          {/* Mobile: Sticky Navigation Bar at Top */}
-          <div className="lg:hidden fixed top-0 left-0 right-0 z-40 bg-gradient-to-b from-black/80 to-black/50 backdrop-blur-sm border-b border-gray-700">
+          {/* Mobile: Sticky Navigation Bar at Bottom */}
+          <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-t from-black via-black/90 to-transparent backdrop-blur-sm border-t border-gray-700">
             <div className="flex items-center justify-center gap-1 p-3 overflow-x-auto">
               <button
                 aria-label="Previous"
@@ -849,7 +849,7 @@ export default function PracticePage() {
             </div>
           </div>
 
-          <div className="flex justify-center mb-8 pt-20 lg:pt-0">
+          <div className="flex justify-center mb-8 pb-32 lg:pb-0 lg:mb-8">
             <div className="w-full max-w-6xl">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
                 {/* Left: Swipe Card */}
