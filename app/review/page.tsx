@@ -168,15 +168,14 @@ export default function ReviewPage() {
         <div className="hidden sm:flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
           <div className="flex items-center space-x-4">
             <Link href="/">
-              <Button className={`border font-semibold px-6 py-2 rounded transition-all ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
+              <Button className={`border font-semibold px-6 py-2 transition-all ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
                 <ArrowLeft className="w-5 h-5 mr-2" />
-                Back to Home
+                Back
               </Button>
             </Link>
             <h1 className={`text-3xl md:text-4xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Review Mode
             </h1>
-            <Badge variant="outline" className={`ml-2 text-xs ${isDark ? 'border-gray-700 text-gray-300' : 'border-gray-300 text-gray-700'}`}>Review flagged & completed questions</Badge>
           </div>
           <div className="flex items-center gap-3">
             <ThemeToggle />
