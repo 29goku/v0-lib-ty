@@ -68,8 +68,6 @@ export default function PracticePage() {
   } | null>(null)
   const [loading, setLoading] = useState(true)
   const [showTranslation, setShowTranslation] = useState(false)
-  const [isAutoMode, setIsAutoMode] = useState(false)
-  const [autoDelay, setAutoDelay] = useState(3000)
   const [currentIndex, setCurrentIndex] = useState(0)
   const overviewRef = useRef<HTMLDivElement | null>(null)
   const feedbackRef = useRef<HTMLDivElement | null>(null)
@@ -323,12 +321,7 @@ export default function PracticePage() {
         }
         // Clear showAnswer last - this will trigger the useEffect to update displayQuestion
         setShowAnswer(false)
-      }, isAutoMode ? autoDelay : 2000)
-    } else if (isAutoMode) {
-      setTimeout(() => {
-        nextQuestion()
-      }, autoDelay)
-    }
+      }, 2000)
   }
 
   const resetProgress = () => {
@@ -544,43 +537,6 @@ export default function PracticePage() {
             </div>
           </div>
 
-          <div className="flex justify-center mb-6">
-            <Card className="bg-white/5">
-              <CardContent className="p-4">
-                <div className="flex items-center justify-center space-x-4">
-                  <span className={`font-semibold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Manual Mode</span>
-                  <Switch
-                      checked={isAutoMode}
-                      onCheckedChange={setIsAutoMode}
-                      className="data-[state=checked]:bg-green-500"
-                  />
-                  <span className={`font-bold ${isDark ? 'text-green-300' : 'text-green-600'}`}>Auto Mode</span>
-                  {isAutoMode && (
-                      <div className="flex items-center space-x-2 ml-4">
-                        <span className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Delay:</span>
-                        <div className="flex items-center space-x-2">
-                          <span className={`text-xs ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>2s</span>
-                          <input
-                              type="range"
-                              min="2000"
-                              max="5000"
-                              step="500"
-                              value={autoDelay}
-                              onChange={(e) => setAutoDelay(Number(e.target.value))}
-                              className="w-20 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
-                              style={{
-                                background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${((autoDelay - 2000) / 3000) * 100}%, #374151 ${((autoDelay - 2000) / 3000) * 100}%, #374151 100%)`,
-                              }}
-                          />
-                          <span className={`text-xs ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>5s</span>
-                          <span className={`text-sm ml-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{autoDelay / 1000}s</span>
-                        </div>
-                      </div>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
 
           {/* Stats Cards - Hidden on mobile, shown on md+ screens */}
           <div className="hidden md:grid md:grid-cols-4 gap-4 mb-8">
@@ -876,7 +832,7 @@ export default function PracticePage() {
                       onTranslate={() => setShowTranslation(!showTranslation)}
                   />
 
-                  {!isAutoMode && showAnswer && (
+                  {showAnswer && (
                       <div className="flex justify-start mt-4">
                         <Button
                             onClick={nextQuestion}
@@ -1000,7 +956,6 @@ export default function PracticePage() {
                 <div className="text-red-500 font-semibold">{t.swipeRight} →</div>
               </div>
               <p className="text-gray-300 font-semibold">{t.keyboardShortcuts}</p>
-              <p className="text-gray-300 font-semibold">Toggle between Auto and Manual mode above</p>
               <p className="text-gray-300 font-semibold">Select a state to practice state-specific questions</p>
               <div>
                 <p className="text-sm text-gray-300 font-semibold">
