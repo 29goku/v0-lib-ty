@@ -50,6 +50,8 @@ export interface AppState {
   testMode: boolean
   testStartTime: number | null
   testAnswers: { questionId: string; selectedIndex: number; correct: boolean }[]
+  lastTestQuestions: Question[] // Store questions from completed test for review
+  lastTestAnswers: { questionId: string; selectedIndex: number; correct: boolean }[] // Store answers from completed test for review
 
   // Actions
   setQuestions: (questions: Question[]) => void
@@ -130,6 +132,8 @@ export const useStore = create<AppState>()(
       testMode: false,
       testStartTime: null,
       testAnswers: [],
+      lastTestQuestions: [],
+      lastTestAnswers: [],
 
       setQuestions: (questions) => set({ questions }),
       setStateQuestions: (questions) => set({ stateQuestions: questions }),
@@ -158,7 +162,7 @@ export const useStore = create<AppState>()(
 
           // Only increment questionsAnswered if it's a new question, and cap at total questions
           if (isNewQuestion) {
-            newProgress.questionsAnswered = Math.min(newProgress.questionsAnswered + 1, 300)
+            newProgress.questionsAnswered += 1
           }
 
           if (correct) {
@@ -258,7 +262,7 @@ export const useStore = create<AppState>()(
 
           // Only increment questionsAnswered if it's a new question, and cap at total questions
           if (isNewQuestion) {
-            newProgress.questionsAnswered = Math.min(newProgress.questionsAnswered + 1, 300)
+            newProgress.questionsAnswered += 1
           }
 
           if (correct) {
@@ -317,9 +321,11 @@ export const useStore = create<AppState>()(
         }),
 
       endTest: () =>
-        set({
+        set((state) => ({
           testMode: false,
           testStartTime: null,
+          lastTestQuestions: state.testQuestions,
+          lastTestAnswers: state.testAnswers,
           testQuestions: [],
           testAnswers: [],
         }),
@@ -427,6 +433,8 @@ export const useStore = create<AppState>()(
         darkMode: state.darkMode,
         language: state.language,
         selectedState: state.selectedState,
+        lastTestQuestions: state.lastTestQuestions,
+        lastTestAnswers: state.lastTestAnswers,
       }),
     },
   ),
