@@ -154,6 +154,7 @@ export const useStore = create<AppState>()(
         set((state) => {
           const newProgress = { ...state.userProgress }
           const isNewQuestion = !newProgress.completedQuestions.includes(questionId)
+          const wasIncorrect = newProgress.incorrectAnswers?.includes(questionId)
 
           // Only increment questionsAnswered if it's a new question, and cap at total questions
           if (isNewQuestion) {
@@ -161,7 +162,11 @@ export const useStore = create<AppState>()(
           }
 
           if (correct) {
-            newProgress.correctAnswers += 1
+            // Only increment correctAnswers if this is a new correct answer
+            // or if it was previously marked incorrect (correcting a mistake)
+            if (isNewQuestion || wasIncorrect) {
+              newProgress.correctAnswers += 1
+            }
             // If previously marked incorrect, remove from incorrectAnswers
             if (newProgress.incorrectAnswers) {
               newProgress.incorrectAnswers = newProgress.incorrectAnswers.filter((id) => id !== questionId)
@@ -228,6 +233,7 @@ export const useStore = create<AppState>()(
         set((state) => {
           const newProgress = { ...state.userProgress }
           const isNewQuestion = !newProgress.completedQuestions.includes(questionId)
+          const wasIncorrect = newProgress.incorrectAnswers?.includes(questionId)
 
           // Track category stats
           if (!newProgress.categoryStats) newProgress.categoryStats = {}
@@ -256,7 +262,11 @@ export const useStore = create<AppState>()(
           }
 
           if (correct) {
-            newProgress.correctAnswers += 1
+            // Only increment correctAnswers if this is a new correct answer
+            // or if it was previously marked incorrect (correcting a mistake)
+            if (isNewQuestion || wasIncorrect) {
+              newProgress.correctAnswers += 1
+            }
             newProgress.dailyStats[today].xp += 10
             if (newProgress.incorrectAnswers) {
               newProgress.incorrectAnswers = newProgress.incorrectAnswers.filter((id) => id !== questionId)
