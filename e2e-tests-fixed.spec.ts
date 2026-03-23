@@ -1,6 +1,6 @@
 import { test, expect, devices } from '@playwright/test';
 
-const BASE_URL = 'https://www.lebeninde.com';
+const BASE_URL = process.env.PLAYWRIGHT_TEST_BASE_URL || 'https://www.lebeninde.com';
 
 // Desktop configuration
 const desktopConfig = {
