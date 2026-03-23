@@ -157,7 +157,7 @@ export const useStore = create<AppState>()(
 
           // Only increment questionsAnswered if it's a new question, and cap at total questions
           if (isNewQuestion) {
-            newProgress.questionsAnswered = Math.min(newProgress.questionsAnswered + 1, 310)
+            newProgress.questionsAnswered = Math.min(newProgress.questionsAnswered + 1, 300)
           }
 
           if (correct) {
@@ -252,7 +252,7 @@ export const useStore = create<AppState>()(
 
           // Only increment questionsAnswered if it's a new question, and cap at total questions
           if (isNewQuestion) {
-            newProgress.questionsAnswered = Math.min(newProgress.questionsAnswered + 1, 310)
+            newProgress.questionsAnswered = Math.min(newProgress.questionsAnswered + 1, 300)
           }
 
           if (correct) {
