@@ -111,7 +111,7 @@ export default function SettingsPage() {
                 <div className={`text-center p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
                   <div className={`text-3xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     {userProgress.questionsAnswered > 0
-                      ? Math.round((userProgress.correctAnswers / userProgress.questionsAnswered) * 100)
+                      ? Math.min(Math.round((userProgress.correctAnswers / userProgress.questionsAnswered) * 100), 100)
                       : 0}
                     %
                   </div>

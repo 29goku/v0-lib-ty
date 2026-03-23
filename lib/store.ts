@@ -159,15 +159,17 @@ export const useStore = create<AppState>()(
           const newProgress = { ...state.userProgress }
           const isNewQuestion = !newProgress.completedQuestions.includes(questionId)
           const wasIncorrect = newProgress.incorrectAnswers?.includes(questionId)
+          const wasCorrect = newProgress.completedQuestions.includes(questionId) && !wasIncorrect
 
-          // Only increment questionsAnswered if it's a new question, and cap at total questions
+          // Only increment questionsAnswered if it's a new question
           if (isNewQuestion) {
             newProgress.questionsAnswered += 1
           }
 
           if (correct) {
-            // Only increment correctAnswers if this is a new correct answer
-            // or if it was previously marked incorrect (correcting a mistake)
+            // Increment correctAnswers only if:
+            // 1. It's a new question, OR
+            // 2. It was previously incorrect (correcting a mistake)
             if (isNewQuestion || wasIncorrect) {
               newProgress.correctAnswers += 1
             }
@@ -176,7 +178,11 @@ export const useStore = create<AppState>()(
               newProgress.incorrectAnswers = newProgress.incorrectAnswers.filter((id) => id !== questionId)
             }
           } else {
-            // mark as incorrect (avoid duplicates)
+            // Decrement correctAnswers if it was previously correct
+            if (wasCorrect) {
+              newProgress.correctAnswers = Math.max(0, newProgress.correctAnswers - 1)
+            }
+            // Add to incorrectAnswers if not already there
             if (!newProgress.incorrectAnswers) newProgress.incorrectAnswers = []
             if (!newProgress.incorrectAnswers.includes(questionId)) newProgress.incorrectAnswers.push(questionId)
           }
@@ -238,6 +244,7 @@ export const useStore = create<AppState>()(
           const newProgress = { ...state.userProgress }
           const isNewQuestion = !newProgress.completedQuestions.includes(questionId)
           const wasIncorrect = newProgress.incorrectAnswers?.includes(questionId)
+          const wasCorrect = newProgress.completedQuestions.includes(questionId) && !wasIncorrect
 
           // Track category stats
           if (!newProgress.categoryStats) newProgress.categoryStats = {}
@@ -260,14 +267,15 @@ export const useStore = create<AppState>()(
             newProgress.dailyStats[today].correct += 1
           }
 
-          // Only increment questionsAnswered if it's a new question, and cap at total questions
+          // Only increment questionsAnswered if it's a new question
           if (isNewQuestion) {
             newProgress.questionsAnswered += 1
           }
 
           if (correct) {
-            // Only increment correctAnswers if this is a new correct answer
-            // or if it was previously marked incorrect (correcting a mistake)
+            // Increment correctAnswers only if:
+            // 1. It's a new question, OR
+            // 2. It was previously incorrect (correcting a mistake)
             if (isNewQuestion || wasIncorrect) {
               newProgress.correctAnswers += 1
             }
@@ -276,6 +284,10 @@ export const useStore = create<AppState>()(
               newProgress.incorrectAnswers = newProgress.incorrectAnswers.filter((id) => id !== questionId)
             }
           } else {
+            // Decrement correctAnswers if it was previously correct
+            if (wasCorrect) {
+              newProgress.correctAnswers = Math.max(0, newProgress.correctAnswers - 1)
+            }
             if (!newProgress.incorrectAnswers) newProgress.incorrectAnswers = []
             if (!newProgress.incorrectAnswers.includes(questionId)) newProgress.incorrectAnswers.push(questionId)
           }
