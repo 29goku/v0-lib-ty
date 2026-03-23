@@ -264,71 +264,115 @@ export default function ReviewPage() {
             {/* Tab Content */}
             <div className="mt-6">
               {activeTab === 'allTests' && (
-                <div className="space-y-3 max-h-[60vh] overflow-y-auto pr-2">
-                  {!userProgress.testAttempts || userProgress.testAttempts.length === 0 ? (
-                    <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
-                      <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                        <p className="text-xl font-semibold">No test attempts yet!</p>
-                        <p className="text-sm mt-2">Take a test to see your history here.</p>
-                      </CardContent>
-                    </Card>
-                  ) : (
-                    [...(userProgress.testAttempts || [])].reverse().map((attempt) => {
-                      const percentage = attempt.totalQuestions > 0 ? Math.round((attempt.score / attempt.totalQuestions) * 100) : 0
-                      const testDate = new Date(attempt.date)
-                      const displayDate = testDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' })
-                      const displayTime = testDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
-                      const isPassed = percentage >= 52
-
-                      return (
-                        <Card
-                          key={attempt.id}
-                          className={`border cursor-pointer transition-colors ${
-                            selectedTestId === attempt.id
-                              ? isDark ? 'border-blue-400 bg-blue-900/20' : 'border-blue-500 bg-blue-50'
-                              : isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'
-                          }`}
-                          onClick={() => {
-                            setSelectedTestId(attempt.id)
-                            setSelectedTestQuestions(attempt.questions || [])
-                            setSelectedTestAnswers(attempt.answers || [])
-                            setSelectedQuestion(attempt.questions?.[0]?.id || null)
-                          }}
-                        >
-                          <CardContent className="p-4">
-                            <div className="flex items-center justify-between">
-                              <div className="flex-1">
-                                <div className="flex items-center gap-3 mb-2">
-                                  <span className={`text-sm font-semibold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                                    {displayDate} at {displayTime}
-                                  </span>
-                                  {attempt.state && (
-                                    <Badge className={`border px-2 py-1 text-xs ${isDark ? 'border-gray-700 bg-transparent text-gray-300' : 'border-gray-300 bg-gray-100 text-gray-700'}`}>
-                                      {attempt.state}
-                                    </Badge>
-                                  )}
-                                </div>
-                                <div className={`text-lg font-bold ${isPassed ? isDark ? 'text-green-400' : 'text-green-600' : isDark ? 'text-red-400' : 'text-red-600'}`}>
-                                  {attempt.score}/{attempt.totalQuestions} ({percentage}%)
-                                </div>
-                              </div>
-                              <div className={`text-right`}>
-                                <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                                  {Math.round(attempt.timeSpent / 1000 / 60)}m
-                                </div>
-                                {isPassed ? (
-                                  <CheckCircle className="w-5 h-5 text-green-500 mt-1" />
-                                ) : (
-                                  <AlertTriangle className="w-5 h-5 text-red-500 mt-1" />
-                                )}
-                              </div>
-                            </div>
+                <>
+                  {selectedTestId ? (
+                    // Show questions list when a test is selected
+                    <div className="space-y-3 max-h-[60vh] overflow-y-auto pr-2">
+                      {selectedTestQuestions.length === 0 ? (
+                        <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
+                          <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                            <p className="text-sm">No questions in this test</p>
                           </CardContent>
                         </Card>
-                      )
-                    })
+                      ) : (
+                        selectedTestQuestions.map((question) => {
+                          const testAnswer = selectedTestAnswers.find((a) => a.questionId === question.id)
+                          const isCorrect = testAnswer?.correct
+                          return (
+                            <Card
+                              key={question.id}
+                              onClick={() => setSelectedQuestion(question.id)}
+                              className={`border cursor-pointer transition-all ${
+                                selectedQuestion === question.id
+                                  ? isDark ? 'bg-gray-900/50 border-blue-500' : 'bg-blue-50 border-blue-400'
+                                  : isDark ? 'border-gray-700 hover:bg-gray-900/30' : 'border-gray-200 hover:bg-gray-50'
+                              }`}
+                            >
+                              <CardContent className="p-4 flex items-center gap-3">
+                                <div className="flex-1">
+                                  <p className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Q {selectedTestQuestions.indexOf(question) + 1}</p>
+                                  <p className={`text-sm line-clamp-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{question.question}</p>
+                                </div>
+                                {isCorrect ? (
+                                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                                ) : (
+                                  <AlertTriangle className="w-5 h-5 text-red-500 flex-shrink-0" />
+                                )}
+                              </CardContent>
+                            </Card>
+                          )
+                        })
+                      )}
+                    </div>
+                  ) : (
+                    // Show test list when no test is selected
+                    <div className="space-y-3 max-h-[60vh] overflow-y-auto pr-2">
+                      {!userProgress.testAttempts || userProgress.testAttempts.length === 0 ? (
+                        <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
+                          <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                            <p className="text-xl font-semibold">No test attempts yet!</p>
+                            <p className="text-sm mt-2">Take a test to see your history here.</p>
+                          </CardContent>
+                        </Card>
+                      ) : (
+                        [...(userProgress.testAttempts || [])].reverse().map((attempt) => {
+                          const percentage = attempt.totalQuestions > 0 ? Math.round((attempt.score / attempt.totalQuestions) * 100) : 0
+                          const testDate = new Date(attempt.date)
+                          const displayDate = testDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' })
+                          const displayTime = testDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+                          const isPassed = percentage >= 52
+
+                          return (
+                            <Card
+                              key={attempt.id}
+                              className={`border cursor-pointer transition-colors ${
+                                selectedTestId === attempt.id
+                                  ? isDark ? 'border-blue-400 bg-blue-900/20' : 'border-blue-500 bg-blue-50'
+                                  : isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'
+                              }`}
+                              onClick={() => {
+                                setSelectedTestId(attempt.id)
+                                setSelectedTestQuestions(attempt.questions || [])
+                                setSelectedTestAnswers(attempt.answers || [])
+                                setSelectedQuestion(attempt.questions?.[0]?.id || null)
+                              }}
+                            >
+                              <CardContent className="p-4">
+                                <div className="flex items-center justify-between">
+                                  <div className="flex-1">
+                                    <div className="flex items-center gap-3 mb-2">
+                                      <span className={`text-sm font-semibold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                                        {displayDate} at {displayTime}
+                                      </span>
+                                      {attempt.state && (
+                                        <Badge className={`border px-2 py-1 text-xs ${isDark ? 'border-gray-700 bg-transparent text-gray-300' : 'border-gray-300 bg-gray-100 text-gray-700'}`}>
+                                          {attempt.state}
+                                        </Badge>
+                                      )}
+                                    </div>
+                                    <div className={`text-lg font-bold ${isPassed ? isDark ? 'text-green-400' : 'text-green-600' : isDark ? 'text-red-400' : 'text-red-600'}`}>
+                                      {attempt.score}/{attempt.totalQuestions} ({percentage}%)
+                                    </div>
+                                  </div>
+                                  <div className={`text-right`}>
+                                    <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                                      {Math.round(attempt.timeSpent / 1000 / 60)}m
+                                    </div>
+                                    {isPassed ? (
+                                      <CheckCircle className="w-5 h-5 text-green-500 mt-1" />
+                                    ) : (
+                                      <AlertTriangle className="w-5 h-5 text-red-500 mt-1" />
+                                    )}
+                                  </div>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          )
+                        })
+                      )}
+                    </div>
                   )}
-                </div>
+                </>
               )}
 
               {activeTab === 'test' && (
