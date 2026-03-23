@@ -383,7 +383,7 @@ export default function HomePage() {
               </div>
 
               <div className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
-                You're {Math.round((stats.correctAnswers / stats.totalQuestions) * 100)}% ready for the test
+                You're {Math.round((stats.correctAnswers / stats.questionsAnswered) * 100)}% ready for the test
               </div>
             </div>
           </div>
