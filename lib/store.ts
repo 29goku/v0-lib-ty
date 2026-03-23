@@ -153,7 +153,13 @@ export const useStore = create<AppState>()(
       answerQuestion: (questionId, selectedIndex, correct) =>
         set((state) => {
           const newProgress = { ...state.userProgress }
-          newProgress.questionsAnswered += 1
+          const isNewQuestion = !newProgress.completedQuestions.includes(questionId)
+
+          // Only increment questionsAnswered if it's a new question
+          if (isNewQuestion) {
+            newProgress.questionsAnswered += 1
+          }
+
           if (correct) {
             newProgress.correctAnswers += 1
             // If previously marked incorrect, remove from incorrectAnswers
@@ -221,6 +227,7 @@ export const useStore = create<AppState>()(
       answerQuestionWithCategory: (questionId, selectedIndex, correct, category) =>
         set((state) => {
           const newProgress = { ...state.userProgress }
+          const isNewQuestion = !newProgress.completedQuestions.includes(questionId)
 
           // Track category stats
           if (!newProgress.categoryStats) newProgress.categoryStats = {}
@@ -243,8 +250,11 @@ export const useStore = create<AppState>()(
             newProgress.dailyStats[today].correct += 1
           }
 
-          // Update regular tracking
-          newProgress.questionsAnswered += 1
+          // Only increment questionsAnswered if it's a new question
+          if (isNewQuestion) {
+            newProgress.questionsAnswered += 1
+          }
+
           if (correct) {
             newProgress.correctAnswers += 1
             newProgress.dailyStats[today].xp += 10
