@@ -25,3 +25,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# playwright test temp files (but keep reports)
+test-results/*
+!test-results/playwright-report/
+playwright-report/
+.playwright/
