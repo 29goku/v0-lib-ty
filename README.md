@@ -1,6 +1,6 @@
 # lebeninde.com
 
-> **Under construction 🚧**  
+>  **Under construction 🚧**  
 > This repository contains the codebase and assets for [`lebeninde.com`](https://lebeninde.com). The project is currently in development and serves as a foundation for an upcoming web application.
 
 ---
