@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: '/v0-lib-ty',
+  output: 'export',
   eslint: {
     ignoreDuringBuilds: true,
   },
