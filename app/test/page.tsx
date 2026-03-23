@@ -25,6 +25,7 @@ export default function TestPage() {
     setCurrentQuestionIndex,
     userProgress,
     answerQuestion,
+    answerQuestionWithCategory,
     flagQuestion,
     unflagQuestion,
     testMode,
@@ -34,6 +35,9 @@ export default function TestPage() {
     endTest,
     recordTestAttempt,
     loadQuestions,
+    updateStreak,
+    addXP,
+    addBadge,
   } = useStore()
 
   const { isDark } = useTheme()
@@ -96,7 +100,21 @@ export default function TestPage() {
 
     setSelectedAnswer(answerIndex)
     const isCorrect = answerIndex === currentQuestion.answerIndex
-    answerQuestion(currentQuestion.id, answerIndex, isCorrect)
+    answerQuestionWithCategory(currentQuestion.id, answerIndex, isCorrect, currentQuestion.category)
+
+    // Award XP and update streak in test mode (same as practice)
+    if (isCorrect) {
+      addXP(10)
+      updateStreak(true)
+
+      if (userProgress.streak === 5) addBadge("streak-5")
+      if (userProgress.streak === 10) addBadge("streak-10")
+
+      if (userProgress.xp >= 100 && !userProgress.badges.includes("xp-100")) addBadge("xp-100")
+      if (userProgress.xp >= 500 && !userProgress.badges.includes("xp-500")) addBadge("xp-500")
+    } else {
+      updateStreak(false)
+    }
   }
 
   const handleNext = () => {

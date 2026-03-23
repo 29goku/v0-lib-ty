@@ -16,8 +16,8 @@ import StickyMobileHeader from "@/components/StickyMobileHeader"
 import LanguageSelector from "@/components/LanguageSelector"
 
 export default function SettingsPage() {
-  const { userProgress, darkMode, toggleDarkMode, resetProgress, exportProgress, importProgress } = useStore()
-  const { isDark } = useTheme()
+  const { userProgress, resetProgress, exportProgress, importProgress } = useStore()
+  const { isDark, toggle: toggleTheme } = useTheme()
   const theme = getTheme(isDark)
 
   const [importData, setImportData] = useState("")
@@ -137,29 +137,29 @@ export default function SettingsPage() {
           </Card>
 
           {/* Appearance */}
-          <Card className="border border-gray-700 bg-black">
+          <Card className={`border ${isDark ? 'border-gray-700 bg-black' : 'border-gray-200 bg-gray-50'}`}>
             <CardHeader>
-              <CardTitle className="text-xl font-semibold text-white">
+              <CardTitle className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Appearance Settings
               </CardTitle>
             </CardHeader>
             <CardContent className="p-4">
-              <div className="flex items-center justify-between p-4 border border-gray-700 bg-white/5">
+              <div className={`flex items-center justify-between p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
                 <div>
-                  <Label htmlFor="dark-mode" className="text-base font-semibold text-white">
-                    {darkMode ? "Dark Mode" : "Light Mode"}
+                  <Label htmlFor="dark-mode" className={`text-base font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    {isDark ? "Dark Mode" : "Light Mode"}
                   </Label>
-                  <p className="text-sm font-normal text-gray-400">Toggle between light and dark themes</p>
+                  <p className={`text-sm font-normal ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Toggle between light and dark themes</p>
                 </div>
-                <Switch id="dark-mode" checked={darkMode} onCheckedChange={toggleDarkMode} />
+                <Switch id="dark-mode" checked={isDark} onCheckedChange={toggleTheme} />
               </div>
             </CardContent>
           </Card>
 
           {/* Data Management */}
-          <Card className="border border-gray-700 bg-black">
+          <Card className={`border ${isDark ? 'border-gray-700 bg-black' : 'border-gray-200 bg-gray-50'}`}>
             <CardHeader>
-              <CardTitle className="text-xl font-semibold text-white">
+              <CardTitle className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Data Management
               </CardTitle>
             </CardHeader>
@@ -167,14 +167,14 @@ export default function SettingsPage() {
               <div className="flex gap-3">
                 <Button
                   onClick={handleExport}
-                  className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-3 text-base"
+                  className={`flex-1 border font-semibold py-3 text-base ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
                 >
                   <Download className="w-4 h-4 mr-2" />
                   Export Progress
                 </Button>
                 <Button
                   onClick={() => setShowImportArea(!showImportArea)}
-                  className="flex-1 border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold py-3 text-base"
+                  className={`flex-1 border font-semibold py-3 text-base ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
                 >
                   <Upload className="w-4 h-4 mr-2" />
                   Import Progress
@@ -182,8 +182,8 @@ export default function SettingsPage() {
               </div>
 
               {showImportArea && (
-                <div className="space-y-4 p-4 border border-gray-700 bg-white/5">
-                  <Label htmlFor="import-data" className="text-base font-semibold text-white">
+                <div className={`space-y-4 p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
+                  <Label htmlFor="import-data" className={`text-base font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     Paste Your Exported Progress Data:
                   </Label>
                   <Textarea
@@ -192,13 +192,13 @@ export default function SettingsPage() {
                     value={importData}
                     onChange={(e) => setImportData(e.target.value)}
                     rows={6}
-                    className="bg-black border border-gray-700 text-white font-mono"
+                    className={`font-mono ${isDark ? 'bg-black border-gray-700 text-white' : 'bg-white border-gray-300 text-gray-900'}`}
                   />
                   <div className="flex gap-3">
                     <Button
                       onClick={handleImport}
                       disabled={!importData.trim()}
-                      className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-4 py-2 disabled:opacity-50"
+                      className={`border font-semibold px-4 py-2 disabled:opacity-50 ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
                     >
                       Import Data
                     </Button>
@@ -207,7 +207,7 @@ export default function SettingsPage() {
                         setShowImportArea(false)
                         setImportData("")
                       }}
-                      className="border border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white font-semibold px-4 py-2"
+                      className={`border font-semibold px-4 py-2 ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}
                     >
                       Cancel
                     </Button>
@@ -215,15 +215,15 @@ export default function SettingsPage() {
                 </div>
               )}
 
-              <div className="pt-4 border-t border-gray-800">
+              <div className={`pt-4 border-t ${isDark ? 'border-gray-800' : 'border-gray-300'}`}>
                 <Button
                   onClick={handleReset}
-                  className="w-full border border-red-500 bg-transparent hover:bg-red-500/20 text-red-400 hover:text-red-300 font-semibold py-3 text-base"
+                  className={`w-full border font-semibold py-3 text-base ${isDark ? 'border-red-500 bg-transparent hover:bg-red-500/20 text-red-400 hover:text-red-300' : 'border-red-400 bg-transparent hover:bg-red-400/20 text-red-600 hover:text-red-700'}`}
                 >
                   <RotateCcw className="w-4 h-4 mr-2" />
                   Reset All Progress
                 </Button>
-                <p className="text-sm font-normal text-gray-400 mt-3 text-center">
+                <p className={`text-sm font-normal mt-3 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                   This will permanently delete ALL your progress, badges, and settings
                 </p>
               </div>
@@ -231,57 +231,57 @@ export default function SettingsPage() {
           </Card>
 
           {/* Study Statistics */}
-          <Card className="border border-gray-700 bg-black">
+          <Card className={`border ${isDark ? 'border-gray-700 bg-black' : 'border-gray-200 bg-gray-50'}`}>
             <CardHeader>
-              <CardTitle className="text-xl font-semibold text-white">
+              <CardTitle className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Study Statistics
               </CardTitle>
             </CardHeader>
             <CardContent className="p-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div className="flex justify-between items-center p-4 border border-gray-700 bg-white/5">
-                  <span className="text-base font-normal text-gray-300">Questions Answered:</span>
-                  <span className="font-semibold text-xl text-white">{userProgress.questionsAnswered}</span>
+                <div className={`flex justify-between items-center p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
+                  <span className={`text-base font-normal ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Questions Answered:</span>
+                  <span className={`font-semibold text-xl ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.questionsAnswered}</span>
                 </div>
-                <div className="flex justify-between items-center p-4 border border-gray-700 bg-white/5">
-                  <span className="text-base font-normal text-gray-300">Correct Answers:</span>
-                  <span className="font-semibold text-xl text-green-400">{userProgress.correctAnswers}</span>
+                <div className={`flex justify-between items-center p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
+                  <span className={`text-base font-normal ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Correct Answers:</span>
+                  <span className={`font-semibold text-xl ${isDark ? 'text-green-400' : 'text-green-600'}`}>{userProgress.correctAnswers}</span>
                 </div>
-                <div className="flex justify-between items-center p-4 border border-gray-700 bg-white/5">
-                  <span className="text-base font-normal text-gray-300">Incorrect Answers:</span>
-                  <span className="font-semibold text-xl text-red-400">
-                    {userProgress.questionsAnswered - userProgress.correctAnswers}
+                <div className={`flex justify-between items-center p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
+                  <span className={`text-base font-normal ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Incorrect Answers:</span>
+                  <span className={`font-semibold text-xl ${isDark ? 'text-red-400' : 'text-red-600'}`}>
+                    {userProgress.incorrectAnswers?.length || 0}
                   </span>
                 </div>
-                <div className="flex justify-between items-center p-4 border border-gray-700 bg-white/5">
-                  <span className="text-base font-normal text-gray-300">Flagged Questions:</span>
-                  <span className="font-semibold text-xl text-white">{userProgress.flaggedQuestions.length}</span>
+                <div className={`flex justify-between items-center p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
+                  <span className={`text-base font-normal ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Flagged Questions:</span>
+                  <span className={`font-semibold text-xl ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.flaggedQuestions.length}</span>
                 </div>
-                <div className="flex justify-between items-center p-4 border border-gray-700 bg-white/5">
-                  <span className="text-base font-normal text-gray-300">Current Streak:</span>
-                  <span className="font-semibold text-xl text-white">{userProgress.streak}</span>
+                <div className={`flex justify-between items-center p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
+                  <span className={`text-base font-normal ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Current Streak:</span>
+                  <span className={`font-semibold text-xl ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.streak}</span>
                 </div>
-                <div className="flex justify-between items-center p-4 border border-gray-700 bg-white/5">
-                  <span className="text-base font-normal text-gray-300">Last Study Date:</span>
-                  <span className="font-semibold text-xl text-white">{userProgress.lastStudyDate}</span>
+                <div className={`flex justify-between items-center p-4 border ${isDark ? 'border-gray-700 bg-white/5' : 'border-gray-300 bg-gray-100'}`}>
+                  <span className={`text-base font-normal ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Last Study Date:</span>
+                  <span className={`font-semibold text-xl ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.lastStudyDate}</span>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* About */}
-          <Card className="border border-gray-700 bg-black">
+          <Card className={`border ${isDark ? 'border-gray-700 bg-black' : 'border-gray-200 bg-gray-50'}`}>
             <CardHeader>
-              <CardTitle className="text-xl font-semibold text-white">
+              <CardTitle className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 About Leben in Deutschland
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-4 space-y-4 text-base text-gray-300">
+            <CardContent className={`p-4 space-y-4 text-base ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               <p className="font-normal">
                 This app helps you prepare for the German citizenship test with interactive learning methods.
               </p>
               <div>
-                <p className="font-semibold text-white mb-3">Features:</p>
+                <p className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Features:</p>
                 <ul className="list-disc list-inside space-y-2 font-normal">
                   <li>310+ official practice questions from the real test</li>
                   <li>Swipe-based learning interface</li>
@@ -292,19 +292,19 @@ export default function SettingsPage() {
                   <li>Progress export/import functionality</li>
                 </ul>
               </div>
-              <div className="pt-4 border-t border-gray-800">
-                <p className="font-semibold text-white mb-2">Official Test Information:</p>
-                <p className="font-normal text-gray-300">
+              <div className={`pt-4 border-t ${isDark ? 'border-gray-800' : 'border-gray-300'}`}>
+                <p className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Official Test Information:</p>
+                <p className={`font-normal ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   The real "Leben in Deutschland" test required for German citizenship contains 33 questions, has a
                   60-minute time limit, and requires 17+ correct answers to pass. It covers politics, history, law,
                   culture, and geography.
                 </p>
-                <p className="mt-3 text-gray-400 font-normal">
+                <p className={`mt-3 font-normal ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                   This is a practice app. Always verify current requirements with official sources.
                 </p>
               </div>
-              <div className="pt-4 border-t border-gray-800">
-                <p className="font-semibold text-white text-center">
+              <div className={`pt-4 border-t ${isDark ? 'border-gray-800' : 'border-gray-300'}`}>
+                <p className={`font-semibold text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                   Version 2.0.0
                 </p>
               </div>
