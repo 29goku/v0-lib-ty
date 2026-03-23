@@ -315,7 +315,14 @@ export const useStore = create<AppState>()(
 
           newProgress.lastStudyDate = today
 
-          return { userProgress: newProgress }
+          const newTestAnswers = state.testMode
+            ? [...state.testAnswers, { questionId, selectedIndex, correct }]
+            : state.testAnswers
+
+          return {
+            userProgress: newProgress,
+            testAnswers: newTestAnswers,
+          }
         }),
 
       recordTestAttempt: (score, totalQuestions, timeSpent, state) =>

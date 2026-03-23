@@ -1,0 +1,60 @@
+[    3035ms] TagError: adsbygoogle.push() error: 'google_ad_client' is missing from the tag config.
+    at xr (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:231:94)
+    at g.client (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:223:47)
+    at dk.g (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:80:559)
+    at kk (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:81:706)
+    at sr (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:223:35)
+    at rr (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:220:132)
+    at https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:245:61
+    at dk.g (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:80:559)
+    at kk (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:81:706)
+    at https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:243:458
+    at https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:245:120
+    at https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:247:4
+[    3094ms] [ERROR] In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <div> p 
+
+  ...
+    <div className="relative z...">
+      <div>
+      <div>
+      <div>
+      <div>
+      <div className="flex justi...">
+        <div className="w-full max...">
+          <div className="grid grid-...">
+            <div className="w-full">
+              <SwipeCard question={{id:"q001", ...}} onSwipe={function handleSwipe} ...>
+                <div className="relative w...">
+                  <motion.div>
+                  <motion.div>
+                  <motion.div ref={{current:null}} className="w-full cur..." style={{x:{...},y:{...}, ...}} drag="x" ...>
+                    <MeasureLayout>
+                    <div className="w-full cur..." draggable={false} style={{...}} ref={function}>
+                      <_c ref={{current:null}} className={"border b..."}>
+                        <div ref={{current:null}} className="rounded-lg...">
+                          <_c2>
+                          <_c8 className="relative z...">
+                            <div ref={null} className="relative z...">
+                              <div>
+                              <div className="text-cente...">
+>                               <p className="text-gray-500 text-sm flex items-center justify-center gap-2">
+                                  <Icon name="Lightbulb" size="sm" color="text-gray-600" animate={false}>
+>                                   <div
+>                                     ref={null}
+>                                     onClick={undefined}
+>                                     title={undefined}
+>                                     className={"inline-flex items-center justify-center  "}
+>                                   >
+                                  ...
+            ...
+ @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[    3094ms] [ERROR] <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <div> @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[    3942ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/favicon.ico:0
+[    4157ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    5595ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    5702ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    5857ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    6411ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    6419ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0

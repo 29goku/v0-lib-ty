@@ -1,0 +1,177 @@
+[    1023ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload assetPrefix="" globalError={[...]}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/practice" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <RootLayout>
+                        <html lang="de" className="__variable...">
+                          <head>
+                            <link>
+                            <link>
+                            <link>
+                            <link>
+                            <link>
+                            <script>
+                            <script
+                              type="application/ld+json"
+                              dangerouslySetInnerHTML={{
++                               __html: "{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Leben i..."
+-                               __html: "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Le..."
+                              }}
+                            >
+                            <script
+                              type="application/ld+json"
+                              dangerouslySetInnerHTML={{
++                               __html: "{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"..."
+-                               __html: "{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Leben i..."
+                              }}
+                            >
+                          ...
+                  ...
+ @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[    1121ms] [ERROR] In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <div> p 
+
+  ...
+    <div className="relative z...">
+      <div>
+      <div>
+      <div>
+      <div>
+      <div className="flex justi...">
+        <div className="w-full max...">
+          <div className="grid grid-...">
+            <div className="w-full">
+              <SwipeCard question={{id:"q001", ...}} onSwipe={function handleSwipe} ...>
+                <div className="relative w...">
+                  <motion.div>
+                  <motion.div>
+                  <motion.div ref={{current:null}} className="w-full cur..." style={{x:{...},y:{...}, ...}} drag="x" ...>
+                    <MeasureLayout>
+                    <div className="w-full cur..." draggable={false} style={{...}} ref={function}>
+                      <_c ref={{current:null}} className={"border b..."}>
+                        <div ref={{current:null}} className="rounded-lg...">
+                          <_c2>
+                          <_c8 className="relative z...">
+                            <div ref={null} className="relative z...">
+                              <div>
+                              <div className="text-cente...">
+>                               <p className="text-gray-500 text-sm flex items-center justify-center gap-2">
+                                  <Icon name="Lightbulb" size="sm" color="text-gray-600" animate={false}>
+>                                   <div
+>                                     ref={null}
+>                                     onClick={undefined}
+>                                     title={undefined}
+>                                     className={"inline-flex items-center justify-center  "}
+>                                   >
+                                  ...
+            ...
+ @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[    1121ms] [ERROR] <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <div> @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[    1525ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    1586ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    1604ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    1931ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    1973ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    2135ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    2453ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    2521ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    2731ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    2979ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    3034ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    3161ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    3712ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    3754ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    3859ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    4118ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    4768ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    4806ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    4913ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    5073ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    5118ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    5186ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    5866ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    5909ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    6232ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    6275ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    6373ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    6863ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    7794ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    7843ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    8214ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    8257ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    8265ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    8623ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    8664ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    8669ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    9528ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    9562ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    9667ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[    9917ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[    9953ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[    9960ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   10580ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   10615ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   10625ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   10994ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   11034ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   11040ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   11411ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   11451ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   11464ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   11815ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   11857ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   11862ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   12236ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   12292ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   12299ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   12898ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   12949ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   13053ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   13318ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   13360ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   13365ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   13738ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   13819ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   14203ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   14473ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   14513ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   14520ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   15157ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   15198ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   15198ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   15570ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   15605ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   15609ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   15960ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   15996ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   16091ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   16326ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   16364ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   16373ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   16716ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
+[   17382ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/icon-192x192.png:0
+[   17433ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3001/icon-192x192.png (Download error or resource isn't a valid image) @ http://localhost:3001/practice:0
+[   17546ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:3001/practice:0
