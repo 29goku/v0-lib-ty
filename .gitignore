@@ -30,4 +30,5 @@ next-env.d.ts
 test-results/*
 !test-results/playwright-report/
 playwright-report/
+!public/playwright-report/
 .playwright/
