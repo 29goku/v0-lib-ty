@@ -328,7 +328,7 @@ export const useStore = create<AppState>()(
           lastTestAnswers: state.testAnswers,
           testQuestions: [],
           testAnswers: [],
-        }),
+        })),
 
       resetProgress: () => set({ userProgress: initialProgress }),
 

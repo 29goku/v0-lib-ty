@@ -192,6 +192,18 @@ export default function PracticePage() {
     userProgress.completedQuestions.includes(q.id)
   ).length
 
+  // Calculate filtered stats
+  const correctInFilter = filteredQuestions.filter((q) =>
+    userProgress.completedQuestions.includes(q.id) &&
+    !(userProgress.incorrectAnswers || []).includes(q.id)
+  ).length
+
+  const accuracyInFilter = answeredInFilter > 0
+    ? Math.round((correctInFilter / answeredInFilter) * 100)
+    : 0
+
+  const xpInFilter = correctInFilter * 10
+
   // Load state questions when state is selected
   useEffect(() => {
     const loadStateQuestionsForFilter = async () => {
@@ -601,7 +613,7 @@ export default function PracticePage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className={`text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.xp}</p>
-                    <p className={`text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.xp}</p>
+                    <p className={`text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{xpInFilter}</p>
                   </div>
                 </div>
               </CardContent>
@@ -612,7 +624,7 @@ export default function PracticePage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className={`text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.streak}</p>
-                    <p className={`text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{userProgress.streak}</p>
+                    <p className={`text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{correctInFilter}</p>
                   </div>
                 </div>
               </CardContent>
@@ -624,10 +636,7 @@ export default function PracticePage() {
                   <div>
                     <p className={`text-sm font-bold uppercase tracking-wider ${isDark ? 'text-green-300' : 'text-green-700'}`}>{t.accuracy}</p>
                     <p className={`text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                      {userProgress.questionsAnswered > 0
-                          ? Math.round((userProgress.correctAnswers / userProgress.questionsAnswered) * 100)
-                          : 0}
-                      %
+                      {accuracyInFilter}%
                     </p>
                   </div>
                 </div>
@@ -783,7 +792,7 @@ export default function PracticePage() {
                         isTranslated={showTranslation}
                         onTranslate={() => setShowTranslation(!showTranslation)}
                         totalQuestions={filteredQuestions.length}
-                        onJumpToQuestion={(index) => setCurrentIndex(index)}
+                        onJumpToQuestion={(index) => handleQuestionJump(index)}
                     />
                   ) : null}
 

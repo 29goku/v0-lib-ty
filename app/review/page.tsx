@@ -17,12 +17,12 @@ import StickyMobileHeader from "@/components/StickyMobileHeader"
 import LanguageSelector from "@/components/LanguageSelector"
 
 export default function ReviewPage() {
-  const { questions, setQuestions, userProgress, unflagQuestion, flagQuestion } = useStore()
+  const { questions, setQuestions, userProgress, unflagQuestion, flagQuestion, lastTestQuestions, lastTestAnswers } = useStore()
   const { isDark } = useTheme()
   const [selectedQuestion, setSelectedQuestion] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [showResetDialog, setShowResetDialog] = useState(false)
-  const [activeTab, setActiveTab] = useState<'flagged' | 'completed' | 'incorrect'>('flagged')
+  const [activeTab, setActiveTab] = useState<'test' | 'flagged' | 'completed' | 'incorrect'>('test')
   const [mounted, setMounted] = useState(false)
 
   const theme = getTheme(isDark)
@@ -81,17 +81,22 @@ export default function ReviewPage() {
   const incorrectQuestions = questions.filter((q) => userProgress.incorrectAnswers?.includes(q.id) || false)
 
   // Find selected question data - ensure it updates when selectedQuestion changes
-  const selectedQuestionData = selectedQuestion ? questions.find((q) => q.id === selectedQuestion) : null
+  const selectedQuestionData = selectedQuestion ? (activeTab === 'test' ? lastTestQuestions.find((q) => q.id === selectedQuestion) : questions.find((q) => q.id === selectedQuestion)) : null
 
   // Get filtered questions based on active tab for jump navigation
   const filteredQuestions =
+    activeTab === 'test' ? lastTestQuestions :
     activeTab === 'flagged' ? flaggedQuestions :
     activeTab === 'completed' ? completedQuestions :
     activeTab === 'incorrect' ? incorrectQuestions : []
 
   // Auto-select first question when tab changes or when no question is selected
   useEffect(() => {
-    if (activeTab === 'flagged') {
+    if (activeTab === 'test') {
+      if (lastTestQuestions.length > 0 && !selectedQuestion) {
+        setSelectedQuestion(lastTestQuestions[0].id)
+      }
+    } else if (activeTab === 'flagged') {
       if (flaggedQuestions.length > 0 && !selectedQuestion) {
         setSelectedQuestion(flaggedQuestions[0].id)
       }
@@ -227,7 +232,7 @@ export default function ReviewPage() {
           <div className="lg:col-span-3">
             {/* Custom Tab Navigation */}
             <div className={`grid grid-cols-3 w-full border rounded-lg overflow-hidden ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
-              {['flagged', 'completed', 'incorrect'].map((tab, idx) => (
+              {['test', 'flagged', 'completed', 'incorrect'].map((tab, idx) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab as any)}
@@ -235,8 +240,9 @@ export default function ReviewPage() {
                     activeTab === tab
                       ? isDark ? 'bg-gray-900/20 text-white' : 'bg-gray-200 text-gray-900'
                       : isDark ? 'text-gray-400 hover:text-gray-300' : 'text-gray-600 hover:text-gray-900'
-                  } ${idx < 2 ? isDark ? 'border-r border-gray-700' : 'border-r border-gray-300' : ''}`}
+                  } ${idx < 3 ? isDark ? 'border-r border-gray-700' : 'border-r border-gray-300' : ''}`}
                 >
+                  {tab === 'test' && `TEST REVIEW (${lastTestQuestions.length})`}
                   {tab === 'flagged' && `FLAGGED (${flaggedQuestions.length})`}
                   {tab === 'completed' && `COMPLETED (${completedQuestions.length})`}
                   {tab === 'incorrect' && `INCORRECT (${incorrectQuestions.length})`}
@@ -246,6 +252,52 @@ export default function ReviewPage() {
 
             {/* Tab Content */}
             <div className="mt-6">
+              {activeTab === 'test' && (
+                <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
+                  {lastTestQuestions.length === 0 ? (
+                    <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
+                      <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                        <p className="text-xl font-semibold">No test attempt to review!</p>
+                        <p className="text-sm mt-2">Take a test first to review your answers here.</p>
+                      </CardContent>
+                    </Card>
+                  ) : (
+                    lastTestQuestions.map((question) => {
+                      const testAnswer = lastTestAnswers.find((a) => a.questionId === question.id)
+                      const isCorrect = testAnswer?.correct
+                      return (
+                        <Card
+                          key={question.id}
+                          onClick={() => setSelectedQuestion(question.id)}
+                          className={`border cursor-pointer transition-all ${
+                            selectedQuestion === question.id
+                              ? isDark ? 'bg-gray-900/50 border-blue-500' : 'bg-blue-50 border-blue-400'
+                              : isDark ? 'border-gray-700 hover:bg-gray-900/30' : 'border-gray-200 hover:bg-gray-50'
+                          }`}
+                        >
+                          <CardContent className="p-4 flex items-center gap-3">
+                            <div className="flex-1">
+                              <p className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                                {question.id}
+                              </p>
+                              <p className={`text-sm mt-1 line-clamp-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                                {question.question}
+                              </p>
+                            </div>
+                            <div className="flex-shrink-0">
+                              {isCorrect ? (
+                                <CheckCircle className="w-6 h-6 text-green-500" />
+                              ) : (
+                                <AlertTriangle className="w-6 h-6 text-red-500" />
+                              )}
+                            </div>
+                          </CardContent>
+                        </Card>
+                      )
+                    })
+                  )}
+                </div>
+              )}
               {activeTab === 'flagged' && (
                 <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                   {flaggedQuestions.length === 0 ? (
@@ -366,15 +418,48 @@ export default function ReviewPage() {
           <div className="lg:col-span-2">
             {selectedQuestionData ? (
               <div className="space-y-4">
-                <SwipeCard
-                  question={selectedQuestionData}
-                  onSwipe={() => {}} // No swipe functionality in review mode
-                  onFlag={() => handleToggleFlag(selectedQuestionData.id)}
-                  isFlagged={userProgress.flaggedQuestions?.includes(selectedQuestionData.id) || false}
-                  showAnswer={true} // Always show answers in review mode
-                  totalQuestions={filteredQuestions.length}
-                  onJumpToQuestion={(index) => setSelectedQuestion(filteredQuestions[index]?.id)}
-                />
+                {activeTab === 'test' && lastTestAnswers.length > 0 ? (
+                  <>
+                    <SwipeCard
+                      question={selectedQuestionData}
+                      onSwipe={() => {}} // No swipe functionality in review mode
+                      onFlag={() => handleToggleFlag(selectedQuestionData.id)}
+                      isFlagged={userProgress.flaggedQuestions?.includes(selectedQuestionData.id) || false}
+                      showAnswer={true} // Always show answers in review mode
+                      externalSelectedAnswer={lastTestAnswers.find((a) => a.questionId === selectedQuestionData.id)?.selectedIndex ?? null}
+                      totalQuestions={filteredQuestions.length}
+                      onJumpToQuestion={(index) => setSelectedQuestion(filteredQuestions[index]?.id)}
+                    />
+                    {/* Test feedback badge */}
+                    {lastTestAnswers.find((a) => a.questionId === selectedQuestionData.id) && (
+                      <Card className={`border ${
+                        lastTestAnswers.find((a) => a.questionId === selectedQuestionData.id)?.correct
+                          ? isDark ? 'border-green-500/50 bg-green-500/10' : 'border-green-300 bg-green-50'
+                          : isDark ? 'border-red-500/50 bg-red-500/10' : 'border-red-300 bg-red-50'
+                      }`}>
+                        <CardContent className={`p-4 text-center font-semibold ${
+                          lastTestAnswers.find((a) => a.questionId === selectedQuestionData.id)?.correct
+                            ? isDark ? 'text-green-400' : 'text-green-700'
+                            : isDark ? 'text-red-400' : 'text-red-700'
+                        }`}>
+                          {lastTestAnswers.find((a) => a.questionId === selectedQuestionData.id)?.correct
+                            ? '✓ CORRECT'
+                            : '✗ INCORRECT'}
+                        </CardContent>
+                      </Card>
+                    )}
+                  </>
+                ) : (
+                  <SwipeCard
+                    question={selectedQuestionData}
+                    onSwipe={() => {}} // No swipe functionality in review mode
+                    onFlag={() => handleToggleFlag(selectedQuestionData.id)}
+                    isFlagged={userProgress.flaggedQuestions?.includes(selectedQuestionData.id) || false}
+                    showAnswer={true} // Always show answers in review mode
+                    totalQuestions={filteredQuestions.length}
+                    onJumpToQuestion={(index) => setSelectedQuestion(filteredQuestions[index]?.id)}
+                  />
+                )}
               </div>
             ) : (
               <Card className="border border-gray-700 bg-transparent">

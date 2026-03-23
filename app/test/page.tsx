@@ -400,24 +400,23 @@ export default function TestPage() {
 
               {/* Action Buttons */}
               <div className="space-y-3">
+                <Link href="/review">
+                  <Button className={`w-full font-semibold py-3 text-base rounded-lg transition-all border ${isDark ? 'border-purple-600 bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 hover:text-purple-200' : 'border-purple-400 bg-purple-400/20 hover:bg-purple-400/30 text-purple-600 hover:text-purple-700'}`}>
+                    🔍 Review This Test
+                  </Button>
+                </Link>
                 <div className="grid grid-cols-2 gap-3">
                   <Link href="/practice">
                     <Button className={`w-full font-semibold py-3 text-base rounded-lg transition-all border ${isDark ? 'border-blue-600 bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 hover:text-blue-200' : 'border-blue-400 bg-blue-400/20 hover:bg-blue-400/30 text-blue-600 hover:text-blue-700'}`}>
                       📚 Practice More
                     </Button>
                   </Link>
-                  <Link href="/review">
-                    <Button className={`w-full font-semibold py-3 text-base rounded-lg transition-all border ${isDark ? 'border-purple-600 bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 hover:text-purple-200' : 'border-purple-400 bg-purple-400/20 hover:bg-purple-400/30 text-purple-600 hover:text-purple-700'}`}>
-                      🔍 Review Answers
+                  <Link href="/">
+                    <Button className={`w-full font-semibold py-3 text-base rounded-lg transition-all border ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/50 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
+                      ← Home
                     </Button>
                   </Link>
                 </div>
-
-                <Link href="/">
-                  <Button className={`w-full font-semibold py-3 text-base rounded-lg transition-all border ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/50 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
-                    ← Back to Home
-                  </Button>
-                </Link>
               </div>
             </CardContent>
           </Card>
