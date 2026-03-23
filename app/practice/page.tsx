@@ -19,6 +19,7 @@ import { getCategoryEmoji } from "@/lib/category-emojis"
 import { MultiSelect } from "@/components/MultiSelect"
 import StickyMobileHeader from "@/components/StickyMobileHeader"
 import DesktopHeader from "@/components/DesktopHeader"
+import { getDataUrl } from "@/lib/api-utils"
 
 const germanStates = [
   { id: "baden-wuerttemberg", name: "Baden-Württemberg", emoji: "🏰" },
@@ -108,7 +109,7 @@ export default function PracticePage() {
         // Load state questions if a state is selected
         if (selectedState) {
           try {
-            const stateResponse = await fetch("/data/state-questions.json")
+            const stateResponse = await fetch(getDataUrl("/data/state-questions.json"))
             if (stateResponse.ok) {
               const stateData = await stateResponse.json()
               setStateQuestions(stateData[selectedState] || [])

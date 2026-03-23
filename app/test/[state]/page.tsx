@@ -6,6 +6,7 @@ import { useStore } from "@/lib/store"
 import { useTheme } from "@/lib/theme"
 import ThemeToggle from "@/components/ThemeToggle"
 import { GERMAN_STATES, getStateByCode } from "@/lib/states"
+import { getDataUrl } from "@/lib/api-utils"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -63,12 +64,12 @@ export default function StateTestPage() {
 
       try {
         // Load general questions
-        const response = await fetch("/data/questions.json")
+        const response = await fetch(getDataUrl("/data/questions.json"))
         if (!response.ok) throw new Error("Failed to load general questions")
         const allQuestions = await response.json()
 
         // Load state-specific questions
-        const stateResponse = await fetch("/data/state-questions.json")
+        const stateResponse = await fetch(getDataUrl("/data/state-questions.json"))
         if (!stateResponse.ok) throw new Error("Failed to load state questions")
         const stateData = await stateResponse.json()
 

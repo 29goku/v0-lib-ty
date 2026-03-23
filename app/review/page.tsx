@@ -15,6 +15,7 @@ import { getCategoryEmoji } from "@/lib/category-emojis"
 import SwipeCard from "@/components/SwipeCard"
 import StickyMobileHeader from "@/components/StickyMobileHeader"
 import LanguageSelector from "@/components/LanguageSelector"
+import { getDataUrl } from "@/lib/api-utils"
 
 export default function ReviewPage() {
   const { questions, setQuestions, userProgress, unflagQuestion, flagQuestion, lastTestQuestions, lastTestAnswers } = useStore()
@@ -51,7 +52,7 @@ export default function ReviewPage() {
         }
 
         // Fallback: try direct fetch
-        const response = await fetch("/data/questions.json")
+        const response = await fetch(getDataUrl("/data/questions.json"))
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
