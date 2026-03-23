@@ -268,6 +268,21 @@ export default function ReviewPage() {
                   {selectedTestId ? (
                     // Show questions list when a test is selected
                     <div className="space-y-3 max-h-[60vh] overflow-y-auto pr-2">
+                      <button
+                        onClick={() => {
+                          setSelectedTestId(null)
+                          setSelectedTestQuestions([])
+                          setSelectedTestAnswers([])
+                          setSelectedQuestion(null)
+                        }}
+                        className={`w-full py-2 px-3 text-sm font-semibold rounded border transition-colors ${
+                          isDark
+                            ? 'border-gray-700 bg-gray-900/30 text-gray-300 hover:bg-gray-900/50'
+                            : 'border-gray-300 bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        }`}
+                      >
+                        ← Back to All Tests
+                      </button>
                       {selectedTestQuestions.length === 0 ? (
                         <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
                           <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
