@@ -2,10 +2,17 @@ name: E2E Tests After Vercel Deploy
 
 on:
   deployment_status:
+  workflow_dispatch:
+  schedule:
+    # Run tests every 6 hours to catch any deployment issues
+    - cron: '0 */6 * * *'
 
 jobs:
   e2e-tests:
-    if: github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'production'
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'schedule' ||
+      (github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'production')
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +33,7 @@ jobs:
       - name: Run E2E tests against production
         run: npm run test:e2e
         env:
-          PLAYWRIGHT_TEST_BASE_URL: ${{ github.event.deployment_status.environment_url }}
+          PLAYWRIGHT_TEST_BASE_URL: ${{ github.event.deployment_status.environment_url || 'https://www.lebeninde.com' }}
 
       - name: Upload test results
         if: always()
