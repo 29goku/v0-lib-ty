@@ -155,9 +155,9 @@ export const useStore = create<AppState>()(
           const newProgress = { ...state.userProgress }
           const isNewQuestion = !newProgress.completedQuestions.includes(questionId)
 
-          // Only increment questionsAnswered if it's a new question
+          // Only increment questionsAnswered if it's a new question, and cap at total questions
           if (isNewQuestion) {
-            newProgress.questionsAnswered += 1
+            newProgress.questionsAnswered = Math.min(newProgress.questionsAnswered + 1, 310)
           }
 
           if (correct) {
@@ -250,9 +250,9 @@ export const useStore = create<AppState>()(
             newProgress.dailyStats[today].correct += 1
           }
 
-          // Only increment questionsAnswered if it's a new question
+          // Only increment questionsAnswered if it's a new question, and cap at total questions
           if (isNewQuestion) {
-            newProgress.questionsAnswered += 1
+            newProgress.questionsAnswered = Math.min(newProgress.questionsAnswered + 1, 310)
           }
 
           if (correct) {
