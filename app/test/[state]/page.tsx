@@ -39,6 +39,7 @@ export default function StateTestPage() {
     testAnswers,
     startTest,
     endTest,
+    recordTestAttempt,
   } = useStore()
 
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
@@ -152,6 +153,9 @@ export default function StateTestPage() {
   }
 
   const handleSubmitTest = () => {
+    const timeSpent = testStartTime ? Date.now() - testStartTime : 0
+    const correctCount = testAnswers.filter((a) => a.correct).length
+    recordTestAttempt(correctCount, testQuestions.length, timeSpent, stateCode, testQuestions, testAnswers)
     setShowResults(true)
     endTest()
   }

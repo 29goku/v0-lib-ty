@@ -5,8 +5,8 @@ import { defineConfig, devices } from '@playwright/test';
  * Reports are generated for Vercel deployments
  */
 export default defineConfig({
-  testDir: './e2e-tests-fixed.spec.ts',
-  testMatch: ['**/*.spec.ts'],
+  testDir: './',
+  testMatch: ['e2e-tests-fixed.spec.ts'],
 
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -14,9 +14,9 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   reporter: [
-    ['html', { outputFolder: 'test-results/playwright-report' }],
-    ['json', { outputFile: 'test-results/test-results.json' }],
-    ['junit', { outputFile: 'test-results/junit.xml' }],
+    ['html'],
+    ['json', { outputFile: 'test-results.json' }],
+    ['junit', { outputFile: 'junit.xml' }],
     ['list']
   ],
 
@@ -53,15 +53,16 @@ export default defineConfig({
     },
   ],
 
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:3001',
-    reuseExistingServer: !process.env.CI,
-    timeout: 120000,
-  },
+  // webServer disabled for production testing
+  // webServer: {
+  //   command: 'npm run dev',
+  //   url: 'http://localhost:3001',
+  //   reuseExistingServer: !process.env.CI,
+  //   timeout: 120000,
+  // },
 
-  timeout: 30000,
+  timeout: 60000,
   expect: {
-    timeout: 5000,
+    timeout: 10000,
   },
 });

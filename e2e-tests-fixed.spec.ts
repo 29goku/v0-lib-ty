@@ -1,6 +1,6 @@
 import { test, expect, devices } from '@playwright/test';
 
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL = 'https://www.lebeninde.com';
 
 // Desktop configuration
 const desktopConfig = {
@@ -89,12 +89,12 @@ for (const config of [desktopConfig, mobileConfig]) {
       });
 
       test('should have back button', async ({ page }) => {
-        const backButton = page.locator('button').filter({ hasText: /Back|Zurück/ }).first();
-        await expect(backButton).toBeVisible({ timeout: 5000 });
+        const backButton = page.locator('button, a').filter({ hasText: 'BACK' }).first();
+        await expect(backButton).toBeVisible({ timeout: 10000 });
       });
 
       test('back button should navigate to home', async ({ page }) => {
-        const backButton = page.locator('button').filter({ hasText: /Back|Zurück/ }).first();
+        const backButton = page.locator('button, a').filter({ hasText: 'BACK' }).first();
         await backButton.click();
         await page.waitForURL(BASE_URL + '/', { timeout: 10000 });
         expect(page.url()).toBe(BASE_URL + '/');
@@ -119,7 +119,7 @@ for (const config of [desktopConfig, mobileConfig]) {
       });
 
       test('back button should navigate to home', async ({ page }) => {
-        const backButton = page.locator('button').filter({ hasText: /Back|Zurück/ }).first();
+        const backButton = page.locator('button, a').filter({ hasText: 'BACK' }).first();
         if (await backButton.isVisible({ timeout: 3000 }).catch(() => false)) {
           await backButton.click();
           await page.waitForURL(BASE_URL + '/', { timeout: 15000 });
@@ -140,8 +140,8 @@ for (const config of [desktopConfig, mobileConfig]) {
       });
 
       test('should have back button', async ({ page }) => {
-        const backButton = page.locator('button').filter({ hasText: /Back|Zurück/ }).first();
-        await expect(backButton).toBeVisible({ timeout: 5000 });
+        const backButton = page.locator('button, a').filter({ hasText: 'BACK' }).first();
+        await expect(backButton).toBeVisible({ timeout: 10000 });
       });
     });
 
@@ -157,8 +157,8 @@ for (const config of [desktopConfig, mobileConfig]) {
       });
 
       test('should have back button', async ({ page }) => {
-        const backButton = page.locator('button').filter({ hasText: /Back|Zurück/ }).first();
-        await expect(backButton).toBeVisible({ timeout: 5000 });
+        const backButton = page.locator('button, a').filter({ hasText: 'BACK' }).first();
+        await expect(backButton).toBeVisible({ timeout: 10000 });
       });
     });
 
@@ -174,8 +174,8 @@ for (const config of [desktopConfig, mobileConfig]) {
       });
 
       test('should have back button', async ({ page }) => {
-        const backButton = page.locator('button').filter({ hasText: /Back|Zurück/ }).first();
-        await expect(backButton).toBeVisible({ timeout: 5000 });
+        const backButton = page.locator('button, a').filter({ hasText: 'BACK' }).first();
+        await expect(backButton).toBeVisible({ timeout: 10000 });
       });
     });
 
@@ -189,7 +189,7 @@ for (const config of [desktopConfig, mobileConfig]) {
         await page.waitForURL('**/practice', { timeout: 10000 });
 
         // Practice -> Home
-        const backButton = page.locator('button').filter({ hasText: /Back|Zurück/ }).first();
+        const backButton = page.locator('button, a').filter({ hasText: 'BACK' }).first();
         await backButton.click();
         await page.waitForURL(BASE_URL + '/', { timeout: 10000 });
         expect(page.url()).toBe(BASE_URL + '/');

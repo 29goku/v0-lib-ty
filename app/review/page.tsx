@@ -22,8 +22,11 @@ export default function ReviewPage() {
   const [selectedQuestion, setSelectedQuestion] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [showResetDialog, setShowResetDialog] = useState(false)
-  const [activeTab, setActiveTab] = useState<'test' | 'flagged' | 'completed' | 'incorrect'>('test')
+  const [activeTab, setActiveTab] = useState<'allTests' | 'test' | 'flagged' | 'completed' | 'incorrect'>('allTests')
   const [mounted, setMounted] = useState(false)
+  const [selectedTestId, setSelectedTestId] = useState<string | null>(null)
+  const [selectedTestQuestions, setSelectedTestQuestions] = useState<any[]>([])
+  const [selectedTestAnswers, setSelectedTestAnswers] = useState<any[]>([])
 
   const theme = getTheme(isDark)
 
@@ -81,10 +84,14 @@ export default function ReviewPage() {
   const incorrectQuestions = questions.filter((q) => userProgress.incorrectAnswers?.includes(q.id) || false)
 
   // Find selected question data - ensure it updates when selectedQuestion changes
-  const selectedQuestionData = selectedQuestion ? (activeTab === 'test' ? lastTestQuestions.find((q) => q.id === selectedQuestion) : questions.find((q) => q.id === selectedQuestion)) : null
+  const selectedQuestionData = selectedQuestion ?
+    (activeTab === 'test' ? lastTestQuestions.find((q) => q.id === selectedQuestion) :
+     activeTab === 'allTests' ? selectedTestQuestions.find((q) => q.id === selectedQuestion) :
+     questions.find((q) => q.id === selectedQuestion)) : null
 
   // Get filtered questions based on active tab for jump navigation
   const filteredQuestions =
+    activeTab === 'allTests' ? selectedTestQuestions :
     activeTab === 'test' ? lastTestQuestions :
     activeTab === 'flagged' ? flaggedQuestions :
     activeTab === 'completed' ? completedQuestions :
@@ -92,7 +99,10 @@ export default function ReviewPage() {
 
   // Auto-select first question when tab changes or when no question is selected
   useEffect(() => {
-    if (activeTab === 'test') {
+    if (activeTab === 'allTests') {
+      // For all tests tab, don't auto-select a question yet
+      setSelectedQuestion(null)
+    } else if (activeTab === 'test') {
       if (lastTestQuestions.length > 0 && !selectedQuestion) {
         setSelectedQuestion(lastTestQuestions[0].id)
       }
@@ -231,18 +241,19 @@ export default function ReviewPage() {
           {/* Question Lists */}
           <div className="lg:col-span-3">
             {/* Custom Tab Navigation */}
-            <div className={`grid grid-cols-3 w-full border rounded-lg overflow-hidden ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
-              {['test', 'flagged', 'completed', 'incorrect'].map((tab, idx) => (
+            <div className={`grid grid-cols-5 w-full border rounded-lg overflow-hidden ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
+              {['allTests', 'test', 'flagged', 'completed', 'incorrect'].map((tab, idx) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab as any)}
-                  className={`py-3 px-4 font-semibold text-center transition-all ${
+                  className={`py-3 px-2 font-semibold text-center text-sm transition-all ${
                     activeTab === tab
                       ? isDark ? 'bg-gray-900/20 text-white' : 'bg-gray-200 text-gray-900'
                       : isDark ? 'text-gray-400 hover:text-gray-300' : 'text-gray-600 hover:text-gray-900'
-                  } ${idx < 3 ? isDark ? 'border-r border-gray-700' : 'border-r border-gray-300' : ''}`}
+                  } ${idx < 4 ? isDark ? 'border-r border-gray-700' : 'border-r border-gray-300' : ''}`}
                 >
-                  {tab === 'test' && `TEST REVIEW (${lastTestQuestions.length})`}
+                  {tab === 'allTests' && `ALL TESTS (${userProgress.testAttempts?.length || 0})`}
+                  {tab === 'test' && `RECENT (${lastTestQuestions.length})`}
                   {tab === 'flagged' && `FLAGGED (${flaggedQuestions.length})`}
                   {tab === 'completed' && `COMPLETED (${completedQuestions.length})`}
                   {tab === 'incorrect' && `INCORRECT (${incorrectQuestions.length})`}
@@ -252,6 +263,74 @@ export default function ReviewPage() {
 
             {/* Tab Content */}
             <div className="mt-6">
+              {activeTab === 'allTests' && (
+                <div className="space-y-3 max-h-[60vh] overflow-y-auto pr-2">
+                  {!userProgress.testAttempts || userProgress.testAttempts.length === 0 ? (
+                    <Card className={`border ${isDark ? 'border-gray-700 bg-transparent' : 'border-gray-200 bg-gray-50'}`}>
+                      <CardContent className={`p-8 text-center ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                        <p className="text-xl font-semibold">No test attempts yet!</p>
+                        <p className="text-sm mt-2">Take a test to see your history here.</p>
+                      </CardContent>
+                    </Card>
+                  ) : (
+                    [...(userProgress.testAttempts || [])].reverse().map((attempt) => {
+                      const percentage = attempt.totalQuestions > 0 ? Math.round((attempt.score / attempt.totalQuestions) * 100) : 0
+                      const testDate = new Date(attempt.date)
+                      const displayDate = testDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' })
+                      const displayTime = testDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+                      const isPassed = percentage >= 52
+
+                      return (
+                        <Card
+                          key={attempt.id}
+                          className={`border cursor-pointer transition-colors ${
+                            selectedTestId === attempt.id
+                              ? isDark ? 'border-blue-400 bg-blue-900/20' : 'border-blue-500 bg-blue-50'
+                              : isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'
+                          }`}
+                          onClick={() => {
+                            setSelectedTestId(attempt.id)
+                            setSelectedTestQuestions(attempt.questions || [])
+                            setSelectedTestAnswers(attempt.answers || [])
+                            setSelectedQuestion(attempt.questions?.[0]?.id || null)
+                          }}
+                        >
+                          <CardContent className="p-4">
+                            <div className="flex items-center justify-between">
+                              <div className="flex-1">
+                                <div className="flex items-center gap-3 mb-2">
+                                  <span className={`text-sm font-semibold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                                    {displayDate} at {displayTime}
+                                  </span>
+                                  {attempt.state && (
+                                    <Badge className={`border px-2 py-1 text-xs ${isDark ? 'border-gray-700 bg-transparent text-gray-300' : 'border-gray-300 bg-gray-100 text-gray-700'}`}>
+                                      {attempt.state}
+                                    </Badge>
+                                  )}
+                                </div>
+                                <div className={`text-lg font-bold ${isPassed ? isDark ? 'text-green-400' : 'text-green-600' : isDark ? 'text-red-400' : 'text-red-600'}`}>
+                                  {attempt.score}/{attempt.totalQuestions} ({percentage}%)
+                                </div>
+                              </div>
+                              <div className={`text-right`}>
+                                <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                                  {Math.round(attempt.timeSpent / 1000 / 60)}m
+                                </div>
+                                {isPassed ? (
+                                  <CheckCircle className="w-5 h-5 text-green-500 mt-1" />
+                                ) : (
+                                  <AlertTriangle className="w-5 h-5 text-red-500 mt-1" />
+                                )}
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      )
+                    })
+                  )}
+                </div>
+              )}
+
               {activeTab === 'test' && (
                 <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                   {lastTestQuestions.length === 0 ? (
@@ -418,7 +497,7 @@ export default function ReviewPage() {
           <div className="lg:col-span-2">
             {selectedQuestionData ? (
               <div className="space-y-4">
-                {activeTab === 'test' && lastTestAnswers.length > 0 ? (
+                {(activeTab === 'test' && lastTestAnswers.length > 0) || (activeTab === 'allTests' && selectedTestAnswers.length > 0) ? (
                   <>
                     <SwipeCard
                       question={selectedQuestionData}
@@ -426,7 +505,11 @@ export default function ReviewPage() {
                       onFlag={() => handleToggleFlag(selectedQuestionData.id)}
                       isFlagged={userProgress.flaggedQuestions?.includes(selectedQuestionData.id) || false}
                       showAnswer={true} // Always show answers in review mode
-                      externalSelectedAnswer={lastTestAnswers.find((a) => a.questionId === selectedQuestionData.id)?.selectedIndex ?? null}
+                      externalSelectedAnswer={
+                        activeTab === 'allTests'
+                          ? selectedTestAnswers.find((a) => a.questionId === selectedQuestionData.id)?.selectedIndex ?? null
+                          : lastTestAnswers.find((a) => a.questionId === selectedQuestionData.id)?.selectedIndex ?? null
+                      }
                       totalQuestions={filteredQuestions.length}
                       onJumpToQuestion={(index) => setSelectedQuestion(filteredQuestions[index]?.id)}
                     />

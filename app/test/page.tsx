@@ -88,7 +88,7 @@ export default function TestPage() {
           // Timer expired - submit test
           const timeSpent = testStartTime ? Date.now() - testStartTime : 0
           const correctCount = testAnswers.filter((a) => a.correct).length
-          recordTestAttempt(correctCount, testQuestions.length, timeSpent)
+          recordTestAttempt(correctCount, testQuestions.length, timeSpent, undefined, testQuestions, testAnswers)
           endTest()
           setShowResults(true)
           return 0
@@ -176,7 +176,7 @@ export default function TestPage() {
     const timeSpent = testStartTime ? Date.now() - testStartTime : 0
     const correctCount = testAnswers.filter((a) => a.correct).length
     // Use testQuestions.length for accurate total (not testAnswers which may be incomplete)
-    recordTestAttempt(correctCount, testQuestions.length, timeSpent)
+    recordTestAttempt(correctCount, testQuestions.length, timeSpent, undefined, testQuestions, testAnswers)
     endTest()
     setShowResults(true)
   }

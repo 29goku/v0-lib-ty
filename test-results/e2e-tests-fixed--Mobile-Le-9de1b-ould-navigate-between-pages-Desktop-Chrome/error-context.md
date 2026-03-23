@@ -1,0 +1,97 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - link [ref=e6] [cursor=pointer]:
+        - /url: /
+        - button [ref=e7]:
+          - img
+      - generic [ref=e9]:
+        - heading "PRACTICE MODE" [level=1] [ref=e10]
+        - paragraph [ref=e11]: Q 1/300
+      - generic [ref=e12]:
+        - button "Switch to light mode" [ref=e13] [cursor=pointer]:
+          - img [ref=e15]
+        - button "🇺🇸" [ref=e22] [cursor=pointer]:
+          - generic [ref=e23]: 🇺🇸
+    - generic [ref=e26]:
+      - button "Show Filters" [ref=e28] [cursor=pointer]:
+        - img
+        - text: Show Filters
+        - img
+      - heading "Filter by Status" [level=3] [ref=e34]
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]: Question q001
+            - generic [ref=e45]:
+              - button "Translate" [ref=e46] [cursor=pointer]:
+                - img
+              - button "Read aloud" [ref=e47] [cursor=pointer]:
+                - img
+              - button "Flag" [ref=e48] [cursor=pointer]:
+                - img
+              - button "Jump to question (1-300)" [ref=e49] [cursor=pointer]:
+                - img
+          - paragraph [ref=e51]: In Deutschland dürfen Menschen offen etwas gegen die Regierung sagen, weil …
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - button "A. hier Religionsfreiheit gilt." [ref=e54] [cursor=pointer]:
+              - generic [ref=e55]:
+                - generic [ref=e56]: A.
+                - generic [ref=e58]: hier Religionsfreiheit gilt.
+            - button "B. die Menschen Steuern zahlen." [ref=e59] [cursor=pointer]:
+              - generic [ref=e60]:
+                - generic [ref=e61]: B.
+                - generic [ref=e63]: die Menschen Steuern zahlen.
+            - button "C. die Menschen das Wahlrecht haben." [ref=e64] [cursor=pointer]:
+              - generic [ref=e65]:
+                - generic [ref=e66]: C.
+                - generic [ref=e68]: die Menschen das Wahlrecht haben.
+            - button "D. hier Meinungsfreiheit gilt." [ref=e69] [cursor=pointer]:
+              - generic [ref=e70]:
+                - generic [ref=e71]: D.
+                - generic [ref=e73]: hier Meinungsfreiheit gilt.
+          - paragraph [ref=e75]:
+            - img [ref=e77]
+            - text: Select an answer
+    - generic [ref=e80]:
+      - button "Previous" [ref=e81] [cursor=pointer]: ‹
+      - generic [ref=e82]:
+        - button "Go to question 1" [ref=e83] [cursor=pointer]:
+          - generic [ref=e84]: "1"
+        - button "Go to question 2" [ref=e85] [cursor=pointer]:
+          - generic [ref=e86]: "2"
+        - button "Go to question 3" [ref=e87] [cursor=pointer]:
+          - generic [ref=e88]: "3"
+        - button "Jump near 151" [ref=e89] [cursor=pointer]: …
+        - button "Go to question 300" [ref=e90] [cursor=pointer]:
+          - generic [ref=e91]: "300"
+      - button "Next" [ref=e92] [cursor=pointer]: ›
+  - alert [ref=e94]
+  - dialog "How would you rate your experience?" [ref=e97]:
+    - generic [ref=e99]:
+      - button [ref=e101] [cursor=pointer]:
+        - img [ref=e102]
+      - generic "How would you rate your experience?" [ref=e105]:
+        - generic [ref=e106]:
+          - heading "How would you rate your experience?" [level=2] [ref=e107]
+          - radiogroup "where 1 is Not satisfied at all and 5 is Very satisfied" [ref=e108]:
+            - generic [ref=e109]:
+              - generic [ref=e110] [cursor=pointer]:
+                - radio "1"
+              - generic [ref=e111] [cursor=pointer]:
+                - radio "2"
+              - generic [ref=e112] [cursor=pointer]:
+                - radio "3"
+              - generic [ref=e113] [cursor=pointer]:
+                - radio "4"
+              - generic [ref=e114] [cursor=pointer]:
+                - radio "5"
+            - generic [ref=e115]:
+              - generic [ref=e116]: Not satisfied at all
+              - generic [ref=e117]: Very satisfied
+        - button "Next" [disabled] [ref=e120]
+```

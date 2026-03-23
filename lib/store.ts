@@ -28,11 +28,14 @@ export interface UserProgress {
   categoryStats?: { [category: string]: { correct: number; total: number } }
   dailyStats?: { [date: string]: { correct: number; total: number; xp: number } }
   testAttempts?: Array<{
+    id: string
     date: string
     score: number
     totalQuestions: number
     timeSpent: number
     state?: string
+    questions: Question[]
+    answers: { questionId: string; selectedIndex: number; correct: boolean }[]
   }>
   studySessionCount?: number
 }
@@ -62,7 +65,7 @@ export interface AppState {
   setCurrentQuestionIndex: (index: number) => void
   answerQuestion: (questionId: string, selectedIndex: number, correct: boolean) => void
   answerQuestionWithCategory: (questionId: string, selectedIndex: number, correct: boolean, category: string) => void
-  recordTestAttempt: (score: number, totalQuestions: number, timeSpent: number, state?: string) => void
+  recordTestAttempt: (score: number, totalQuestions: number, timeSpent: number, state?: string, questions?: Question[], answers?: { questionId: string; selectedIndex: number; correct: boolean }[]) => void
   flagQuestion: (questionId: string) => void
   unflagQuestion: (questionId: string) => void
   addXP: (amount: number) => void
@@ -325,17 +328,31 @@ export const useStore = create<AppState>()(
           }
         }),
 
-      recordTestAttempt: (score, totalQuestions, timeSpent, state) =>
+      recordTestAttempt: (score, totalQuestions, timeSpent, state, questions = [], answers = []) =>
         set((state_) => {
           const newProgress = { ...state_.userProgress }
           if (!newProgress.testAttempts) newProgress.testAttempts = []
+
+          // Generate unique test ID
+          const testId = `test-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`
+
+          // Add new test attempt
           newProgress.testAttempts.push({
+            id: testId,
             date: new Date().toISOString(),
             score,
             totalQuestions,
             timeSpent,
             state,
+            questions,
+            answers,
           })
+
+          // Keep only last 50 tests to manage localStorage size
+          if (newProgress.testAttempts.length > 50) {
+            newProgress.testAttempts = newProgress.testAttempts.slice(-50)
+          }
+
           if (!newProgress.studySessionCount) newProgress.studySessionCount = 0
           newProgress.studySessionCount += 1
           return { userProgress: newProgress }
