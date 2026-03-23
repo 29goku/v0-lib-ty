@@ -1,6 +1,7 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
 import type { Language } from "./i18n"
+import { getDataUrl } from "./api-utils"
 
 export interface Question {
   id: string
@@ -434,7 +435,7 @@ export const useStore = create<AppState>()(
         console.log("🔥 Loading questions from JSON...")
         try {
           // Try multiple possible paths for questions.json
-          let response = await fetch("/data/questions.json")
+          let response = await fetch(getDataUrl("/data/questions.json"))
 
           // If not found, try alternate paths
           if (!response.ok) {
@@ -460,7 +461,7 @@ export const useStore = create<AppState>()(
           console.error("Failed to load questions from questions.json:", error)
           // Try loading state questions as fallback
           try {
-            const stateResponse = await fetch("/data/state-questions.json")
+            const stateResponse = await fetch(getDataUrl("/data/state-questions.json"))
             if (!stateResponse.ok) {
               throw new Error(`HTTP error! status: ${stateResponse.status}`)
             }
