@@ -80,27 +80,24 @@ export default function TestPage() {
     initializeTest()
   }, [loadQuestions])
 
-  const handleSubmitTest = useCallback(() => {
-    const timeSpent = testStartTime ? Date.now() - testStartTime : 0
-    const correctCount = testAnswers.filter((a) => a.correct).length
-    recordTestAttempt(correctCount, testAnswers.length, timeSpent)
-    endTest()
-    setShowResults(true)
-  }, [testStartTime, testAnswers, recordTestAttempt, endTest])
-
   useEffect(() => {
     if (!testMode || showResults || showConfig) return
     const timer = setInterval(() => {
       setTimeRemaining((prev) => {
         if (prev <= 1) {
-          handleSubmitTest()
+          // Timer expired - submit test
+          const timeSpent = testStartTime ? Date.now() - testStartTime : 0
+          const correctCount = testAnswers.filter((a) => a.correct).length
+          recordTestAttempt(correctCount, testQuestions.length, timeSpent)
+          endTest()
+          setShowResults(true)
           return 0
         }
         return prev - 1
       })
     }, 1000)
     return () => clearInterval(timer)
-  }, [testMode, showResults, showConfig, handleSubmitTest])
+  }, [testMode, showResults, showConfig])
 
   // Cleanup test state when navigating away
   useEffect(() => {
