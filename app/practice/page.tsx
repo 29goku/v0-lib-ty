@@ -766,19 +766,21 @@ export default function PracticePage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
                 {/* Left: Swipe Card */}
                 <div className="w-full">
-                  <SwipeCard
-                      question={currentQuestion}
-                      onSwipe={handleSwipe}
-                      onAnswerSelect={handleAnswerSelect}
-                      showAnswer={showAnswer}
-                      onFlag={handleFlag}
-                      isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
-                      externalSelectedAnswer={lastAnswer?.selectedIndex ?? null}
-                      isTranslated={showTranslation}
-                      onTranslate={() => setShowTranslation(!showTranslation)}
-                      totalQuestions={filteredQuestions.length}
-                      onJumpToQuestion={(index) => setCurrentIndex(index)}
-                  />
+                  {currentQuestion ? (
+                    <SwipeCard
+                        question={currentQuestion}
+                        onSwipe={handleSwipe}
+                        onAnswerSelect={handleAnswerSelect}
+                        showAnswer={showAnswer}
+                        onFlag={handleFlag}
+                        isFlagged={userProgress.flaggedQuestions.includes(currentQuestion.id)}
+                        externalSelectedAnswer={lastAnswer?.selectedIndex ?? null}
+                        isTranslated={showTranslation}
+                        onTranslate={() => setShowTranslation(!showTranslation)}
+                        totalQuestions={filteredQuestions.length}
+                        onJumpToQuestion={(index) => setCurrentIndex(index)}
+                    />
+                  ) : null}
 
                   {showAnswer && (
                       <div className="flex justify-start mt-4">
