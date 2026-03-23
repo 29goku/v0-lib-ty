@@ -187,6 +187,11 @@ export default function PracticePage() {
 
   const currentQuestion = filteredQuestions[currentIndex]
 
+  // Calculate progress for filtered questions only
+  const answeredInFilter = filteredQuestions.filter((q) =>
+    userProgress.completedQuestions.includes(q.id)
+  ).length
+
   // Load state questions when state is selected
   useEffect(() => {
     const loadStateQuestionsForFilter = async () => {
@@ -580,13 +585,13 @@ export default function PracticePage() {
                   <div>
                     <p className={`text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.progress}</p>
                     <p className={`text-3xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                      {userProgress.questionsAnswered}/{filteredQuestions.length}
+                      {answeredInFilter}/{filteredQuestions.length}
                     </p>
                   </div>
                   <div className="text-4xl group-hover:scale-125 transition-transform animate-pulse">🎯</div>
                 </div>
                 <div className="mt-4">
-                  <ProgressBar current={userProgress.questionsAnswered} total={filteredQuestions.length} label="" showNumbers={false} />
+                  <ProgressBar current={answeredInFilter} total={filteredQuestions.length} label="" showNumbers={false} />
                 </div>
               </CardContent>
             </Card>
