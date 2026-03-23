@@ -518,6 +518,7 @@ export default function TestPage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-6 mb-6">
           {/* Left: Question Card */}
           <div>
+            {currentQuestion ? (
             <SwipeCard
               question={currentQuestion}
               onSwipe={(dir) => {
@@ -540,6 +541,7 @@ export default function TestPage() {
               totalQuestions={testQuestions.length}
               onJumpToQuestion={setCurrentQuestionIndex}
             />
+            ) : null}
           </div>
 
           {/* Right: Question Grid */}
