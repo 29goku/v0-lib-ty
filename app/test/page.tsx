@@ -453,11 +453,12 @@ export default function TestPage() {
     )
   }
 
-  if (!currentQuestion) {
+  if (!testMode || !testQuestions.length || !currentQuestion) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-semibold">No questions available</h2>
+          <h2 className="text-2xl font-semibold">Test Loading...</h2>
+          <p className="mt-2 text-gray-400 text-sm">Please wait or click Start Test</p>
           <Link href="/">
             <Button className="mt-4">Back to Home</Button>
           </Link>
