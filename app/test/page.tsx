@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
+import { useRouter } from "next/navigation"
 import { useStore } from "@/lib/store"
 import { useTheme, getTheme } from "@/lib/theme"
 import ThemeToggle from "@/components/ThemeToggle"
@@ -42,6 +43,7 @@ export default function TestPage() {
 
   const { isDark } = useTheme()
   const theme = getTheme(isDark)
+  const router = useRouter()
 
   // Start test with selected number of questions
   const handleStartTest = () => {
@@ -78,6 +80,14 @@ export default function TestPage() {
     initializeTest()
   }, [loadQuestions])
 
+  const handleSubmitTest = useCallback(() => {
+    const timeSpent = testStartTime ? Date.now() - testStartTime : 0
+    const correctCount = testAnswers.filter((a) => a.correct).length
+    recordTestAttempt(correctCount, testAnswers.length, timeSpent)
+    endTest()
+    setShowResults(true)
+  }, [testStartTime, testAnswers, recordTestAttempt, endTest])
+
   useEffect(() => {
     if (!testMode || showResults || showConfig) return
     const timer = setInterval(() => {
@@ -90,7 +100,26 @@ export default function TestPage() {
       })
     }, 1000)
     return () => clearInterval(timer)
-  }, [testMode, showResults, showConfig])
+  }, [testMode, showResults, showConfig, handleSubmitTest])
+
+  // Cleanup test state when navigating away
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      if (testMode && !showResults) {
+        endTest()
+      }
+    }
+
+    window.addEventListener('beforeunload', handleBeforeUnload)
+
+    // Cleanup on component unmount
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload)
+      if (testMode && !showResults && !showConfig) {
+        endTest()
+      }
+    }
+  }, [testMode, showResults, showConfig, endTest])
 
   const currentQuestion = testQuestions[currentQuestionIndex]
   const currentAnswer = testAnswers.find((a) => a.questionId === currentQuestion?.id)
@@ -105,13 +134,14 @@ export default function TestPage() {
     // Award XP and update streak in test mode (same as practice)
     if (isCorrect) {
       addXP(10)
-      updateStreak(true)
+      const newStreak = updateStreak(true)
 
-      if (userProgress.streak === 5) addBadge("streak-5")
-      if (userProgress.streak === 10) addBadge("streak-10")
+      if (newStreak === 5) addBadge("streak-5")
+      if (newStreak === 10) addBadge("streak-10")
 
-      if (userProgress.xp >= 100 && !userProgress.badges.includes("xp-100")) addBadge("xp-100")
-      if (userProgress.xp >= 500 && !userProgress.badges.includes("xp-500")) addBadge("xp-500")
+      const newXP = userProgress.xp + 10
+      if (newXP >= 100 && !userProgress.badges.includes("xp-100")) addBadge("xp-100")
+      if (newXP >= 500 && !userProgress.badges.includes("xp-500")) addBadge("xp-500")
     } else {
       updateStreak(false)
     }
@@ -148,7 +178,8 @@ export default function TestPage() {
   const handleSubmitTest = () => {
     const timeSpent = testStartTime ? Date.now() - testStartTime : 0
     const correctCount = testAnswers.filter((a) => a.correct).length
-    recordTestAttempt(correctCount, testAnswers.length, timeSpent)
+    // Use testQuestions.length for accurate total (not testAnswers which may be incomplete)
+    recordTestAttempt(correctCount, testQuestions.length, timeSpent)
     endTest()
     setShowResults(true)
   }

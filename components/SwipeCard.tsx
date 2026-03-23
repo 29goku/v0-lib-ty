@@ -456,8 +456,10 @@ export default function SwipeCard({
                 <motion.button
                   key={index}
                   onClick={() => handleAnswerClick(index)}
+                  drag={false}
                   whileHover={{ backgroundColor: "rgba(0,0,0,0.4)" }}
                   whileTap={{ scale: 0.99 }}
+                  style={{ pointerEvents: "auto" }}
                   className={`w-full p-3 text-left rounded border-2 text-sm transition-all font-semibold ${
                     showAnswer && displaySelectedAnswer !== null
                       ? index === question.answerIndex

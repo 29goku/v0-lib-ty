@@ -66,7 +66,7 @@ export interface AppState {
   flagQuestion: (questionId: string) => void
   unflagQuestion: (questionId: string) => void
   addXP: (amount: number) => void
-  updateStreak: (correct: boolean) => void
+  updateStreak: (correct: boolean) => number
   toggleDarkMode: () => void
   setLanguage: (language: Language) => void
   setSelectedCategory: (category: string | null) => void
@@ -227,17 +227,22 @@ export const useStore = create<AppState>()(
           },
         })),
 
-      updateStreak: (correct) =>
+      updateStreak: (correct) => {
+        let newStreak = 0
         set((state) => {
           const newProgress = { ...state.userProgress }
           if (correct) {
             newProgress.streak += 1
             newProgress.maxStreak = Math.max(newProgress.maxStreak, newProgress.streak)
+            newStreak = newProgress.streak
           } else {
             newProgress.streak = 0
+            newStreak = 0
           }
           return { userProgress: newProgress }
-        }),
+        })
+        return newStreak
+      },
 
       answerQuestionWithCategory: (questionId, selectedIndex, correct, category) =>
         set((state) => {
@@ -246,25 +251,38 @@ export const useStore = create<AppState>()(
           const wasIncorrect = newProgress.incorrectAnswers?.includes(questionId)
           const wasCorrect = newProgress.completedQuestions.includes(questionId) && !wasIncorrect
 
-          // Track category stats
+          // Track category stats - only count for new questions or corrections
           if (!newProgress.categoryStats) newProgress.categoryStats = {}
           if (!newProgress.categoryStats[category]) {
             newProgress.categoryStats[category] = { correct: 0, total: 0 }
           }
-          newProgress.categoryStats[category].total += 1
-          if (correct) {
+          if (isNewQuestion) {
+            newProgress.categoryStats[category].total += 1
+            if (correct) {
+              newProgress.categoryStats[category].correct += 1
+            }
+          } else if (wasIncorrect && correct) {
+            // Correcting a mistake: increment correct but not total
             newProgress.categoryStats[category].correct += 1
           }
 
-          // Track daily stats
+          // Track daily stats - only count for new questions or corrections
           const today = new Date().toISOString().split("T")[0]
           if (!newProgress.dailyStats) newProgress.dailyStats = {}
           if (!newProgress.dailyStats[today]) {
             newProgress.dailyStats[today] = { correct: 0, total: 0, xp: 0 }
           }
-          newProgress.dailyStats[today].total += 1
-          if (correct) {
+          if (isNewQuestion) {
+            newProgress.dailyStats[today].total += 1
+            if (correct) {
+              newProgress.dailyStats[today].correct += 1
+            }
+          } else if (wasIncorrect && correct) {
+            // Correcting a mistake: increment correct but not total
             newProgress.dailyStats[today].correct += 1
+          }
+          if (correct && (isNewQuestion || wasIncorrect)) {
+            newProgress.dailyStats[today].xp += 10
           }
 
           // Only increment questionsAnswered if it's a new question
@@ -279,7 +297,6 @@ export const useStore = create<AppState>()(
             if (isNewQuestion || wasIncorrect) {
               newProgress.correctAnswers += 1
             }
-            newProgress.dailyStats[today].xp += 10
             if (newProgress.incorrectAnswers) {
               newProgress.incorrectAnswers = newProgress.incorrectAnswers.filter((id) => id !== questionId)
             }
@@ -336,6 +353,7 @@ export const useStore = create<AppState>()(
         set((state) => ({
           testMode: false,
           testStartTime: null,
+          currentQuestionIndex: 0,
           lastTestQuestions: state.testQuestions,
           lastTestAnswers: state.testAnswers,
           testQuestions: [],

@@ -185,7 +185,15 @@ export default function PracticePage() {
     })
   }
 
-  const currentQuestion = filteredQuestions[currentIndex]
+  // Add bounds checking to prevent index out of bounds errors
+  const currentQuestion = filteredQuestions[currentIndex] || null
+
+  // Auto-correct currentIndex if it's out of bounds
+  useEffect(() => {
+    if (filteredQuestions.length > 0 && currentIndex >= filteredQuestions.length) {
+      setCurrentIndex(0)
+    }
+  }, [filteredQuestions.length, currentIndex])
 
   // Calculate progress for filtered questions only
   const answeredInFilter = filteredQuestions.filter((q) =>
@@ -225,6 +233,9 @@ export default function PracticePage() {
               })
               setStateQuestions(combined)
             }
+          } else {
+            // Clear stale data if fetch fails
+            setStateQuestions([])
           }
         } catch (error) {
           console.error("Failed to load state questions:", error)
@@ -261,6 +272,13 @@ export default function PracticePage() {
     setShowAnswer(false)
     setLastAnswer(null)
     setShowTranslation(false)
+
+    // Add safety check for empty filter
+    if (filteredQuestions.length === 0) {
+      setCurrentIndex(0)
+      return
+    }
+
     if (currentIndex < filteredQuestions.length - 1) {
       setCurrentIndex(currentIndex + 1)
     } else {
@@ -269,16 +287,32 @@ export default function PracticePage() {
   }
 
   const previousQuestion = () => {
+    setShowAnswer(false)
+    setLastAnswer(null)
+    setShowTranslation(false)
+
+    // Add safety check for empty filter
+    if (filteredQuestions.length === 0) {
+      setCurrentIndex(0)
+      return
+    }
+
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1)
-      setShowAnswer(false)
-      setLastAnswer(null)
-      setShowTranslation(false)
+    } else {
+      // Wrap to last question if at beginning
+      setCurrentIndex(filteredQuestions.length - 1)
     }
   }
 
   const handleQuestionJump = (index: number) => {
-    setCurrentIndex(index)
+    // Add bounds checking for question jump - prevent accessing empty arrays
+    if (filteredQuestions.length === 0) {
+      setCurrentIndex(0)
+      return
+    }
+    const safeIndex = Math.max(0, Math.min(index, filteredQuestions.length - 1))
+    setCurrentIndex(safeIndex)
     setShowAnswer(false)
     setLastAnswer(null)
     setShowTranslation(false)
@@ -336,13 +370,14 @@ export default function PracticePage() {
 
     if (isCorrect) {
       addXP(10)
-      updateStreak(true)
+      const newStreak = updateStreak(true)
 
-      if (userProgress.streak === 5) addBadge("streak-5")
-      if (userProgress.streak === 10) addBadge("streak-10")
+      if (newStreak === 5) addBadge("streak-5")
+      if (newStreak === 10) addBadge("streak-10")
 
-      if (userProgress.xp >= 100 && !userProgress.badges.includes("xp-100")) addBadge("xp-100")
-      if (userProgress.xp >= 500 && !userProgress.badges.includes("xp-500")) addBadge("xp-500")
+      const newXP = userProgress.xp + 10
+      if (newXP >= 100 && !userProgress.badges.includes("xp-100")) addBadge("xp-100")
+      if (newXP >= 500 && !userProgress.badges.includes("xp-500")) addBadge("xp-500")
     } else {
       updateStreak(false)
     }
@@ -357,13 +392,20 @@ export default function PracticePage() {
         // First clear the feedback states
         setLastAnswer(null)
         setShowTranslation(false)
-        // After removing this question, if we were at the last question, go to start
-        // Otherwise stay at same index (which will now show the next question)
-        if (currentIndex >= currentFilterLength - 1) {
-          setCurrentIndex(0)
-        }
-        // Clear showAnswer last - this will trigger the useEffect to update displayQuestion
         setShowAnswer(false)
+
+        // After state updates, check bounds and adjust index if needed
+        // Use a second timeout to ensure state updates have processed
+        setTimeout(() => {
+          if (currentFilterLength <= 1) {
+            // If this was the last question in filter, reset to 0
+            setCurrentIndex(0)
+          } else if (currentIndex >= currentFilterLength - 1) {
+            // If we were at the last question, go to start
+            setCurrentIndex(0)
+          }
+          // Otherwise, stay at same index (which will now show the next question)
+        }, 0)
       }, 2000)
     }
   }
