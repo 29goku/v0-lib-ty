@@ -35,14 +35,20 @@ jobs:
         env:
           PLAYWRIGHT_TEST_BASE_URL: https://www.lebeninde.com
 
+      - name: Copy report to public folder
+        if: always()
+        run: |
+          mkdir -p public/playwright-report
+          cp -r test-results/playwright-report/* public/playwright-report/ || true
+
       - name: Commit test report to repo
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Add report files
-          git add test-results/ test-results.json junit.xml || true
+          # Add report files and public folder
+          git add test-results/ test-results.json junit.xml public/playwright-report/ || true
 
           # Check if there are changes
           if git diff --cached --quiet; then
