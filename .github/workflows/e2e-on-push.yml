@@ -1,0 +1,58 @@
+name: E2E Tests on Push
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+    # Wait for Vercel deployment (30 seconds should be enough for most cases)
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Wait for Vercel deployment
+        run: sleep 30
+
+      - name: Run E2E tests against production
+        run: npm run test:e2e
+        env:
+          PLAYWRIGHT_TEST_BASE_URL: https://www.lebeninde.com
+
+      - name: Commit test report to repo
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Add report files
+          git add test-results/ test-results.json junit.xml || true
+
+          # Check if there are changes
+          if git diff --cached --quiet; then
+            echo "No test result changes to commit"
+          else
+            git commit -m "test: Update E2E test results from workflow run ${{ github.run_id }}"
+            git push https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git HEAD:main
+          fi
+
+      - name: Upload test results as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: test-results/playwright-report/
+          retention-days: 7
