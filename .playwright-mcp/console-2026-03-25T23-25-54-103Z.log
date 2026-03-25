@@ -1,0 +1,37 @@
+[     132ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/media/028c0d39d2e8f589-s.p.woff2:0
+[     138ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/4bd1b696-1c88c00269cf164c.js:0
+[     138ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/webpack-80607c4b50fde8ad.js:0
+[     138ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/css/44a7b1b6a8b04da0.css:0
+[     138ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/media/5b01f339abf2f1a5.p.woff2:0
+[     151ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/255-eac72127868500e2.js:0
+[     156ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/app/layout-3aa09c7d3f19abd3.js:0
+[     156ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/main-app-f810cc9959894cd9.js:0
+[     156ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/b1644e8c-5506a8d4545c242a.js:0
+[     162ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/app/page-8c894b3e56a59f6d.js:0
+[     162ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/204-f4a84e71d45d261e.js:0
+[     162ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/447-94fc62b244a69cfa.js:0
+[     180ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/manifest.webmanifest:0
+[     180ms] [ERROR] Manifest fetch from https://www.lebeninde.com/v0-lib-ty/manifest.webmanifest failed, code 404 @ https://www.lebeninde.com/:0
+[     379ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://www.lebeninde.com/:0
+[    4268ms] [WARNING] The resource https://www.lebeninde.com/v0-lib-ty/_next/static/media/028c0d39d2e8f589-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.lebeninde.com/:0
+[    4268ms] [WARNING] The resource https://www.lebeninde.com/v0-lib-ty/_next/static/media/5b01f339abf2f1a5.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.lebeninde.com/:0
+[   65996ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/media/028c0d39d2e8f589-s.p.woff2:0
+[   66001ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/255-eac72127868500e2.js:0
+[   66002ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/media/5b01f339abf2f1a5.p.woff2:0
+[   66011ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/4bd1b696-1c88c00269cf164c.js:0
+[   66011ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/css/44a7b1b6a8b04da0.css:0
+[   66018ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/app/page-8c894b3e56a59f6d.js:0
+[   66022ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/b1644e8c-5506a8d4545c242a.js:0
+[   66022ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/204-f4a84e71d45d261e.js:0
+[   66022ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/main-app-f810cc9959894cd9.js:0
+[   66023ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/447-94fc62b244a69cfa.js:0
+[   66023ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/manifest.webmanifest:0
+[   66023ms] [ERROR] Manifest fetch from https://www.lebeninde.com/v0-lib-ty/manifest.webmanifest failed, code 404 @ https://www.lebeninde.com/:0
+[   66026ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/webpack-80607c4b50fde8ad.js:0
+[   66029ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/v0-lib-ty/_next/static/chunks/app/layout-3aa09c7d3f19abd3.js:0
+[   66148ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://www.lebeninde.com/:0
+[   70110ms] [WARNING] The resource https://www.lebeninde.com/v0-lib-ty/_next/static/media/028c0d39d2e8f589-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.lebeninde.com/:0
+[   70110ms] [WARNING] The resource https://www.lebeninde.com/v0-lib-ty/_next/static/media/5b01f339abf2f1a5.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.lebeninde.com/:0
+[  603901ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://www.lebeninde.com/:0
+[  604012ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/icon-192x192.png:0
+[  604012ms] [WARNING] Error while trying to use the following icon from the Manifest: https://www.lebeninde.com/icon-192x192.png (Download error or resource isn't a valid image) @ https://www.lebeninde.com/:0

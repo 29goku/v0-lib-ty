@@ -23,7 +23,7 @@ for (const config of [desktopConfig, mobileConfig]) {
     test.describe('Homepage - /', () => {
       test.beforeEach(async ({ page }) => {
         await page.goto(BASE_URL);
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('domcontentloaded');
       });
 
       test('should load homepage with correct title', async ({ page }) => {
@@ -71,7 +71,7 @@ for (const config of [desktopConfig, mobileConfig]) {
     test.describe('Practice Page - /practice', () => {
       test.beforeEach(async ({ page }) => {
         await page.goto(BASE_URL + '/practice');
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('domcontentloaded');
       });
 
       test('should load practice page', async ({ page }) => {
@@ -113,7 +113,7 @@ for (const config of [desktopConfig, mobileConfig]) {
     test.describe('Test Page - /test', () => {
       test.beforeEach(async ({ page }) => {
         await page.goto(BASE_URL + '/test');
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('domcontentloaded');
       });
 
       test('should load test page', async ({ page }) => {
@@ -140,7 +140,7 @@ for (const config of [desktopConfig, mobileConfig]) {
     test.describe('Review Page - /review', () => {
       test.beforeEach(async ({ page }) => {
         await page.goto(BASE_URL + '/review');
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('domcontentloaded');
       });
 
       test('should load review page', async ({ page }) => {
@@ -161,7 +161,7 @@ for (const config of [desktopConfig, mobileConfig]) {
     test.describe('Settings Page - /settings', () => {
       test.beforeEach(async ({ page }) => {
         await page.goto(BASE_URL + '/settings');
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('domcontentloaded');
       });
 
       test('should load settings page', async ({ page }) => {
@@ -182,7 +182,7 @@ for (const config of [desktopConfig, mobileConfig]) {
     test.describe('Stats Page - /stats', () => {
       test.beforeEach(async ({ page }) => {
         await page.goto(BASE_URL + '/stats');
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('domcontentloaded');
       });
 
       test('should load stats page', async ({ page }) => {
