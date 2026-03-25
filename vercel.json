@@ -1,13 +1,7 @@
-{
-  "buildCommand": "next build",
-  "outputDirectory": ".next",
-  "env": {
-    "NEXT_PUBLIC_VERCEL_ENV": "production"
-  },
-  "functions": {
-    "api/**/*.ts": {
-      "memory": 2048,
-      "maxDuration": 60
-    }
-  }
-}
+ {                                                                                                                           
+    "buildCommand": "next build",                                                                                             
+    "outputDirectory": ".next",                                                                                               
+    "env": {
+      "NEXT_PUBLIC_VERCEL_ENV": "production"                                                                                  
+    }                                                                                                                         
+  }   
