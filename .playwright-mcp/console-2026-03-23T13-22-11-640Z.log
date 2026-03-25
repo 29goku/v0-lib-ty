@@ -1,0 +1,15 @@
+[    1017ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/_vercel/insights/script.js:0
+[    1018ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/_vercel/speed-insights/script.js:0
+[    1115ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/data/questions.json:0
+[    1115ms] [WARNING] Primary path failed, trying alternate paths... @ https://29goku.github.io/v0-lib-ty/_next/static/chunks/204-28a778cace456635.js:0
+[    1282ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/public/data/questions.json:0
+[    1282ms] [ERROR] Failed to load questions from questions.json: Error: HTTP error! status: 404
+    at loadQuestions (https://29goku.github.io/v0-lib-ty/_next/static/chunks/204-28a778cace456635.js:1:7706) @ https://29goku.github.io/v0-lib-ty/_next/static/chunks/204-28a778cace456635.js:0
+[    1493ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/data/state-questions.json:0
+[    1493ms] [ERROR] Failed to load state questions: Error: HTTP error! status: 404
+    at loadQuestions (https://29goku.github.io/v0-lib-ty/_next/static/chunks/204-28a778cace456635.js:1:8067) @ https://29goku.github.io/v0-lib-ty/_next/static/chunks/204-28a778cace456635.js:0
+[    1493ms] [WARNING] 💪 Using built-in fallback questions @ https://29goku.github.io/v0-lib-ty/_next/static/chunks/204-28a778cace456635.js:0
+[    1777ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://29goku.github.io/v0-lib-ty/:0
+[    1948ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/favicon.ico:0
+[    1961ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/icon-192x192.png:0
+[    1961ms] [WARNING] Error while trying to use the following icon from the Manifest: https://29goku.github.io/icon-192x192.png (Download error or resource isn't a valid image) @ https://29goku.github.io/v0-lib-ty/:0

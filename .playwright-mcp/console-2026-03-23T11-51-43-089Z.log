@@ -1,0 +1,7 @@
+[     966ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://www.lebeninde.com/:0
+[    1040ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/favicon.ico:0
+[    1041ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/icon-192x192.png:0
+[    1042ms] [WARNING] Error while trying to use the following icon from the Manifest: https://www.lebeninde.com/icon-192x192.png (Download error or resource isn't a valid image) @ https://www.lebeninde.com/:0
+[    9597ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://www.lebeninde.com/test:0
+[    9739ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.lebeninde.com/icon-192x192.png:0
+[    9740ms] [WARNING] Error while trying to use the following icon from the Manifest: https://www.lebeninde.com/icon-192x192.png (Download error or resource isn't a valid image) @ https://www.lebeninde.com/test:0

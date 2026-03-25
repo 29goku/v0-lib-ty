@@ -1,0 +1,25 @@
+[     134ms] TagError: adsbygoogle.push() error: 'google_ad_client' is missing from the tag config.
+    at zr (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:231:79)
+    at https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:223:47
+    at ck.g (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:80:555)
+    at jk (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:81:706)
+    at ur (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:223:35)
+    at tr (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:220:132)
+    at https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:245:61
+    at ck.g (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:80:555)
+    at jk (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:81:706)
+    at https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=undefined:243:458
+[     218ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/data/questions.json:0
+[     219ms] [WARNING] Primary path failed, trying alternate paths... @ https://29goku.github.io/v0-lib-ty/_next/static/chunks/204-28a778cace456635.js:0
+[     219ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/_vercel/speed-insights/script.js:0
+[     219ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/_vercel/insights/script.js:0
+[     268ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/public/data/questions.json:0
+[     268ms] [ERROR] Failed to load questions from questions.json: Error: HTTP error! status: 404
+    at loadQuestions (https://29goku.github.io/v0-lib-ty/_next/static/chunks/204-28a778cace456635.js:1:7706) @ https://29goku.github.io/v0-lib-ty/_next/static/chunks/204-28a778cace456635.js:0
+[     332ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/data/state-questions.json:0
+[     332ms] [ERROR] Failed to load state questions: Error: HTTP error! status: 404
+    at loadQuestions (https://29goku.github.io/v0-lib-ty/_next/static/chunks/204-28a778cace456635.js:1:8067) @ https://29goku.github.io/v0-lib-ty/_next/static/chunks/204-28a778cace456635.js:0
+[     332ms] [WARNING] 💪 Using built-in fallback questions @ https://29goku.github.io/v0-lib-ty/_next/static/chunks/204-28a778cace456635.js:0
+[     405ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://29goku.github.io/v0-lib-ty/:0
+[     480ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://29goku.github.io/icon-192x192.png:0
+[     482ms] [WARNING] Error while trying to use the following icon from the Manifest: https://29goku.github.io/icon-192x192.png (Download error or resource isn't a valid image) @ https://29goku.github.io/v0-lib-ty/:0
