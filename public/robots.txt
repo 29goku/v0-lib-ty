@@ -1,23 +1,36 @@
+# Default rule for all bots
 User-agent: *
+Disallow: /
+Crawl-delay: 10
+Request-rate: 1/10s
+
+# Allow search engines (Google, Bing, etc.)
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Slurp
+User-agent: DuckDuckGo-Bot
 Allow: /
-
-# Sitemap
-Sitemap: https://lebeninde.com/sitemap.xml
-
-# Crawl-delay for respectful crawling
 Crawl-delay: 1
+Request-rate: 10/1s
 
-# Allow all important pages
-Allow: /practice
-Allow: /test
-Allow: /review
-Allow: /settings
+# Explicitly block bad bots and scrapers
+User-agent: MJ12bot
+User-agent: SemrushBot
+User-agent: DotBot
+User-agent: AhrefsBot
+User-agent: Scrapy
+User-agent: curl
+User-agent: wget
+User-agent: python-requests
+User-agent: HeadlessChrome
+User-agent: Playwright
+User-agent: Selenium
+Disallow: /
 
-# Block admin or private areas (if any)
+# Block everything by default
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
+Disallow: /private/
 
-# Allow search engines to index all content
-Allow: /images/
-Allow: /data/
+Sitemap: https://lebeninde.com/sitemap.xml
