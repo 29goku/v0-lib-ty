@@ -233,6 +233,42 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Progress Section - Only show if user has progress */}
+        {stats.questionsAnswered > 0 && (
+          <div className={`py-10 md:py-12 px-4 ${isDark ? 'border-t border-gray-700 bg-white/5' : 'border-t border-gray-200 bg-gray-50'}`}>
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 md:mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                Your {t.progress}
+              </h2>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-6">
+                <div className="text-center">
+                  <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.xp}</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.xp}</div>
+                </div>
+                <div className="text-center">
+                  <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.streak}</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.streak}</div>
+                </div>
+                <div className="text-center">
+                  <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-green-400' : 'text-green-600'}`}>{stats.correctAnswers}</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.correct}</div>
+                </div>
+                <div className="text-center">
+                  <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.completedQuestions}</div>
+                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                    {t.completedQuestions}
+                  </div>
+                </div>
+              </div>
+
+              <div className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
+                You're {Math.round((stats.correctAnswers / stats.questionsAnswered) * 100)}% ready for the test
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Features Section */}
         <div className="py-6 md:py-8 px-4 relative">
           <div className="max-w-7xl mx-auto">
@@ -352,42 +388,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
-        {/* Progress Section - Only show if user has progress */}
-        {stats.questionsAnswered > 0 && (
-          <div className={`py-10 md:py-12 px-4 ${isDark ? 'border-t border-gray-700 bg-white/5' : 'border-t border-gray-200 bg-gray-50'}`}>
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 md:mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                Your {t.progress}
-              </h2>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-6">
-                <div className="text-center">
-                  <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.xp}</div>
-                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.xp}</div>
-                </div>
-                <div className="text-center">
-                  <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.streak}</div>
-                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.streak}</div>
-                </div>
-                <div className="text-center">
-                  <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-green-400' : 'text-green-600'}`}>{stats.correctAnswers}</div>
-                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t.correct}</div>
-                </div>
-                <div className="text-center">
-                  <div className={`text-2xl md:text-3xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{stats.completedQuestions}</div>
-                  <div className={`text-xs md:text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    {t.completedQuestions}
-                  </div>
-                </div>
-              </div>
-
-              <div className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
-                You're {Math.round((stats.correctAnswers / stats.questionsAnswered) * 100)}% ready for the test
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* Final CTA */}
         <div className={`py-10 md:py-12 px-4 ${isDark ? 'border-t border-gray-700 bg-white/5' : 'border-t border-gray-200 bg-gray-50'}`}>
