@@ -32,3 +32,4 @@ test-results/*
 playwright-report/
 !public/playwright-report/
 .playwright/
+.env*.local
