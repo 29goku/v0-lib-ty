@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   description: "Kostenlose Vorbereitung für den Leben in Deutschland Test 2025 mit allen 310 offiziellen Fragen, Antworten und Erklärungen. Interaktiv, mobilfreundlich und perfekt für den Einbürgerungstest. Bestehen Sie den Test mit unserer bewährten App!",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/favicon-96.png", sizes: "96x96", type: "image/png" }
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" }
     ],
     apple: "/apple-touch-icon.png",
   },
@@ -135,6 +135,10 @@ export default function RootLayout({
         {/* DNS prefetch for performance */}
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+        {/* Web App Manifest */}
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="apple-mobile-web-app-title" content="lebeninde" />
 
         {/* Structured Data for Organization */}
         <script
