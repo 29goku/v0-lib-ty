@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <!-- Dark rounded background -->
+  <rect width="192" height="192" rx="45" fill="#1a1f2e"/>
+  <!-- Lightning bolt in yellow/gold -->
+  <g transform="translate(96, 96)">
+    <!-- Main lightning bolt -->
+    <path d="M 0 -40 L 25 -5 L 15 5 L 40 50 L -5 20 L 5 0 Z" fill="#ffd700" stroke="none"/>
+    
+    <!-- Left arc accent -->
+    <path d="M -35 -10 Q -50 0 -40 20" stroke="#b89e3d" stroke-width="8" fill="none" stroke-linecap="round"/>
+    
+    <!-- Right arc accent -->
+    <path d="M 35 10 Q 50 25 40 40" stroke="#b89e3d" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

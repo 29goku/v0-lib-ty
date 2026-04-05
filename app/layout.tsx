@@ -17,6 +17,14 @@ export const metadata: Metadata = {
     template: "%s | Leben in Deutschland Test"
   },
   description: "Kostenlose Vorbereitung für den Leben in Deutschland Test 2025 mit allen 310 offiziellen Fragen, Antworten und Erklärungen. Interaktiv, mobilfreundlich und perfekt für den Einbürgerungstest. Bestehen Sie den Test mit unserer bewährten App!",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" }
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   keywords: [
     "Leben in Deutschland Test",
     "Einbürgerungstest",
