@@ -1,0 +1,197 @@
+[
+  {
+    "id": "missing_59",
+    "category": "Mixed",
+    "question": "Welche Parteien wurden in Deutschland 2007 zur Partei „Die Linke“?",
+    "options": [
+      "CDU und SSW",
+      "PDS und WASG",
+      "CSU und FDP",
+      "Bündnis 90/Die Grünen und SPD"
+    ],
+    "answerIndex": 1,
+    "explanation": "Answer: PDS und WASG"
+  },
+  {
+    "id": "missing_66",
+    "category": "Mixed",
+    "question": "Wer schrieb den Text zur deutschen Nationalhymne?",
+    "options": [
+      "Friedrich von Schiller",
+      "Clemens Brentano",
+      "Johann Wolfgang von Goethe",
+      "Heinrich Hoffmann von Fallersleben"
+    ],
+    "answerIndex": 3,
+    "explanation": "Answer: Heinrich Hoffmann von Fallersleben"
+  },
+  {
+    "id": "missing_84",
+    "category": "Mixed",
+    "question": "Welche Hauptaufgabe hat der deutsche Bundespräsident / die deutsche Bundespräsidentin? Er / Sie …",
+    "options": [
+      "regiert das Land.",
+      "entwirft die Gesetze.",
+      "repräsentiert das Land.",
+      "überwacht die Einhaltung der Gesetze."
+    ],
+    "answerIndex": 2,
+    "explanation": "Answer: repräsentiert das Land."
+  },
+  {
+    "id": "missing_96",
+    "category": "Mixed",
+    "question": "Was muss jeder deutsche Staatsbürger / jede deutsche Staatsbürgerin ab dem 16. Lebensjahr besitzen?",
+    "options": [
+      "einen Reisepass",
+      "einen Personalausweis",
+      "einen Sozialversicherungsausweis",
+      "einen Führerschein"
+    ],
+    "answerIndex": 1,
+    "explanation": "Answer: einen Personalausweis"
+  },
+  {
+    "id": "missing_108",
+    "category": "Mixed",
+    "question": "Bei einer Bundestagswahl in Deutschland darf jeder wählen, der …",
+    "options": [
+      "in der Bundesrepublik Deutschland wohnt und wählen möchte.",
+      "Bürger / Bürgerin der Bundesrepublik Deutschland ist und mindestens 18 Jahre alt ist.",
+      "seit mindestens 3 Jahren in der Bundesrepublik Deutschland lebt.",
+      "Bürger / Bürgerin der Bundesrepublik Deutschland ist und mindestens 21 Jahre alt ist."
+    ],
+    "answerIndex": 1,
+    "explanation": "Answer: Bürger / Bürgerin der Bundesrepublik Deutschland ist und mindestens 18 Jahre alt ist."
+  },
+  {
+    "id": "missing_111",
+    "category": "Mixed",
+    "question": "In Deutschland darf man wählen. Was bedeutet das?",
+    "options": [
+      "Alle deutschen Staatsangehörigen dürfen wählen, wenn sie das Mindestalter erreicht haben.",
+      "Nur verheiratete Personen dürfen wählen.",
+      "Nur Personen mit einem festen Arbeitsplatz dürfen wählen.",
+      "Alle Einwohner und Einwohnerinnen in Deutschland müssen wählen."
+    ],
+    "answerIndex": 0,
+    "explanation": "Answer: Alle deutschen Staatsangehörigen dürfen wählen, wenn sie das Mindestalter erreicht haben."
+  },
+  {
+    "id": "missing_118",
+    "category": "Mixed",
+    "question": "Was regelt das Wahlrecht in Deutschland?",
+    "options": [
+      "Wer wählen darf, muss wählen.",
+      "Alle die wollen, können wählen.",
+      "Wer nicht wählt, verliert das Recht zu wählen.",
+      "Wer wählen darf, kann wählen."
+    ],
+    "answerIndex": 3,
+    "explanation": "Answer: Wer wählen darf, kann wählen."
+  },
+  {
+    "id": "missing_140",
+    "category": "Mixed",
+    "question": "Was macht ein Schöffe / eine Schöffin in Deutschland? Er / Sie …",
+    "options": [
+      "entscheidet mit Richtern / Richterinnen über Schuld und Strafe.",
+      "gibt Bürgern / Bürgerinnen rechtlichen Rat.",
+      "stellt Urkunden aus.",
+      "verteidigt den Angeklagten / die Angeklagte."
+    ],
+    "answerIndex": 0,
+    "explanation": "Answer: entscheidet mit Richtern / Richterinnen über Schuld und Strafe."
+  },
+  {
+    "id": "missing_142",
+    "category": "Mixed",
+    "question": "Was ist die Hauptaufgabe eines Richters / einer Richterin in Deutschland? Ein Richter / eine Richterin …",
+    "options": [
+      "vertritt Bürger und Bürgerinnen vor einem Gericht.",
+      "arbeitet an einem Gericht und spricht Urteile.",
+      "ändert Gesetze.",
+      "betreut Jugendliche vor Gericht."
+    ],
+    "answerIndex": 1,
+    "explanation": "Answer: arbeitet an einem Gericht und spricht Urteile."
+  },
+  {
+    "id": "missing_149",
+    "category": "Mixed",
+    "question": "Wer kann Gerichtsschöffe / Gerichtsschöffin in Deutschland werden?",
+    "options": [
+      "alle in Deutschland geborenen Einwohner / Einwohnerinnen über 18 Jahre",
+      "alle deutschen Staatsangehörigen älter als 24 und jünger als 70 Jahre",
+      "alle Personen, die seit mindestens 5 Jahren in Deutschland leben",
+      "nur Personen mit einem abgeschlossenen Jurastudium"
+    ],
+    "answerIndex": 1,
+    "explanation": "Answer: alle deutschen Staatsangehörigen älter als 24 und jünger als 70 Jahre"
+  },
+  {
+    "id": "missing_182",
+    "category": "Mixed",
+    "question": "Welche Parteien wurden 1946 zwangsweise zur SED vereint, der Einheitspartei der späteren DDR?",
+    "options": [
+      "KPD und SPD",
+      "SPD und CDU",
+      "CDU und FDP",
+      "KPD und CSU"
+    ],
+    "answerIndex": 0,
+    "explanation": "Answer: KPD und SPD"
+  },
+  {
+    "id": "missing_184",
+    "category": "Mixed",
+    "question": "Was nannten die Menschen in Deutschland sehr lange „Die Stunde Null“?",
+    "options": [
+      "Damit wird die Zeit nach der Wende im Jahr 1989 bezeichnet.",
+      "Damit wurde der Beginn des Zweiten Weltkrieges bezeichnet.",
+      "Darunter verstand man das Ende des Zweiten Weltkrieges und den Beginn des Wiederaufbaus.",
+      "Damit ist die Stunde gemeint, in der die Uhr von der Sommerzeit auf die Winterzeit umgestellt wird."
+    ],
+    "answerIndex": 2,
+    "explanation": "Answer: Darunter verstand man das Ende des Zweiten Weltkrieges und den Beginn des Wiederaufbaus."
+  },
+  {
+    "id": "missing_206",
+    "category": "Mixed",
+    "question": "Was bedeutete im Jahr 1989 in Deutschland das Wort „Montagsdemonstration“?",
+    "options": [
+      "In der Bundesrepublik waren Demonstrationen nur am Montag erlaubt.",
+      "Montags waren Demonstrationen gegen das DDR-Regime.",
+      "Am ersten Montag im Monat trafen sich in der Bundesrepublik Deutschland Demonstranten.",
+      "Montags demonstrierte man in der DDR gegen den Westen."
+    ],
+    "answerIndex": 1,
+    "explanation": "Answer: Montags waren Demonstrationen gegen das DDR-Regime."
+  },
+  {
+    "id": "missing_288",
+    "category": "Mixed",
+    "question": "Bei welchem Amt muss man in Deutschland in der Regel seinen Hund anmelden?",
+    "options": [
+      "beim Finanzamt",
+      "beim Einwohnermeldeamt",
+      "bei der Kommune (Stadt oder Gemeinde)",
+      "beim Gesundheitsamt"
+    ],
+    "answerIndex": 2,
+    "explanation": "Answer: bei der Kommune (Stadt oder Gemeinde)"
+  },
+  {
+    "id": "missing_368",
+    "category": "Mixed",
+    "question": "Welches Bundesland ist Hessen?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answerIndex": 2,
+    "explanation": "Answer: 3"
+  }
+]
