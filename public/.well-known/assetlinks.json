@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.lebeninde.app2",
+    "sha256_cert_fingerprints": [
+      "13:5B:0E:D2:E3:80:49:2C:E3:4C:63:DD:4D:97:B1:87:AD:16:94:35:AD:3A:4C:C0:10:0D:03:A8:AB:21:4F:6A"
+    ]
+  }
+}]
