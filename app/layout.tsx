@@ -13,10 +13,10 @@ import { ThemeProvider } from "@/components/ThemeProvider"
 
 export const metadata: Metadata = {
   title: {
-    default: "Leben in Deutschland Test 2025 – 310 Offizielle Fragen & Vorbereitung",
+    default: "Leben in Deutschland Test 2026 – 460 Offizielle BAMF-Fragen & Vorbereitung",
     template: "%s | Leben in Deutschland Test"
   },
-  description: "Kostenlose Vorbereitung für den Leben in Deutschland Test 2025 mit allen 310 offiziellen Fragen, Antworten und Erklärungen. Interaktiv, mobilfreundlich und perfekt für den Einbürgerungstest. Bestehen Sie den Test mit unserer bewährten App!",
+  description: "Kostenlose Vorbereitung für den Leben in Deutschland Test 2026 mit allen 460 offiziellen BAMF-Fragen, Antworten und Erklärungen. Aktualisiert 2026. Interaktiv, mobilfreundlich und perfekt für den Einbürgerungstest.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -35,14 +35,14 @@ export const metadata: Metadata = {
     "Staatsbürgerschaft Test",
     "Deutscher Einbürgerungstest",
     "Integrationskurs",
-    "Leben in Deutschland 2025",
+    "Leben in Deutschland 2026",
     "Einbürgerungstest online",
     "Deutschland Test üben",
     "Bürgertest Vorbereitung",
     "Einbürgerungstest Fragen",
     "Leben in Deutschland App",
     "Einbürgerungstest kostenlos",
-    "Deutschland Test 2025",
+    "Deutschland Test 2026",
     "Einbürgerungstest bestehen",
     "BAMF Test",
     "Einbürgerungstest Vorbereitung"
@@ -79,30 +79,30 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
     url: "https://lebeninde.com",
-    title: "Leben in Deutschland Test 2025 – 310 Offizielle Fragen & Vorbereitung",
-    description: "Kostenlose Vorbereitung für den Leben in Deutschland Test 2025 mit allen 310 offiziellen Fragen, Antworten und Erklärungen. Interaktiv, mobilfreundlich und perfekt für den Einbürgerungstest.",
+    title: "Leben in Deutschland Test 2026 – 460 Offizielle BAMF-Fragen & Vorbereitung",
+    description: "Kostenlose Vorbereitung für den Leben in Deutschland Test 2026 mit allen 460 offiziellen BAMF-Fragen, Antworten und Erklärungen. Aktualisiert 2026.",
     siteName: "Leben in Deutschland Test",
     images: [
       {
         url: "https://lebeninde.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Leben in Deutschland Test 2025 - Offizielle Vorbereitung",
+        alt: "Leben in Deutschland Test 2026 - Offizielle Vorbereitung",
         type: "image/jpeg",
       },
       {
         url: "https://lebeninde.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Leben in Deutschland Test 2025 - Offizielle Vorbereitung",
+        alt: "Leben in Deutschland Test 2026 - Offizielle Vorbereitung",
         type: "image/png",
       }
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Leben in Deutschland Test 2025 – 310 Offizielle Fragen & Vorbereitung",
-    description: "Kostenlose Vorbereitung für den Leben in Deutschland Test 2025 mit allen 310 offiziellen Fragen, Antworten und Erklärungen. Interaktiv & kostenlos.",
+    title: "Leben in Deutschland Test 2026 – 460 Offizielle BAMF-Fragen & Vorbereitung",
+    description: "Kostenlose Vorbereitung für den Leben in Deutschland Test 2026 mit allen 460 offiziellen BAMF-Fragen, Antworten und Erklärungen. Aktualisiert 2026.",
     images: ["https://lebeninde.com/twitter-image.jpg"],
     creator: "@lebeninde",
     site: "@lebeninde",
@@ -151,7 +151,7 @@ export default function RootLayout({
               "name": "Leben in Deutschland Test",
               "url": "https://lebeninde.com",
               "logo": "https://lebeninde.com/logo.png",
-              "description": "Offizielle Vorbereitung für den Leben in Deutschland Test 2025",
+              "description": "Offizielle Vorbereitung für den Leben in Deutschland Test 2026",
               "sameAs": [
                 "https://twitter.com/lebeninde",
                 "https://facebook.com/lebeninde"
@@ -174,7 +174,7 @@ export default function RootLayout({
               "@type": "WebSite",
               "name": "Leben in Deutschland Test",
               "url": "https://lebeninde.com",
-              "description": "Kostenlose Vorbereitung für den Leben in Deutschland Test 2025",
+              "description": "Kostenlose Vorbereitung für den Leben in Deutschland Test 2026",
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": "https://lebeninde.com/search?q={search_term_string}",
