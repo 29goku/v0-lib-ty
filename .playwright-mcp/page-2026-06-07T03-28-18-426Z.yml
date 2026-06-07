@@ -1,0 +1,980 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - 'link "Logo der Website Leben in Deutschland: diagonal verlaufende Farbstreifen in schwarz, rot, gold Einbürgerungstest Leben in Deutschland" [ref=e6] [cursor=pointer]':
+        - /url: https://www.lebenindeutschland.eu
+        - 'img "Logo der Website Leben in Deutschland: diagonal verlaufende Farbstreifen in schwarz, rot, gold" [ref=e7]'
+        - generic [ref=e8]:
+          - generic [ref=e9]: Einbürgerungstest
+          - generic [ref=e10]: Leben in Deutschland
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - link "Startseite Hier geht’s los" [ref=e13] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu
+            - text: Startseite
+            - generic [ref=e14]: Hier geht’s los
+          - link "Der Test mit Auswertung" [ref=e15] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/test
+            - text: Der Test
+            - generic [ref=e16]: mit Auswertung
+          - link "Fragen mit Antworten" [ref=e17] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/fragenkatalog
+            - text: Fragen
+            - generic [ref=e18]: mit Antworten
+        - link "Login Anmeldung" [ref=e20] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/login
+          - text: Login
+          - generic [ref=e21]: Anmeldung
+    - generic [ref=e23]:
+      - heading "Fragenkatalog zum Test Leben in Deutschland. Fragen 241 bis 270" [level=1] [ref=e24]
+      - heading "Alle Fragen mit Antworten" [level=2] [ref=e25]
+    - generic [ref=e26]:
+      - generic [ref=e30]:
+        - heading "Deutschland allgemein" [level=4] [ref=e31]
+        - list [ref=e32]:
+          - listitem [ref=e33]:
+            - link "1 – 30" [ref=e34] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/1
+          - listitem [ref=e35]:
+            - link "31 – 60" [ref=e36] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/2
+          - listitem [ref=e37]:
+            - link "61 – 90" [ref=e38] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/3
+          - listitem [ref=e39]:
+            - link "91 – 120" [ref=e40] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/4
+          - listitem [ref=e41]:
+            - link "121 – 150" [ref=e42] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/5
+          - listitem [ref=e43]:
+            - link "151 – 180" [ref=e44] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/6
+          - listitem [ref=e45]:
+            - link "181 – 210" [ref=e46] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/7
+          - listitem [ref=e47]:
+            - link "211 – 240" [ref=e48] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/8
+          - listitem [ref=e49]: Fragen 241 – 270
+          - listitem [ref=e50]:
+            - link "271 – 300" [ref=e51] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/10
+        - heading "Bundesland" [level=4] [ref=e52]
+        - list [ref=e53]:
+          - listitem [ref=e54]:
+            - link "Baden-Württemberg" [ref=e55] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bw
+          - listitem [ref=e56]:
+            - link "Bayern" [ref=e57] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/by
+          - listitem [ref=e58]:
+            - link "Berlin" [ref=e59] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/be
+          - listitem [ref=e60]:
+            - link "Brandenburg" [ref=e61] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bb
+          - listitem [ref=e62]:
+            - link "Bremen" [ref=e63] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hb
+          - listitem [ref=e64]:
+            - link "Hamburg" [ref=e65] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hh
+          - listitem [ref=e66]:
+            - link "Hessen" [ref=e67] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/he
+          - listitem [ref=e68]:
+            - link "Mecklenburg-Vorpommern" [ref=e69] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/mv
+          - listitem [ref=e70]:
+            - link "Niedersachsen" [ref=e71] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/ni
+          - listitem [ref=e72]:
+            - link "Nordrhein-Westfalen" [ref=e73] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/nw
+          - listitem [ref=e74]:
+            - link "Rheinland-Pfalz" [ref=e75] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/rp
+          - listitem [ref=e76]:
+            - link "Saarland" [ref=e77] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sl
+          - listitem [ref=e78]:
+            - link "Sachsen" [ref=e79] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sn
+          - listitem [ref=e80]:
+            - link "Sachsen-Anhalt" [ref=e81] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/st
+          - listitem [ref=e82]:
+            - link "Schleswig-Holstein" [ref=e83] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sh
+          - listitem [ref=e84]:
+            - link "Thüringen" [ref=e85] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/th
+      - generic [ref=e86]:
+        - paragraph [ref=e87]:
+          - text: Würden Sie den Test
+          - emphasis [ref=e88]: Leben in Deutschland
+          - text: bestehen?
+        - link "Zur Bundesland-Auswahl →" [ref=e89] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/test
+          - generic [ref=e90]:
+            - text: Zur Bundesland-Auswahl
+            - generic [ref=e91]: →
+      - generic [ref=e92]:
+        - generic [ref=e97]:
+          - img [ref=e99] [cursor=pointer]
+          - text: Frage № 241
+        - generic [ref=e102]:
+          - 'heading "Frage № 241: Frau Seger bekommt ein Kind. Was muss sie tun, um Elterngeld zu erhalten?" [level=3] [ref=e103]'
+          - generic [ref=e104]:
+            - generic [ref=e105]:
+              - generic [ref=e106]: —
+              - generic [ref=e107]: Sie muss an ihre Krankenkasse schreiben.
+            - generic [ref=e108]:
+              - generic [ref=e109]: —
+              - generic [ref=e110]: Sie muss nichts tun, denn sie bekommt automatisch Elterngeld.
+            - generic [ref=e111]:
+              - generic [ref=e112]: ✓
+              - generic [ref=e113]: Sie muss einen Antrag bei der Elterngeldstelle stellen.
+            - generic [ref=e114]:
+              - generic [ref=e115]: —
+              - generic [ref=e116]: Sie muss das Arbeitsamt um Erlaubnis bitten.
+      - generic [ref=e117]:
+        - generic [ref=e122]:
+          - img [ref=e124] [cursor=pointer]
+          - text: Frage № 242
+        - generic [ref=e127]:
+          - 'heading "Frage № 242: Wer entscheidet, ob ein Kind in Deutschland in den Kindergarten geht?" [level=3] [ref=e128]'
+          - generic [ref=e129]:
+            - generic [ref=e130]:
+              - generic [ref=e131]: —
+              - generic [ref=e132]: der Staat
+            - generic [ref=e133]:
+              - generic [ref=e134]: —
+              - generic [ref=e135]: die Bundesländer
+            - generic [ref=e136]:
+              - generic [ref=e137]: ✓
+              - generic [ref=e138]: die Eltern / die Erziehungsberechtigten
+            - generic [ref=e139]:
+              - generic [ref=e140]: —
+              - generic [ref=e141]: die Schulen
+      - generic [ref=e142]:
+        - generic [ref=e147]:
+          - img [ref=e149] [cursor=pointer]
+          - text: Frage № 243
+        - generic [ref=e152]:
+          - 'heading "Frage № 243: Maik und Sybille wollen mit Freunden an ihrem deutschen Wohnort eine Demonstration auf der Straße abhalten. Was müssen sie vorher tun?" [level=3] [ref=e153]'
+          - generic [ref=e154]:
+            - generic [ref=e155]:
+              - generic [ref=e156]: —
+              - generic [ref=e157]: Sie müssen nichts tun. Man darf in Deutschland jederzeit überall demonstrieren.
+            - generic [ref=e158]:
+              - generic [ref=e159]: ✓
+              - generic [ref=e160]: Sie müssen die Demonstration anmelden.
+            - generic [ref=e161]:
+              - generic [ref=e162]: —
+              - generic [ref=e163]: Sie können gar nichts tun, denn Demonstrationen sind in Deutschland grundsätzlich verboten.
+            - generic [ref=e164]:
+              - generic [ref=e165]: —
+              - generic [ref=e166]: Maik und Sybille müssen einen neuen Verein gründen, weil nur Vereine demonstrieren dürfen.
+      - generic [ref=e167]:
+        - generic [ref=e172]:
+          - img [ref=e174] [cursor=pointer]
+          - text: Frage № 244
+        - generic [ref=e177]:
+          - 'heading "Frage № 244: Welchen Schulabschluss braucht man normalerweise, um an einer Universität in Deutschland ein Studium zu beginnen?" [level=3] [ref=e178]'
+          - generic [ref=e179]:
+            - generic [ref=e180]:
+              - generic [ref=e181]: ✓
+              - generic [ref=e182]: das Abitur
+            - generic [ref=e183]:
+              - generic [ref=e184]: —
+              - generic [ref=e185]: ein Diplom
+            - generic [ref=e186]:
+              - generic [ref=e187]: —
+              - generic [ref=e188]: die Prokura
+            - generic [ref=e189]:
+              - generic [ref=e190]: —
+              - generic [ref=e191]: eine Gesellenprüfung
+      - generic [ref=e192]:
+        - generic [ref=e197]:
+          - img [ref=e199] [cursor=pointer]
+          - text: Frage № 245
+        - generic [ref=e202]:
+          - 'heading "Frage № 245: Wer darf in Deutschland nicht als Paar zusammenleben?" [level=3] [ref=e203]'
+          - generic [ref=e204]:
+            - generic [ref=e205]:
+              - generic [ref=e206]: —
+              - generic [ref=e207]: Hans (20 Jahre) und Marie (19 Jahre)
+            - generic [ref=e208]:
+              - generic [ref=e209]: —
+              - generic [ref=e210]: Tom (20 Jahre) und Klaus (45 Jahre)
+            - generic [ref=e211]:
+              - generic [ref=e212]: —
+              - generic [ref=e213]: Sofie (35 Jahre) und Lisa (40 Jahre)
+            - generic [ref=e214]:
+              - generic [ref=e215]: ✓
+              - generic [ref=e216]: Anne (13 Jahre) und Tim (25 Jahre)
+      - generic [ref=e219]:
+        - generic [ref=e224]:
+          - img [ref=e226] [cursor=pointer]
+          - text: Frage № 246
+        - generic [ref=e229]:
+          - 'heading "Frage № 246: Ab welchem Alter ist man in Deutschland volljährig?" [level=3] [ref=e230]'
+          - generic [ref=e231]:
+            - generic [ref=e232]:
+              - generic [ref=e233]: —
+              - generic [ref=e234]: "16"
+            - generic [ref=e235]:
+              - generic [ref=e236]: ✓
+              - generic [ref=e237]: "18"
+            - generic [ref=e238]:
+              - generic [ref=e239]: —
+              - generic [ref=e240]: "19"
+            - generic [ref=e241]:
+              - generic [ref=e242]: —
+              - generic [ref=e243]: "21"
+      - generic [ref=e244]:
+        - generic [ref=e249]:
+          - img [ref=e251] [cursor=pointer]
+          - text: Frage № 247
+        - generic [ref=e254]:
+          - 'heading "Frage № 247: Eine Frau ist schwanger. Sie ist kurz vor und nach der Geburt ihres Kindes vom Gesetz besonders beschützt. Wie heißt dieser Schutz?" [level=3] [ref=e255]'
+          - generic [ref=e256]:
+            - generic [ref=e257]:
+              - generic [ref=e258]: —
+              - generic [ref=e259]: Elternzeit
+            - generic [ref=e260]:
+              - generic [ref=e261]: —
+              - generic [ref=e262]: Geburtsvorbereitung
+            - generic [ref=e263]:
+              - generic [ref=e264]: ✓
+              - generic [ref=e265]: Mutterschutz
+            - generic [ref=e266]:
+              - generic [ref=e267]: —
+              - generic [ref=e268]: Wochenbett
+      - generic [ref=e269]:
+        - generic [ref=e274]:
+          - img [ref=e276] [cursor=pointer]
+          - text: Frage № 248
+        - generic [ref=e279]:
+          - 'heading "Frage № 248: Die Erziehung der Kinder ist in Deutschland vor allem Aufgabe …" [level=3] [ref=e280]'
+          - generic [ref=e281]:
+            - generic [ref=e282]:
+              - generic [ref=e283]: —
+              - generic [ref=e284]: des Staates.
+            - generic [ref=e285]:
+              - generic [ref=e286]: ✓
+              - generic [ref=e287]: der Eltern.
+            - generic [ref=e288]:
+              - generic [ref=e289]: —
+              - generic [ref=e290]: der Großeltern.
+            - generic [ref=e291]:
+              - generic [ref=e292]: —
+              - generic [ref=e293]: der Schulen.
+      - generic [ref=e294]:
+        - generic [ref=e299]:
+          - img [ref=e301] [cursor=pointer]
+          - text: Frage № 249
+        - generic [ref=e304]:
+          - 'heading "Frage № 249: Wer ist in Deutschland hauptsächlich verantwortlich für die Kindererziehung?" [level=3] [ref=e305]'
+          - generic [ref=e306]:
+            - generic [ref=e307]:
+              - generic [ref=e308]: —
+              - generic [ref=e309]: der Staat
+            - generic [ref=e310]:
+              - generic [ref=e311]: ✓
+              - generic [ref=e312]: die Eltern
+            - generic [ref=e313]:
+              - generic [ref=e314]: —
+              - generic [ref=e315]: die Verwandten
+            - generic [ref=e316]:
+              - generic [ref=e317]: —
+              - generic [ref=e318]: die Schulen
+      - generic [ref=e319]:
+        - generic [ref=e324]:
+          - img [ref=e326] [cursor=pointer]
+          - text: Frage № 250
+        - generic [ref=e329]:
+          - 'heading "Frage № 250: In Deutschland hat man die besten Chancen auf einen gut bezahlten Arbeitsplatz, wenn man …" [level=3] [ref=e330]'
+          - generic [ref=e331]:
+            - generic [ref=e332]:
+              - generic [ref=e333]: —
+              - generic [ref=e334]: katholisch ist.
+            - generic [ref=e335]:
+              - generic [ref=e336]: ✓
+              - generic [ref=e337]: gut ausgebildet ist.
+            - generic [ref=e338]:
+              - generic [ref=e339]: —
+              - generic [ref=e340]: eine Frau ist.
+            - generic [ref=e341]:
+              - generic [ref=e342]: —
+              - generic [ref=e343]: Mitglied einer Partei ist.
+      - generic [ref=e344]:
+        - generic [ref=e349]:
+          - img [ref=e351] [cursor=pointer]
+          - text: Frage № 251
+        - generic [ref=e354]:
+          - 'heading "Frage № 251: Wenn man in Deutschland ein Kind schlägt, …" [level=3] [ref=e355]'
+          - generic [ref=e356]:
+            - generic [ref=e357]:
+              - generic [ref=e358]: —
+              - generic [ref=e359]: geht das niemanden etwas an.
+            - generic [ref=e360]:
+              - generic [ref=e361]: —
+              - generic [ref=e362]: geht das nur die Familie etwas an.
+            - generic [ref=e363]:
+              - generic [ref=e364]: —
+              - generic [ref=e365]: kann man dafür nicht bestraft werden.
+            - generic [ref=e366]:
+              - generic [ref=e367]: ✓
+              - generic [ref=e368]: kann man dafür bestraft werden.
+      - generic [ref=e369]:
+        - generic [ref=e374]:
+          - img [ref=e376] [cursor=pointer]
+          - text: Frage № 252
+        - generic [ref=e379]:
+          - 'heading "Frage № 252: In Deutschland …" [level=3] [ref=e380]'
+          - generic [ref=e381]:
+            - generic [ref=e382]:
+              - generic [ref=e383]: ✓
+              - generic [ref=e384]: darf man zur gleichen Zeit nur mit einem Partner / einer Partnerin verheiratet sein.
+            - generic [ref=e385]:
+              - generic [ref=e386]: —
+              - generic [ref=e387]: kann man mehrere Ehepartner / Ehepartnerinnen gleichzeitig haben.
+            - generic [ref=e388]:
+              - generic [ref=e389]: —
+              - generic [ref=e390]: darf man nicht wieder heiraten, wenn man einmal verheiratet war.
+            - generic [ref=e391]:
+              - generic [ref=e392]: —
+              - generic [ref=e393]: darf eine Frau nicht wieder heiraten, wenn ihr Mann gestorben ist.
+      - generic [ref=e394]:
+        - generic [ref=e399]:
+          - img [ref=e401] [cursor=pointer]
+          - text: Frage № 253
+        - generic [ref=e404]:
+          - 'heading "Frage № 253: Wo müssen Sie sich anmelden, wenn Sie in Deutschland umziehen?" [level=3] [ref=e405]'
+          - generic [ref=e406]:
+            - generic [ref=e407]:
+              - generic [ref=e408]: ✓
+              - generic [ref=e409]: beim Einwohnermeldeamt
+            - generic [ref=e410]:
+              - generic [ref=e411]: —
+              - generic [ref=e412]: beim Standesamt
+            - generic [ref=e413]:
+              - generic [ref=e414]: —
+              - generic [ref=e415]: beim Ordnungsamt
+            - generic [ref=e416]:
+              - generic [ref=e417]: —
+              - generic [ref=e418]: beim Gewerbeamt
+      - generic [ref=e419]:
+        - generic [ref=e424]:
+          - img [ref=e426] [cursor=pointer]
+          - text: Frage № 254
+        - generic [ref=e429]:
+          - 'heading "Frage № 254: In Deutschland dürfen Ehepaare sich scheiden lassen. Meistens müssen sie dazu das „Trennungsjahr“ einhalten. Was bedeutet das?" [level=3] [ref=e430]'
+          - generic [ref=e431]:
+            - generic [ref=e432]:
+              - generic [ref=e433]: —
+              - generic [ref=e434]: Der Scheidungsprozess dauert ein Jahr.
+            - generic [ref=e435]:
+              - generic [ref=e436]: —
+              - generic [ref=e437]: Die Ehegatten sind ein Jahr verheiratet, dann ist die Scheidung möglich.
+            - generic [ref=e438]:
+              - generic [ref=e439]: —
+              - generic [ref=e440]: Das Besuchsrecht für die Kinder gilt ein Jahr.
+            - generic [ref=e441]:
+              - generic [ref=e442]: ✓
+              - generic [ref=e443]: Die Ehegatten führen mindestens ein Jahr getrennt ihr eigenes Leben. Danach ist die Scheidung möglich.
+      - generic [ref=e444]:
+        - generic [ref=e449]:
+          - img [ref=e451] [cursor=pointer]
+          - text: Frage № 255
+        - generic [ref=e454]:
+          - 'heading "Frage № 255: Bei Erziehungsproblemen können Eltern in Deutschland Hilfe erhalten vom …" [level=3] [ref=e455]'
+          - generic [ref=e456]:
+            - generic [ref=e457]:
+              - generic [ref=e458]: —
+              - generic [ref=e459]: Ordnungsamt.
+            - generic [ref=e460]:
+              - generic [ref=e461]: —
+              - generic [ref=e462]: Schulamt.
+            - generic [ref=e463]:
+              - generic [ref=e464]: ✓
+              - generic [ref=e465]: Jugendamt.
+            - generic [ref=e466]:
+              - generic [ref=e467]: —
+              - generic [ref=e468]: Gesundheitsamt.
+      - generic [ref=e469]:
+        - generic [ref=e474]:
+          - img [ref=e476] [cursor=pointer]
+          - text: Frage № 256
+        - generic [ref=e479]:
+          - 'heading "Frage № 256: Ein Ehepaar möchte in Deutschland ein Restaurant eröffnen. Was braucht es dazu unbedingt?" [level=3] [ref=e480]'
+          - generic [ref=e481]:
+            - generic [ref=e482]:
+              - generic [ref=e483]: —
+              - generic [ref=e484]: eine Erlaubnis der Polizei
+            - generic [ref=e485]:
+              - generic [ref=e486]: —
+              - generic [ref=e487]: eine Genehmigung einer Partei
+            - generic [ref=e488]:
+              - generic [ref=e489]: —
+              - generic [ref=e490]: eine Genehmigung des Einwohnermeldeamts
+            - generic [ref=e491]:
+              - generic [ref=e492]: ✓
+              - generic [ref=e493]: eine Gaststättenerlaubnis von der zuständigen Behörde
+      - generic [ref=e494]:
+        - generic [ref=e499]:
+          - img [ref=e501] [cursor=pointer]
+          - text: Frage № 257
+        - generic [ref=e504]:
+          - 'heading "Frage № 257: Eine erwachsene Frau möchte in Deutschland das Abitur nachholen. Das kann sie an …" [level=3] [ref=e505]'
+          - generic [ref=e506]:
+            - generic [ref=e507]:
+              - generic [ref=e508]: —
+              - generic [ref=e509]: einer Hochschule.
+            - generic [ref=e510]:
+              - generic [ref=e511]: ✓
+              - generic [ref=e512]: einem Abendgymnasium.
+            - generic [ref=e513]:
+              - generic [ref=e514]: —
+              - generic [ref=e515]: einer Hauptschule.
+            - generic [ref=e516]:
+              - generic [ref=e517]: —
+              - generic [ref=e518]: einer Privatuniversität.
+      - generic [ref=e519]:
+        - generic [ref=e524]:
+          - img [ref=e526] [cursor=pointer]
+          - text: Frage № 258
+        - generic [ref=e529]:
+          - 'heading "Frage № 258: Was darf das Jugendamt in Deutschland?" [level=3] [ref=e530]'
+          - generic [ref=e531]:
+            - generic [ref=e532]:
+              - generic [ref=e533]: —
+              - generic [ref=e534]: Es entscheidet, welche Schule das Kind besucht.
+            - generic [ref=e535]:
+              - generic [ref=e536]: ✓
+              - generic [ref=e537]: Es kann ein Kind, das geschlagen wird oder hungern muss, aus der Familie nehmen.
+            - generic [ref=e538]:
+              - generic [ref=e539]: —
+              - generic [ref=e540]: Es bezahlt das Kindergeld an die Eltern.
+            - generic [ref=e541]:
+              - generic [ref=e542]: —
+              - generic [ref=e543]: Es kontrolliert, ob das Kind einen Kindergarten besucht.
+      - generic [ref=e544]:
+        - generic [ref=e549]:
+          - img [ref=e551] [cursor=pointer]
+          - text: Frage № 259
+        - generic [ref=e554]:
+          - 'heading "Frage № 259: Das Berufsinformationszentrum BIZ bei der Bundesagentur für Arbeit in Deutschland hilft bei der …" [level=3] [ref=e555]'
+          - generic [ref=e556]:
+            - generic [ref=e557]:
+              - generic [ref=e558]: —
+              - generic [ref=e559]: Rentenberechnung.
+            - generic [ref=e560]:
+              - generic [ref=e561]: ✓
+              - generic [ref=e562]: Lehrstellensuche.
+            - generic [ref=e563]:
+              - generic [ref=e564]: —
+              - generic [ref=e565]: Steuererklärung.
+            - generic [ref=e566]:
+              - generic [ref=e567]: —
+              - generic [ref=e568]: Krankenversicherung.
+      - generic [ref=e569]:
+        - generic [ref=e574]:
+          - img [ref=e576] [cursor=pointer]
+          - text: Frage № 260
+        - generic [ref=e579]:
+          - 'heading "Frage № 260: In Deutschland hat ein Kind in der Schule …" [level=3] [ref=e580]'
+          - generic [ref=e581]:
+            - generic [ref=e582]:
+              - generic [ref=e583]: —
+              - generic [ref=e584]: Recht auf unbegrenzte Freizeit.
+            - generic [ref=e585]:
+              - generic [ref=e586]: —
+              - generic [ref=e587]: Wahlfreiheit für alle Fächer.
+            - generic [ref=e588]:
+              - generic [ref=e589]: —
+              - generic [ref=e590]: Anspruch auf Schulgeld.
+            - generic [ref=e591]:
+              - generic [ref=e592]: ✓
+              - generic [ref=e593]: Anwesenheitspflicht.
+      - generic [ref=e594]:
+        - generic [ref=e599]:
+          - img [ref=e601] [cursor=pointer]
+          - text: Frage № 261
+        - generic [ref=e604]:
+          - 'heading "Frage № 261: Ein Mann möchte mit 30 Jahren in Deutschland sein Abitur nachholen. Wo kann er das tun? An …" [level=3] [ref=e605]'
+          - generic [ref=e606]:
+            - generic [ref=e607]:
+              - generic [ref=e608]: —
+              - generic [ref=e609]: einer Hochschule
+            - generic [ref=e610]:
+              - generic [ref=e611]: ✓
+              - generic [ref=e612]: einem Abendgymnasium
+            - generic [ref=e613]:
+              - generic [ref=e614]: —
+              - generic [ref=e615]: einer Hauptschule
+            - generic [ref=e616]:
+              - generic [ref=e617]: —
+              - generic [ref=e618]: einer Privatuniversität
+      - generic [ref=e619]:
+        - generic [ref=e624]:
+          - img [ref=e626] [cursor=pointer]
+          - text: Frage № 262
+        - generic [ref=e629]:
+          - 'heading "Frage № 262: Was bedeutet in Deutschland der Grundsatz der Gleichbehandlung?" [level=3] [ref=e630]'
+          - generic [ref=e631]:
+            - generic [ref=e632]:
+              - generic [ref=e633]: ✓
+              - generic [ref=e634]: Niemand darf z. B. wegen einer Behinderung benachteiligt werden.
+            - generic [ref=e635]:
+              - generic [ref=e636]: —
+              - generic [ref=e637]: Man darf andere Personen benachteiligen, wenn ausreichende persönliche Gründe hierfür vorliegen.
+            - generic [ref=e638]:
+              - generic [ref=e639]: —
+              - generic [ref=e640]: Niemand darf gegen Personen klagen, wenn sie benachteiligt wurden.
+            - generic [ref=e641]:
+              - generic [ref=e642]: —
+              - generic [ref=e643]: Es ist für alle Gesetz, benachteiligten Gruppen jährlich Geld zu spenden.
+      - generic [ref=e644]:
+        - generic [ref=e649]:
+          - img [ref=e651] [cursor=pointer]
+          - text: Frage № 263
+        - generic [ref=e654]:
+          - 'heading "Frage № 263: In Deutschland sind Jugendliche ab 14 Jahren strafmündig. Das bedeutet: Jugendliche, die 14 Jahre und älter sind und gegen Strafgesetze verstoßen, …" [level=3] [ref=e655]'
+          - generic [ref=e656]:
+            - generic [ref=e657]:
+              - generic [ref=e658]: ✓
+              - generic [ref=e659]: werden bestraft.
+            - generic [ref=e660]:
+              - generic [ref=e661]: —
+              - generic [ref=e662]: werden wie Erwachsene behandelt.
+            - generic [ref=e663]:
+              - generic [ref=e664]: —
+              - generic [ref=e665]: teilen die Strafe mit ihren Eltern.
+            - generic [ref=e666]:
+              - generic [ref=e667]: —
+              - generic [ref=e668]: werden nicht bestraft.
+      - generic [ref=e669]:
+        - generic [ref=e674]:
+          - img [ref=e676] [cursor=pointer]
+          - text: Frage № 264
+        - generic [ref=e679]:
+          - 'heading "Frage № 264: Zu welchem Fest tragen Menschen in Deutschland bunte Kostüme und Masken?" [level=3] [ref=e680]'
+          - generic [ref=e681]:
+            - generic [ref=e682]:
+              - generic [ref=e683]: ✓
+              - generic [ref=e684]: am Rosenmontag
+            - generic [ref=e685]:
+              - generic [ref=e686]: —
+              - generic [ref=e687]: am Maifeiertag
+            - generic [ref=e688]:
+              - generic [ref=e689]: —
+              - generic [ref=e690]: beim Oktoberfest
+            - generic [ref=e691]:
+              - generic [ref=e692]: —
+              - generic [ref=e693]: an Pfingsten
+      - generic [ref=e694]:
+        - generic [ref=e699]:
+          - img [ref=e701] [cursor=pointer]
+          - text: Frage № 265
+        - generic [ref=e704]:
+          - 'heading "Frage № 265: Wohin muss man in Deutschland zuerst gehen, wenn man heiraten möchte?" [level=3] [ref=e705]'
+          - generic [ref=e706]:
+            - generic [ref=e707]:
+              - generic [ref=e708]: —
+              - generic [ref=e709]: zum Einwohnermeldeamt
+            - generic [ref=e710]:
+              - generic [ref=e711]: —
+              - generic [ref=e712]: zum Ordnungsamt
+            - generic [ref=e713]:
+              - generic [ref=e714]: —
+              - generic [ref=e715]: zur Agentur für Arbeit
+            - generic [ref=e716]:
+              - generic [ref=e717]: ✓
+              - generic [ref=e718]: zum Standesamt
+      - generic [ref=e719]:
+        - generic [ref=e724]:
+          - img [ref=e726] [cursor=pointer]
+          - text: Frage № 266
+        - generic [ref=e729]:
+          - 'heading "Frage № 266: Wann beginnt die gesetzliche Nachtruhe in Deutschland?" [level=3] [ref=e730]'
+          - generic [ref=e731]:
+            - generic [ref=e732]:
+              - generic [ref=e733]: —
+              - generic [ref=e734]: wenn die Sonne untergeht
+            - generic [ref=e735]:
+              - generic [ref=e736]: ✓
+              - generic [ref=e737]: um 22 Uhr
+            - generic [ref=e738]:
+              - generic [ref=e739]: —
+              - generic [ref=e740]: wenn die Nachbarn schlafen gehen
+            - generic [ref=e741]:
+              - generic [ref=e742]: —
+              - generic [ref=e743]: um 0 Uhr, Mitternacht
+      - generic [ref=e744]:
+        - generic [ref=e749]:
+          - img [ref=e751] [cursor=pointer]
+          - text: Frage № 267
+        - generic [ref=e754]:
+          - 'heading "Frage № 267: Eine junge Frau in Deutschland, 22 Jahre alt, lebt mit ihrem Freund zusammen. Die Eltern der Frau finden das nicht gut, weil ihnen der Freund nicht gefällt. Was können die Eltern tun?" [level=3] [ref=e755]'
+          - generic [ref=e756]:
+            - generic [ref=e757]:
+              - generic [ref=e758]: ✓
+              - generic [ref=e759]: Sie müssen die Entscheidung der volljährigen Tochter respektieren.
+            - generic [ref=e760]:
+              - generic [ref=e761]: —
+              - generic [ref=e762]: Sie haben das Recht, die Tochter in die elterliche Wohnung zurückzuholen.
+            - generic [ref=e763]:
+              - generic [ref=e764]: —
+              - generic [ref=e765]: Sie können zur Polizei gehen und die Tochter anzeigen.
+            - generic [ref=e766]:
+              - generic [ref=e767]: —
+              - generic [ref=e768]: Sie suchen einen anderen Mann für die Tochter.
+      - generic [ref=e769]:
+        - generic [ref=e774]:
+          - img [ref=e776] [cursor=pointer]
+          - text: Frage № 268
+        - generic [ref=e779]:
+          - 'heading "Frage № 268: Eine junge Frau will den Führerschein machen. Sie hat Angst vor der Prüfung, weil ihre Muttersprache nicht Deutsch ist. Was ist richtig?" [level=3] [ref=e780]'
+          - generic [ref=e781]:
+            - generic [ref=e782]:
+              - generic [ref=e783]: —
+              - generic [ref=e784]: Sie muss mindestens zehn Jahre in Deutschland leben, bevor sie den Führerschein machen kann.
+            - generic [ref=e785]:
+              - generic [ref=e786]: ✓
+              - generic [ref=e787]: Sie kann die Theorie-Prüfung vielleicht in ihrer Muttersprache machen. Es gibt mehr als zehn Sprachen zur Auswahl.
+            - generic [ref=e788]:
+              - generic [ref=e789]: —
+              - generic [ref=e790]: Wenn sie kein Deutsch kann, darf sie keinen Führerschein haben.
+            - generic [ref=e791]:
+              - generic [ref=e792]: —
+              - generic [ref=e793]: Sie muss den Führerschein in dem Land machen, in dem man ihre Sprache spricht.
+      - generic [ref=e794]:
+        - generic [ref=e799]:
+          - img [ref=e801] [cursor=pointer]
+          - text: Frage № 269
+        - generic [ref=e804]:
+          - 'heading "Frage № 269: In Deutschland haben Kinder ab dem Alter von drei Jahren bis zur Ersteinschulung einen Anspruch auf …" [level=3] [ref=e805]'
+          - generic [ref=e806]:
+            - generic [ref=e807]:
+              - generic [ref=e808]: —
+              - generic [ref=e809]: monatliches Taschengeld.
+            - generic [ref=e810]:
+              - generic [ref=e811]: ✓
+              - generic [ref=e812]: einen Kindergartenplatz.
+            - generic [ref=e813]:
+              - generic [ref=e814]: —
+              - generic [ref=e815]: einen Platz in einem Sportverein.
+            - generic [ref=e816]:
+              - generic [ref=e817]: —
+              - generic [ref=e818]: einen Ferienpass.
+      - generic [ref=e819]:
+        - generic [ref=e824]:
+          - img [ref=e826] [cursor=pointer]
+          - text: Frage № 270
+        - generic [ref=e829]:
+          - 'heading "Frage № 270: Die Volkshochschule in Deutschland ist eine Einrichtung …" [level=3] [ref=e830]'
+          - generic [ref=e831]:
+            - generic [ref=e832]:
+              - generic [ref=e833]: —
+              - generic [ref=e834]: für den Religionsunterricht.
+            - generic [ref=e835]:
+              - generic [ref=e836]: —
+              - generic [ref=e837]: nur für Jugendliche.
+            - generic [ref=e838]:
+              - generic [ref=e839]: ✓
+              - generic [ref=e840]: zur Weiterbildung.
+            - generic [ref=e841]:
+              - generic [ref=e842]: —
+              - generic [ref=e843]: nur für Rentner und Rentnerinnen.
+      - generic [ref=e844]:
+        - paragraph [ref=e845]:
+          - text: Würden Sie den Test
+          - emphasis [ref=e846]: Leben in Deutschland
+          - text: bestehen?
+        - link "Zur Bundesland-Auswahl →" [ref=e847] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/test
+          - generic [ref=e848]:
+            - text: Zur Bundesland-Auswahl
+            - generic [ref=e849]: →
+  - list [ref=e852]:
+    - listitem [ref=e853]:
+      - link "Leben in Deutschland" [ref=e854] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu
+    - listitem [ref=e855]: ›
+    - listitem [ref=e856]:
+      - link "Fragenkatalog" [ref=e857] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/fragenkatalog
+    - listitem [ref=e858]: ›
+    - listitem [ref=e859]: Fragenkatalog, Seite 9
+  - generic [ref=e861]:
+    - paragraph [ref=e863]:
+      - text: © 2013 — 2026
+      - link "lebenindeutschland.eu" [ref=e864] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu
+      - text: —
+      - link "Impressum" [ref=e865] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/impressum
+      - text: —
+      - link "Datenschutz" [ref=e866] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/datenschutz
+      - text: —
+      - link "Utiq verwalten" [ref=e867] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/utiq-verwalten
+    - paragraph [ref=e869]: Seit April 2013 müssen Bewerber für die deutsche Staatsbürgerschaft den Test Leben in Deutschland erfolgreich bestehen. Die kostenlose Online-Lernplattform lebenindeutschland.eu bietet Ihnen eine kostenlose Möglichkeit zur zeitlich unbegrenzten Übung.
+    - generic [ref=e870]:
+      - generic [ref=e871]:
+        - heading "Test Leben in Deutschland" [level=3] [ref=e872]:
+          - link "Test Leben in Deutschland" [ref=e873] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/test
+        - list [ref=e874]:
+          - listitem [ref=e875]:
+            - link "Test für Baden-Württemberg" [ref=e876] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/bw
+          - listitem [ref=e877]:
+            - link "Test für Bayern" [ref=e878] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/by
+          - listitem [ref=e879]:
+            - link "Test für Berlin" [ref=e880] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/be
+          - listitem [ref=e881]:
+            - link "Test für Brandenburg" [ref=e882] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/bb
+          - listitem [ref=e883]:
+            - link "Test für Bremen" [ref=e884] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/hb
+          - listitem [ref=e885]:
+            - link "Test für Hamburg" [ref=e886] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/hh
+          - listitem [ref=e887]:
+            - link "Test für Hessen" [ref=e888] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/he
+          - listitem [ref=e889]:
+            - link "Test für Mecklenburg-Vorpommern" [ref=e890] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/mv
+          - listitem [ref=e891]:
+            - link "Test für Niedersachsen" [ref=e892] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/ni
+          - listitem [ref=e893]:
+            - link "Test für Nordrhein-Westfalen" [ref=e894] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/nw
+          - listitem [ref=e895]:
+            - link "Test für Rheinland-Pfalz" [ref=e896] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/rp
+          - listitem [ref=e897]:
+            - link "Test für das Saarland" [ref=e898] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sl
+          - listitem [ref=e899]:
+            - link "Test für Sachsen" [ref=e900] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sn
+          - listitem [ref=e901]:
+            - link "Test für Sachsen-Anhalt" [ref=e902] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/st
+          - listitem [ref=e903]:
+            - link "Test für Schleswig-Holstein" [ref=e904] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sh
+          - listitem [ref=e905]:
+            - link "Test für Thüringen" [ref=e906] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/th
+      - generic [ref=e907]:
+        - heading "Fragenkatalog" [level=3] [ref=e908]:
+          - link "Fragenkatalog" [ref=e909] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/fragenkatalog
+        - list [ref=e910]:
+          - listitem [ref=e911]:
+            - link "Deutschland" [ref=e912] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog
+          - listitem [ref=e913]:
+            - link "Fragen für Baden-Württemberg" [ref=e914] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bw
+          - listitem [ref=e915]:
+            - link "Fragen für Bayern" [ref=e916] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/by
+          - listitem [ref=e917]:
+            - link "Fragen für Berlin" [ref=e918] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/be
+          - listitem [ref=e919]:
+            - link "Fragen für Brandenburg" [ref=e920] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bb
+          - listitem [ref=e921]:
+            - link "Fragen für Bremen" [ref=e922] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hb
+          - listitem [ref=e923]:
+            - link "Fragen für Hamburg" [ref=e924] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hh
+          - listitem [ref=e925]:
+            - link "Fragen für Hessen" [ref=e926] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/he
+          - listitem [ref=e927]:
+            - link "Fragen für Mecklenburg-Vorpommern" [ref=e928] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/mv
+          - listitem [ref=e929]:
+            - link "Fragen für Niedersachsen" [ref=e930] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/ni
+          - listitem [ref=e931]:
+            - link "Fragen für Nordrhein-Westfalen" [ref=e932] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/nw
+          - listitem [ref=e933]:
+            - link "Fragen für Rheinland-Pfalz" [ref=e934] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/rp
+          - listitem [ref=e935]:
+            - link "Fragen für das Saarland" [ref=e936] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sl
+          - listitem [ref=e937]:
+            - link "Fragen für Sachsen" [ref=e938] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sn
+          - listitem [ref=e939]:
+            - link "Fragen für Sachsen-Anhalt" [ref=e940] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/st
+          - listitem [ref=e941]:
+            - link "Fragen für Schleswig-Holstein" [ref=e942] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sh
+          - listitem [ref=e943]:
+            - link "Fragen für Thüringen" [ref=e944] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/th
+      - generic [ref=e945]:
+        - heading "Prüfstellen" [level=3] [ref=e946]:
+          - link "Prüfstellen" [ref=e947] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/pruefstellen
+        - list [ref=e948]:
+          - listitem [ref=e949]:
+            - link "Prüfstellen in Baden-Württemberg" [ref=e950] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/bw
+          - listitem [ref=e951]:
+            - link "Prüfstellen in Bayern" [ref=e952] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/by
+          - listitem [ref=e953]:
+            - link "Prüfstellen in Berlin" [ref=e954] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/be
+          - listitem [ref=e955]:
+            - link "Prüfstellen in Brandenburg" [ref=e956] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/bb
+          - listitem [ref=e957]:
+            - link "Prüfstellen in Bremen" [ref=e958] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/hb
+          - listitem [ref=e959]:
+            - link "Prüfstellen in Hamburg" [ref=e960] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/hh
+          - listitem [ref=e961]:
+            - link "Prüfstellen in Hessen" [ref=e962] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/he
+          - listitem [ref=e963]:
+            - link "Prüfstellen in Mecklenburg-Vorpommern" [ref=e964] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/mv
+          - listitem [ref=e965]:
+            - link "Prüfstellen in Niedersachsen" [ref=e966] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/ni
+          - listitem [ref=e967]:
+            - link "Prüfstellen in Nordrhein-Westfalen" [ref=e968] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/nw
+          - listitem [ref=e969]:
+            - link "Prüfstellen in Rheinland-Pfalz" [ref=e970] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/rp
+          - listitem [ref=e971]:
+            - link "Prüfstellen im Saarland" [ref=e972] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sl
+          - listitem [ref=e973]:
+            - link "Prüfstellen in Sachsen" [ref=e974] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sn
+          - listitem [ref=e975]:
+            - link "Prüfstellen in Sachsen-Anhalt" [ref=e976] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/st
+          - listitem [ref=e977]:
+            - link "Prüfstellen in Schleswig-Holstein" [ref=e978] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sh
+          - listitem [ref=e979]:
+            - link "Prüfstellen in Thüringen" [ref=e980] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/th
+  - generic:
+    - status
+  - generic:
+    - generic:
+      - dialog "Privacy and cookie preferences":
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - img "Publisher Logo"
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: your access to lebenindeutschland.eu
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Continue with ads
+                        - paragraph:
+                          - generic:
+                            - text: Use this offer as usual with usage-based advertising and tracking under the terms of our
+                            - link "User Agreement":
+                              - /url: "#"
+                            - text: .
+                        - generic:
+                          - button "Accept all settings and proceed": ACCEPT ALL
+                        - paragraph:
+                          - text: You can find details in our
+                          - link "Privacy Center.":
+                            - /url: "#"
+                      - generic:
+                        - generic: ...or subscribe to Freechoice
+                        - paragraph: One login – many tracking-free offers! Online privacy here and wherever you are in the Freechoice offer.
+                        - generic:
+                          - button "SUBSCRIBE NOW"
+                        - paragraph:
+                          - text: Already a subscriber?
+                          - link "Login":
+                            - /url: "#"
+                            - text: LOGIN
+                  - generic:
+                    - generic:
+                      - text: What does "continue reading for free" mean?
+                      - text: To provide you with our journalistic content as part of the free version, we finance this service through the display of usage-based advertising with the help of our (264)
+                      - link "partners":
+                        - /url: "#"
+                      - text: . This also includes the use of a so-called "TC String" - a digital identifier that stores your advertising settings and enables compliance with your data protection preferences. In this context, we deploy cookies, device IDs, and similar tracking technologies and transmit
+                      - link "personal data":
+                        - /url: "#"
+                      - text: to third-party providers. Your consent applies to this service only. Details can be found in the privacy policy and in the
+                      - link "Privacy Center":
+                        - /url: "#"
+                      - text: ", where you can also make individual settings. You have the right to withdraw your consent at any time. In this case, we hereby declare the extraordinary termination of the underlying user contract, conditionally suspended by the revocation of consent according to §327q paragraph 2 BGB."
+                  - generic:
+                    - list:
+                      - listitem:
+                        - generic:
+                          - button "Use mandatory services":
+                            - generic: Use mandatory services
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Store and/or access information on a device":
+                            - generic: Store and/or access information on a device
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Precise geolocation data, and identification through device scanning":
+                            - generic: Precise geolocation data, and identification through device scanning
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Personalised advertising and content, advertising and content measurement, audience research and services development":
+                            - generic: Personalised advertising and content, advertising and content measurement, audience research and services development
+                            - generic:
+                              - img
+                  - generic:
+                    - generic: Information on data transfer to the USA:Your data will only be transferred to the USA to the extent permitted by law.
+                - generic:
+                  - generic:
+                    - link "POLICY":
+                      - /url: https://www.lebenindeutschland.eu/impressum?&cmp-silent=1
+                  - generic:
+                    - link "IMPRINT":
+                      - /url: https://www.lebenindeutschland.eu/impressum?&cmp-silent=1

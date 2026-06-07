@@ -1,0 +1,998 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - 'link "Logo der Website Leben in Deutschland: diagonal verlaufende Farbstreifen in schwarz, rot, gold Einbürgerungstest Leben in Deutschland" [ref=e6] [cursor=pointer]':
+        - /url: https://www.lebenindeutschland.eu
+        - 'img "Logo der Website Leben in Deutschland: diagonal verlaufende Farbstreifen in schwarz, rot, gold" [ref=e7]'
+        - generic [ref=e8]:
+          - generic [ref=e9]: Einbürgerungstest
+          - generic [ref=e10]: Leben in Deutschland
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - link "Startseite Hier geht’s los" [ref=e13] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu
+            - text: Startseite
+            - generic [ref=e14]: Hier geht’s los
+          - link "Der Test mit Auswertung" [ref=e15] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/test
+            - text: Der Test
+            - generic [ref=e16]: mit Auswertung
+          - link "Fragen mit Antworten" [ref=e17] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/fragenkatalog
+            - text: Fragen
+            - generic [ref=e18]: mit Antworten
+        - link "Login Anmeldung" [ref=e20] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/login
+          - text: Login
+          - generic [ref=e21]: Anmeldung
+    - generic [ref=e23]:
+      - heading "Fragenkatalog zum Test Leben in Deutschland. Fragen 91 bis 120" [level=1] [ref=e24]
+      - heading "Alle Fragen mit Antworten" [level=2] [ref=e25]
+    - generic [ref=e26]:
+      - generic [ref=e30]:
+        - heading "Deutschland allgemein" [level=4] [ref=e31]
+        - list [ref=e32]:
+          - listitem [ref=e33]:
+            - link "1 – 30" [ref=e34] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/1
+          - listitem [ref=e35]:
+            - link "31 – 60" [ref=e36] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/2
+          - listitem [ref=e37]:
+            - link "61 – 90" [ref=e38] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/3
+          - listitem [ref=e39]: Fragen 91 – 120
+          - listitem [ref=e40]:
+            - link "121 – 150" [ref=e41] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/5
+          - listitem [ref=e42]:
+            - link "151 – 180" [ref=e43] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/6
+          - listitem [ref=e44]:
+            - link "181 – 210" [ref=e45] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/7
+          - listitem [ref=e46]:
+            - link "211 – 240" [ref=e47] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/8
+          - listitem [ref=e48]:
+            - link "241 – 270" [ref=e49] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/9
+          - listitem [ref=e50]:
+            - link "271 – 300" [ref=e51] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/10
+        - heading "Bundesland" [level=4] [ref=e52]
+        - list [ref=e53]:
+          - listitem [ref=e54]:
+            - link "Baden-Württemberg" [ref=e55] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bw
+          - listitem [ref=e56]:
+            - link "Bayern" [ref=e57] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/by
+          - listitem [ref=e58]:
+            - link "Berlin" [ref=e59] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/be
+          - listitem [ref=e60]:
+            - link "Brandenburg" [ref=e61] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bb
+          - listitem [ref=e62]:
+            - link "Bremen" [ref=e63] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hb
+          - listitem [ref=e64]:
+            - link "Hamburg" [ref=e65] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hh
+          - listitem [ref=e66]:
+            - link "Hessen" [ref=e67] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/he
+          - listitem [ref=e68]:
+            - link "Mecklenburg-Vorpommern" [ref=e69] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/mv
+          - listitem [ref=e70]:
+            - link "Niedersachsen" [ref=e71] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/ni
+          - listitem [ref=e72]:
+            - link "Nordrhein-Westfalen" [ref=e73] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/nw
+          - listitem [ref=e74]:
+            - link "Rheinland-Pfalz" [ref=e75] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/rp
+          - listitem [ref=e76]:
+            - link "Saarland" [ref=e77] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sl
+          - listitem [ref=e78]:
+            - link "Sachsen" [ref=e79] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sn
+          - listitem [ref=e80]:
+            - link "Sachsen-Anhalt" [ref=e81] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/st
+          - listitem [ref=e82]:
+            - link "Schleswig-Holstein" [ref=e83] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sh
+          - listitem [ref=e84]:
+            - link "Thüringen" [ref=e85] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/th
+      - generic [ref=e86]:
+        - paragraph [ref=e87]:
+          - text: Würden Sie den Test
+          - emphasis [ref=e88]: Leben in Deutschland
+          - text: bestehen?
+        - link "Zur Bundesland-Auswahl →" [ref=e89] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/test
+          - generic [ref=e90]:
+            - text: Zur Bundesland-Auswahl
+            - generic [ref=e91]: →
+      - generic [ref=e92]:
+        - generic [ref=e97]:
+          - img [ref=e99] [cursor=pointer]
+          - text: Frage № 91
+        - generic [ref=e102]:
+          - 'heading "Frage № 91: In Deutschland kann ein Regierungswechsel in einem Bundesland Auswirkungen auf die Bundespolitik haben. Das Regieren wird …" [level=3] [ref=e103]':
+            - 'link "Frage № 91: In Deutschland kann ein Regierungswechsel in einem Bundesland Auswirkungen auf die Bundespolitik haben. Das Regieren wird …" [ref=e104] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-91-in-deutschland-kann-ein-regierungswechsel-in-einem-bundesland-auswirkungen-auf-die-bundespolitik-haben
+          - generic [ref=e105]:
+            - generic [ref=e106]:
+              - generic [ref=e107]: —
+              - generic [ref=e108]: schwieriger, wenn sich dadurch die Mehrheit im Bundestag ändert.
+            - generic [ref=e109]:
+              - generic [ref=e110]: —
+              - generic [ref=e111]: leichter, wenn dadurch neue Parteien in den Bundesrat kommen.
+            - generic [ref=e112]:
+              - generic [ref=e113]: ✓
+              - generic [ref=e114]: schwieriger, wenn dadurch die Mehrheit im Bundesrat verändert wird.
+            - generic [ref=e115]:
+              - generic [ref=e116]: —
+              - generic [ref=e117]: leichter, wenn es sich um ein reiches Bundesland handelt.
+      - generic [ref=e118]:
+        - generic [ref=e123]:
+          - img [ref=e125] [cursor=pointer]
+          - text: Frage № 92
+        - generic [ref=e128]:
+          - 'heading "Frage № 92: Was bedeutet die Abkürzung CSU in Deutschland?" [level=3] [ref=e129]'
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - generic [ref=e132]: —
+              - generic [ref=e133]: Christlich Sichere Union
+            - generic [ref=e134]:
+              - generic [ref=e135]: —
+              - generic [ref=e136]: Christlich Süddeutsche Union
+            - generic [ref=e137]:
+              - generic [ref=e138]: —
+              - generic [ref=e139]: Christlich Sozialer Unternehmerverband
+            - generic [ref=e140]:
+              - generic [ref=e141]: ✓
+              - generic [ref=e142]: Christlich Soziale Union
+      - generic [ref=e143]:
+        - generic [ref=e148]:
+          - img [ref=e150] [cursor=pointer]
+          - text: Frage № 93
+        - generic [ref=e153]:
+          - 'heading "Frage № 93: Je mehr „Zweitstimmen“ eine Partei bei einer Bundestagswahl bekommt, desto …" [level=3] [ref=e154]':
+            - 'link "Frage № 93: Je mehr „Zweitstimmen“ eine Partei bei einer Bundestagswahl bekommt, desto …" [ref=e155] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-93-je-mehr-zweitstimmen-eine-partei-bei-einer-bundestagswahl-bekommt-desto
+          - generic [ref=e156]:
+            - generic [ref=e157]:
+              - generic [ref=e158]: ✓
+              - generic [ref=e159]: mehr Sitze erhält die Partei im Parlament.
+            - generic [ref=e160]:
+              - generic [ref=e161]: —
+              - generic [ref=e162]: weniger Erststimmen kann sie haben.
+            - generic [ref=e163]:
+              - generic [ref=e164]: —
+              - generic [ref=e165]: mehr Direktkandidaten der Partei ziehen ins Parlament ein.
+            - generic [ref=e166]:
+              - generic [ref=e167]: —
+              - generic [ref=e168]: größer ist das Risiko, eine Koalition bilden zu müssen.
+      - generic [ref=e169]:
+        - generic [ref=e174]:
+          - img [ref=e176] [cursor=pointer]
+          - text: Frage № 94
+        - generic [ref=e179]:
+          - 'heading "Frage № 94: Ab welchem Alter darf man in Deutschland an der Wahl zum Deutschen Bundestag teilnehmen?" [level=3] [ref=e180]'
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - generic [ref=e183]: —
+              - generic [ref=e184]: "16"
+            - generic [ref=e185]:
+              - generic [ref=e186]: ✓
+              - generic [ref=e187]: "18"
+            - generic [ref=e188]:
+              - generic [ref=e189]: —
+              - generic [ref=e190]: "21"
+            - generic [ref=e191]:
+              - generic [ref=e192]: —
+              - generic [ref=e193]: "23"
+      - generic [ref=e194]:
+        - generic [ref=e199]:
+          - img [ref=e201] [cursor=pointer]
+          - text: Frage № 95
+        - generic [ref=e204]:
+          - 'heading "Frage № 95: Was gilt für die meisten Kinder in Deutschland?" [level=3] [ref=e205]'
+          - generic [ref=e206]:
+            - generic [ref=e207]:
+              - generic [ref=e208]: —
+              - generic [ref=e209]: Wahlpflicht
+            - generic [ref=e210]:
+              - generic [ref=e211]: ✓
+              - generic [ref=e212]: Schulpflicht
+            - generic [ref=e213]:
+              - generic [ref=e214]: —
+              - generic [ref=e215]: Schweigepflicht
+            - generic [ref=e216]:
+              - generic [ref=e217]: —
+              - generic [ref=e218]: Religionspflicht
+      - generic [ref=e221]:
+        - generic [ref=e226]:
+          - img [ref=e228] [cursor=pointer]
+          - text: Frage № 96
+        - generic [ref=e231]:
+          - 'heading "Frage № 96: Wie kann jemand, der den Holocaust leugnet, bestraft werden?" [level=3] [ref=e232]'
+          - generic [ref=e233]:
+            - generic [ref=e234]:
+              - generic [ref=e235]: —
+              - generic [ref=e236]: Kürzung sozialer Leistungen
+            - generic [ref=e237]:
+              - generic [ref=e238]: —
+              - generic [ref=e239]: bis zu 100 Sozialstunden
+            - generic [ref=e240]:
+              - generic [ref=e241]: —
+              - generic [ref=e242]: gar nicht, Holocaustleugnung ist erlaubt
+            - generic [ref=e243]:
+              - generic [ref=e244]: ✓
+              - generic [ref=e245]: mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe
+      - generic [ref=e246]:
+        - generic [ref=e251]:
+          - img [ref=e253] [cursor=pointer]
+          - text: Frage № 97
+        - generic [ref=e256]:
+          - 'heading "Frage № 97: Was bezahlt man in Deutschland automatisch, wenn man fest angestellt ist?" [level=3] [ref=e257]'
+          - generic [ref=e258]:
+            - generic [ref=e259]:
+              - generic [ref=e260]: ✓
+              - generic [ref=e261]: Sozialversicherung
+            - generic [ref=e262]:
+              - generic [ref=e263]: —
+              - generic [ref=e264]: Sozialhilfe
+            - generic [ref=e265]:
+              - generic [ref=e266]: —
+              - generic [ref=e267]: Kindergeld
+            - generic [ref=e268]:
+              - generic [ref=e269]: —
+              - generic [ref=e270]: Wohngeld
+      - generic [ref=e271]:
+        - generic [ref=e276]:
+          - img [ref=e278] [cursor=pointer]
+          - text: Frage № 98
+        - generic [ref=e281]:
+          - 'heading "Frage № 98: Wenn Abgeordnete im Deutschen Bundestag ihre Fraktion wechseln, …" [level=3] [ref=e282]':
+            - 'link "Frage № 98: Wenn Abgeordnete im Deutschen Bundestag ihre Fraktion wechseln, …" [ref=e283] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-98-wenn-abgeordnete-im-deutschen-bundestag-ihre-fraktion-wechseln
+          - generic [ref=e284]:
+            - generic [ref=e285]:
+              - generic [ref=e286]: ✓
+              - generic [ref=e287]: kann die Regierung ihre Mehrheit verlieren.
+            - generic [ref=e288]:
+              - generic [ref=e289]: —
+              - generic [ref=e290]: dürfen sie nicht mehr an den Sitzungen des Parlaments teilnehmen.
+            - generic [ref=e291]:
+              - generic [ref=e292]: —
+              - generic [ref=e293]: muss der Bundespräsident / die Bundespräsidentin zuvor sein / ihr Einverständnis geben.
+            - generic [ref=e294]:
+              - generic [ref=e295]: —
+              - generic [ref=e296]: dürfen die Wähler / Wählerinnen dieser Abgeordneten noch einmal wählen.
+      - generic [ref=e297]:
+        - generic [ref=e302]:
+          - img [ref=e304] [cursor=pointer]
+          - text: Frage № 99
+        - generic [ref=e307]:
+          - 'heading "Frage № 99: Wer bezahlt in Deutschland die Sozialversicherungen?" [level=3] [ref=e308]'
+          - generic [ref=e309]:
+            - generic [ref=e310]:
+              - generic [ref=e311]: ✓
+              - generic [ref=e312]: Arbeitgeber / Arbeitgeberinnen und Arbeitnehmer / Arbeitnehmerinnen
+            - generic [ref=e313]:
+              - generic [ref=e314]: —
+              - generic [ref=e315]: nur Arbeitnehmer / Arbeitnehmerinnen
+            - generic [ref=e316]:
+              - generic [ref=e317]: —
+              - generic [ref=e318]: alle Staatsangehörigen
+            - generic [ref=e319]:
+              - generic [ref=e320]: —
+              - generic [ref=e321]: nur Arbeitgeber / Arbeitgeberinnen
+      - generic [ref=e322]:
+        - generic [ref=e327]:
+          - img [ref=e329] [cursor=pointer]
+          - text: Frage № 100
+        - generic [ref=e332]:
+          - 'heading "Frage № 100: Was gehört nicht zur gesetzlichen Sozialversicherung?" [level=3] [ref=e333]'
+          - generic [ref=e334]:
+            - generic [ref=e335]:
+              - generic [ref=e336]: —
+              - generic [ref=e337]: die gesetzliche Rentenversicherung
+            - generic [ref=e338]:
+              - generic [ref=e339]: ✓
+              - generic [ref=e340]: die Lebensversicherung
+            - generic [ref=e341]:
+              - generic [ref=e342]: —
+              - generic [ref=e343]: die Arbeitslosenversicherung
+            - generic [ref=e344]:
+              - generic [ref=e345]: —
+              - generic [ref=e346]: die Pflegeversicherung
+      - generic [ref=e347]:
+        - generic [ref=e352]:
+          - img [ref=e354] [cursor=pointer]
+          - text: Frage № 101
+        - generic [ref=e357]:
+          - 'heading "Frage № 101: Gewerkschaften sind Interessenverbände der …" [level=3] [ref=e358]':
+            - 'link "Frage № 101: Gewerkschaften sind Interessenverbände der …" [ref=e359] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-101-gewerkschaften-sind-interessenverbaende-der
+          - generic [ref=e360]:
+            - generic [ref=e361]:
+              - generic [ref=e362]: —
+              - generic [ref=e363]: Jugendlichen.
+            - generic [ref=e364]:
+              - generic [ref=e365]: ✓
+              - generic [ref=e366]: Arbeitnehmer und Arbeitnehmerinnen.
+            - generic [ref=e367]:
+              - generic [ref=e368]: —
+              - generic [ref=e369]: Rentner und Rentnerinnen.
+            - generic [ref=e370]:
+              - generic [ref=e371]: —
+              - generic [ref=e372]: Arbeitgeber und Arbeitgeberinnen.
+      - generic [ref=e373]:
+        - generic [ref=e378]:
+          - img [ref=e380] [cursor=pointer]
+          - text: Frage № 102
+        - generic [ref=e383]:
+          - 'heading "Frage № 102: Womit kann man in der Bundesrepublik Deutschland geehrt werden, wenn man auf politischem, wirtschaftlichem, kulturellem, geistigem oder sozialem Gebiet eine besondere Leistung erbracht hat? Mit dem …" [level=3] [ref=e384]':
+            - 'link "Frage № 102: Womit kann man in der Bundesrepublik Deutschland geehrt werden, wenn man auf politischem, wirtschaftlichem, kulturellem, geistigem oder sozialem Gebiet eine besondere Leistung erbracht hat? Mit dem …" [ref=e385] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-102-womit-kann-man-in-der-bundesrepublik-deutschland-geehrt-werden-wenn-man-auf-politischem-wirtschaftlichem-kulturellem-geistigem-oder-sozialem-gebiet-eine-besondere-leistung-erbracht-hat
+          - generic [ref=e386]:
+            - generic [ref=e387]:
+              - generic [ref=e388]: —
+              - generic [ref=e389]: Bundesadler
+            - generic [ref=e390]:
+              - generic [ref=e391]: ✓
+              - generic [ref=e392]: Bundesverdienstkreuz
+            - generic [ref=e393]:
+              - generic [ref=e394]: —
+              - generic [ref=e395]: Vaterländischen Verdienstorden
+            - generic [ref=e396]:
+              - generic [ref=e397]: —
+              - generic [ref=e398]: Ehrentitel „Held der Deutschen Demokratischen Republik“
+      - generic [ref=e399]:
+        - generic [ref=e404]:
+          - img [ref=e406] [cursor=pointer]
+          - text: Frage № 103
+        - generic [ref=e409]:
+          - 'heading "Frage № 103: Was wird in Deutschland als „Ampelkoalition“ bezeichnet?" [level=3] [ref=e410]':
+            - 'link "Frage № 103: Was wird in Deutschland als „Ampelkoalition“ bezeichnet?" [ref=e411] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-103-was-wird-in-deutschland-als-ampelkoalition-bezeichnet-die-zusammenarbeit
+          - generic [ref=e412]:
+            - generic [ref=e413]:
+              - generic [ref=e414]: —
+              - generic [ref=e415]: der Bundestagsfraktionen von CDU und CSU
+            - generic [ref=e416]:
+              - generic [ref=e417]: ✓
+              - generic [ref=e418]: von SPD, FDP und Bündnis 90/Die Grünen in einer Regierung
+            - generic [ref=e419]:
+              - generic [ref=e420]: —
+              - generic [ref=e421]: von CSU, Die Linke und Bündnis 90/Die Grünen in einer Regierung
+            - generic [ref=e422]:
+              - generic [ref=e423]: —
+              - generic [ref=e424]: der Bundestagsfraktionen von CDU und SPD
+      - generic [ref=e425]:
+        - generic [ref=e430]:
+          - img [ref=e432] [cursor=pointer]
+          - text: Frage № 104
+        - generic [ref=e435]:
+          - 'heading "Frage № 104: Eine Frau in Deutschland verliert ihre Arbeit. Was darf nicht der Grund für diese Entlassung sein?" [level=3] [ref=e436]'
+          - generic [ref=e437]:
+            - generic [ref=e438]:
+              - generic [ref=e439]: —
+              - generic [ref=e440]: Die Frau ist lange krank und arbeitsunfähig.
+            - generic [ref=e441]:
+              - generic [ref=e442]: —
+              - generic [ref=e443]: Die Frau kam oft zu spät zur Arbeit.
+            - generic [ref=e444]:
+              - generic [ref=e445]: —
+              - generic [ref=e446]: Die Frau erledigt private Sachen während der Arbeitszeit.
+            - generic [ref=e447]:
+              - generic [ref=e448]: ✓
+              - generic [ref=e449]: Die Frau bekommt ein Kind und ihr Chef weiß das.
+      - generic [ref=e450]:
+        - generic [ref=e455]:
+          - img [ref=e457] [cursor=pointer]
+          - text: Frage № 105
+        - generic [ref=e460]:
+          - 'heading "Frage № 105: Was ist eine Aufgabe von Wahlhelfern / Wahlhelferinnen in Deutschland?" [level=3] [ref=e461]'
+          - generic [ref=e462]:
+            - generic [ref=e463]:
+              - generic [ref=e464]: —
+              - generic [ref=e465]: Sie helfen alten Menschen bei der Stimmabgabe in der Wahlkabine.
+            - generic [ref=e466]:
+              - generic [ref=e467]: —
+              - generic [ref=e468]: Sie schreiben die Wahlbenachrichtigungen vor der Wahl.
+            - generic [ref=e469]:
+              - generic [ref=e470]: —
+              - generic [ref=e471]: Sie geben Zwischenergebnisse an die Medien weiter.
+            - generic [ref=e472]:
+              - generic [ref=e473]: ✓
+              - generic [ref=e474]: Sie zählen die Stimmen nach dem Ende der Wahl.
+      - generic [ref=e475]:
+        - generic [ref=e480]:
+          - img [ref=e482] [cursor=pointer]
+          - text: Frage № 106
+        - generic [ref=e485]:
+          - 'heading "Frage № 106: In Deutschland helfen ehrenamtliche Wahlhelfer und Wahlhelferinnen bei den Wahlen. Was ist eine Aufgabe von Wahlhelfern / Wahlhelferinnen?" [level=3] [ref=e486]'
+          - generic [ref=e487]:
+            - generic [ref=e488]:
+              - generic [ref=e489]: —
+              - generic [ref=e490]: Sie helfen Kindern und alten Menschen beim Wählen.
+            - generic [ref=e491]:
+              - generic [ref=e492]: —
+              - generic [ref=e493]: Sie schreiben Karten und Briefe mit der Angabe des Wahllokals.
+            - generic [ref=e494]:
+              - generic [ref=e495]: —
+              - generic [ref=e496]: Sie geben Zwischenergebnisse an Journalisten weiter.
+            - generic [ref=e497]:
+              - generic [ref=e498]: ✓
+              - generic [ref=e499]: Sie zählen die Stimmen nach dem Ende der Wahl.
+      - generic [ref=e500]:
+        - generic [ref=e505]:
+          - img [ref=e507] [cursor=pointer]
+          - text: Frage № 107
+        - generic [ref=e510]:
+          - 'heading "Frage № 107: Für wie viele Jahre wird der Bundestag in Deutschland gewählt?" [level=3] [ref=e511]':
+            - 'link "Frage № 107: Für wie viele Jahre wird der Bundestag in Deutschland gewählt?" [ref=e512] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-107-fuer-wie-viele-jahre-wird-der-bundestag-in-deutschland-gewaehlt
+          - generic [ref=e513]:
+            - generic [ref=e514]:
+              - generic [ref=e515]: —
+              - generic [ref=e516]: 2 Jahre
+            - generic [ref=e517]:
+              - generic [ref=e518]: ✓
+              - generic [ref=e519]: 4 Jahre
+            - generic [ref=e520]:
+              - generic [ref=e521]: —
+              - generic [ref=e522]: 6 Jahre
+            - generic [ref=e523]:
+              - generic [ref=e524]: —
+              - generic [ref=e525]: 8 Jahre
+      - generic [ref=e526]:
+        - generic [ref=e531]:
+          - img [ref=e533] [cursor=pointer]
+          - text: Frage № 108
+        - generic [ref=e536]:
+          - 'heading "Frage № 108: Bei einer Bundestagswahl in Deutschland darf jeder wählen, der …" [level=3] [ref=e537]'
+          - generic [ref=e538]:
+            - generic [ref=e539]:
+              - generic [ref=e540]: —
+              - generic [ref=e541]: in der Bundesrepublik Deutschland wohnt und wählen möchte.
+            - generic [ref=e542]:
+              - generic [ref=e543]: ✓
+              - generic [ref=e544]: Bürger / Bürgerin der Bundesrepublik Deutschland ist und mindestens 18 Jahre alt ist.
+            - generic [ref=e545]:
+              - generic [ref=e546]: —
+              - generic [ref=e547]: seit mindestens 3 Jahren in der Bundesrepublik Deutschland lebt.
+            - generic [ref=e548]:
+              - generic [ref=e549]: —
+              - generic [ref=e550]: Bürger / Bürgerin der Bundesrepublik Deutschland ist und mindestens 21 Jahre alt ist.
+      - generic [ref=e551]:
+        - generic [ref=e556]:
+          - img [ref=e558] [cursor=pointer]
+          - text: Frage № 109
+        - generic [ref=e561]:
+          - 'heading "Frage № 109: Wie oft gibt es normalerweise Bundestagswahlen in Deutschland?" [level=3] [ref=e562]'
+          - generic [ref=e563]:
+            - generic [ref=e564]:
+              - generic [ref=e565]: —
+              - generic [ref=e566]: alle drei Jahre
+            - generic [ref=e567]:
+              - generic [ref=e568]: ✓
+              - generic [ref=e569]: alle vier Jahre
+            - generic [ref=e570]:
+              - generic [ref=e571]: —
+              - generic [ref=e572]: alle fünf Jahre
+            - generic [ref=e573]:
+              - generic [ref=e574]: —
+              - generic [ref=e575]: alle sechs Jahre
+      - generic [ref=e576]:
+        - generic [ref=e581]:
+          - img [ref=e583] [cursor=pointer]
+          - text: Frage № 110
+        - generic [ref=e586]:
+          - 'heading "Frage № 110: Für wie viele Jahre wird der Bundestag in Deutschland gewählt?" [level=3] [ref=e587]'
+          - generic [ref=e588]:
+            - generic [ref=e589]:
+              - generic [ref=e590]: —
+              - generic [ref=e591]: 2 Jahre
+            - generic [ref=e592]:
+              - generic [ref=e593]: —
+              - generic [ref=e594]: 3 Jahre
+            - generic [ref=e595]:
+              - generic [ref=e596]: ✓
+              - generic [ref=e597]: 4 Jahre
+            - generic [ref=e598]:
+              - generic [ref=e599]: —
+              - generic [ref=e600]: 5 Jahre
+      - generic [ref=e601]:
+        - generic [ref=e606]:
+          - img [ref=e608] [cursor=pointer]
+          - text: Frage № 111
+        - generic [ref=e611]:
+          - 'heading "Frage № 111: Welche Handlung mit Bezug auf den Staat Israel ist in Deutschland verboten?" [level=3] [ref=e612]':
+            - 'link "Frage № 111: Welche Handlung mit Bezug auf den Staat Israel ist in Deutschland verboten?" [ref=e613] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-111-welche-handlung-mit-bezug-auf-den-staat-israel-ist-in-deutschland-verboten
+          - generic [ref=e614]:
+            - generic [ref=e615]:
+              - generic [ref=e616]: —
+              - generic [ref=e617]: Die Politik Israels öffentlich kritisieren.
+            - generic [ref=e618]:
+              - generic [ref=e619]: —
+              - generic [ref=e620]: Das Aufhängen einer israelischen Flagge auf dem Privatgrundstück.
+            - generic [ref=e621]:
+              - generic [ref=e622]: —
+              - generic [ref=e623]: Eine Diskussion über die Politik Israels.
+            - generic [ref=e624]:
+              - generic [ref=e625]: ✓
+              - generic [ref=e626]: Der öffentliche Aufruf zur Vernichtung Israels.
+      - generic [ref=e627]:
+        - generic [ref=e632]:
+          - img [ref=e634] [cursor=pointer]
+          - text: Frage № 112
+        - generic [ref=e637]:
+          - 'heading "Frage № 112: Die Wahlen in Deutschland sind …" [level=3] [ref=e638]'
+          - generic [ref=e639]:
+            - generic [ref=e640]:
+              - generic [ref=e641]: —
+              - generic [ref=e642]: speziell.
+            - generic [ref=e643]:
+              - generic [ref=e644]: ✓
+              - generic [ref=e645]: geheim.
+            - generic [ref=e646]:
+              - generic [ref=e647]: —
+              - generic [ref=e648]: berufsbezogen.
+            - generic [ref=e649]:
+              - generic [ref=e650]: —
+              - generic [ref=e651]: geschlechtsabhängig.
+      - generic [ref=e652]:
+        - generic [ref=e657]:
+          - img [ref=e659] [cursor=pointer]
+          - text: Frage № 113
+        - generic [ref=e662]:
+          - 'heading "Frage № 113: Wahlen in Deutschland gewinnt die Partei, die …" [level=3] [ref=e663]'
+          - generic [ref=e664]:
+            - generic [ref=e665]:
+              - generic [ref=e666]: ✓
+              - generic [ref=e667]: die meisten Stimmen bekommt.
+            - generic [ref=e668]:
+              - generic [ref=e669]: —
+              - generic [ref=e670]: die meisten Männer mehrheitlich gewählt haben.
+            - generic [ref=e671]:
+              - generic [ref=e672]: —
+              - generic [ref=e673]: die meisten Stimmen bei den Arbeitern / Arbeiterinnen bekommen hat.
+            - generic [ref=e674]:
+              - generic [ref=e675]: —
+              - generic [ref=e676]: die meisten Erststimmen für ihren Kanzlerkandidaten / ihre Kanzlerkandidatin erhalten hat.
+      - generic [ref=e677]:
+        - generic [ref=e682]:
+          - img [ref=e684] [cursor=pointer]
+          - text: Frage № 114
+        - generic [ref=e687]:
+          - 'heading "Frage № 114: An demokratischen Wahlen in Deutschland teilzunehmen ist …" [level=3] [ref=e688]'
+          - generic [ref=e689]:
+            - generic [ref=e690]:
+              - generic [ref=e691]: —
+              - generic [ref=e692]: eine Pflicht.
+            - generic [ref=e693]:
+              - generic [ref=e694]: ✓
+              - generic [ref=e695]: ein Recht.
+            - generic [ref=e696]:
+              - generic [ref=e697]: —
+              - generic [ref=e698]: ein Zwang.
+            - generic [ref=e699]:
+              - generic [ref=e700]: —
+              - generic [ref=e701]: eine Last.
+      - generic [ref=e702]:
+        - generic [ref=e707]:
+          - img [ref=e709] [cursor=pointer]
+          - text: Frage № 115
+        - generic [ref=e712]:
+          - 'heading "Frage № 115: Was bedeutet „aktives Wahlrecht“ in Deutschland?" [level=3] [ref=e713]':
+            - 'link "Frage № 115: Was bedeutet „aktives Wahlrecht“ in Deutschland?" [ref=e714] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-115-was-bedeutet-aktives-wahlrecht-in-deutschland
+          - generic [ref=e715]:
+            - generic [ref=e716]:
+              - generic [ref=e717]: —
+              - generic [ref=e718]: Man kann gewählt werden.
+            - generic [ref=e719]:
+              - generic [ref=e720]: —
+              - generic [ref=e721]: Man muss wählen gehen.
+            - generic [ref=e722]:
+              - generic [ref=e723]: ✓
+              - generic [ref=e724]: Man kann wählen.
+            - generic [ref=e725]:
+              - generic [ref=e726]: —
+              - generic [ref=e727]: Man muss zur Auszählung der Stimmen gehen.
+      - generic [ref=e728]:
+        - generic [ref=e733]:
+          - img [ref=e735] [cursor=pointer]
+          - text: Frage № 116
+        - generic [ref=e738]:
+          - 'heading "Frage № 116: Wenn Sie bei einer Bundestagswahl in Deutschland wählen dürfen, heißt das …" [level=3] [ref=e739]'
+          - generic [ref=e740]:
+            - generic [ref=e741]:
+              - generic [ref=e742]: —
+              - generic [ref=e743]: aktive Wahlkampagne.
+            - generic [ref=e744]:
+              - generic [ref=e745]: —
+              - generic [ref=e746]: aktives Wahlverfahren.
+            - generic [ref=e747]:
+              - generic [ref=e748]: —
+              - generic [ref=e749]: aktiver Wahlkampf.
+            - generic [ref=e750]:
+              - generic [ref=e751]: ✓
+              - generic [ref=e752]: aktives Wahlrecht.
+      - generic [ref=e753]:
+        - generic [ref=e758]:
+          - img [ref=e760] [cursor=pointer]
+          - text: Frage № 117
+        - generic [ref=e763]:
+          - 'heading "Frage № 117: Wie viel Prozent der Zweitstimmen müssen Parteien mindestens bekommen, um in den Deutschen Bundestag gewählt zu werden?" [level=3] [ref=e764]'
+          - generic [ref=e765]:
+            - generic [ref=e766]:
+              - generic [ref=e767]: —
+              - generic [ref=e768]: 3 %
+            - generic [ref=e769]:
+              - generic [ref=e770]: —
+              - generic [ref=e771]: 4 %
+            - generic [ref=e772]:
+              - generic [ref=e773]: ✓
+              - generic [ref=e774]: 5 %
+            - generic [ref=e775]:
+              - generic [ref=e776]: —
+              - generic [ref=e777]: 6 %
+      - generic [ref=e778]:
+        - generic [ref=e783]:
+          - img [ref=e785] [cursor=pointer]
+          - text: Frage № 118
+        - generic [ref=e788]:
+          - 'heading "Frage № 118: Wer darf bei den rund 40 jüdischen Makkabi-Sportvereinen Mitglied werden?" [level=3] [ref=e789]'
+          - generic [ref=e790]:
+            - generic [ref=e791]:
+              - generic [ref=e792]: —
+              - generic [ref=e793]: nur Deutsche
+            - generic [ref=e794]:
+              - generic [ref=e795]: —
+              - generic [ref=e796]: nur Israelis
+            - generic [ref=e797]:
+              - generic [ref=e798]: —
+              - generic [ref=e799]: nur religiöse Menschen
+            - generic [ref=e800]:
+              - generic [ref=e801]: ✓
+              - generic [ref=e802]: alle Menschen
+      - generic [ref=e803]:
+        - generic [ref=e808]:
+          - img [ref=e810] [cursor=pointer]
+          - text: Frage № 119
+        - generic [ref=e813]:
+          - 'heading "Frage № 119: Wahlen in Deutschland sind frei. Was bedeutet das?" [level=3] [ref=e814]'
+          - generic [ref=e815]:
+            - generic [ref=e816]:
+              - generic [ref=e817]: —
+              - generic [ref=e818]: Alle verurteilten Straftäter / Straftäterinnen dürfen nicht wählen.
+            - generic [ref=e819]:
+              - generic [ref=e820]: —
+              - generic [ref=e821]: Wenn ich wählen gehen möchte, muss mein Arbeitgeber / meine Arbeitgeberin mir frei geben.
+            - generic [ref=e822]:
+              - generic [ref=e823]: ✓
+              - generic [ref=e824]: Jede Person kann ohne Zwang entscheiden, ob sie wählen möchte und wen sie wählen möchte.
+            - generic [ref=e825]:
+              - generic [ref=e826]: —
+              - generic [ref=e827]: Ich kann frei entscheiden, wo ich wählen gehen möchte.
+      - generic [ref=e828]:
+        - generic [ref=e833]:
+          - img [ref=e835] [cursor=pointer]
+          - text: Frage № 120
+        - generic [ref=e838]:
+          - 'heading "Frage № 120: Das Wahlsystem in Deutschland ist ein …" [level=3] [ref=e839]'
+          - generic [ref=e840]:
+            - generic [ref=e841]:
+              - generic [ref=e842]: —
+              - generic [ref=e843]: Zensuswahlrecht.
+            - generic [ref=e844]:
+              - generic [ref=e845]: —
+              - generic [ref=e846]: Dreiklassenwahlrecht.
+            - generic [ref=e847]:
+              - generic [ref=e848]: ✓
+              - generic [ref=e849]: Mehrheits- und Verhältniswahlrecht.
+            - generic [ref=e850]:
+              - generic [ref=e851]: —
+              - generic [ref=e852]: allgemeines Männerwahlrecht.
+      - generic [ref=e853]:
+        - paragraph [ref=e854]:
+          - text: Würden Sie den Test
+          - emphasis [ref=e855]: Leben in Deutschland
+          - text: bestehen?
+        - link "Zur Bundesland-Auswahl →" [ref=e856] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/test
+          - generic [ref=e857]:
+            - text: Zur Bundesland-Auswahl
+            - generic [ref=e858]: →
+  - list [ref=e861]:
+    - listitem [ref=e862]:
+      - link "Leben in Deutschland" [ref=e863] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu
+    - listitem [ref=e864]: ›
+    - listitem [ref=e865]:
+      - link "Fragenkatalog" [ref=e866] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/fragenkatalog
+    - listitem [ref=e867]: ›
+    - listitem [ref=e868]: Fragenkatalog, Seite 4
+  - generic [ref=e870]:
+    - paragraph [ref=e872]:
+      - text: © 2013 — 2026
+      - link "lebenindeutschland.eu" [ref=e873] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu
+      - text: —
+      - link "Impressum" [ref=e874] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/impressum
+      - text: —
+      - link "Datenschutz" [ref=e875] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/datenschutz
+      - text: —
+      - link "Utiq verwalten" [ref=e876] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/utiq-verwalten
+    - paragraph [ref=e878]: Seit April 2013 müssen Bewerber für die deutsche Staatsbürgerschaft den Test Leben in Deutschland erfolgreich bestehen. Die kostenlose Online-Lernplattform lebenindeutschland.eu bietet Ihnen eine kostenlose Möglichkeit zur zeitlich unbegrenzten Übung.
+    - generic [ref=e879]:
+      - generic [ref=e880]:
+        - heading "Test Leben in Deutschland" [level=3] [ref=e881]:
+          - link "Test Leben in Deutschland" [ref=e882] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/test
+        - list [ref=e883]:
+          - listitem [ref=e884]:
+            - link "Test für Baden-Württemberg" [ref=e885] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/bw
+          - listitem [ref=e886]:
+            - link "Test für Bayern" [ref=e887] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/by
+          - listitem [ref=e888]:
+            - link "Test für Berlin" [ref=e889] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/be
+          - listitem [ref=e890]:
+            - link "Test für Brandenburg" [ref=e891] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/bb
+          - listitem [ref=e892]:
+            - link "Test für Bremen" [ref=e893] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/hb
+          - listitem [ref=e894]:
+            - link "Test für Hamburg" [ref=e895] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/hh
+          - listitem [ref=e896]:
+            - link "Test für Hessen" [ref=e897] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/he
+          - listitem [ref=e898]:
+            - link "Test für Mecklenburg-Vorpommern" [ref=e899] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/mv
+          - listitem [ref=e900]:
+            - link "Test für Niedersachsen" [ref=e901] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/ni
+          - listitem [ref=e902]:
+            - link "Test für Nordrhein-Westfalen" [ref=e903] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/nw
+          - listitem [ref=e904]:
+            - link "Test für Rheinland-Pfalz" [ref=e905] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/rp
+          - listitem [ref=e906]:
+            - link "Test für das Saarland" [ref=e907] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sl
+          - listitem [ref=e908]:
+            - link "Test für Sachsen" [ref=e909] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sn
+          - listitem [ref=e910]:
+            - link "Test für Sachsen-Anhalt" [ref=e911] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/st
+          - listitem [ref=e912]:
+            - link "Test für Schleswig-Holstein" [ref=e913] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sh
+          - listitem [ref=e914]:
+            - link "Test für Thüringen" [ref=e915] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/th
+      - generic [ref=e916]:
+        - heading "Fragenkatalog" [level=3] [ref=e917]:
+          - link "Fragenkatalog" [ref=e918] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/fragenkatalog
+        - list [ref=e919]:
+          - listitem [ref=e920]:
+            - link "Deutschland" [ref=e921] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog
+          - listitem [ref=e922]:
+            - link "Fragen für Baden-Württemberg" [ref=e923] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bw
+          - listitem [ref=e924]:
+            - link "Fragen für Bayern" [ref=e925] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/by
+          - listitem [ref=e926]:
+            - link "Fragen für Berlin" [ref=e927] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/be
+          - listitem [ref=e928]:
+            - link "Fragen für Brandenburg" [ref=e929] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bb
+          - listitem [ref=e930]:
+            - link "Fragen für Bremen" [ref=e931] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hb
+          - listitem [ref=e932]:
+            - link "Fragen für Hamburg" [ref=e933] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hh
+          - listitem [ref=e934]:
+            - link "Fragen für Hessen" [ref=e935] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/he
+          - listitem [ref=e936]:
+            - link "Fragen für Mecklenburg-Vorpommern" [ref=e937] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/mv
+          - listitem [ref=e938]:
+            - link "Fragen für Niedersachsen" [ref=e939] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/ni
+          - listitem [ref=e940]:
+            - link "Fragen für Nordrhein-Westfalen" [ref=e941] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/nw
+          - listitem [ref=e942]:
+            - link "Fragen für Rheinland-Pfalz" [ref=e943] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/rp
+          - listitem [ref=e944]:
+            - link "Fragen für das Saarland" [ref=e945] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sl
+          - listitem [ref=e946]:
+            - link "Fragen für Sachsen" [ref=e947] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sn
+          - listitem [ref=e948]:
+            - link "Fragen für Sachsen-Anhalt" [ref=e949] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/st
+          - listitem [ref=e950]:
+            - link "Fragen für Schleswig-Holstein" [ref=e951] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sh
+          - listitem [ref=e952]:
+            - link "Fragen für Thüringen" [ref=e953] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/th
+      - generic [ref=e954]:
+        - heading "Prüfstellen" [level=3] [ref=e955]:
+          - link "Prüfstellen" [ref=e956] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/pruefstellen
+        - list [ref=e957]:
+          - listitem [ref=e958]:
+            - link "Prüfstellen in Baden-Württemberg" [ref=e959] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/bw
+          - listitem [ref=e960]:
+            - link "Prüfstellen in Bayern" [ref=e961] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/by
+          - listitem [ref=e962]:
+            - link "Prüfstellen in Berlin" [ref=e963] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/be
+          - listitem [ref=e964]:
+            - link "Prüfstellen in Brandenburg" [ref=e965] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/bb
+          - listitem [ref=e966]:
+            - link "Prüfstellen in Bremen" [ref=e967] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/hb
+          - listitem [ref=e968]:
+            - link "Prüfstellen in Hamburg" [ref=e969] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/hh
+          - listitem [ref=e970]:
+            - link "Prüfstellen in Hessen" [ref=e971] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/he
+          - listitem [ref=e972]:
+            - link "Prüfstellen in Mecklenburg-Vorpommern" [ref=e973] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/mv
+          - listitem [ref=e974]:
+            - link "Prüfstellen in Niedersachsen" [ref=e975] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/ni
+          - listitem [ref=e976]:
+            - link "Prüfstellen in Nordrhein-Westfalen" [ref=e977] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/nw
+          - listitem [ref=e978]:
+            - link "Prüfstellen in Rheinland-Pfalz" [ref=e979] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/rp
+          - listitem [ref=e980]:
+            - link "Prüfstellen im Saarland" [ref=e981] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sl
+          - listitem [ref=e982]:
+            - link "Prüfstellen in Sachsen" [ref=e983] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sn
+          - listitem [ref=e984]:
+            - link "Prüfstellen in Sachsen-Anhalt" [ref=e985] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/st
+          - listitem [ref=e986]:
+            - link "Prüfstellen in Schleswig-Holstein" [ref=e987] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sh
+          - listitem [ref=e988]:
+            - link "Prüfstellen in Thüringen" [ref=e989] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/th
+  - generic:
+    - status
+  - generic:
+    - generic:
+      - dialog "Privacy and cookie preferences":
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - img "Publisher Logo"
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: your access to lebenindeutschland.eu
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Continue with ads
+                        - paragraph:
+                          - generic:
+                            - text: Use this offer as usual with usage-based advertising and tracking under the terms of our
+                            - link "User Agreement":
+                              - /url: "#"
+                            - text: .
+                        - generic:
+                          - button "Accept all settings and proceed": ACCEPT ALL
+                        - paragraph:
+                          - text: You can find details in our
+                          - link "Privacy Center.":
+                            - /url: "#"
+                      - generic:
+                        - generic: ...or subscribe to Freechoice
+                        - paragraph: One login – many tracking-free offers! Online privacy here and wherever you are in the Freechoice offer.
+                        - generic:
+                          - button "SUBSCRIBE NOW"
+                        - paragraph:
+                          - text: Already a subscriber?
+                          - link "Login":
+                            - /url: "#"
+                            - text: LOGIN
+                  - generic:
+                    - generic:
+                      - text: What does "continue reading for free" mean?
+                      - text: To provide you with our journalistic content as part of the free version, we finance this service through the display of usage-based advertising with the help of our (264)
+                      - link "partners":
+                        - /url: "#"
+                      - text: . This also includes the use of a so-called "TC String" - a digital identifier that stores your advertising settings and enables compliance with your data protection preferences. In this context, we deploy cookies, device IDs, and similar tracking technologies and transmit
+                      - link "personal data":
+                        - /url: "#"
+                      - text: to third-party providers. Your consent applies to this service only. Details can be found in the privacy policy and in the
+                      - link "Privacy Center":
+                        - /url: "#"
+                      - text: ", where you can also make individual settings. You have the right to withdraw your consent at any time. In this case, we hereby declare the extraordinary termination of the underlying user contract, conditionally suspended by the revocation of consent according to §327q paragraph 2 BGB."
+                  - generic:
+                    - list:
+                      - listitem:
+                        - generic:
+                          - button "Use mandatory services":
+                            - generic: Use mandatory services
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Store and/or access information on a device":
+                            - generic: Store and/or access information on a device
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Precise geolocation data, and identification through device scanning":
+                            - generic: Precise geolocation data, and identification through device scanning
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Personalised advertising and content, advertising and content measurement, audience research and services development":
+                            - generic: Personalised advertising and content, advertising and content measurement, audience research and services development
+                            - generic:
+                              - img
+                  - generic:
+                    - generic: Information on data transfer to the USA:Your data will only be transferred to the USA to the extent permitted by law.
+                - generic:
+                  - generic:
+                    - link "POLICY":
+                      - /url: https://www.lebenindeutschland.eu/impressum?&cmp-silent=1
+                  - generic:
+                    - link "IMPRINT":
+                      - /url: https://www.lebenindeutschland.eu/impressum?&cmp-silent=1
