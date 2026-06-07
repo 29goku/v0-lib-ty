@@ -205,6 +205,12 @@ export default function RootLayout({
             })
           }}
         />
+        {/* Service worker registration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js')})}`,
+          }}
+        />
       </head>
       <body className={GeistSans.className}>
         <ThemeProvider>
