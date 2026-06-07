@@ -740,7 +740,7 @@
       "id": "bw008",
       "category": "State",
       "question": "Welches Bundesland ist Baden-Württemberg?",
-      "image": "/images/germany-map-baden-wurttemberg.jpg",
+      "image": "/images/308.png",
       "options": [
         "1",
         "2",
@@ -1794,7 +1794,7 @@
       "id": "by008",
       "category": "State",
       "question": "Welches Bundesland ist Bayern?",
-      "image": "/images/germany-map-baden-wurttemberg.jpg",
+      "image": "/images/318.png",
       "options": [
         "1",
         "2",
@@ -2848,7 +2848,7 @@
       "id": "be008",
       "category": "State",
       "question": "Welches Bundesland ist Berlin?",
-      "image": "/images/map.jpg",
+      "image": "/images/328.png",
       "options": [
         "1",
         "2",
@@ -3902,7 +3902,7 @@
       "id": "bb008",
       "category": "State",
       "question": "Welches Bundesland ist Brandenburg?",
-      "image": "/images/bremen.jpg",
+      "image": "/images/338.png",
       "options": [
         "1",
         "2",
@@ -4956,7 +4956,7 @@
       "id": "hb008",
       "category": "State",
       "question": "Welches Bundesland ist Bremen?",
-      "image": "/images/bremen.jpg",
+      "image": "/images/348.png",
       "options": [
         "1",
         "2",
@@ -5271,111 +5271,111 @@
   ],
   "hamburg": [
     {
-    "id": "hh001",
-    "category": "State",
-    "question": "Welches Wappen gehört zur Freien und Hansestadt Hamburg?",
-    "image": "/images/351.png",
-    "options": [
-      "Bild 1",
-      "Bild 2",
-      "Bild 3",
-      "Bild 4"
-    ],
-    "answerIndex": 1,
-    "explanation": "Das Wappen der Freien und Hansestadt Hamburg (Bild 2) zeigt eine Burg mit drei Türmen.",
-    "translations": {
-      "en": {
-        "question": "Which coat of arms belongs to the Free and Hanseatic City of Hamburg?",
-        "options": [
-          "Image 1",
-          "Image 2",
-          "Image 3",
-          "Image 4"
-        ],
-        "explanation": "The coat of arms of the Free and Hanseatic City of Hamburg (Image 2) shows a castle with three towers."
-      },
-      "es": {
-        "question": "¿Qué escudo de armas pertenece a la Ciudad Libre y Hanseática de Hamburgo?",
-        "options": [
-          "Imagen 1",
-          "Imagen 2",
-          "Imagen 3",
-          "Imagen 4"
-        ],
-        "explanation": "El escudo de armas de la Ciudad Libre y Hanseática de Hamburgo (Imagen 2) muestra un castillo con tres torres."
-      },
-      "fr": {
-        "question": "Quel blason appartient à la Ville Libre et Hanséatique de Hambourg ?",
-        "options": [
-          "Image 1",
-          "Image 2",
-          "Image 3",
-          "Image 4"
-        ],
-        "explanation": "Le blason de la Ville Libre et Hanséatique de Hambourg (Image 2) montre un château avec trois tours."
-      },
-      "it": {
-        "question": "Quale stemma appartiene alla Città Libera e Anseatica di Amburgo?",
-        "options": [
-          "Immagine 1",
-          "Immagine 2",
-          "Immagine 3",
-          "Immagine 4"
-        ],
-        "explanation": "Lo stemma della Città Libera e Anseatica di Amburgo (Immagine 2) mostra un castello con tre torri."
-      },
-      "tr": {
-        "question": "Özgür ve Hansa Şehri Hamburg'a hangi arma aittir?",
-        "options": [
-          "Resim 1",
-          "Resim 2",
-          "Resim 3",
-          "Resim 4"
-        ],
-        "explanation": "Özgür ve Hansa Şehri Hamburg'un arması (Resim 2), üç kuleli bir kale gösterir."
-      },
-      "ar": {
-        "question": "أي شعار نبالة ينتمي إلى مدينة هامبورغ الحرة والهانزية؟",
-        "options": [
-          "الصورة 1",
-          "الصورة 2",
-          "الصورة 3",
-          "الصورة 4"
-        ],
-        "explanation": "شعار نبالة مدينة هامبورغ الحرة والهانزية (الصورة 2) يظهر قلعة بثلاثة أبراج."
-      },
-      "ru": {
-        "question": "Какой герб принадлежит Вольному и ганзейскому городу Гамбургу?",
-        "options": [
-          "Изображение 1",
-          "Изображение 2",
-          "Изображение 3",
-          "Изображение 4"
-        ],
-        "explanation": "Герб Вольного и ганзейского города Гамбурга (Изображение 2) показывает замок с тремя башнями."
-      },
-      "zh": {
-        "question": "哪个纹章属于汉堡自由汉萨城？",
-        "options": [
-          "图1",
-          "图2",
-          "图3",
-          "图4"
-        ],
-        "explanation": "汉堡自由汉萨城（图 2）的纹章展示了一座带有三座塔楼的城堡。"
-      },
-      "hi": {
-        "question": "कौन सा प्रतीक चिन्ह हैम्बर्ग के स्वतंत्र और हैन्सेटिक शहर का है?",
-        "options": [
-          "छवि 1",
-          "छवि 2",
-          "छवि 3",
-          "छवि 4"
-        ],
-        "explanation": "हैम्बर्ग के स्वतंत्र और हैन्सेटिक शहर का प्रतीक चिन्ह (छवि 2) तीन टावरों वाला एक महल दिखाता है।"
+      "id": "hh001",
+      "category": "State",
+      "question": "Welches Wappen gehört zur Freien und Hansestadt Hamburg?",
+      "image": "/images/351.png",
+      "options": [
+        "Bild 1",
+        "Bild 2",
+        "Bild 3",
+        "Bild 4"
+      ],
+      "answerIndex": 1,
+      "explanation": "Das Wappen der Freien und Hansestadt Hamburg (Bild 2) zeigt eine Burg mit drei Türmen.",
+      "translations": {
+        "en": {
+          "question": "Which coat of arms belongs to the Free and Hanseatic City of Hamburg?",
+          "options": [
+            "Image 1",
+            "Image 2",
+            "Image 3",
+            "Image 4"
+          ],
+          "explanation": "The coat of arms of the Free and Hanseatic City of Hamburg (Image 2) shows a castle with three towers."
+        },
+        "es": {
+          "question": "¿Qué escudo de armas pertenece a la Ciudad Libre y Hanseática de Hamburgo?",
+          "options": [
+            "Imagen 1",
+            "Imagen 2",
+            "Imagen 3",
+            "Imagen 4"
+          ],
+          "explanation": "El escudo de armas de la Ciudad Libre y Hanseática de Hamburgo (Imagen 2) muestra un castillo con tres torres."
+        },
+        "fr": {
+          "question": "Quel blason appartient à la Ville Libre et Hanséatique de Hambourg ?",
+          "options": [
+            "Image 1",
+            "Image 2",
+            "Image 3",
+            "Image 4"
+          ],
+          "explanation": "Le blason de la Ville Libre et Hanséatique de Hambourg (Image 2) montre un château avec trois tours."
+        },
+        "it": {
+          "question": "Quale stemma appartiene alla Città Libera e Anseatica di Amburgo?",
+          "options": [
+            "Immagine 1",
+            "Immagine 2",
+            "Immagine 3",
+            "Immagine 4"
+          ],
+          "explanation": "Lo stemma della Città Libera e Anseatica di Amburgo (Immagine 2) mostra un castello con tre torri."
+        },
+        "tr": {
+          "question": "Özgür ve Hansa Şehri Hamburg'a hangi arma aittir?",
+          "options": [
+            "Resim 1",
+            "Resim 2",
+            "Resim 3",
+            "Resim 4"
+          ],
+          "explanation": "Özgür ve Hansa Şehri Hamburg'un arması (Resim 2), üç kuleli bir kale gösterir."
+        },
+        "ar": {
+          "question": "أي شعار نبالة ينتمي إلى مدينة هامبورغ الحرة والهانزية؟",
+          "options": [
+            "الصورة 1",
+            "الصورة 2",
+            "الصورة 3",
+            "الصورة 4"
+          ],
+          "explanation": "شعار نبالة مدينة هامبورغ الحرة والهانزية (الصورة 2) يظهر قلعة بثلاثة أبراج."
+        },
+        "ru": {
+          "question": "Какой герб принадлежит Вольному и ганзейскому городу Гамбургу?",
+          "options": [
+            "Изображение 1",
+            "Изображение 2",
+            "Изображение 3",
+            "Изображение 4"
+          ],
+          "explanation": "Герб Вольного и ганзейского города Гамбурга (Изображение 2) показывает замок с тремя башнями."
+        },
+        "zh": {
+          "question": "哪个纹章属于汉堡自由汉萨城？",
+          "options": [
+            "图1",
+            "图2",
+            "图3",
+            "图4"
+          ],
+          "explanation": "汉堡自由汉萨城（图 2）的纹章展示了一座带有三座塔楼的城堡。"
+        },
+        "hi": {
+          "question": "कौन सा प्रतीक चिन्ह हैम्बर्ग के स्वतंत्र और हैन्सेटिक शहर का है?",
+          "options": [
+            "छवि 1",
+            "छवि 2",
+            "छवि 3",
+            "छवि 4"
+          ],
+          "explanation": "हैम्बर्ग के स्वतंत्र और हैन्सेटिक शहर का प्रतीक चिन्ह (छवि 2) तीन टावरों वाला एक महल दिखाता है।"
+        }
       }
-    }
-  },
+    },
     {
       "id": "hh002",
       "category": "State",
@@ -6010,7 +6010,7 @@
       "id": "hh008",
       "category": "State",
       "question": "Welches Bundesland ist Hamburg?",
-      "image": "/images/map.jpg",
+      "image": "/images/358.png",
       "options": [
         "1",
         "2",
@@ -6327,62 +6327,108 @@
     {
       "id": "he001",
       "category": "State",
-      "question": "Was ist die Hauptstadt von Hessen?",
+      "question": "Welches Wappen gehört zum Bundesland Hessen?",
       "options": [
-        "Wiesbaden",
-        "Frankfurt am Main",
-        "Kassel",
-        "Gießen"
+        "Bild 1",
+        "Bild 2",
+        "Bild 3",
+        "Bild 4"
       ],
       "answerIndex": 0,
       "explanation": "Die Hauptstadt von Hessen ist Wiesbaden.",
       "translations": {
         "en": {
           "question": "What is the capital of Hesse?",
-          "options": [ "Wiesbaden", "Frankfurt am Main", "Kassel", "Gießen" ],
+          "options": [
+            "Wiesbaden",
+            "Frankfurt am Main",
+            "Kassel",
+            "Gießen"
+          ],
           "explanation": "The capital of Hesse is Wiesbaden."
         },
         "es": {
           "question": "¿Cuál es la capital de Hesse?",
-          "options": [ "Wiesbaden", "Frankfurt del Meno", "Kassel", "Gießen" ],
+          "options": [
+            "Wiesbaden",
+            "Frankfurt del Meno",
+            "Kassel",
+            "Gießen"
+          ],
           "explanation": "La capital de Hesse es Wiesbaden."
         },
         "fr": {
           "question": "Quelle est la capitale de Hesse ?",
-          "options": [ "Wiesbaden", "Francfort-sur-le-Main", "Kassel", "Gießen" ],
+          "options": [
+            "Wiesbaden",
+            "Francfort-sur-le-Main",
+            "Kassel",
+            "Gießen"
+          ],
           "explanation": "La capitale de Hesse est Wiesbaden."
         },
         "it": {
           "question": "Qual è la capitale dell'Assia?",
-          "options": [ "Wiesbaden", "Francoforte sul Meno", "Kassel", "Gießen" ],
+          "options": [
+            "Wiesbaden",
+            "Francoforte sul Meno",
+            "Kassel",
+            "Gießen"
+          ],
           "explanation": "La capitale dell'Assia è Wiesbaden."
         },
         "tr": {
           "question": "Hessen'in başkenti neresidir?",
-          "options": [ "Viesbaden", "Frankfurt am Main", "Kassel", "Gießen" ],
+          "options": [
+            "Viesbaden",
+            "Frankfurt am Main",
+            "Kassel",
+            "Gießen"
+          ],
           "explanation": "Hessen'in başkenti Viesbaden'dir."
         },
         "ar": {
           "question": "ما هي عاصمة هيسن؟",
-          "options": [ "فيزبادن", "فرانكفورت أم ماين", "كاسل", "جيßen" ],
+          "options": [
+            "فيزبادن",
+            "فرانكفورت أم ماين",
+            "كاسل",
+            "جيßen"
+          ],
           "explanation": "عاصمة هيسن هي فيزبادن."
         },
         "ru": {
           "question": "Какова столица Гессена?",
-          "options": [ "Висбаден", "Франкфурт-на-Майне", "Кассель", "Гиссен" ],
+          "options": [
+            "Висбаден",
+            "Франкфурт-на-Майне",
+            "Кассель",
+            "Гиссен"
+          ],
           "explanation": "Столицей Гессена является Висбаден."
         },
         "zh": {
           "question": "黑森州的首府是哪里？",
-          "options": [ "威斯巴登", "法兰克福", "卡塞尔", "吉森" ],
+          "options": [
+            "威斯巴登",
+            "法兰克福",
+            "卡塞尔",
+            "吉森"
+          ],
           "explanation": "黑森州的首府是威斯巴登。"
         },
         "hi": {
           "question": "हेसेन की राजधानी क्या है?",
-          "options": [ "विसबादेन", "फ्रैंकफर्ट एम माइन", "कासेल", "गिसेन" ],
+          "options": [
+            "विसबादेन",
+            "फ्रैंकफर्ट एम माइन",
+            "कासेल",
+            "गिसेन"
+          ],
           "explanation": "हेसेन की राजधानी विसबादेन है।"
         }
-      }
+      },
+      "image": "/images/361.png"
     },
     {
       "id": "he002",
@@ -6399,47 +6445,92 @@
       "translations": {
         "en": {
           "question": "Which one is a district in Hesse?",
-          "options": [ "Ammerland", "Altötting", "Prignitz", "Main-Taunus-Kreis" ],
+          "options": [
+            "Ammerland",
+            "Altötting",
+            "Prignitz",
+            "Main-Taunus-Kreis"
+          ],
           "explanation": "The Main-Taunus-Kreis is a district in Hesse."
         },
         "es": {
           "question": "¿Cuál es un distrito en Hesse?",
-          "options": [ "Ammerland", "Altötting", "Prignitz", "Main-Taunus-Kreis" ],
+          "options": [
+            "Ammerland",
+            "Altötting",
+            "Prignitz",
+            "Main-Taunus-Kreis"
+          ],
           "explanation": "El Main-Taunus-Kreis es un distrito en Hesse."
         },
         "fr": {
           "question": "Quel est un district en Hesse ?",
-          "options": [ "Ammerland", "Altötting", "Prignitz", "Main-Taunus-Kreis" ],
+          "options": [
+            "Ammerland",
+            "Altötting",
+            "Prignitz",
+            "Main-Taunus-Kreis"
+          ],
           "explanation": "Le Main-Taunus-Kreis est un district en Hesse."
         },
         "it": {
           "question": "Qual è un distretto dell'Assia?",
-          "options": [ "Ammerland", "Altötting", "Prignitz", "Main-Taunus-Kreis" ],
+          "options": [
+            "Ammerland",
+            "Altötting",
+            "Prignitz",
+            "Main-Taunus-Kreis"
+          ],
           "explanation": "Il Main-Taunus-Kreis è un distretto dell'Assia."
         },
         "tr": {
           "question": "Hessen'de bir ilçe hangisidir?",
-          "options": [ "Ammerland", "Altötting", "Prignitz", "Main-Taunus-Kreis" ],
+          "options": [
+            "Ammerland",
+            "Altötting",
+            "Prignitz",
+            "Main-Taunus-Kreis"
+          ],
           "explanation": "Main-Taunus-Kreis, Hessen'de bir ilçedir."
         },
         "ar": {
           "question": "أي من هذه منطقة في هيسن؟",
-          "options": [ "أمرلاند", "ألتوتينغ", "بريغنيتز", "مين-تاونوس-كرايس" ],
+          "options": [
+            "أمرلاند",
+            "ألتوتينغ",
+            "بريغنيتز",
+            "مين-تاونوس-كرايس"
+          ],
           "explanation": "مين-تاونوس-كرايس هو منطقة في هيسن."
         },
         "ru": {
           "question": "Какой из них является районом в Гессене?",
-          "options": [ "Аммерланд", "Альтёттинг", "Принитц", "Майн-Таунус-Крайс" ],
+          "options": [
+            "Аммерланд",
+            "Альтёттинг",
+            "Принитц",
+            "Майн-Таунус-Крайс"
+          ],
           "explanation": "Майн-Таунус-Крайс — это район в Гессене."
         },
         "zh": {
           "question": "哪个是黑森州的一个区？",
-          "options": [ "阿默兰", "阿尔特廷", "普里尼茨", "美因-陶努斯县" ],
+          "options": [
+            "阿默兰",
+            "阿尔特廷",
+            "普里尼茨",
+            "美因-陶努斯县"
+          ],
           "explanation": "美因-陶努斯县是黑森州的一个区。"
         },
         "hi": {
           "question": "हेसेन में कौन सा एक जिला है?",
-          "options": [ "अम्मरलैंड", "अल्टोटिंग", "प्रिगनिट्ज़", "मेन-टाउनस-क्राइस" ],
+          "options": [
+            "अम्मरलैंड",
+            "अल्टोटिंग",
+            "प्रिगनिट्ज़",
+            "मेन-टाउनस-क्राइस"
+          ],
           "explanation": "मेन-टाउनस-क्राइस हेसेन का एक जिला है।"
         }
       }
@@ -6448,53 +6539,103 @@
       "id": "he003",
       "category": "State",
       "question": "Für wie viele Jahre wird der Landtag in Hessen gewählt?",
-      "options": [ "3", "4", "5", "6" ],
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
       "answerIndex": 2,
       "explanation": "Der Landtag in Hessen wird für 5 Jahre gewählt.",
       "translations": {
         "en": {
           "question": "For how many years is the state parliament in Hesse elected?",
-          "options": [ "3", "4", "5", "6" ],
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "explanation": "The state parliament in Hesse is elected for 5 years."
         },
         "es": {
           "question": "¿Por cuántos años se elige el parlamento estatal en Hesse?",
-          "options": [ "3", "4", "5", "6" ],
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "explanation": "El parlamento estatal en Hesse se elige por 5 años."
         },
         "fr": {
           "question": "Pour combien d'années le parlement d'État en Hesse est-il élu ?",
-          "options": [ "3", "4", "5", "6" ],
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "explanation": "Le parlement d'État en Hesse est élu pour 5 ans."
         },
         "it": {
           "question": "Per quanti anni viene eletto il parlamento statale in Assia?",
-          "options": [ "3", "4", "5", "6" ],
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "explanation": "Il parlamento statale in Assia viene eletto per 5 anni."
         },
         "tr": {
           "question": "Hessen'deki eyalet parlamentosu kaç yıllığına seçilir?",
-          "options": [ "3", "4", "5", "6" ],
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "explanation": "Hessen'deki eyalet parlamentosu 5 yıllığına seçilir."
         },
         "ar": {
           "question": "لمدة كم سنة يتم انتخاب برلمان الولاية في هيسن؟",
-          "options": [ "3", "4", "5", "6" ],
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "explanation": "يتم انتخاب برلمان الولاية في هيسن لمدة 5 سنوات."
         },
         "ru": {
           "question": "На сколько лет избирается парламент земли в Гессене?",
-          "options": [ "3", "4", "5", "6" ],
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "explanation": "Парламент земли в Гессене избирается на 5 лет."
         },
         "zh": {
           "question": "黑森州议会任期为多少年？",
-          "options": [ "3", "4", "5", "6" ],
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "explanation": "黑森州议会任期为5年。"
         },
         "hi": {
           "question": "हेसेन में राज्य संसद का चुनाव कितने वर्षों के लिए होता है?",
-          "options": [ "3", "4", "5", "6" ],
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "explanation": "हेसेन में राज्य संसद का चुनाव 5 वर्षों के लिए होता है।"
         }
       }
@@ -6503,53 +6644,103 @@
       "id": "he004",
       "category": "State",
       "question": "Ab welchem Alter darf man in Hessen bei Kommunalwahlen wählen?",
-      "options": [ "14", "16", "18", "20" ],
+      "options": [
+        "14",
+        "16",
+        "18",
+        "20"
+      ],
       "answerIndex": 2,
       "explanation": "In Hessen darf man ab 18 Jahren bei Kommunalwahlen wählen.",
       "translations": {
         "en": {
           "question": "From what age can one vote in municipal elections in Hesse?",
-          "options": [ "14", "16", "18", "20" ],
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
           "explanation": "In Hesse, you can vote in municipal elections from the age of 18."
         },
         "es": {
           "question": "¿A partir de qué edad se puede votar en las elecciones municipales en Hesse?",
-          "options": [ "14", "16", "18", "20" ],
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
           "explanation": "En Hesse, se puede votar en las elecciones municipales a partir de los 18 años."
         },
         "fr": {
           "question": "À partir de quel âge peut-on voter aux élections municipales en Hesse ?",
-          "options": [ "14", "16", "18", "20" ],
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
           "explanation": "En Hesse, on peut voter aux élections municipales à partir de 18 ans."
         },
         "it": {
           "question": "A partire da quale età si può votare alle elezioni comunali in Assia?",
-          "options": [ "14", "16", "18", "20" ],
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
           "explanation": "In Assia, si può votare alle elezioni comunali a partire dai 18 anni."
         },
         "tr": {
           "question": "Hessen'de belediye seçimlerinde kaç yaşından itibaren oy kullanabilirsiniz?",
-          "options": [ "14", "16", "18", "20" ],
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
           "explanation": "Hessen'de, 18 yaşından itibaren belediye seçimlerinde oy kullanabilirsiniz."
         },
         "ar": {
           "question": "من أي عمر يسمح بالتصويت في الانتخابات المحلية في هيسن؟",
-          "options": [ "14", "16", "18", "20" ],
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
           "explanation": "في هيسن، يمكن التصويت في الانتخابات المحلية من عمر 18 سنة."
         },
         "ru": {
           "question": "С какого возраста можно голосовать на муниципальных выборах в Гессене?",
-          "options": [ "14", "16", "18", "20" ],
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
           "explanation": "В Гессене можно голосовать на муниципальных выборах с 18 лет."
         },
         "zh": {
           "question": "在黑森州，从几岁开始可以参加市政选举？",
-          "options": [ "14", "16", "18", "20" ],
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
           "explanation": "在黑森州，年满18岁即可参加市政选举。"
         },
         "hi": {
           "question": "हेसेन में किस उम्र से नगर निगम चुनावों में वोट दिया जा सकता है?",
-          "options": [ "14", "16", "18", "20" ],
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
           "explanation": "हेसेन में, 18 वर्ष की आयु से नगर निगम चुनावों में मतदान किया जा सकता है।"
         }
       }
@@ -6558,53 +6749,103 @@
       "id": "he005",
       "category": "State",
       "question": "Welche Farben hat die Landesflagge von Hessen?",
-      "options": [ "blau-weiß-rot", "rot-weiß", "schwarz-gold", "grün-weiß-rot" ],
+      "options": [
+        "blau-weiß-rot",
+        "rot-weiß",
+        "schwarz-gold",
+        "grün-weiß-rot"
+      ],
       "answerIndex": 1,
       "explanation": "Die Landesflagge von Hessen ist rot-weiß.",
       "translations": {
         "en": {
           "question": "What colors does the state flag of Hesse have?",
-          "options": [ "blue-white-red", "red-white", "black-gold", "green-white-red" ],
+          "options": [
+            "blue-white-red",
+            "red-white",
+            "black-gold",
+            "green-white-red"
+          ],
           "explanation": "The state flag of Hesse is red and white."
         },
         "es": {
           "question": "¿Qué colores tiene la bandera del estado de Hesse?",
-          "options": [ "azul-blanco-rojo", "rojo-blanco", "negro-dorado", "verde-blanco-rojo" ],
+          "options": [
+            "azul-blanco-rojo",
+            "rojo-blanco",
+            "negro-dorado",
+            "verde-blanco-rojo"
+          ],
           "explanation": "La bandera del estado de Hesse es roja y blanca."
         },
         "fr": {
           "question": "Quelles couleurs a le drapeau de l'État de Hesse ?",
-          "options": [ "bleu-blanc-rouge", "rouge-blanc", "noir-or", "vert-blanc-rouge" ],
+          "options": [
+            "bleu-blanc-rouge",
+            "rouge-blanc",
+            "noir-or",
+            "vert-blanc-rouge"
+          ],
           "explanation": "Le drapeau de l'État de Hesse est rouge et blanc."
         },
         "it": {
           "question": "Quali colori ha la bandiera dello stato dell'Assia?",
-          "options": [ "blu-bianco-rosso", "rosso-bianco", "nero-oro", "verde-bianco-rosso" ],
+          "options": [
+            "blu-bianco-rosso",
+            "rosso-bianco",
+            "nero-oro",
+            "verde-bianco-rosso"
+          ],
           "explanation": "La bandiera dello stato dell'Assia è rossa e bianca."
         },
         "tr": {
           "question": "Hessen eyalet bayrağının renkleri nelerdir?",
-          "options": [ "mavi-beyaz-kırmızı", "kırmızı-beyaz", "siyah-altın", "yeşil-beyaz-kırmızı" ],
+          "options": [
+            "mavi-beyaz-kırmızı",
+            "kırmızı-beyaz",
+            "siyah-altın",
+            "yeşil-beyaz-kırmızı"
+          ],
           "explanation": "Hessen eyalet bayrağı kırmızı-beyazdır."
         },
         "ar": {
           "question": "ما هي ألوان علم ولاية هيسن؟",
-          "options": [ "أزرق-أبيض-أحمر", "أحمر-أبيض", "أسود-ذهبي", "أخضر-أبيض-أحمر" ],
+          "options": [
+            "أزرق-أبيض-أحمر",
+            "أحمر-أبيض",
+            "أسود-ذهبي",
+            "أخضر-أبيض-أحمر"
+          ],
           "explanation": "علم ولاية هيسن هو أحمر وأبيض."
         },
         "ru": {
           "question": "Какие цвета у флага земли Гессен?",
-          "options": [ "сине-бело-красный", "красно-белый", "черно-золотой", "зелено-бело-красный" ],
+          "options": [
+            "сине-бело-красный",
+            "красно-белый",
+            "черно-золотой",
+            "зелено-бело-красный"
+          ],
           "explanation": "Флаг земли Гессен — красно-белый."
         },
         "zh": {
           "question": "黑森州旗是什么颜色的？",
-          "options": [ "蓝-白-红", "红-白", "黑-金", "绿-白-红" ],
+          "options": [
+            "蓝-白-红",
+            "红-白",
+            "黑-金",
+            "绿-白-红"
+          ],
           "explanation": "黑森州旗是红白相间的。"
         },
         "hi": {
           "question": "हेसेन के राज्य ध्वज का रंग क्या है?",
-          "options": [ "नीला-सफेद-लाल", "लाल-सफेद", "काला-सुनहरा", "हरा-सफेद-लाल" ],
+          "options": [
+            "नीला-सफेद-लाल",
+            "लाल-सफेद",
+            "काला-सुनहरा",
+            "हरा-सफेद-लाल"
+          ],
           "explanation": "हेसेन का राज्य ध्वज लाल-सफेद है।"
         }
       }
@@ -6612,59 +6853,104 @@
     {
       "id": "he006",
       "category": "State",
-      "question": "Welches Tier ist ein Symbol von Hessen?",
+      "question": "Wo können Sie sich in Hessen über politische Themen informieren?",
       "options": [
-        "Adler",
-        "Löwe",
-        "Bär",
-        "Wolf"
+        "bei der Landeszentrale für politische Bildung",
+        "bei der Verbraucherzentrale",
+        "beim Ordnungsamt der Gemeinde",
+        "bei den Kirchen"
       ],
       "answerIndex": 0,
       "explanation": "Der Adler ist ein Symbol von Hessen.",
       "translations": {
         "en": {
           "question": "Which animal is a symbol of Hesse?",
-          "options": [ "Eagle", "Lion", "Bear", "Wolf" ],
+          "options": [
+            "Eagle",
+            "Lion",
+            "Bear",
+            "Wolf"
+          ],
           "explanation": "The eagle is a symbol of Hesse."
         },
         "es": {
           "question": "¿Qué animal es símbolo de Hesse?",
-          "options": [ "Águila", "León", "Oso", "Lobo" ],
+          "options": [
+            "Águila",
+            "León",
+            "Oso",
+            "Lobo"
+          ],
           "explanation": "El águila es símbolo de Hesse."
         },
         "fr": {
           "question": "Quel animal est un symbole de Hesse ?",
-          "options": [ "Aigle", "Lion", "Ours", "Loup" ],
+          "options": [
+            "Aigle",
+            "Lion",
+            "Ours",
+            "Loup"
+          ],
           "explanation": "L'aigle est un symbole de Hesse."
         },
         "it": {
           "question": "Quale animale è simbolo dell'Assia?",
-          "options": [ "Aquila", "Leone", "Orso", "Lupo" ],
+          "options": [
+            "Aquila",
+            "Leone",
+            "Orso",
+            "Lupo"
+          ],
           "explanation": "L'aquila è un simbolo dell'Assia."
         },
         "tr": {
           "question": "Hessen'in sembolü olan hayvan hangisidir?",
-          "options": [ "Şahin", "Aslan", "Ayı", "Kurt" ],
+          "options": [
+            "Şahin",
+            "Aslan",
+            "Ayı",
+            "Kurt"
+          ],
           "explanation": "Şahin, Hessen'in sembolüdür."
         },
         "ar": {
           "question": "أي من هذه الحيوانات هو رمز هيسن؟",
-          "options": [ "نسر", "أسد", "دب", "ذئب" ],
+          "options": [
+            "نسر",
+            "أسد",
+            "دب",
+            "ذئب"
+          ],
           "explanation": "النسر هو رمز هيسن."
         },
         "ru": {
           "question": "Какое животное является символом Гессена?",
-          "options": [ "Орёл", "Лев", "Медведь", "Волк" ],
+          "options": [
+            "Орёл",
+            "Лев",
+            "Медведь",
+            "Волк"
+          ],
           "explanation": "Орёл является символом Гессена."
         },
         "zh": {
           "question": "哪种动物是黑森州的象征？",
-          "options": [ "鹰", "狮子", "熊", "狼" ],
+          "options": [
+            "鹰",
+            "狮子",
+            "熊",
+            "狼"
+          ],
           "explanation": "鹰是黑森州的象征。"
         },
         "hi": {
           "question": "हेसेन का प्रतीक जानवर कौन सा है?",
-          "options": [ "गरुड़", "सिंह", "भालू", "भेड़िया" ],
+          "options": [
+            "गरुड़",
+            "सिंह",
+            "भालू",
+            "भेड़िया"
+          ],
           "explanation": "गरुड़ हेसेन का प्रतीक है।"
         }
       }
@@ -6672,59 +6958,104 @@
     {
       "id": "he007",
       "category": "State",
-      "question": "Was ist die Landeswährung von Hessen?",
+      "question": "Die Landeshauptstadt von Hessen heißt …",
       "options": [
-        "Euro",
-        "Dollar",
-        "Pfund",
-        "Yen"
+        "Kassel.",
+        "Darmstadt.",
+        "Frankfurt.",
+        "Wiesbaden."
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "Die Landeswährung von Hessen ist der Euro.",
       "translations": {
         "en": {
           "question": "What is the state currency of Hesse?",
-          "options": [ "Euro", "Dollar", "Pound", "Yen" ],
+          "options": [
+            "Euro",
+            "Dollar",
+            "Pound",
+            "Yen"
+          ],
           "explanation": "The state currency of Hesse is the Euro."
         },
         "es": {
           "question": "¿Cuál es la moneda estatal de Hesse?",
-          "options": [ "Euro", "Dólar", "Libra", "Yen" ],
+          "options": [
+            "Euro",
+            "Dólar",
+            "Libra",
+            "Yen"
+          ],
           "explanation": "La moneda estatal de Hesse es el Euro."
         },
         "fr": {
           "question": "Quelle est la monnaie d'État en Hesse ?",
-          "options": [ "Euro", "Dollar", "Livre", "Yen" ],
+          "options": [
+            "Euro",
+            "Dollar",
+            "Livre",
+            "Yen"
+          ],
           "explanation": "La monnaie d'État en Hesse est l'Euro."
         },
         "it": {
           "question": "Qual è la valuta statale dell'Assia?",
-          "options": [ "Euro", "Dollaro", "Sterlina", "Yen" ],
+          "options": [
+            "Euro",
+            "Dollaro",
+            "Sterlina",
+            "Yen"
+          ],
           "explanation": "La valuta statale dell'Assia è l'Euro."
         },
         "tr": {
           "question": "Hessen eyaletinin para birimi nedir?",
-          "options": [ "Euro", "Dolar", "Pound", "Yen" ],
+          "options": [
+            "Euro",
+            "Dolar",
+            "Pound",
+            "Yen"
+          ],
           "explanation": "Hessen eyaletinin para birimi Euro'dur."
         },
         "ar": {
           "question": "ما هي عملة ولاية هيسن؟",
-          "options": [ "يورو", "دولار", "جنيه", "ين" ],
+          "options": [
+            "يورو",
+            "دولار",
+            "جنيه",
+            "ين"
+          ],
           "explanation": "عملة ولاية هيسن هي اليورو."
         },
         "ru": {
           "question": "Какая государственная валюта в Гессене?",
-          "options": [ "Евро", "Доллар", "Фунт", "Йена" ],
+          "options": [
+            "Евро",
+            "Доллар",
+            "Фунт",
+            "Йена"
+          ],
           "explanation": "Государственная валюта в Гессене — евро."
         },
         "zh": {
           "question": "黑森州的法定货币是什么？",
-          "options": [ "欧元", "美元", "英镑", "日元" ],
+          "options": [
+            "欧元",
+            "美元",
+            "英镑",
+            "日元"
+          ],
           "explanation": "黑森州的法定货币是欧元。"
         },
         "hi": {
           "question": "हेसेन की राज्य मुद्रा क्या है?",
-          "options": [ "यूरो", "डॉलर", "पाउंड", "येन" ],
+          "options": [
+            "यूरो",
+            "डॉलर",
+            "पाउंड",
+            "येन"
+          ],
           "explanation": "हेसेन की राज्य मुद्रा यूरो है।"
         }
       }
@@ -6732,119 +7063,210 @@
     {
       "id": "he008",
       "category": "State",
-      "question": "Welches Fest wird in Hessen als 'Äppelwoi-Festival' gefeiert?",
+      "question": "Welches Bundesland ist Hessen?",
       "options": [
-        "Weinfest",
-        "Apfelfest",
-        "Oktoberfest",
-        "Lichterfest"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "Das 'Äppelwoi-Festival' in Hessen ist ein Apfelfest.",
       "translations": {
         "en": {
           "question": "Which festival is celebrated as the 'Äppelwoi-Festival' in Hesse?",
-          "options": [ "Wine Festival", "Apple Festival", "Oktoberfest", "Festival of Lights" ],
+          "options": [
+            "Wine Festival",
+            "Apple Festival",
+            "Oktoberfest",
+            "Festival of Lights"
+          ],
           "explanation": "The 'Äppelwoi-Festival' in Hesse is an Apple Festival."
         },
         "es": {
           "question": "¿Qué festival se celebra en Hesse como 'Festival Äppelwoi'?",
-          "options": [ "Festival del Vino", "Festival de la Manzana", "Oktoberfest", "Festival de las Luces" ],
+          "options": [
+            "Festival del Vino",
+            "Festival de la Manzana",
+            "Oktoberfest",
+            "Festival de las Luces"
+          ],
           "explanation": "El 'Festival Äppelwoi' en Hesse es un Festival de la Manzana."
         },
         "fr": {
           "question": "Quel festival est célébré en Hesse comme le 'Festival Äppelwoi' ?",
-          "options": [ "Festival du Vin", "Festival de la Pomme", "Oktoberfest", "Festival des Lumières" ],
+          "options": [
+            "Festival du Vin",
+            "Festival de la Pomme",
+            "Oktoberfest",
+            "Festival des Lumières"
+          ],
           "explanation": "Le 'Festival Äppelwoi' en Hesse est un Festival de la Pomme."
         },
         "it": {
           "question": "Quale festa è celebrata in Assia come 'Festival Äppelwoi'?",
-          "options": [ "Festival del Vino", "Festival della Mela", "Oktoberfest", "Festival delle Luci" ],
+          "options": [
+            "Festival del Vino",
+            "Festival della Mela",
+            "Oktoberfest",
+            "Festival delle Luci"
+          ],
           "explanation": "Il 'Festival Äppelwoi' in Assia è un Festival della Mela."
         },
         "tr": {
           "question": "Hessen'de 'Äppelwoi-Festival' olarak kutlanan festival hangisidir?",
-          "options": [ "Şarap Festivali", "Elma Festivali", "Oktoberfest", "Işık Festivali" ],
+          "options": [
+            "Şarap Festivali",
+            "Elma Festivali",
+            "Oktoberfest",
+            "Işık Festivali"
+          ],
           "explanation": "Hessen'deki 'Äppelwoi-Festival', bir Elma Festivalidir."
         },
         "ar": {
           "question": "أي من المهرجانات يحتفل به في هيسن باسم 'مهرجان Äppelwoi'؟",
-          "options": [ "مهرجان النبيذ", "مهرجان التفاح", "أكتوبرfest", "مهرجان الأضواء" ],
+          "options": [
+            "مهرجان النبيذ",
+            "مهرجان التفاح",
+            "أكتوبرfest",
+            "مهرجان الأضواء"
+          ],
           "explanation": "مهرجان 'Äppelwoi' في هيسن هو مهرجان للتفاح."
         },
         "ru": {
           "question": "Какой фестиваль отмечается в Гессене как 'Фестиваль Äppelwoi'?",
-          "options": [ "Винный фестиваль", "Яблочный фестиваль", "Октоберфест", "Фестиваль огней" ],
+          "options": [
+            "Винный фестиваль",
+            "Яблочный фестиваль",
+            "Октоберфест",
+            "Фестиваль огней"
+          ],
           "explanation": "Фестиваль 'Äppelwoi' в Гессене — это Яблочный фестиваль."
         },
         "zh": {
           "question": "在黑森州，哪个节日被称为'苹果酒节'？",
-          "options": [ "葡萄酒节", "苹果节", "十月节", "灯光节" ],
+          "options": [
+            "葡萄酒节",
+            "苹果节",
+            "十月节",
+            "灯光节"
+          ],
           "explanation": "'苹果酒节'是在黑森州庆祝的苹果节。"
         },
         "hi": {
           "question": "हेसेन में 'Äppelwoi-Festival' के रूप में कौन सा त्योहार मनाया जाता है?",
-          "options": [ "वाइन फेस्टिवल", "सेब महोत्सव", "अक्टूबर फेस्ट", "लाइट फेस्टिवल" ],
+          "options": [
+            "वाइन फेस्टिवल",
+            "सेब महोत्सव",
+            "अक्टूबर फेस्ट",
+            "लाइट फेस्टिवल"
+          ],
           "explanation": "'Äppelwoi-Festival' हेसेन में सेब महोत्सव है।"
         }
-      }
+      },
+      "image": "/images/368.png"
     },
     {
       "id": "he009",
       "category": "State",
-      "question": "Welches Gebäude ist kein Schloss in Hessen?",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef in Hessen?",
       "options": [
-        "Schloss Neuschwanstein",
-        "Schloss Biebrich",
-        "Schloss Wilhelmshöhe",
-        "Schloss Darmstadt"
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "Schloss Neuschwanstein ist kein Schloss in Hessen, sondern in Bayern.",
       "translations": {
         "en": {
           "question": "Which building is not a castle in Hesse?",
-          "options": [ "Neuschwanstein Castle", "Biebrich Palace", "Wilhelmshöhe Palace", "Darmstadt Palace" ],
+          "options": [
+            "Neuschwanstein Castle",
+            "Biebrich Palace",
+            "Wilhelmshöhe Palace",
+            "Darmstadt Palace"
+          ],
           "explanation": "Neuschwanstein Castle is not a castle in Hesse, but in Bavaria."
         },
         "es": {
           "question": "¿Qué edificio no es un castillo en Hesse?",
-          "options": [ "Castillo de Neuschwanstein", "Palacio de Biebrich", "Palacio de Wilhelmshöhe", "Palacio de Darmstadt" ],
+          "options": [
+            "Castillo de Neuschwanstein",
+            "Palacio de Biebrich",
+            "Palacio de Wilhelmshöhe",
+            "Palacio de Darmstadt"
+          ],
           "explanation": "El castillo de Neuschwanstein no está en Hesse, sino en Baviera."
         },
         "fr": {
           "question": "Quel bâtiment n'est pas un château en Hesse ?",
-          "options": [ "Château de Neuschwanstein", "Palais de Biebrich", "Palais de Wilhelmshöhe", "Palais de Darmstadt" ],
+          "options": [
+            "Château de Neuschwanstein",
+            "Palais de Biebrich",
+            "Palais de Wilhelmshöhe",
+            "Palais de Darmstadt"
+          ],
           "explanation": "Le château de Neuschwanstein n'est pas en Hesse, mais en Bavière."
         },
         "it": {
           "question": "Quale edificio non è un castello in Assia?",
-          "options": [ "Castello di Neuschwanstein", "Palazzo di Biebrich", "Palazzo di Wilhelmshöhe", "Palazzo di Darmstadt" ],
+          "options": [
+            "Castello di Neuschwanstein",
+            "Palazzo di Biebrich",
+            "Palazzo di Wilhelmshöhe",
+            "Palazzo di Darmstadt"
+          ],
           "explanation": "Il castello di Neuschwanstein non si trova in Assia, ma in Baviera."
         },
         "tr": {
           "question": "Hessen'de hangi bina bir şato değildir?",
-          "options": [ "Neuschwanstein Şatosu", "Biebrich Sarayı", "Wilhelmshöhe Sarayı", "Darmstadt Sarayı" ],
+          "options": [
+            "Neuschwanstein Şatosu",
+            "Biebrich Sarayı",
+            "Wilhelmshöhe Sarayı",
+            "Darmstadt Sarayı"
+          ],
           "explanation": "Neuschwanstein Şatosu, Hessen'de değil, Bavyera'dadır."
         },
         "ar": {
           "question": "أي من المباني ليس قلعة في هيسن؟",
-          "options": [ "قلعة نويشفانشتاين", "قصر بيبريش", "قصر فيلهلمسهوه", "قصر دارمشتات" ],
+          "options": [
+            "قلعة نويشفانشتاين",
+            "قصر بيبريش",
+            "قصر فيلهلمسهوه",
+            "قصر دارمشتات"
+          ],
           "explanation": "قلعة نويشفانشتاين ليست قلعة في هيسن، بل في بافاريا."
         },
         "ru": {
           "question": "Какое здание не является замком в Гессене?",
-          "options": [ "Замок Нойшванштайн", "Дворец Бибрих", "Дворец Вильгельмсхёэ", "Дворец Дармштадт" ],
+          "options": [
+            "Замок Нойшванштайн",
+            "Дворец Бибрих",
+            "Дворец Вильгельмсхёэ",
+            "Дворец Дармштадт"
+          ],
           "explanation": "Замок Нойшванштайн находится не в Гессене, а в Баварии."
         },
         "zh": {
           "question": "哪个建筑不是黑森州的城堡？",
-          "options": [ "新天鹅堡", "比布里希宫", "威廉斯高宫", "达姆施塔特宫" ],
+          "options": [
+            "新天鹅堡",
+            "比布里希宫",
+            "威廉斯高宫",
+            "达姆施塔特宫"
+          ],
           "explanation": "新天鹅堡不在黑森州，而是在巴伐利亚。"
         },
         "hi": {
           "question": "हेसेन में कौन सा भवन महल नहीं है?",
-          "options": [ "न्यूश्वानस्टीन महल", "बिब्रिख पैलेस", "विल्हेम्सहैहे पैलेस", "डार्मस्टाट पैलेस" ],
+          "options": [
+            "न्यूश्वानस्टीन महल",
+            "बिब्रिख पैलेस",
+            "विल्हेम्सहैहे पैलेस",
+            "डार्मस्टाट पैलेस"
+          ],
           "explanation": "न्यूश्वानस्टीन महल हेसेन में नहीं है, बल्कि बवेरिया में है।"
         }
       }
@@ -6852,59 +7274,104 @@
     {
       "id": "he010",
       "category": "State",
-      "question": "Welcher Fluss fließt nicht durch Hessen?",
+      "question": "Welche Ministerin/welchen Minister hat Hessen nicht?",
       "options": [
-        "Rhein",
-        "Main",
-        "Elbe",
-        "Fulda"
+        "Justizministerin/Justizminister",
+        "Außenministerin/Außenminister",
+        "Finanzministerin/Finanzminister",
+        "Innenministerin/Innenminister"
       ],
-      "answerIndex": 2,
+      "answerIndex": 1,
       "explanation": "Die Elbe fließt nicht durch Hessen, sondern durch Sachsen und Sachsen-Anhalt.",
       "translations": {
         "en": {
           "question": "Which river does not flow through Hesse?",
-          "options": [ "Rhine", "Main", "Elbe", "Fulda" ],
+          "options": [
+            "Rhine",
+            "Main",
+            "Elbe",
+            "Fulda"
+          ],
           "explanation": "The Elbe does not flow through Hesse, but through Saxony and Saxony-Anhalt."
         },
         "es": {
           "question": "¿Qué río no atraviesa Hesse?",
-          "options": [ "Rin", "Main", "Elba", "Fulda" ],
+          "options": [
+            "Rin",
+            "Main",
+            "Elba",
+            "Fulda"
+          ],
           "explanation": "El Elba no atraviesa Hesse, sino Sajonia y Sajonia-Anhalt."
         },
         "fr": {
           "question": "Quel fleuve ne traverse pas la Hesse ?",
-          "options": [ "Rhin", "Main", "Elbe", "Fulda" ],
+          "options": [
+            "Rhin",
+            "Main",
+            "Elbe",
+            "Fulda"
+          ],
           "explanation": "L'Elbe ne traverse pas la Hesse, mais la Saxe et la Saxe-Anhalt."
         },
         "it": {
           "question": "Quale fiume non attraversa l'Assia?",
-          "options": [ "Renania", "Meno", "Elba", "Fulda" ],
+          "options": [
+            "Renania",
+            "Meno",
+            "Elba",
+            "Fulda"
+          ],
           "explanation": "L'Elba non attraversa l'Assia, ma la Sassonia e la Sassonia-Anhalt."
         },
         "tr": {
           "question": "Hessen'den hangi nehir geçmez?",
-          "options": [ "Ren", "Main", "Elbe", "Fulda" ],
+          "options": [
+            "Ren",
+            "Main",
+            "Elbe",
+            "Fulda"
+          ],
           "explanation": "Elbe, Hessen'den değil, Saksonya ve Saksonya-Anhalt'tan geçer."
         },
         "ar": {
           "question": "أي من الأنهار لا يمر عبر هيسن؟",
-          "options": [ "راين", "ماين", "إلبه", "فولدا" ],
+          "options": [
+            "راين",
+            "ماين",
+            "إلبه",
+            "فولدا"
+          ],
           "explanation": "نهر إلبه لا يمر عبر هيسن، بل يمر عبر ساكسونيا وساكسونيا-أنهالت."
         },
         "ru": {
           "question": "Какая река не протекает по Гессену?",
-          "options": [ "Рейн", "Майн", "Эльба", "Фульда" ],
+          "options": [
+            "Рейн",
+            "Майн",
+            "Эльба",
+            "Фульда"
+          ],
           "explanation": "Эльба не протекает по Гессену, а протекает по Саксонии и Саксонии-Анхальт."
         },
         "zh": {
           "question": "哪条河流不流经黑森州？",
-          "options": [ "莱茵河", "美因河", "易北河", "富尔达河" ],
+          "options": [
+            "莱茵河",
+            "美因河",
+            "易北河",
+            "富尔达河"
+          ],
           "explanation": "易北河不流经黑森州，而是流经萨克森州和萨克森-安哈尔特州。"
         },
         "hi": {
           "question": "हेसेन से कौन सा नदी नहीं बहती है?",
-          "options": [ "राइन", "माइन", "एल्बे", "फुल्डा" ],
+          "options": [
+            "राइन",
+            "माइन",
+            "एल्बे",
+            "फुल्डा"
+          ],
           "explanation": "एल्बे हेसेन से नहीं, बल्कि सैक्सनी और सैक्सनी-आन्हाल्ट से बहती है।"
         }
       }
@@ -7040,8 +7507,13 @@
     {
       "id": "mv006",
       "category": "State",
-      "question": "Wo können Sie sich in Mecklenburg-Vorpommern über politische Themen informieren?","options": ["bei der Landeszentrale für politische Bildung","bei den Kirchen","beim Ordnungsamt der Gemeinde","bei der Verbraucherzentrale"
-    ],
+      "question": "Wo können Sie sich in Mecklenburg-Vorpommern über politische Themen informieren?",
+      "options": [
+        "bei der Landeszentrale für politische Bildung",
+        "bei den Kirchen",
+        "beim Ordnungsamt der Gemeinde",
+        "bei der Verbraucherzentrale"
+      ],
       "answerIndex": 0,
       "explanation": "In Mecklenburg-Vorpommern können Sie sich bei der Landeszentrale für politische Bildung über politische Themen informieren.",
       "translations": {
@@ -7062,10 +7534,10 @@
       "category": "State",
       "question": "Die Landeshauptstadt von Mecklenburg-Vorpommern heißt …",
       "options": [
-        "Greifswald",
-        "Schwerin",
-        "Rostock",
-        "Wismar"
+        "Greifswald.",
+        "Schwerin.",
+        "Rostock.",
+        "Wismar."
       ],
       "answerIndex": 1,
       "explanation": "Die Landeshauptstadt von Mecklenburg-Vorpommern ist Schwerin.",
@@ -7086,7 +7558,7 @@
       "id": "mv008",
       "category": "State",
       "question": "Welches Bundesland ist Mecklenburg-Vorpommern?",
-      "image": "/images/mecklenburg-vorpommern-map.png",
+      "image": "/images/378.png",
       "options": [
         "1",
         "2",
@@ -7111,12 +7583,12 @@
     {
       "id": "mv009",
       "category": "State",
-      "question": "Wie nennt man den Regierungschef / die Regierungschefin in Mecklenburg-Vorpommern?",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef in Mecklenburg-Vorpommern?",
       "options": [
-        "Erster Minister / Erste Ministerin",
-        "Premierminister / Premierministerin",
-        "Bürgermeister / Bürgermeisterin",
-        "Ministerpräsident / Ministerpräsidentin"
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
       ],
       "answerIndex": 3,
       "explanation": "Der Regierungschef / die Regierungschefin in Mecklenburg-Vorpommern wird als Ministerpräsident / Ministerpräsidentin bezeichnet.",
@@ -7136,12 +7608,12 @@
     {
       "id": "mv010",
       "category": "State",
-      "question": "Welchen Minister / welche Ministerin hat Mecklenburg-Vorpommern nicht?",
+      "question": "Welche Ministerin/welchen Minister hat Mecklenburg-Vorpommern nicht?",
       "options": [
-        "Justizminister / Justizministerin",
-        "Außenminister / Außenministerin",
-        "Finanzminister / Finanzministerin",
-        "Innenminister / Innenministerin"
+        "Justizministerin/Justizminister",
+        "Außenministerin/Außenminister",
+        "Finanzministerin/Finanzminister",
+        "Innenministerin/Innenminister"
       ],
       "answerIndex": 1,
       "explanation": "Mecklenburg-Vorpommern hat keinen Außenminister / keine Außenministerin, da dies eine Aufgabe der Bundesregierung ist.",
@@ -7316,10 +7788,10 @@
       "category": "State",
       "question": "Die Landeshauptstadt von Niedersachsen heißt …",
       "options": [
-        "Hannover",
-        "Braunschweig",
-        "Wolfsburg",
-        "Osnabrück"
+        "Hannover.",
+        "Braunschweig.",
+        "Wolfsburg.",
+        "Osnabrück."
       ],
       "answerIndex": 0,
       "explanation": "Die Landeshauptstadt von Niedersachsen ist Hannover.",
@@ -7340,7 +7812,7 @@
       "id": "ni008",
       "category": "State",
       "question": "Welches Bundesland ist Niedersachsen?",
-      "image": "/images/sachsen-anhalt-map.png",
+      "image": "/images/388.png",
       "options": [
         "1",
         "2",
@@ -7365,12 +7837,12 @@
     {
       "id": "ni009",
       "category": "State",
-      "question": "Wie nennt man den Regierungschef / die Regierungschefin in Niedersachsen?",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef in Niedersachsen?",
       "options": [
-        "Erster Minister / Erste Ministerin",
-        "Premierminister / Premierministerin",
-        "Bürgermeister / Bürgermeisterin",
-        "Ministerpräsident / Ministerpräsidentin"
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
       ],
       "answerIndex": 3,
       "explanation": "Der Regierungschef / die Regierungschefin in Niedersachsen wird als Ministerpräsident / Ministerpräsidentin bezeichnet.",
@@ -7390,12 +7862,12 @@
     {
       "id": "ni010",
       "category": "State",
-      "question": "Welchen Minister / welche Ministerin hat Niedersachsen nicht?",
+      "question": "Welche Ministerin/welchen Minister hat Niedersachsen nicht?",
       "options": [
-        "Justizminister / Justizministerin",
-        "Außenminister / Außenministerin",
-        "Finanzminister / Finanzministerin",
-        "Innenminister / Innenministerin"
+        "Justizministerin/Justizminister",
+        "Außenministerin/Außenminister",
+        "Finanzministerin/Finanzminister",
+        "Innenministerin/Innenminister"
       ],
       "answerIndex": 1,
       "explanation": "Niedersachsen hat keinen Außenminister / keine Außenministerin, da dies eine Aufgabe der Bundesregierung ist.",
@@ -7570,10 +8042,10 @@
       "category": "State",
       "question": "Die Landeshauptstadt von Nordrhein-Westfalen heißt …",
       "options": [
-        "Köln",
-        "Bonn",
-        "Düsseldorf",
-        "Dortmund"
+        "Köln.",
+        "Bonn.",
+        "Düsseldorf.",
+        "Dortmund."
       ],
       "answerIndex": 2,
       "explanation": "Die Landeshauptstadt von Nordrhein-Westfalen ist Düsseldorf.",
@@ -7594,7 +8066,7 @@
       "id": "nw008",
       "category": "State",
       "question": "Welches Bundesland ist Nordrhein-Westfalen?",
-      "image": "/images/nordrhein-westfalen-map.png",
+      "image": "/images/398.png",
       "options": [
         "1",
         "2",
@@ -7619,12 +8091,12 @@
     {
       "id": "nw009",
       "category": "State",
-      "question": "Wie nennt man den Regierungschef / die Regierungschefin in Nordrhein-Westfalen?",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef in Nordrhein-Westfalen?",
       "options": [
-        "Erster Minister / Erste Ministerin",
-        "Premierminister / Premierministerin",
-        "Bürgermeister / Bürgermeisterin",
-        "Ministerpräsident / Ministerpräsidentin"
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
       ],
       "answerIndex": 3,
       "explanation": "Der Regierungschef / die Regierungschefin in Nordrhein-Westfalen wird als Ministerpräsident / Ministerpräsidentin bezeichnet.",
@@ -7644,12 +8116,12 @@
     {
       "id": "nw010",
       "category": "State",
-      "question": "Welchen Minister / welche Ministerin hat Nordrhein-Westfalen nicht?",
+      "question": "Welche Ministerin/welchen Minister hat Nordrhein-Westfalen nicht?",
       "options": [
-        "Justizminister / Justizministerin",
-        "Außenminister / Außenministerin",
-        "Finanzminister / Finanzministerin",
-        "Innenminister / Innenministerin"
+        "Justizministerin/Justizminister",
+        "Außenministerin/Außenminister",
+        "Finanzministerin/Finanzminister",
+        "Innenministerin/Innenminister"
       ],
       "answerIndex": 1,
       "explanation": "Nordrhein-Westfalen hat keinen Außenminister / keine Außenministerin, da dies eine Aufgabe der Bundesregierung ist.",
@@ -7824,10 +8296,10 @@
       "category": "State",
       "question": "Die Landeshauptstadt von Rheinland-Pfalz heißt …",
       "options": [
-        "Mainz",
-        "Kaiserslautern",
-        "Ludwigshafen",
-        "Koblenz"
+        "Mainz.",
+        "Kaiserslautern.",
+        "Ludwigshafen.",
+        "Koblenz."
       ],
       "answerIndex": 0,
       "explanation": "Die Landeshauptstadt von Rheinland-Pfalz ist Mainz.",
@@ -7848,7 +8320,7 @@
       "id": "rp008",
       "category": "State",
       "question": "Welches Bundesland ist Rheinland-Pfalz?",
-      "image": "/images/rheinland-pfalz-map.png",
+      "image": "/images/408.png",
       "options": [
         "1",
         "2",
@@ -7873,12 +8345,12 @@
     {
       "id": "rp009",
       "category": "State",
-      "question": "Wie nennt man den Regierungschef / die Regierungschefin in Rheinland-Pfalz?",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef in Rheinland-Pfalz?",
       "options": [
-        "Erster Minister / Erste Ministerin",
-        "Premierminister / Premierministerin",
-        "Bürgermeister / Bürgermeisterin",
-        "Ministerpräsident / Ministerpräsidentin"
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
       ],
       "answerIndex": 3,
       "explanation": "Der Regierungschef / die Regierungschefin in Rheinland-Pfalz wird als Ministerpräsident / Ministerpräsidentin bezeichnet.",
@@ -7898,12 +8370,12 @@
     {
       "id": "rp010",
       "category": "State",
-      "question": "Welchen Minister / welche Ministerin hat Rheinland-Pfalz nicht?",
+      "question": "Welche Ministerin/welchen Minister hat Rheinland-Pfalz nicht?",
       "options": [
-        "Justizminister / Justizministerin",
-        "Außenminister / Außenministerin",
-        "Finanzminister / Finanzministerin",
-        "Innenminister / Innenministerin"
+        "Justizministerin/Justizminister",
+        "Außenministerin/Außenminister",
+        "Finanzministerin/Finanzminister",
+        "Innenministerin/Innenminister"
       ],
       "answerIndex": 1,
       "explanation": "Rheinland-Pfalz hat keinen Außenminister / keine Außenministerin, da dies eine Aufgabe der Bundesregierung ist.",
@@ -8078,10 +8550,10 @@
       "category": "State",
       "question": "Die Landeshauptstadt des Saarlandes heißt …",
       "options": [
-        "Neunkirchen",
-        "Homburg",
-        "Saarbrücken",
-        "Völklingen"
+        "Neunkirchen.",
+        "Homburg.",
+        "Saarbrücken.",
+        "Völklingen."
       ],
       "answerIndex": 2,
       "explanation": "Die Landeshauptstadt des Saarlandes ist Saarbrücken.",
@@ -8102,7 +8574,7 @@
       "id": "sl008",
       "category": "State",
       "question": "Welches Bundesland ist das Saarland?",
-      "image": "/images/saarland-map.png",
+      "image": "/images/418.png",
       "options": [
         "1",
         "2",
@@ -8127,12 +8599,12 @@
     {
       "id": "sl009",
       "category": "State",
-      "question": "Wie nennt man den Regierungschef / die Regierungschefin des Saarlandes?",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef des Saarlandes?",
       "options": [
-        "Erster Minister / Erste Ministerin",
-        "Premierminister / Premierministerin",
-        "Bürgermeister / Bürgermeisterin",
-        "Ministerpräsident / Ministerpräsidentin"
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
       ],
       "answerIndex": 3,
       "explanation": "Der Regierungschef / die Regierungschefin des Saarlandes wird als Ministerpräsident / Ministerpräsidentin bezeichnet.",
@@ -8152,12 +8624,12 @@
     {
       "id": "sl010",
       "category": "State",
-      "question": "Welchen Minister / welche Ministerin hat das Saarland nicht?",
+      "question": "Welche Ministerin/welchen Minister hat das Saarland nicht?",
       "options": [
-        "Justizminister / Justizministerin",
-        "Außenminister / Außenministerin",
-        "Finanzminister / Finanzministerin",
-        "Innenminister / Innenministerin"
+        "Justizministerin/Justizminister",
+        "Außenministerin/Außenminister",
+        "Finanzministerin/Finanzminister",
+        "Innenministerin/Innenminister"
       ],
       "answerIndex": 1,
       "explanation": "Das Saarland hat keinen Außenminister / keine Außenministerin, da dies eine Aufgabe der Bundesregierung ist.",
@@ -8332,10 +8804,10 @@
       "category": "State",
       "question": "Die Landeshauptstadt von Sachsen heißt …",
       "options": [
-        "Leipzig",
-        "Dresden",
-        "Chemnitz",
-        "Zwickau"
+        "Leipzig.",
+        "Dresden.",
+        "Chemnitz.",
+        "Zwickau."
       ],
       "answerIndex": 1,
       "explanation": "Die Landeshauptstadt von Sachsen ist Dresden.",
@@ -8356,7 +8828,7 @@
       "id": "sn008",
       "category": "State",
       "question": "Welches Bundesland ist Sachsen?",
-      "image": "/images/sachsen-map.png",
+      "image": "/images/428.png",
       "options": [
         "1",
         "2",
@@ -8381,12 +8853,12 @@
     {
       "id": "sn009",
       "category": "State",
-      "question": "Wie nennt man den Regierungschef / die Regierungschefin in Sachsen?",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef in Sachsen?",
       "options": [
-        "Erster Minister / Erste Ministerin",
-        "Premierminister / Premierministerin",
-        "Bürgermeister / Bürgermeisterin",
-        "Ministerpräsident / Ministerpräsidentin"
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
       ],
       "answerIndex": 3,
       "explanation": "Der Regierungschef / die Regierungschefin in Sachsen wird als Ministerpräsident / Ministerpräsidentin bezeichnet.",
@@ -8406,12 +8878,12 @@
     {
       "id": "sn010",
       "category": "State",
-      "question": "Welchen Minister / welche Ministerin hat Sachsen nicht?",
+      "question": "Welche Ministerin/welchen Minister hat Sachsen nicht?",
       "options": [
-        "Justizminister / Justizministerin",
-        "Außenminister / Außenministerin",
-        "Finanzminister / Finanzministerin",
-        "Innenminister / Innenministerin"
+        "Justizministerin/Justizminister",
+        "Außenministerin/Außenminister",
+        "Finanzministerin/Finanzminister",
+        "Innenministerin/Innenminister"
       ],
       "answerIndex": 1,
       "explanation": "Sachsen hat keinen Außenminister / keine Außenministerin, da dies eine Aufgabe der Bundesregierung ist.",
@@ -8586,10 +9058,10 @@
       "category": "State",
       "question": "Die Landeshauptstadt von Sachsen-Anhalt heißt …",
       "options": [
-        "Halle",
-        "Dessau",
-        "Magdeburg",
-        "Wittenberg"
+        "Halle.",
+        "Dessau.",
+        "Magdeburg.",
+        "Wittenberg."
       ],
       "answerIndex": 2,
       "explanation": "Die Landeshauptstadt von Sachsen-Anhalt ist Magdeburg.",
@@ -8610,7 +9082,7 @@
       "id": "st008",
       "category": "State",
       "question": "Welches Bundesland ist Sachsen-Anhalt?",
-      "image": "/images/sachsen-anhalt-map.png",
+      "image": "/images/438.png",
       "options": [
         "1",
         "2",
@@ -8635,12 +9107,12 @@
     {
       "id": "st009",
       "category": "State",
-      "question": "Wie nennt man den Regierungschef / die Regierungschefin in Sachsen-Anhalt?",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef in Sachsen-Anhalt?",
       "options": [
-        "Erster Minister / Erste Ministerin",
-        "Premierminister / Premierministerin",
-        "Bürgermeister / Bürgermeisterin",
-        "Ministerpräsident / Ministerpräsidentin"
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
       ],
       "answerIndex": 3,
       "explanation": "Der Regierungschef / die Regierungschefin in Sachsen-Anhalt wird als Ministerpräsident / Ministerpräsidentin bezeichnet.",
@@ -8660,12 +9132,12 @@
     {
       "id": "st010",
       "category": "State",
-      "question": "Welchen Minister / welche Ministerin hat Sachsen-Anhalt nicht?",
+      "question": "Welche Ministerin/welchen Minister hat Sachsen-Anhalt nicht?",
       "options": [
-        "Justizminister / Justizministerin",
-        "Außenminister / Außenministerin",
-        "Finanzminister / Finanzministerin",
-        "Innenminister / Innenministerin"
+        "Justizministerin/Justizminister",
+        "Außenministerin/Außenminister",
+        "Finanzministerin/Finanzminister",
+        "Innenministerin/Innenminister"
       ],
       "answerIndex": 1,
       "explanation": "Sachsen-Anhalt hat keinen Außenminister / keine Außenministerin, da dies eine Aufgabe der Bundesregierung ist.",
@@ -8817,7 +9289,7 @@
       "options": [
         "bei der Verbraucherzentrale",
         "beim Ordnungsamt der Gemeinde",
-        "bei dem/der Landesbeauftragten für politische Bildung",
+        "beim / bei der Landesbeauftragten für politische Bildung",
         "bei den Kirchen"
       ],
       "answerIndex": 2,
@@ -8840,10 +9312,10 @@
       "category": "State",
       "question": "Die Landeshauptstadt von Schleswig-Holstein heißt …",
       "options": [
-        "Husum",
-        "Flensburg",
-        "Lübeck",
-        "Kiel"
+        "Husum.",
+        "Flensburg.",
+        "Lübeck.",
+        "Kiel."
       ],
       "answerIndex": 3,
       "explanation": "Die Landeshauptstadt von Schleswig-Holstein ist Kiel.",
@@ -8864,7 +9336,7 @@
       "id": "sh008",
       "category": "State",
       "question": "Welches Bundesland ist Schleswig-Holstein?",
-      "image": "/images/schleswig-holstein-map.png",
+      "image": "/images/448.png",
       "options": [
         "1",
         "2",
@@ -8889,12 +9361,12 @@
     {
       "id": "sh009",
       "category": "State",
-      "question": "Wie nennt man den Regierungschef / die Regierungschefin in Schleswig-Holstein?",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef in Schleswig-Holstein?",
       "options": [
-        "Erster Minister / Erste Ministerin",
-        "Premierminister / Premierministerin",
-        "Bürgermeister / Bürgermeisterin",
-        "Ministerpräsident / Ministerpräsidentin"
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
       ],
       "answerIndex": 3,
       "explanation": "Der Regierungschef / die Regierungschefin in Schleswig-Holstein wird als Ministerpräsident / Ministerpräsidentin bezeichnet.",
@@ -8914,12 +9386,12 @@
     {
       "id": "sh010",
       "category": "State",
-      "question": "Welchen Minister / welche Ministerin hat Schleswig-Holstein nicht?",
+      "question": "Welche Ministerin/welchen Minister hat Schleswig-Holstein nicht?",
       "options": [
-        "Justizminister / Justizministerin",
-        "Außenminister / Außenministerin",
-        "Finanzminister / Finanzministerin",
-        "Innenminister / Innenministerin"
+        "Justizministerin/Justizminister",
+        "Außenministerin/Außenminister",
+        "Finanzministerin/Finanzminister",
+        "Innenministerin/Innenminister"
       ],
       "answerIndex": 1,
       "explanation": "Schleswig-Holstein hat keinen Außenminister / keine Außenministerin, da dies eine Aufgabe der Bundesregierung ist.",
@@ -9094,10 +9566,10 @@
       "category": "State",
       "question": "Die Landeshauptstadt von Thüringen heißt …",
       "options": [
-        "Eisenach",
-        "Erfurt",
-        "Gera",
-        "Jena"
+        "Eisenach.",
+        "Erfurt.",
+        "Gera.",
+        "Jena."
       ],
       "answerIndex": 1,
       "explanation": "Die Landeshauptstadt von Thüringen ist Erfurt.",
@@ -9118,7 +9590,7 @@
       "id": "th008",
       "category": "State",
       "question": "Welches Bundesland ist Thüringen?",
-      "image": "/images/thuringia-map.png",
+      "image": "/images/458.png",
       "options": [
         "1",
         "2",
@@ -9143,12 +9615,12 @@
     {
       "id": "th009",
       "category": "State",
-      "question": "Wie nennt man den Regierungschef / die Regierungschefin in Thüringen?",
+      "question": "Wie nennt man die Regierungschefin/den Regierungschef in Thüringen?",
       "options": [
-        "Erster Minister / Erste Ministerin",
-        "Premierminister / Premierministerin",
-        "Bürgermeister / Bürgermeisterin",
-        "Ministerpräsident / Ministerpräsidentin"
+        "Erste Ministerin/Erster Minister",
+        "Premierministerin/Premierminister",
+        "Bürgermeisterin/Bürgermeister",
+        "Ministerpräsidentin/Ministerpräsident"
       ],
       "answerIndex": 3,
       "explanation": "Der Regierungschef / die Regierungschefin in Thüringen wird als Ministerpräsident / Ministerpräsidentin bezeichnet.",
@@ -9168,12 +9640,12 @@
     {
       "id": "th010",
       "category": "State",
-      "question": "Welchen Minister / welche Ministerin hat Thüringen nicht?",
+      "question": "Welche Ministerin/welchen Minister hat Thüringen nicht?",
       "options": [
-        "Justizminister / Justizministerin",
-        "Außenminister / Außenministerin",
-        "Finanzminister / Finanzministerin",
-        "Innenminister / Innenministerin"
+        "Justizministerin/Justizminister",
+        "Außenministerin/Außenminister",
+        "Finanzministerin/Finanzminister",
+        "Innenministerin/Innenminister"
       ],
       "answerIndex": 1,
       "explanation": "Thüringen hat keinen Außenminister / keine Außenministerin, da dies eine Aufgabe der Bundesregierung ist.",

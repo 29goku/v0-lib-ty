@@ -107,12 +107,12 @@
   {
     "id": "q002",
     "category": "Politics",
-    "question": "In Deutschland können Eltern bis zum 14. Lebensjahr ihres Kindes entscheiden, ob es in der Schule am … teilnimmt.",
+    "question": "In Deutschland können Eltern bis zum 14. Lebensjahr ihres Kindes entscheiden, ob es in der Schule am …",
     "options": [
-      "Geschichtsunterricht",
-      "Religionsunterricht",
-      "Politikunterricht",
-      "Sprachunterricht"
+      "Geschichtsunterricht teilnimmt.",
+      "Religionsunterricht teilnimmt.",
+      "Politikunterricht teilnimmt.",
+      "Sprachunterricht teilnimmt."
     ],
     "answerIndex": 1,
     "explanation": "Eltern haben das Recht zu entscheiden, ob ihr Kind am Religionsunterricht teilnimmt. Dies ist Teil der Religionsfreiheit in Deutschland.",
@@ -1370,7 +1370,7 @@
     "question": "Meinungsfreiheit in Deutschland heißt, dass ich …",
     "options": [
       "Passanten auf der Straße beschimpfen darf.",
-      "meine Meinung im Internet äußern kann.",
+      "meine Meinung in Leserbriefen äußern kann.",
       "Nazi-, Hamas- oder Islamischer Staat-Symbole öffentlich tragen darf.",
       "meine Meinung nur dann äußern darf, solange ich der Regierung nicht widerspreche."
     ],
@@ -7567,10 +7567,10 @@
     "category": "Politics",
     "question": "Die beiden größten Fraktionen im Deutschen Bundestag heißen zurzeit …",
     "options": [
-      "CDU/CSU und AfD.",
+      "CDU/CSU und SPD.",
       "Die Linke und Bündnis 90/Die Grünen.",
-      "Bündnis 90/Die Grünen und SPD.",
-      "Die Linke und CDU/CSU."
+      "FDP und SPD.",
+      "Die Linke und FDP."
     ],
     "answerIndex": 0,
     "explanation": "Die größten Fraktionen im Deutschen Bundestag sind CDU/CSU und AfD.",
@@ -13235,7 +13235,7 @@
   {
     "id": "q127",
     "category": "Politics",
-    "question": "Warum gibt es die 5%-Hürde im Wahlgesetz der Bundesrepublik Deutschland? Es gibt sie, weil…",
+    "question": "Warum gibt es die 5%-Hürde im Wahlgesetz der Bundesrepublik Deutschland? Es gibt sie, weil …",
     "options": [
       "die Programme von vielen kleinen Parteien viele Gemeinsamkeiten haben.",
       "die Bürgerinnen und Bürger bei vielen kleinen Parteien die Orientierung verlieren können.",
@@ -13551,14 +13551,14 @@
     "id": "q130",
     "category": "Politics",
     "question": "Welcher Stimmzettel wäre bei einer Bundestagswahl gültig?",
-    "image": "/images/german-ballot-examples.jpg",
+    "image": "/images/130.png",
     "options": [
       "1",
       "2",
       "3",
       "4"
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": "Stimmzettel 1 ist gültig, weil er in jeder Spalte nur ein Kreuz hat.",
     "translations": {
       "en": {
@@ -18382,7 +18382,7 @@
     "id": "q176",
     "category": "History",
     "question": "Wie waren die Besatzungszonen Deutschlands nach 1945 verteilt?",
-    "image": "/images/germany-occupation-zones-1945.jpg",
+    "image": "/images/176.png",
     "options": [
       "1=Großbritannien, 2=Sowjetunion, 3=Frankreich, 4=USA",
       "1=Sowjetunion, 2=Großbritannien, 3=USA, 4=Frankreich",
@@ -18908,7 +18908,7 @@
     "id": "q181",
     "category": "History",
     "question": "Was wollte Willy Brandt mit seinem Kniefall 1970 im ehemaligen jüdischen Ghetto in Warschau ausdrücken?",
-    "image": "/images/willy-brandt-warsaw.jpg",
+    "image": "/images/181.png",
     "options": [
       "Er hat sich den ehemaligen Alliierten unterworfen.",
       "Er bat Polen und die polnischen Juden um Vergebung.",
@@ -19118,7 +19118,7 @@
   {
     "id": "q183",
     "category": "History",
-    "question": "Wann war in der Bundesrepublik Deutschland das \"Wirtschaftswunder\"?",
+    "question": "Wann war in der Bundesrepublik Deutschland das 'Wirtschaftswunder'?",
     "options": [
       "40er Jahre",
       "50er Jahre",
@@ -19328,7 +19328,7 @@
   {
     "id": "q185",
     "category": "History",
-    "question": "Wofür stand der Ausdruck \"Eiserner Vorhang\"? Für die Abschottung …",
+    "question": "Wofür stand der Ausdruck 'Eiserner Vorhang'? Für die Abschottung …",
     "options": [
       "des Warschauer Pakts gegen den Westen",
       "Norddeutschlands gegen Süddeutschland",
@@ -19539,7 +19539,7 @@
     "id": "q187",
     "category": "History",
     "question": "Welcher deutsche Staat hatte eine schwarz-rot-goldene Flagge mit Hammer, Zirkel und Ährenkranz?",
-    "image": "/images/east-german-flag.jpg",
+    "image": "/images/187.png",
     "options": [
       "Preußen",
       "Bundesrepublik Deutschland",
@@ -20484,7 +20484,7 @@
   {
     "id": "q196",
     "category": "History",
-    "question": "Warum nennt man die Zeit im Herbst 1989 in der DDR \"Die Wende\"? In dieser Zeit veränderte sich die DDR politisch …",
+    "question": "Warum nennt man die Zeit im Herbst 1989 in der DDR 'Die Wende'? In dieser Zeit veränderte sich die DDR politisch …",
     "options": [
       "von einer Diktatur zur Demokratie.",
       "von einer liberalen Marktwirtschaft zum Sozialismus.",
@@ -20799,7 +20799,7 @@
   {
     "id": "q199",
     "category": "History",
-    "question": "Mit der Abkürzung \"Stasi\" meinte man in der DDR …",
+    "question": "Mit der Abkürzung 'Stasi' meinte man in der DDR …",
     "options": [
       "das Parlament.",
       "das Ministerium für Staatssicherheit.",
@@ -21114,7 +21114,7 @@
   {
     "id": "q202",
     "category": "History",
-    "question": "Zu wem gehörte die DDR im \"Kalten Krieg\"?",
+    "question": "Zu wem gehörte die DDR im 'Kalten Krieg'?",
     "options": [
       "zu den Westmächten",
       "zum Warschauer Pakt",
@@ -21534,7 +21534,7 @@
   {
     "id": "q206",
     "category": "History",
-    "question": "Woran erinnern die sogenannten „Stolpersteine“ in Deutschland?",
+    "question": "Woran erinnern die sogenannten 'Stolpersteine' in Deutschland?",
     "options": [
       "an berühmte deutsche Politikerinnen und Politiker",
       "an die Opfer des Nationalsozialismus",
@@ -21744,9 +21744,9 @@
   {
     "id": "q208",
     "category": "History",
-    "question": "Was war die \"Stasi\"?",
+    "question": "Was war die 'Stasi'?",
     "options": [
-      "der Geheimdienst im \"Dritten Reich\"",
+      "der Geheimdienst im 'Dritten Reich'",
       "eine berühmte deutsche Gedenkstätte",
       "der Geheimdienst der DDR",
       "ein deutscher Sportverein während des Zweiten Weltkrieges"
@@ -21850,7 +21850,7 @@
     "id": "q209",
     "category": "History",
     "question": "Welches war das Wappen der Deutschen Demokratischen Republik?",
-    "image": "/images/east-german-coat-of-arms.jpg",
+    "image": "/images/209.png",
     "options": [
       "Bild 1",
       "Bild 2",
@@ -22060,7 +22060,7 @@
   {
     "id": "q211",
     "category": "Politics",
-    "question": "Welcher Politiker steht für die \"Ostverträge\"?",
+    "question": "Welcher Politiker steht für die 'Ostverträge'?",
     "options": [
       "Helmut Kohl",
       "Willy Brandt",
@@ -22480,7 +22480,7 @@
   {
     "id": "q215",
     "category": "History",
-    "question": "Wer wird als \"Kanzler der Deutschen Einheit\" bezeichnet?",
+    "question": "Wer wird als 'Kanzler der Deutschen Einheit' bezeichnet?",
     "options": [
       "Gerhard Schröder",
       "Helmut Kohl",
@@ -22586,7 +22586,7 @@
     "id": "q216",
     "category": "Politics",
     "question": "Welches Symbol ist im Plenarsaal des Deutschen Bundestages zu sehen?",
-    "image": "/images/bundestag-interior-eagle.jpg",
+    "image": "/images/216.png",
     "options": [
       "der Bundesadler",
       "die Fahne der Stadt Berlin",
@@ -23637,7 +23637,7 @@
     "id": "q226",
     "category": "Politics",
     "question": "Welche ist die Flagge der Europäischen Union?",
-    "image": "/images/eu-flag-identification.jpg",
+    "image": "/images/226.png",
     "options": [
       "Bild 1",
       "Bild 2",
@@ -24162,7 +24162,7 @@
   {
     "id": "q231",
     "category": "Politics",
-    "question": "Was bedeutet der Begriff \"europäische Integration\"?",
+    "question": "Was bedeutet der Begriff 'europäische Integration'?",
     "options": [
       "Damit sind amerikanische Einwanderinnen und Einwanderer in Europa gemeint.",
       "Der Begriff meint den Einwanderungsstopp nach Europa.",
@@ -24793,7 +24793,7 @@
   {
     "id": "q237",
     "category": "History",
-    "question": "2007 wurde das 50-jährige Jubiläum der \"Römischen Verträge\" gefeiert. Was war der Inhalt der Verträge?",
+    "question": "2007 wurde das 50-jährige Jubiläum der 'Römischen Verträge' gefeiert. Was war der Inhalt der Verträge?",
     "options": [
       "Beitritt Deutschlands zur NATO",
       "Gründung der Europäischen Wirtschaftsgemeinschaft (EWG)",
@@ -25005,10 +25005,10 @@
     "category": "History",
     "question": "Durch welche Verträge schloss sich die Bundesrepublik Deutschland mit anderen Staaten zur Europäischen Wirtschaftsgemeinschaft zusammen?",
     "options": [
-      "durch die \"Hamburger Verträge\"",
-      "durch die \"Römischen Verträge\"",
-      "durch die \"Pariser Verträge\"",
-      "durch die \"Londoner Verträge\""
+      "durch die 'Hamburger Verträge'",
+      "durch die 'Römischen Verträge'",
+      "durch die 'Pariser Verträge'",
+      "durch die 'Londoner Verträge'"
     ],
     "answerIndex": 1,
     "explanation": "Die Bundesrepublik schloss sich mit anderen Staaten durch die Römischen Verträge zur EWG zusammen.",
@@ -25948,7 +25948,7 @@
   {
     "id": "q248",
     "category": "Family",
-    "question": "Die Erziehung der Kinder ist in Deutschland ist vor allem Aufgabe …",
+    "question": "Die Erziehung der Kinder ist in Deutschland vor allem Aufgabe …",
     "options": [
       "des Staates.",
       "der Eltern.",
@@ -26578,7 +26578,7 @@
   {
     "id": "q254",
     "category": "Law",
-    "question": "In Deutschland dürfen Ehepaare sich scheiden lassen. Meistens müssen sie dazu das \"Trennungsjahr\" einhalten. Was bedeutet das?",
+    "question": "In Deutschland dürfen Ehepaare sich scheiden lassen. Meistens müssen sie dazu das 'Trennungsjahr' einhalten. Was bedeutet das?",
     "options": [
       "Der Scheidungsprozess dauert ein Jahr.",
       "Die Ehegatten sind ein Jahr verheiratet, dann ist die Scheidung möglich.",
@@ -26683,7 +26683,7 @@
   {
     "id": "q255",
     "category": "Family",
-    "question": "Bei Erziehungsproblemen können Eltern in Deutschland Hilfe erhalten vom…",
+    "question": "Bei Erziehungsproblemen können Eltern in Deutschland Hilfe erhalten vom …",
     "options": [
       "Ordnungsamt.",
       "Schulamt.",
@@ -29203,7 +29203,7 @@
   {
     "id": "q279",
     "category": "Law",
-    "question": "In den meisten Mietshäusern in Deutschland gibt es eine \"Hausordnung\". Was steht in einer solchen \"Hausordnung\"? Sie nennt …",
+    "question": "In den meisten Mietshäusern in Deutschland gibt es eine 'Hausordnung'. Was steht in einer solchen 'Hausordnung'? Sie nennt …",
     "options": [
       "Regeln für die Benutzung öffentlicher Verkehrsmittel.",
       "alle Mieterinnen und Mieter im Haus.",

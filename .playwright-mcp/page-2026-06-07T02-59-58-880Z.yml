@@ -1,0 +1,257 @@
+- generic:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - link:
+            - /url: /
+            - button:
+              - img
+              - text: BACK
+          - generic:
+            - heading [level=1]: PRACTICE MODE
+            - generic: Hessen Questions 🏛️
+          - generic:
+            - button:
+              - generic:
+                - img
+            - generic:
+              - button:
+                - img
+                - generic: 🇺🇸
+                - generic: English
+                - img
+            - button:
+              - img
+              - text: RESET
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - paragraph: Progress
+                  - paragraph: 0/10
+                - generic: 🎯
+              - generic:
+                - generic:
+                  - progressbar
+                  - generic: 0.0%
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - paragraph: XP
+                  - paragraph: "0"
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - paragraph: Streak
+                  - paragraph: "0"
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - paragraph: Accuracy
+                  - paragraph: 0%
+        - generic:
+          - button:
+            - img
+            - text: Hide Filters
+            - img
+          - paragraph: 1 state
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - button [expanded]:
+                  - generic:
+                    - img
+                    - generic: Hessen
+                  - img
+                - generic:
+                  - generic:
+                    - generic: 🏛️
+                    - generic: Hessen
+                    - button:
+                      - img
+          - generic:
+            - generic:
+              - generic:
+                - button:
+                  - generic:
+                    - img
+                    - generic: Select categories...
+                  - img
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=3]: Filter by Status
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: →
+                  - generic:
+                    - generic: ←
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Question he001
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                        - generic:
+                          - paragraph: Welches Wappen gehört zum Bundesland Hessen?
+                      - generic:
+                        - generic:
+                          - button [ref=e455] [cursor=pointer]:
+                            - generic [ref=e104]:
+                              - generic [ref=e105]: A.
+                              - generic [ref=e107]: Bild 1
+                          - button [ref=e456] [cursor=pointer]:
+                            - generic [ref=e109]:
+                              - generic [ref=e110]: B.
+                              - generic [ref=e112]: Bild 2
+                          - button [ref=e457] [cursor=pointer]:
+                            - generic [ref=e114]:
+                              - generic [ref=e115]: C.
+                              - generic [ref=e117]: Bild 3
+                          - button [ref=e458] [cursor=pointer]:
+                            - generic [ref=e119]:
+                              - generic [ref=e120]: D.
+                              - generic [ref=e122]: Bild 4
+                        - generic:
+                          - paragraph:
+                            - generic:
+                              - img
+                            - text: Select an answer
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button: "1"
+                      - button: "2"
+                      - button: "3"
+                      - button: "4"
+                      - button: "5"
+                      - button: "6"
+                      - button: "7"
+                      - button: "8"
+                      - button: "9"
+                      - button: "10"
+  - generic:
+    - button [ref=e459] [cursor=pointer]:
+      - img [ref=e11]
+      - generic [ref=e13]: Feedback
+    - region:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - group:
+                  - generic:
+                    - heading: How would you rate your experience?
+                    - generic: where 1 is Not satisfied at all and 5 is Very satisfied
+                    - radiogroup:
+                      - generic:
+                        - generic:
+                          - radio
+                        - generic:
+                          - radio
+                        - generic:
+                          - radio
+                        - generic:
+                          - radio
+                        - generic:
+                          - radio
+                      - generic:
+                        - generic: Not satisfied at all
+                        - generic: Very satisfied
+                  - generic:
+                    - generic:
+                      - button [disabled]: Next
+  - button "Open Next.js Dev Tools" [ref=e437] [cursor=pointer]:
+    - img [ref=e438]
+  - alert: Leben in Deutschland Test 2025 – 310 Offizielle Fragen & Vorbereitung
+  - menu "Hessen" [active] [ref=e543]:
+    - generic [ref=e461]:
+      - text: Select State
+      - button "Clear All" [ref=e544] [cursor=pointer]
+    - separator [ref=e462]
+    - menuitemcheckbox "🏰 Baden-Württemberg" [ref=e463]:
+      - generic [ref=e465]:
+        - generic [ref=e466]: 🏰
+        - generic [ref=e467]: Baden-Württemberg
+    - menuitemcheckbox "🍺 Bayern" [ref=e468]:
+      - generic [ref=e470]:
+        - generic [ref=e471]: 🍺
+        - generic [ref=e472]: Bayern
+    - menuitemcheckbox "🐻 Berlin" [ref=e473]:
+      - generic [ref=e475]:
+        - generic [ref=e476]: 🐻
+        - generic [ref=e477]: Berlin
+    - menuitemcheckbox "🌲 Brandenburg" [ref=e478]:
+      - generic [ref=e480]:
+        - generic [ref=e481]: 🌲
+        - generic [ref=e482]: Brandenburg
+    - menuitemcheckbox "⚓ Bremen" [ref=e483]:
+      - generic [ref=e485]:
+        - generic [ref=e486]: ⚓
+        - generic [ref=e487]: Bremen
+    - menuitemcheckbox "🚢 Hamburg" [ref=e488]:
+      - generic [ref=e490]:
+        - generic [ref=e491]: 🚢
+        - generic [ref=e492]: Hamburg
+    - menuitemcheckbox "🏛️ Hessen" [checked] [ref=e493]:
+      - img [ref=e546]
+      - generic [ref=e495]:
+        - generic [ref=e496]: 🏛️
+        - generic [ref=e497]: Hessen
+    - menuitemcheckbox "🏖️ Mecklenburg-Vorpommern" [ref=e498]:
+      - generic [ref=e500]:
+        - generic [ref=e501]: 🏖️
+        - generic [ref=e502]: Mecklenburg-Vorpommern
+    - menuitemcheckbox "🐴 Niedersachsen" [ref=e503]:
+      - generic [ref=e505]:
+        - generic [ref=e506]: 🐴
+        - generic [ref=e507]: Niedersachsen
+    - menuitemcheckbox "🏴 Nordrhein-Westfalen" [ref=e508]:
+      - generic [ref=e510]:
+        - generic [ref=e511]: 🏴
+        - generic [ref=e512]: Nordrhein-Westfalen
+    - menuitemcheckbox "🍷 Rheinland-Pfalz" [ref=e513]:
+      - generic [ref=e515]:
+        - generic [ref=e516]: 🍷
+        - generic [ref=e517]: Rheinland-Pfalz
+    - menuitemcheckbox "⚒️ Saarland" [ref=e518]:
+      - generic [ref=e520]:
+        - generic [ref=e521]: ⚒️
+        - generic [ref=e522]: Saarland
+    - menuitemcheckbox "🎭 Sachsen" [ref=e523]:
+      - generic [ref=e525]:
+        - generic [ref=e526]: 🎭
+        - generic [ref=e527]: Sachsen
+    - menuitemcheckbox "🏰 Sachsen-Anhalt" [ref=e528]:
+      - generic [ref=e530]:
+        - generic [ref=e531]: 🏰
+        - generic [ref=e532]: Sachsen-Anhalt
+    - menuitemcheckbox "🌊 Schleswig-Holstein" [ref=e533]:
+      - generic [ref=e535]:
+        - generic [ref=e536]: 🌊
+        - generic [ref=e537]: Schleswig-Holstein
+    - menuitemcheckbox "🌳 Thüringen" [ref=e538]:
+      - generic [ref=e540]:
+        - generic [ref=e541]: 🌳
+        - generic [ref=e542]: Thüringen
