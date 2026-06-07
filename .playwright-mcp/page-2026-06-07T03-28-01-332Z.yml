@@ -1,0 +1,1015 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - 'link "Logo der Website Leben in Deutschland: diagonal verlaufende Farbstreifen in schwarz, rot, gold Einbürgerungstest Leben in Deutschland" [ref=e6] [cursor=pointer]':
+        - /url: https://www.lebenindeutschland.eu
+        - 'img "Logo der Website Leben in Deutschland: diagonal verlaufende Farbstreifen in schwarz, rot, gold" [ref=e7]'
+        - generic [ref=e8]:
+          - generic [ref=e9]: Einbürgerungstest
+          - generic [ref=e10]: Leben in Deutschland
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - link "Startseite Hier geht’s los" [ref=e13] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu
+            - text: Startseite
+            - generic [ref=e14]: Hier geht’s los
+          - link "Der Test mit Auswertung" [ref=e15] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/test
+            - text: Der Test
+            - generic [ref=e16]: mit Auswertung
+          - link "Fragen mit Antworten" [ref=e17] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/fragenkatalog
+            - text: Fragen
+            - generic [ref=e18]: mit Antworten
+        - link "Login Anmeldung" [ref=e20] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/login
+          - text: Login
+          - generic [ref=e21]: Anmeldung
+    - generic [ref=e23]:
+      - heading "Fragenkatalog zum Test Leben in Deutschland. Fragen 181 bis 210" [level=1] [ref=e24]
+      - heading "Alle Fragen mit Antworten" [level=2] [ref=e25]
+    - generic [ref=e26]:
+      - generic [ref=e30]:
+        - heading "Deutschland allgemein" [level=4] [ref=e31]
+        - list [ref=e32]:
+          - listitem [ref=e33]:
+            - link "1 – 30" [ref=e34] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/1
+          - listitem [ref=e35]:
+            - link "31 – 60" [ref=e36] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/2
+          - listitem [ref=e37]:
+            - link "61 – 90" [ref=e38] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/3
+          - listitem [ref=e39]:
+            - link "91 – 120" [ref=e40] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/4
+          - listitem [ref=e41]:
+            - link "121 – 150" [ref=e42] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/5
+          - listitem [ref=e43]:
+            - link "151 – 180" [ref=e44] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/6
+          - listitem [ref=e45]: Fragen 181 – 210
+          - listitem [ref=e46]:
+            - link "211 – 240" [ref=e47] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/8
+          - listitem [ref=e48]:
+            - link "241 – 270" [ref=e49] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/9
+          - listitem [ref=e50]:
+            - link "271 – 300" [ref=e51] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/10
+        - heading "Bundesland" [level=4] [ref=e52]
+        - list [ref=e53]:
+          - listitem [ref=e54]:
+            - link "Baden-Württemberg" [ref=e55] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bw
+          - listitem [ref=e56]:
+            - link "Bayern" [ref=e57] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/by
+          - listitem [ref=e58]:
+            - link "Berlin" [ref=e59] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/be
+          - listitem [ref=e60]:
+            - link "Brandenburg" [ref=e61] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bb
+          - listitem [ref=e62]:
+            - link "Bremen" [ref=e63] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hb
+          - listitem [ref=e64]:
+            - link "Hamburg" [ref=e65] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hh
+          - listitem [ref=e66]:
+            - link "Hessen" [ref=e67] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/he
+          - listitem [ref=e68]:
+            - link "Mecklenburg-Vorpommern" [ref=e69] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/mv
+          - listitem [ref=e70]:
+            - link "Niedersachsen" [ref=e71] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/ni
+          - listitem [ref=e72]:
+            - link "Nordrhein-Westfalen" [ref=e73] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/nw
+          - listitem [ref=e74]:
+            - link "Rheinland-Pfalz" [ref=e75] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/rp
+          - listitem [ref=e76]:
+            - link "Saarland" [ref=e77] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sl
+          - listitem [ref=e78]:
+            - link "Sachsen" [ref=e79] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sn
+          - listitem [ref=e80]:
+            - link "Sachsen-Anhalt" [ref=e81] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/st
+          - listitem [ref=e82]:
+            - link "Schleswig-Holstein" [ref=e83] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sh
+          - listitem [ref=e84]:
+            - link "Thüringen" [ref=e85] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/th
+      - generic [ref=e86]:
+        - paragraph [ref=e87]:
+          - text: Würden Sie den Test
+          - emphasis [ref=e88]: Leben in Deutschland
+          - text: bestehen?
+        - link "Zur Bundesland-Auswahl →" [ref=e89] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/test
+          - generic [ref=e90]:
+            - text: Zur Bundesland-Auswahl
+            - generic [ref=e91]: →
+      - generic [ref=e92]:
+        - generic [ref=e97]:
+          - img [ref=e99] [cursor=pointer]
+          - text: Frage № 181
+        - generic [ref=e102]:
+          - 'heading "Frage № 181: Was wollte Willy Brandt mit seinem Kniefall 1970 im ehemaligen jüdischen Ghetto in Warschau ausdrücken?" [level=3] [ref=e103]'
+          - img "Willy Brandt kniet auf Stufen vor einem Blumenkranz. Im Hintergrund sind viele Zuschauer zu sehen" [ref=e105]
+          - generic [ref=e106]:
+            - generic [ref=e107]:
+              - generic [ref=e108]: —
+              - generic [ref=e109]: Er hat sich den ehemaligen Alliierten unterworfen.
+            - generic [ref=e110]:
+              - generic [ref=e111]: ✓
+              - generic [ref=e112]: Er bat Polen und die polnischen Juden um Vergebung.
+            - generic [ref=e113]:
+              - generic [ref=e114]: —
+              - generic [ref=e115]: Er zeigte seine Demut vor dem Warschauer Pakt.
+            - generic [ref=e116]:
+              - generic [ref=e117]: —
+              - generic [ref=e118]: Er sprach ein Gebet am Grab des Unbekannten Soldaten.
+      - generic [ref=e119]:
+        - generic [ref=e124]:
+          - img [ref=e126] [cursor=pointer]
+          - text: Frage № 182
+        - generic [ref=e129]:
+          - 'heading "Frage № 182: Wie heißt das jüdische Gebetshaus?" [level=3] [ref=e130]'
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - generic [ref=e133]: —
+              - generic [ref=e134]: Basilika
+            - generic [ref=e135]:
+              - generic [ref=e136]: —
+              - generic [ref=e137]: Moschee
+            - generic [ref=e138]:
+              - generic [ref=e139]: ✓
+              - generic [ref=e140]: Synagoge
+            - generic [ref=e141]:
+              - generic [ref=e142]: —
+              - generic [ref=e143]: Kirche
+      - generic [ref=e144]:
+        - generic [ref=e149]:
+          - img [ref=e151] [cursor=pointer]
+          - text: Frage № 183
+        - generic [ref=e154]:
+          - 'heading "Frage № 183: Wann war in der Bundesrepublik Deutschland das „Wirtschaftswunder“?" [level=3] [ref=e155]'
+          - generic [ref=e156]:
+            - generic [ref=e157]:
+              - generic [ref=e158]: —
+              - generic [ref=e159]: 40er Jahre
+            - generic [ref=e160]:
+              - generic [ref=e161]: ✓
+              - generic [ref=e162]: 50er Jahre
+            - generic [ref=e163]:
+              - generic [ref=e164]: —
+              - generic [ref=e165]: 70er Jahre
+            - generic [ref=e166]:
+              - generic [ref=e167]: —
+              - generic [ref=e168]: 80er Jahre
+      - generic [ref=e169]:
+        - generic [ref=e174]:
+          - img [ref=e176] [cursor=pointer]
+          - text: Frage № 184
+        - generic [ref=e179]:
+          - 'heading "Frage № 184: Auf welcher rechtlichen Grundlage wurde der Staat Israel gegründet?" [level=3] [ref=e180]':
+            - 'link "Frage № 184: Auf welcher rechtlichen Grundlage wurde der Staat Israel gegründet?" [ref=e181] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-184-auf-welcher-rechtlichen-grundlage-wurde-der-staat-israel-gegruendet
+          - generic [ref=e182]:
+            - generic [ref=e183]:
+              - generic [ref=e184]: ✓
+              - generic [ref=e185]: eine Resolution der Vereinten Nationen
+            - generic [ref=e186]:
+              - generic [ref=e187]: —
+              - generic [ref=e188]: ein Beschluss des Zionistenkongresses
+            - generic [ref=e189]:
+              - generic [ref=e190]: —
+              - generic [ref=e191]: ein Vorschlag der Bundesregierung
+            - generic [ref=e192]:
+              - generic [ref=e193]: —
+              - generic [ref=e194]: ein Vorschlag der UdSSR
+      - generic [ref=e195]:
+        - generic [ref=e200]:
+          - img [ref=e202] [cursor=pointer]
+          - text: Frage № 185
+        - generic [ref=e205]:
+          - 'heading "Frage № 185: Wofür stand der Ausdruck „Eiserner Vorhang“? Für die Abschottung …" [level=3] [ref=e206]':
+            - 'link "Frage № 185: Wofür stand der Ausdruck „Eiserner Vorhang“? Für die Abschottung …" [ref=e207] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-185-wofuer-stand-der-ausdruck-eiserner-vorhang
+          - generic [ref=e208]:
+            - generic [ref=e209]:
+              - generic [ref=e210]: ✓
+              - generic [ref=e211]: des Warschauer Pakts gegen den Westen.
+            - generic [ref=e212]:
+              - generic [ref=e213]: —
+              - generic [ref=e214]: Norddeutschlands gegen Süddeutschland.
+            - generic [ref=e215]:
+              - generic [ref=e216]: —
+              - generic [ref=e217]: Nazi-Deutschlands gegen die Alliierten.
+            - generic [ref=e218]:
+              - generic [ref=e219]: —
+              - generic [ref=e220]: Europas gegen die USA.
+      - generic [ref=e223]:
+        - generic [ref=e228]:
+          - img [ref=e230] [cursor=pointer]
+          - text: Frage № 186
+        - generic [ref=e233]:
+          - 'heading "Frage № 186: Im Jahr 1953 gab es in der DDR einen Aufstand, an den lange Zeit in der Bundesrepublik Deutschland ein Feiertag erinnerte. Wann war das?" [level=3] [ref=e234]':
+            - 'link "Frage № 186: Im Jahr 1953 gab es in der DDR einen Aufstand, an den lange Zeit in der Bundesrepublik Deutschland ein Feiertag erinnerte. Wann war das?" [ref=e235] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-186-im-jahr-1953-gab-es-in-der-ddr-einen-aufstand-an-den-lange-zeit-in-der-bundesrepublik-deutschland-ein-feiertag-erinnerte
+          - generic [ref=e236]:
+            - generic [ref=e237]:
+              - generic [ref=e238]: —
+              - generic [ref=e239]: 1. Mai
+            - generic [ref=e240]:
+              - generic [ref=e241]: ✓
+              - generic [ref=e242]: 17. Juni
+            - generic [ref=e243]:
+              - generic [ref=e244]: —
+              - generic [ref=e245]: 20. Juli
+            - generic [ref=e246]:
+              - generic [ref=e247]: —
+              - generic [ref=e248]: 9. November
+      - generic [ref=e249]:
+        - generic [ref=e254]:
+          - img [ref=e256] [cursor=pointer]
+          - text: Frage № 187
+        - generic [ref=e259]:
+          - 'heading "Frage № 187: Welcher deutsche Staat hatte eine schwarz-rot-goldene Flagge mit Hammer, Zirkel und Ährenkranz?" [level=3] [ref=e260]'
+          - img "Schwarz-rot-goldene Flagge mit Hammer, Zirkel und Ährenkranz" [ref=e262]
+          - generic [ref=e263]:
+            - generic [ref=e264]:
+              - generic [ref=e265]: —
+              - generic [ref=e266]: Preußen
+            - generic [ref=e267]:
+              - generic [ref=e268]: —
+              - generic [ref=e269]: Bundesrepublik Deutschland
+            - generic [ref=e270]:
+              - generic [ref=e271]: ✓
+              - generic [ref=e272]: DDR
+            - generic [ref=e273]:
+              - generic [ref=e274]: —
+              - generic [ref=e275]: „Drittes Reich“
+      - generic [ref=e276]:
+        - generic [ref=e281]:
+          - img [ref=e283] [cursor=pointer]
+          - text: Frage № 188
+        - generic [ref=e286]:
+          - 'heading "Frage № 188: In welchem Jahr wurde die Mauer in Berlin gebaut?" [level=3] [ref=e287]':
+            - 'link "Frage № 188: In welchem Jahr wurde die Mauer in Berlin gebaut?" [ref=e288] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-188-in-welchem-jahr-wurde-die-mauer-in-berlin-gebaut
+          - generic [ref=e289]:
+            - generic [ref=e290]:
+              - generic [ref=e291]: —
+              - generic [ref=e292]: "1953"
+            - generic [ref=e293]:
+              - generic [ref=e294]: —
+              - generic [ref=e295]: "1956"
+            - generic [ref=e296]:
+              - generic [ref=e297]: —
+              - generic [ref=e298]: "1959"
+            - generic [ref=e299]:
+              - generic [ref=e300]: ✓
+              - generic [ref=e301]: "1961"
+      - generic [ref=e302]:
+        - generic [ref=e307]:
+          - img [ref=e309] [cursor=pointer]
+          - text: Frage № 189
+        - generic [ref=e312]:
+          - 'heading "Frage № 189: Wann baute die DDR die Mauer in Berlin?" [level=3] [ref=e313]'
+          - generic [ref=e314]:
+            - generic [ref=e315]:
+              - generic [ref=e316]: —
+              - generic [ref=e317]: "1919"
+            - generic [ref=e318]:
+              - generic [ref=e319]: —
+              - generic [ref=e320]: "1933"
+            - generic [ref=e321]:
+              - generic [ref=e322]: ✓
+              - generic [ref=e323]: "1961"
+            - generic [ref=e324]:
+              - generic [ref=e325]: —
+              - generic [ref=e326]: "1990"
+      - generic [ref=e327]:
+        - generic [ref=e332]:
+          - img [ref=e334] [cursor=pointer]
+          - text: Frage № 190
+        - generic [ref=e337]:
+          - 'heading "Frage № 190: Was bedeutet die Abkürzung DDR?" [level=3] [ref=e338]'
+          - generic [ref=e339]:
+            - generic [ref=e340]:
+              - generic [ref=e341]: —
+              - generic [ref=e342]: Dritter Deutscher Rundfunk
+            - generic [ref=e343]:
+              - generic [ref=e344]: —
+              - generic [ref=e345]: Die Deutsche Republik
+            - generic [ref=e346]:
+              - generic [ref=e347]: —
+              - generic [ref=e348]: Dritte Deutsche Republik
+            - generic [ref=e349]:
+              - generic [ref=e350]: ✓
+              - generic [ref=e351]: Deutsche Demokratische Republik
+      - generic [ref=e352]:
+        - generic [ref=e357]:
+          - img [ref=e359] [cursor=pointer]
+          - text: Frage № 191
+        - generic [ref=e362]:
+          - 'heading "Frage № 191: Wann wurde die Mauer in Berlin für alle geöffnet?" [level=3] [ref=e363]'
+          - generic [ref=e364]:
+            - generic [ref=e365]:
+              - generic [ref=e366]: —
+              - generic [ref=e367]: "1987"
+            - generic [ref=e368]:
+              - generic [ref=e369]: ✓
+              - generic [ref=e370]: "1989"
+            - generic [ref=e371]:
+              - generic [ref=e372]: —
+              - generic [ref=e373]: "1992"
+            - generic [ref=e374]:
+              - generic [ref=e375]: —
+              - generic [ref=e376]: "1995"
+      - generic [ref=e377]:
+        - generic [ref=e382]:
+          - img [ref=e384] [cursor=pointer]
+          - text: Frage № 192
+        - generic [ref=e387]:
+          - 'heading "Frage № 192: Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?" [level=3] [ref=e388]':
+            - 'link "Frage № 192: Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?" [ref=e389] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-192-welches-heutige-deutsche-bundesland-gehoerte-frueher-zum-gebiet-der-ddr
+          - generic [ref=e390]:
+            - generic [ref=e391]:
+              - generic [ref=e392]: ✓
+              - generic [ref=e393]: Brandenburg
+            - generic [ref=e394]:
+              - generic [ref=e395]: —
+              - generic [ref=e396]: Bayern
+            - generic [ref=e397]:
+              - generic [ref=e398]: —
+              - generic [ref=e399]: Saarland
+            - generic [ref=e400]:
+              - generic [ref=e401]: —
+              - generic [ref=e402]: Hessen
+      - generic [ref=e403]:
+        - generic [ref=e408]:
+          - img [ref=e410] [cursor=pointer]
+          - text: Frage № 193
+        - generic [ref=e413]:
+          - 'heading "Frage № 193: Von 1961 bis 1989 war Berlin …" [level=3] [ref=e414]'
+          - generic [ref=e415]:
+            - generic [ref=e416]:
+              - generic [ref=e417]: —
+              - generic [ref=e418]: ohne Bürgermeister.
+            - generic [ref=e419]:
+              - generic [ref=e420]: —
+              - generic [ref=e421]: ein eigener Staat.
+            - generic [ref=e422]:
+              - generic [ref=e423]: ✓
+              - generic [ref=e424]: durch eine Mauer geteilt.
+            - generic [ref=e425]:
+              - generic [ref=e426]: —
+              - generic [ref=e427]: nur mit dem Flugzeug erreichbar.
+      - generic [ref=e428]:
+        - generic [ref=e433]:
+          - img [ref=e435] [cursor=pointer]
+          - text: Frage № 194
+        - generic [ref=e438]:
+          - 'heading "Frage № 194: Am 3. Oktober feiert man in Deutschland den Tag der Deutschen …" [level=3] [ref=e439]'
+          - generic [ref=e440]:
+            - generic [ref=e441]:
+              - generic [ref=e442]: ✓
+              - generic [ref=e443]: Einheit.
+            - generic [ref=e444]:
+              - generic [ref=e445]: —
+              - generic [ref=e446]: Nation.
+            - generic [ref=e447]:
+              - generic [ref=e448]: —
+              - generic [ref=e449]: Bundesländer.
+            - generic [ref=e450]:
+              - generic [ref=e451]: —
+              - generic [ref=e452]: Städte.
+      - generic [ref=e453]:
+        - generic [ref=e458]:
+          - img [ref=e460] [cursor=pointer]
+          - text: Frage № 195
+        - generic [ref=e463]:
+          - 'heading "Frage № 195: Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?" [level=3] [ref=e464]':
+            - 'link "Frage № 195: Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?" [ref=e465] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-195-welches-heutige-deutsche-bundesland-gehoerte-frueher-zum-gebiet-der-ddr
+          - generic [ref=e466]:
+            - generic [ref=e467]:
+              - generic [ref=e468]: —
+              - generic [ref=e469]: Hessen
+            - generic [ref=e470]:
+              - generic [ref=e471]: ✓
+              - generic [ref=e472]: Sachsen-Anhalt
+            - generic [ref=e473]:
+              - generic [ref=e474]: —
+              - generic [ref=e475]: Nordrhein-Westfalen
+            - generic [ref=e476]:
+              - generic [ref=e477]: —
+              - generic [ref=e478]: Saarland
+      - generic [ref=e479]:
+        - generic [ref=e484]:
+          - img [ref=e486] [cursor=pointer]
+          - text: Frage № 196
+        - generic [ref=e489]:
+          - 'heading "Frage № 196: Warum nennt man die Zeit im Herbst 1989 in der DDR „Die Wende“? In dieser Zeit veränderte sich die DDR politisch …" [level=3] [ref=e490]'
+          - generic [ref=e491]:
+            - generic [ref=e492]:
+              - generic [ref=e493]: ✓
+              - generic [ref=e494]: von einer Diktatur zur Demokratie.
+            - generic [ref=e495]:
+              - generic [ref=e496]: —
+              - generic [ref=e497]: von einer liberalen Marktwirtschaft zum Sozialismus.
+            - generic [ref=e498]:
+              - generic [ref=e499]: —
+              - generic [ref=e500]: von einer Monarchie zur Sozialdemokratie.
+            - generic [ref=e501]:
+              - generic [ref=e502]: —
+              - generic [ref=e503]: von einem religiösen Staat zu einem kommunistischen Staat.
+      - generic [ref=e504]:
+        - generic [ref=e509]:
+          - img [ref=e511] [cursor=pointer]
+          - text: Frage № 197
+        - generic [ref=e514]:
+          - 'heading "Frage № 197: Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?" [level=3] [ref=e515]':
+            - 'link "Frage № 197: Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?" [ref=e516] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-197-welches-heutige-deutsche-bundesland-gehoerte-frueher-zum-gebiet-der-ddr
+          - generic [ref=e517]:
+            - generic [ref=e518]:
+              - generic [ref=e519]: ✓
+              - generic [ref=e520]: Thüringen
+            - generic [ref=e521]:
+              - generic [ref=e522]: —
+              - generic [ref=e523]: Hessen
+            - generic [ref=e524]:
+              - generic [ref=e525]: —
+              - generic [ref=e526]: Bayern
+            - generic [ref=e527]:
+              - generic [ref=e528]: —
+              - generic [ref=e529]: Bremen
+      - generic [ref=e530]:
+        - generic [ref=e535]:
+          - img [ref=e537] [cursor=pointer]
+          - text: Frage № 198
+        - generic [ref=e540]:
+          - 'heading "Frage № 198: Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?" [level=3] [ref=e541]':
+            - 'link "Frage № 198: Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?" [ref=e542] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-198-welches-heutige-deutsche-bundesland-gehoerte-frueher-zum-gebiet-der-ddr
+          - generic [ref=e543]:
+            - generic [ref=e544]:
+              - generic [ref=e545]: —
+              - generic [ref=e546]: Bayern
+            - generic [ref=e547]:
+              - generic [ref=e548]: —
+              - generic [ref=e549]: Niedersachsen
+            - generic [ref=e550]:
+              - generic [ref=e551]: ✓
+              - generic [ref=e552]: Sachsen
+            - generic [ref=e553]:
+              - generic [ref=e554]: —
+              - generic [ref=e555]: Baden-Württemberg
+      - generic [ref=e556]:
+        - generic [ref=e561]:
+          - img [ref=e563] [cursor=pointer]
+          - text: Frage № 199
+        - generic [ref=e566]:
+          - 'heading "Frage № 199: Mit der Abkürzung „Stasi“ meinte man in der DDR …" [level=3] [ref=e567]':
+            - 'link "Frage № 199: Mit der Abkürzung „Stasi“ meinte man in der DDR …" [ref=e568] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-199-mit-der-abkuerzung-stasi-meinte-man-in-der-ddr
+          - generic [ref=e569]:
+            - generic [ref=e570]:
+              - generic [ref=e571]: —
+              - generic [ref=e572]: das Parlament.
+            - generic [ref=e573]:
+              - generic [ref=e574]: ✓
+              - generic [ref=e575]: das Ministerium für Staatssicherheit.
+            - generic [ref=e576]:
+              - generic [ref=e577]: —
+              - generic [ref=e578]: eine regierende Partei.
+            - generic [ref=e579]:
+              - generic [ref=e580]: —
+              - generic [ref=e581]: das Ministerium für Volksbildung.
+      - generic [ref=e582]:
+        - generic [ref=e587]:
+          - img [ref=e589] [cursor=pointer]
+          - text: Frage № 200
+        - generic [ref=e592]:
+          - 'heading "Frage № 200: Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?" [level=3] [ref=e593]':
+            - 'link "Frage № 200: Welches heutige deutsche Bundesland gehörte früher zum Gebiet der DDR?" [ref=e594] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-200-welches-heutige-deutsche-bundesland-gehoerte-frueher-zum-gebiet-der-ddr
+          - generic [ref=e595]:
+            - generic [ref=e596]:
+              - generic [ref=e597]: —
+              - generic [ref=e598]: Hessen
+            - generic [ref=e599]:
+              - generic [ref=e600]: —
+              - generic [ref=e601]: Schleswig-Holstein
+            - generic [ref=e602]:
+              - generic [ref=e603]: ✓
+              - generic [ref=e604]: Mecklenburg-Vorpommern
+            - generic [ref=e605]:
+              - generic [ref=e606]: —
+              - generic [ref=e607]: Saarland
+      - generic [ref=e608]:
+        - generic [ref=e613]:
+          - img [ref=e615] [cursor=pointer]
+          - text: Frage № 201
+        - generic [ref=e618]:
+          - 'heading "Frage № 201: Welche der folgenden Auflistungen enthält nur Bundesländer, die zum Gebiet der früheren DDR gehörten?" [level=3] [ref=e619]':
+            - 'link "Frage № 201: Welche der folgenden Auflistungen enthält nur Bundesländer, die zum Gebiet der früheren DDR gehörten?" [ref=e620] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-201-welche-der-folgenden-auflistungen-enthaelt-nur-bundeslaender-die-zum-gebiet-der-frueheren-ddr-gehoerten
+          - generic [ref=e621]:
+            - generic [ref=e622]:
+              - generic [ref=e623]: —
+              - generic [ref=e624]: Niedersachsen, Nordrhein-Westfalen, Hessen, Schleswig-Holstein, Brandenburg
+            - generic [ref=e625]:
+              - generic [ref=e626]: ✓
+              - generic [ref=e627]: Mecklenburg-Vorpommern, Brandenburg, Sachsen, Sachsen-Anhalt, Thüringen
+            - generic [ref=e628]:
+              - generic [ref=e629]: —
+              - generic [ref=e630]: Bayern, Baden-Württemberg, Rheinland-Pfalz, Thüringen, Sachsen
+            - generic [ref=e631]:
+              - generic [ref=e632]: —
+              - generic [ref=e633]: Sachsen, Thüringen, Hessen, Niedersachsen, Brandenburg
+      - generic [ref=e634]:
+        - generic [ref=e639]:
+          - img [ref=e641] [cursor=pointer]
+          - text: Frage № 202
+        - generic [ref=e644]:
+          - 'heading "Frage № 202: Zu wem gehörte die DDR im „Kalten Krieg“?" [level=3] [ref=e645]'
+          - generic [ref=e646]:
+            - generic [ref=e647]:
+              - generic [ref=e648]: —
+              - generic [ref=e649]: zu den Westmächten
+            - generic [ref=e650]:
+              - generic [ref=e651]: ✓
+              - generic [ref=e652]: zum Warschauer Pakt
+            - generic [ref=e653]:
+              - generic [ref=e654]: —
+              - generic [ref=e655]: zur NATO
+            - generic [ref=e656]:
+              - generic [ref=e657]: —
+              - generic [ref=e658]: zu den blockfreien Staaten
+      - generic [ref=e659]:
+        - generic [ref=e664]:
+          - img [ref=e666] [cursor=pointer]
+          - text: Frage № 203
+        - generic [ref=e669]:
+          - 'heading "Frage № 203: Wie hieß das Wirtschaftssystem der DDR?" [level=3] [ref=e670]':
+            - 'link "Frage № 203: Wie hieß das Wirtschaftssystem der DDR?" [ref=e671] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-203-wie-hiess-das-wirtschaftssystem-der-ddr
+          - generic [ref=e672]:
+            - generic [ref=e673]:
+              - generic [ref=e674]: —
+              - generic [ref=e675]: Marktwirtschaft
+            - generic [ref=e676]:
+              - generic [ref=e677]: ✓
+              - generic [ref=e678]: Planwirtschaft
+            - generic [ref=e679]:
+              - generic [ref=e680]: —
+              - generic [ref=e681]: Angebot und Nachfrage
+            - generic [ref=e682]:
+              - generic [ref=e683]: —
+              - generic [ref=e684]: Kapitalismus
+      - generic [ref=e685]:
+        - generic [ref=e690]:
+          - img [ref=e692] [cursor=pointer]
+          - text: Frage № 204
+        - generic [ref=e695]:
+          - 'heading "Frage № 204: Wie wurden die Bundesrepublik Deutschland und die DDR zu einem Staat?" [level=3] [ref=e696]':
+            - 'link "Frage № 204: Wie wurden die Bundesrepublik Deutschland und die DDR zu einem Staat?" [ref=e697] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-204-wie-wurden-die-bundesrepublik-deutschland-und-die-ddr-zu-einem-staat
+          - generic [ref=e698]:
+            - generic [ref=e699]:
+              - generic [ref=e700]: —
+              - generic [ref=e701]: Die Bundesrepublik Deutschland hat die DDR besetzt.
+            - generic [ref=e702]:
+              - generic [ref=e703]: ✓
+              - generic [ref=e704]: Die heutigen fünf östlichen Bundesländer sind der Bundesrepublik Deutschland beigetreten.
+            - generic [ref=e705]:
+              - generic [ref=e706]: —
+              - generic [ref=e707]: Die westlichen Bundesländer sind der DDR beigetreten.
+            - generic [ref=e708]:
+              - generic [ref=e709]: —
+              - generic [ref=e710]: Die DDR hat die Bundesrepublik Deutschland besetzt.
+      - generic [ref=e711]:
+        - generic [ref=e716]:
+          - img [ref=e718] [cursor=pointer]
+          - text: Frage № 205
+        - generic [ref=e721]:
+          - 'heading "Frage № 205: Mit dem Beitritt der DDR zur Bundesrepublik Deutschland gehören die neuen Bundesländer nun auch …" [level=3] [ref=e722]':
+            - 'link "Frage № 205: Mit dem Beitritt der DDR zur Bundesrepublik Deutschland gehören die neuen Bundesländer nun auch …" [ref=e723] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-205-mit-dem-beitritt-der-ddr-zur-bundesrepublik-deutschland-gehoeren-die-neuen-bundeslaender-nun-auch
+          - generic [ref=e724]:
+            - generic [ref=e725]:
+              - generic [ref=e726]: ✓
+              - generic [ref=e727]: zur Europäischen Union.
+            - generic [ref=e728]:
+              - generic [ref=e729]: —
+              - generic [ref=e730]: zum Warschauer Pakt.
+            - generic [ref=e731]:
+              - generic [ref=e732]: —
+              - generic [ref=e733]: zur OPEC.
+            - generic [ref=e734]:
+              - generic [ref=e735]: —
+              - generic [ref=e736]: zur Europäischen Verteidigungsgemeinschaft.
+      - generic [ref=e737]:
+        - generic [ref=e742]:
+          - img [ref=e744] [cursor=pointer]
+          - text: Frage № 206
+        - generic [ref=e747]:
+          - 'heading "Frage № 206: Woran erinnern die sogenannten „Stolpersteine“ in Deutschland?" [level=3] [ref=e748]'
+          - generic [ref=e749]:
+            - generic [ref=e750]:
+              - generic [ref=e751]: —
+              - generic [ref=e752]: an berühmte deutsche Politikerinnen und Politiker
+            - generic [ref=e753]:
+              - generic [ref=e754]: ✓
+              - generic [ref=e755]: an die Opfer des Nationalsozialismus
+            - generic [ref=e756]:
+              - generic [ref=e757]: —
+              - generic [ref=e758]: an Verkehrstote
+            - generic [ref=e759]:
+              - generic [ref=e760]: —
+              - generic [ref=e761]: an bekannte jüdische Musiker
+      - generic [ref=e762]:
+        - generic [ref=e767]:
+          - img [ref=e769] [cursor=pointer]
+          - text: Frage № 207
+        - generic [ref=e772]:
+          - 'heading "Frage № 207: In welchem Militärbündnis war die DDR Mitglied?" [level=3] [ref=e773]'
+          - generic [ref=e774]:
+            - generic [ref=e775]:
+              - generic [ref=e776]: —
+              - generic [ref=e777]: in der NATO
+            - generic [ref=e778]:
+              - generic [ref=e779]: —
+              - generic [ref=e780]: im Rheinbund
+            - generic [ref=e781]:
+              - generic [ref=e782]: ✓
+              - generic [ref=e783]: im Warschauer Pakt
+            - generic [ref=e784]:
+              - generic [ref=e785]: —
+              - generic [ref=e786]: im Europabündnis
+      - generic [ref=e787]:
+        - generic [ref=e792]:
+          - img [ref=e794] [cursor=pointer]
+          - text: Frage № 208
+        - generic [ref=e797]:
+          - 'heading "Frage № 208: Was war die „Stasi“?" [level=3] [ref=e798]'
+          - generic [ref=e799]:
+            - generic [ref=e800]:
+              - generic [ref=e801]: —
+              - generic [ref=e802]: der Geheimdienst im „Dritten Reich“
+            - generic [ref=e803]:
+              - generic [ref=e804]: —
+              - generic [ref=e805]: eine berühmte deutsche Gedenkstätte
+            - generic [ref=e806]:
+              - generic [ref=e807]: ✓
+              - generic [ref=e808]: der Geheimdienst der DDR
+            - generic [ref=e809]:
+              - generic [ref=e810]: —
+              - generic [ref=e811]: ein deutscher Sportverein während des Zweiten Weltkrieges
+      - generic [ref=e812]:
+        - generic [ref=e817]:
+          - img [ref=e819] [cursor=pointer]
+          - text: Frage № 209
+        - generic [ref=e822]:
+          - 'heading "Frage № 209: Welches war das Wappen der Deutschen Demokratischen Republik?" [level=3] [ref=e823]':
+            - 'link "Frage № 209: Welches war das Wappen der Deutschen Demokratischen Republik?" [ref=e824] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-209-welches-war-das-wappen-der-deutschen-demokratischen-republik
+          - 'img "Vier Symbole: 1) einköpfiger Adler auf einem (gelben) Schild. 2) Zwei vereinigte Symbole. 3) stilisiertes Tatzenkreuz. 4) Ährenkranz mit Hammer und Zirkel" [ref=e826]'
+          - generic [ref=e827]:
+            - generic [ref=e828]:
+              - generic [ref=e829]: —
+              - generic [ref=e830]: "1"
+            - generic [ref=e831]:
+              - generic [ref=e832]: —
+              - generic [ref=e833]: "2"
+            - generic [ref=e834]:
+              - generic [ref=e835]: —
+              - generic [ref=e836]: "3"
+            - generic [ref=e837]:
+              - generic [ref=e838]: ✓
+              - generic [ref=e839]: "4"
+      - generic [ref=e840]:
+        - generic [ref=e845]:
+          - img [ref=e847] [cursor=pointer]
+          - text: Frage № 210
+        - generic [ref=e850]:
+          - 'heading "Frage № 210: Was ereignete sich am 17. Juni 1953 in der DDR?" [level=3] [ref=e851]':
+            - 'link "Frage № 210: Was ereignete sich am 17. Juni 1953 in der DDR?" [ref=e852] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-210-was-ereignete-sich-am-17-juni-1953-in-der-ddr
+          - generic [ref=e853]:
+            - generic [ref=e854]:
+              - generic [ref=e855]: —
+              - generic [ref=e856]: der feierliche Beitritt zum Warschauer Pakt
+            - generic [ref=e857]:
+              - generic [ref=e858]: ✓
+              - generic [ref=e859]: landesweite Streiks und ein Volksaufstand
+            - generic [ref=e860]:
+              - generic [ref=e861]: —
+              - generic [ref=e862]: der 1. SED-Parteitag
+            - generic [ref=e863]:
+              - generic [ref=e864]: —
+              - generic [ref=e865]: der erste Besuch Fidel Castros
+      - generic [ref=e866]:
+        - paragraph [ref=e867]:
+          - text: Würden Sie den Test
+          - emphasis [ref=e868]: Leben in Deutschland
+          - text: bestehen?
+        - link "Zur Bundesland-Auswahl →" [ref=e869] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/test
+          - generic [ref=e870]:
+            - text: Zur Bundesland-Auswahl
+            - generic [ref=e871]: →
+  - list [ref=e874]:
+    - listitem [ref=e875]:
+      - link "Leben in Deutschland" [ref=e876] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu
+    - listitem [ref=e877]: ›
+    - listitem [ref=e878]:
+      - link "Fragenkatalog" [ref=e879] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/fragenkatalog
+    - listitem [ref=e880]: ›
+    - listitem [ref=e881]: Fragenkatalog, Seite 7
+  - generic [ref=e883]:
+    - paragraph [ref=e885]:
+      - text: © 2013 — 2026
+      - link "lebenindeutschland.eu" [ref=e886] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu
+      - text: —
+      - link "Impressum" [ref=e887] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/impressum
+      - text: —
+      - link "Datenschutz" [ref=e888] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/datenschutz
+      - text: —
+      - link "Utiq verwalten" [ref=e889] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/utiq-verwalten
+    - paragraph [ref=e891]: Seit April 2013 müssen Bewerber für die deutsche Staatsbürgerschaft den Test Leben in Deutschland erfolgreich bestehen. Die kostenlose Online-Lernplattform lebenindeutschland.eu bietet Ihnen eine kostenlose Möglichkeit zur zeitlich unbegrenzten Übung.
+    - generic [ref=e892]:
+      - generic [ref=e893]:
+        - heading "Test Leben in Deutschland" [level=3] [ref=e894]:
+          - link "Test Leben in Deutschland" [ref=e895] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/test
+        - list [ref=e896]:
+          - listitem [ref=e897]:
+            - link "Test für Baden-Württemberg" [ref=e898] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/bw
+          - listitem [ref=e899]:
+            - link "Test für Bayern" [ref=e900] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/by
+          - listitem [ref=e901]:
+            - link "Test für Berlin" [ref=e902] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/be
+          - listitem [ref=e903]:
+            - link "Test für Brandenburg" [ref=e904] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/bb
+          - listitem [ref=e905]:
+            - link "Test für Bremen" [ref=e906] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/hb
+          - listitem [ref=e907]:
+            - link "Test für Hamburg" [ref=e908] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/hh
+          - listitem [ref=e909]:
+            - link "Test für Hessen" [ref=e910] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/he
+          - listitem [ref=e911]:
+            - link "Test für Mecklenburg-Vorpommern" [ref=e912] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/mv
+          - listitem [ref=e913]:
+            - link "Test für Niedersachsen" [ref=e914] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/ni
+          - listitem [ref=e915]:
+            - link "Test für Nordrhein-Westfalen" [ref=e916] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/nw
+          - listitem [ref=e917]:
+            - link "Test für Rheinland-Pfalz" [ref=e918] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/rp
+          - listitem [ref=e919]:
+            - link "Test für das Saarland" [ref=e920] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sl
+          - listitem [ref=e921]:
+            - link "Test für Sachsen" [ref=e922] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sn
+          - listitem [ref=e923]:
+            - link "Test für Sachsen-Anhalt" [ref=e924] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/st
+          - listitem [ref=e925]:
+            - link "Test für Schleswig-Holstein" [ref=e926] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sh
+          - listitem [ref=e927]:
+            - link "Test für Thüringen" [ref=e928] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/th
+      - generic [ref=e929]:
+        - heading "Fragenkatalog" [level=3] [ref=e930]:
+          - link "Fragenkatalog" [ref=e931] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/fragenkatalog
+        - list [ref=e932]:
+          - listitem [ref=e933]:
+            - link "Deutschland" [ref=e934] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog
+          - listitem [ref=e935]:
+            - link "Fragen für Baden-Württemberg" [ref=e936] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bw
+          - listitem [ref=e937]:
+            - link "Fragen für Bayern" [ref=e938] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/by
+          - listitem [ref=e939]:
+            - link "Fragen für Berlin" [ref=e940] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/be
+          - listitem [ref=e941]:
+            - link "Fragen für Brandenburg" [ref=e942] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bb
+          - listitem [ref=e943]:
+            - link "Fragen für Bremen" [ref=e944] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hb
+          - listitem [ref=e945]:
+            - link "Fragen für Hamburg" [ref=e946] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hh
+          - listitem [ref=e947]:
+            - link "Fragen für Hessen" [ref=e948] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/he
+          - listitem [ref=e949]:
+            - link "Fragen für Mecklenburg-Vorpommern" [ref=e950] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/mv
+          - listitem [ref=e951]:
+            - link "Fragen für Niedersachsen" [ref=e952] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/ni
+          - listitem [ref=e953]:
+            - link "Fragen für Nordrhein-Westfalen" [ref=e954] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/nw
+          - listitem [ref=e955]:
+            - link "Fragen für Rheinland-Pfalz" [ref=e956] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/rp
+          - listitem [ref=e957]:
+            - link "Fragen für das Saarland" [ref=e958] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sl
+          - listitem [ref=e959]:
+            - link "Fragen für Sachsen" [ref=e960] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sn
+          - listitem [ref=e961]:
+            - link "Fragen für Sachsen-Anhalt" [ref=e962] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/st
+          - listitem [ref=e963]:
+            - link "Fragen für Schleswig-Holstein" [ref=e964] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sh
+          - listitem [ref=e965]:
+            - link "Fragen für Thüringen" [ref=e966] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/th
+      - generic [ref=e967]:
+        - heading "Prüfstellen" [level=3] [ref=e968]:
+          - link "Prüfstellen" [ref=e969] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/pruefstellen
+        - list [ref=e970]:
+          - listitem [ref=e971]:
+            - link "Prüfstellen in Baden-Württemberg" [ref=e972] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/bw
+          - listitem [ref=e973]:
+            - link "Prüfstellen in Bayern" [ref=e974] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/by
+          - listitem [ref=e975]:
+            - link "Prüfstellen in Berlin" [ref=e976] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/be
+          - listitem [ref=e977]:
+            - link "Prüfstellen in Brandenburg" [ref=e978] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/bb
+          - listitem [ref=e979]:
+            - link "Prüfstellen in Bremen" [ref=e980] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/hb
+          - listitem [ref=e981]:
+            - link "Prüfstellen in Hamburg" [ref=e982] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/hh
+          - listitem [ref=e983]:
+            - link "Prüfstellen in Hessen" [ref=e984] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/he
+          - listitem [ref=e985]:
+            - link "Prüfstellen in Mecklenburg-Vorpommern" [ref=e986] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/mv
+          - listitem [ref=e987]:
+            - link "Prüfstellen in Niedersachsen" [ref=e988] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/ni
+          - listitem [ref=e989]:
+            - link "Prüfstellen in Nordrhein-Westfalen" [ref=e990] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/nw
+          - listitem [ref=e991]:
+            - link "Prüfstellen in Rheinland-Pfalz" [ref=e992] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/rp
+          - listitem [ref=e993]:
+            - link "Prüfstellen im Saarland" [ref=e994] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sl
+          - listitem [ref=e995]:
+            - link "Prüfstellen in Sachsen" [ref=e996] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sn
+          - listitem [ref=e997]:
+            - link "Prüfstellen in Sachsen-Anhalt" [ref=e998] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/st
+          - listitem [ref=e999]:
+            - link "Prüfstellen in Schleswig-Holstein" [ref=e1000] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sh
+          - listitem [ref=e1001]:
+            - link "Prüfstellen in Thüringen" [ref=e1002] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/th
+  - generic:
+    - status
+  - generic:
+    - generic:
+      - dialog "Privacy and cookie preferences":
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - img "Publisher Logo"
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: your access to lebenindeutschland.eu
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Continue with ads
+                        - paragraph:
+                          - generic:
+                            - text: Use this offer as usual with usage-based advertising and tracking under the terms of our
+                            - link "User Agreement":
+                              - /url: "#"
+                            - text: .
+                        - generic:
+                          - button "Accept all settings and proceed": ACCEPT ALL
+                        - paragraph:
+                          - text: You can find details in our
+                          - link "Privacy Center.":
+                            - /url: "#"
+                      - generic:
+                        - generic: ...or subscribe to Freechoice
+                        - paragraph: One login – many tracking-free offers! Online privacy here and wherever you are in the Freechoice offer.
+                        - generic:
+                          - button "SUBSCRIBE NOW"
+                        - paragraph:
+                          - text: Already a subscriber?
+                          - link "Login":
+                            - /url: "#"
+                            - text: LOGIN
+                  - generic:
+                    - generic:
+                      - text: What does "continue reading for free" mean?
+                      - text: To provide you with our journalistic content as part of the free version, we finance this service through the display of usage-based advertising with the help of our (264)
+                      - link "partners":
+                        - /url: "#"
+                      - text: . This also includes the use of a so-called "TC String" - a digital identifier that stores your advertising settings and enables compliance with your data protection preferences. In this context, we deploy cookies, device IDs, and similar tracking technologies and transmit
+                      - link "personal data":
+                        - /url: "#"
+                      - text: to third-party providers. Your consent applies to this service only. Details can be found in the privacy policy and in the
+                      - link "Privacy Center":
+                        - /url: "#"
+                      - text: ", where you can also make individual settings. You have the right to withdraw your consent at any time. In this case, we hereby declare the extraordinary termination of the underlying user contract, conditionally suspended by the revocation of consent according to §327q paragraph 2 BGB."
+                  - generic:
+                    - list:
+                      - listitem:
+                        - generic:
+                          - button "Use mandatory services":
+                            - generic: Use mandatory services
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Store and/or access information on a device":
+                            - generic: Store and/or access information on a device
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Precise geolocation data, and identification through device scanning":
+                            - generic: Precise geolocation data, and identification through device scanning
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Personalised advertising and content, advertising and content measurement, audience research and services development":
+                            - generic: Personalised advertising and content, advertising and content measurement, audience research and services development
+                            - generic:
+                              - img
+                  - generic:
+                    - generic: Information on data transfer to the USA:Your data will only be transferred to the USA to the extent permitted by law.
+                - generic:
+                  - generic:
+                    - link "POLICY":
+                      - /url: https://www.lebenindeutschland.eu/impressum?&cmp-silent=1
+                  - generic:
+                    - link "IMPRINT":
+                      - /url: https://www.lebenindeutschland.eu/impressum?&cmp-silent=1

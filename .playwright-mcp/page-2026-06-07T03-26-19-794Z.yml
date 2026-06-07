@@ -1,0 +1,1011 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - 'link "Logo der Website Leben in Deutschland: diagonal verlaufende Farbstreifen in schwarz, rot, gold Einbürgerungstest Leben in Deutschland" [ref=e6] [cursor=pointer]':
+        - /url: https://www.lebenindeutschland.eu
+        - 'img "Logo der Website Leben in Deutschland: diagonal verlaufende Farbstreifen in schwarz, rot, gold" [ref=e7]'
+        - generic [ref=e8]:
+          - generic [ref=e9]: Einbürgerungstest
+          - generic [ref=e10]: Leben in Deutschland
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - link "Startseite Hier geht’s los" [ref=e13] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu
+            - text: Startseite
+            - generic [ref=e14]: Hier geht’s los
+          - link "Der Test mit Auswertung" [ref=e15] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/test
+            - text: Der Test
+            - generic [ref=e16]: mit Auswertung
+          - link "Fragen mit Antworten" [ref=e17] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/fragenkatalog
+            - text: Fragen
+            - generic [ref=e18]: mit Antworten
+        - link "Login Anmeldung" [ref=e20] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/login
+          - text: Login
+          - generic [ref=e21]: Anmeldung
+    - generic [ref=e23]:
+      - heading "Fragenkatalog zum Test Leben in Deutschland. Fragen 31 bis 60" [level=1] [ref=e24]
+      - heading "Alle Fragen mit Antworten" [level=2] [ref=e25]
+    - generic [ref=e26]:
+      - generic [ref=e30]:
+        - heading "Deutschland allgemein" [level=4] [ref=e31]
+        - list [ref=e32]:
+          - listitem [ref=e33]:
+            - link "1 – 30" [ref=e34] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/1
+          - listitem [ref=e35]: Fragen 31 – 60
+          - listitem [ref=e36]:
+            - link "61 – 90" [ref=e37] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/3
+          - listitem [ref=e38]:
+            - link "91 – 120" [ref=e39] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/4
+          - listitem [ref=e40]:
+            - link "121 – 150" [ref=e41] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/5
+          - listitem [ref=e42]:
+            - link "151 – 180" [ref=e43] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/6
+          - listitem [ref=e44]:
+            - link "181 – 210" [ref=e45] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/7
+          - listitem [ref=e46]:
+            - link "211 – 240" [ref=e47] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/8
+          - listitem [ref=e48]:
+            - link "241 – 270" [ref=e49] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/9
+          - listitem [ref=e50]:
+            - link "271 – 300" [ref=e51] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/10
+        - heading "Bundesland" [level=4] [ref=e52]
+        - list [ref=e53]:
+          - listitem [ref=e54]:
+            - link "Baden-Württemberg" [ref=e55] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bw
+          - listitem [ref=e56]:
+            - link "Bayern" [ref=e57] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/by
+          - listitem [ref=e58]:
+            - link "Berlin" [ref=e59] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/be
+          - listitem [ref=e60]:
+            - link "Brandenburg" [ref=e61] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bb
+          - listitem [ref=e62]:
+            - link "Bremen" [ref=e63] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hb
+          - listitem [ref=e64]:
+            - link "Hamburg" [ref=e65] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hh
+          - listitem [ref=e66]:
+            - link "Hessen" [ref=e67] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/he
+          - listitem [ref=e68]:
+            - link "Mecklenburg-Vorpommern" [ref=e69] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/mv
+          - listitem [ref=e70]:
+            - link "Niedersachsen" [ref=e71] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/ni
+          - listitem [ref=e72]:
+            - link "Nordrhein-Westfalen" [ref=e73] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/nw
+          - listitem [ref=e74]:
+            - link "Rheinland-Pfalz" [ref=e75] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/rp
+          - listitem [ref=e76]:
+            - link "Saarland" [ref=e77] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sl
+          - listitem [ref=e78]:
+            - link "Sachsen" [ref=e79] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sn
+          - listitem [ref=e80]:
+            - link "Sachsen-Anhalt" [ref=e81] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/st
+          - listitem [ref=e82]:
+            - link "Schleswig-Holstein" [ref=e83] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sh
+          - listitem [ref=e84]:
+            - link "Thüringen" [ref=e85] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/th
+      - generic [ref=e86]:
+        - paragraph [ref=e87]:
+          - text: Würden Sie den Test
+          - emphasis [ref=e88]: Leben in Deutschland
+          - text: bestehen?
+        - link "Zur Bundesland-Auswahl →" [ref=e89] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/test
+          - generic [ref=e90]:
+            - text: Zur Bundesland-Auswahl
+            - generic [ref=e91]: →
+      - generic [ref=e92]:
+        - generic [ref=e97]:
+          - img [ref=e99] [cursor=pointer]
+          - text: Frage № 31
+        - generic [ref=e102]:
+          - 'heading "Frage № 31: Die Zusammenarbeit von Parteien zur Bildung einer Regierung nennt man in Deutschland …" [level=3] [ref=e103]':
+            - 'link "Frage № 31: Die Zusammenarbeit von Parteien zur Bildung einer Regierung nennt man in Deutschland …" [ref=e104] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-31-die-zusammenarbeit-von-parteien-zur-bildung-einer-regierung-nennt-man-in-deutschland
+          - generic [ref=e105]:
+            - generic [ref=e106]:
+              - generic [ref=e107]: —
+              - generic [ref=e108]: Einheit.
+            - generic [ref=e109]:
+              - generic [ref=e110]: ✓
+              - generic [ref=e111]: Koalition.
+            - generic [ref=e112]:
+              - generic [ref=e113]: —
+              - generic [ref=e114]: Ministerium.
+            - generic [ref=e115]:
+              - generic [ref=e116]: —
+              - generic [ref=e117]: Fraktion.
+      - generic [ref=e118]:
+        - generic [ref=e123]:
+          - img [ref=e125] [cursor=pointer]
+          - text: Frage № 32
+        - generic [ref=e128]:
+          - 'heading "Frage № 32: Was ist keine staatliche Gewalt in Deutschland?" [level=3] [ref=e129]':
+            - 'link "Frage № 32: Was ist keine staatliche Gewalt in Deutschland?" [ref=e130] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-32-was-ist-keine-staatliche-gewalt-in-deutschland
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - generic [ref=e133]: —
+              - generic [ref=e134]: Gesetzgebung
+            - generic [ref=e135]:
+              - generic [ref=e136]: —
+              - generic [ref=e137]: Regierung
+            - generic [ref=e138]:
+              - generic [ref=e139]: ✓
+              - generic [ref=e140]: Presse
+            - generic [ref=e141]:
+              - generic [ref=e142]: —
+              - generic [ref=e143]: Rechtsprechung
+      - generic [ref=e144]:
+        - generic [ref=e149]:
+          - img [ref=e151] [cursor=pointer]
+          - text: Frage № 33
+        - generic [ref=e154]:
+          - 'heading "Frage № 33: Welche Aussage ist richtig? In Deutschland …" [level=3] [ref=e155]':
+            - 'link "Frage № 33: Welche Aussage ist richtig? In Deutschland …" [ref=e156] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-33-welche-aussage-ist-richtig-in-deutschland
+          - generic [ref=e157]:
+            - generic [ref=e158]:
+              - generic [ref=e159]: ✓
+              - generic [ref=e160]: sind Staat und Religionsgemeinschaften voneinander getrennt.
+            - generic [ref=e161]:
+              - generic [ref=e162]: —
+              - generic [ref=e163]: bilden die Religionsgemeinschaften den Staat.
+            - generic [ref=e164]:
+              - generic [ref=e165]: —
+              - generic [ref=e166]: ist der Staat abhängig von den Religionsgemeinschaften.
+            - generic [ref=e167]:
+              - generic [ref=e168]: —
+              - generic [ref=e169]: bilden Staat und Religionsgemeinschaften eine Einheit.
+      - generic [ref=e170]:
+        - generic [ref=e175]:
+          - img [ref=e177] [cursor=pointer]
+          - text: Frage № 34
+        - generic [ref=e180]:
+          - 'heading "Frage № 34: Was ist Deutschland nicht?" [level=3] [ref=e181]'
+          - generic [ref=e182]:
+            - generic [ref=e183]:
+              - generic [ref=e184]: —
+              - generic [ref=e185]: eine Demokratie
+            - generic [ref=e186]:
+              - generic [ref=e187]: —
+              - generic [ref=e188]: ein Rechtsstaat
+            - generic [ref=e189]:
+              - generic [ref=e190]: ✓
+              - generic [ref=e191]: eine Monarchie
+            - generic [ref=e192]:
+              - generic [ref=e193]: —
+              - generic [ref=e194]: ein Sozialstaat
+      - generic [ref=e195]:
+        - generic [ref=e200]:
+          - img [ref=e202] [cursor=pointer]
+          - text: Frage № 35
+        - generic [ref=e205]:
+          - 'heading "Frage № 35: Womit finanziert der deutsche Staat die Sozialversicherung?" [level=3] [ref=e206]'
+          - generic [ref=e207]:
+            - generic [ref=e208]:
+              - generic [ref=e209]: —
+              - generic [ref=e210]: Kirchensteuern
+            - generic [ref=e211]:
+              - generic [ref=e212]: ✓
+              - generic [ref=e213]: Sozialabgaben
+            - generic [ref=e214]:
+              - generic [ref=e215]: —
+              - generic [ref=e216]: Spendengeldern
+            - generic [ref=e217]:
+              - generic [ref=e218]: —
+              - generic [ref=e219]: Vereinsbeiträgen
+      - generic [ref=e222]:
+        - generic [ref=e227]:
+          - img [ref=e229] [cursor=pointer]
+          - text: Frage № 36
+        - generic [ref=e232]:
+          - 'heading "Frage № 36: Welche Maßnahme schafft in Deutschland soziale Sicherheit?" [level=3] [ref=e233]'
+          - generic [ref=e234]:
+            - generic [ref=e235]:
+              - generic [ref=e236]: ✓
+              - generic [ref=e237]: die Krankenversicherung
+            - generic [ref=e238]:
+              - generic [ref=e239]: —
+              - generic [ref=e240]: die Autoversicherung
+            - generic [ref=e241]:
+              - generic [ref=e242]: —
+              - generic [ref=e243]: die Gebäudeversicherung
+            - generic [ref=e244]:
+              - generic [ref=e245]: —
+              - generic [ref=e246]: die Haftpflichtversicherung
+      - generic [ref=e247]:
+        - generic [ref=e252]:
+          - img [ref=e254] [cursor=pointer]
+          - text: Frage № 37
+        - generic [ref=e257]:
+          - 'heading "Frage № 37: Wie werden die Regierungschefs / Regierungschefinnen der meisten Bundesländer in Deutschland genannt?" [level=3] [ref=e258]'
+          - generic [ref=e259]:
+            - generic [ref=e260]:
+              - generic [ref=e261]: —
+              - generic [ref=e262]: Erster Minister / Erste Ministerin
+            - generic [ref=e263]:
+              - generic [ref=e264]: —
+              - generic [ref=e265]: Premierminister / Premierministerin
+            - generic [ref=e266]:
+              - generic [ref=e267]: —
+              - generic [ref=e268]: Senator / Senatorin
+            - generic [ref=e269]:
+              - generic [ref=e270]: ✓
+              - generic [ref=e271]: Ministerpräsident / Ministerpräsidentin
+      - generic [ref=e272]:
+        - generic [ref=e277]:
+          - img [ref=e279] [cursor=pointer]
+          - text: Frage № 38
+        - generic [ref=e282]:
+          - 'heading "Frage № 38: Die Bundesrepublik Deutschland ist ein demokratischer und sozialer …" [level=3] [ref=e283]'
+          - generic [ref=e284]:
+            - generic [ref=e285]:
+              - generic [ref=e286]: —
+              - generic [ref=e287]: Staatenverbund.
+            - generic [ref=e288]:
+              - generic [ref=e289]: ✓
+              - generic [ref=e290]: Bundesstaat.
+            - generic [ref=e291]:
+              - generic [ref=e292]: —
+              - generic [ref=e293]: Staatenbund.
+            - generic [ref=e294]:
+              - generic [ref=e295]: —
+              - generic [ref=e296]: Zentralstaat.
+      - generic [ref=e297]:
+        - generic [ref=e302]:
+          - img [ref=e304] [cursor=pointer]
+          - text: Frage № 39
+        - generic [ref=e307]:
+          - 'heading "Frage № 39: Was hat jedes deutsche Bundesland?" [level=3] [ref=e308]':
+            - 'link "Frage № 39: Was hat jedes deutsche Bundesland?" [ref=e309] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-39-was-hat-jedes-deutsche-bundesland
+          - generic [ref=e310]:
+            - generic [ref=e311]:
+              - generic [ref=e312]: —
+              - generic [ref=e313]: einen eigenen Außenminister / eine eigene Außenministerin
+            - generic [ref=e314]:
+              - generic [ref=e315]: —
+              - generic [ref=e316]: eine eigene Währung
+            - generic [ref=e317]:
+              - generic [ref=e318]: —
+              - generic [ref=e319]: eine eigene Armee
+            - generic [ref=e320]:
+              - generic [ref=e321]: ✓
+              - generic [ref=e322]: eine eigene Regierung
+      - generic [ref=e323]:
+        - generic [ref=e328]:
+          - img [ref=e330] [cursor=pointer]
+          - text: Frage № 40
+        - generic [ref=e333]:
+          - 'heading "Frage № 40: Mit welchen Worten beginnt die deutsche Nationalhymne?" [level=3] [ref=e334]'
+          - generic [ref=e335]:
+            - generic [ref=e336]:
+              - generic [ref=e337]: —
+              - generic [ref=e338]: Völker, hört die Signale …
+            - generic [ref=e339]:
+              - generic [ref=e340]: ✓
+              - generic [ref=e341]: Einigkeit und Recht und Freiheit …
+            - generic [ref=e342]:
+              - generic [ref=e343]: —
+              - generic [ref=e344]: Freude schöner Götterfunken …
+            - generic [ref=e345]:
+              - generic [ref=e346]: —
+              - generic [ref=e347]: Deutschland einig Vaterland …
+      - generic [ref=e348]:
+        - generic [ref=e353]:
+          - img [ref=e355] [cursor=pointer]
+          - text: Frage № 41
+        - generic [ref=e358]:
+          - 'heading "Frage № 41: Warum gibt es in einer Demokratie mehr als eine Partei?" [level=3] [ref=e359]'
+          - generic [ref=e360]:
+            - generic [ref=e361]:
+              - generic [ref=e362]: ✓
+              - generic [ref=e363]: weil dadurch die unterschiedlichen Meinungen der Bürger und Bürgerinnen vertreten werden
+            - generic [ref=e364]:
+              - generic [ref=e365]: —
+              - generic [ref=e366]: damit Bestechung in der Politik begrenzt wird
+            - generic [ref=e367]:
+              - generic [ref=e368]: —
+              - generic [ref=e369]: um politische Demonstrationen zu verhindern
+            - generic [ref=e370]:
+              - generic [ref=e371]: —
+              - generic [ref=e372]: um wirtschaftlichen Wettbewerb anzuregen
+      - generic [ref=e373]:
+        - generic [ref=e378]:
+          - img [ref=e380] [cursor=pointer]
+          - text: Frage № 42
+        - generic [ref=e383]:
+          - 'heading "Frage № 42: Wer beschließt in Deutschland ein neues Gesetz?" [level=3] [ref=e384]':
+            - 'link "Frage № 42: Wer beschließt in Deutschland ein neues Gesetz?" [ref=e385] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-42-wer-beschliesst-in-deutschland-ein-neues-gesetz
+          - generic [ref=e386]:
+            - generic [ref=e387]:
+              - generic [ref=e388]: —
+              - generic [ref=e389]: die Regierung
+            - generic [ref=e390]:
+              - generic [ref=e391]: ✓
+              - generic [ref=e392]: das Parlament
+            - generic [ref=e393]:
+              - generic [ref=e394]: —
+              - generic [ref=e395]: die Gerichte
+            - generic [ref=e396]:
+              - generic [ref=e397]: —
+              - generic [ref=e398]: die Polizei
+      - generic [ref=e399]:
+        - generic [ref=e404]:
+          - img [ref=e406] [cursor=pointer]
+          - text: Frage № 43
+        - generic [ref=e409]:
+          - 'heading "Frage № 43: Wann kann in Deutschland eine Partei verboten werden?" [level=3] [ref=e410]'
+          - generic [ref=e411]:
+            - generic [ref=e412]:
+              - generic [ref=e413]: —
+              - generic [ref=e414]: wenn ihr Wahlkampf zu teuer ist
+            - generic [ref=e415]:
+              - generic [ref=e416]: ✓
+              - generic [ref=e417]: wenn sie gegen die Verfassung kämpft
+            - generic [ref=e418]:
+              - generic [ref=e419]: —
+              - generic [ref=e420]: wenn sie Kritik am Staatsoberhaupt äußert
+            - generic [ref=e421]:
+              - generic [ref=e422]: —
+              - generic [ref=e423]: wenn ihr Programm eine neue Richtung vorschlägt
+      - generic [ref=e424]:
+        - generic [ref=e429]:
+          - img [ref=e431] [cursor=pointer]
+          - text: Frage № 44
+        - generic [ref=e434]:
+          - 'heading "Frage № 44: Wen kann man als Bürger / Bürgerin in Deutschland nicht direkt wählen?" [level=3] [ref=e435]':
+            - 'link "Frage № 44: Wen kann man als Bürger / Bürgerin in Deutschland nicht direkt wählen?" [ref=e436] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-44-wen-kann-man-als-buerger-buergerin-in-deutschland-nicht-direkt-waehlen
+          - generic [ref=e437]:
+            - generic [ref=e438]:
+              - generic [ref=e439]: —
+              - generic [ref=e440]: Abgeordnete des EU-Parlaments
+            - generic [ref=e441]:
+              - generic [ref=e442]: ✓
+              - generic [ref=e443]: den Bundespräsidenten / die Bundespräsidentin
+            - generic [ref=e444]:
+              - generic [ref=e445]: —
+              - generic [ref=e446]: Landtagsabgeordnete
+            - generic [ref=e447]:
+              - generic [ref=e448]: —
+              - generic [ref=e449]: Bundestagsabgeordnete
+      - generic [ref=e450]:
+        - generic [ref=e455]:
+          - img [ref=e457] [cursor=pointer]
+          - text: Frage № 45
+        - generic [ref=e460]:
+          - 'heading "Frage № 45: Zu welcher Versicherung gehört die Pflegeversicherung?" [level=3] [ref=e461]'
+          - generic [ref=e462]:
+            - generic [ref=e463]:
+              - generic [ref=e464]: ✓
+              - generic [ref=e465]: Sozialversicherung
+            - generic [ref=e466]:
+              - generic [ref=e467]: —
+              - generic [ref=e468]: Unfallversicherung
+            - generic [ref=e469]:
+              - generic [ref=e470]: —
+              - generic [ref=e471]: Hausratversicherung
+            - generic [ref=e472]:
+              - generic [ref=e473]: —
+              - generic [ref=e474]: Haftpflicht- und Feuerversicherung
+      - generic [ref=e475]:
+        - generic [ref=e480]:
+          - img [ref=e482] [cursor=pointer]
+          - text: Frage № 46
+        - generic [ref=e485]:
+          - 'heading "Frage № 46: Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört dazu?" [level=3] [ref=e486]'
+          - generic [ref=e487]:
+            - generic [ref=e488]:
+              - generic [ref=e489]: ✓
+              - generic [ref=e490]: Er baut Straßen und Schulen.
+            - generic [ref=e491]:
+              - generic [ref=e492]: —
+              - generic [ref=e493]: Er verkauft Lebensmittel und Kleidung.
+            - generic [ref=e494]:
+              - generic [ref=e495]: —
+              - generic [ref=e496]: Er versorgt alle Einwohner und Einwohnerinnen kostenlos mit Zeitungen.
+            - generic [ref=e497]:
+              - generic [ref=e498]: —
+              - generic [ref=e499]: Er produziert Autos und Busse.
+      - generic [ref=e500]:
+        - generic [ref=e505]:
+          - img [ref=e507] [cursor=pointer]
+          - text: Frage № 47
+        - generic [ref=e510]:
+          - 'heading "Frage № 47: Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört nicht dazu?" [level=3] [ref=e511]'
+          - generic [ref=e512]:
+            - generic [ref=e513]:
+              - generic [ref=e514]: ✓
+              - generic [ref=e515]: Er bezahlt für alle Staatsangehörigen Urlaubsreisen.
+            - generic [ref=e516]:
+              - generic [ref=e517]: —
+              - generic [ref=e518]: Er zahlt Kindergeld.
+            - generic [ref=e519]:
+              - generic [ref=e520]: —
+              - generic [ref=e521]: Er unterstützt Museen.
+            - generic [ref=e522]:
+              - generic [ref=e523]: —
+              - generic [ref=e524]: Er fördert Sportler und Sportlerinnen.
+      - generic [ref=e525]:
+        - generic [ref=e530]:
+          - img [ref=e532] [cursor=pointer]
+          - text: Frage № 48
+        - generic [ref=e535]:
+          - 'heading "Frage № 48: Welches Organ gehört nicht zu den Verfassungsorganen Deutschlands?" [level=3] [ref=e536]':
+            - 'link "Frage № 48: Welches Organ gehört nicht zu den Verfassungsorganen Deutschlands?" [ref=e537] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-48-welches-organ-gehoert-nicht-zu-den-verfassungsorganen-deutschlands
+          - generic [ref=e538]:
+            - generic [ref=e539]:
+              - generic [ref=e540]: —
+              - generic [ref=e541]: der Bundesrat
+            - generic [ref=e542]:
+              - generic [ref=e543]: —
+              - generic [ref=e544]: der Bundespräsident / die Bundespräsidentin
+            - generic [ref=e545]:
+              - generic [ref=e546]: ✓
+              - generic [ref=e547]: die Bürgerversammlung
+            - generic [ref=e548]:
+              - generic [ref=e549]: —
+              - generic [ref=e550]: die Regierung
+      - generic [ref=e551]:
+        - generic [ref=e556]:
+          - img [ref=e558] [cursor=pointer]
+          - text: Frage № 49
+        - generic [ref=e561]:
+          - 'heading "Frage № 49: Wer bestimmt in Deutschland die Schulpolitik?" [level=3] [ref=e562]'
+          - generic [ref=e563]:
+            - generic [ref=e564]:
+              - generic [ref=e565]: —
+              - generic [ref=e566]: die Lehrer und Lehrerinnen
+            - generic [ref=e567]:
+              - generic [ref=e568]: ✓
+              - generic [ref=e569]: die Bundesländer
+            - generic [ref=e570]:
+              - generic [ref=e571]: —
+              - generic [ref=e572]: das Familienministerium
+            - generic [ref=e573]:
+              - generic [ref=e574]: —
+              - generic [ref=e575]: die Universitäten
+      - generic [ref=e576]:
+        - generic [ref=e581]:
+          - img [ref=e583] [cursor=pointer]
+          - text: Frage № 50
+        - generic [ref=e586]:
+          - 'heading "Frage № 50: Die Wirtschaftsform in Deutschland nennt man …" [level=3] [ref=e587]':
+            - 'link "Frage № 50: Die Wirtschaftsform in Deutschland nennt man …" [ref=e588] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-50-die-wirtschaftsform-in-deutschland-nennt-man
+          - generic [ref=e589]:
+            - generic [ref=e590]:
+              - generic [ref=e591]: —
+              - generic [ref=e592]: freie Zentralwirtschaft.
+            - generic [ref=e593]:
+              - generic [ref=e594]: ✓
+              - generic [ref=e595]: soziale Marktwirtschaft.
+            - generic [ref=e596]:
+              - generic [ref=e597]: —
+              - generic [ref=e598]: gelenkte Zentralwirtschaft.
+            - generic [ref=e599]:
+              - generic [ref=e600]: —
+              - generic [ref=e601]: Planwirtschaft.
+      - generic [ref=e602]:
+        - generic [ref=e607]:
+          - img [ref=e609] [cursor=pointer]
+          - text: Frage № 51
+        - generic [ref=e612]:
+          - 'heading "Frage № 51: Zu einem demokratischen Rechtsstaat gehört es nicht, dass …" [level=3] [ref=e613]'
+          - generic [ref=e614]:
+            - generic [ref=e615]:
+              - generic [ref=e616]: —
+              - generic [ref=e617]: Menschen sich kritisch über die Regierung äußern können.
+            - generic [ref=e618]:
+              - generic [ref=e619]: —
+              - generic [ref=e620]: Bürger friedlich demonstrieren gehen dürfen.
+            - generic [ref=e621]:
+              - generic [ref=e622]: ✓
+              - generic [ref=e623]: Menschen von einer Privatpolizei ohne Grund verhaftet werden.
+            - generic [ref=e624]:
+              - generic [ref=e625]: —
+              - generic [ref=e626]: jemand ein Verbrechen begeht und deshalb verhaftet wird.
+      - generic [ref=e627]:
+        - generic [ref=e632]:
+          - img [ref=e634] [cursor=pointer]
+          - text: Frage № 52
+        - generic [ref=e637]:
+          - 'heading "Frage № 52: Was bedeutet „Volkssouveränität“? Alle Staatsgewalt geht vom …" [level=3] [ref=e638]':
+            - 'link "Frage № 52: Was bedeutet „Volkssouveränität“? Alle Staatsgewalt geht vom …" [ref=e639] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-52-was-bedeutet-volkssouveraenitaet
+          - generic [ref=e640]:
+            - generic [ref=e641]:
+              - generic [ref=e642]: ✓
+              - generic [ref=e643]: Volke aus.
+            - generic [ref=e644]:
+              - generic [ref=e645]: —
+              - generic [ref=e646]: Bundestag aus.
+            - generic [ref=e647]:
+              - generic [ref=e648]: —
+              - generic [ref=e649]: preußischen König aus.
+            - generic [ref=e650]:
+              - generic [ref=e651]: —
+              - generic [ref=e652]: Bundesverfassungsgericht aus.
+      - generic [ref=e653]:
+        - generic [ref=e658]:
+          - img [ref=e660] [cursor=pointer]
+          - text: Frage № 53
+        - generic [ref=e663]:
+          - 'heading "Frage № 53: Was bedeutet „Rechtsstaat“ in Deutschland?" [level=3] [ref=e664]':
+            - 'link "Frage № 53: Was bedeutet „Rechtsstaat“ in Deutschland?" [ref=e665] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-53-was-bedeutet-rechtsstaat-in-deutschland
+          - generic [ref=e666]:
+            - generic [ref=e667]:
+              - generic [ref=e668]: —
+              - generic [ref=e669]: Der Staat hat Recht.
+            - generic [ref=e670]:
+              - generic [ref=e671]: —
+              - generic [ref=e672]: Es gibt nur rechte Parteien.
+            - generic [ref=e673]:
+              - generic [ref=e674]: —
+              - generic [ref=e675]: Die Bürger und Bürgerinnen entscheiden über Gesetze.
+            - generic [ref=e676]:
+              - generic [ref=e677]: ✓
+              - generic [ref=e678]: Der Staat muss die Gesetze einhalten.
+      - generic [ref=e679]:
+        - generic [ref=e684]:
+          - img [ref=e686] [cursor=pointer]
+          - text: Frage № 54
+        - generic [ref=e689]:
+          - 'heading "Frage № 54: Was ist keine staatliche Gewalt in Deutschland?" [level=3] [ref=e690]':
+            - 'link "Frage № 54: Was ist keine staatliche Gewalt in Deutschland?" [ref=e691] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-54-was-ist-keine-staatliche-gewalt-in-deutschland
+          - generic [ref=e692]:
+            - generic [ref=e693]:
+              - generic [ref=e694]: —
+              - generic [ref=e695]: Legislative
+            - generic [ref=e696]:
+              - generic [ref=e697]: —
+              - generic [ref=e698]: Judikative
+            - generic [ref=e699]:
+              - generic [ref=e700]: —
+              - generic [ref=e701]: Exekutive
+            - generic [ref=e702]:
+              - generic [ref=e703]: ✓
+              - generic [ref=e704]: Direktive
+      - generic [ref=e705]:
+        - generic [ref=e710]:
+          - img [ref=e712] [cursor=pointer]
+          - text: Frage № 55
+        - generic [ref=e715]:
+          - 'heading "Frage № 55: Was zeigt dieses Bild?" [level=3] [ref=e716]':
+            - 'link "Frage № 55: Was zeigt dieses Bild?" [ref=e717] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-55-was-zeigt-dieses-bild
+          - img "Gebäude mit zwei Türmen rechts und links der Fassade, und einer Glaskuppel auf dem Dach mittig" [ref=e719]
+          - generic [ref=e720]:
+            - generic [ref=e721]:
+              - generic [ref=e722]: ✓
+              - generic [ref=e723]: den Bundestagssitz in Berlin
+            - generic [ref=e724]:
+              - generic [ref=e725]: —
+              - generic [ref=e726]: das Bundesverfassungsgericht in Karlsruhe
+            - generic [ref=e727]:
+              - generic [ref=e728]: —
+              - generic [ref=e729]: das Bundesratsgebäude in Berlin
+            - generic [ref=e730]:
+              - generic [ref=e731]: —
+              - generic [ref=e732]: das Bundeskanzleramt in Berlin
+      - generic [ref=e733]:
+        - generic [ref=e738]:
+          - img [ref=e740] [cursor=pointer]
+          - text: Frage № 56
+        - generic [ref=e743]:
+          - 'heading "Frage № 56: Welches Amt gehört in Deutschland zur Gemeindeverwaltung?" [level=3] [ref=e744]'
+          - generic [ref=e745]:
+            - generic [ref=e746]:
+              - generic [ref=e747]: —
+              - generic [ref=e748]: Pfarramt
+            - generic [ref=e749]:
+              - generic [ref=e750]: ✓
+              - generic [ref=e751]: Ordnungsamt
+            - generic [ref=e752]:
+              - generic [ref=e753]: —
+              - generic [ref=e754]: Finanzamt
+            - generic [ref=e755]:
+              - generic [ref=e756]: —
+              - generic [ref=e757]: Auswärtiges Amt
+      - generic [ref=e758]:
+        - generic [ref=e763]:
+          - img [ref=e765] [cursor=pointer]
+          - text: Frage № 57
+        - generic [ref=e768]:
+          - 'heading "Frage № 57: Wer wird meistens zum Präsidenten / zur Präsidentin des Deutschen Bundestages gewählt?" [level=3] [ref=e769]':
+            - 'link "Frage № 57: Wer wird meistens zum Präsidenten / zur Präsidentin des Deutschen Bundestages gewählt?" [ref=e770] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-57-wer-wird-meistens-zum-praesidenten-zur-praesidentin-des-deutschen-bundestages-gewaehlt
+          - generic [ref=e771]:
+            - generic [ref=e772]:
+              - generic [ref=e773]: —
+              - generic [ref=e774]: der / die älteste Abgeordnete im Parlament
+            - generic [ref=e775]:
+              - generic [ref=e776]: —
+              - generic [ref=e777]: der Ministerpräsident / die Ministerpräsidentin des größten Bundeslandes
+            - generic [ref=e778]:
+              - generic [ref=e779]: ✓
+              - generic [ref=e780]: ein Abgeordneter / eine Abgeordnete der stärksten Fraktion
+            - generic [ref=e781]:
+              - generic [ref=e782]: —
+              - generic [ref=e783]: ein ehemaliger Bundeskanzler / eine ehemalige Bundeskanzlerin
+      - generic [ref=e784]:
+        - generic [ref=e789]:
+          - img [ref=e791] [cursor=pointer]
+          - text: Frage № 58
+        - generic [ref=e794]:
+          - 'heading "Frage № 58: Wer ernennt in Deutschland die Minister / die Ministerinnen der Bundesregierung?" [level=3] [ref=e795]':
+            - 'link "Frage № 58: Wer ernennt in Deutschland die Minister / die Ministerinnen der Bundesregierung?" [ref=e796] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-58-wer-ernennt-in-deutschland-die-minister-die-ministerinnen-der-bundesregierung
+          - generic [ref=e797]:
+            - generic [ref=e798]:
+              - generic [ref=e799]: —
+              - generic [ref=e800]: der Präsident / die Präsidentin des Bundesverfassungsgerichtes
+            - generic [ref=e801]:
+              - generic [ref=e802]: ✓
+              - generic [ref=e803]: der Bundespräsident / die Bundespräsidentin
+            - generic [ref=e804]:
+              - generic [ref=e805]: —
+              - generic [ref=e806]: der Bundesratspräsident / die Bundesratspräsidentin
+            - generic [ref=e807]:
+              - generic [ref=e808]: —
+              - generic [ref=e809]: der Bundestagspräsident / die Bundestagspräsidentin
+      - generic [ref=e810]:
+        - generic [ref=e815]:
+          - img [ref=e817] [cursor=pointer]
+          - text: Frage № 59
+        - generic [ref=e820]:
+          - 'heading "Frage № 59: Vor wie vielen Jahren gab es erstmals eine jüdische Gemeinde auf dem Gebiet des heutigen Deutschlands?" [level=3] [ref=e821]'
+          - generic [ref=e822]:
+            - generic [ref=e823]:
+              - generic [ref=e824]: —
+              - generic [ref=e825]: vor etwa 300 Jahren
+            - generic [ref=e826]:
+              - generic [ref=e827]: —
+              - generic [ref=e828]: vor etwa 700 Jahren
+            - generic [ref=e829]:
+              - generic [ref=e830]: —
+              - generic [ref=e831]: vor etwa 1150 Jahren
+            - generic [ref=e832]:
+              - generic [ref=e833]: ✓
+              - generic [ref=e834]: vor etwa 1700 Jahren
+      - generic [ref=e835]:
+        - generic [ref=e840]:
+          - img [ref=e842] [cursor=pointer]
+          - text: Frage № 60
+        - generic [ref=e845]:
+          - 'heading "Frage № 60: In Deutschland gehören der Bundestag und der Bundesrat zur …" [level=3] [ref=e846]':
+            - 'link "Frage № 60: In Deutschland gehören der Bundestag und der Bundesrat zur …" [ref=e847] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-60-in-deutschland-gehoeren-der-bundestag-und-der-bundesrat-zur
+          - generic [ref=e848]:
+            - generic [ref=e849]:
+              - generic [ref=e850]: —
+              - generic [ref=e851]: Exekutive.
+            - generic [ref=e852]:
+              - generic [ref=e853]: ✓
+              - generic [ref=e854]: Legislative.
+            - generic [ref=e855]:
+              - generic [ref=e856]: —
+              - generic [ref=e857]: Direktive.
+            - generic [ref=e858]:
+              - generic [ref=e859]: —
+              - generic [ref=e860]: Judikative.
+      - generic [ref=e861]:
+        - paragraph [ref=e862]:
+          - text: Würden Sie den Test
+          - emphasis [ref=e863]: Leben in Deutschland
+          - text: bestehen?
+        - link "Zur Bundesland-Auswahl →" [ref=e864] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/test
+          - generic [ref=e865]:
+            - text: Zur Bundesland-Auswahl
+            - generic [ref=e866]: →
+  - list [ref=e869]:
+    - listitem [ref=e870]:
+      - link "Leben in Deutschland" [ref=e871] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu
+    - listitem [ref=e872]: ›
+    - listitem [ref=e873]:
+      - link "Fragenkatalog" [ref=e874] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/fragenkatalog
+    - listitem [ref=e875]: ›
+    - listitem [ref=e876]: Fragenkatalog, Seite 2
+  - generic [ref=e878]:
+    - paragraph [ref=e880]:
+      - text: © 2013 — 2026
+      - link "lebenindeutschland.eu" [ref=e881] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu
+      - text: —
+      - link "Impressum" [ref=e882] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/impressum
+      - text: —
+      - link "Datenschutz" [ref=e883] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/datenschutz
+      - text: —
+      - link "Utiq verwalten" [ref=e884] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/utiq-verwalten
+    - paragraph [ref=e886]: Seit April 2013 müssen Bewerber für die deutsche Staatsbürgerschaft den Test Leben in Deutschland erfolgreich bestehen. Die kostenlose Online-Lernplattform lebenindeutschland.eu bietet Ihnen eine kostenlose Möglichkeit zur zeitlich unbegrenzten Übung.
+    - generic [ref=e887]:
+      - generic [ref=e888]:
+        - heading "Test Leben in Deutschland" [level=3] [ref=e889]:
+          - link "Test Leben in Deutschland" [ref=e890] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/test
+        - list [ref=e891]:
+          - listitem [ref=e892]:
+            - link "Test für Baden-Württemberg" [ref=e893] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/bw
+          - listitem [ref=e894]:
+            - link "Test für Bayern" [ref=e895] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/by
+          - listitem [ref=e896]:
+            - link "Test für Berlin" [ref=e897] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/be
+          - listitem [ref=e898]:
+            - link "Test für Brandenburg" [ref=e899] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/bb
+          - listitem [ref=e900]:
+            - link "Test für Bremen" [ref=e901] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/hb
+          - listitem [ref=e902]:
+            - link "Test für Hamburg" [ref=e903] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/hh
+          - listitem [ref=e904]:
+            - link "Test für Hessen" [ref=e905] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/he
+          - listitem [ref=e906]:
+            - link "Test für Mecklenburg-Vorpommern" [ref=e907] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/mv
+          - listitem [ref=e908]:
+            - link "Test für Niedersachsen" [ref=e909] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/ni
+          - listitem [ref=e910]:
+            - link "Test für Nordrhein-Westfalen" [ref=e911] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/nw
+          - listitem [ref=e912]:
+            - link "Test für Rheinland-Pfalz" [ref=e913] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/rp
+          - listitem [ref=e914]:
+            - link "Test für das Saarland" [ref=e915] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sl
+          - listitem [ref=e916]:
+            - link "Test für Sachsen" [ref=e917] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sn
+          - listitem [ref=e918]:
+            - link "Test für Sachsen-Anhalt" [ref=e919] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/st
+          - listitem [ref=e920]:
+            - link "Test für Schleswig-Holstein" [ref=e921] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sh
+          - listitem [ref=e922]:
+            - link "Test für Thüringen" [ref=e923] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/th
+      - generic [ref=e924]:
+        - heading "Fragenkatalog" [level=3] [ref=e925]:
+          - link "Fragenkatalog" [ref=e926] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/fragenkatalog
+        - list [ref=e927]:
+          - listitem [ref=e928]:
+            - link "Deutschland" [ref=e929] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog
+          - listitem [ref=e930]:
+            - link "Fragen für Baden-Württemberg" [ref=e931] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bw
+          - listitem [ref=e932]:
+            - link "Fragen für Bayern" [ref=e933] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/by
+          - listitem [ref=e934]:
+            - link "Fragen für Berlin" [ref=e935] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/be
+          - listitem [ref=e936]:
+            - link "Fragen für Brandenburg" [ref=e937] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bb
+          - listitem [ref=e938]:
+            - link "Fragen für Bremen" [ref=e939] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hb
+          - listitem [ref=e940]:
+            - link "Fragen für Hamburg" [ref=e941] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hh
+          - listitem [ref=e942]:
+            - link "Fragen für Hessen" [ref=e943] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/he
+          - listitem [ref=e944]:
+            - link "Fragen für Mecklenburg-Vorpommern" [ref=e945] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/mv
+          - listitem [ref=e946]:
+            - link "Fragen für Niedersachsen" [ref=e947] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/ni
+          - listitem [ref=e948]:
+            - link "Fragen für Nordrhein-Westfalen" [ref=e949] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/nw
+          - listitem [ref=e950]:
+            - link "Fragen für Rheinland-Pfalz" [ref=e951] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/rp
+          - listitem [ref=e952]:
+            - link "Fragen für das Saarland" [ref=e953] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sl
+          - listitem [ref=e954]:
+            - link "Fragen für Sachsen" [ref=e955] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sn
+          - listitem [ref=e956]:
+            - link "Fragen für Sachsen-Anhalt" [ref=e957] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/st
+          - listitem [ref=e958]:
+            - link "Fragen für Schleswig-Holstein" [ref=e959] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sh
+          - listitem [ref=e960]:
+            - link "Fragen für Thüringen" [ref=e961] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/th
+      - generic [ref=e962]:
+        - heading "Prüfstellen" [level=3] [ref=e963]:
+          - link "Prüfstellen" [ref=e964] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/pruefstellen
+        - list [ref=e965]:
+          - listitem [ref=e966]:
+            - link "Prüfstellen in Baden-Württemberg" [ref=e967] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/bw
+          - listitem [ref=e968]:
+            - link "Prüfstellen in Bayern" [ref=e969] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/by
+          - listitem [ref=e970]:
+            - link "Prüfstellen in Berlin" [ref=e971] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/be
+          - listitem [ref=e972]:
+            - link "Prüfstellen in Brandenburg" [ref=e973] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/bb
+          - listitem [ref=e974]:
+            - link "Prüfstellen in Bremen" [ref=e975] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/hb
+          - listitem [ref=e976]:
+            - link "Prüfstellen in Hamburg" [ref=e977] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/hh
+          - listitem [ref=e978]:
+            - link "Prüfstellen in Hessen" [ref=e979] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/he
+          - listitem [ref=e980]:
+            - link "Prüfstellen in Mecklenburg-Vorpommern" [ref=e981] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/mv
+          - listitem [ref=e982]:
+            - link "Prüfstellen in Niedersachsen" [ref=e983] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/ni
+          - listitem [ref=e984]:
+            - link "Prüfstellen in Nordrhein-Westfalen" [ref=e985] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/nw
+          - listitem [ref=e986]:
+            - link "Prüfstellen in Rheinland-Pfalz" [ref=e987] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/rp
+          - listitem [ref=e988]:
+            - link "Prüfstellen im Saarland" [ref=e989] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sl
+          - listitem [ref=e990]:
+            - link "Prüfstellen in Sachsen" [ref=e991] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sn
+          - listitem [ref=e992]:
+            - link "Prüfstellen in Sachsen-Anhalt" [ref=e993] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/st
+          - listitem [ref=e994]:
+            - link "Prüfstellen in Schleswig-Holstein" [ref=e995] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sh
+          - listitem [ref=e996]:
+            - link "Prüfstellen in Thüringen" [ref=e997] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/th
+  - generic:
+    - status
+  - generic:
+    - generic:
+      - dialog "Privacy and cookie preferences":
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - img "Publisher Logo"
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: your access to lebenindeutschland.eu
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Continue with ads
+                        - paragraph:
+                          - generic:
+                            - text: Use this offer as usual with usage-based advertising and tracking under the terms of our
+                            - link "User Agreement":
+                              - /url: "#"
+                            - text: .
+                        - generic:
+                          - button "Accept all settings and proceed": ACCEPT ALL
+                        - paragraph:
+                          - text: You can find details in our
+                          - link "Privacy Center.":
+                            - /url: "#"
+                      - generic:
+                        - generic: ...or subscribe to Freechoice
+                        - paragraph: One login – many tracking-free offers! Online privacy here and wherever you are in the Freechoice offer.
+                        - generic:
+                          - button "SUBSCRIBE NOW"
+                        - paragraph:
+                          - text: Already a subscriber?
+                          - link "Login":
+                            - /url: "#"
+                            - text: LOGIN
+                  - generic:
+                    - generic:
+                      - text: What does "continue reading for free" mean?
+                      - text: To provide you with our journalistic content as part of the free version, we finance this service through the display of usage-based advertising with the help of our (264)
+                      - link "partners":
+                        - /url: "#"
+                      - text: . This also includes the use of a so-called "TC String" - a digital identifier that stores your advertising settings and enables compliance with your data protection preferences. In this context, we deploy cookies, device IDs, and similar tracking technologies and transmit
+                      - link "personal data":
+                        - /url: "#"
+                      - text: to third-party providers. Your consent applies to this service only. Details can be found in the privacy policy and in the
+                      - link "Privacy Center":
+                        - /url: "#"
+                      - text: ", where you can also make individual settings. You have the right to withdraw your consent at any time. In this case, we hereby declare the extraordinary termination of the underlying user contract, conditionally suspended by the revocation of consent according to §327q paragraph 2 BGB."
+                  - generic:
+                    - list:
+                      - listitem:
+                        - generic:
+                          - button "Use mandatory services":
+                            - generic: Use mandatory services
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Store and/or access information on a device":
+                            - generic: Store and/or access information on a device
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Precise geolocation data, and identification through device scanning":
+                            - generic: Precise geolocation data, and identification through device scanning
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Personalised advertising and content, advertising and content measurement, audience research and services development":
+                            - generic: Personalised advertising and content, advertising and content measurement, audience research and services development
+                            - generic:
+                              - img
+                  - generic:
+                    - generic: Information on data transfer to the USA:Your data will only be transferred to the USA to the extent permitted by law.
+                - generic:
+                  - generic:
+                    - link "POLICY":
+                      - /url: https://www.lebenindeutschland.eu/impressum?&cmp-silent=1
+                  - generic:
+                    - link "IMPRINT":
+                      - /url: https://www.lebenindeutschland.eu/impressum?&cmp-silent=1

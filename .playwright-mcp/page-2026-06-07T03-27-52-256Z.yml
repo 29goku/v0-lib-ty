@@ -1,0 +1,1013 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - 'link "Logo der Website Leben in Deutschland: diagonal verlaufende Farbstreifen in schwarz, rot, gold Einbürgerungstest Leben in Deutschland" [ref=e6] [cursor=pointer]':
+        - /url: https://www.lebenindeutschland.eu
+        - 'img "Logo der Website Leben in Deutschland: diagonal verlaufende Farbstreifen in schwarz, rot, gold" [ref=e7]'
+        - generic [ref=e8]:
+          - generic [ref=e9]: Einbürgerungstest
+          - generic [ref=e10]: Leben in Deutschland
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - link "Startseite Hier geht’s los" [ref=e13] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu
+            - text: Startseite
+            - generic [ref=e14]: Hier geht’s los
+          - link "Der Test mit Auswertung" [ref=e15] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/test
+            - text: Der Test
+            - generic [ref=e16]: mit Auswertung
+          - link "Fragen mit Antworten" [ref=e17] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/fragenkatalog
+            - text: Fragen
+            - generic [ref=e18]: mit Antworten
+        - link "Login Anmeldung" [ref=e20] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/login
+          - text: Login
+          - generic [ref=e21]: Anmeldung
+    - generic [ref=e23]:
+      - heading "Fragenkatalog zum Test Leben in Deutschland. Fragen 151 bis 180" [level=1] [ref=e24]
+      - heading "Alle Fragen mit Antworten" [level=2] [ref=e25]
+    - generic [ref=e26]:
+      - generic [ref=e30]:
+        - heading "Deutschland allgemein" [level=4] [ref=e31]
+        - list [ref=e32]:
+          - listitem [ref=e33]:
+            - link "1 – 30" [ref=e34] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/1
+          - listitem [ref=e35]:
+            - link "31 – 60" [ref=e36] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/2
+          - listitem [ref=e37]:
+            - link "61 – 90" [ref=e38] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/3
+          - listitem [ref=e39]:
+            - link "91 – 120" [ref=e40] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/4
+          - listitem [ref=e41]:
+            - link "121 – 150" [ref=e42] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/5
+          - listitem [ref=e43]: Fragen 151 – 180
+          - listitem [ref=e44]:
+            - link "181 – 210" [ref=e45] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/7
+          - listitem [ref=e46]:
+            - link "211 – 240" [ref=e47] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/8
+          - listitem [ref=e48]:
+            - link "241 – 270" [ref=e49] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/9
+          - listitem [ref=e50]:
+            - link "271 – 300" [ref=e51] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/10
+        - heading "Bundesland" [level=4] [ref=e52]
+        - list [ref=e53]:
+          - listitem [ref=e54]:
+            - link "Baden-Württemberg" [ref=e55] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bw
+          - listitem [ref=e56]:
+            - link "Bayern" [ref=e57] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/by
+          - listitem [ref=e58]:
+            - link "Berlin" [ref=e59] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/be
+          - listitem [ref=e60]:
+            - link "Brandenburg" [ref=e61] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bb
+          - listitem [ref=e62]:
+            - link "Bremen" [ref=e63] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hb
+          - listitem [ref=e64]:
+            - link "Hamburg" [ref=e65] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hh
+          - listitem [ref=e66]:
+            - link "Hessen" [ref=e67] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/he
+          - listitem [ref=e68]:
+            - link "Mecklenburg-Vorpommern" [ref=e69] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/mv
+          - listitem [ref=e70]:
+            - link "Niedersachsen" [ref=e71] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/ni
+          - listitem [ref=e72]:
+            - link "Nordrhein-Westfalen" [ref=e73] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/nw
+          - listitem [ref=e74]:
+            - link "Rheinland-Pfalz" [ref=e75] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/rp
+          - listitem [ref=e76]:
+            - link "Saarland" [ref=e77] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sl
+          - listitem [ref=e78]:
+            - link "Sachsen" [ref=e79] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sn
+          - listitem [ref=e80]:
+            - link "Sachsen-Anhalt" [ref=e81] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/st
+          - listitem [ref=e82]:
+            - link "Schleswig-Holstein" [ref=e83] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sh
+          - listitem [ref=e84]:
+            - link "Thüringen" [ref=e85] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/th
+      - generic [ref=e86]:
+        - paragraph [ref=e87]:
+          - text: Würden Sie den Test
+          - emphasis [ref=e88]: Leben in Deutschland
+          - text: bestehen?
+        - link "Zur Bundesland-Auswahl →" [ref=e89] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/test
+          - generic [ref=e90]:
+            - text: Zur Bundesland-Auswahl
+            - generic [ref=e91]: →
+      - generic [ref=e92]:
+        - generic [ref=e97]:
+          - img [ref=e99] [cursor=pointer]
+          - text: Frage № 151
+        - generic [ref=e102]:
+          - 'heading "Frage № 151: Wer baute die Mauer in Berlin?" [level=3] [ref=e103]':
+            - 'link "Frage № 151: Wer baute die Mauer in Berlin?" [ref=e104] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-151-wer-baute-die-mauer-in-berlin
+          - generic [ref=e105]:
+            - generic [ref=e106]:
+              - generic [ref=e107]: —
+              - generic [ref=e108]: Großbritannien
+            - generic [ref=e109]:
+              - generic [ref=e110]: —
+              - generic [ref=e111]: die Bundesrepublik Deutschland
+            - generic [ref=e112]:
+              - generic [ref=e113]: ✓
+              - generic [ref=e114]: die DDR
+            - generic [ref=e115]:
+              - generic [ref=e116]: —
+              - generic [ref=e117]: die USA
+      - generic [ref=e118]:
+        - generic [ref=e123]:
+          - img [ref=e125] [cursor=pointer]
+          - text: Frage № 152
+        - generic [ref=e128]:
+          - 'heading "Frage № 152: Wann waren die Nationalsozialisten mit Adolf Hitler in Deutschland an der Macht?" [level=3] [ref=e129]'
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - generic [ref=e132]: —
+              - generic [ref=e133]: 1918 bis 1923
+            - generic [ref=e134]:
+              - generic [ref=e135]: —
+              - generic [ref=e136]: 1932 bis 1950
+            - generic [ref=e137]:
+              - generic [ref=e138]: ✓
+              - generic [ref=e139]: 1933 bis 1945
+            - generic [ref=e140]:
+              - generic [ref=e141]: —
+              - generic [ref=e142]: 1945 bis 1989
+      - generic [ref=e143]:
+        - generic [ref=e148]:
+          - img [ref=e150] [cursor=pointer]
+          - text: Frage № 153
+        - generic [ref=e153]:
+          - 'heading "Frage № 153: Was war am 8. Mai 1945?" [level=3] [ref=e154]'
+          - generic [ref=e155]:
+            - generic [ref=e156]:
+              - generic [ref=e157]: —
+              - generic [ref=e158]: Tod Adolf Hitlers
+            - generic [ref=e159]:
+              - generic [ref=e160]: —
+              - generic [ref=e161]: Beginn des Berliner Mauerbaus
+            - generic [ref=e162]:
+              - generic [ref=e163]: —
+              - generic [ref=e164]: Wahl von Konrad Adenauer zum Bundeskanzler
+            - generic [ref=e165]:
+              - generic [ref=e166]: ✓
+              - generic [ref=e167]: Ende des Zweiten Weltkriegs in Europa
+      - generic [ref=e168]:
+        - generic [ref=e173]:
+          - img [ref=e175] [cursor=pointer]
+          - text: Frage № 154
+        - generic [ref=e178]:
+          - 'heading "Frage № 154: Wann war der Zweite Weltkrieg zu Ende?" [level=3] [ref=e179]':
+            - 'link "Frage № 154: Wann war der Zweite Weltkrieg zu Ende?" [ref=e180] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-154-wann-war-der-zweite-weltkrieg-zu-ende
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - generic [ref=e183]: —
+              - generic [ref=e184]: "1933"
+            - generic [ref=e185]:
+              - generic [ref=e186]: ✓
+              - generic [ref=e187]: "1945"
+            - generic [ref=e188]:
+              - generic [ref=e189]: —
+              - generic [ref=e190]: "1949"
+            - generic [ref=e191]:
+              - generic [ref=e192]: —
+              - generic [ref=e193]: "1961"
+      - generic [ref=e194]:
+        - generic [ref=e199]:
+          - img [ref=e201] [cursor=pointer]
+          - text: Frage № 155
+        - generic [ref=e204]:
+          - 'heading "Frage № 155: Wann waren die Nationalsozialisten in Deutschland an der Macht?" [level=3] [ref=e205]'
+          - generic [ref=e206]:
+            - generic [ref=e207]:
+              - generic [ref=e208]: —
+              - generic [ref=e209]: 1888 bis 1918
+            - generic [ref=e210]:
+              - generic [ref=e211]: —
+              - generic [ref=e212]: 1921 bis 1934
+            - generic [ref=e213]:
+              - generic [ref=e214]: ✓
+              - generic [ref=e215]: 1933 bis 1945
+            - generic [ref=e216]:
+              - generic [ref=e217]: —
+              - generic [ref=e218]: 1949 bis 1963
+      - generic [ref=e221]:
+        - generic [ref=e226]:
+          - img [ref=e228] [cursor=pointer]
+          - text: Frage № 156
+        - generic [ref=e231]:
+          - 'heading "Frage № 156: In welchem Jahr wurde Hitler Reichskanzler?" [level=3] [ref=e232]'
+          - generic [ref=e233]:
+            - generic [ref=e234]:
+              - generic [ref=e235]: —
+              - generic [ref=e236]: "1923"
+            - generic [ref=e237]:
+              - generic [ref=e238]: —
+              - generic [ref=e239]: "1927"
+            - generic [ref=e240]:
+              - generic [ref=e241]: ✓
+              - generic [ref=e242]: "1933"
+            - generic [ref=e243]:
+              - generic [ref=e244]: —
+              - generic [ref=e245]: "1936"
+      - generic [ref=e246]:
+        - generic [ref=e251]:
+          - img [ref=e253] [cursor=pointer]
+          - text: Frage № 157
+        - generic [ref=e256]:
+          - 'heading "Frage № 157: Die Nationalsozialisten mit Adolf Hitler errichteten 1933 in Deutschland …" [level=3] [ref=e257]'
+          - generic [ref=e258]:
+            - generic [ref=e259]:
+              - generic [ref=e260]: ✓
+              - generic [ref=e261]: eine Diktatur.
+            - generic [ref=e262]:
+              - generic [ref=e263]: —
+              - generic [ref=e264]: einen demokratischen Staat.
+            - generic [ref=e265]:
+              - generic [ref=e266]: —
+              - generic [ref=e267]: eine Monarchie.
+            - generic [ref=e268]:
+              - generic [ref=e269]: —
+              - generic [ref=e270]: ein Fürstentum.
+      - generic [ref=e271]:
+        - generic [ref=e276]:
+          - img [ref=e278] [cursor=pointer]
+          - text: Frage № 158
+        - generic [ref=e281]:
+          - 'heading "Frage № 158: Das „Dritte Reich“ war eine …" [level=3] [ref=e282]'
+          - generic [ref=e283]:
+            - generic [ref=e284]:
+              - generic [ref=e285]: ✓
+              - generic [ref=e286]: Diktatur.
+            - generic [ref=e287]:
+              - generic [ref=e288]: —
+              - generic [ref=e289]: Demokratie.
+            - generic [ref=e290]:
+              - generic [ref=e291]: —
+              - generic [ref=e292]: Monarchie.
+            - generic [ref=e293]:
+              - generic [ref=e294]: —
+              - generic [ref=e295]: Räterepublik.
+      - generic [ref=e296]:
+        - generic [ref=e301]:
+          - img [ref=e303] [cursor=pointer]
+          - text: Frage № 159
+        - generic [ref=e306]:
+          - 'heading "Frage № 159: Was gab es in Deutschland nicht während der Zeit des Nationalsozialismus?" [level=3] [ref=e307]':
+            - 'link "Frage № 159: Was gab es in Deutschland nicht während der Zeit des Nationalsozialismus?" [ref=e308] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-159-was-gab-es-in-deutschland-nicht-waehrend-der-zeit-des-nationalsozialismus
+          - generic [ref=e309]:
+            - generic [ref=e310]:
+              - generic [ref=e311]: ✓
+              - generic [ref=e312]: freie Wahlen
+            - generic [ref=e313]:
+              - generic [ref=e314]: —
+              - generic [ref=e315]: Pressezensur
+            - generic [ref=e316]:
+              - generic [ref=e317]: —
+              - generic [ref=e318]: willkürliche Verhaftungen
+            - generic [ref=e319]:
+              - generic [ref=e320]: —
+              - generic [ref=e321]: Verfolgung der Juden
+      - generic [ref=e322]:
+        - generic [ref=e327]:
+          - img [ref=e329] [cursor=pointer]
+          - text: Frage № 160
+        - generic [ref=e332]:
+          - 'heading "Frage № 160: Welcher Krieg dauerte von 1939 bis 1945?" [level=3] [ref=e333]'
+          - generic [ref=e334]:
+            - generic [ref=e335]:
+              - generic [ref=e336]: —
+              - generic [ref=e337]: der Erste Weltkrieg
+            - generic [ref=e338]:
+              - generic [ref=e339]: ✓
+              - generic [ref=e340]: der Zweite Weltkrieg
+            - generic [ref=e341]:
+              - generic [ref=e342]: —
+              - generic [ref=e343]: der Vietnamkrieg
+            - generic [ref=e344]:
+              - generic [ref=e345]: —
+              - generic [ref=e346]: der Golfkrieg
+      - generic [ref=e347]:
+        - generic [ref=e352]:
+          - img [ref=e354] [cursor=pointer]
+          - text: Frage № 161
+        - generic [ref=e357]:
+          - 'heading "Frage № 161: Was kennzeichnete den NS-Staat? Eine Politik …" [level=3] [ref=e358]':
+            - 'link "Frage № 161: Was kennzeichnete den NS-Staat? Eine Politik …" [ref=e359] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-161-was-kennzeichnete-den-ns-staat
+          - generic [ref=e360]:
+            - generic [ref=e361]:
+              - generic [ref=e362]: ✓
+              - generic [ref=e363]: des staatlichen Rassismus
+            - generic [ref=e364]:
+              - generic [ref=e365]: —
+              - generic [ref=e366]: der Meinungsfreiheit
+            - generic [ref=e367]:
+              - generic [ref=e368]: —
+              - generic [ref=e369]: der allgemeinen Religionsfreiheit
+            - generic [ref=e370]:
+              - generic [ref=e371]: —
+              - generic [ref=e372]: der Entwicklung der Demokratie
+      - generic [ref=e373]:
+        - generic [ref=e378]:
+          - img [ref=e380] [cursor=pointer]
+          - text: Frage № 162
+        - generic [ref=e383]:
+          - 'heading "Frage № 162: Claus Schenk Graf von Stauffenberg wurde bekannt durch …" [level=3] [ref=e384]':
+            - 'link "Frage № 162: Claus Schenk Graf von Stauffenberg wurde bekannt durch …" [ref=e385] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-162-claus-schenk-graf-von-stauffenberg-wurde-bekannt-durch
+          - generic [ref=e386]:
+            - generic [ref=e387]:
+              - generic [ref=e388]: —
+              - generic [ref=e389]: eine Goldmedaille bei den Olympischen Spielen 1936.
+            - generic [ref=e390]:
+              - generic [ref=e391]: —
+              - generic [ref=e392]: den Bau des Reichstagsgebäudes.
+            - generic [ref=e393]:
+              - generic [ref=e394]: —
+              - generic [ref=e395]: den Aufbau der Wehrmacht.
+            - generic [ref=e396]:
+              - generic [ref=e397]: ✓
+              - generic [ref=e398]: das Attentat auf Hitler am 20. Juli 1944.
+      - generic [ref=e399]:
+        - generic [ref=e404]:
+          - img [ref=e406] [cursor=pointer]
+          - text: Frage № 163
+        - generic [ref=e409]:
+          - 'heading "Frage № 163: In welchem Jahr zerstörten die Nationalsozialisten Synagogen und jüdische Geschäfte in Deutschland?" [level=3] [ref=e410]':
+            - 'link "Frage № 163: In welchem Jahr zerstörten die Nationalsozialisten Synagogen und jüdische Geschäfte in Deutschland?" [ref=e411] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-163-in-welchem-jahr-zerstoerten-die-nationalsozialisten-synagogen-und-juedische-geschaefte-in-deutschland
+          - generic [ref=e412]:
+            - generic [ref=e413]:
+              - generic [ref=e414]: —
+              - generic [ref=e415]: "1925"
+            - generic [ref=e416]:
+              - generic [ref=e417]: —
+              - generic [ref=e418]: "1930"
+            - generic [ref=e419]:
+              - generic [ref=e420]: ✓
+              - generic [ref=e421]: "1938"
+            - generic [ref=e422]:
+              - generic [ref=e423]: —
+              - generic [ref=e424]: "1945"
+      - generic [ref=e425]:
+        - generic [ref=e430]:
+          - img [ref=e432] [cursor=pointer]
+          - text: Frage № 164
+        - generic [ref=e435]:
+          - 'heading "Frage № 164: Was passierte am 9. November 1938 in Deutschland?" [level=3] [ref=e436]':
+            - 'link "Frage № 164: Was passierte am 9. November 1938 in Deutschland?" [ref=e437] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-164-was-passierte-am-9-november-1938-in-deutschland
+          - generic [ref=e438]:
+            - generic [ref=e439]:
+              - generic [ref=e440]: —
+              - generic [ref=e441]: Mit dem Angriff auf Polen beginnt der Zweite Weltkrieg.
+            - generic [ref=e442]:
+              - generic [ref=e443]: —
+              - generic [ref=e444]: Die Nationalsozialisten verlieren eine Wahl und lösen den Reichstag auf.
+            - generic [ref=e445]:
+              - generic [ref=e446]: ✓
+              - generic [ref=e447]: Jüdische Geschäfte und Synagogen werden durch Nationalsozialisten und ihre Anhänger zerstört.
+            - generic [ref=e448]:
+              - generic [ref=e449]: —
+              - generic [ref=e450]: Hitler wird Reichspräsident und lässt alle Parteien verbieten.
+      - generic [ref=e451]:
+        - generic [ref=e456]:
+          - img [ref=e458] [cursor=pointer]
+          - text: Frage № 165
+        - generic [ref=e461]:
+          - 'heading "Frage № 165: Wie hieß der erste Bundeskanzler der Bundesrepublik Deutschland?" [level=3] [ref=e462]':
+            - 'link "Frage № 165: Wie hieß der erste Bundeskanzler der Bundesrepublik Deutschland?" [ref=e463] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-165-wie-hiess-der-erste-bundeskanzler-der-bundesrepublik-deutschland
+          - generic [ref=e464]:
+            - generic [ref=e465]:
+              - generic [ref=e466]: ✓
+              - generic [ref=e467]: Konrad Adenauer
+            - generic [ref=e468]:
+              - generic [ref=e469]: —
+              - generic [ref=e470]: Kurt Georg Kiesinger
+            - generic [ref=e471]:
+              - generic [ref=e472]: —
+              - generic [ref=e473]: Helmut Schmidt
+            - generic [ref=e474]:
+              - generic [ref=e475]: —
+              - generic [ref=e476]: Willy Brandt
+      - generic [ref=e477]:
+        - generic [ref=e482]:
+          - img [ref=e484] [cursor=pointer]
+          - text: Frage № 166
+        - generic [ref=e487]:
+          - 'heading "Frage № 166: Bei welchen Demonstrationen in Deutschland riefen die Menschen „Wir sind das Volk“?" [level=3] [ref=e488]'
+          - generic [ref=e489]:
+            - generic [ref=e490]:
+              - generic [ref=e491]: ✓
+              - generic [ref=e492]: bei den Montagsdemonstrationen 1989 in der DDR
+            - generic [ref=e493]:
+              - generic [ref=e494]: —
+              - generic [ref=e495]: beim Arbeiteraufstand 1953 in der DDR
+            - generic [ref=e496]:
+              - generic [ref=e497]: —
+              - generic [ref=e498]: bei den Demonstrationen 1968 in der Bundesrepublik Deutschland
+            - generic [ref=e499]:
+              - generic [ref=e500]: —
+              - generic [ref=e501]: bei den Anti-Atomkraft-Demonstrationen 1985 in der Bundesrepublik Deutschland
+      - generic [ref=e502]:
+        - generic [ref=e507]:
+          - img [ref=e509] [cursor=pointer]
+          - text: Frage № 167
+        - generic [ref=e512]:
+          - 'heading "Frage № 167: Welche Länder wurden nach dem Zweiten Weltkrieg in Deutschland als „Alliierte Besatzungsmächte“ bezeichnet?" [level=3] [ref=e513]'
+          - generic [ref=e514]:
+            - generic [ref=e515]:
+              - generic [ref=e516]: —
+              - generic [ref=e517]: Sowjetunion, Großbritannien, Polen, Schweden
+            - generic [ref=e518]:
+              - generic [ref=e519]: —
+              - generic [ref=e520]: Frankreich, Sowjetunion, Italien, Japan
+            - generic [ref=e521]:
+              - generic [ref=e522]: —
+              - generic [ref=e523]: USA, Sowjetunion, Spanien, Portugal
+            - generic [ref=e524]:
+              - generic [ref=e525]: ✓
+              - generic [ref=e526]: USA, Sowjetunion, Großbritannien, Frankreich
+      - generic [ref=e527]:
+        - generic [ref=e532]:
+          - img [ref=e534] [cursor=pointer]
+          - text: Frage № 168
+        - generic [ref=e537]:
+          - 'heading "Frage № 168: Welches Land war keine „Alliierte Besatzungsmacht“ in Deutschland?" [level=3] [ref=e538]'
+          - generic [ref=e539]:
+            - generic [ref=e540]:
+              - generic [ref=e541]: —
+              - generic [ref=e542]: USA
+            - generic [ref=e543]:
+              - generic [ref=e544]: —
+              - generic [ref=e545]: Sowjetunion
+            - generic [ref=e546]:
+              - generic [ref=e547]: —
+              - generic [ref=e548]: Frankreich
+            - generic [ref=e549]:
+              - generic [ref=e550]: ✓
+              - generic [ref=e551]: Japan
+      - generic [ref=e552]:
+        - generic [ref=e557]:
+          - img [ref=e559] [cursor=pointer]
+          - text: Frage № 169
+        - generic [ref=e562]:
+          - 'heading "Frage № 169: Wann wurde die Bundesrepublik Deutschland gegründet?" [level=3] [ref=e563]':
+            - 'link "Frage № 169: Wann wurde die Bundesrepublik Deutschland gegründet?" [ref=e564] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-169-wann-wurde-die-bundesrepublik-deutschland-gegruendet
+          - generic [ref=e565]:
+            - generic [ref=e566]:
+              - generic [ref=e567]: —
+              - generic [ref=e568]: "1939"
+            - generic [ref=e569]:
+              - generic [ref=e570]: —
+              - generic [ref=e571]: "1945"
+            - generic [ref=e572]:
+              - generic [ref=e573]: ✓
+              - generic [ref=e574]: "1949"
+            - generic [ref=e575]:
+              - generic [ref=e576]: —
+              - generic [ref=e577]: "1951"
+      - generic [ref=e578]:
+        - generic [ref=e583]:
+          - img [ref=e585] [cursor=pointer]
+          - text: Frage № 170
+        - generic [ref=e588]:
+          - 'heading "Frage № 170: Was gab es während der Zeit des Nationalsozialismus in Deutschland?" [level=3] [ref=e589]':
+            - 'link "Frage № 170: Was gab es während der Zeit des Nationalsozialismus in Deutschland?" [ref=e590] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-170-was-gab-es-waehrend-der-zeit-des-nationalsozialismus-in-deutschland
+          - generic [ref=e591]:
+            - generic [ref=e592]:
+              - generic [ref=e593]: —
+              - generic [ref=e594]: das Recht zur freien Entfaltung der Persönlichkeit
+            - generic [ref=e595]:
+              - generic [ref=e596]: —
+              - generic [ref=e597]: Pressefreiheit
+            - generic [ref=e598]:
+              - generic [ref=e599]: ✓
+              - generic [ref=e600]: das Verbot von Parteien
+            - generic [ref=e601]:
+              - generic [ref=e602]: —
+              - generic [ref=e603]: den Schutz der Menschenwürde
+      - generic [ref=e604]:
+        - generic [ref=e609]:
+          - img [ref=e611] [cursor=pointer]
+          - text: Frage № 171
+        - generic [ref=e614]:
+          - 'heading "Frage № 171: Soziale Marktwirtschaft bedeutet, die Wirtschaft …" [level=3] [ref=e615]':
+            - 'link "Frage № 171: Soziale Marktwirtschaft bedeutet, die Wirtschaft …" [ref=e616] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-171-soziale-marktwirtschaft-bedeutet-die-wirtschaft
+          - generic [ref=e617]:
+            - generic [ref=e618]:
+              - generic [ref=e619]: —
+              - generic [ref=e620]: steuert sich allein nach Angebot und Nachfrage.
+            - generic [ref=e621]:
+              - generic [ref=e622]: —
+              - generic [ref=e623]: wird vom Staat geplant und gesteuert, Angebot und Nachfrage werden nicht berücksichtigt.
+            - generic [ref=e624]:
+              - generic [ref=e625]: —
+              - generic [ref=e626]: richtet sich nach der Nachfrage im Ausland.
+            - generic [ref=e627]:
+              - generic [ref=e628]: ✓
+              - generic [ref=e629]: richtet sich nach Angebot und Nachfrage, aber der Staat sorgt für einen sozialen Ausgleich.
+      - generic [ref=e630]:
+        - generic [ref=e635]:
+          - img [ref=e637] [cursor=pointer]
+          - text: Frage № 172
+        - generic [ref=e640]:
+          - 'heading "Frage № 172: In welcher Besatzungszone wurde die DDR gegründet? In der …" [level=3] [ref=e641]'
+          - generic [ref=e642]:
+            - generic [ref=e643]:
+              - generic [ref=e644]: —
+              - generic [ref=e645]: amerikanischen Besatzungszone.
+            - generic [ref=e646]:
+              - generic [ref=e647]: —
+              - generic [ref=e648]: französischen Besatzungszone.
+            - generic [ref=e649]:
+              - generic [ref=e650]: —
+              - generic [ref=e651]: britischen Besatzungszone.
+            - generic [ref=e652]:
+              - generic [ref=e653]: ✓
+              - generic [ref=e654]: sowjetischen Besatzungszone.
+      - generic [ref=e655]:
+        - generic [ref=e660]:
+          - img [ref=e662] [cursor=pointer]
+          - text: Frage № 173
+        - generic [ref=e665]:
+          - 'heading "Frage № 173: Die Bundesrepublik Deutschland ist ein Gründungsmitglied …" [level=3] [ref=e666]'
+          - generic [ref=e667]:
+            - generic [ref=e668]:
+              - generic [ref=e669]: —
+              - generic [ref=e670]: des Nordatlantikpakts (NATO).
+            - generic [ref=e671]:
+              - generic [ref=e672]: —
+              - generic [ref=e673]: der Vereinten Nationen (VN).
+            - generic [ref=e674]:
+              - generic [ref=e675]: ✓
+              - generic [ref=e676]: der Europäischen Union (EU).
+            - generic [ref=e677]:
+              - generic [ref=e678]: —
+              - generic [ref=e679]: des Warschauer Pakts.
+      - generic [ref=e680]:
+        - generic [ref=e685]:
+          - img [ref=e687] [cursor=pointer]
+          - text: Frage № 174
+        - generic [ref=e690]:
+          - 'heading "Frage № 174: Wann wurde die DDR gegründet?" [level=3] [ref=e691]':
+            - 'link "Frage № 174: Wann wurde die DDR gegründet?" [ref=e692] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-174-wann-wurde-die-ddr-gegruendet
+          - generic [ref=e693]:
+            - generic [ref=e694]:
+              - generic [ref=e695]: —
+              - generic [ref=e696]: "1947"
+            - generic [ref=e697]:
+              - generic [ref=e698]: ✓
+              - generic [ref=e699]: "1949"
+            - generic [ref=e700]:
+              - generic [ref=e701]: —
+              - generic [ref=e702]: "1953"
+            - generic [ref=e703]:
+              - generic [ref=e704]: —
+              - generic [ref=e705]: "1956"
+      - generic [ref=e706]:
+        - generic [ref=e711]:
+          - img [ref=e713] [cursor=pointer]
+          - text: Frage № 175
+        - generic [ref=e716]:
+          - 'heading "Frage № 175: Wie viele Besatzungszonen gab es in Deutschland nach dem Zweiten Weltkrieg?" [level=3] [ref=e717]':
+            - 'link "Frage № 175: Wie viele Besatzungszonen gab es in Deutschland nach dem Zweiten Weltkrieg?" [ref=e718] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-175-wie-viele-besatzungszonen-gab-es-in-deutschland-nach-dem-zweiten-weltkrieg
+          - generic [ref=e719]:
+            - generic [ref=e720]:
+              - generic [ref=e721]: —
+              - generic [ref=e722]: "3"
+            - generic [ref=e723]:
+              - generic [ref=e724]: ✓
+              - generic [ref=e725]: "4"
+            - generic [ref=e726]:
+              - generic [ref=e727]: —
+              - generic [ref=e728]: "5"
+            - generic [ref=e729]:
+              - generic [ref=e730]: —
+              - generic [ref=e731]: "6"
+      - generic [ref=e732]:
+        - generic [ref=e737]:
+          - img [ref=e739] [cursor=pointer]
+          - text: Frage № 176
+        - generic [ref=e742]:
+          - 'heading "Frage № 176: Wie waren die Besatzungszonen Deutschlands nach 1945 verteilt?" [level=3] [ref=e743]':
+            - 'link "Frage № 176: Wie waren die Besatzungszonen Deutschlands nach 1945 verteilt?" [ref=e744] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-176-wie-waren-die-besatzungszonen-deutschlands-nach-1945-verteilt
+          - 'img "Deutschland-Karte mit eingezeichneten Besatzungszonen: (1) im Nord-Westen, (2) im Nord-Osten, (3) im Süd-Osten, und (4) im Süd-Westen" [ref=e746]'
+          - generic [ref=e747]:
+            - generic [ref=e748]:
+              - generic [ref=e749]: —
+              - generic [ref=e750]: 1=Großbritannien, 2=Sowjetunion, 3=Frankreich, 4=USA
+            - generic [ref=e751]:
+              - generic [ref=e752]: —
+              - generic [ref=e753]: 1=Sowjetunion, 2=Großbritannien, 3=USA, 4=Frankreich
+            - generic [ref=e754]:
+              - generic [ref=e755]: ✓
+              - generic [ref=e756]: 1=Großbritannien, 2=Sowjetunion, 3=USA, 4=Frankreich
+            - generic [ref=e757]:
+              - generic [ref=e758]: —
+              - generic [ref=e759]: 1=Großbritannien, 2=USA, 3=Sowjetunion, 4=Frankreich
+      - generic [ref=e760]:
+        - generic [ref=e765]:
+          - img [ref=e767] [cursor=pointer]
+          - text: Frage № 177
+        - generic [ref=e770]:
+          - 'heading "Frage № 177: Welche deutsche Stadt wurde nach dem Zweiten Weltkrieg in vier Sektoren aufgeteilt?" [level=3] [ref=e771]'
+          - generic [ref=e772]:
+            - generic [ref=e773]:
+              - generic [ref=e774]: —
+              - generic [ref=e775]: München
+            - generic [ref=e776]:
+              - generic [ref=e777]: ✓
+              - generic [ref=e778]: Berlin
+            - generic [ref=e779]:
+              - generic [ref=e780]: —
+              - generic [ref=e781]: Dresden
+            - generic [ref=e782]:
+              - generic [ref=e783]: —
+              - generic [ref=e784]: Frankfurt/Oder
+      - generic [ref=e785]:
+        - generic [ref=e790]:
+          - img [ref=e792] [cursor=pointer]
+          - text: Frage № 178
+        - generic [ref=e795]:
+          - 'heading "Frage № 178: Vom Juni 1948 bis zum Mai 1949 wurden die Bürger und Bürgerinnen von West-Berlin durch eine Luftbrücke versorgt. Welcher Umstand war dafür verantwortlich?" [level=3] [ref=e796]'
+          - generic [ref=e797]:
+            - generic [ref=e798]:
+              - generic [ref=e799]: —
+              - generic [ref=e800]: Für Frankreich war eine Versorgung der West-Berliner Bevölkerung mit dem Flugzeug kostengünstiger.
+            - generic [ref=e801]:
+              - generic [ref=e802]: —
+              - generic [ref=e803]: Die amerikanischen Soldaten / Soldatinnen hatten beim Landtransport Angst vor Überfällen.
+            - generic [ref=e804]:
+              - generic [ref=e805]: —
+              - generic [ref=e806]: Für Großbritannien war die Versorgung über die Luftbrücke schneller.
+            - generic [ref=e807]:
+              - generic [ref=e808]: ✓
+              - generic [ref=e809]: Die Sowjetunion unterbrach den gesamten Verkehr auf dem Landwege.
+      - generic [ref=e810]:
+        - generic [ref=e815]:
+          - img [ref=e817] [cursor=pointer]
+          - text: Frage № 179
+        - generic [ref=e820]:
+          - 'heading "Frage № 179: Wie endete der Zweite Weltkrieg in Europa offiziell?" [level=3] [ref=e821]':
+            - 'link "Frage № 179: Wie endete der Zweite Weltkrieg in Europa offiziell?" [ref=e822] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-179-wie-endete-der-zweite-weltkrieg-in-europa-offiziell
+          - generic [ref=e823]:
+            - generic [ref=e824]:
+              - generic [ref=e825]: —
+              - generic [ref=e826]: mit dem Tod Adolf Hitlers
+            - generic [ref=e827]:
+              - generic [ref=e828]: ✓
+              - generic [ref=e829]: durch die bedingungslose Kapitulation Deutschlands
+            - generic [ref=e830]:
+              - generic [ref=e831]: —
+              - generic [ref=e832]: mit dem Rückzug der Deutschen aus den besetzten Gebieten
+            - generic [ref=e833]:
+              - generic [ref=e834]: —
+              - generic [ref=e835]: durch eine Revolution in Deutschland
+      - generic [ref=e836]:
+        - generic [ref=e841]:
+          - img [ref=e843] [cursor=pointer]
+          - text: Frage № 180
+        - generic [ref=e846]:
+          - 'heading "Frage № 180: Der erste Bundeskanzler der Bundesrepublik Deutschland war …" [level=3] [ref=e847]':
+            - 'link "Frage № 180: Der erste Bundeskanzler der Bundesrepublik Deutschland war …" [ref=e848] [cursor=pointer]':
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/frage-180-der-erste-bundeskanzler-der-bundesrepublik-deutschland-war
+          - generic [ref=e849]:
+            - generic [ref=e850]:
+              - generic [ref=e851]: —
+              - generic [ref=e852]: Ludwig Erhard.
+            - generic [ref=e853]:
+              - generic [ref=e854]: —
+              - generic [ref=e855]: Willy Brandt.
+            - generic [ref=e856]:
+              - generic [ref=e857]: ✓
+              - generic [ref=e858]: Konrad Adenauer.
+            - generic [ref=e859]:
+              - generic [ref=e860]: —
+              - generic [ref=e861]: Gerhard Schröder.
+      - generic [ref=e862]:
+        - paragraph [ref=e863]:
+          - text: Würden Sie den Test
+          - emphasis [ref=e864]: Leben in Deutschland
+          - text: bestehen?
+        - link "Zur Bundesland-Auswahl →" [ref=e865] [cursor=pointer]:
+          - /url: https://www.lebenindeutschland.eu/test
+          - generic [ref=e866]:
+            - text: Zur Bundesland-Auswahl
+            - generic [ref=e867]: →
+  - list [ref=e870]:
+    - listitem [ref=e871]:
+      - link "Leben in Deutschland" [ref=e872] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu
+    - listitem [ref=e873]: ›
+    - listitem [ref=e874]:
+      - link "Fragenkatalog" [ref=e875] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/fragenkatalog
+    - listitem [ref=e876]: ›
+    - listitem [ref=e877]: Fragenkatalog, Seite 6
+  - generic [ref=e879]:
+    - paragraph [ref=e881]:
+      - text: © 2013 — 2026
+      - link "lebenindeutschland.eu" [ref=e882] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu
+      - text: —
+      - link "Impressum" [ref=e883] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/impressum
+      - text: —
+      - link "Datenschutz" [ref=e884] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/datenschutz
+      - text: —
+      - link "Utiq verwalten" [ref=e885] [cursor=pointer]:
+        - /url: https://www.lebenindeutschland.eu/utiq-verwalten
+    - paragraph [ref=e887]: Seit April 2013 müssen Bewerber für die deutsche Staatsbürgerschaft den Test Leben in Deutschland erfolgreich bestehen. Die kostenlose Online-Lernplattform lebenindeutschland.eu bietet Ihnen eine kostenlose Möglichkeit zur zeitlich unbegrenzten Übung.
+    - generic [ref=e888]:
+      - generic [ref=e889]:
+        - heading "Test Leben in Deutschland" [level=3] [ref=e890]:
+          - link "Test Leben in Deutschland" [ref=e891] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/test
+        - list [ref=e892]:
+          - listitem [ref=e893]:
+            - link "Test für Baden-Württemberg" [ref=e894] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/bw
+          - listitem [ref=e895]:
+            - link "Test für Bayern" [ref=e896] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/by
+          - listitem [ref=e897]:
+            - link "Test für Berlin" [ref=e898] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/be
+          - listitem [ref=e899]:
+            - link "Test für Brandenburg" [ref=e900] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/bb
+          - listitem [ref=e901]:
+            - link "Test für Bremen" [ref=e902] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/hb
+          - listitem [ref=e903]:
+            - link "Test für Hamburg" [ref=e904] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/hh
+          - listitem [ref=e905]:
+            - link "Test für Hessen" [ref=e906] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/he
+          - listitem [ref=e907]:
+            - link "Test für Mecklenburg-Vorpommern" [ref=e908] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/mv
+          - listitem [ref=e909]:
+            - link "Test für Niedersachsen" [ref=e910] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/ni
+          - listitem [ref=e911]:
+            - link "Test für Nordrhein-Westfalen" [ref=e912] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/nw
+          - listitem [ref=e913]:
+            - link "Test für Rheinland-Pfalz" [ref=e914] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/rp
+          - listitem [ref=e915]:
+            - link "Test für das Saarland" [ref=e916] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sl
+          - listitem [ref=e917]:
+            - link "Test für Sachsen" [ref=e918] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sn
+          - listitem [ref=e919]:
+            - link "Test für Sachsen-Anhalt" [ref=e920] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/st
+          - listitem [ref=e921]:
+            - link "Test für Schleswig-Holstein" [ref=e922] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/sh
+          - listitem [ref=e923]:
+            - link "Test für Thüringen" [ref=e924] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/test/th
+      - generic [ref=e925]:
+        - heading "Fragenkatalog" [level=3] [ref=e926]:
+          - link "Fragenkatalog" [ref=e927] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/fragenkatalog
+        - list [ref=e928]:
+          - listitem [ref=e929]:
+            - link "Deutschland" [ref=e930] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog
+          - listitem [ref=e931]:
+            - link "Fragen für Baden-Württemberg" [ref=e932] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bw
+          - listitem [ref=e933]:
+            - link "Fragen für Bayern" [ref=e934] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/by
+          - listitem [ref=e935]:
+            - link "Fragen für Berlin" [ref=e936] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/be
+          - listitem [ref=e937]:
+            - link "Fragen für Brandenburg" [ref=e938] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/bb
+          - listitem [ref=e939]:
+            - link "Fragen für Bremen" [ref=e940] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hb
+          - listitem [ref=e941]:
+            - link "Fragen für Hamburg" [ref=e942] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/hh
+          - listitem [ref=e943]:
+            - link "Fragen für Hessen" [ref=e944] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/he
+          - listitem [ref=e945]:
+            - link "Fragen für Mecklenburg-Vorpommern" [ref=e946] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/mv
+          - listitem [ref=e947]:
+            - link "Fragen für Niedersachsen" [ref=e948] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/ni
+          - listitem [ref=e949]:
+            - link "Fragen für Nordrhein-Westfalen" [ref=e950] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/nw
+          - listitem [ref=e951]:
+            - link "Fragen für Rheinland-Pfalz" [ref=e952] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/rp
+          - listitem [ref=e953]:
+            - link "Fragen für das Saarland" [ref=e954] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sl
+          - listitem [ref=e955]:
+            - link "Fragen für Sachsen" [ref=e956] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sn
+          - listitem [ref=e957]:
+            - link "Fragen für Sachsen-Anhalt" [ref=e958] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/st
+          - listitem [ref=e959]:
+            - link "Fragen für Schleswig-Holstein" [ref=e960] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/sh
+          - listitem [ref=e961]:
+            - link "Fragen für Thüringen" [ref=e962] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/fragenkatalog/th
+      - generic [ref=e963]:
+        - heading "Prüfstellen" [level=3] [ref=e964]:
+          - link "Prüfstellen" [ref=e965] [cursor=pointer]:
+            - /url: https://www.lebenindeutschland.eu/pruefstellen
+        - list [ref=e966]:
+          - listitem [ref=e967]:
+            - link "Prüfstellen in Baden-Württemberg" [ref=e968] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/bw
+          - listitem [ref=e969]:
+            - link "Prüfstellen in Bayern" [ref=e970] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/by
+          - listitem [ref=e971]:
+            - link "Prüfstellen in Berlin" [ref=e972] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/be
+          - listitem [ref=e973]:
+            - link "Prüfstellen in Brandenburg" [ref=e974] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/bb
+          - listitem [ref=e975]:
+            - link "Prüfstellen in Bremen" [ref=e976] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/hb
+          - listitem [ref=e977]:
+            - link "Prüfstellen in Hamburg" [ref=e978] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/hh
+          - listitem [ref=e979]:
+            - link "Prüfstellen in Hessen" [ref=e980] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/he
+          - listitem [ref=e981]:
+            - link "Prüfstellen in Mecklenburg-Vorpommern" [ref=e982] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/mv
+          - listitem [ref=e983]:
+            - link "Prüfstellen in Niedersachsen" [ref=e984] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/ni
+          - listitem [ref=e985]:
+            - link "Prüfstellen in Nordrhein-Westfalen" [ref=e986] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/nw
+          - listitem [ref=e987]:
+            - link "Prüfstellen in Rheinland-Pfalz" [ref=e988] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/rp
+          - listitem [ref=e989]:
+            - link "Prüfstellen im Saarland" [ref=e990] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sl
+          - listitem [ref=e991]:
+            - link "Prüfstellen in Sachsen" [ref=e992] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sn
+          - listitem [ref=e993]:
+            - link "Prüfstellen in Sachsen-Anhalt" [ref=e994] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/st
+          - listitem [ref=e995]:
+            - link "Prüfstellen in Schleswig-Holstein" [ref=e996] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/sh
+          - listitem [ref=e997]:
+            - link "Prüfstellen in Thüringen" [ref=e998] [cursor=pointer]:
+              - /url: https://www.lebenindeutschland.eu/pruefstellen/th
+  - generic:
+    - status
+  - generic:
+    - generic:
+      - dialog "Privacy and cookie preferences":
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - img "Publisher Logo"
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: your access to lebenindeutschland.eu
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Continue with ads
+                        - paragraph:
+                          - generic:
+                            - text: Use this offer as usual with usage-based advertising and tracking under the terms of our
+                            - link "User Agreement":
+                              - /url: "#"
+                            - text: .
+                        - generic:
+                          - button "Accept all settings and proceed": ACCEPT ALL
+                        - paragraph:
+                          - text: You can find details in our
+                          - link "Privacy Center.":
+                            - /url: "#"
+                      - generic:
+                        - generic: ...or subscribe to Freechoice
+                        - paragraph: One login – many tracking-free offers! Online privacy here and wherever you are in the Freechoice offer.
+                        - generic:
+                          - button "SUBSCRIBE NOW"
+                        - paragraph:
+                          - text: Already a subscriber?
+                          - link "Login":
+                            - /url: "#"
+                            - text: LOGIN
+                  - generic:
+                    - generic:
+                      - text: What does "continue reading for free" mean?
+                      - text: To provide you with our journalistic content as part of the free version, we finance this service through the display of usage-based advertising with the help of our (264)
+                      - link "partners":
+                        - /url: "#"
+                      - text: . This also includes the use of a so-called "TC String" - a digital identifier that stores your advertising settings and enables compliance with your data protection preferences. In this context, we deploy cookies, device IDs, and similar tracking technologies and transmit
+                      - link "personal data":
+                        - /url: "#"
+                      - text: to third-party providers. Your consent applies to this service only. Details can be found in the privacy policy and in the
+                      - link "Privacy Center":
+                        - /url: "#"
+                      - text: ", where you can also make individual settings. You have the right to withdraw your consent at any time. In this case, we hereby declare the extraordinary termination of the underlying user contract, conditionally suspended by the revocation of consent according to §327q paragraph 2 BGB."
+                  - generic:
+                    - list:
+                      - listitem:
+                        - generic:
+                          - button "Use mandatory services":
+                            - generic: Use mandatory services
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Store and/or access information on a device":
+                            - generic: Store and/or access information on a device
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Precise geolocation data, and identification through device scanning":
+                            - generic: Precise geolocation data, and identification through device scanning
+                            - generic:
+                              - img
+                      - listitem:
+                        - generic:
+                          - button "Personalised advertising and content, advertising and content measurement, audience research and services development":
+                            - generic: Personalised advertising and content, advertising and content measurement, audience research and services development
+                            - generic:
+                              - img
+                  - generic:
+                    - generic: Information on data transfer to the USA:Your data will only be transferred to the USA to the extent permitted by law.
+                - generic:
+                  - generic:
+                    - link "POLICY":
+                      - /url: https://www.lebenindeutschland.eu/impressum?&cmp-silent=1
+                  - generic:
+                    - link "IMPRINT":
+                      - /url: https://www.lebenindeutschland.eu/impressum?&cmp-silent=1
