@@ -4,10 +4,23 @@
  */
 
 import React from "react"
-import * as Icons from "lucide-react"
+import {
+  AlertTriangle, ArrowLeft, Award, BarChart3, Check, CheckCircle,
+  ChevronDown, ChevronRight, Circle, Clock, Download, Filter, Flag,
+  Flame, Globe, Languages, Loader2, MapPin, Moon, RotateCcw, Star,
+  Sun, Target, TrendingUp, Trophy, Upload, Volume2, X, Zap,
+} from "lucide-react"
+
+// Only the icons actually used in this app — avoids loading all 900+ lucide icons
+const Icons: Record<string, React.ComponentType<any>> = {
+  AlertTriangle, ArrowLeft, Award, BarChart3, Check, CheckCircle,
+  ChevronDown, ChevronRight, Circle, Clock, Download, Filter, Flag,
+  Flame, Globe, Languages, Loader2, MapPin, Moon, RotateCcw, Star,
+  Sun, Target, TrendingUp, Trophy, Upload, Volume2, X, Zap,
+}
 
 interface IconProps {
-  name: keyof typeof Icons
+  name: string
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl"
   color?: string
   className?: string
@@ -38,7 +51,7 @@ export const Icon = React.forwardRef<HTMLDivElement, IconProps>(
     title,
   }, ref) => {
     // Get the icon component
-    const IconComponent = Icons[name as keyof typeof Icons] as React.ComponentType<any>
+    const IconComponent = Icons[name as string] as React.ComponentType<any>
 
     if (!IconComponent) {
       return <div ref={ref} title="Icon not found" className="text-gray-600">?</div>
@@ -75,7 +88,7 @@ export const IconLabel = ({
   color = "text-gray-400",
   layout = "row",
 }: {
-  icon: keyof typeof Icons
+  icon: string
   label: string
   size?: "xs" | "sm" | "md" | "lg" | "xl"
   color?: string
@@ -125,7 +138,7 @@ export const StatusIcon = ({
   return (
     <div className={`rounded-full p-2 ${config.bg}`}>
       <Icon
-        name={config.icon as keyof typeof Icons}
+        name={config.icon as string}
         size={size}
         color={config.color}
         animate={config.animate}
@@ -140,7 +153,7 @@ export const StatusIcon = ({
 export const IconButton = React.forwardRef<
   HTMLButtonElement,
   {
-    icon: keyof typeof Icons
+    icon: string
     label?: string
     onClick: () => void
     size?: "sm" | "md" | "lg"
@@ -198,7 +211,7 @@ export const IconBadge = ({
   label,
   color = "blue",
 }: {
-  icon: keyof typeof Icons
+  icon: string
   label: string
   color?: "blue" | "green" | "red" | "yellow" | "purple" | "cyan"
 }) => {
