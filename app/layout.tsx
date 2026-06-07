@@ -10,6 +10,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ThemeProvider } from "@/components/ThemeProvider"
+import PWAInstallBanner from "@/components/PWAInstallBanner"
 
 export const metadata: Metadata = {
   title: {
@@ -211,6 +212,7 @@ export default function RootLayout({
         </ThemeProvider>
         <GoogleAdSense />
         <HotjarScript />
+        <PWAInstallBanner />
         <SpeedInsights />
         <Analytics />
       </body>
