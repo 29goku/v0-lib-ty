@@ -1,0 +1,540 @@
+- generic:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - link:
+            - /url: /
+            - button:
+              - img
+              - text: BACK
+          - generic:
+            - heading [level=1]: PRACTICE MODE
+            - generic: Master the German citizenship test 🚀
+          - generic:
+            - button:
+              - generic:
+                - img
+            - generic:
+              - button:
+                - img
+                - generic: 🇺🇸
+                - generic: English
+                - img
+            - button:
+              - img
+              - text: RESET
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - paragraph: Progress
+                  - paragraph: 3/300
+                - generic: 🎯
+              - generic:
+                - generic:
+                  - progressbar
+                  - generic: 1.0%
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - paragraph: XP
+                  - paragraph: "20"
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - paragraph: Streak
+                  - paragraph: "2"
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - paragraph: Accuracy
+                  - paragraph: 67%
+        - generic:
+          - button:
+            - img
+            - text: Hide Filters
+            - img
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - button [expanded]:
+                  - generic:
+                    - img
+                    - generic: Select German states...
+                  - img
+          - generic:
+            - generic:
+              - generic:
+                - button:
+                  - generic:
+                    - img
+                    - generic: Select categories...
+                  - img
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=3]: Filter by Status
+              - generic:
+                - button: Incorrect (1)
+                - button: Correct (2)
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: →
+                  - generic:
+                    - generic: ←
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Question q001
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                        - generic:
+                          - paragraph: In Deutschland dürfen Menschen offen etwas gegen die Regierung sagen, weil …
+                      - generic:
+                        - generic:
+                          - button [ref=e455] [cursor=pointer]:
+                            - generic [ref=e104]:
+                              - generic [ref=e105]: A.
+                              - generic [ref=e107]: hier Religionsfreiheit gilt.
+                          - button [ref=e456] [cursor=pointer]:
+                            - generic [ref=e109]:
+                              - generic [ref=e110]: B.
+                              - generic [ref=e112]: die Menschen Steuern zahlen.
+                          - button [ref=e457] [cursor=pointer]:
+                            - generic [ref=e114]:
+                              - generic [ref=e115]: C.
+                              - generic [ref=e117]: die Menschen das Wahlrecht haben.
+                          - button [ref=e458] [cursor=pointer]:
+                            - generic [ref=e119]:
+                              - generic [ref=e120]: D.
+                              - generic [ref=e122]: hier Meinungsfreiheit gilt.
+                        - generic:
+                          - paragraph:
+                            - generic:
+                              - img
+                            - text: Select an answer
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - button: "1"
+                      - button: "2"
+                      - button: "3"
+                      - button: "4"
+                      - button: "5"
+                      - button: "6"
+                      - button: "7"
+                      - button: "8"
+                      - button: "9"
+                      - button: "10"
+                      - button: "11"
+                      - button: "12"
+                      - button: "13"
+                      - button: "14"
+                      - button: "15"
+                      - button: "16"
+                      - button: "17"
+                      - button: "18"
+                      - button: "19"
+                      - button: "20"
+                      - button: "21"
+                      - button: "22"
+                      - button: "23"
+                      - button: "24"
+                      - button: "25"
+                      - button: "26"
+                      - button: "27"
+                      - button: "28"
+                      - button: "29"
+                      - button: "30"
+                      - button: "31"
+                      - button: "32"
+                      - button: "33"
+                      - button: "34"
+                      - button: "35"
+                      - button: "36"
+                      - button: "37"
+                      - button: "38"
+                      - button: "39"
+                      - button: "40"
+                      - button: "41"
+                      - button: "42"
+                      - button: "43"
+                      - button: "44"
+                      - button: "45"
+                      - button: "46"
+                      - button: "47"
+                      - button: "48"
+                      - button: "49"
+                      - button: "50"
+                      - button: "51"
+                      - button: "52"
+                      - button: "53"
+                      - button: "54"
+                      - button: "55"
+                      - button: "56"
+                      - button: "57"
+                      - button: "58"
+                      - button: "59"
+                      - button: "60"
+                      - button: "61"
+                      - button: "62"
+                      - button: "63"
+                      - button: "64"
+                      - button: "65"
+                      - button: "66"
+                      - button: "67"
+                      - button: "68"
+                      - button: "69"
+                      - button: "70"
+                      - button: "71"
+                      - button: "72"
+                      - button: "73"
+                      - button: "74"
+                      - button: "75"
+                      - button: "76"
+                      - button: "77"
+                      - button: "78"
+                      - button: "79"
+                      - button: "80"
+                      - button: "81"
+                      - button: "82"
+                      - button: "83"
+                      - button: "84"
+                      - button: "85"
+                      - button: "86"
+                      - button: "87"
+                      - button: "88"
+                      - button: "89"
+                      - button: "90"
+                      - button: "91"
+                      - button: "92"
+                      - button: "93"
+                      - button: "94"
+                      - button: "95"
+                      - button: "96"
+                      - button: "97"
+                      - button: "98"
+                      - button: "99"
+                      - button: "100"
+                      - button: "101"
+                      - button: "102"
+                      - button: "103"
+                      - button: "104"
+                      - button: "105"
+                      - button: "106"
+                      - button: "107"
+                      - button: "108"
+                      - button: "109"
+                      - button: "110"
+                      - button: "111"
+                      - button: "112"
+                      - button: "113"
+                      - button: "114"
+                      - button: "115"
+                      - button: "116"
+                      - button: "117"
+                      - button: "118"
+                      - button: "119"
+                      - button: "120"
+                      - button: "121"
+                      - button: "122"
+                      - button: "123"
+                      - button: "124"
+                      - button: "125"
+                      - button: "126"
+                      - button: "127"
+                      - button: "128"
+                      - button: "129"
+                      - button: "130"
+                      - button: "131"
+                      - button: "132"
+                      - button: "133"
+                      - button: "134"
+                      - button: "135"
+                      - button: "136"
+                      - button: "137"
+                      - button: "138"
+                      - button: "139"
+                      - button: "140"
+                      - button: "141"
+                      - button: "142"
+                      - button: "143"
+                      - button: "144"
+                      - button: "145"
+                      - button: "146"
+                      - button: "147"
+                      - button: "148"
+                      - button: "149"
+                      - button: "150"
+                      - button: "151"
+                      - button: "152"
+                      - button: "153"
+                      - button: "154"
+                      - button: "155"
+                      - button: "156"
+                      - button: "157"
+                      - button: "158"
+                      - button: "159"
+                      - button: "160"
+                      - button: "161"
+                      - button: "162"
+                      - button: "163"
+                      - button: "164"
+                      - button: "165"
+                      - button: "166"
+                      - button: "167"
+                      - button: "168"
+                      - button: "169"
+                      - button: "170"
+                      - button: "171"
+                      - button: "172"
+                      - button: "173"
+                      - button: "174"
+                      - button: "175"
+                      - button: "176"
+                      - button: "177"
+                      - button: "178"
+                      - button: "179"
+                      - button: "180"
+                      - button: "181"
+                      - button: "182"
+                      - button: "183"
+                      - button: "184"
+                      - button: "185"
+                      - button: "186"
+                      - button: "187"
+                      - button: "188"
+                      - button: "189"
+                      - button: "190"
+                      - button: "191"
+                      - button: "192"
+                      - button: "193"
+                      - button: "194"
+                      - button: "195"
+                      - button: "196"
+                      - button: "197"
+                      - button: "198"
+                      - button: "199"
+                      - button: "200"
+                      - button: "201"
+                      - button: "202"
+                      - button: "203"
+                      - button: "204"
+                      - button: "205"
+                      - button: "206"
+                      - button: "207"
+                      - button: "208"
+                      - button: "209"
+                      - button: "210"
+                      - button: "211"
+                      - button: "212"
+                      - button: "213"
+                      - button: "214"
+                      - button: "215"
+                      - button: "216"
+                      - button: "217"
+                      - button: "218"
+                      - button: "219"
+                      - button: "220"
+                      - button: "221"
+                      - button: "222"
+                      - button: "223"
+                      - button: "224"
+                      - button: "225"
+                      - button: "226"
+                      - button: "227"
+                      - button: "228"
+                      - button: "229"
+                      - button: "230"
+                      - button: "231"
+                      - button: "232"
+                      - button: "233"
+                      - button: "234"
+                      - button: "235"
+                      - button: "236"
+                      - button: "237"
+                      - button: "238"
+                      - button: "239"
+                      - button: "240"
+                      - button: "241"
+                      - button: "242"
+                      - button: "243"
+                      - button: "244"
+                      - button: "245"
+                      - button: "246"
+                      - button: "247"
+                      - button: "248"
+                      - button: "249"
+                      - button: "250"
+                      - button: "251"
+                      - button: "252"
+                      - button: "253"
+                      - button: "254"
+                      - button: "255"
+                      - button: "256"
+                      - button: "257"
+                      - button: "258"
+                      - button: "259"
+                      - button: "260"
+                      - button: "261"
+                      - button: "262"
+                      - button: "263"
+                      - button: "264"
+                      - button: "265"
+                      - button: "266"
+                      - button: "267"
+                      - button: "268"
+                      - button: "269"
+                      - button: "270"
+                      - button: "271"
+                      - button: "272"
+                      - button: "273"
+                      - button: "274"
+                      - button: "275"
+                      - button: "276"
+                      - button: "277"
+                      - button: "278"
+                      - button: "279"
+                      - button: "280"
+                      - button: "281"
+                      - button: "282"
+                      - button: "283"
+                      - button: "284"
+                      - button: "285"
+                      - button: "286"
+                      - button: "287"
+                      - button: "288"
+                      - button: "289"
+                      - button: "290"
+                      - button: "291"
+                      - button: "292"
+                      - button: "293"
+                      - button: "294"
+                      - button: "295"
+                      - button: "296"
+                      - button: "297"
+                      - button: "298"
+                      - button: "299"
+                      - button: "300"
+  - generic:
+    - button [ref=e459] [cursor=pointer]:
+      - img [ref=e11]
+      - generic [ref=e13]: Feedback
+    - region:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - group:
+                  - generic:
+                    - heading: How would you rate your experience?
+                    - generic: where 1 is Not satisfied at all and 5 is Very satisfied
+                    - radiogroup:
+                      - generic:
+                        - generic:
+                          - radio
+                        - generic:
+                          - radio
+                        - generic:
+                          - radio
+                        - generic:
+                          - radio
+                        - generic:
+                          - radio
+                      - generic:
+                        - generic: Not satisfied at all
+                        - generic: Very satisfied
+                  - generic:
+                    - generic:
+                      - button [disabled]: Next
+  - button "Open Next.js Dev Tools" [ref=e437] [cursor=pointer]:
+    - img [ref=e438]
+  - alert: Leben in Deutschland Test 2025 – 310 Offizielle Fragen & Vorbereitung
+  - menu "Select German states..." [active] [ref=e460]:
+    - generic [ref=e461]: Select State
+    - separator [ref=e462]
+    - menuitemcheckbox "🏰 Baden-Württemberg" [ref=e463]:
+      - generic [ref=e465]:
+        - generic [ref=e466]: 🏰
+        - generic [ref=e467]: Baden-Württemberg
+    - menuitemcheckbox "🍺 Bayern" [ref=e468]:
+      - generic [ref=e470]:
+        - generic [ref=e471]: 🍺
+        - generic [ref=e472]: Bayern
+    - menuitemcheckbox "🐻 Berlin" [ref=e473]:
+      - generic [ref=e475]:
+        - generic [ref=e476]: 🐻
+        - generic [ref=e477]: Berlin
+    - menuitemcheckbox "🌲 Brandenburg" [ref=e478]:
+      - generic [ref=e480]:
+        - generic [ref=e481]: 🌲
+        - generic [ref=e482]: Brandenburg
+    - menuitemcheckbox "⚓ Bremen" [ref=e483]:
+      - generic [ref=e485]:
+        - generic [ref=e486]: ⚓
+        - generic [ref=e487]: Bremen
+    - menuitemcheckbox "🚢 Hamburg" [ref=e488]:
+      - generic [ref=e490]:
+        - generic [ref=e491]: 🚢
+        - generic [ref=e492]: Hamburg
+    - menuitemcheckbox "🏛️ Hessen" [ref=e493]:
+      - generic [ref=e495]:
+        - generic [ref=e496]: 🏛️
+        - generic [ref=e497]: Hessen
+    - menuitemcheckbox "🏖️ Mecklenburg-Vorpommern" [ref=e498]:
+      - generic [ref=e500]:
+        - generic [ref=e501]: 🏖️
+        - generic [ref=e502]: Mecklenburg-Vorpommern
+    - menuitemcheckbox "🐴 Niedersachsen" [ref=e503]:
+      - generic [ref=e505]:
+        - generic [ref=e506]: 🐴
+        - generic [ref=e507]: Niedersachsen
+    - menuitemcheckbox "🏴 Nordrhein-Westfalen" [ref=e508]:
+      - generic [ref=e510]:
+        - generic [ref=e511]: 🏴
+        - generic [ref=e512]: Nordrhein-Westfalen
+    - menuitemcheckbox "🍷 Rheinland-Pfalz" [ref=e513]:
+      - generic [ref=e515]:
+        - generic [ref=e516]: 🍷
+        - generic [ref=e517]: Rheinland-Pfalz
+    - menuitemcheckbox "⚒️ Saarland" [ref=e518]:
+      - generic [ref=e520]:
+        - generic [ref=e521]: ⚒️
+        - generic [ref=e522]: Saarland
+    - menuitemcheckbox "🎭 Sachsen" [ref=e523]:
+      - generic [ref=e525]:
+        - generic [ref=e526]: 🎭
+        - generic [ref=e527]: Sachsen
+    - menuitemcheckbox "🏰 Sachsen-Anhalt" [ref=e528]:
+      - generic [ref=e530]:
+        - generic [ref=e531]: 🏰
+        - generic [ref=e532]: Sachsen-Anhalt
+    - menuitemcheckbox "🌊 Schleswig-Holstein" [ref=e533]:
+      - generic [ref=e535]:
+        - generic [ref=e536]: 🌊
+        - generic [ref=e537]: Schleswig-Holstein
+    - menuitemcheckbox "🌳 Thüringen" [ref=e538]:
+      - generic [ref=e540]:
+        - generic [ref=e541]: 🌳
+        - generic [ref=e542]: Thüringen

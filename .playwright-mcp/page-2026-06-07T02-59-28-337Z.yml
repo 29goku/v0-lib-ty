@@ -1,0 +1,42 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e5]:
+    - paragraph [ref=e7]: Loading Questions...
+    - paragraph [ref=e8]: Get Ready!
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - button "Feedback - Show survey" [ref=e9] [cursor=pointer]:
+                - img [ref=e11]
+                - generic [ref=e13]: Feedback
+              - region:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - group:
+                            - generic:
+                              - heading: How would you rate your experience?
+                              - generic: where 1 is Not satisfied at all and 5 is Very satisfied
+                              - radiogroup:
+                                - generic:
+                                  - generic:
+                                    - radio
+                                  - generic:
+                                    - radio
+                                  - generic:
+                                    - radio
+                                  - generic:
+                                    - radio
+                                  - generic:
+                                    - radio
+                                - generic:
+                                  - generic: Not satisfied at all
+                                  - generic: Very satisfied
+                            - generic:
+                              - generic:
+                                - button [disabled]: Next
+  - alert [ref=e14]

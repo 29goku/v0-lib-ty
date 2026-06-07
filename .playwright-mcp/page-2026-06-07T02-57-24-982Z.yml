@@ -1,0 +1,238 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e7]:
+      - link "Leben in Deutschland Leben in Deutschland Test" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img "Leben in Deutschland" [ref=e11]
+        - heading "Leben in Deutschland Test" [level=1] [ref=e12]
+      - navigation [ref=e13]:
+        - generic [ref=e14]:
+          - link "Home" [ref=e15] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e16]: Home
+          - link "Practice Sets" [ref=e17] [cursor=pointer]:
+            - /url: /all-sets
+            - generic [ref=e18]: Practice Sets
+          - link "All Questions" [ref=e19] [cursor=pointer]:
+            - /url: /fragen
+            - generic [ref=e20]: All Questions
+          - link "Tests" [ref=e21] [cursor=pointer]:
+            - /url: /test
+            - generic [ref=e22]: Tests
+          - link "Exam" [ref=e23] [cursor=pointer]:
+            - /url: /exam
+            - generic [ref=e24]: Exam
+          - link "Apps" [ref=e25] [cursor=pointer]:
+            - /url: /apps
+            - generic [ref=e26]: Apps
+      - generic [ref=e27]:
+        - button "English" [ref=e30]:
+          - img [ref=e31]
+          - generic [ref=e34]: English
+          - img [ref=e35]
+        - link "Download Free App" [ref=e37] [cursor=pointer]:
+          - /url: /apps
+          - generic [ref=e38]: Download Free App
+          - img [ref=e39]
+  - main [ref=e41]:
+    - generic [ref=e43]:
+      - img [ref=e45]
+      - heading "Leben in Deutschland" [level=2] [ref=e47]
+      - paragraph [ref=e48]: Loading questions...
+  - contentinfo [ref=e52]:
+    - generic [ref=e53]:
+      - paragraph [ref=e54]: Since 2024, this free platform helps you prepare for the “Leben in Deutschland” test — with unlimited practice, all official BAMF questions, state-specific questions, and mock exams. Also available as native iOS and Android apps.
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - heading "Mobile apps" [level=2] [ref=e57]
+          - list [ref=e58]:
+            - listitem [ref=e59]:
+              - link "Apps overview" [ref=e60] [cursor=pointer]:
+                - /url: /apps
+            - listitem [ref=e61]:
+              - link "App Store (iOS)" [ref=e62] [cursor=pointer]:
+                - /url: https://apps.apple.com/app/leben-in-deutschland-pro/id6751195385
+            - listitem [ref=e63]:
+              - link "Google Play (Android)" [ref=e64] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=com.caglayanserbetci.LebenInDeutschland
+        - generic [ref=e65]:
+          - heading "Leben in Deutschland test" [level=2] [ref=e66]
+          - list [ref=e67]:
+            - listitem [ref=e68]:
+              - link "All tests overview" [ref=e69] [cursor=pointer]:
+                - /url: /test
+            - listitem [ref=e70]:
+              - link "Mock exam (33 questions)" [ref=e71] [cursor=pointer]:
+                - /url: /exam
+            - listitem [ref=e72]:
+              - link "Tests für Baden-Württemberg" [ref=e73] [cursor=pointer]:
+                - /url: /test/baden-wuerttemberg
+            - listitem [ref=e74]:
+              - link "Tests für Bayern" [ref=e75] [cursor=pointer]:
+                - /url: /test/bayern
+            - listitem [ref=e76]:
+              - link "Tests für Berlin" [ref=e77] [cursor=pointer]:
+                - /url: /test/berlin
+            - listitem [ref=e78]:
+              - link "Tests für Brandenburg" [ref=e79] [cursor=pointer]:
+                - /url: /test/brandenburg
+            - listitem [ref=e80]:
+              - link "Tests für Bremen" [ref=e81] [cursor=pointer]:
+                - /url: /test/bremen
+            - listitem [ref=e82]:
+              - link "Tests für Hamburg" [ref=e83] [cursor=pointer]:
+                - /url: /test/hamburg
+            - listitem [ref=e84]:
+              - link "Tests für Hessen" [ref=e85] [cursor=pointer]:
+                - /url: /test/hessen
+            - listitem [ref=e86]:
+              - link "Tests für Mecklenburg-Vorpommern" [ref=e87] [cursor=pointer]:
+                - /url: /test/mecklenburg-vorpommern
+            - listitem [ref=e88]:
+              - link "Tests für Niedersachsen" [ref=e89] [cursor=pointer]:
+                - /url: /test/niedersachsen
+            - listitem [ref=e90]:
+              - link "Tests für Nordrhein-Westfalen" [ref=e91] [cursor=pointer]:
+                - /url: /test/nordrhein-westfalen
+            - listitem [ref=e92]:
+              - link "Tests für Rheinland-Pfalz" [ref=e93] [cursor=pointer]:
+                - /url: /test/rheinland-pfalz
+            - listitem [ref=e94]:
+              - link "Tests für das Saarland" [ref=e95] [cursor=pointer]:
+                - /url: /test/saarland
+            - listitem [ref=e96]:
+              - link "Tests für Sachsen" [ref=e97] [cursor=pointer]:
+                - /url: /test/sachsen
+            - listitem [ref=e98]:
+              - link "Tests für Sachsen-Anhalt" [ref=e99] [cursor=pointer]:
+                - /url: /test/sachsen-anhalt
+            - listitem [ref=e100]:
+              - link "Tests für Schleswig-Holstein" [ref=e101] [cursor=pointer]:
+                - /url: /test/schleswig-holstein
+            - listitem [ref=e102]:
+              - link "Tests für Thüringen" [ref=e103] [cursor=pointer]:
+                - /url: /test/thueringen
+        - generic [ref=e104]:
+          - heading "Question catalog" [level=2] [ref=e105]
+          - list [ref=e106]:
+            - listitem [ref=e107]:
+              - link "All questions" [ref=e108] [cursor=pointer]:
+                - /url: /fragen
+            - listitem [ref=e109]:
+              - link "Germany (federal questions)" [ref=e110] [cursor=pointer]:
+                - /url: /fragen/deutschland
+            - listitem [ref=e111]:
+              - link "Fragen für Baden-Württemberg" [ref=e112] [cursor=pointer]:
+                - /url: /fragen/baden-wuerttemberg
+            - listitem [ref=e113]:
+              - link "Fragen für Bayern" [ref=e114] [cursor=pointer]:
+                - /url: /fragen/bayern
+            - listitem [ref=e115]:
+              - link "Fragen für Berlin" [ref=e116] [cursor=pointer]:
+                - /url: /fragen/berlin
+            - listitem [ref=e117]:
+              - link "Fragen für Brandenburg" [ref=e118] [cursor=pointer]:
+                - /url: /fragen/brandenburg
+            - listitem [ref=e119]:
+              - link "Fragen für Bremen" [ref=e120] [cursor=pointer]:
+                - /url: /fragen/bremen
+            - listitem [ref=e121]:
+              - link "Fragen für Hamburg" [ref=e122] [cursor=pointer]:
+                - /url: /fragen/hamburg
+            - listitem [ref=e123]:
+              - link "Fragen für Hessen" [ref=e124] [cursor=pointer]:
+                - /url: /fragen/hessen
+            - listitem [ref=e125]:
+              - link "Fragen für Mecklenburg-Vorpommern" [ref=e126] [cursor=pointer]:
+                - /url: /fragen/mecklenburg-vorpommern
+            - listitem [ref=e127]:
+              - link "Fragen für Niedersachsen" [ref=e128] [cursor=pointer]:
+                - /url: /fragen/niedersachsen
+            - listitem [ref=e129]:
+              - link "Fragen für Nordrhein-Westfalen" [ref=e130] [cursor=pointer]:
+                - /url: /fragen/nordrhein-westfalen
+            - listitem [ref=e131]:
+              - link "Fragen für Rheinland-Pfalz" [ref=e132] [cursor=pointer]:
+                - /url: /fragen/rheinland-pfalz
+            - listitem [ref=e133]:
+              - link "Fragen für das Saarland" [ref=e134] [cursor=pointer]:
+                - /url: /fragen/saarland
+            - listitem [ref=e135]:
+              - link "Fragen für Sachsen" [ref=e136] [cursor=pointer]:
+                - /url: /fragen/sachsen
+            - listitem [ref=e137]:
+              - link "Fragen für Sachsen-Anhalt" [ref=e138] [cursor=pointer]:
+                - /url: /fragen/sachsen-anhalt
+            - listitem [ref=e139]:
+              - link "Fragen für Schleswig-Holstein" [ref=e140] [cursor=pointer]:
+                - /url: /fragen/schleswig-holstein
+            - listitem [ref=e141]:
+              - link "Fragen für Thüringen" [ref=e142] [cursor=pointer]:
+                - /url: /fragen/thueringen
+        - generic [ref=e143]:
+          - heading "Test centers" [level=2] [ref=e144]
+          - list [ref=e145]:
+            - listitem [ref=e146]:
+              - link "Test centers overview" [ref=e147] [cursor=pointer]:
+                - /url: /pruefstellen
+            - listitem [ref=e148]:
+              - link "Test centers in in Baden-Württemberg" [ref=e149] [cursor=pointer]:
+                - /url: /pruefstellen/baden-wuerttemberg
+            - listitem [ref=e150]:
+              - link "Test centers in in Bayern" [ref=e151] [cursor=pointer]:
+                - /url: /pruefstellen/bayern
+            - listitem [ref=e152]:
+              - link "Test centers in in Berlin" [ref=e153] [cursor=pointer]:
+                - /url: /pruefstellen/berlin
+            - listitem [ref=e154]:
+              - link "Test centers in in Brandenburg" [ref=e155] [cursor=pointer]:
+                - /url: /pruefstellen/brandenburg
+            - listitem [ref=e156]:
+              - link "Test centers in in Bremen" [ref=e157] [cursor=pointer]:
+                - /url: /pruefstellen/bremen
+            - listitem [ref=e158]:
+              - link "Test centers in in Hamburg" [ref=e159] [cursor=pointer]:
+                - /url: /pruefstellen/hamburg
+            - listitem [ref=e160]:
+              - link "Test centers in in Hessen" [ref=e161] [cursor=pointer]:
+                - /url: /pruefstellen/hessen
+            - listitem [ref=e162]:
+              - link "Test centers in in Mecklenburg-Vorpommern" [ref=e163] [cursor=pointer]:
+                - /url: /pruefstellen/mecklenburg-vorpommern
+            - listitem [ref=e164]:
+              - link "Test centers in in Niedersachsen" [ref=e165] [cursor=pointer]:
+                - /url: /pruefstellen/niedersachsen
+            - listitem [ref=e166]:
+              - link "Test centers in in Nordrhein-Westfalen" [ref=e167] [cursor=pointer]:
+                - /url: /pruefstellen/nordrhein-westfalen
+            - listitem [ref=e168]:
+              - link "Test centers in in Rheinland-Pfalz" [ref=e169] [cursor=pointer]:
+                - /url: /pruefstellen/rheinland-pfalz
+            - listitem [ref=e170]:
+              - link "Test centers in im Saarland" [ref=e171] [cursor=pointer]:
+                - /url: /pruefstellen/saarland
+            - listitem [ref=e172]:
+              - link "Test centers in in Sachsen" [ref=e173] [cursor=pointer]:
+                - /url: /pruefstellen/sachsen
+            - listitem [ref=e174]:
+              - link "Test centers in in Sachsen-Anhalt" [ref=e175] [cursor=pointer]:
+                - /url: /pruefstellen/sachsen-anhalt
+            - listitem [ref=e176]:
+              - link "Test centers in in Schleswig-Holstein" [ref=e177] [cursor=pointer]:
+                - /url: /pruefstellen/schleswig-holstein
+            - listitem [ref=e178]:
+              - link "Test centers in in Thüringen" [ref=e179] [cursor=pointer]:
+                - /url: /pruefstellen/thueringen
+      - generic [ref=e180]:
+        - paragraph [ref=e181]:
+          - text: © 2024 — 2026 Leben in Deutschland Test
+          - link "Legal notice" [ref=e182] [cursor=pointer]:
+            - /url: /impressum
+          - text: —
+          - link "Privacy" [ref=e183] [cursor=pointer]:
+            - /url: /datenschutz
+        - paragraph [ref=e184]: EduLikya · Düsseldorf
+  - link "Send Feedback" [ref=e185] [cursor=pointer]:
+    - /url: https://docs.google.com/forms/d/e/1FAIpQLSda05xacElKV86nyNA5CZ4dkaTGKAANw79f1L2OF-Z_MWiXmA/viewform
+    - img [ref=e186]
+    - generic: Send Feedback
