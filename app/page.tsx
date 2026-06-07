@@ -53,22 +53,22 @@ export default function HomePage() {
   return (
       <>
         <Head>
-          <title>Leben in Deutschland Test 2025 – 310 Offizielle Fragen & Vorbereitung</title>
-          <meta name="description" content="Kostenlose Vorbereitung für den Leben in Deutschland Test 2025 mit allen 310 offiziellen Fragen, Antworten und Erklärungen. Interaktiv, mobilfreundlich und perfekt für den Einbürgerungstest." />
+          <title>Leben in Deutschland Test 2026 – 460 Offizielle Fragen & Vorbereitung</title>
+          <meta name="description" content="Kostenlose Vorbereitung für den Leben in Deutschland Test 2026 mit allen 460 offiziellen BAMF-Fragen, Antworten und Erklärungen. Aktualisiert 2026. Interaktiv, mobilfreundlich und perfekt für den Einbürgerungstest." />
           <meta name="robots" content="index, follow" />
           <link rel="canonical" href="https://lebeninde.com/" />
           <link rel="alternate" href="https://lebeninde.com/en/" hrefLang="en" />
           <link rel="alternate" href="https://lebeninde.com/" hrefLang="de" />
           {/* Open Graph */}
-          <meta property="og:title" content="Leben in Deutschland Test 2025 – 310 Offizielle Fragen & Vorbereitung" />
-          <meta property="og:description" content="Kostenlose Vorbereitung für den Leben in Deutschland Test 2025 mit allen 310 offiziellen Fragen, Antworten und Erklärungen. Interaktiv, mobilfreundlich und perfekt für den Einbürgerungstest." />
+          <meta property="og:title" content="Leben in Deutschland Test 2026 – 460 Offizielle Fragen & Vorbereitung" />
+          <meta property="og:description" content="Kostenlose Vorbereitung für den Leben in Deutschland Test 2026 mit allen 460 offiziellen BAMF-Fragen, Antworten und Erklärungen. Aktualisiert 2026." />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://lebeninde.com/" />
           <meta property="og:image" content="/public/placeholder-logo.png" />
           {/* Twitter Card */}
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Leben in Deutschland Test 2025 – 310 Offizielle Fragen & Vorbereitung" />
-          <meta name="twitter:description" content="Kostenlose Vorbereitung für den Leben in Deutschland Test 2025 mit allen 310 offiziellen Fragen, Antworten und Erklärungen. Interaktiv, mobilfreundlich und perfekt für den Einbürgerungstest." />
+          <meta name="twitter:title" content="Leben in Deutschland Test 2026 – 460 Offizielle Fragen & Vorbereitung" />
+          <meta name="twitter:description" content="Kostenlose Vorbereitung für den Leben in Deutschland Test 2026 mit allen 460 offiziellen BAMF-Fragen, Antworten und Erklärungen. Aktualisiert 2026." />
           <meta name="twitter:image" content="/public/placeholder-logo.png" />
           {/* Schema.org Structured Data */}
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -180,6 +180,12 @@ export default function HomePage() {
 
             {/* Main title */}
             <div className="mb-4 sm:mb-6 md:mb-8 relative">
+              {/* 2026 BAMF badge */}
+              <div className="flex justify-center mb-4">
+                <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide border ${isDark ? 'bg-green-900/40 border-green-700 text-green-300' : 'bg-green-50 border-green-400 text-green-700'}`}>
+                  ✓ Updated 2026 · Official BAMF Data · 460 Questions
+                </span>
+              </div>
               <h1 className={`text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-semibold mb-1 sm:mb-2 md:mb-3 leading-none ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 LEBEN
               </h1>
