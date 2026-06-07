@@ -12,24 +12,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/29goku/v0-lib-ty/commit/266dd7c892df122b554790d3735fae760cb8f843",
-        "commitHash": "266dd7c892df122b554790d3735fae760cb8f843",
-        "buildHref": "https://github.com/29goku/v0-lib-ty/actions/runs/27081300108"
+        "commitHref": "https://github.com/29goku/v0-lib-ty/commit/dadb973202e049540287cd8f9dab0f62daccf814",
+        "commitHash": "dadb973202e049540287cd8f9dab0f62daccf814",
+        "buildHref": "https://github.com/29goku/v0-lib-ty/actions/runs/27081829823"
       },
       "gitCommit": {
-        "shortHash": "266dd7c",
-        "hash": "266dd7c892df122b554790d3735fae760cb8f843",
-        "subject": "Merge pull request #28 from shobhitsingh29/2026ques",
-        "body": "Merge pull request #28 from shobhitsingh29/2026ques\n\n2026ques",
+        "shortHash": "dadb973",
+        "hash": "dadb973202e049540287cd8f9dab0f62daccf814",
+        "subject": "Merge pull request #31 from shobhitsingh29/feat/2026-bamf-update",
+        "body": "Merge pull request #31 from shobhitsingh29/feat/2026-bamf-update\n\nfeat: add full PWA support for free iOS/Android installation",
         "author": {
           "name": "29goku",
           "email": "134237065+29goku@users.noreply.github.com",
-          "time": 1780802189000
+          "time": 1780803870000
         },
         "committer": {
           "name": "GitHub",
           "email": "noreply@github.com",
-          "time": 1780802189000
+          "time": 1780803870000
         },
         "branch": "main"
       },
@@ -43,24 +43,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/29goku/v0-lib-ty/commit/266dd7c892df122b554790d3735fae760cb8f843",
-            "commitHash": "266dd7c892df122b554790d3735fae760cb8f843",
-            "buildHref": "https://github.com/29goku/v0-lib-ty/actions/runs/27081300108"
+            "commitHref": "https://github.com/29goku/v0-lib-ty/commit/dadb973202e049540287cd8f9dab0f62daccf814",
+            "commitHash": "dadb973202e049540287cd8f9dab0f62daccf814",
+            "buildHref": "https://github.com/29goku/v0-lib-ty/actions/runs/27081829823"
           },
           "gitCommit": {
-            "shortHash": "266dd7c",
-            "hash": "266dd7c892df122b554790d3735fae760cb8f843",
-            "subject": "Merge pull request #28 from shobhitsingh29/2026ques",
-            "body": "Merge pull request #28 from shobhitsingh29/2026ques\n\n2026ques",
+            "shortHash": "dadb973",
+            "hash": "dadb973202e049540287cd8f9dab0f62daccf814",
+            "subject": "Merge pull request #31 from shobhitsingh29/feat/2026-bamf-update",
+            "body": "Merge pull request #31 from shobhitsingh29/feat/2026-bamf-update\n\nfeat: add full PWA support for free iOS/Android installation",
             "author": {
               "name": "29goku",
               "email": "134237065+29goku@users.noreply.github.com",
-              "time": 1780802189000
+              "time": 1780803870000
             },
             "committer": {
               "name": "GitHub",
               "email": "noreply@github.com",
-              "time": 1780802189000
+              "time": 1780803870000
             },
             "branch": "main"
           },
@@ -81,24 +81,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/29goku/v0-lib-ty/commit/266dd7c892df122b554790d3735fae760cb8f843",
-            "commitHash": "266dd7c892df122b554790d3735fae760cb8f843",
-            "buildHref": "https://github.com/29goku/v0-lib-ty/actions/runs/27081300108"
+            "commitHref": "https://github.com/29goku/v0-lib-ty/commit/dadb973202e049540287cd8f9dab0f62daccf814",
+            "commitHash": "dadb973202e049540287cd8f9dab0f62daccf814",
+            "buildHref": "https://github.com/29goku/v0-lib-ty/actions/runs/27081829823"
           },
           "gitCommit": {
-            "shortHash": "266dd7c",
-            "hash": "266dd7c892df122b554790d3735fae760cb8f843",
-            "subject": "Merge pull request #28 from shobhitsingh29/2026ques",
-            "body": "Merge pull request #28 from shobhitsingh29/2026ques\n\n2026ques",
+            "shortHash": "dadb973",
+            "hash": "dadb973202e049540287cd8f9dab0f62daccf814",
+            "subject": "Merge pull request #31 from shobhitsingh29/feat/2026-bamf-update",
+            "body": "Merge pull request #31 from shobhitsingh29/feat/2026-bamf-update\n\nfeat: add full PWA support for free iOS/Android installation",
             "author": {
               "name": "29goku",
               "email": "134237065+29goku@users.noreply.github.com",
-              "time": 1780802189000
+              "time": 1780803870000
             },
             "committer": {
               "name": "GitHub",
               "email": "noreply@github.com",
-              "time": 1780802189000
+              "time": 1780803870000
             },
             "branch": "main"
           },
@@ -119,24 +119,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/29goku/v0-lib-ty/commit/266dd7c892df122b554790d3735fae760cb8f843",
-            "commitHash": "266dd7c892df122b554790d3735fae760cb8f843",
-            "buildHref": "https://github.com/29goku/v0-lib-ty/actions/runs/27081300108"
+            "commitHref": "https://github.com/29goku/v0-lib-ty/commit/dadb973202e049540287cd8f9dab0f62daccf814",
+            "commitHash": "dadb973202e049540287cd8f9dab0f62daccf814",
+            "buildHref": "https://github.com/29goku/v0-lib-ty/actions/runs/27081829823"
           },
           "gitCommit": {
-            "shortHash": "266dd7c",
-            "hash": "266dd7c892df122b554790d3735fae760cb8f843",
-            "subject": "Merge pull request #28 from shobhitsingh29/2026ques",
-            "body": "Merge pull request #28 from shobhitsingh29/2026ques\n\n2026ques",
+            "shortHash": "dadb973",
+            "hash": "dadb973202e049540287cd8f9dab0f62daccf814",
+            "subject": "Merge pull request #31 from shobhitsingh29/feat/2026-bamf-update",
+            "body": "Merge pull request #31 from shobhitsingh29/feat/2026-bamf-update\n\nfeat: add full PWA support for free iOS/Android installation",
             "author": {
               "name": "29goku",
               "email": "134237065+29goku@users.noreply.github.com",
-              "time": 1780802189000
+              "time": 1780803870000
             },
             "committer": {
               "name": "GitHub",
               "email": "noreply@github.com",
-              "time": 1780802189000
+              "time": 1780803870000
             },
             "branch": "main"
           },
@@ -157,24 +157,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/29goku/v0-lib-ty/commit/266dd7c892df122b554790d3735fae760cb8f843",
-            "commitHash": "266dd7c892df122b554790d3735fae760cb8f843",
-            "buildHref": "https://github.com/29goku/v0-lib-ty/actions/runs/27081300108"
+            "commitHref": "https://github.com/29goku/v0-lib-ty/commit/dadb973202e049540287cd8f9dab0f62daccf814",
+            "commitHash": "dadb973202e049540287cd8f9dab0f62daccf814",
+            "buildHref": "https://github.com/29goku/v0-lib-ty/actions/runs/27081829823"
           },
           "gitCommit": {
-            "shortHash": "266dd7c",
-            "hash": "266dd7c892df122b554790d3735fae760cb8f843",
-            "subject": "Merge pull request #28 from shobhitsingh29/2026ques",
-            "body": "Merge pull request #28 from shobhitsingh29/2026ques\n\n2026ques",
+            "shortHash": "dadb973",
+            "hash": "dadb973202e049540287cd8f9dab0f62daccf814",
+            "subject": "Merge pull request #31 from shobhitsingh29/feat/2026-bamf-update",
+            "body": "Merge pull request #31 from shobhitsingh29/feat/2026-bamf-update\n\nfeat: add full PWA support for free iOS/Android installation",
             "author": {
               "name": "29goku",
               "email": "134237065+29goku@users.noreply.github.com",
-              "time": 1780802189000
+              "time": 1780803870000
             },
             "committer": {
               "name": "GitHub",
               "email": "noreply@github.com",
-              "time": 1780802189000
+              "time": 1780803870000
             },
             "branch": "main"
           },
@@ -195,24 +195,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/29goku/v0-lib-ty/commit/266dd7c892df122b554790d3735fae760cb8f843",
-            "commitHash": "266dd7c892df122b554790d3735fae760cb8f843",
-            "buildHref": "https://github.com/29goku/v0-lib-ty/actions/runs/27081300108"
+            "commitHref": "https://github.com/29goku/v0-lib-ty/commit/dadb973202e049540287cd8f9dab0f62daccf814",
+            "commitHash": "dadb973202e049540287cd8f9dab0f62daccf814",
+            "buildHref": "https://github.com/29goku/v0-lib-ty/actions/runs/27081829823"
           },
           "gitCommit": {
-            "shortHash": "266dd7c",
-            "hash": "266dd7c892df122b554790d3735fae760cb8f843",
-            "subject": "Merge pull request #28 from shobhitsingh29/2026ques",
-            "body": "Merge pull request #28 from shobhitsingh29/2026ques\n\n2026ques",
+            "shortHash": "dadb973",
+            "hash": "dadb973202e049540287cd8f9dab0f62daccf814",
+            "subject": "Merge pull request #31 from shobhitsingh29/feat/2026-bamf-update",
+            "body": "Merge pull request #31 from shobhitsingh29/feat/2026-bamf-update\n\nfeat: add full PWA support for free iOS/Android installation",
             "author": {
               "name": "29goku",
               "email": "134237065+29goku@users.noreply.github.com",
-              "time": 1780802189000
+              "time": 1780803870000
             },
             "committer": {
               "name": "GitHub",
               "email": "noreply@github.com",
-              "time": 1780802189000
+              "time": 1780803870000
             },
             "branch": "main"
           },
@@ -303,12 +303,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 2005,
+                          "duration": 2338,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:13.216Z",
+                          "startTime": "2026-06-07T03:47:17.613Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -324,14 +324,14 @@
                       "results": [
                         {
                           "workerIndex": 4,
-                          "parallelIndex": 2,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 7338,
+                          "duration": 4001,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:40.541Z",
+                          "startTime": "2026-06-07T03:47:42.209Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -346,15 +346,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 8,
-                          "parallelIndex": 0,
+                          "workerIndex": 9,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 7387,
+                          "duration": 6993,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:21.171Z",
+                          "startTime": "2026-06-07T03:48:20.582Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -369,15 +369,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 12,
+                          "workerIndex": 13,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 2522,
+                          "duration": 2599,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:07.720Z",
+                          "startTime": "2026-06-07T03:49:03.887Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -393,14 +393,14 @@
                       "results": [
                         {
                           "workerIndex": 16,
-                          "parallelIndex": 1,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3633,
+                          "duration": 3319,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:45.410Z",
+                          "startTime": "2026-06-07T03:49:40.955Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -429,12 +429,12 @@
                           "workerIndex": 1,
                           "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 2419,
+                          "duration": 2172,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:13.331Z",
+                          "startTime": "2026-06-07T03:47:17.581Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -452,12 +452,12 @@
                           "workerIndex": 5,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 4750,
+                          "duration": 4634,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:40.754Z",
+                          "startTime": "2026-06-07T03:47:42.305Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -482,15 +482,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 10,
+                          "workerIndex": 8,
                           "parallelIndex": 2,
                           "status": "skipped",
-                          "duration": 7263,
+                          "duration": 6493,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:21.323Z",
+                          "startTime": "2026-06-07T03:48:20.389Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -515,15 +515,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 14,
-                          "parallelIndex": 3,
+                          "workerIndex": 12,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 2570,
+                          "duration": 2516,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:08.223Z",
+                          "startTime": "2026-06-07T03:49:03.947Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -551,12 +551,12 @@
                           "workerIndex": 17,
                           "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 3243,
+                          "duration": 3141,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:45.506Z",
+                          "startTime": "2026-06-07T03:49:40.853Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -595,12 +595,12 @@
                           "workerIndex": 2,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 2322,
+                          "duration": 2357,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:13.273Z",
+                          "startTime": "2026-06-07T03:47:17.687Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -618,12 +618,12 @@
                           "workerIndex": 6,
                           "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 4595,
+                          "duration": 5833,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:40.631Z",
+                          "startTime": "2026-06-07T03:47:42.851Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -648,15 +648,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 9,
+                          "workerIndex": 10,
                           "parallelIndex": 1,
                           "status": "skipped",
-                          "duration": 6907,
+                          "duration": 6366,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:21.347Z",
+                          "startTime": "2026-06-07T03:48:21.153Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -681,15 +681,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 13,
-                          "parallelIndex": 1,
+                          "workerIndex": 14,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 2639,
+                          "duration": 2449,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:07.988Z",
+                          "startTime": "2026-06-07T03:49:04.652Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -717,12 +717,12 @@
                           "workerIndex": 18,
                           "parallelIndex": 3,
                           "status": "skipped",
-                          "duration": 3133,
+                          "duration": 3246,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:46.155Z",
+                          "startTime": "2026-06-07T03:49:41.575Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -761,12 +761,12 @@
                           "workerIndex": 3,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 2499,
+                          "duration": 2203,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:13.247Z",
+                          "startTime": "2026-06-07T03:47:17.670Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -782,14 +782,14 @@
                       "results": [
                         {
                           "workerIndex": 7,
-                          "parallelIndex": 3,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 6645,
+                          "duration": 7132,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:41.271Z",
+                          "startTime": "2026-06-07T03:47:43.009Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -805,14 +805,14 @@
                       "results": [
                         {
                           "workerIndex": 11,
-                          "parallelIndex": 3,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 7885,
+                          "duration": 7105,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:21.599Z",
+                          "startTime": "2026-06-07T03:48:21.559Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -828,14 +828,14 @@
                       "results": [
                         {
                           "workerIndex": 15,
-                          "parallelIndex": 0,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 2733,
+                          "duration": 2903,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:08.899Z",
+                          "startTime": "2026-06-07T03:49:05.026Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -851,14 +851,14 @@
                       "results": [
                         {
                           "workerIndex": 19,
-                          "parallelIndex": 2,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 4612,
+                          "duration": 4332,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:46.639Z",
+                          "startTime": "2026-06-07T03:49:41.872Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -884,15 +884,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 0,
-                          "parallelIndex": 0,
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 2524,
+                          "duration": 3014,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:17.240Z",
+                          "startTime": "2026-06-07T03:47:20.191Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -907,15 +907,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 6,
-                          "parallelIndex": 1,
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 5295,
+                          "duration": 4012,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:45.969Z",
+                          "startTime": "2026-06-07T03:47:46.961Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -930,15 +930,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 9,
+                          "workerIndex": 10,
                           "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 13487,
+                          "duration": 7820,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:29.005Z",
+                          "startTime": "2026-06-07T03:48:27.737Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -953,15 +953,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 12,
+                          "workerIndex": 13,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 5343,
+                          "duration": 4825,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:10.420Z",
+                          "startTime": "2026-06-07T03:49:06.630Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -979,12 +979,12 @@
                           "workerIndex": 17,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6309,
+                          "duration": 9321,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:48.984Z",
+                          "startTime": "2026-06-07T03:49:44.198Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1010,15 +1010,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 2,
-                          "parallelIndex": 2,
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 4341,
+                          "duration": 3653,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:17.546Z",
+                          "startTime": "2026-06-07T03:47:20.220Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1036,12 +1036,12 @@
                           "workerIndex": 5,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 4595,
+                          "duration": 4901,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:46.665Z",
+                          "startTime": "2026-06-07T03:47:48.058Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1056,15 +1056,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 10,
+                          "workerIndex": 8,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 9344,
+                          "duration": 6730,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:29.352Z",
+                          "startTime": "2026-06-07T03:48:27.737Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1079,15 +1079,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 13,
-                          "parallelIndex": 1,
+                          "workerIndex": 12,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 7519,
+                          "duration": 8536,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:10.856Z",
+                          "startTime": "2026-06-07T03:49:06.664Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1103,14 +1103,14 @@
                       "results": [
                         {
                           "workerIndex": 16,
-                          "parallelIndex": 1,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 6926,
+                          "duration": 7998,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:49.225Z",
+                          "startTime": "2026-06-07T03:49:44.472Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1144,15 +1144,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 1,
-                          "parallelIndex": 1,
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3520,
+                          "duration": 3106,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:17.632Z",
+                          "startTime": "2026-06-07T03:47:20.374Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1167,15 +1167,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 4,
-                          "parallelIndex": 2,
+                          "workerIndex": 6,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 4536,
+                          "duration": 4002,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:49.819Z",
+                          "startTime": "2026-06-07T03:47:49.873Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1190,15 +1190,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 8,
-                          "parallelIndex": 0,
+                          "workerIndex": 9,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3142,
+                          "duration": 3740,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:29.490Z",
+                          "startTime": "2026-06-07T03:48:28.259Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1216,12 +1216,12 @@
                           "workerIndex": 14,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3552,
+                          "duration": 4625,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:11.020Z",
+                          "startTime": "2026-06-07T03:49:07.280Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1239,12 +1239,12 @@
                           "workerIndex": 18,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 4273,
+                          "duration": 3635,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:49.598Z",
+                          "startTime": "2026-06-07T03:49:45.010Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1270,15 +1270,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 3,
-                          "parallelIndex": 3,
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 3297,
+                          "duration": 3332,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:17.734Z",
+                          "startTime": "2026-06-07T03:47:20.378Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1293,15 +1293,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 7,
+                          "workerIndex": 4,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 4245,
+                          "duration": 2948,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:50.182Z",
+                          "startTime": "2026-06-07T03:47:51.068Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1317,14 +1317,14 @@
                       "results": [
                         {
                           "workerIndex": 11,
-                          "parallelIndex": 3,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 4035,
+                          "duration": 3402,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:30.189Z",
+                          "startTime": "2026-06-07T03:48:28.774Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1340,14 +1340,14 @@
                       "results": [
                         {
                           "workerIndex": 15,
-                          "parallelIndex": 0,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 4903,
+                          "duration": 5217,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:11.941Z",
+                          "startTime": "2026-06-07T03:49:08.117Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1363,14 +1363,14 @@
                       "results": [
                         {
                           "workerIndex": 19,
-                          "parallelIndex": 2,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 4827,
+                          "duration": 5956,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:51.650Z",
+                          "startTime": "2026-06-07T03:49:46.589Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1396,15 +1396,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 0,
-                          "parallelIndex": 0,
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 2678,
+                          "duration": 3446,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:19.861Z",
+                          "startTime": "2026-06-07T03:47:23.260Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1419,15 +1419,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 5,
-                          "parallelIndex": 0,
+                          "workerIndex": 7,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 4319,
+                          "duration": 4375,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:51.319Z",
+                          "startTime": "2026-06-07T03:47:52.246Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1442,15 +1442,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 8,
-                          "parallelIndex": 0,
+                          "workerIndex": 9,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 7105,
+                          "duration": 5966,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:32.696Z",
+                          "startTime": "2026-06-07T03:48:32.057Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1465,15 +1465,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 14,
-                          "parallelIndex": 3,
+                          "workerIndex": 13,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3881,
+                          "duration": 3880,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:14.617Z",
+                          "startTime": "2026-06-07T03:49:11.513Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1491,12 +1491,12 @@
                           "workerIndex": 18,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 8212,
+                          "duration": 10961,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:53.937Z",
+                          "startTime": "2026-06-07T03:49:48.705Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1522,15 +1522,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 3,
-                          "parallelIndex": 3,
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3732,
+                          "duration": 3595,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:21.098Z",
+                          "startTime": "2026-06-07T03:47:23.526Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1545,15 +1545,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 6,
-                          "parallelIndex": 1,
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 5181,
+                          "duration": 4468,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:51.393Z",
+                          "startTime": "2026-06-07T03:47:53.064Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1579,14 +1579,14 @@
                       "results": [
                         {
                           "workerIndex": 11,
-                          "parallelIndex": 3,
+                          "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 4683,
+                          "duration": 4276,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:34.291Z",
+                          "startTime": "2026-06-07T03:48:32.227Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -1611,15 +1611,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 12,
-                          "parallelIndex": 2,
+                          "workerIndex": 14,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3316,
+                          "duration": 4017,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:15.818Z",
+                          "startTime": "2026-06-07T03:49:11.970Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1644,15 +1644,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 17,
-                          "parallelIndex": 0,
+                          "workerIndex": 16,
+                          "parallelIndex": 2,
                           "status": "skipped",
-                          "duration": 6346,
+                          "duration": 8896,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:55.360Z",
+                          "startTime": "2026-06-07T03:49:52.556Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -1696,15 +1696,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 1,
-                          "parallelIndex": 1,
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 3607,
+                          "duration": 4171,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:21.211Z",
+                          "startTime": "2026-06-07T03:47:23.760Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1719,15 +1719,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 4,
-                          "parallelIndex": 2,
+                          "workerIndex": 6,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 4133,
+                          "duration": 3594,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:54.463Z",
+                          "startTime": "2026-06-07T03:47:53.987Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1742,15 +1742,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 10,
+                          "workerIndex": 8,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 5895,
+                          "duration": 5573,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:38.740Z",
+                          "startTime": "2026-06-07T03:48:34.515Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1766,14 +1766,14 @@
                       "results": [
                         {
                           "workerIndex": 15,
-                          "parallelIndex": 0,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 7219,
+                          "duration": 7270,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:16.922Z",
+                          "startTime": "2026-06-07T03:49:13.406Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1788,15 +1788,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 16,
+                          "workerIndex": 19,
                           "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 11555,
+                          "duration": 12605,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:56.198Z",
+                          "startTime": "2026-06-07T03:49:52.626Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1822,15 +1822,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 2,
-                          "parallelIndex": 2,
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3665,
+                          "duration": 3754,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:21.947Z",
+                          "startTime": "2026-06-07T03:47:23.934Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1845,15 +1845,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 7,
+                          "workerIndex": 4,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3537,
+                          "duration": 4118,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:54.521Z",
+                          "startTime": "2026-06-07T03:47:54.127Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1868,15 +1868,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 11,
-                          "parallelIndex": 3,
+                          "workerIndex": 10,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 6520,
+                          "duration": 7592,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:39.075Z",
+                          "startTime": "2026-06-07T03:48:35.608Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1891,15 +1891,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 13,
-                          "parallelIndex": 1,
+                          "workerIndex": 12,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 9536,
+                          "duration": 9081,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:18.448Z",
+                          "startTime": "2026-06-07T03:49:15.253Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1914,15 +1914,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 19,
-                          "parallelIndex": 2,
+                          "workerIndex": 17,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 8651,
+                          "duration": 11148,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:56.580Z",
+                          "startTime": "2026-06-07T03:49:53.585Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1948,15 +1948,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 0,
-                          "parallelIndex": 0,
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 2915,
+                          "duration": 2580,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:22.601Z",
+                          "startTime": "2026-06-07T03:47:26.794Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1971,15 +1971,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 5,
-                          "parallelIndex": 0,
+                          "workerIndex": 7,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3712,
+                          "duration": 4270,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:55.772Z",
+                          "startTime": "2026-06-07T03:47:56.774Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2004,15 +2004,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 8,
+                          "workerIndex": 11,
                           "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 5264,
+                          "duration": 4865,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:39.891Z",
+                          "startTime": "2026-06-07T03:48:36.601Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -2037,15 +2037,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 14,
-                          "parallelIndex": 3,
+                          "workerIndex": 13,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 4429,
+                          "duration": 4093,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:18.541Z",
+                          "startTime": "2026-06-07T03:49:15.423Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2070,15 +2070,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 17,
-                          "parallelIndex": 0,
+                          "workerIndex": 18,
+                          "parallelIndex": 3,
                           "status": "skipped",
-                          "duration": 6239,
+                          "duration": 7892,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:01.799Z",
+                          "startTime": "2026-06-07T03:49:59.764Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -2122,15 +2122,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 3,
-                          "parallelIndex": 3,
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 1783,
+                          "duration": 2117,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:24.871Z",
+                          "startTime": "2026-06-07T03:47:27.177Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2145,15 +2145,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 6,
-                          "parallelIndex": 1,
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 2599,
+                          "duration": 3344,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:56.650Z",
+                          "startTime": "2026-06-07T03:47:57.594Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2169,14 +2169,14 @@
                       "results": [
                         {
                           "workerIndex": 9,
-                          "parallelIndex": 1,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3780,
+                          "duration": 4618,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:42.534Z",
+                          "startTime": "2026-06-07T03:48:38.076Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2191,15 +2191,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 12,
-                          "parallelIndex": 2,
+                          "workerIndex": 14,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3489,
+                          "duration": 2976,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:19.200Z",
+                          "startTime": "2026-06-07T03:49:16.017Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2214,15 +2214,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 18,
-                          "parallelIndex": 3,
+                          "workerIndex": 16,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 7080,
+                          "duration": 5879,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:02.240Z",
+                          "startTime": "2026-06-07T03:50:01.534Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2248,15 +2248,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 1,
-                          "parallelIndex": 1,
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 1939,
+                          "duration": 2032,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:24.879Z",
+                          "startTime": "2026-06-07T03:47:27.715Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2271,15 +2271,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 7,
-                          "parallelIndex": 3,
+                          "workerIndex": 6,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 3895,
+                          "duration": 3438,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:58.142Z",
+                          "startTime": "2026-06-07T03:47:57.647Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2294,15 +2294,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 10,
+                          "workerIndex": 8,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 4961,
+                          "duration": 5610,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:44.762Z",
+                          "startTime": "2026-06-07T03:48:40.141Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2317,15 +2317,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 12,
-                          "parallelIndex": 2,
+                          "workerIndex": 14,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 2833,
+                          "duration": 2418,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:22.728Z",
+                          "startTime": "2026-06-07T03:49:19.028Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2340,15 +2340,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 19,
-                          "parallelIndex": 2,
+                          "workerIndex": 17,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6521,
+                          "duration": 6590,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:05.279Z",
+                          "startTime": "2026-06-07T03:50:04.876Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2385,12 +2385,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 1819,
+                          "duration": 1878,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:25.539Z",
+                          "startTime": "2026-06-07T03:47:27.980Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2406,14 +2406,14 @@
                       "results": [
                         {
                           "workerIndex": 4,
-                          "parallelIndex": 2,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3354,
+                          "duration": 2952,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:58.662Z",
+                          "startTime": "2026-06-07T03:47:58.294Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2428,15 +2428,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 8,
+                          "workerIndex": 11,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 4324,
+                          "duration": 3701,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:45.201Z",
+                          "startTime": "2026-06-07T03:48:41.559Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2451,15 +2451,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 14,
-                          "parallelIndex": 3,
+                          "workerIndex": 13,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 1974,
+                          "duration": 2391,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:23.013Z",
+                          "startTime": "2026-06-07T03:49:19.562Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2474,15 +2474,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 16,
+                          "workerIndex": 19,
                           "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 4808,
+                          "duration": 6480,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:07.825Z",
+                          "startTime": "2026-06-07T03:50:05.340Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2511,12 +2511,12 @@
                           "workerIndex": 2,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 1914,
+                          "duration": 1576,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:25.655Z",
+                          "startTime": "2026-06-07T03:47:29.353Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2531,15 +2531,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 6,
-                          "parallelIndex": 1,
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 3060,
+                          "duration": 2782,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:59.304Z",
+                          "startTime": "2026-06-07T03:48:00.967Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2554,15 +2554,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 11,
+                          "workerIndex": 9,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 4122,
+                          "duration": 3347,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:45.648Z",
+                          "startTime": "2026-06-07T03:48:42.740Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2578,14 +2578,14 @@
                       "results": [
                         {
                           "workerIndex": 15,
-                          "parallelIndex": 0,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 2471,
+                          "duration": 2191,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:24.198Z",
+                          "startTime": "2026-06-07T03:49:20.730Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2600,15 +2600,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 17,
-                          "parallelIndex": 0,
+                          "workerIndex": 16,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 4687,
+                          "duration": 4743,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:08.097Z",
+                          "startTime": "2026-06-07T03:50:07.492Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2642,15 +2642,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 3,
-                          "parallelIndex": 3,
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 1873,
+                          "duration": 1729,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:26.699Z",
+                          "startTime": "2026-06-07T03:47:29.414Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2665,15 +2665,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 5,
-                          "parallelIndex": 0,
+                          "workerIndex": 7,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 2859,
+                          "duration": 3124,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:59.579Z",
+                          "startTime": "2026-06-07T03:48:01.113Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2688,15 +2688,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 9,
+                          "workerIndex": 10,
                           "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 4117,
+                          "duration": 3403,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:46.361Z",
+                          "startTime": "2026-06-07T03:48:43.245Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2714,12 +2714,12 @@
                           "workerIndex": 14,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 2416,
+                          "duration": 2087,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:25.014Z",
+                          "startTime": "2026-06-07T03:49:21.498Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2737,12 +2737,12 @@
                           "workerIndex": 18,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 5239,
+                          "duration": 4854,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:09.381Z",
+                          "startTime": "2026-06-07T03:50:07.748Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2768,15 +2768,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 1,
-                          "parallelIndex": 1,
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 1907,
+                          "duration": 1614,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:26.837Z",
+                          "startTime": "2026-06-07T03:47:29.789Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2791,15 +2791,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 4,
-                          "parallelIndex": 2,
+                          "workerIndex": 6,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 3416,
+                          "duration": 2831,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:02.044Z",
+                          "startTime": "2026-06-07T03:48:01.152Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2814,15 +2814,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 8,
+                          "workerIndex": 11,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 3232,
+                          "duration": 3766,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:49.564Z",
+                          "startTime": "2026-06-07T03:48:45.317Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2837,15 +2837,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 12,
+                          "workerIndex": 13,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 2206,
+                          "duration": 2259,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:25.608Z",
+                          "startTime": "2026-06-07T03:49:21.977Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2860,15 +2860,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 19,
-                          "parallelIndex": 2,
+                          "workerIndex": 17,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 4385,
+                          "duration": 4050,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:11.847Z",
+                          "startTime": "2026-06-07T03:50:11.556Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2914,12 +2914,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 1755,
+                          "duration": 1635,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:27.377Z",
+                          "startTime": "2026-06-07T03:47:29.902Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2934,15 +2934,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 7,
+                          "workerIndex": 4,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 2982,
+                          "duration": 3087,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:02.110Z",
+                          "startTime": "2026-06-07T03:48:01.335Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2957,15 +2957,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 10,
+                          "workerIndex": 8,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 2223,
+                          "duration": 2406,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:49.808Z",
+                          "startTime": "2026-06-07T03:48:45.833Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -2981,14 +2981,14 @@
                       "results": [
                         {
                           "workerIndex": 15,
-                          "parallelIndex": 0,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 2406,
+                          "duration": 1850,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:26.709Z",
+                          "startTime": "2026-06-07T03:49:22.982Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3003,15 +3003,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 16,
+                          "workerIndex": 19,
                           "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 3009,
+                          "duration": 2774,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:12.684Z",
+                          "startTime": "2026-06-07T03:50:11.909Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3040,12 +3040,12 @@
                           "workerIndex": 2,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 1949,
+                          "duration": 1575,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:27.660Z",
+                          "startTime": "2026-06-07T03:47:30.953Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3060,15 +3060,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 6,
-                          "parallelIndex": 1,
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 3039,
+                          "duration": 3153,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:02.396Z",
+                          "startTime": "2026-06-07T03:48:03.801Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3093,15 +3093,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 11,
+                          "workerIndex": 9,
                           "parallelIndex": 3,
                           "status": "skipped",
-                          "duration": 2124,
+                          "duration": 2579,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:49.878Z",
+                          "startTime": "2026-06-07T03:48:46.186Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -3129,12 +3129,12 @@
                           "workerIndex": 14,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 1859,
+                          "duration": 2223,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:27.450Z",
+                          "startTime": "2026-06-07T03:49:23.620Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3159,15 +3159,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 17,
-                          "parallelIndex": 0,
+                          "workerIndex": 16,
+                          "parallelIndex": 2,
                           "status": "skipped",
-                          "duration": 2647,
+                          "duration": 2983,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:12.874Z",
+                          "startTime": "2026-06-07T03:50:12.269Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -3203,15 +3203,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 3,
-                          "parallelIndex": 3,
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 2081,
+                          "duration": 1818,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:28.622Z",
+                          "startTime": "2026-06-07T03:47:31.172Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3226,15 +3226,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 5,
-                          "parallelIndex": 0,
+                          "workerIndex": 6,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 2819,
+                          "duration": 2900,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:02.476Z",
+                          "startTime": "2026-06-07T03:48:04.037Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3259,15 +3259,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 9,
+                          "workerIndex": 10,
                           "parallelIndex": 1,
                           "status": "skipped",
-                          "duration": 2706,
+                          "duration": 2396,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:50.508Z",
+                          "startTime": "2026-06-07T03:48:46.693Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -3292,15 +3292,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 12,
+                          "workerIndex": 13,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 2361,
+                          "duration": 1981,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:27.850Z",
+                          "startTime": "2026-06-07T03:49:24.280Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3328,12 +3328,12 @@
                           "workerIndex": 18,
                           "parallelIndex": 3,
                           "status": "skipped",
-                          "duration": 2247,
+                          "duration": 2723,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:14.763Z",
+                          "startTime": "2026-06-07T03:50:12.666Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -3369,15 +3369,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 1,
-                          "parallelIndex": 1,
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 1810,
+                          "duration": 1549,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:28.762Z",
+                          "startTime": "2026-06-07T03:47:31.446Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3393,14 +3393,14 @@
                       "results": [
                         {
                           "workerIndex": 7,
-                          "parallelIndex": 3,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3373,
+                          "duration": 2863,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:05.149Z",
+                          "startTime": "2026-06-07T03:48:04.268Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3415,15 +3415,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 11,
-                          "parallelIndex": 3,
+                          "workerIndex": 8,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3915,
+                          "duration": 2757,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:52.028Z",
+                          "startTime": "2026-06-07T03:48:48.283Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3438,15 +3438,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 13,
-                          "parallelIndex": 1,
+                          "workerIndex": 12,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 1998,
+                          "duration": 2305,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:28.021Z",
+                          "startTime": "2026-06-07T03:49:24.386Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3461,15 +3461,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 17,
-                          "parallelIndex": 0,
+                          "workerIndex": 19,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 4765,
+                          "duration": 3086,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:15.616Z",
+                          "startTime": "2026-06-07T03:50:14.758Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3498,12 +3498,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 2399,
+                          "duration": 2294,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:29.178Z",
+                          "startTime": "2026-06-07T03:47:31.567Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3518,15 +3518,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 5,
-                          "parallelIndex": 0,
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3493,
+                          "duration": 3865,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:05.357Z",
+                          "startTime": "2026-06-07T03:48:04.458Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3541,15 +3541,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 10,
-                          "parallelIndex": 2,
+                          "workerIndex": 9,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3735,
+                          "duration": 4258,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:52.072Z",
+                          "startTime": "2026-06-07T03:48:48.851Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3565,14 +3565,14 @@
                       "results": [
                         {
                           "workerIndex": 15,
-                          "parallelIndex": 0,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 3537,
+                          "duration": 2633,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:29.135Z",
+                          "startTime": "2026-06-07T03:49:24.893Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3588,14 +3588,14 @@
                       "results": [
                         {
                           "workerIndex": 16,
-                          "parallelIndex": 1,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 4446,
+                          "duration": 5481,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:15.732Z",
+                          "startTime": "2026-06-07T03:50:15.283Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3624,12 +3624,12 @@
                           "workerIndex": 2,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 2703,
+                          "duration": 2920,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:29.678Z",
+                          "startTime": "2026-06-07T03:47:32.587Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3644,15 +3644,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 6,
-                          "parallelIndex": 1,
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 3577,
+                          "duration": 3835,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:05.459Z",
+                          "startTime": "2026-06-07T03:48:06.986Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3667,15 +3667,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 8,
-                          "parallelIndex": 0,
+                          "workerIndex": 10,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 4293,
+                          "duration": 4045,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:52.834Z",
+                          "startTime": "2026-06-07T03:48:49.120Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3693,12 +3693,12 @@
                           "workerIndex": 14,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 6609,
+                          "duration": 7223,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:29.347Z",
+                          "startTime": "2026-06-07T03:49:25.873Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3713,15 +3713,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 19,
-                          "parallelIndex": 2,
+                          "workerIndex": 18,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3877,
+                          "duration": 6079,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:16.263Z",
+                          "startTime": "2026-06-07T03:50:15.442Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3755,15 +3755,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 1,
-                          "parallelIndex": 1,
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3175,
+                          "duration": 2591,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:30.609Z",
+                          "startTime": "2026-06-07T03:47:33.020Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3778,15 +3778,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 4,
-                          "parallelIndex": 2,
+                          "workerIndex": 6,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 3512,
+                          "duration": 3110,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:05.489Z",
+                          "startTime": "2026-06-07T03:48:06.999Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3801,15 +3801,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 9,
-                          "parallelIndex": 1,
+                          "workerIndex": 11,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 2776,
+                          "duration": 2724,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:53.248Z",
+                          "startTime": "2026-06-07T03:48:49.130Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3825,14 +3825,14 @@
                       "results": [
                         {
                           "workerIndex": 13,
-                          "parallelIndex": 1,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 2911,
+                          "duration": 3113,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:30.077Z",
+                          "startTime": "2026-06-07T03:49:26.289Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3847,15 +3847,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 18,
-                          "parallelIndex": 3,
+                          "workerIndex": 17,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 3419,
+                          "duration": 4516,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:17.095Z",
+                          "startTime": "2026-06-07T03:50:15.645Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3881,15 +3881,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 3,
-                          "parallelIndex": 3,
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 2624,
+                          "duration": 2497,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:30.766Z",
+                          "startTime": "2026-06-07T03:47:33.030Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3905,14 +3905,14 @@
                       "results": [
                         {
                           "workerIndex": 7,
-                          "parallelIndex": 3,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3981,
+                          "duration": 3770,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:08.574Z",
+                          "startTime": "2026-06-07T03:48:07.170Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3927,15 +3927,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 10,
+                          "workerIndex": 8,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3941,
+                          "duration": 3343,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:55.848Z",
+                          "startTime": "2026-06-07T03:48:51.076Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3951,14 +3951,14 @@
                       "results": [
                         {
                           "workerIndex": 12,
-                          "parallelIndex": 2,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 3146,
+                          "duration": 2915,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:30.254Z",
+                          "startTime": "2026-06-07T03:49:26.757Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3974,14 +3974,14 @@
                       "results": [
                         {
                           "workerIndex": 19,
-                          "parallelIndex": 2,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 5066,
+                          "duration": 4277,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:20.177Z",
+                          "startTime": "2026-06-07T03:50:17.896Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4019,12 +4019,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 2157,
+                          "duration": 1856,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:31.626Z",
+                          "startTime": "2026-06-07T03:47:33.893Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -4057,15 +4057,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 5,
-                          "parallelIndex": 0,
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
                           "status": "skipped",
-                          "duration": 2949,
+                          "duration": 2985,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:08.913Z",
+                          "startTime": "2026-06-07T03:48:08.352Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -4099,14 +4099,14 @@
                       "results": [
                         {
                           "workerIndex": 11,
-                          "parallelIndex": 3,
+                          "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 4119,
+                          "duration": 3619,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:55.983Z",
+                          "startTime": "2026-06-07T03:48:51.881Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -4140,14 +4140,14 @@
                       "results": [
                         {
                           "workerIndex": 15,
-                          "parallelIndex": 0,
+                          "parallelIndex": 1,
                           "status": "skipped",
-                          "duration": 3536,
+                          "duration": 2191,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:32.723Z",
+                          "startTime": "2026-06-07T03:49:27.556Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -4180,15 +4180,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 16,
-                          "parallelIndex": 1,
+                          "workerIndex": 17,
+                          "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 5010,
+                          "duration": 3820,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:20.216Z",
+                          "startTime": "2026-06-07T03:50:20.209Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -4232,15 +4232,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 2,
-                          "parallelIndex": 2,
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
                           "status": "skipped",
-                          "duration": 2094,
+                          "duration": 2717,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:32.422Z",
+                          "startTime": "2026-06-07T03:47:35.560Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -4273,15 +4273,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 4,
-                          "parallelIndex": 2,
+                          "workerIndex": 6,
+                          "parallelIndex": 1,
                           "status": "skipped",
-                          "duration": 3290,
+                          "duration": 2910,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:09.029Z",
+                          "startTime": "2026-06-07T03:48:10.157Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -4315,14 +4315,14 @@
                       "results": [
                         {
                           "workerIndex": 9,
-                          "parallelIndex": 1,
+                          "parallelIndex": 3,
                           "status": "skipped",
-                          "duration": 3601,
+                          "duration": 4565,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:56.069Z",
+                          "startTime": "2026-06-07T03:48:53.173Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -4356,14 +4356,14 @@
                       "results": [
                         {
                           "workerIndex": 13,
-                          "parallelIndex": 1,
+                          "parallelIndex": 2,
                           "status": "skipped",
-                          "duration": 3099,
+                          "duration": 3599,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:33.049Z",
+                          "startTime": "2026-06-07T03:49:29.436Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -4396,15 +4396,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 17,
-                          "parallelIndex": 0,
+                          "workerIndex": 16,
+                          "parallelIndex": 2,
                           "status": "skipped",
-                          "duration": 4609,
+                          "duration": 5223,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:20.432Z",
+                          "startTime": "2026-06-07T03:50:20.821Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -4447,15 +4447,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 3,
-                          "parallelIndex": 3,
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 2696,
+                          "duration": 2911,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:33.427Z",
+                          "startTime": "2026-06-07T03:47:35.565Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4470,15 +4470,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 6,
-                          "parallelIndex": 1,
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 3583,
+                          "duration": 3041,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:09.069Z",
+                          "startTime": "2026-06-07T03:48:10.867Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4493,15 +4493,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 8,
-                          "parallelIndex": 0,
+                          "workerIndex": 10,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 4625,
+                          "duration": 4876,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:57.167Z",
+                          "startTime": "2026-06-07T03:48:53.215Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4517,14 +4517,14 @@
                       "results": [
                         {
                           "workerIndex": 12,
-                          "parallelIndex": 2,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 7718,
+                          "duration": 7242,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:33.468Z",
+                          "startTime": "2026-06-07T03:49:29.711Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4542,12 +4542,12 @@
                           "workerIndex": 18,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 4660,
+                          "duration": 4727,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:20.537Z",
+                          "startTime": "2026-06-07T03:50:21.572Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4573,15 +4573,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 1,
-                          "parallelIndex": 1,
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 2973,
+                          "duration": 2964,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:33.829Z",
+                          "startTime": "2026-06-07T03:47:35.652Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4596,15 +4596,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 5,
-                          "parallelIndex": 0,
+                          "workerIndex": 7,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3502,
+                          "duration": 3394,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:11.931Z",
+                          "startTime": "2026-06-07T03:48:10.977Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4619,15 +4619,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 9,
-                          "parallelIndex": 1,
+                          "workerIndex": 8,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3883,
+                          "duration": 4893,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:59.743Z",
+                          "startTime": "2026-06-07T03:48:54.466Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4642,15 +4642,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 14,
-                          "parallelIndex": 3,
+                          "workerIndex": 15,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 6403,
+                          "duration": 6180,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:36.013Z",
+                          "startTime": "2026-06-07T03:49:29.784Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4665,15 +4665,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 17,
-                          "parallelIndex": 0,
+                          "workerIndex": 19,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 4845,
+                          "duration": 5077,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:25.124Z",
+                          "startTime": "2026-06-07T03:50:22.234Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4702,12 +4702,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 2960,
+                          "duration": 3103,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:33.838Z",
+                          "startTime": "2026-06-07T03:47:35.787Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4723,14 +4723,14 @@
                       "results": [
                         {
                           "workerIndex": 4,
-                          "parallelIndex": 2,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 2981,
+                          "duration": 3186,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:12.372Z",
+                          "startTime": "2026-06-07T03:48:11.405Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4755,15 +4755,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 10,
-                          "parallelIndex": 2,
+                          "workerIndex": 11,
+                          "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 3433,
+                          "duration": 3885,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:59.835Z",
+                          "startTime": "2026-06-07T03:48:55.532Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -4789,14 +4789,14 @@
                       "results": [
                         {
                           "workerIndex": 13,
-                          "parallelIndex": 1,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 7061,
+                          "duration": 5672,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:36.187Z",
+                          "startTime": "2026-06-07T03:49:33.147Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4821,15 +4821,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 18,
-                          "parallelIndex": 3,
+                          "workerIndex": 17,
+                          "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 3769,
+                          "duration": 4401,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:25.273Z",
+                          "startTime": "2026-06-07T03:50:24.111Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -4873,15 +4873,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 2,
-                          "parallelIndex": 2,
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 2023,
+                          "duration": 1486,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:34.566Z",
+                          "startTime": "2026-06-07T03:47:38.308Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4896,15 +4896,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 7,
-                          "parallelIndex": 3,
+                          "workerIndex": 6,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 3252,
+                          "duration": 2829,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:12.625Z",
+                          "startTime": "2026-06-07T03:48:13.102Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4919,15 +4919,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 11,
+                          "workerIndex": 9,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3451,
+                          "duration": 2258,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:00.162Z",
+                          "startTime": "2026-06-07T03:48:57.816Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4942,15 +4942,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 15,
-                          "parallelIndex": 0,
+                          "workerIndex": 14,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 2361,
+                          "duration": 2274,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:36.281Z",
+                          "startTime": "2026-06-07T03:49:33.151Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -4966,14 +4966,14 @@
                       "results": [
                         {
                           "workerIndex": 16,
-                          "parallelIndex": 1,
+                          "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3364,
+                          "duration": 3176,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:25.280Z",
+                          "startTime": "2026-06-07T03:50:26.162Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -5008,15 +5008,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 3,
-                          "parallelIndex": 3,
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
                           "status": "skipped",
-                          "duration": 1528,
+                          "duration": 1436,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:36.172Z",
+                          "startTime": "2026-06-07T03:47:38.507Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5049,15 +5049,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 6,
-                          "parallelIndex": 1,
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 3046,
+                          "duration": 2990,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:12.700Z",
+                          "startTime": "2026-06-07T03:48:13.947Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5090,15 +5090,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 8,
-                          "parallelIndex": 0,
+                          "workerIndex": 10,
+                          "parallelIndex": 1,
                           "status": "skipped",
-                          "duration": 2729,
+                          "duration": 2478,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:01.861Z",
+                          "startTime": "2026-06-07T03:48:58.137Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5131,15 +5131,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 15,
-                          "parallelIndex": 0,
+                          "workerIndex": 14,
+                          "parallelIndex": 3,
                           "status": "skipped",
-                          "duration": 2844,
+                          "duration": 2194,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:38.677Z",
+                          "startTime": "2026-06-07T03:49:35.482Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5172,15 +5172,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 19,
-                          "parallelIndex": 2,
+                          "workerIndex": 18,
+                          "parallelIndex": 3,
                           "status": "skipped",
-                          "duration": 2790,
+                          "duration": 2783,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:25.305Z",
+                          "startTime": "2026-06-07T03:50:26.360Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5223,15 +5223,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 2,
-                          "parallelIndex": 2,
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 1527,
+                          "duration": 1479,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:36.623Z",
+                          "startTime": "2026-06-07T03:47:38.646Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -5246,15 +5246,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 4,
+                          "workerIndex": 7,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 3093,
+                          "duration": 2675,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:15.406Z",
+                          "startTime": "2026-06-07T03:48:14.464Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -5269,15 +5269,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 10,
+                          "workerIndex": 8,
                           "parallelIndex": 2,
                           "status": "passed",
-                          "duration": 2576,
+                          "duration": 2273,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:03.345Z",
+                          "startTime": "2026-06-07T03:48:59.408Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -5292,15 +5292,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 12,
-                          "parallelIndex": 2,
+                          "workerIndex": 15,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 1693,
+                          "duration": 2094,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:41.284Z",
+                          "startTime": "2026-06-07T03:49:35.994Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -5316,14 +5316,14 @@
                       "results": [
                         {
                           "workerIndex": 19,
-                          "parallelIndex": 2,
+                          "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 3472,
+                          "duration": 3139,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:28.133Z",
+                          "startTime": "2026-06-07T03:50:27.346Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -5361,12 +5361,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 1721,
+                          "duration": 1396,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:36.833Z",
+                          "startTime": "2026-06-07T03:47:38.927Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5399,15 +5399,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 5,
-                          "parallelIndex": 0,
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
                           "status": "skipped",
-                          "duration": 2638,
+                          "duration": 2519,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:15.506Z",
+                          "startTime": "2026-06-07T03:48:14.625Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5441,14 +5441,14 @@
                       "results": [
                         {
                           "workerIndex": 11,
-                          "parallelIndex": 3,
+                          "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 2333,
+                          "duration": 2347,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:03.661Z",
+                          "startTime": "2026-06-07T03:48:59.471Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5481,15 +5481,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 15,
+                          "workerIndex": 12,
                           "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 1901,
+                          "duration": 1886,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:41.542Z",
+                          "startTime": "2026-06-07T03:49:36.991Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5522,15 +5522,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 16,
-                          "parallelIndex": 1,
+                          "workerIndex": 17,
+                          "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 3728,
+                          "duration": 3210,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:28.687Z",
+                          "startTime": "2026-06-07T03:50:28.605Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5576,12 +5576,12 @@
                           "workerIndex": 1,
                           "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 1753,
+                          "duration": 1274,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:36.838Z",
+                          "startTime": "2026-06-07T03:47:39.813Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -5599,12 +5599,12 @@
                           "workerIndex": 6,
                           "parallelIndex": 1,
                           "status": "passed",
-                          "duration": 2778,
+                          "duration": 2174,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:15.786Z",
+                          "startTime": "2026-06-07T03:48:16.050Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -5620,14 +5620,14 @@
                       "results": [
                         {
                           "workerIndex": 9,
-                          "parallelIndex": 1,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 2379,
+                          "duration": 2561,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:03.681Z",
+                          "startTime": "2026-06-07T03:49:00.127Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -5645,12 +5645,12 @@
                           "workerIndex": 14,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 1706,
+                          "duration": 1918,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:42.434Z",
+                          "startTime": "2026-06-07T03:49:37.729Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -5668,12 +5668,12 @@
                           "workerIndex": 18,
                           "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3525,
+                          "duration": 2381,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:29.097Z",
+                          "startTime": "2026-06-07T03:50:29.200Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -5708,15 +5708,15 @@
                       "projectName": "Desktop Chrome",
                       "results": [
                         {
-                          "workerIndex": 3,
-                          "parallelIndex": 3,
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
                           "status": "skipped",
-                          "duration": 1355,
+                          "duration": 1262,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:19:37.729Z",
+                          "startTime": "2026-06-07T03:47:39.981Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5749,15 +5749,15 @@
                       "projectName": "Desktop Firefox",
                       "results": [
                         {
-                          "workerIndex": 7,
-                          "parallelIndex": 3,
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
                           "status": "skipped",
-                          "duration": 2871,
+                          "duration": 1777,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:20:15.930Z",
+                          "startTime": "2026-06-07T03:48:16.999Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5790,15 +5790,15 @@
                       "projectName": "Desktop Safari",
                       "results": [
                         {
-                          "workerIndex": 8,
-                          "parallelIndex": 0,
+                          "workerIndex": 10,
+                          "parallelIndex": 1,
                           "status": "skipped",
-                          "duration": 2222,
+                          "duration": 2255,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:04.616Z",
+                          "startTime": "2026-06-07T03:49:00.659Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5831,15 +5831,15 @@
                       "projectName": "Mobile Chrome",
                       "results": [
                         {
-                          "workerIndex": 12,
-                          "parallelIndex": 2,
+                          "workerIndex": 15,
+                          "parallelIndex": 1,
                           "status": "skipped",
-                          "duration": 1617,
+                          "duration": 1734,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:21:43.002Z",
+                          "startTime": "2026-06-07T03:49:38.130Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5872,15 +5872,15 @@
                       "projectName": "Mobile Safari",
                       "results": [
                         {
-                          "workerIndex": 17,
-                          "parallelIndex": 0,
+                          "workerIndex": 16,
+                          "parallelIndex": 2,
                           "status": "skipped",
-                          "duration": 2871,
+                          "duration": 2604,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T03:22:30.037Z",
+                          "startTime": "2026-06-07T03:50:29.415Z",
                           "annotations": [
                             {
                               "type": "skip",
@@ -5911,8 +5911,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-07T03:19:11.490Z",
-    "duration": 201540.924,
+    "startTime": "2026-06-07T03:47:15.775Z",
+    "duration": 196393.61500000002,
     "expected": 151,
     "skipped": 39,
     "unexpected": 0,
