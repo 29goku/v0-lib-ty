@@ -12,6 +12,14 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ThemeProvider } from "@/components/ThemeProvider"
 import PWAInstallBanner from "@/components/PWAInstallBanner"
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#000000",
+}
+
 export const metadata: Metadata = {
   title: {
     default: "Leben in Deutschland Test 2026 – 460 Offizielle BAMF-Fragen & Vorbereitung",
@@ -128,6 +136,7 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

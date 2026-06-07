@@ -44,12 +44,14 @@
     {
       "name": "Practice",
       "url": "/practice",
-      "description": "Practice all 300 federal questions"
+      "description": "Practice all 300 federal questions",
+      "icons": [{ "src": "/web-app-manifest-192x192.png", "sizes": "192x192" }]
     },
     {
       "name": "Mock Test",
       "url": "/test",
-      "description": "Take a timed 33-question mock exam"
+      "description": "Take a timed 33-question mock exam",
+      "icons": [{ "src": "/web-app-manifest-192x192.png", "sizes": "192x192" }]
     }
   ]
 }

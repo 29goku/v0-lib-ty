@@ -4,6 +4,10 @@ import withPWA from "next-pwa"
 const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
+  compress: true,
+  experimental: {
+    optimizePackageImports: ["recharts", "lucide-react", "framer-motion", "@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu"],
+  },
 }
 
 // configure-pages@v5 (GitHub Pages CI) injects `output: "export"` by rewriting
