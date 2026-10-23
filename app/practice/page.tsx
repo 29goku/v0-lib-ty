@@ -190,8 +190,13 @@ export default function PracticePage() {
 
   // Auto-correct currentIndex if it's out of bounds
   useEffect(() => {
-    if (filteredQuestions.length > 0 && currentIndex >= filteredQuestions.length) {
+    if (filteredQuestions.length === 0) {
       setCurrentIndex(0)
+      return
+    }
+
+    if (currentIndex >= filteredQuestions.length) {
+      setCurrentIndex(filteredQuestions.length - 1)
     }
   }, [filteredQuestions.length, currentIndex])
 
@@ -385,26 +390,19 @@ export default function PracticePage() {
     setLastAnswer({ correct: isCorrect, selectedIndex: selectedAnswerIndex })
     setShowAnswer(true)
 
-    // If the question will be removed from filter, move to next after showing feedback
+    // If the question will be removed from filter, move to next after showing feedback.
+    // Use the current filtered list length before the re-render so the next item stays stable.
     if (willBeRemovedFromFilter) {
       const currentFilterLength = filteredQuestions.length
+      const targetIndex = currentFilterLength <= 1 ? 0 : currentIndex >= currentFilterLength - 1 ? 0 : currentIndex
+
       setTimeout(() => {
-        // First clear the feedback states
         setLastAnswer(null)
         setShowTranslation(false)
         setShowAnswer(false)
 
-        // After state updates, check bounds and adjust index if needed
-        // Use a second timeout to ensure state updates have processed
         setTimeout(() => {
-          if (currentFilterLength <= 1) {
-            // If this was the last question in filter, reset to 0
-            setCurrentIndex(0)
-          } else if (currentIndex >= currentFilterLength - 1) {
-            // If we were at the last question, go to start
-            setCurrentIndex(0)
-          }
-          // Otherwise, stay at same index (which will now show the next question)
+          setCurrentIndex(targetIndex)
         }, 0)
       }, 2000)
     }
@@ -598,7 +596,7 @@ export default function PracticePage() {
         <div className="relative z-10 container mx-auto px-4 py-8 sm:py-8">
           <div className="hidden sm:flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4">
             <Link href="/">
-              <Button className={`border transition-all font-semibold text-sm md:text-base px-4 py-2 md:px-6 md:py-3 ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700'}` }>
+              <Button className={`border transition-all font-semibold text-sm md:text-base px-4 py-2 md:px-6 md:py-3 ${isDark ? 'border-gray-700 bg-transparent hover:bg-gray-900/20 text-gray-300 hover:text-white' : 'border-gray-300 bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900'}`}>
                 <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
                 {t.back.toUpperCase()}
               </Button>
@@ -906,7 +904,7 @@ export default function PracticePage() {
             <button
                 aria-label="Previous"
                 onClick={() => currentIndex > 0 && handleQuestionJump(currentIndex - 1)}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-blue-600 text-white font-bold text-base sm:text-lg flex items-center justify-center border border-blue-500 hover:bg-blue-700 transition-colors flex-shrink-0 shadow-lg"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-blue-600 text-white font-bold text-base sm:text-lg flex items-center justify-center border border-blue-500 hover:bg-blue-700 transition-all"
             >
               ‹
             </button>
@@ -989,7 +987,7 @@ export default function PracticePage() {
             <button
                 aria-label="Next"
                 onClick={() => currentIndex < pageCount - 1 && handleQuestionJump(currentIndex + 1)}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-blue-600 text-white font-bold text-base sm:text-lg flex items-center justify-center border border-blue-500 hover:bg-blue-700 transition-colors flex-shrink-0 shadow-lg"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-blue-600 text-white font-bold text-base sm:text-lg flex items-center justify-center border border-blue-500 hover:bg-blue-700 transition-all"
             >
               ›
             </button>
