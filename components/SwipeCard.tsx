@@ -71,6 +71,7 @@ export default function SwipeCard({
 
   // Use externalSelectedAnswer if provided (for displaying feedback from parent)
   const displaySelectedAnswer = externalSelectedAnswer !== undefined ? externalSelectedAnswer : selectedAnswer
+  const effectiveDisplaySelectedAnswer = showAnswer ? displaySelectedAnswer : null
 
   // Custom hooks for modular functionality
   const {
@@ -142,7 +143,13 @@ export default function SwipeCard({
     }
   }, [externalSelectedAnswer])
 
-  // Reset state when question changes
+  // Reset state when question changes, and clear selection as soon as feedback closes
+  useEffect(() => {
+    if (!showAnswer) {
+      setSelectedAnswer(null)
+    }
+  }, [showAnswer, question.id])
+
   useEffect(() => {
     setSelectedAnswer(null)
     setInternalShowTranslation(false)
@@ -380,7 +387,7 @@ export default function SwipeCard({
                 {totalQuestions && (
                   <Button
                     onClick={() => setShowJumpDialog(!showJumpDialog)}
-                    className={`border px-2 py-1.5 rounded text-xs transition-colors ${isDark ? 'bg-transparent hover:bg-blue-500/20 text-blue-300 border-blue-700 hover:border-blue-500' : 'bg-transparent hover:bg-blue-100 text-blue-600 border-blue-300 hover:border-blue-500'}`}
+                    className={`border px-2 py-1.5 rounded text-xs transition-colors ${isDark ? 'bg-transparent hover:bg-blue-500/20 text-blue-300 border-blue-700 hover:border-blue-500' : 'bg-transparent hover:bg-blue-100 text-blue-700 border-blue-300 hover:border-blue-500'}`}
                     title={`Jump to question (1-${totalQuestions})`}
                   >
                     <Zap className="w-4 h-4" />
@@ -411,7 +418,7 @@ export default function SwipeCard({
                   <Button
                     type="submit"
                     disabled={!jumpInput}
-                    className={`px-4 py-2 text-sm border rounded font-medium transition-colors ${isDark ? 'bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 border-blue-700 hover:border-blue-500' : 'bg-blue-100 hover:bg-blue-200 text-blue-600 border-blue-300'}`}
+                    className={`px-4 py-2 text-sm border rounded font-medium transition-colors ${isDark ? 'bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 border-blue-700 hover:border-blue-500' : 'bg-blue-100 hover:bg-blue-200 text-blue-700 border-blue-300 hover:border-blue-500'}`}
                   >
                     Jump
                   </Button>
@@ -461,13 +468,13 @@ export default function SwipeCard({
                   whileTap={{ scale: 0.99 }}
                   style={{ pointerEvents: "auto" }}
                   className={`w-full p-3 text-left rounded border-2 text-sm transition-all font-semibold ${
-                    showAnswer && displaySelectedAnswer !== null
+                    showAnswer && effectiveDisplaySelectedAnswer !== null
                       ? index === question.answerIndex
                         ? isDark ? "bg-green-500/50 border-green-400 text-green-100" : "bg-green-300 border-green-700 text-green-950"
-                        : displaySelectedAnswer === index
+                        : effectiveDisplaySelectedAnswer === index
                           ? isDark ? "bg-red-500/50 border-red-400 text-red-100" : "bg-red-300 border-red-700 text-red-950"
                           : isDark ? "bg-gray-900/20 border-gray-700 text-gray-500" : "bg-gray-100 border-gray-400 text-gray-600"
-                      : displaySelectedAnswer === index
+                      : effectiveDisplaySelectedAnswer === index
                         ? isDark ? "bg-blue-500/40 border-blue-400 text-blue-100" : "bg-blue-200 border-blue-600 text-blue-900"
                         : isDark ? "bg-transparent border-gray-700 text-gray-200 hover:bg-gray-900/20" : "bg-transparent border-gray-300 text-gray-700 hover:bg-gray-100"
                   }`}
@@ -514,11 +521,11 @@ export default function SwipeCard({
               </motion.div>
             )}
 
-            {showAnswer && displaySelectedAnswer !== null && (
+            {showAnswer && effectiveDisplaySelectedAnswer !== null && (
               <div className="hidden md:block">
                 <GamificationFeedback
-                  isCorrect={displaySelectedAnswer === question.answerIndex}
-                  xpGained={displaySelectedAnswer === question.answerIndex ? 10 : 0}
+                  isCorrect={effectiveDisplaySelectedAnswer === question.answerIndex}
+                  xpGained={effectiveDisplaySelectedAnswer === question.answerIndex ? 10 : 0}
                   accuracy={0}
                 />
               </div>
